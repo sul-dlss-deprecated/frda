@@ -1,0 +1,21 @@
+<div id="sidebar" class="span3">
+	<div id="sidebar-nav">
+	  <ul class="nav nav-list">
+	    <li class="nav-header"><%=t('frda.nav.about')%></li>
+	    <li><%= link_to t('frda.nav.laura_bassi'), :controller => "about",  :action => "show", :id => "laura_bassi" %></li>
+			<li><%= link_to t('frda.nav.project_overview'), :controller => "about",  :action => "show", :id => "project" %></li>
+			<li><%= link_to t('frda.nav.project_history'), :controller => "about",  :action => "show", :id => "history" %></li>
+			<li><%= link_to t('frda.nav.project_team_stanford'), :controller => "about",  :action => "show", :id => "stanford_team" %></li>
+			<li><%= link_to t('frda.nav.project_team_italy'), :controller => "about",  :action => "show", :id => "italy_team" %></li>
+			<li><%= link_to t('frda.nav.acknowledgements'), :controller => "about",  :action => "show", :id => "acknowledgements" %></li>
+	  </ul>
+
+	  <ul class="nav nav-list">
+	    <li class="nav-header"><%=t('frda.nav.contact')%></li>
+			<li><%= link_to t('frda.nav.contact_us'), :controller => "about", :action => "contact" %></li>
+			<li><%= link_to t('frda.nav.report_problem'), :controller => "about", :action => "contact" %></li>			
+			<li><%= link_to t('frda.nav.use_policy'), :controller => "about", :action => "show", :id=> "terms_of_use" %></li>
+	  </ul>
+
+	</div>
+</div>

@@ -1,0 +1,22 @@
+<% cache(:action => "index", :action_suffix => "map")  do %>
+	<script language="JavaScript">
+		$(document).ready(function(){
+			var options = {
+				zoom: 5,
+				center: new google.maps.LatLng(42.915141,11.107737),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map( document.getElementById( 'result_map' ), options );
+			var markers = [];
+			<%- @document_locations.each_with_index do |(location,coordinate),i| 
+				url=catalog_index_path(:"f[geographic_name_ssim][]"=>"#{location}")
+				%>
+				markers[<%=i%>] = new google.maps.Marker({position: new google.maps.LatLng(<%="#{coordinate[:lat]},#{coordinate[:lon]}"%>),map: map,url:"<%=url%>",title:"<%="#{location} (#{coordinate[:count]})"%>"});
+				google.maps.event.addListener(markers[<%=i%>], 'click', function() {window.location.href = this.url;});
+			<% end %>
+		});
+	</script>
+
+	<div id="result_map"></div>
+
+<% end %>

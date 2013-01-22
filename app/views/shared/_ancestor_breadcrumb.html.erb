@@ -1,0 +1,9 @@
+<% if ['item','file','box', 'folder'].include?(document.level) && !document.series.blank? %>
+	<li><%= link_to "#{t('frda.show.series.word')} #{document.series_number}", inventory_path(:anchor => document.series) %></li> 
+<% end %>
+<% if ['item','file','box'].include?(document.level) && !document.box.blank?%>
+	&#187; <li><%= link_to "#{t('frda.show.box.word')} #{document.box}",inventory_path(:anchor => "box#{document.box}") %></li> 
+<% end %>
+<% if ['item','file'].include?(document.level) && !document.folder.blank? %>
+	&#187; <li><%= link_to "#{t('frda.show.folder.word')} #{document.folder}",inventory_path(:anchor => "box#{document.box}-folder#{document.folder}") %></li>		
+<% end %>

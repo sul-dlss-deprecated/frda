@@ -1,0 +1,248 @@
+it:
+  active_record:
+    models:
+      feedback: 'Feedback'
+    attributes:
+      feedback:
+        name: 'Nome'
+        email: 'Indirizzo email' 
+        message: 'Messaggio' 
+  views:
+    pagination:
+      first: '&laquo; Primo' 
+      last: 'Ultimo &raquo;' 
+      previous: '&laquo; Precedente' 
+      next: 'Prossimo &raquo;' 
+      truncate: '…'
+      
+    pagination_compact:
+      previous: '&laquo; Precedente'
+      next: 'Prossimo &raquo;'
+
+  blacklight:
+    active_record:
+      models:
+        feedback: 'Feedback'
+      attributes:
+        feedback:
+          name: 'Nome'
+          email: 'Indirizzo email' 
+          message: 'Messaggio' 
+    views:
+      pagination:
+        first: '&laquo; Primo' 
+        last: 'Ultimo &raquo;' 
+        previous: '&laquo; Precedente' 
+        next: 'Prossimo &raquo;' 
+        truncate: '…' 
+
+    header_links:
+      login: 'Effettuare il login' 
+      logout: 'Effettuare il logout'
+      bookmarks: 'Segnalibri'
+      saved_searches: 'Ricerche salvate' 
+      selected_items: 'Dati selezionati' 
+      search_history: 'Cronologia di ricerca' 
+
+    welcome: 'Benvenuto!' 
+    and: 'e'
+    or: 'o' 
+
+    bookmarks:
+      collection:
+        add:
+          button: 'Aggiungi ai segnalibri' 
+      title: 'Segnalibri' 
+      no_bookmarks: "Non c'è nessun segnalibro"
+      add:
+        button: 'Mettere il segnalibro'
+        success:
+          one: 'Segnalibro aggiunto con successo' 
+          other: 'Segnalibri aggiunti con successo'
+        failure:  "Spiacente, c'è stato un problema durante il salvataggio dei segnalibri"
+      remove:
+        button: 'Rimuovi segnalibri'
+        success: 'Segnalibro rimosso con successo'
+        failure: "Spiacente, c'è stato un problema durante la cancellazione dei segnalibri"
+        action_confirm: 'Rimuovi questo segnalibro?'
+      clear:
+        action_title: 'Cancella segnalibri'
+        action_confirm: 'Cancella i segnalibri?'
+        success: 'I segnalibri sono stati cancellati'
+        failure: "Spiacente, c'è stato un problema durante la cancellazione dei signalibri"
+      need_login: "Effetua il login per gestire e visualizzare i segnalibri."
+      list_title: 'Segnalibri'
+      delete: 'Rimuovi'
+
+      feedback:
+      valid_name: 'È richiesto un nome valido'
+      valid_email: 'È richiesto un indirizzo email valido'
+
+      need_message: 'È richiesto un messaggio'
+      submit: 'Inviare!'
+      errors:
+        title: 'Correggi i seguenti errori di forma:'
+      complete:
+        title: 'Grazie per il suggerimento'
+
+    folder:
+      title: 'Dati selezionati' 
+      add:
+        success: '%{title} aggiunto con successo agli dati selezionati'
+      remove:
+        success: '%{title} rimosso con successo dagli dati selezionati'
+      clear:
+        success: 'I dati selezionati sono stati cancellati' 
+
+    saved_searches:
+      add:
+        success: 'Ricerca salvata con successo'
+        failure: "C'è stato un problema durante il salvataggio della ricerca"
+      remove:
+        success: 'La ricerca salvata è stata rimossa con successo'
+        failure: "C'è stato un problema durante la rimozione della ricerca"
+      clear:
+        action_title: 'Cancella ricerche salvate'
+        action_confirm: 'Cancella ricerche salvate?'
+        success: 'Le ricerche salvate sono state cancellate'
+        failure: "C'è stato un problema durante la cancellazione della ricerca"
+      title: 'Ricerche salvate'
+      need_login: 'Effetua il login per gestire e visualizzare le ricerche salvate'
+      no_searches: 'Non ci sono ricerche salvate'
+      list_title: 'Ricerche salvate'
+      delete: 'Cancellare'
+
+    search_history:
+      clear:
+        action_title: 'Cancella cronologia di ricerca'
+        action_confirm: 'Cancella cronologia di ricerca?'
+        success: 'La cronologia di ricerca è stata cancellata.'
+        failure: "C'è stato un problema durante la cancellazione della cronologia di ricerca"
+      title: 'Cronologia di ricerca'
+      no_history: "Non c'è nessuna cronologia di ricerca"
+      recent: 'Ricerche recenti'
+      forget: 'Cancellare'
+      save: 'Salvare'
+
+    tools:
+      cite: 'Citare'
+      endnote: 'Esportare in formato EndNote'
+      refworks: 'Esportare in formato Refworks'
+      email: 'Email'
+      sms: 'Invia come SMS'
+      librarian_view: 'Vista per bibliotecari'
+      clear: 'Cancellare'
+
+    citation:
+      mla: 'MLA'
+      apa: 'APA'
+      chicago: 'Chicago'
+
+    email:
+      form:
+        title: 'Invia come Email'
+        to: 'Email:'
+        message: 'Messaggio:'
+        submit: 'Inviare'
+      text:
+        title: 'Titolo: %{value}'
+        author: 'Autore: %{value}'
+        format: 'Formato: %{value}'
+        language: 'Lingua: %{value}'
+        subject:
+          one: 'Record del dato: %{title}'
+          other: 'I Record del dato'
+        url: 'URL: %{url}'
+        message: 'Messaggio: %{message}'
+
+      errors:
+        to:
+          invalid: 'È necessario inserire un indirizzo email valido'
+          blank: 'È necessario inserire un destinatario per inviare questo messaggio'
+    sms:
+      form:
+        title: 'Invia come SMS'
+        to: 'Numero di telefono:'
+        carrier: 'Fornitore di servizio telefonico'
+        carrier_prompt: 'Si prega di selezionare il fornitore di servizio telefonico'
+        submit: 'Inviare'
+      text:
+        title: '%{value}'
+        author: 'Di %{value}'
+        url: 'Collegamento: %{url}'
+      errors:
+        to:
+          invalid: 'Si deve immettere un numero di telefono di 10 cifre'
+          blank: 'È necessario immettere il numero di telefono del destinatario per inviare questo messaggio'
+        carrier:
+          blank: 'È necessario selezionare un fornitore di servizio telefonico'
+
+    back_to_search: 'Torna a ricerca'
+
+    search:
+      title: '%{application_name} Risultati di ricerca'
+      search_results_header: 'Risultati di Ricerca'
+      search_results: 'Risultati di ricerca'
+      errors:
+        request_error: 'Spiacente, la ricerca richiesta non è stata capita'
+        invalid_solr_id: 'Spiacente, il record richiesto non esiste'
+      per_page:
+        label: '%{count}<span class="hide-text"> per pagina</span>'
+        title: 'Numero dei risultati da indicare per pagina'
+        button_label: '%{count} per pagina'
+        submit: 'Aggiornare'
+      sort:
+        label: 'Ordina per %{select}'
+        submit: 'Ordina i risultati'
+      form:
+        search_field:
+          label: 'in'
+          title: 'Scelta mirata di ricerca'
+        q: 'Ricerca...'
+        submit: 'Cercare'
+      pagination:
+        title: 'Navigazione dei risultati'
+      pagination_info:
+        no_items_found: '%{entry_name} non trovato(a)'
+        single_item_found: 'Mostro <b>1</b> %{entry_name}'
+        pages:
+          one: 'Mostro <b>tutti %{total_num}</b> %{entry_name}'
+          other: 'Mostro %{entry_name} <b>%{start_num} - %{end_num}</b> di <b>%{total_num}</b>'
+      entry_pagination_info:
+        one: "Mostro l'unico risultato della ricerca"
+        other: 'Mostro il risultato <b>%{current} di %{total}</b> della ricerca'
+      documents:
+        counter: '%{counter}. '
+      folder:
+        select: 'Selezionare'
+        unselect: 'Deselezionare'
+      facets:
+        title: 'Limitare la ricerca'
+        sort:
+          count: 'Ordinamento numerico'
+          index: 'Ordinamento alfabetico'
+        count: '(%{number})'
+        more: 'di più »'
+        selected:
+          remove: '[rimuovere]'
+      filters:
+        title: 'Si è cercato:'
+        label: '%{label}:'
+        remove:
+          value: 'Rimuovere vincolo %{value}'
+          label_value: 'Rimuovere vincolo %{label}: %{value}'
+      librarian_view:
+        title: 'Vista per bibliotecari'
+        leader: 'LEADER %{leader}'
+      start_over: 'Ricominciare'
+      show:
+        title: '%{document_title} - %{application_name}'
+      rss_feed: 'RSS per i risultati'
+      atom_feed: 'Atom per i risultati'
+      fields:
+        default: 'Parola chiave'
+
+    entry_name:
+      default: 'Inserimento'
+
+    did_you_mean: 'Forse intendevi inserire: %{options}?'

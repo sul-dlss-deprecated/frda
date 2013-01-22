@@ -1,0 +1,19 @@
+<%= render :partial => 'show_about_sidebar' unless @no_nav%>
+
+<div id="content" class="span9 about-content">
+	<div class="row">
+	  <div class="span9">
+	    <h2><%= @page_title %></h2>
+	  </div>
+	</div>
+	
+	<div class="row">
+	  <div class="span9">
+			<%= render :partial => @page_name %>
+			<% unless controller.action_name == 'contact' || @page_name == 'terms_dialog' %>
+			  <p><span class="slug">End</span></p>
+			<% end %>
+		</div>
+	</div>
+
+</div>

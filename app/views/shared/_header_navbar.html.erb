@@ -1,0 +1,58 @@
+<!-- Brandbar snippet start -->
+<div id="brandbar">
+  <div class="container">
+    <%= link_to(image_tag("SUL-Logo-white-text-h25.png", :alt => "Stanford University Libraries"), "http://library.stanford.edu/")%>
+  </div> <!-- .container end -->
+</div> <!-- #brandbar end -->
+<!-- Brandbar snippet end -->
+
+<div id="header-navbar-static-top" class="navbar navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="row">
+        <div class="span3">
+          <%= link_to(image_tag("BVP.jpg", :alt => t('blacklight.application_name')), root_path, :class => "logo") %>
+        </div>
+
+        <div class="span8 site-header-content">
+          <div class="language-toggle">
+            <% if I18n.locale == :en %>
+              English
+            <% else %>
+              <%= link_to "English", :locale=>'en'%>
+            <% end %>
+              |
+            <% if I18n.locale == :it %>
+              Italiano
+            <% else %>
+              <%= link_to "Italiano", :locale=>'it'%>
+            <% end %>
+          </div>
+          <h1><%= t('blacklight.application_name') %></h1>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="<%="active" if on_home_page%>">
+                <%= link_to t('frda.nav.home').upcase, root_path %>
+              </li>
+              <li class="<%="active" if on_collection_highlights_page%>">
+                <%= link_to t('frda.nav.collections').upcase, collection_highlights_path%>
+              </li>
+              <li class="<%="active" if on_background_page%>">
+                <%= link_to t('frda.nav.background').upcase, background_path%>
+              </li>
+              <li class="<%="active" if on_inventory_pages || on_show_page || on_collections_pages %>">
+                <%= link_to t('frda.nav.content_inventory').upcase, inventory_path%>
+              </li>
+              <li class="<%="active" if on_about_pages%>"><%= link_to t('frda.nav.about').upcase, about_project_path %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div id="sidebar" class="span3">
+  <div id="sidebar-nav">
+    <%= render :partial => 'shared/finding_aid_download_links' %>
+
+    <ul class="nav nav-list inventory-toc affix">
+      <li class="nav-header"><%=t('frda.sidebar.inventory.title')%></li>
+      <%- SolrDocument.new.all_series.each_with_index do |series, index| -%>
+        <li><a href="#series<%= index+1 %>"><i class="icon-chevron-right"></i> Series <%= index+1 %></a></li>
+      <%- end -%>
+    </ul>
+  </div>
+</div>

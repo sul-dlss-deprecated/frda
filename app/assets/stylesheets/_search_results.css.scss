@@ -1,0 +1,190 @@
+/* Map View */
+#documents.map {}
+
+#documents {
+  border-top: 2px dotted darken($container_bg_color, 10%);
+  margin-top: 0;
+  padding-top: 15px;
+  a {color: #333;}
+}
+
+/* Gallery View */
+#documents.gallery {
+  ul.image-grid {list-style-type: none;}
+  ul.image-grid li.image-item {
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    min-height: 360px;
+    width: 205px;
+  }
+  ul.inventory-ancestry {margin-top: 5px;}
+  .documentHeader {
+    padding-top: 0;
+    h5 {
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+  ul.inventory-ancestry, .documentHeader {margin-left: 3px;}
+}
+
+/* Brief/Text Only View */
+#documents.brief {
+  .row {
+    margin-bottom: 20px;
+    padding-left: 10px;
+  }
+  .documentHeader {
+    .index_title {max-width: 600px;}
+    margin-top: 0;
+  }
+}
+
+/* Default View */
+#documents.default {
+  .documentHeader {
+    display: inline-block;
+    .index_title {
+      float: left;
+      margin: 0;
+      max-width: 480px;
+    }
+  }
+  .row {margin-bottom: 20px; padding-left: 10px;}
+  dl {margin-top: 8px;}
+  dt {
+    text-align: left;
+    width: 50px;
+  }
+  dd {margin-left: 60px;}
+  img {vertical-align: top;}
+  .results-image {
+    margin-top: 2px;
+  }
+  .results-metadata {margin-left: 0;}
+}
+
+/* Breadcrumb-like single-line display of result's ancestors */
+ul.inventory-ancestry {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+/* Results paging/controls */
+.row.results-controls {
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+.gallery_toggle {
+  font-size: 12px;
+  float: right;
+	.active {
+		color: black;
+		cursor: default;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+	.nav-pills {
+    margin-bottom: 0;
+    li > a {
+      background-color: $header_bg_color;
+      border: 1px solid darken($header_bg_color, 5%);
+      font-weight: 600;
+      margin-left: 6px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    li > a:hover {
+      background-color: darken($header_bg_color, 5%);
+    }
+    li > a.active, a.active:hover {
+      background-color: darken($header_bg_color, 10%);
+      border: 1px solid darken($header_bg_color, 10%);
+      color: $active_link_color;
+    }
+  }
+}
+
+.prev-next {
+  margin-top: 5px;
+}
+#sort-drowpdown, #per_page-dropdown {
+  margin-top: 3px;
+  z-index: 9999;
+}
+.css-dropdown li {
+  font-size: 12px;
+  padding: 2px 10px;
+  > a {padding: 2px;}
+}
+span.constraints-label {margin-right: 0.5em;}
+
+#sortAndPerPage {
+  background-color: $body_bg_color;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+.constraints, #sortAndPerPage {font-size: 0.85em;}
+.constraints {
+  clear: right;
+  margin: 0 8px 0 0;
+  .appliedFilter {
+    padding: 1px 50px 1px 1em;
+    .btnRemove {
+      /* override the BL icon used as separator */
+      background: asset_url('remove.png', image) no-repeat center center;
+      background-size: 8px 8px;
+    }
+    .queryName,.filterName {
+      /* override the BL icon used as separator */
+      background: none;
+      padding-right: 0;
+      &:after {
+        content: ">";   /* Facet > Value separator */
+        padding-left: 6px;
+      }
+    }
+  }
+}
+
+/* Search Form */
+#sidebar .search_form {
+	margin-bottom: 55px;
+	input.hide {
+		position:absolute;
+		left: -1000px;
+	}
+  input[type='text'] {
+	  width: 93%;
+		@media(max-width: 767px){
+		  width: 98%;
+		}
+  }
+}
+
+/* Responsive styles */
+@media (min-width: 768px) and (max-width: 979px) {
+  .blacklight-catalog-index #documents.default {
+    .results-image {padding-right: 10px;}
+  }
+  .prev-next, .page-pulldown, .view-toggle {
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    width: 100%;
+  }
+  .prev-next {margin-bottom: 0;}
+  .gallery_toggle, #sortAndPerPage {margin-right: 20px;}
+}
+@media (max-width: 767px) {
+  .blacklight-catalog-index #documents.default {
+    .dl-horizontal dt {float: left;}
+    .results-image {margin-bottom: 10px;}
+  }
+}

@@ -1,0 +1,28 @@
+.collection-members {
+	@include member-section-header;
+	margin-top: 5px;
+	h5 {
+		@media(max-width: 767px){
+			text-align: center;
+		}
+		margin:0;
+	}
+	.controls {
+	  font-size: 12px;
+	  margin-bottom: 10px;
+	  text-transform: none;
+		@media(max-width: 767px){
+			text-align: center;
+		}
+		text-align: right;
+	}
+	.item {
+		float: left;
+		margin: 5px 8px;
+	}
+	.muted {
+	  font-size: 12px;
+	  margin-left: 3px;
+	  vertical-align: top;
+	}
+}

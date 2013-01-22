@@ -1,0 +1,28 @@
+<%- type ||= :collection -%>
+<%- document ||= @document -%>
+<div class="row">
+  <div class="span9 collection-members">
+    <div class="row">
+      <%- if type == :collection -%>
+        <div class="span6">
+          <h5><%= t('frda.collection_members_grid.collection_text') %> <span class="muted">(<%= collection_members.total_members %>)</span></h5>
+        </div>
+        <div class="span2 offset1 controls">
+          <%= link_to(t('frda.collection_members_grid.members_link'), catalog_index_path( {:f => { blacklight_config.collection_member_collection_title_field => collection_members.first[blacklight_config.collection_member_collection_title_field]  } } )) %>
+        </div>
+      <%- else -%>
+        <div class="span6">
+          <h5><%= t('frda.collection_members_grid.sibling_text', :collection => document[blacklight_config.collection_member_collection_title_field].first) %> <span class="muted">(<%= collection_members.total_members %>)</span></h5>
+        </div>
+        <div class="span2 offset1 controls">
+          <%= link_to(t('frda.collection_members_grid.collection_link'), catalog_path(document[blacklight_config.collection_member_identifying_field])) %>
+        </div>
+      <%- end -%>
+    </div>
+    <%- collection_members.each do |item| -%>
+      <div class="item">
+        <%= link_to(image_tag(item.images.first), item_path(item)) %>
+      </div>
+    <%- end -%>
+  </div>
+</div>

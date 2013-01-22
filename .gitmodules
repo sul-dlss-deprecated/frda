@@ -1,0 +1,4 @@
+[submodule "jetty"]
+	path = jetty
+	url = https://github.com/projectblacklight/blacklight-jetty.git
+	ignore = dirty

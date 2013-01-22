@@ -1,0 +1,696 @@
+it:
+  frda:
+    background:
+      respository: 'Repository'
+      repository_text: "Biblioteca dell'Archginnasio"
+      summary_title: 'Title'
+      summary_title_text: 'Inventario Laura Bassi'
+      Date: 'Date'
+      date_text: '1591 (in copia) - 1836'
+      extent: 'Extent'
+      extent_text: '12.0 boxes (~6,000 digital objects)'
+      language: 'Language'      
+      language_text: 'Italiano'
+      title: 'Background'
+      extent_description_title: 'Elenco di consistenza'      
+      extent_description_text_html: |
+        <p>Delle singole serie che costituiscono il fondo si riportano l'indicazione degli estremi cronologici e la numerazione dei cartoni entro i quali le serie sono collocate.</p>
+        <ol>
+          <li>Istrumenti relativi alla famiglia Bassi, 1591-1776, cartoni 1, 2</li>
+          <li>Istrumenti relativi alla famiglia Veratti, 1691-1830, cartoni 3, 4</li>
+          <li>Documenti relativi a Francesco Veratti, 1684-1708, cartone 5</li>
+          <li>Documenti relativi a Ferdinando Veratti, 1721-1788, cartone 5</li>
+          <li>Documenti relativi a Giuseppe Veratti, 1734-1742, cartone 5</li>
+          <li>Documenti relativi a Laura Bassi, 1732-1836, cartoni 6, 7</li>
+          <li>Documenti relativi a Giovanni Veratti, 1761-1800, cartone 8</li>
+          <li>Documenti relativi a Giacomo Veratti, 1772-1818, cartone 8</li>
+          <li>Documenti relativi a Paolo Veratti, 1765-1832, cartoni 9-11</li>
+          <li>Documenti relativi a Gaetano Veratti, 1806-1825, cartone 12</li>
+          <li>Documenti relativi a Francesco Veratti, 1830, cartone 12</li>
+          <li>Miscellanea, 1712-sec. XVIII, cartone 12</li>
+        </ol>
+      custodial_note_title: 'Il fondo speciale "Laura Bassi e famiglia Veratti"'
+      custodial_note_text_html: |
+        <p>Tra il 1922 e il 1924 fu donato alla Biblioteca comunale dell'Archiginnasio materiale documentario relativo a Laura Maria Caterina Bassi Veratti <a href="#footnote_1">[1]</a>, al figlio Paolo e in generale alle famiglie Bassi e Veratti. Il dono, che comprendeva anche un cospicuo numero di pubblicazioni a stampa a carattere scientifico, fu fatto per volontà di uno dei discendenti diretti di Laura, Giovanni Veratti, per mano della figlia Emma e di suo marito Giulio Mazzoni <a href="#footnote_2">[2]</a>.</p>
+        <p>Tale donazione comprese inizialmente solo due cartoni, con documenti relativi esclusivamente a Laura Bassi, con lettere, dissertazioni, una medaglia d'argento dedicata a Laura Bassi, fatta in occasione della sua prima lezione tenuta all'Archiginnasio <a href="#footnote_3">[3]</a>, ed un punzone per il conio di una delle due facce della stessa.</p>
+        <p>Al primo nucleo, pervenuto nel 1922, si aggiunsero nel 1924 quattro cartoni di atti notarili relativi alle famiglie Bassi e Veratti, tre cartoni relativi alla famiglia Veratti, ai discendenti di Laura ed in particolare a suo figlio Paolo, e le pubblicazioni a stampa <a href="#footnote_4">[4]</a>.</p>
+        <p>I due cartoni relativi a Laura Bassi, i più consultati finora per l’importanza del personaggio, sono stati oggetto di riordino ed inventariazione nel 1962 <a href="#footnote_5">[5]</a>. La restante documentazione, ancora in gran parte nella sistemazione corrispondente alla descrizione dell'elenco di consegna, è stata oggetto del presente lavoro di riordino ed inventariazione, che ha compreso comunque i due cartoni suddetti con il relativo inventario, al quale è stato apportato solo qualche aggiornamento.</p>
+        <p>In generale si tratta di una raccolta di documenti manoscritti relativi alla famiglia di Domenico Veratti (morto nel 1679) alla quale, grazie al matrimonio di Giuseppe Veratti, suo discendente diretto, con Laura Bassi, si sono aggiunti documenti a lei direttamente relativi ed altri della famiglia Bassi, da lei portati in supporto di beni ereditati, quale ultima rappresentante del suo ramo famigliare.</p>
+        <p>Come già sottolineato in altra sede, la figura di Laura Bassi è troppo nota per dilungarsi in questa sede su di essa <a href="#footnote_6">[6]</a>. Gli atti ulteriormente inventariati, che si aggiungono ai due cartoni a lei relativi, non forniscono nulla di nuovo sulla sua figura, se non il fatto di sottolineare ulteriormente la notorietà della donna, quanto essa abbia colpito i suoi contemporanei e influito sulla vita dei suoi famigliari e diretti discendenti. Valga per tutte le biografie il brano riportato di seguito, tratto da un volume di memorie della famiglia Veratti, presente nel fondo, redatto da Ferdinando Veratti, cognato di Laura Bassi, nel quale viene dedicato ampio spazio alla figura della donna, pur essendo questa un elemento acquisito della famiglia. Egli, pur essendo solitamente telegrafico nelle annotazioni relative agli avvenimenti significativi della propria famiglia, dedica più pagine per descrivere le doti della cognata e gli avvenimenti del 1732, anno fondamentale nella vita di Laura. A tali avvenimenti, e a volte solo a quelli, fanno riferimento tutti i biografi della Bassi.</p>
+        <p>
+            <blockquote>
+                <p>Crebbe talmente la fama della signora Laura che non si dubitò punto di avanzarla alli gradi della letteratura e, perché non si omettesse alcuno di quei cimenti a cui si espongono coloro che vogliono ed essi essere promossi, si pensò a farla difendere una pubblica Conclusione di Filosofia. Li signori illustrissimi ed eccelsi Confaloniere ed Anziani Consoli le offrirono, pel luogo della disputa, la Galleria loro nel Palazzo Pubblico. Quindi, il 17 aprile 1732, comparve ella in abito nero o sia mantò accompagnata da due nobilissime dame, cioè dalla signora marchesa Elisabetta Ercolani, moglie del signor marchese senatore Ratta Garganelli, e dalla signora contessa Maria Bergonzi da Parma, moglie del senatore Marco Antonio Ranuzzi nella detta galleria piena di nobili, letterati sì bolognesi che forestieri e di cittadini scelti, accorsi a questa funzione. Vi intervennero li signori cardinali in abito Girolamo Grimaldi genovese, legato di Bologna, e Prospero Lambertini, arcivescovo di Bologna, monsignor Alberico Simonetti milanese vicelegato e il gonfaloniere marchese senatore e commendatore dell'Ordine di Santo Stefano Filippo Sampieri. e li Signori Anziani Consoli. Cominciò la disputa il padre don Giulio Marchetti, canonico lateranense e lettore teologo in San Giovanni in Monte, e fu doppo lui continuata con vari argomenti e difficoltà dalli reverendi padri Giuseppe Cassoni, letterato teologo de Ministri degli Infermi, padre don Gian Grisostomo Trombelli della Congregazione Renana canonico e letterato teologo in San Salvatore, padre fra Giuseppe Sivieri ministro conventuale e reggente del convento di San Francesco, padre Paolo Francesco Torre, gesuita e lettore di filosofia in Santa Lucia. Indi dalli signori dottor Giacomo Bartolomeo Beccari, lettore pubblico di medicina, anatomia ed uno dei professori dell'Istituto delle Scienze, e dal dottor Gabriele Manfredi, lettore pubblico segretario del Reggimento, e celebratissimo filosofo e algebrista. Durò la disputa più ore e finì con un pulito e grazioso ringraziamento della signora che superò le aspettazioni di chiunque vi si trovò presente sì per la chiarezza delle risposte agli argomenti sì per la profondità delle dottrine sì finalmente per la penetrazione del suo acutissimo ingegno. Riscosse ella pertanto da ogni genere di persone una indicibile stima ed applauso ma particolarmente dai letterati cittadini ed esteri onde non si dubitò punto di sollecitare ad onorarla della Laurea Dottorale e perciò adì 12 maggio 1732 si radunò il Collegio dei Filosofi e Medici nella solita loro residenza per udire la esposizione de punti assegnatile ed insieme lo scioglimento delle opposizioni in contrario, esame solito a praticarsi ad esperimento de promovendi al dottorato. Vi si volle trovare presente il signor cardinale Lambertini arcivescovo e la signora Laura (che vestiva ora in abito da corte cioè busto e veste color nero e che vi venne accompagnata dalle dette due dame Ratta e Ranuzzi) diede nuovamente saggio del suo talento e sapere onde li signori collegiati gli destinarono la Laurea e l'aggregazione al loro Collegio. Quindi partiti dal Collegio li dottori si portarono nel Pubblico Palazzo dove nella sala d'Ercole fatta magnificamente apparare dalli eccelsi signori Confalonieri ed Anziani Consoli si sedettero nel luogo loro preparato faccia al trono de signori cardinali Legato ed Arcivescovo e del signor cardinal Melchiorre di Polignach francese che da Roma tornava in Francia che tutti e tre vollero intervenire a questa funzione. Fu accompagnata la signora Laura dal Collegio alla gran sala d'Ercole nel pubblico palazzo dalle prefate due dame marchesa Elisabetta Ratta e contessa Maria Ranuzzi ed arrivata al luogo destinatole fu da monsignor conte Alessandro Formagliari arcidiacono di Bologna e maggior cancelliere dell'Università dei dottori e scolari dello Studio dichiarata dottoressa in filosofia premessa una elegante orazione. Le insegne dottorali le furono in seguito conferite con eloquentissima orazione del signor dottor Matteo Bazzani di Filosofia e Medicina dottore collegiato e lettore pubblico di medicina e notomia nella Università. Questi le pose in capo una corona d'argento significante il lauro regio, l'anello nel dito e la ornò col varro insegna ed abito proprio de dottori colleggiati, come aggregata al Collegio de Filosofi, li quali, siccome anche li Medici collegiati vi intervennero con toga e varro. Furono a questa funzione presenti li suddetti tre cardinali, monsignor Simonetta suddetto vicelegato, il signor gonfaloniere conte Filippo senatore Aldrovandi, il signor Podestà e i signori Anziani Consoli, tutta la Letteratura e Nobiltà anche estera, con folto popolo. Terminò la funzione con un erudito ed elegante ringraziamento della detta signora Laura. Fu in questa occasione dispensata una copiosa raccolta di rime in lode della signora laureata… Il 29 ottobre 1732 fu alla signora Laura Bassi conferita la lettura di filosofia dal Senato essendo confaloniere il signor Marchese Bartolomeo De Buoi Vizzani, con lo stipendio di lire cinquecento annue il quale nei seguenti anni crebbe per due aumenti ottenuti sino a lire mille. Fu al tempo stesso esentata dal peso di far lezioni su le pubbliche scuole ma sol tanto quando fosse richiesta dai signori superiori. Il 18 dicembre 1732 la signora suddetta fece la prima sua lezione di filosofia nell'Archiginnasio degli Artisti col intervento dei signori confaloniere Girolamo Marchese Cospi, Podestà ed Anziani Consoli. Era la signora vestita in busto, vesta, e varro e somma fu la lode che indi riportò. Intanto alcuni letterati ed altri cittadini e nobili fecero fare una medaglia rappresentante le effigie della signora[7].</p>
+            </blockquote></p>
+        <p>Dal fondo emergono alcune informazioni sulla famiglia Bassi e soprattutto sulla famiglia Veratti, a partire dalla fine del sec. XVII, sui discendenti di Laura ed in particolare su suo figlio Paolo che, vissuto nel riflesso della figura materna, intraprese la carriera di medico diventando poi docente all’Università di Bologna <a href="#footnote_8">[8]</a>.</p>
+        <p>Le notizie in merito alla famiglia Bassi vengono da una raccolta di istrumenti ad essa relativa, conservata in due cartoni, pervenuta alla famiglia Veratti, come si è detto, tramite Laura. La famiglia Bassi, di origine modenese, si trasferì a Bologna con Giuseppe Bassi, padre di Laura, che acquisì la cittadinanza dopo il suo prolungato soggiorno in città. Laura era l'ultima rappresentante della sua famiglia, essendo Carlo Filippo Bassi, suo unico cugino, figlio di Giacomo, fratello del padre, sacerdote. Gli atti presenti relativi alla famiglia Bassi sono in gran parte riferiti ai beni che in ultima istanza furono ereditati da Laura quale erede di Carlo Filippo. La famiglia di Domenico Veratti, o Verati, anch'essa di origine modenese, si trasferì a Bologna nel 1694 con Francesco di Domenico Veratti, medico condotto e padre di Giuseppe, marito di Laura Bassi. È da evidenziare l'utilizzo del cognome di questa famiglia che negli atti compare più frequentemente quale Verati, ma che si è attestato nel tempo quale Veratti <a href="#footnote_9">[9]</a>.</p>
+        <p>Nella memoria già menzionata di Ferdinando Veratti, nell'introduzione, egli avverte che sin dalle origini la famiglia prendeva il nome indifferentemente di Verati o Veratti <a href="#footnote_10">[10]</a> ma i documenti stessi, quali lettere sottoscritte da Laura o da altri della famiglia mettono in luce la preferenza per la prima stesura. In questo contesto è stato usato Veratti per i riferimenti correnti, per attenerci appunto alle abitudini e all'uso attuale con cui Laura Bassi è più comunemente conosciuta, e la versione originale nel caso delle citazioni originali o desunte.</p>
+        <p>Gli atti in nostro possesso sono costituiti da una raccolta di istrumenti e da carte relative a diversi componenti della famiglia Veratti, discendenti dal capostipite Domenico e da suo figlio Francesco. ma soprattutto a Paolo Veratti, figlio di Laura, pervenutici tramite i loro diretti discendenti.</p>
+        <p>Si tratta di documentazione conservata originariamente in ordine sparso, senza alcun nesso né di argomento né cronologico, con carte numerate progressivamente con mano del sec. XX <a href="#footnote_11">[11]</a>. Il materiale, essendo risultato frutto di una semplice sedimentazione di atti e non mostrando alcun ordine precostituito, è stato organizzato separando gli atti relativi alle diverse persone, seguendo un criterio cronologico-familiare, tenendo in considerazione la discendenza, individuando poi nel caso di Paolo Veratti, il più conosciuto tra i figli di Laura Bassi e al quale è relativa la maggior parte della documentazione, degli argomenti ricorrenti e rilevanti nella sua vita. Agli atti pertinenti alla due famiglie si aggiunge una miscellanea costituita da documentazione trovata frammista al fondo originale e che non è stato possibile ricondurre con certezza a nessuno dei due nuclei famigliari, Bassi e Veratti, o ad alcuno degli argomenti individuati.</p>
+        <p>È necessario infine segnalare che al fondo principale, donato negli anni Venti dalla famiglia Mazzoni, è stato in seguito accorpato materiale già pervenuto nel 1905 alla Biblioteca dell'Archiginnasio, grazie ad una cospicua donazione effettuata dall'ingegner Arturo Gozzi <a href="#footnote_12">[12]</a>.Non è dato di sapere quando ciò sia avvenuto, ma si può supporre che l'operazione sia stata effettuata quasi subito, all'arrivo del materiale del dono Mazzoni, data l'abitudine di alcuni ordinatori del passato di sistemare il materiale in base all'argomento e non al principio di provenienza. Sicuramente era già riunito nel 1962 quando fu fatto l'inventario delle carte relative a Laura Bassi, in quanto in esso è già compreso.</p>
+        <p>Del dono Gozzi esiste un elenco grazie al quale è possibile l'individuazione di parte del materiale accorpato. In sede di riordino, tale documentazione è stata lasciata nel fondo, in quanto la sua presenza risultava già ormai consolidata ed anche perché l'elenco non permette, data la sua sommarietà, la certa identificazione di tutto il materiale <a href="#footnote_13">[13]</a>. Quando possibile è stata segnalata in nota la provenienza.</p>
+      notes_title: 'Note metodologiche'
+      notes_text_html: |
+        <p>All'inizio dei lavori di riordino la documentazione era costituita da nove cartoni:
+          <ul>
+            <li>due relativi a Laura Bassi, già ordinati ed inventariati;</li>
+            <li>tre relativi ai componenti della famiglia Veratti ed in particolare a Paolo Veratti, figlio di Laura;</li>
+            <li>quattro cartoni con istrumenti senza alcun ordine, relativi alle famiglie Bassi e Veratti.</li>
+          </ul>
+        </p>
+        <p>Dai documenti relativi alla donazione <a href="#footnote_14">[14]</a> sembra che questa fosse la sistemazione con cui le carte pervennero all’Archiginnasio. In seguito ad una prima analisi risultò non esserci alcun nesso originale tra le carte per cui, trattandosi evidentemente di una raccolta e non di un vero e proprio archivio di persona, si è proceduto ad ordinare le carte secondo un ordine logico che permettesse un facile approccio alle stesse.</p>
+        <p>Innanzi tutto sono stati rispettati il riordino e l'inventariazione già dati ai cartoni relativi a Laura Bassi, in quanto funzionali è già utilizzati in passato dagli studiosi; sono state apportate solo alcune modifiche alla descrizione per renderla omogenea a quella restante del fondo. Sono stati riordinati i quattro cartoni di istrumenti, dividendo quelli relativi alla famiglia Bassi da quelli della famiglia Veratti, sistemandoli cronologicamente.</p>
+        <p>Sugli istrumenti sono state trovate delle segnature per libro e numero; non è stato trovato alcuno strumento di corredo relativo ma, ragionando per analogia, tale segnatura ha permesso di attribuire alcuni documenti a questa o quella famiglia e a verificare che si trattava comunque di una sistemazione grosso modo cronologica, che collocava prima gli istrumenti Bassi e di seguito gli istrumenti Veratti. Un’altra annotazione apposta su più atti notarili, "Gamberini notaio", non ha dato alcuna indicazione utile, se non per formulare l’ipotesi che tale notaio abbia potuto utilizzare i documenti da lui segnati per un fine non identificato.</p>
+        <p>Sono state infine riordinate le altre carte, rispettando la o le persone che le hanno poste in essere, tenendo in considerazione la cronologia delle stesse. Parte dei documenti erano praticamente non consultabili a causa del cattivo stato di conservazione e, prima del riordino, sono state oggetto di restauro nell'anno 2000. <a href="#footnote_15">[15]</a></p>
+        <p>La documentazione è stata infine sistemata in 12 cartoni descritti ognuno analiticamente in base alle unità archivistiche che lo compongono (fascicoli, registri, singoli documenti) e sono stati messi in ordine cercando di rispettare la cronologia delle due famiglie:</p>
+        <dl class="dl-horizontal">
+          <dt>cartoni 1-2:</dt>
+          <dd>istrumenti relativi alla famiglia Bassi, i più antichi cronologicamente;</dd>
+          <dt>cartoni 3-4:</dt>
+          <dd>istrumenti relativi alla famiglia Veratti;</dd>
+          <dt>cartone 5:</dt>
+          <dd>carte relative alla famiglia Veratti (antecedenti all'inserimento nell'asse famigliare di Laura Bassi);</dd>
+          <dt>cartoni 6-7:</dt>
+          <dd>carte relative a Laura Bassi;</dd>
+          <dt>cartoni 8-12:</dt>
+          <dd>carte relative ai figli e discendenti di Laura Bassi;</dd>
+        </dl>
+        <p>Ad ogni nucleo è stata anteposta una breve introduzione esplicativa.</p>
+        <p>Per ogni singolo pezzo archivistico (fascicolo, registro, singolo documento) è stata data l'intitolazione, la data e la consistenza. L'intitolazione è stata riportata tra virgolette se desunta e trascritta dal pezzo medesimo; in assenza di una intitolazione originaria o comunque se presente ma non esaustiva ne è stata data una esprimente genericamente il contenuto, senza virgolette. La datazione di ogni pezzo è stata espressa, se possibile e indicativa, con anno mese e giorno. Nel caso di datazioni non originali o ipotizzate, queste sono state poste tra parentesi quadre. La consistenza è stata data nel caso di fascicoli tramite i documenti o le carte che lo compongono, mentre per i registri cartulando gli stessi. Anche nel caso di descrizione di documenti è stata data la relativa consistenza indicando le carte relative. Le eventuali note sono state apposte a piè di pagina.</p>
+        <p>Lo stato di conservazione di ogni pezzo è stato dato in nota nel caso in cui era necessario segnalarlo, in quanto l'archivio si trova attualmente in buone condizioni di conservazione, soprattutto dopo gli interventi di restauro.</p>
+      abbreviations_title: 'Abbreviazioni'
+      abbreviations_text_html: |
+        <dl class="dl-horizontal">
+            <dt>c., cc.</dt>
+            <dd>carta, carte</dd>
+            <dt>cc. num. orig.</dt>
+            <dd>carte numerate originariamente</dd>
+            <dt>doc., docc.</dt>
+            <dd>documento, documenti</dd>
+            <dt>fasc., fascc.</dt>
+            <dd>fascicolo, fascicoli</dd>
+            <dt>fasc. ril.</dt>
+            <dd>fascicolo rilegato</dd>
+            <dt>m.</dt>
+            <dd>morto</dd>
+            <dt>mz., mzz.</dt>
+            <dd>mazzo, mazzi</dd>
+            <dt>n.</dt>
+            <dd>nato</dd>
+            <dt>n., nn.</dt>
+            <dd>numero</dd>
+            <dt>p., pp.</dt>
+            <dd>pagina, pagine</dd>
+            <dt>pz., pzz.</dt>
+            <dd>pezzo, pezzi</dd>
+            <dt>reg., regg.</dt>
+            <dd>registro, registri</dd>
+            <dt>rif.</dt>
+            <dd>riferimenti</dd>
+            <dt>s.a.</dt>
+            <dd>senza autore</dd>
+            <dt>s.d.</dt>
+            <dd>senza data</dd>
+            <dt>s.g.</dt>
+            <dd>senza giorno</dd>
+            <dt>s.l.</dt>
+            <dd>senza luogo</dd>
+            <dt>s.m.</dt>
+            <dd>senza mese</dd>
+            <dt>s.n.t.</dt>
+            <dd>senza note tipografiche</dd>
+            <dt>vol., voll.</dt>
+            <dd>volume, volumi</dd>
+            <dt>°°</dt>
+            <dd>sposato con</dd>
+        </dl>
+      bibliography_title: 'Nota bibliografica'
+      index_title: 'Indice'
+      index_text_html: |
+        <p>L'indice fornisce una lista di tutti i nomi di persona, ente e luogo presenti nell'inventario.</p>
+        <ul>
+        <li><a href="/it/catalog?q=Accademici%20Agiati%20vedi%20Accademia%20degli%20Agiati%20(Roveredo)">Accademici Agiati vedi Accademia degli Agiati (Roveredo)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20degli%20Agiati%20(Roveredo)">Accademia degli Agiati (Roveredo)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20degli%20Amanti%20della%20Botanica%20(Cortona)">Accademia degli Amanti della Botanica (Cortona)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20degli%20Arcadi%20(Roma)">Accademia degli Arcadi (Roma)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20degli%20Ardenti%20(Bologna)">Accademia degli Ardenti (Bologna)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20dei%20Dissonanti%20(Modena)">Accademia dei Dissonanti (Modena)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20Emonia%20(Busseto)">Accademia Emonia (Busseto)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20degli%20Erranti%20(Fermo)">Accademia degli Erranti (Fermo)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20degli%20Erranti%20gi%C3%A0%20Raffrontati">Accademia degli Erranti già Raffrontati</a></li>
+        <li><a href="/it/catalog?q=Accademia%20dei%20Fluttuanti%20(Finale%20di%20Modena)">Accademia dei Fluttuanti (Finale di Modena)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20Fulginia%20(Foligno)">Accademia Fulginia (Foligno)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20degli%20Ipocondriaci%20(Reggio%20Emilia)">Accademia degli Ipocondriaci (Reggio Emilia)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20dei%20Placidi%20(Recanati)">Accademia dei Placidi (Recanati)</a></li>
+        <li><a href="/it/catalog?q=Accademia%20dei%20Teopneusti%20(Correggio)">Accademia dei Teopneusti (Correggio)</a></li>
+        <li><a href="/it/catalog?q=Accarisi,%20Floriano">Accarisi, Floriano</a></li>
+        <li><a href="/it/catalog?q=Agli%20Puccetti,%20Laura">Agli Puccetti, Laura</a></li>
+        <li><a href="/it/catalog?q=Albergati%20Fontani,%20Ginevra">Albergati Fontani, Ginevra</a></li>
+        <li><a href="/it/catalog?q=Aldini,%20Giovanni">Aldini, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Aldrovandi,%20Filippo">Aldrovandi, Filippo</a></li>
+        <li><a href="/it/catalog?q=Aldrovandi,%20Pier%20Iacopo">Aldrovandi, Pier Iacopo</a></li>
+        <li><a href="/it/catalog?q=Aldrovandi,%20Pietro,%20vedi%20Aldrovandi,%20Pier%20Iacopo">Aldrovandi, Pietro, vedi Aldrovandi, Pier Iacopo</a></li>
+        <li><a href="/it/catalog?q=Aldrovandi%20Marescotti,%20Carlo%20Filippo">Aldrovandi Marescotti, Carlo Filippo</a></li>
+        <li><a href="/it/catalog?q=Algardi,%20Francesco%20Antonio">Algardi, Francesco Antonio</a></li>
+        <li><a href="/it/catalog?q=Algardi,%20Giovanni">Algardi, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Amministrazione%20centrale%20del%20Reno">Amministrazione centrale del Reno</a></li>
+        <li><a href="/it/catalog?q=Ancona">Ancona</a></li>
+        <li><a href="/it/catalog?q=Angela%20Matilde,%20suora,%20vedi%20Albergati%20Fontani,%20Ginevra">Angela Matilde, suora, vedi Albergati Fontani, Ginevra</a></li>
+        <li><a href="/it/catalog?q=Angelelli,%20Teresa">Angelelli, Teresa</a></li>
+        <li><a href="/it/catalog?q=Anosiro%20Minali">Anosiro Minali</a></li>
+        <li><a href="/it/catalog?q=Antici,%20Tommaso,%20cardinale">Antici, Tommaso, cardinale</a></li>
+        <li><a href="/it/catalog?q=Anton%20Maria%20da%20Pistoja,%20cappuccino">Anton Maria da Pistoja, cappuccino</a></li>
+        <li><a href="/it/catalog?q=Ascoli">Ascoli</a></li>
+        <li><a href="/it/catalog?q=Aranti,%20Silvio">Aranti, Silvio</a></li>
+        <li><a href="/it/catalog?q=Archetti,%20Giovanni%20Andrea,%20cardinale">Archetti, Giovanni Andrea, cardinale</a></li>
+        <li><a href="/it/catalog?q=Assunteria%20di%20Abbondanza">Assunteria di Abbondanza</a></li>
+        <li><a href="/it/catalog?q=Assunteria%20delle%20Acque">Assunteria delle Acque</a></li>
+        <li><a href="/it/catalog?q=Assunteria%20di%20Governo">Assunteria di Governo</a></li>
+        <li><a href="/it/catalog?q=Assunteria%20di%20Sanit%C3%A0">Assunteria di Sanità</a></li>
+        <li><a href="/it/catalog?q=Atti,%20Giuseppe">Atti, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=B.P.L.T.">B.P.L.T.</a></li>
+        <li><a href="/it/catalog?q=B[...],%20Ferdinando">B[...], Ferdinando</a></li>
+        <li><a href="/it/catalog?q=Baccelli,%20Liberato">Baccelli, Liberato</a></li>
+        <li><a href="/it/catalog?q=Bacialli,%20Angelo%20Michele">Bacialli, Angelo Michele</a></li>
+        <li><a href="/it/catalog?q=Bajotti,%20Rinaldo">Bajotti, Rinaldo</a></li>
+        <li><a href="/it/catalog?q=Baldi,%20Antonio">Baldi, Antonio</a></li>
+        <li><a href="/it/catalog?q=Bandiera,%20Giovanni%20Nicol%C3%B2">Bandiera, Giovanni Nicolò</a></li>
+        <li><a href="/it/catalog?q=Baroni,%20Innocenzo">Baroni, Innocenzo</a></li>
+        <li><a href="/it/catalog?q=Bassi,%20famiglia">Bassi, famiglia</a></li>
+        <li><a href="/it/catalog?q=Bassi,%20Carlo%20Filippo">Bassi, Carlo Filippo</a></li>
+        <li><a href="/it/catalog?q=Bassi,%20Felice">Bassi, Felice</a></li>
+        <li><a href="/it/catalog?q=Bassi,%20Francesco">Bassi, Francesco</a></li>
+        <li><a href="/it/catalog?q=Bassi,%20Gaspare">Bassi, Gaspare</a></li>
+        <li><a href="/it/catalog?q=Bassi,%20Giacinto">Bassi, Giacinto</a></li>
+        <li><a href="/it/catalog?q=Bassi,%20Giacomo">Bassi, Giacomo</a></li>
+        <li><a href="/it/catalog?q=Bassi,%20Giovanni">Bassi, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Bassi,%20Giuseppe">Bassi, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Bassi,%20Giuseppe%20Maria">Bassi, Giuseppe Maria</a></li>
+        <li><a href="/it/catalog?q=Bassi,%20Laura">Bassi, Laura</a></li>
+        <li><a href="/it/catalog?q=Bavari,%20Francesco%20Saverio">Bavari, Francesco Saverio</a></li>
+        <li><a href="/it/catalog?q=Bavoli,%20Giuseppe%20Maria">Bavoli, Giuseppe Maria</a></li>
+        <li><a href="/it/catalog?q=Bazzani,%20Matteo">Bazzani, Matteo</a></li>
+        <li><a href="/it/catalog?q=Beccari,%20Giacomo%20Bartolomeo">Beccari, Giacomo Bartolomeo</a></li>
+        <li><a href="/it/catalog?q=Bellettini,%20Pierangelo">Bellettini, Pierangelo</a></li>
+        <li><a href="/it/catalog?q=Bellini,%20Stefano">Bellini, Stefano</a></li>
+        <li><a href="/it/catalog?q=Belluzzi,%20Francesco%20Maria">Belluzzi, Francesco Maria</a></li>
+        <li><a href="/it/catalog?q=Benati,%20Giorgio">Benati, Giorgio</a></li>
+        <li><a href="/it/catalog?q=Benelli,%20fratelli">Benelli, fratelli</a></li>
+        <li><a href="/it/catalog?q=Benelli,%20Francesco%20Maria">Benelli, Francesco Maria</a></li>
+        <li><a href="/it/catalog?q=Benelli,%20Giuseppe">Benelli, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Benelli,%20Ludovico">Benelli, Ludovico</a></li>
+        <li><a href="/it/catalog?q=Bergonzi%20Ranuzzi,%20Maria">Bergonzi Ranuzzi, Maria</a></li>
+        <li><a href="/it/catalog?q=Bernardi,%20Angelo%20Antonio">Bernardi, Angelo Antonio</a></li>
+        <li><a href="/it/catalog?q=Bernardi,%20Antonio">Bernardi, Antonio</a></li>
+        <li><a href="/it/catalog?q=Bertacini,%20Antonio">Bertacini, Antonio</a></li>
+        <li><a href="/it/catalog?q=Bertinoro">Bertinoro</a></li>
+        <li><a href="/it/catalog?q=Bertoloni,%20Antonio">Bertoloni, Antonio</a></li>
+        <li><a href="/it/catalog?q=Bertolotti,%20Angelo">Bertolotti, Angelo</a></li>
+        <li><a href="/it/catalog?q=Biasini,%20Giovanni">Biasini, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Bignami,%20Angelo">Bignami, Angelo</a></li>
+        <li><a href="/it/catalog?q=Blasi,%20Matteo">Blasi, Matteo</a></li>
+        <li><a href="/it/catalog?q=Bologna">Bologna</a></li>
+        <li><a href="/it/catalog?q=Bonaccorsi,%20Giovanna">Bonaccorsi, Giovanna</a></li>
+        <li><a href="/it/catalog?q=Bonazzi,%20Bartolomeo">Bonazzi, Bartolomeo</a></li>
+        <li><a href="/it/catalog?q=Bonfioli%20Malvezzi,%20Alfonso">Bonfioli Malvezzi, Alfonso</a></li>
+        <li><a href="/it/catalog?q=Bonini,%20Giovanni%20Battista">Bonini, Giovanni Battista</a></li>
+        <li><a href="/it/catalog?q=Borgognoni,%20Vincenzo">Borgognoni, Vincenzo</a></li>
+        <li><a href="/it/catalog?q=Borsari,%20Lorenzo">Borsari, Lorenzo</a></li>
+        <li><a href="/it/catalog?q=Branciforte%20Colonna,%20Antonio">Branciforte Colonna, Antonio</a></li>
+        <li><a href="/it/catalog?q=Brighenti,%20Nicola%20Vittorio">Brighenti, Nicola Vittorio</a></li>
+        <li><a href="/it/catalog?q=Brizzi,%20Bernardino">Brizzi, Bernardino</a></li>
+        <li><a href="/it/catalog?q=Bruzzi,%20Elisabetta">Bruzzi, Elisabetta</a></li>
+        <li><a href="/it/catalog?q=Budrio">Budrio</a></li>
+        <li><a href="/it/catalog?q=Busseto">Busseto</a></li>
+        <li><a href="/it/catalog?q=Ca[...],%20Luigi">Ca[...], Luigi</a></li>
+        <li><a href="/it/catalog?q=Cagnaroni,%20Giuseppe">Cagnaroni, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Calvi,%20Jacopo%20Alessandro">Calvi, Jacopo Alessandro</a></li>
+        <li><a href="/it/catalog?q=Calvoli,%20famiglia">Calvoli, famiglia</a></li>
+        <li><a href="/it/catalog?q=Calvoli,%20Giacomo">Calvoli, Giacomo</a></li>
+        <li><a href="/it/catalog?q=Calvoli,%20Giuseppe">Calvoli, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Calvoli,%20Rosalia">Calvoli, Rosalia</a></li>
+        <li><a href="/it/catalog?q=Camerino">Camerino</a></li>
+        <li><a href="/it/catalog?q=Canneto%20(Bari)">Canneto (Bari)</a></li>
+        <li><a href="/it/catalog?q=Canova,%20Giuseppe">Canova, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Cantelli%20Cremonini,%20Giulia%20Teresa">Cantelli Cremonini, Giulia Teresa</a></li>
+        <li><a href="/it/catalog?q=Cantelli%20Tagliazucchi,%20Veronica">Cantelli Tagliazucchi, Veronica</a></li>
+        <li><a href="/it/catalog?q=Canterzani,%20Sebastiano">Canterzani, Sebastiano</a></li>
+        <li><a href="/it/catalog?q=Cappi,%20Maria%20Anna%20Margherita">Cappi, Maria Anna Margherita</a></li>
+        <li><a href="/it/catalog?q=Carini,%20Anna%20Caterina">Carini, Anna Caterina</a></li>
+        <li><a href="/it/catalog?q=Carlani,%20Carlo%20Antonio">Carlani, Carlo Antonio</a></li>
+        <li><a href="/it/catalog?q=Casignoli,%20Giovanni%20Domenico">Casignoli, Giovanni Domenico</a></li>
+        <li><a href="/it/catalog?q=Cassoni,%20Giuseppe">Cassoni, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Castelli,%20monsignore">Castelli, monsignore</a></li>
+        <li><a href="/it/catalog?q=Castelli,%20Giovanni%20Battista">Castelli, Giovanni Battista</a></li>
+        <li><a href="/it/catalog?q=Castelli,%20Virginia">Castelli, Virginia</a></li>
+        <li><a href="/it/catalog?q=Castiglioni,%20Filippo">Castiglioni, Filippo</a></li>
+        <li><a href="/it/catalog?q=Castiglioni,%20Francesco%20Saverio,%20vedi%20Pio%20VIII,%20papa">Castiglioni, Francesco Saverio, vedi Pio VIII, papa</a></li>
+        <li><a href="/it/catalog?q=Cavalleri,%20Domenico">Cavalleri, Domenico</a></li>
+        <li><a href="/it/catalog?q=Cavazza,%20Marta">Cavazza, Marta</a></li>
+        <li><a href="/it/catalog?q=Cavazzi,%20Bartolomeo">Cavazzi, Bartolomeo</a></li>
+        <li><a href="/it/catalog?q=Cazzani,%20Pietro">Cazzani, Pietro</a></li>
+        <li><a href="/it/catalog?q=Celsi,%20Giuseppe">Celsi, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Cenerelli,%20Giuseppe">Cenerelli, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Cesari,%20Rosa%20Maria">Cesari, Rosa Maria</a></li>
+        <li><a href="/it/catalog?q=Cesena">Cesena</a></li>
+        <li><a href="/it/catalog?q=Chierichetti%20Forti,%20Rosa">Chierichetti Forti, Rosa</a></li>
+        <li><a href="/it/catalog?q=Chierichetti,%20Ermenegildo">Chierichetti, Ermenegildo</a></li>
+        <li><a href="/it/catalog?q=Chierici,%20Francesco%20Maria">Chierici, Francesco Maria</a></li>
+        <li><a href="/it/catalog?q=Cingoli">Cingoli</a></li>
+        <li><a href="/it/catalog?q=Collegio%20medico%20chirurgico%20di%20Bologna">Collegio medico chirurgico di Bologna</a></li>
+        <li><a href="/it/catalog?q=Colli,%20Francesco">Colli, Francesco</a></li>
+        <li><a href="/it/catalog?q=Colli,%20Giuseppe">Colli, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Comelli,%20Giovanni%20Battista">Comelli, Giovanni Battista</a></li>
+        <li><a href="/it/catalog?q=Commissione%20cantonale%20di%20leva">Commissione cantonale di leva</a></li>
+        <li><a href="/it/catalog?q=Commissione%20dipartimentale%20di%20Sanit%C3%A0%20del%20Reno">Commissione dipartimentale di Sanità del Reno</a></li>
+        <li><a href="/it/catalog?q=Commissione%20provinciale%20di%20Sanit%C3%A0">Commissione provinciale di Sanità</a></li>
+        <li><a href="/it/catalog?q=Compagnia%20di%20Ges%C3%B9%20(Modena)">Compagnia di Gesù (Modena)</a></li>
+        <li><a href="/it/catalog?q=Compagnia%20del%20Santissimo%20Sacramento%20(parrocchia%20di%20Santa%20Caterina)">Compagnia del Santissimo Sacramento (parrocchia di Santa Caterina)</a></li>
+        <li><a href="/it/catalog?q=Conventi,%20Benedetto">Conventi, Benedetto</a></li>
+        <li><a href="/it/catalog?q=Corradini%20(Coradini)%20Zinanni,%20Maria%20Maddalena">Corradini (Coradini) Zinanni, Maria Maddalena</a></li>
+        <li><a href="/it/catalog?q=Correggio">Correggio</a></li>
+        <li><a href="/it/catalog?q=Corticelli,%20Alessandro">Corticelli, Alessandro</a></li>
+        <li><a href="/it/catalog?q=Cortona">Cortona</a></li>
+        <li><a href="/it/catalog?q=Cospi,%20Girolamo">Cospi, Girolamo</a></li>
+        <li><a href="/it/catalog?q=Costa,%20Paolo">Costa, Paolo</a></li>
+        <li><a href="/it/catalog?q=Covi,%20Antonio">Covi, Antonio</a></li>
+        <li><a href="/it/catalog?q=Cremonini,%20Francesco%20Antonio%20Bonaventura">Cremonini, Francesco Antonio Bonaventura</a></li>
+        <li><a href="/it/catalog?q=Cremonini,%20Paolo">Cremonini, Paolo</a></li>
+        <li><a href="/it/catalog?q=Cremonini,%20Teresa%20Maria">Cremonini, Teresa Maria</a></li>
+        <li><a href="/it/catalog?q=Cremonini%20Raggi,%20Angela">Cremonini Raggi, Angela</a></li>
+        <li><a href="/it/catalog?q=Crivelli,%20Giovanni">Crivelli, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Cruciani,%20Ercole">Cruciani, Ercole</a></li>
+        <li><a href="/it/catalog?q=Cruciani,%20Giulio">Cruciani, Giulio</a></li>
+        <li><a href="/it/catalog?q=Cruciani,%20Nicola">Cruciani, Nicola</a></li>
+        <li><a href="/it/catalog?q=Cuppini,%20Giuseppe">Cuppini, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=D.G.C.">D.G.C.</a></li>
+        <li><a href="/it/catalog?q=D'Ar%C3%A8ncourt,%20Garnier">D'Arèncourt, Garnier</a></li>
+        <li><a href="/it/catalog?q=Dalisa%20Caistria,%20pastore%20arcade">Dalisa Caistria, pastore arcade</a></li>
+        <li><a href="/it/catalog?q=Dalla%20Volpe">Dalla Volpe</a></li>
+        <li><a href="/it/catalog?q=Dalla%20Volpe">Dalla Volpe</a></li>
+        <li><a href="/it/catalog?q=Dalle%20Donne,%20Maria">Dalle Donne, Maria</a></li>
+        <li><a href="/it/catalog?q=Davia,%20Giovanni%20Antonio,%20cardinale">Davia, Giovanni Antonio, cardinale</a></li>
+        <li><a href="/it/catalog?q=Davia,%20Giuseppe">Davia, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=De%20Bandel,%20Giuseppe%20Antonio">De Bandel, Giuseppe Antonio</a></li>
+        <li><a href="/it/catalog?q=De%20Bianchi,%20V.">De Bianchi, V.</a></li>
+        <li><a href="/it/catalog?q=De%20Buoi,%20Bartolomeo">De Buoi, Bartolomeo</a></li>
+        <li><a href="/it/catalog?q=De%20Bonifazi,%20famiglia">De Bonifazi, famiglia</a></li>
+        <li><a href="/it/catalog?q=Devizi%20(De%20Vizi),%20Vittoria">Devizi (De Vizi), Vittoria</a></li>
+        <li><a href="/it/catalog?q=Di%20Polignach,%20Melchiorre">Di Polignach, Melchiorre</a></li>
+        <li><a href="/it/catalog?q=Direzione%20delle%20Poste%20nel%20Dipartimento%20del%20Reno">Direzione delle Poste nel Dipartimento del Reno</a></li>
+        <li><a href="/it/catalog?q=Disvetro%20(Modena)">Disvetro (Modena)</a></li>
+        <li><a href="/it/catalog?q=Dodi,%20Gaetano">Dodi, Gaetano</a></li>
+        <li><a href="/it/catalog?q=Dodi,%20Pietro">Dodi, Pietro</a></li>
+        <li><a href="/it/catalog?q=Dugliolo">Dugliolo</a></li>
+        <li><a href="/it/catalog?q=Emiliani,%20Luigi">Emiliani, Luigi</a></li>
+        <li><a href="/it/catalog?q=Ercolani%20Ratta%20Garganelli,%20Elisabetta">Ercolani Ratta Garganelli, Elisabetta</a></li>
+        <li><a href="/it/catalog?q=F.P.">F.P.</a></li>
+        <li><a href="/it/catalog?q=Fabri,%20Francesco">Fabri, Francesco</a></li>
+        <li><a href="/it/catalog?q=Fabri,%20Ranier%20Bernardino">Fabri, Ranier Bernardino</a></li>
+        <li><a href="/it/catalog?q=Fano">Fano</a></li>
+        <li><a href="/it/catalog?q=Fanti,%20Mario">Fanti, Mario</a></li>
+        <li><a href="/it/catalog?q=Fantoni,%20Pio">Fantoni, Pio</a></li>
+        <li><a href="/it/catalog?q=Fantuzzi,%20Giovanni">Fantuzzi, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Farri,%20Francesco">Farri, Francesco</a></li>
+        <li><a href="/it/catalog?q=Felici,%20Giovanni%20Battista">Felici, Giovanni Battista</a></li>
+        <li><a href="/it/catalog?q=Fermo">Fermo</a></li>
+        <li><a href="/it/catalog?q=Ferrara">Ferrara</a></li>
+        <li><a href="/it/catalog?q=Ferri,%20Antonio">Ferri, Antonio</a></li>
+        <li><a href="/it/catalog?q=Ferri,%20Giuseppe">Ferri, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Ferri,%20Gregorio%20Antonio">Ferri, Gregorio Antonio</a></li>
+        <li><a href="/it/catalog?q=Fiandrini,%20Ottavio">Fiandrini, Ottavio</a></li>
+        <li><a href="/it/catalog?q=Fieschi,%20Adriano">Fieschi, Adriano</a></li>
+        <li><a href="/it/catalog?q=Finale%20Emilia">Finale Emilia</a></li>
+        <li><a href="/it/catalog?q=Fiorini,%20Anna">Fiorini, Anna</a></li>
+        <li><a href="/it/catalog?q=Fiorini,%20Domenico">Fiorini, Domenico</a></li>
+        <li><a href="/it/catalog?q=Firenze">Firenze</a></li>
+        <li><a href="/it/catalog?q=Fittili%20Lauri,%20Maria">Fittili Lauri, Maria</a></li>
+        <li><a href="/it/catalog?q=Foligno">Foligno</a></li>
+        <li><a href="/it/catalog?q=Formagliari,%20Alessandro">Formagliari, Alessandro</a></li>
+        <li><a href="/it/catalog?q=Francesco%20Anton%20Maria%20da%20Pistoja,%20cappuccino">Francesco Anton Maria da Pistoja, cappuccino</a></li>
+        <li><a href="/it/catalog?q=Frascaroli,%20sorelle">Frascaroli, sorelle</a></li>
+        <li><a href="/it/catalog?q=Frascaroli,%20Antonia%20Maria">Frascaroli, Antonia Maria</a></li>
+        <li><a href="/it/catalog?q=Frascaroli,%20Caterina%20Maria">Frascaroli, Caterina Maria</a></li>
+        <li><a href="/it/catalog?q=Frascaroli,%20Domenico">Frascaroli, Domenico</a></li>
+        <li><a href="/it/catalog?q=Frascaroli,%20Giuseppe">Frascaroli, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Frascaroli,%20Matteo">Frascaroli, Matteo</a></li>
+        <li><a href="/it/catalog?q=Frascaroli,%20Rosa%20Maria">Frascaroli, Rosa Maria</a></li>
+        <li><a href="/it/catalog?q=Fratta,%20Domenico%20Maria">Fratta, Domenico Maria</a></li>
+        <li><a href="/it/catalog?q=Frulli,%20Carlo">Frulli, Carlo</a></li>
+        <li><a href="/it/catalog?q=Fulchi,%20Bartolomeo">Fulchi, Bartolomeo</a></li>
+        <li><a href="/it/catalog?q=G.A.G.">G.A.G.</a></li>
+        <li><a href="/it/catalog?q=G.B.A.">G.B.A.</a></li>
+        <li><a href="/it/catalog?q=G.B.F.F.C.">G.B.F.F.C.</a></li>
+        <li><a href="/it/catalog?q=G.C.C.">G.C.C.</a></li>
+        <li><a href="/it/catalog?q=G.M.">G.M.</a></li>
+        <li><a href="/it/catalog?q=G.M.C.">G.M.C.</a></li>
+        <li><a href="/it/catalog?q=G.P.C.">G.P.C.</a></li>
+        <li><a href="/it/catalog?q=G.V.D.F.">G.V.D.F.</a></li>
+        <li><a href="/it/catalog?q=Gaiba,%20Giuseppe">Gaiba, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Galli,%20Pietro">Galli, Pietro</a></li>
+        <li><a href="/it/catalog?q=Galvani,%20Giacomo%20Filippo%20Antonio">Galvani, Giacomo Filippo Antonio</a></li>
+        <li><a href="/it/catalog?q=Galvani,%20Luigi">Galvani, Luigi</a></li>
+        <li><a href="/it/catalog?q=Gambarini%20Gandolfi,%20Carlo">Gambarini Gandolfi, Carlo</a></li>
+        <li><a href="/it/catalog?q=Gamberini,%20notaio">Gamberini, notaio</a></li>
+        <li><a href="/it/catalog?q=Garattoni,%20Giuseppe%20Enea">Garattoni, Giuseppe Enea</a></li>
+        <li><a href="/it/catalog?q=Garelli,%20Antonio,%20canonico">Garelli, Antonio, canonico</a></li>
+        <li><a href="/it/catalog?q=Garelli,%20Salvatore">Garelli, Salvatore</a></li>
+        <li><a href="/it/catalog?q=Garetti,%20Nicol%C3%B2">Garetti, Nicolò</a></li>
+        <li><a href="/it/catalog?q=Garetti,%20Paolo%20Francesco">Garetti, Paolo Francesco</a></li>
+        <li><a href="/it/catalog?q=Gasperini,%20Giuseppe">Gasperini, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Gennari,%20Filippo">Gennari, Filippo</a></li>
+        <li><a href="/it/catalog?q=Genova">Genova</a></li>
+        <li><a href="/it/catalog?q=Gherardi,%20Adriano">Gherardi, Adriano</a></li>
+        <li><a href="/it/catalog?q=Ghisilieri,%20Francesco">Ghisilieri, Francesco</a></li>
+        <li><a href="/it/catalog?q=Gini,%20Cesare%20Massimiliano">Gini, Cesare Massimiliano</a></li>
+        <li><a href="/it/catalog?q=Giovannini,%20Carlo">Giovannini, Carlo</a></li>
+        <li><a href="/it/catalog?q=Giron,%20Giovanni%20Giuseppe,%20principe%20di%20Canneto">Giron, Giovanni Giuseppe, principe di Canneto</a></li>
+        <li><a href="/it/catalog?q=Giuliani,%20Giuseppe">Giuliani, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Giusti,%20Filippo">Giusti, Filippo</a></li>
+        <li><a href="/it/catalog?q=Giustiniani,%20Giacomo">Giustiniani, Giacomo</a></li>
+        <li><a href="/it/catalog?q=Gnecco,%20Luigi">Gnecco, Luigi</a></li>
+        <li><a href="/it/catalog?q=Golfieri,%20Giovanni%20Paolo">Golfieri, Giovanni Paolo</a></li>
+        <li><a href="/it/catalog?q=Gonzaga,%20Angelo">Gonzaga, Angelo</a></li>
+        <li><a href="/it/catalog?q=Gozzi,%20Arturo">Gozzi, Arturo</a></li>
+        <li><a href="/it/catalog?q=Gozzi,%20Fulvio">Gozzi, Fulvio</a></li>
+        <li><a href="/it/catalog?q=Grimaldi,%20Girolamo,%20cardinale%20legato">Grimaldi, Girolamo, cardinale legato</a></li>
+        <li><a href="/it/catalog?q=Gualandi,%20Michelangelo">Gualandi, Michelangelo</a></li>
+        <li><a href="/it/catalog?q=Guardia%20Nazionale%20di%20Bologna">Guardia Nazionale di Bologna</a></li>
+        <li><a href="/it/catalog?q=Guarmani,%20Giuseppe%20Filippo">Guarmani, Giuseppe Filippo</a></li>
+        <li><a href="/it/catalog?q=Guglielmini,%20Petronilla,%20principessa%20di%20Canneto">Guglielmini, Petronilla, principessa di Canneto</a></li>
+        <li><a href="/it/catalog?q=Guscelli,%20Mario">Guscelli, Mario</a></li>
+        <li><a href="/it/catalog?q=Hercolani,%20Filippo">Hercolani, Filippo</a></li>
+        <li><a href="/it/catalog?q=I.M.">I.M.</a></li>
+        <li><a href="/it/catalog?q=Iesi">Iesi</a></li>
+        <li><a href="/it/catalog?q=Ikrzetuski,%20Gaetano%20Giuseppe">Ikrzetuski, Gaetano Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Imola">Imola</a></li>
+        <li><a href="/it/catalog?q=Istituto%20delle%20Scienze">Istituto delle Scienze</a></li>
+        <li><a href="/it/catalog?q=Istituto%20Nazionale,%20vedi%20Istituto%20delle%20Scienze">Istituto Nazionale, vedi Istituto delle Scienze</a></li>
+        <li><a href="/it/catalog?q=K%C3%B6hler,%20Johann%20David">Köhler, Johann David</a></li>
+        <li><a href="/it/catalog?q=L.F.F.M.">L.F.F.M.</a></li>
+        <li><a href="/it/catalog?q=L.M.">L.M.</a></li>
+        <li><a href="/it/catalog?q=Laghi,%20Luigi">Laghi, Luigi</a></li>
+        <li><a href="/it/catalog?q=Lambertini%20Vighi,%20Giovanni">Lambertini Vighi, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Lambertini,%20Cornelia">Lambertini, Cornelia</a></li>
+        <li><a href="/it/catalog?q=Lambertini,%20Francesco">Lambertini, Francesco</a></li>
+        <li><a href="/it/catalog?q=Lambertini,%20Giovanni">Lambertini, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Lambertini,%20Maria%20Imelda%20Lucrezia">Lambertini, Maria Imelda Lucrezia</a></li>
+        <li><a href="/it/catalog?q=Lambertini,%20Prospero,%20arcivescovo,%20poi%20papa%20Benedetto%20XIV">Lambertini, Prospero, arcivescovo, poi papa Benedetto XIV</a></li>
+        <li><a href="/it/catalog?q=Lante,%20Antonio,%20cardinale">Lante, Antonio, cardinale</a></li>
+        <li><a href="/it/catalog?q=Laurinda,%20pastore%20arcade,%20vedi%20Bassi,%20Laura">Laurinda, pastore arcade, vedi Bassi, Laura</a></li>
+        <li><a href="/it/catalog?q=Lazzari,%20Antonio">Lazzari, Antonio</a></li>
+        <li><a href="/it/catalog?q=Leprotti,%20Antonio">Leprotti, Antonio</a></li>
+        <li><a href="/it/catalog?q=Le%20Sage,%20Georges%20Louis">Le Sage, Georges Louis</a></li>
+        <li><a href="/it/catalog?q=Liceo%20dipartimentale%20del%20Reno,%20vedi%20San%20Luigi,%20liceo">Liceo dipartimentale del Reno, vedi San Luigi, liceo</a></li>
+        <li><a href="/it/catalog?q=Liceo%20provinciale%20di%20Bologna,%20vedi%20San%20Luigi,%20liceo">Liceo provinciale di Bologna, vedi San Luigi, liceo</a></li>
+        <li><a href="/it/catalog?q=Locatelli,%20Cesare">Locatelli, Cesare</a></li>
+        <li><a href="/it/catalog?q=Loiani,%20Giacinto">Loiani, Giacinto</a></li>
+        <li><a href="/it/catalog?q=Lolli,%20Giuseppe">Lolli, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Longhi,%20Francesco">Longhi, Francesco</a></li>
+        <li><a href="/it/catalog?q=Lucchesini,%20Giovanni">Lucchesini, Giovanni</a></li>
+        <li><a href="/it/catalog?q=M.D.G.L.">M.D.G.L.</a></li>
+        <li><a href="/it/catalog?q=M.G.">M.G.</a></li>
+        <li><a href="/it/catalog?q=Malaguti,%20Pietro">Malaguti, Pietro</a></li>
+        <li><a href="/it/catalog?q=Malalbergo">Malalbergo</a></li>
+        <li><a href="/it/catalog?q=Malavolta">Malavolta</a></li>
+        <li><a href="/it/catalog?q=Malvezzi,%20famiglia">Malvezzi, famiglia</a></li>
+        <li><a href="/it/catalog?q=Manfredi,%20Eustachio">Manfredi, Eustachio</a></li>
+        <li><a href="/it/catalog?q=Manfredi,%20Gabriele">Manfredi, Gabriele</a></li>
+        <li><a href="/it/catalog?q=Manzoni%20Pilla,%20Francesca">Manzoni Pilla, Francesca</a></li>
+        <li><a href="/it/catalog?q=Marchesini,%20Adelaide">Marchesini, Adelaide</a></li>
+        <li><a href="/it/catalog?q=Marchesini,%20Anna">Marchesini, Anna</a></li>
+        <li><a href="/it/catalog?q=Marchesini,%20Gaetano">Marchesini, Gaetano</a></li>
+        <li><a href="/it/catalog?q=Marchesini,%20Giuseppe">Marchesini, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Marchesini,%20Maria">Marchesini, Maria</a></li>
+        <li><a href="/it/catalog?q=Marchetti,%20Giulio">Marchetti, Giulio</a></li>
+        <li><a href="/it/catalog?q=Marconi,%20Enrico">Marconi, Enrico</a></li>
+        <li><a href="/it/catalog?q=Marconi,%20Luigia">Marconi, Luigia</a></li>
+        <li><a href="/it/catalog?q=Mareggiani,%20Maria">Mareggiani, Maria</a></li>
+        <li><a href="/it/catalog?q=Marescalchi,%20F.">Marescalchi, F.</a></li>
+        <li><a href="/it/catalog?q=Maria%20Casimira,%20suora,%20vedi%20Veratti,%20Angela">Maria Casimira, suora, vedi Veratti, Angela</a></li>
+        <li><a href="/it/catalog?q=Marrocchi,%20Pier%20Tommaso,%20frate">Marrocchi, Pier Tommaso, frate</a></li>
+        <li><a href="/it/catalog?q=Martinelli,%20Vincenzo">Martinelli, Vincenzo</a></li>
+        <li><a href="/it/catalog?q=Massei,%20Alfonso">Massei, Alfonso</a></li>
+        <li><a href="/it/catalog?q=Masucci,%20Samaritana">Masucci, Samaritana</a></li>
+        <li><a href="/it/catalog?q=Mattioli,%20Ludovico">Mattioli, Ludovico</a></li>
+        <li><a href="/it/catalog?q=Mazzanti,%20Flora">Mazzanti, Flora</a></li>
+        <li><a href="/it/catalog?q=Mazza,%20Teresa">Mazza, Teresa</a></li>
+        <li><a href="/it/catalog?q=Mazzanti,%20Francesco%20Antonio">Mazzanti, Francesco Antonio</a></li>
+        <li><a href="/it/catalog?q=Mazzei,%20Raffaele">Mazzei, Raffaele</a></li>
+        <li><a href="/it/catalog?q=Mazzi,%20Maria%20Colomba">Mazzi, Maria Colomba</a></li>
+        <li><a href="/it/catalog?q=Mazzoni,%20famiglia">Mazzoni, famiglia</a></li>
+        <li><a href="/it/catalog?q=Mazzoni,%20Giulio">Mazzoni, Giulio</a></li>
+        <li><a href="/it/catalog?q=Melchiorri,%20Gaetano">Melchiorri, Gaetano</a></li>
+        <li><a href="/it/catalog?q=Melli,%20Elio">Melli, Elio</a></li>
+        <li><a href="/it/catalog?q=Mezzolara">Mezzolara</a></li>
+        <li><a href="/it/catalog?q=Minarelli,%20Giuseppe">Minarelli, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Modena">Modena</a></li>
+        <li><a href="/it/catalog?q=Modona,%20vedi%20Modena">Modona, vedi Modena</a></li>
+        <li><a href="/it/catalog?q=Mogliano">Mogliano</a></li>
+        <li><a href="/it/catalog?q=Molinelli,%20Giovanni%20Pietro">Molinelli, Giovanni Pietro</a></li>
+        <li><a href="/it/catalog?q=Molinelli,%20Pietro%20Paolo">Molinelli, Pietro Paolo</a></li>
+        <li><a href="/it/catalog?q=Mondini,%20Achille">Mondini, Achille</a></li>
+        <li><a href="/it/catalog?q=Mondini,%20Anna">Mondini, Anna</a></li>
+        <li><a href="/it/catalog?q=Mondini,%20Carlo">Mondini, Carlo</a></li>
+        <li><a href="/it/catalog?q=Mondini,%20Francesco">Mondini, Francesco</a></li>
+        <li><a href="/it/catalog?q=Mondini,%20Vincenzo">Mondini, Vincenzo</a></li>
+        <li><a href="/it/catalog?q=Montalto,%20collegio">Montalto, collegio</a></li>
+        <li><a href="/it/catalog?q=Montanari,%20Giovanni%20Battista">Montanari, Giovanni Battista</a></li>
+        <li><a href="/it/catalog?q=Montec%C3%B2saro%20(Macerata)">Montecòsaro (Macerata)</a></li>
+        <li><a href="/it/catalog?q=Monti,%20s.n.">Monti, s.n.</a></li>
+        <li><a href="/it/catalog?q=Monti,%20Basilio">Monti, Basilio</a></li>
+        <li><a href="/it/catalog?q=Monti,%20Gaetano">Monti, Gaetano</a></li>
+        <li><a href="/it/catalog?q=Monti,%20Giulio%20Cesare">Monti, Giulio Cesare</a></li>
+        <li><a href="/it/catalog?q=Moreschi,%20Alessandro">Moreschi, Alessandro</a></li>
+        <li><a href="/it/catalog?q=Moreschi,%20Giambattista">Moreschi, Giambattista</a></li>
+        <li><a href="/it/catalog?q=Mosca,%20Carlo">Mosca, Carlo</a></li>
+        <li><a href="/it/catalog?q=Mosca,%20Francesco">Mosca, Francesco</a></li>
+        <li><a href="/it/catalog?q=Moscati,%20Pietro">Moscati, Pietro</a></li>
+        <li><a href="/it/catalog?q=Muzzi,%20Giuseppe">Muzzi, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Nanuzzi,%20Francesca">Nanuzzi, Francesca</a></li>
+        <li><a href="/it/catalog?q=Napoli">Napoli</a></li>
+        <li><a href="/it/catalog?q=Napoleone%20I,%20imperatore%20dei%20Francesi">Napoleone I, imperatore dei Francesi</a></li>
+        <li><a href="/it/catalog?q=Nembrini%20Gonzaga,%20Alessandro">Nembrini Gonzaga, Alessandro</a></li>
+        <li><a href="/it/catalog?q=Nembrini%20Gonzaga,%20Cesare">Nembrini Gonzaga, Cesare</a></li>
+        <li><a href="/it/catalog?q=Norimberba">Norimberba</a></li>
+        <li><a href="/it/catalog?q=Oddi,%20Giuseppe">Oddi, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Olimene%20Anfrisio,%20pastore%20emonio">Olimene Anfrisio, pastore emonio</a></li>
+        <li><a href="/it/catalog?q=Opera%20delle%20Scuole%20Pie">Opera delle Scuole Pie</a></li>
+        <li><a href="/it/catalog?q=Opera%20pia%20dei%20Poveri%20Vergognosi">Opera pia dei Poveri Vergognosi</a></li>
+        <li><a href="/it/catalog?q=Oppizzoni,%20Carlo,%20cardinale">Oppizzoni, Carlo, cardinale</a></li>
+        <li><a href="/it/catalog?q=Oriana%20Ecalidea,%20vedi%20Cantelli%20Tagliazucchi,%20Veronica">Oriana Ecalidea, vedi Cantelli Tagliazucchi, Veronica</a></li>
+        <li><a href="/it/catalog?q=Orengo,%20Luigi">Orengo, Luigi</a></li>
+        <li><a href="/it/catalog?q=Orlandi,%20Carlo">Orlandi, Carlo</a></li>
+        <li><a href="/it/catalog?q=Ortolani,%20F.">Ortolani, F.</a></li>
+        <li><a href="/it/catalog?q=Osimo">Osimo</a></li>
+        <li><a href="/it/catalog?q=Pagnini,%20Giuseppe">Pagnini, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Palpigni,%20Caterina">Palpigni, Caterina</a></li>
+        <li><a href="/it/catalog?q=Panichi,%20Serafino">Panichi, Serafino</a></li>
+        <li><a href="/it/catalog?q=Parisani,%20Giuseppe">Parisani, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Parma">Parma</a></li>
+        <li><a href="/it/catalog?q=Pavia,%20Antonio">Pavia, Antonio</a></li>
+        <li><a href="/it/catalog?q=Pelizzoni,%20Luigia">Pelizzoni, Luigia</a></li>
+        <li><a href="/it/catalog?q=Perez,%20Francesco">Perez, Francesco</a></li>
+        <li><a href="/it/catalog?q=Perugia">Perugia</a></li>
+        <li><a href="/it/catalog?q=Pesaro">Pesaro</a></li>
+        <li><a href="/it/catalog?q=Pia%20Antonia%20Maria%20Redegonda%20Teresa,%20suora,%20vedi%20Cremonini,%20Teresa%20Maria">Pia Antonia Maria Redegonda Teresa, suora, vedi Cremonini, Teresa Maria</a></li>
+        <li><a href="/it/catalog?q=Piana,%20Luigi">Piana, Luigi</a></li>
+        <li><a href="/it/catalog?q=Piccioli,%20Benedetto">Piccioli, Benedetto</a></li>
+        <li><a href="/it/catalog?q=Pio%20VI,%20papa">Pio VI, papa</a></li>
+        <li><a href="/it/catalog?q=Pio%20VII,%20papa">Pio VII, papa</a></li>
+        <li><a href="/it/catalog?q=Pio%20VIII,%20papa">Pio VIII, papa</a></li>
+        <li><a href="/it/catalog?q=Pironi,%20Giuseppe">Pironi, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Pistoia">Pistoia</a></li>
+        <li><a href="/it/catalog?q=Poggi,%20Caterina">Poggi, Caterina</a></li>
+        <li><a href="/it/catalog?q=Poggi,%20Francesco">Poggi, Francesco</a></li>
+        <li><a href="/it/catalog?q=Pozzi,%20Vincenzo">Pozzi, Vincenzo</a></li>
+        <li><a href="/it/catalog?q=Prefettura%20Dipartimentale%20del%20Reno">Prefettura Dipartimentale del Reno</a></li>
+        <li><a href="/it/catalog?q=Presidoni,%20Geronima">Presidoni, Geronima</a></li>
+        <li><a href="/it/catalog?q=Prospera%20Caterina%20Maria%20Imelda,%20suora,%20vedi%20Lambertini,%20Maria%20Imelda%20Lucrezia">Prospera Caterina Maria Imelda, suora, vedi Lambertini, Maria Imelda Lucrezia</a></li>
+        <li><a href="/it/catalog?q=Quercia,%20Lucia">Quercia, Lucia</a></li>
+        <li><a href="/it/catalog?q=Quirini%20Stampalia,%20Alvise">Quirini Stampalia, Alvise</a></li>
+        <li><a href="/it/catalog?q=Raggi,%20Antonio">Raggi, Antonio</a></li>
+        <li><a href="/it/catalog?q=Raimondi,%20Caterina%20Redegonda">Raimondi, Caterina Redegonda</a></li>
+        <li><a href="/it/catalog?q=Raimondi,%20Luigi%20Camillo">Raimondi, Luigi Camillo</a></li>
+        <li><a href="/it/catalog?q=Raimondi,%20Maria">Raimondi, Maria</a></li>
+        <li><a href="/it/catalog?q=Raimondi,%20Matteo">Raimondi, Matteo</a></li>
+        <li><a href="/it/catalog?q=Raimondi,%20Nicol%C3%B2">Raimondi, Nicolò</a></li>
+        <li><a href="/it/catalog?q=Rambaldi,%20Antonio">Rambaldi, Antonio</a></li>
+        <li><a href="/it/catalog?q=Ramponi,%20Domenico">Ramponi, Domenico</a></li>
+        <li><a href="/it/catalog?q=Ramponi,%20Giovanni">Ramponi, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Ranuzzi,%20Marco%20Antonio">Ranuzzi, Marco Antonio</a></li>
+        <li><a href="/it/catalog?q=Rattagarganelli,%20Ludovico%20Maria">Rattagarganelli, Ludovico Maria</a></li>
+        <li><a href="/it/catalog?q=Ravenna">Ravenna</a></li>
+        <li><a href="/it/catalog?q=Recanati">Recanati</a></li>
+        <li><a href="/it/catalog?q=Redi,%20Maria%20Gioseffa,%20suora">Redi, Maria Gioseffa, suora</a></li>
+        <li><a href="/it/catalog?q=Reggio%20Emilia">Reggio Emilia</a></li>
+        <li><a href="/it/catalog?q=Regia%20Reggenza%20provvisoria">Regia Reggenza provvisoria</a></li>
+        <li><a href="/it/catalog?q=Righi%20Fangarezi,%20Lucia">Righi Fangarezi, Lucia</a></li>
+        <li><a href="/it/catalog?q=Rimini">Rimini</a></li>
+        <li><a href="/it/catalog?q=Riviera,%20Tarsizio">Riviera, Tarsizio</a></li>
+        <li><a href="/it/catalog?q=Rizzardi,%20Maria%20Camilla,%20suora">Rizzardi, Maria Camilla, suora</a></li>
+        <li><a href="/it/catalog?q=Rizzoli,%20Lodovico">Rizzoli, Lodovico</a></li>
+        <li><a href="/it/catalog?q=Roffeni,%20Giacomo">Roffeni, Giacomo</a></li>
+        <li><a href="/it/catalog?q=Roli,%20Francesco%20Maria">Roli, Francesco Maria</a></li>
+        <li><a href="/it/catalog?q=Roma">Roma</a></li>
+        <li><a href="/it/catalog?q=Romani,%20Nicol%C3%B2">Romani, Nicolò</a></li>
+        <li><a href="/it/catalog?q=Roveredo">Roveredo</a></li>
+        <li><a href="/it/catalog?q=Roversi,%20Melchiorre">Roversi, Melchiorre</a></li>
+        <li><a href="/it/catalog?q=Rubbiati,%20Tranquillino">Rubbiati, Tranquillino</a></li>
+        <li><a href="/it/catalog?q=Rusconi,%20Giuseppe%20Benedetto">Rusconi, Giuseppe Benedetto</a></li>
+        <li><a href="/it/catalog?q=Rusi,%20Vincenzo">Rusi, Vincenzo</a></li>
+        <li><a href="/it/catalog?q=Rusticelli,%20Angela">Rusticelli, Angela</a></li>
+        <li><a href="/it/catalog?q=Rusticelli,%20Giovanni">Rusticelli, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Rusticelli,%20Luca">Rusticelli, Luca</a></li>
+        <li><a href="/it/catalog?q=Ruvinetti,%20Giulia">Ruvinetti, Giulia</a></li>
+        <li><a href="/it/catalog?q=S.R.B.">S.R.B.</a></li>
+        <li><a href="/it/catalog?q=S.%20Loran,%20Maria%20Caterina">S. Loran, Maria Caterina</a></li>
+        <li><a href="/it/catalog?q=Salaroli,%20Camillo">Salaroli, Camillo</a></li>
+        <li><a href="/it/catalog?q=Salaroli,%20Giovanni">Salaroli, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Sambuceti,%20Luigi">Sambuceti, Luigi</a></li>
+        <li><a href="/it/catalog?q=Sampieri,%20Filippo">Sampieri, Filippo</a></li>
+        <li><a href="/it/catalog?q=San%20Biagio,%20chiesa">San Biagio, chiesa</a></li>
+        <li><a href="/it/catalog?q=San%20Giovanni%20Battista,%20chiesa%20(Disvetro)">San Giovanni Battista, chiesa (Disvetro)</a></li>
+        <li><a href="/it/catalog?q=San%20Giovanni%20Battista,%20monastero">San Giovanni Battista, monastero</a></li>
+        <li><a href="/it/catalog?q=San%20Giovanni%20in%20Monte,%20chiesa">San Giovanni in Monte, chiesa</a></li>
+        <li><a href="/it/catalog?q=San%20Giovanni%20in%20Persiceto">San Giovanni in Persiceto</a></li>
+        <li><a href="/it/catalog?q=San%20Lorenzo,%20monastero">San Lorenzo, monastero</a></li>
+        <li><a href="/it/catalog?q=San%20Luigi,%20liceo">San Luigi, liceo</a></li>
+        <li><a href="/it/catalog?q=San%20Petronio,%20chiesa">San Petronio, chiesa</a></li>
+        <li><a href="/it/catalog?q=San%20Salvatore,%20chiesa">San Salvatore, chiesa</a></li>
+        <li><a href="/it/catalog?q=Sanseverino">Sanseverino</a></li>
+        <li><a href="/it/catalog?q=Santa%20Caterina,%20chiesa">Santa Caterina, chiesa</a></li>
+        <li><a href="/it/catalog?q=Santa%20Lucia,%20liceo">Santa Lucia, liceo</a></li>
+        <li><a href="/it/catalog?q=Santa%20Maria%20degli%20Angeli,%20confraternita">Santa Maria degli Angeli, confraternita</a></li>
+        <li><a href="/it/catalog?q=Santa%20Maria%20degli%20Angeli,%20monastero">Santa Maria degli Angeli, monastero</a></li>
+        <li><a href="/it/catalog?q=Santa%20Maria%20della%20Purificazione,%20monastero">Santa Maria della Purificazione, monastero</a></li>
+        <li><a href="/it/catalog?q=Santa%20Maria%20Maddalena,%20monastero">Santa Maria Maddalena, monastero</a></li>
+        <li><a href="/it/catalog?q=Santissima%20Annunziata,%20convento">Santissima Annunziata, convento</a></li>
+        <li><a href="/it/catalog?q=Santissima%20Concezione,%20monastero">Santissima Concezione, monastero</a></li>
+        <li><a href="/it/catalog?q=Scarpellini,%20Feliciano">Scarpellini, Feliciano</a></li>
+        <li><a href="/it/catalog?q=Scarselli,%20Cesare%20Alessandro">Scarselli, Cesare Alessandro</a></li>
+        <li><a href="/it/catalog?q=Scarselli,%20Flaminio">Scarselli, Flaminio</a></li>
+        <li><a href="/it/catalog?q=Sebastiani,%20Francesco">Sebastiani, Francesco</a></li>
+        <li><a href="/it/catalog?q=Serpieri,%20Giulio%20Cesare">Serpieri, Giulio Cesare</a></li>
+        <li><a href="/it/catalog?q=Serpieri,%20Marcellino">Serpieri, Marcellino</a></li>
+        <li><a href="/it/catalog?q=Sibari%20Tessalicense,%20pastore%20arcade">Sibari Tessalicense, pastore arcade</a></li>
+        <li><a href="/it/catalog?q=Simonetti,%20Alberico">Simonetti, Alberico</a></li>
+        <li><a href="/it/catalog?q=Simonetti,%20Prospero">Simonetti, Prospero</a></li>
+        <li><a href="/it/catalog?q=Sivieri,%20Giuseppe">Sivieri, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Somenzari,%20Teodoro">Somenzari, Teodoro</a></li>
+        <li><a href="/it/catalog?q=Sorbelli,%20Albano">Sorbelli, Albano</a></li>
+        <li><a href="/it/catalog?q=Spallanzani,%20Lazzaro">Spallanzani, Lazzaro</a></li>
+        <li><a href="/it/catalog?q=Spezieria%20della%20Vita">Spezieria della Vita</a></li>
+        <li><a href="/it/catalog?q=Spezieria%20di%20Santa%20Caterina">Spezieria di Santa Caterina</a></li>
+        <li><a href="/it/catalog?q=Spina,%20Giuseppe,%20cardinale">Spina, Giuseppe, cardinale</a></li>
+        <li><a href="/it/catalog?q=Spinelli,%20s.n.">Spinelli, s.n.</a></li>
+        <li><a href="/it/catalog?q=Spoleto">Spoleto</a></li>
+        <li><a href="/it/catalog?q=Stegani,%20Lorenzo">Stegani, Lorenzo</a></li>
+        <li><a href="/it/catalog?q=Tacconi,%20Gaetano">Tacconi, Gaetano</a></li>
+        <li><a href="/it/catalog?q=Tadolini,%20Maria">Tadolini, Maria</a></li>
+        <li><a href="/it/catalog?q=Talisio%20P[elleo],%20vedi%20D'Ar%C3%A8ncourt,%20Garnier">Talisio P[elleo], vedi D'Arèncourt, Garnier</a></li>
+        <li><a href="/it/catalog?q=Termanini,%20Gaetano">Termanini, Gaetano</a></li>
+        <li><a href="/it/catalog?q=Testa,%20Giuseppe">Testa, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Tomba,%20Filippo">Tomba, Filippo</a></li>
+        <li><a href="/it/catalog?q=Tommasi,%20Raffaella">Tommasi, Raffaella</a></li>
+        <li><a href="/it/catalog?q=Torcioni,%20Caterina">Torcioni, Caterina</a></li>
+        <li><a href="/it/catalog?q=Torre,%20Paolo%20Francesco">Torre, Paolo Francesco</a></li>
+        <li><a href="/it/catalog?q=Trebbi,%20Giovanni">Trebbi, Giovanni</a></li>
+        <li><a href="/it/catalog?q=Trebbi,%20Pietro%20Giovanni">Trebbi, Pietro Giovanni</a></li>
+        <li><a href="/it/catalog?q=Tribunale%20di%20Bologna">Tribunale di Bologna</a></li>
+        <li><a href="/it/catalog?q=Trombelli,%20Giovanni%20Grisostomo">Trombelli, Giovanni Grisostomo</a></li>
+        <li><a href="/it/catalog?q=Turrio,%20Giacomo">Turrio, Giacomo</a></li>
+        <li><a href="/it/catalog?q=Ufficio%20delle%20Ipoteche%20di%20Bologna">Ufficio delle Ipoteche di Bologna</a></li>
+        <li><a href="/it/catalog?q=Universit%C3%A0%20degli%20Apatisti%20(Firenze)">Università degli Apatisti (Firenze)</a></li>
+        <li><a href="/it/catalog?q=Urbino">Urbino</a></li>
+        <li><a href="/it/catalog?q=Uttini,%20Gaetano">Uttini, Gaetano</a></li>
+        <li><a href="/it/catalog?q=Valeriani,%20Orazio">Valeriani, Orazio</a></li>
+        <li><a href="/it/catalog?q=Vanducci,%20Laura">Vanducci, Laura</a></li>
+        <li><a href="/it/catalog?q=Varrini,%20Ottavio">Varrini, Ottavio</a></li>
+        <li><a href="/it/catalog?q=Veggetti,%20Liborio">Veggetti, Liborio</a></li>
+        <li><a href="/it/catalog?q=Venezia">Venezia</a></li>
+        <li><a href="/it/catalog?q=Venturoli,%20Giuseppe">Venturoli, Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Verardini%20Prendiparti,%20Andrea">Verardini Prendiparti, Andrea</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20famiglia">Veratti, famiglia</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Angela">Veratti, Angela</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Anna">Veratti, Anna</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Anna%20Maria">Veratti, Anna Maria</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Antonio">Veratti, Antonio</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Benedetto">Veratti, Benedetto</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Bruno">Veratti, Bruno</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Carlo%20di%20Giuseppe">Veratti, Carlo di Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Caterina,%20nata%201739">Veratti, Caterina, nata 1739</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Caterina,%20nata%201742">Veratti, Caterina, nata 1742</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Caterina,%20nata%201745">Veratti, Caterina, nata 1745</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Caterina,%20nata%201750">Veratti, Caterina, nata 1750</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Ciro">Veratti, Ciro</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Domenica">Veratti, Domenica</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Domenico">Veratti, Domenico</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Elisabetta">Veratti, Elisabetta</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Ferdinando">Veratti, Ferdinando</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Flaminio">Veratti, Flaminio</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Francesco%20di%20Domenico">Veratti, Francesco di Domenico</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Francesco%20di%20Paolo">Veratti, Francesco di Paolo</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Gaetano">Veratti, Gaetano</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Geminiano">Veratti, Geminiano</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Geminiano%20di%20Domenico">Veratti, Geminiano di Domenico</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Giacomo">Veratti, Giacomo</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Giovanni%20Battista">Veratti, Giovanni Battista</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Giovanni%20di%20Carlo">Veratti, Giovanni di Carlo</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Giovanni%20di%20Domenico">Veratti, Giovanni di Domenico</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Giovanni%20Francesco%20di%20Giuseppe">Veratti, Giovanni Francesco di Giuseppe</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Giovanni%20Pietro">Veratti, Giovanni Pietro</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Giuseppe%20di%20Carlo">Veratti, Giuseppe di Carlo</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Giuseppe%20di%20Francesco%20di%20Domenico">Veratti, Giuseppe di Francesco di Domenico</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Giuseppe%20di%20Francesco%20di%20Paolo">Veratti, Giuseppe di Francesco di Paolo</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Giuseppe%20di%20Paolo">Veratti, Giuseppe di Paolo</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Gustavo">Veratti, Gustavo</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Laura%20Maria%20Caterina">Veratti, Laura Maria Caterina</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Leonida">Veratti, Leonida</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Margherita">Veratti, Margherita</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Maria%20Chiara">Veratti, Maria Chiara</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Paola">Veratti, Paola</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Paolo">Veratti, Paolo</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Teresa%20di%20Ciro">Veratti, Teresa di Ciro</a></li>
+        <li><a href="/it/catalog?q=Veratti,%20Teresa%20di%20Francesco">Veratti, Teresa di Francesco</a></li>
+        <li><a href="/it/catalog?q=Veratti%20Mazzoni,%20Emma">Veratti Mazzoni, Emma</a></li>
+        <li><a href="/it/catalog?q=Verona">Verona</a></li>
+        <li><a href="/it/catalog?q=Veronesi%20Viani,%20Maria">Veronesi Viani, Maria</a></li>
+        <li><a href="/it/catalog?q=Viani,%20Vincenzo">Viani, Vincenzo</a></li>
+        <li><a href="/it/catalog?q=Vitali,%20Costanza%20Beatrice">Vitali, Costanza Beatrice</a></li>
+        <li><a href="/it/catalog?q=Vitali,%20Girolamo">Vitali, Girolamo</a></li>
+        <li><a href="/it/catalog?q=Vizzani,%20Angelo%20Michele">Vizzani, Angelo Michele</a></li>
+        <li><a href="/it/catalog?q=Zagnoni,%20Gabriele%20Maria">Zagnoni, Gabriele Maria</a></li>
+        <li><a href="/it/catalog?q=Zanoni,%20Bartolomeo">Zanoni, Bartolomeo</a></li>
+        <li><a href="/it/catalog?q=Zanotti,%20Alessandro">Zanotti, Alessandro</a></li>
+        <li><a href="/it/catalog?q=Zanotti,%20Francesco%20Maria">Zanotti, Francesco Maria</a></li>
+        <li><a href="/it/catalog?q=Zanotti,%20Giampietro">Zanotti, Giampietro</a></li>
+        <li><a href="/it/catalog?q=Zanotti,%20Luigi">Zanotti, Luigi</a></li>
+        <li><a href="/it/catalog?q=Zarri,%20Anna">Zarri, Anna</a></li>
+        <li><a href="/it/catalog?q=Zeneroni,%20Bernardino">Zeneroni, Bernardino</a></li>
+        <li><a href="/it/catalog?q=Zoli,%20Agostino">Zoli, Agostino</a></li>
+        <li><a href="/it/catalog?q=Zoli,%20Filippo">Zoli, Filippo</a></li>
+        </ul>
+      footnotes_title: 'Note al testo'
+      footnotes_text_html: |
+        <ol>
+           <li><a name="footnote_1"></a>D'ora in poi indicata semplicemente come Laura Bassi.</li>
+           <li><a name="footnote_2"></a>Cfr. ARCHIVIO STORICO DEL COMUNE DI BOLOGNA (d'ora in poi ASCBo), Carteggio amministrativo, 1924, tit. XIV, rub. 5, sez. 3, prot. 12.688, "Biblioteca dell'Archiginnasio. Accettazione dai coniugi cav. Giulio Mazzoni ed Emma Veratti Mazzoni della donazione di lettere e scritti vari della celebre scienziata Laura Bassi Veratti e di altri personaggi della stessa famiglia Veratti".</li>
+           <li><a name="footnote_3"></a>La medaglia (cfr. cartone 6) fu disegnata da Domenico Maria Fratta e coniata dall'incisore Antonio Lazzari, come attestano le memorie e biografie.</li>
+           <li><a name="footnote_4"></a>Si tratta di circa 51 volumi presenti nella Biblioteca dell'Archiginnasio; cfr. elenco in: ASCBo, Carteggio amministrativo, cit., allegato C.</li>
+           <li><a name="footnote_5"></a>Cfr. RAFFAELLA TOMMASI, 
+                <em>Documenti riguardanti Laura Bassi conservati presso l'Archiginnasio</em>, "L'Archiginnasio", LVII, 1962, pp. 319-324.</li>
+           <li><a name="footnote_6"></a>Cfr. R. TOMMASI, 
+                <em>Documenti riguardanti Laura Bassi</em>, cit., p. 319. Esiste più di una biografia in merito a partire da "Notizie riguardanti la signora Laura Bassi Verati", copia di una lettera di Eustachio Manfredi, sec. XVIII/fine, cc. 2 (cfr. cartone 6) e dalle notizie presenti nel volume di memorie, compreso nel presente lavoro (cfr. cartone 5) e da cui sono state tratti gran parte dei dati, specialmente da Antonio Garelli per la sua biografia inserita in 
+                <em>Lettere inedite alla celebre Laura Bassi scritte da illustri italiani e stranieri con biografia</em>, Bologna, Tipografia G. Cenerelli, 1885, pp. 11-29. Si noti comunque come tutte le biografie a lei dedicate nei secc. XVIII e XIX sono incentrate sulla sua presentazione in pubblico, la laurea e la sua prima dissertazione, avvenimenti tutti avvenuti nell'arco del 1732, mentre poco o nulla viene detto sul resto della sua vita. Come sostiene Elio Melli, in 
+                <em>Laura Bassi Verati: ridiscussioni e nuovi spunti, in Alma Mater Studiorum. La presenza femminile dal XVIII al XX secolo</em>, Bologna, CLUEB, 1988, pp. 71-79, è l'epistolario di Laura Bassi la fonte primaria per avere un quadro più completo sulla sua vita.</li>
+           <li><a name="footnote_7"></a>Cfr. cartone 5, pezzo n. 3: "Memorie della famiglia Veratti di Bologna", 1726-1788 (rif. sec. XVII/metà - 1788), vol. manoscritto, pp. 102-105.</li>
+           <li><a name="footnote_8"></a>Cfr. cartoni 9-11.</li>
+           <li><a name="footnote_9"></a>A Bologna, ad esempio, esiste una via intestata appunto a Laura Bassi Veratti e la stessa Emma Mazzoni, che donò la raccolta, si firma nel 1924 "nata Veratti".</li>
+           <li><a name="footnote_10"></a>Ferdinando Veratti aggiunge "altrimenti detta de' Bonifazi" in quanto afferma che, per tradizione famigliare, si sosteneva che la famiglia traesse le sue origini da quella dei conti Sanbonifazi di Verona.</li>
+           <li><a name="footnote_11"></a>La numerazione è rimasta apposta sulle carte.</li>
+           <li><a name="footnote_12"></a>Cfr. BIBLIOTECA COMUNALE DELL'ARCHIGINNASIO, Archivio, Registri d'ingresso, Doni, 1905, nn. 261.717-261.877.</li>
+           <li><a name="footnote_13"></a>Si fa riferimento a volte sommariamente a "carte e fogli volanti in mazzo" o ad esempio a "poesie manoscritte ed altri scritti e memorie in onore della Laura Maria Caterina Bassi Veratti (un mazzo)", materiale identificabile solo in parte in quello conservato nel cartone 6, fascicolo 6.</li>
+           <li><a name="footnote_14"></a>ASCBo, Carteggio amministrativo, cit., allegati A-C.</li>
+           <li><a name="footnote_15"></a>Cfr. PIERANGELO BELLETTINI, <em>Relazione del Direttore sull'attività svolta nel biennio 1999-2000</em>, "L'Archiginnasio", XCIV-XCV, 1999-2000, pp. VII-XLVIII. a p. XXX-XXXI.</li>
+           <li><a name="footnote_16"></a>Nota redazionale: le abbreviazioni usate in riferimento alla documentazione indicizzata in questo inventario sono quelle tradizionalmente impiegate nella prassi archivistica.</li>
+        </ol>

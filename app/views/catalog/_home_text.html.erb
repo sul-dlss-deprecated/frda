@@ -1,0 +1,57 @@
+<div id="content" class="span9">
+	<div class="row">
+	  <div class="span9">
+	    <h2><%=t('frda.home.collection_highlights')%><span class="highlights-link"><%=link_to t('frda.home.more_highlights'),collection_highlights_path%></span></h2>
+	  </div>
+	</div>
+
+  <div class="row featured-collections">
+		<% @highlights.each do |highlight| %>
+      <div class="span3 featured-collection">
+        <%= link_to(image_tag(highlight.image_url, :class => 'highlight-poster-image'),catalog_index_path(params_for_collection_highlight(highlight)))  %>
+        <h3 class="collection-title"><%= link_to_collection_highlight(highlight) %></h3>
+        <span>(<%=t('frda.show.item',:count=>highlight.collection_highlight_items.size)%>)</span>
+      </div>
+		<% end %>
+  </div>
+
+
+  <div class="row">
+    <div class="span9 about-dl">
+      <h3 class="section-heading">About the Collection</h3>
+      <p>
+        <%= link_to image_tag('bv-sample.png', :width => '120'), about_project_path %>
+        <%= t('frda.home.about_text_html') %>
+      </p>
+      <p>
+        <%= link_to t('blacklight.search.facets.more'), about_project_path %>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span9 overview">
+      <h3 class="section-heading"><%=t('frda.home.overview_by')%>
+        <div class="overview tabbable tabs-below">
+          <ul class="nav nav-pills">
+            <li><%= link_to t('frda.home.location'), '#tab1', "data-toggle" => "pill" %></li>
+            <li><%= link_to t('frda.home.document_type'), '#tab2', "data-toggle" => "pill" %></li>
+          </ul>
+        </h3>
+
+          <div class="overview-area tab-content">
+
+            <div class="tab-pane fade" id="tab1">
+              <%= render :partial => 'overview_map' %>
+            </div>
+
+            <div class="tab-pane fade" id="tab2">
+	             VIEW BY DOCUMENT TYPE VIZ HERE
+            </div>
+
+          </div><!-- end overview-area -->
+        </div><!-- end tabbable -->
+    </div>
+  </div>
+
+</div>

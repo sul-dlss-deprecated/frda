@@ -1,0 +1,45 @@
+<ul class="breadcrumb">
+  <li><%= link_to t('frda.nav.frda_collection'), root_path%></li>
+
+  <% if on_about_pages %>
+   &#187; <li><%= link_to t('frda.nav.about'), about_project_path%></li>
+		<% case @page_name %>
+ 			<% when "laura_bassi" %> 
+				&#187; <%=t('frda.nav.laura_bassi') %>
+ 			<% when "project" %> 
+				&#187; <%=t('frda.nav.project_overview') %>
+ 			<% when "history" %> 
+				&#187; <%=t('frda.nav.project_history') %>
+ 			<% when "stanford_team" %> 
+				&#187; <%=t('frda.nav.project_team_stanford') %>
+ 			<% when "italy_team" %> 
+				&#187; <%=t('frda.nav.project_team_italy') %>
+ 			<% when "acknowledgements" %> 
+				&#187; <%=t('frda.nav.acknowledgements') %>
+ 			<% when "contact" %> 
+				&#187; <%=t('frda.nav.contact_us') %>
+ 			<% when "terms_of_use" %> 
+				&#187; <%=t('frda.nav.use_policy') %>
+		 <% end %>
+  <% end %>
+
+ <% if on_background_page %>
+    &#187; <li><%= t('frda.nav.background') %></li>
+ <% end %>
+
+ <% if on_inventory_pages %>
+    &#187; <li><%= t('frda.nav.content_inventory') %></li>
+ <% end %>
+
+ <% if on_collection_highlights_page %>
+    &#187; <li><%=t('frda.home.collection_highlights')%></li>
+ <% end %>
+
+ <% if on_show_page %>
+    &#187; <%= render :partial => "shared/ancestor_breadcrumb", :locals => {:document => @document} %>
+ <% end %>
+
+	<% if (on_collections_pages || on_show_page) && !on_collection_highlights_page%>
+		&#187; <li><%= raw truncate(@page_title) %></li>
+	<% end %>
+</ul>

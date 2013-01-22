@@ -1,0 +1,16 @@
+<div id="sidebar" class="span3">
+  <div id="sidebar-nav">
+    <%= render :partial => 'shared/finding_aid_download_links' %>
+
+    <ul class="nav nav-list background-toc affix">
+      <li class="nav-header"><%=t('frda.sidebar.background.title')%></li>
+      <li><a href="#notes"><i class="icon-chevron-right"></i> <%=t('frda.background.notes_title') %></a></li>
+      <li><a href="#extent"><i class="icon-chevron-right"></i> <%=t('frda.background.extent_description_title') %></a></li>
+      <li><a href="#custodial_note"><i class="icon-chevron-right"></i> <%=t('frda.background.custodial_note_title').truncate(25) %></a></li>
+      <li><a href="#abbreviations"><i class="icon-chevron-right"></i> <%=t('frda.background.abbreviations_title') %></a></li>
+      <li><a href="#bibliography"><i class="icon-chevron-right"></i> <%=t('frda.background.bibliography_title') %></a></li>
+      <li><a href="#index"><i class="icon-chevron-right"></i> <%=t('frda.background.index_title') %></a></li>
+      <li><a href="#footnotes"><i class="icon-chevron-right"></i> <%=t('frda.background.footnotes_title') %></a></li>
+    </ul>
+	</div>
+</div>

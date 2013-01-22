@@ -1,0 +1,13 @@
+<div id="content" class="span9 collection-highlights">
+  <h2><%=t('frda.home.collection_highlights')%></h2>
+
+  <ul class="image-grid">
+    <% @highlights.each do |highlight| %>
+      <li class="image-item">
+        <%= link_to(image_tag(highlight.image_url, :class => 'highlight-poster-image'),catalog_index_path(params_for_collection_highlight(highlight)))  %>
+        <h3 class="collection-title"><%= link_to_collection_highlight(highlight) %></h3>
+        <span>(<%=t('frda.show.item',:count=>highlight.collection_highlight_items.size)%>)</span>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,37 @@
+<div id="sidebar" class="span3">
+  <%= render "search_form" %>
+  <%= render :partial => 'constraints' if query_has_constraints? %>
+  <%= render :partial=>'facets' %>
+</div>
+
+<div id="content" class="span9">
+
+  <% unless has_search_parameters? %>
+    <%# if there are no input/search related params, display the "home" or collection highlight partial -%>
+		<% if on_collection_highlights_page %>
+			<%= render 'highlights' %>
+		<% else %>
+			<%= render 'home' %>
+		<% end %>
+  <% else %>
+
+    <% @page_title = t('frda.search.search_label') %>
+
+    <% extra_head_content << render_opensearch_response_metadata.html_safe %>
+
+		<h2 class="search-results"><%= t('blacklight.search.search_results_header') %></h2>
+
+		<div id="search-results-metadata">
+
+
+	    <%= render :partial => 'did_you_mean' %>
+      <%#= render :partial => 'constraints' %>
+		</div>
+
+    <%= render_document_index %>
+
+    <%= render 'results_pagination' %>
+
+  <% end %>
+
+</div>

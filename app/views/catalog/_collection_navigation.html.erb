@@ -1,0 +1,6 @@
+<ul class="nav nav-list">
+  <li class="nav-header"><%= t('frda.sidebar.navigation.title') %></li>
+  <li><%= link_to(t('frda.sidebar.navigation.all_collections'), collection_highlights_path)%></li>
+  <li><%= link_back_to_catalog %></li>
+  <li><%=link_to "#{t('blacklight.search.start_over')}", root_path, :id=>"startOverLink" %></li>
+</ul>

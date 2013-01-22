@@ -1,0 +1,223 @@
+/* TODO: Refactor to use mix-ins, etc. */
+
+/* Variables */
+/* Theme color palette */
+
+$body_bg_color: #fff;
+
+$header_bg_color: #f8f6f1;
+$nav_border_color: #e3dbce;
+
+$container_bg_color: #fdfdfb;
+$heading_color: #6d5b48;
+$sidebar_header_color: #AA7D17;
+$text_color: #4e4134;
+
+$active_link_color: #6d5b48;
+$hover_link_color: #c08e1a;
+$active_nav_link_color: #836d56;
+$inactive_nav_link_color: $text_color;
+
+$facet_box_background_color: lighten($header_bg_color, 1%);
+$facet_link_color: #946c14;
+$facet_selected_color: #c08e1a;
+
+/* constraint (you searched for:) details: */
+$constraint_bg_color: #ece7da;
+$constraint_border_color: darken($constraint_bg_color, 20%);
+$constraint_border_active_color: #FFD27A !default;
+
+/* Mixins */
+@mixin red-top_border {
+  border-top: 5px solid #AA7D17;
+  padding-top: 10px;
+}
+
+@mixin gray-top_border {
+  border-top: 5px solid darken($header_bg_color, 8%);
+  padding-top: 10px;
+}
+
+@mixin page-header {
+  @include gray-top_border;
+  color: $heading_color;
+  font-family: "cronos-pro-subhead","news-gothic-std","Helvetica","Arial",sans-serif;
+  margin-top: 0;
+  padding-top: 10px;
+  text-transform: uppercase;
+}
+
+@mixin member-section-header {
+  @include gray-top_border;
+  color: #990000;
+  margin-top: 0;
+  padding-top: 10px;
+  text-transform: uppercase;
+}
+
+/* --- */
+
+html {
+  font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Palatino", "Palatino Linotype", "URW Palladio L", serif;
+  background: $container_bg_color;
+  font-size: 0.85em;
+  line-height: 18px;
+  margin: 0;
+  height: auto;
+}
+
+#sidebar {@include red-top_border;}
+#sidebar-nav > .nav-list {
+  margin-bottom: 20px;
+  padding-left: 5px;
+  li > a {padding: 1px 15px;}
+}
+
+a:focus {
+	outline: thin dotted #333;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+a:hover,a:active {
+	outline: 0;
+}
+
+img {
+	max-width: 100%;
+	height:auto !important;
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+
+a {
+	color: $active_link_color;
+	text-decoration: none;
+}
+a:hover {
+	color: $hover_link_color;
+	text-decoration: underline;
+}
+#news-gothic .normal {
+	font-family: "news-gothic-std","Helvetica","Arial",sans-serif;
+	font-weight: 400;
+}
+#news-gothic .bold {
+	font-family: "news-gothic-std","Helvetica","Arial",sans-serif;
+	font-weight: 700;
+}
+#chaparral-pro .normal {
+	font-family: "chaparral-pro","Georgia","Times New Roman",serif;
+	font-weight: 400;
+}
+#chaparral-pro .bold {
+	font-family: "chaparral-pro","Georgia","Times New Roman",serif;
+	font-weight: 700;
+}
+#helvetica {
+	font-family: "Helvetica","Arial",sans-serif;
+}
+h1 {
+	display: block;
+	float: left;
+	font-family: "cronos-pro-subhead","news-gothic-std","Helvetica","Arial",sans-serif;
+	font-weight: 700;
+	font-size: 1.5em;
+	line-height: 1.1em;
+	color: $text_color;
+	margin-top: 30px;
+	-webkit-font-smoothing: antialiased;
+	margin-bottom: 30px;
+	border-bottom: 2px solid #dddddd;
+	padding-bottom: 10px;
+}
+h2 {
+  @include page-header;
+	font-size: 1.5em;
+	line-height: 1.5em;
+}
+h3 {
+  font-family: "cronos-pro-subhead","news-gothic-std","Helvetica","Arial",sans-serif;
+	font-size: 1.125em;
+	line-height: 1.5em;
+}
+p {
+  font-family: "Palatino", "Palatino Linotype", "URW Palladio L", serif;
+  color: #333333;
+//  font-size: 0.8em;
+  font-size: 13px;
+  line-height: 1.5em;
+  margin:12px 0;
+}
+span.content-type {
+	font-size: 0.8em;
+	font-weight: bold;
+	display: block;
+	color: #990000;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	&.collection {color: #01835F;}
+}
+.slideshow {
+  margin-bottom: 20px;
+}
+.nav-list > .active > a,
+.nav-list > .active > a:hover {
+  background-color: #eae5d6;
+  color: #222;
+  > [class^="icon-"] {background-image: none; }
+}
+.nav-header {color: $sidebar_header_color;}
+
+.nav > li > a  {border-radius: 6px;}
+
+.hidden {display: none;}
+
+.search_form .btn {float: right;}
+
+// Override Blacklight theme pagination styling
+.pagination {
+  border-top: 1px solid #dddddd;
+  padding-top: 20px;
+  ul {
+    margin-left: -20px;
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    -webkit-box-shadow: 0 0 0;
+       -moz-box-shadow: 0 0 0;
+            box-shadow: 0 0 0;
+    > li {
+      > a, > span {
+        background-color: transparent;
+        border: none;
+        border-right: 1px solid #ddd;
+        color: #999999;
+        line-height: 1.5em;
+      }
+      > a:hover {
+        color: $active_nav_link_color;
+        text-decoration: underline;
+      }
+      &.disabled > a:hover, &.active > a:hover {text-decoration: none;}
+      &:last-child > a,
+      &:last-child > span {border-right: none;}
+    }
+    > .active > a,
+    > .active > span {
+      background-color: transparent;
+      font-weight: bold;
+      &:hover {color: #999999;};
+    }
+  }
+}
+@media (max-width: 767px) {
+  .pagination {clear: both;}
+  .search_form .btn {float: left;}
+}

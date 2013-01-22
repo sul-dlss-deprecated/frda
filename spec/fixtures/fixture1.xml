@@ -1,0 +1,5 @@
+<doc>
+  <field name="id">1</field>
+  <field name="title_tsi">First Document</field>
+  <field name="description_tsim">Test solr fixture.</field>
+</doc>

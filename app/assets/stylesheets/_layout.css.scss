@@ -1,0 +1,41 @@
+body {
+  padding-top: 0;
+}
+
+#main-container {
+  padding-bottom: 50px;
+  padding-top: 6px;
+}
+
+.breadcrumb {
+  background: $container_bg_color;
+  color: #666;
+  font-size: 13px;
+  margin-bottom:6px;
+  margin-left: 5px;
+}
+
+body {
+  @media (max-width: 767px) {
+      padding-left: 0px;
+      padding-right: 0px;
+      // don't fix position toc nav (since no sidebar) on phones
+      .background-toc.affix, .inventory-toc.affix {position: relative;}
+    }
+}
+#header-navbar-static-top {
+  @media (max-width: 767px) {
+      margin-left: 0px;
+    }
+}
+#main-container {
+  @media (max-width: 767px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+}
+.breadcrumb {
+  @media (min-width: 1200px) {
+    margin-left: 15px;
+  }
+}

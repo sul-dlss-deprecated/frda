@@ -1,0 +1,14 @@
+/* Adjust Stanford Identity styles that have been previously overriden by FRDA or Blacklight styles */
+
+#brandbar {
+  background: #585754;
+}
+#global-footer, #global-footer .container {
+  background: #8A887D;
+  a, p.copyright { color: darken(#f7f7f7, 5%);}
+  p.copyright {
+    margin: 0;
+    line-height: 1.5em;
+    text-align: left;
+  }
+}

@@ -1,0 +1,52 @@
+#content.inventory {
+  h3 {
+    clear: both;
+    font-size: 1.5em;
+    &:before {content: "Series ";}
+  }
+  p {
+    font-size: 14px;
+    margin-top: 3px;
+  }
+  i {margin-right: 3px;}
+  a {color: #333;}
+  ul.series {
+    margin-bottom: 35px;
+    margin-left: 0;
+    text-transform: uppercase;
+    li {
+      clear: both;
+      line-height: 1.4em;
+      list-style-type:none;
+      &[data-behavior='toggle-handler']{cursor: pointer;}
+    }
+    > li {margin-bottom: 10px;}
+    > li > ul li {
+      margin-bottom: 10px;
+      text-transform: none;
+    }
+    ul.box-list li {
+    }
+    ul.folder-list {
+      li {
+        text-indent: -1.5em;
+        margin-left: 1em;
+      }
+      ul.folder-items {margin-left: 0;}
+      li.item-count {
+        font-style: italic;
+        margin-left: 1.5em}
+    }
+    ul.item-list {
+      margin-left: 0;
+      li {
+        clear: none;
+        float: left;
+        margin-right: 20px;
+        margin-left: 0;
+        text-indent: 0;
+        &:last-child {margin-bottom: 30px;}
+      }
+    }
+  }
+}

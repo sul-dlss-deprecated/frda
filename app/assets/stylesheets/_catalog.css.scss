@@ -1,0 +1,121 @@
+.blacklight-catalog-index {
+  h3 {
+    padding-top: 10px;
+    &.section-heading {
+      border-top: 3px solid darken($header_bg_color, 5%);
+      font-size: 1.25em;
+    }
+  }
+  #featured-collection-nav {
+    @include red-top_border;
+  }
+  .documentHeader {
+    display: inline-block;
+	  .index_title {
+		  float: left;
+      margin: 0;
+      max-width: 480px;
+	  }
+	  .documentFunctions {
+		  float: right;
+	  }
+  }
+  #documents.default {
+    .row {margin-bottom: 20px; padding-left: 10px;}
+    dl {margin-top: 8px;}
+    dt {
+      text-align: left;
+      width: 50px;
+    }
+    dd {margin-left: 60px;}
+    img {vertical-align: top;}
+    .results-image {
+      margin-top: 2px;
+    }
+    .results-metadata {margin-left: 0;}
+  }
+  span.inventory-ancestry {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
+
+.index_title {color: #999999;}
+.bookmark_toggle {
+	label {
+		cursor: pointer;
+		display: inline;
+	}
+}
+
+.blacklight-catalog-show {
+  #document, #document h4 {
+    margin-top: 0;
+    .document-details {
+      margin-bottom: 50px;
+      margin-top: 10px;
+      dt {color: $active_nav_link_color;}
+    }
+  }
+  h2 {@include page-header;}
+  .member-image img {margin-bottom: 20px;}
+  .show-document-title {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .zoom-image-link {
+    display: block;
+    &.visible-phone {margin-bottom: 15px;}
+    &.hidden-phone {margin-top: 20px; margin-bottom: none;}
+  }
+  .dl-horizontal {
+    dt {
+      float: left;
+      clear: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left;
+      white-space: nowrap;
+      width: 90px;
+    }
+    dd {
+      margin-left: 100px;
+      margin-right: 15px;
+    }
+  }
+  h3 {
+    border-top: 3px solid darken($header_bg_color, 5%);
+    color: $heading_color;
+    font-size: 1.25em;
+    padding-top: 10px;
+  }
+  ul.preview-folder-items {
+    margin-left: 0;
+    li {
+      list-style-type: none;
+      float: left;
+      margin-bottom: 10px;
+      margin-right: 15px;
+      &:last-child {margin-bottom: 30px;}
+    }
+  }
+  ul.item-mvf-list {
+    list-style-type: none;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+}
+
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .slideshow img {margin-bottom: 20px;}
+  .blacklight-catalog-show .dl-horizontal {
+    dt {
+      float: none;
+      width: 100%;
+    }
+    dd {margin-left: 0;}
+  }
+}

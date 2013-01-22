@@ -1,0 +1,118 @@
+<div class="document">
+  <div class="row">
+    <div class="span9">
+      <h2><%= t('frda.collection.member_detail') %></h2>
+    </div>
+  </div>
+
+  <div class="row document-details">
+    <div class="span4 member-image">
+      <%if @document.images.size > 0 %>
+        <div id="image_carousel" class="carousel slide">
+          <div class="carousel-inner">
+            <%- @document.images.each_with_index do |image,index|%>
+              <div class="item<%= " active" if index == 0 %>">
+                <%= image_tag(image, :alt => "Image #{index}") %>
+              </div>
+            <%- end -%>
+          </div>
+          <div class="carousel-controls">
+            <a class="carousel-control left" href="#image_carousel" data-slide="prev">&lsaquo;</a>
+            <span class="number-of-items"><%=t('frda.show.showing')%> <span id="iterator">1</span> <%= "#{t('frda.show.of')} #{@document.images.count}" if @document.images.count > 1 %></span>
+            <a class="carousel-control right" href="#image_carousel" data-slide="next">&rsaquo;</a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="span5">
+      <%= render_document_heading(:h4).html_safe %>
+      <dl class="dl-horizontal  dl-invert">
+        <dt><%=t('frda.show.date')%>:</dt><dd><%=show_list(@document.date)%>&nbsp;</dd>
+				<% unless list_is_empty?(@document.description) %>
+          <dt><%=t('frda.show.description')%>:</dt><dd><%=show_formatted_list(@document.description)%></dd>
+        <% end %>
+        <% unless list_is_empty?(@document.people) %>
+          <dt><%=t('frda.show.people')%>:</dt><dd><%=show_formatted_list(@document.people,:facet=>'personal_name_ssim')%></dd>
+        <% end %>
+        <% unless list_is_empty?(@document.families) %>
+          <dt><%=t('frda.show.families')%>:</dt><dd><%=show_formatted_list(@document.families,:facet=>'family_name_ssim')%></dd>
+        <% end %>
+        <% unless list_is_empty?(@document.corporations) %>
+          <dt><%=t('frda.show.corporations')%>:</dt><dd><%=show_formatted_list(@document.corporations,:facet=>'corporate_name_ssim')%></dd>
+        <% end %>
+        <% unless list_is_empty?(@document.location) %>
+          <dt><%=t('frda.show.locations')%>:</dt>
+						<dd><%=show_formatted_list(@document.location,:facet=>'geographic_name_ssim')%> 
+							<% unless list_is_empty?(@document.coordinates) %>
+                <a href="#location-map" data-toggle="modal" id="show-map-link" class="hidden">
+                  <i class="icon-globe"></i> <%=t('frda.show.show_map')%>
+                </a>
+              <% end %>
+						</dd>
+        <% end %>
+        <% unless list_is_empty?(@document.notes) %>
+          <dt><%=t('frda.show.notes')%>:</dt><dd><%=show_formatted_list(@document.notes)%></dd>
+        <% end %>
+        <% unless @document.purl.blank? %>
+          <dt><%=t('frda.show.citation')%>:</dt><dd><%=link_to @document.purl,@document.purl%></dd>
+        <% end %>
+      </dl>
+    <div>
+
+  </div>
+
+</div>
+
+
+<% if @document.folder_siblings.documents.size > 0%>
+<div class="row">
+  <div class="span9">
+		<h3>
+		  <%=t('frda.show.all_items_in_folder')%>  (<%=@document.folder_siblings.documents.size%>)
+		  <span class="highlights-link"><%= link_to t('frda.show.view_in_inventory', :item => 'folder'), inventory_path(:anchor => "box#{@document.box}-folder#{@document.folder}") %></span>
+		</h3>
+		<ul class="preview-folder-items">
+  		<% @document.folder_siblings.documents.each do |sibling| %>
+  		  <li>
+  				<%= link_to(image_tag(sibling.first_image(:square),:alt=>sibling.title,:title=>sibling.title,:border=>0), catalog_path(sibling[:id])) %>
+  			</li>
+  		<% end %>
+		</ul>
+  </div>
+</div>
+<% end %>
+
+<% unless list_is_empty?(@document.coordinates) %>
+	<script>
+	$(document).ready(function(){
+  	$('#location-map').modal({keyboard: true, backdrop: 'static', show: false});
+		$('#show-map-link').removeClass('hidden');
+		var options = {
+			zoom: 6,
+			center: new google.maps.LatLng(<%="#{document.coordinates.first[:lat]},#{@document.coordinates.first[:lon]}"%>),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map( document.getElementById( 'result_map' ), options );
+		<%- @document.coordinates.each do |coordinate| %>			  
+			new google.maps.Marker({position: new google.maps.LatLng(<%="#{coordinate[:lat]},#{coordinate[:lon]}"%>),map: map,title:"<%=coordinate[:name]%>"});
+		<% end %>
+
+	});
+
+	</script>
+
+	<div class="modal fade" id="location-map">
+	  <div class="modal-header">
+	    <h3><%=t('frda.show.map')%></h3>
+	  </div>
+	  <div class="modal-body">
+			
+				<div id="result_map"></div>
+
+	  </div>
+	  <div class="modal-footer">
+	    <button class="tod-agree btn btn-primary" data-dismiss="modal"><%=t('frda.nav.close')%></button>
+	  </div>
+	</div>
+<% end %>

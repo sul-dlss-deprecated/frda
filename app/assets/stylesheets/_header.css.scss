@@ -1,0 +1,96 @@
+/* TODO: Refactor to use mix-ins, etc. */
+
+#brandbar {
+  min-height: 35px;
+}
+
+#header-navbar-static-top {
+  border-bottom: 1px solid $nav_border_color;
+  &.navbar {
+      font-family: "Helvetica","Arial",sans-serif;
+    .logo {
+      text-align: center;
+      img {
+        max-height: 125px;
+        display: block;
+        margin: auto;
+      }
+    }
+    .nav {
+      border-bottom: 1px solid $nav_border_color;
+      border-top: 1px solid $nav_border_color;
+      clear: left;
+      margin-top: 6px;
+      padding-bottom: 3px;
+      > li {
+        &.active > a {color: $active_nav_link_color;}
+        > a {
+          background-color: $header_bg_color;
+          box-shadow: none;
+          color: $inactive_nav_link_color;
+        	font-weight: 700;
+        	text-transform: uppercase;
+        	font-size: 0.965em;
+        	-webkit-font-smoothing: antialiased;
+          padding: 8px 25px 5px 3px;
+          &:hover, &:focus {color: $active_nav_link_color;}
+        }
+      }
+      > li:last-child > a {padding-right: 0}
+    }
+  }
+  h1 {
+    border-bottom: none;
+    font-size: 3.3em;
+    font-family: "cronos-pro-subhead","news-gothic-std","Helvetica","Arial",sans-serif;
+    margin: 0;
+  	line-height: 1.5em;
+    padding-bottom: 0;
+  }  
+  .navbar-inner {
+    background: $header_bg_color;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    .language-toggle {
+      color: #999;
+      font-size: 13px;
+      text-align: right;
+    }
+  }
+}
+
+/* Phones: reduce logo size and center site title and nav elements */
+@media (max-width: 767px) {
+  #header-navbar-static-top {
+    .logo img {
+      float: left;
+      max-width: 60px;
+    }
+    &.navbar {
+      .site-header-content {text-align: center;}
+      h1 {
+        font-size: 2.5em;
+        float: none;
+      }
+      .language-toggle {text-align: center;}
+      .nav > li:last-child > a {padding-right: 25px}
+    }
+  }
+}
+/* Tablets: reduce logo size and add some extra space between logo
+   and site title and nav elements */
+@media (min-width: 768px) and (max-width: 979px) {
+  #header-navbar-static-top {
+    .logo img {
+      float: right;
+      max-width: 60px;
+    }
+    &.navbar {
+      .site-header-content {margin-left: 30px;}
+      .language-toggle {text-align: left;}
+    }
+  }
+}

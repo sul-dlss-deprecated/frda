@@ -1,0 +1,18 @@
+<ul class="nav nav-list">
+  <li class="nav-header"><%= t('frda.sidebar.actions.title') %></li>
+  <li><%= link_to t('frda.sidebar.actions.view_in_inventory'), inventory_path(:anchor => "box#{@document.box}-folder#{@document.folder}") %></li>
+  <!-- <li><%#= link_to t('frda.sidebar.actions.print'), '#' %></li> -->
+  <li><%= link_to t('frda.sidebar.actions.cite'), '#' %></li>
+
+  <%- # extracted from show_tools partial %>
+  <% if @document.respond_to?( :to_email_text ) %>
+    <li class="email">
+    <%= link_to t('blacklight.tools.email'), email_catalog_path(:id => @document), {:id => 'emailLink', :name => 'email', :class => 'lightboxLink'} %>
+    </li>
+  <%- end -%>
+  <%- if @document.respond_to?( :to_sms_text ) -%>
+    <li class="sms">
+    <%= link_to t('blacklight.tools.sms'), sms_catalog_path(:id => @document), {:id => 'smsLink', :name => 'sms', :class => 'lightboxLink'} %>
+    </li>
+  <%- end -%>
+</ul>

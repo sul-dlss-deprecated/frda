@@ -1,0 +1,138 @@
+en:
+  frda:
+    about_text_html: |
+      <p>
+        The online Bassi-Veratti Collection is a multi-year collaboration of
+        the Stanford University Libraries, the Biblioteca Comunale
+        dell’Archiginnasio, Bologna, Italy, and the Istituto per i Beni
+        Artistici, Culturali e Naturali della Regione Emilia-Romagna, to produce
+        a digital version of the archive of the influential woman scientist,
+        Laura Bassi. Part of the rich collections of the Archiginnasio, the
+        collection contains not only materials about Laura Bassi, but also those
+        of her husband, scientist Giuseppe Veratti, their children, and his
+        family.
+      </p>
+      <p>
+        The Stanford Digital Repository ensures each digital object is
+        preserved, made available via a permanent persistent URL
+        (web address), enforces content rights and restrictions and provides
+        a common storage mechanism for other applications to build upon.
+      </p>
+      <p>
+        The Bassi-Veratti Collection is being built on top of the Stanford
+        Digital Repository to provide a web based platform for discovery and
+        study of the archive. The Collection is developed in
+        <a href="http://www.rubyonrails.org">Ruby on Rails</a> using open
+        source technologies, including
+        <a href="http://projectblacklight.org/">Blacklight</a>,
+        <a href="http://projecthydra.org/">Hydra</a>, and
+        <a href="http://fedora-commons.org/">Fedora Commons</a>.
+      </p>
+    laura_bassi_text_html: |
+      <img src="/assets/BVP.jpg" width="200"/>
+      <p>
+        Laura Bassi (1711-1778) was one of the most important and visible
+        scientific women in eighteenth-century Europe. In 1732 she was the
+        second woman to receive a university degree in Europe and the first
+        to be offered an official university teaching position, both at the
+        University of Bologna. She was the first female member of the
+        Bologna Academy of Sciences, one of Italy’s leading academies, and
+        played a significant role in the spread of Newtonian experimental
+        physics through her teaching, research, and correspondence. While
+        little documentary evidence of her own scientific work survives, she
+        nonetheless had an active program of research and experimentation
+        for many decades and was widely reputed to be an outstanding teacher
+        of experimental physics. Bassi carried on extensive correspondence
+        with other natural philosophers of her time, including Alessandro
+        Volta, Lazzaro Spallanzani, Giovanni Battista Beccaria,
+        Jean-François Nollet, Voltaire, and Francesco Algarotti.
+      </p>
+      <p>
+        Encouraged in her studies by her family and by the intellectual
+        community of Bologna, at the age of twenty she was invited to give a
+        public debate of 49 philosophical and physical theses. Not long
+        after this success, she received a special doctorate from the
+        University of Bologna, followed soon after by an ex officio
+        appointment to a chair in philosophy at the university. In Bologna
+        she presented dissertations on subjects such as gravity,
+        refrangibility, mechanics, and hydraulics. With her husband,
+        Giuseppe Veratti, she made Bologna a center for experimental
+        research in electricity. Laura Bassi was a high-profile public
+        figure who disputed frequently in public, appeared regularly at
+        Bologna’s annual carnival anatomy, attracted high-profile visitors
+        to Bologna from across Europe, wrote poetry for important public
+        functions, and enjoyed the patronage of many contemporaries. Despite
+        her very true public presence, however, most of Bassi’s teaching and
+        research took place in her home, where from 1749 until her death,
+        she and her husband established a laboratory, taught classes in
+        experimental physics and natural philosophy, and presided over a
+        lively scientific “salon.” In 1776 she was named professor of
+        experimental physics at the Bologna Academy of Sciences, with her
+        husband as her assistant. Giuseppe Veratti, her husband and
+        intellectual partner, took over the professorship when his wife died
+        only two years later;while Laura Bassi was celebrated during her
+        lifetime and is the focus of current research, we lack any studies
+        of him. Their youngest son Paolo Veratti continued to teach
+        experimental physics from the family physics cabinet but never
+        entirely replicated the success of either parent.
+      </p>
+      <p>
+        The Bassi-Veratti Collection at the Archiginnasio is key to any
+        research on Laura Bassi, her husband Giuseppe Veratti, and their
+        family. Given her busy life as scientist, educator, poet, wife, and
+        mother, Laura Bassi’s published output does not reflect the full
+        scope of her accomplishments. Only the public disputations that
+        launched her career and four treatises in the Commentarii of the
+        Academy of Sciences were published. We know that during her lifetime
+        she was a celebrated figure in the intellectual life of Bologna and
+        that she played an important role in spreading Newtonian ideas of
+        physics and natural philosophy in Italy in the 18th century, but
+        less about her daily activities and those of her family. The
+        Bassi-Veratti Collection consists of 12 boxes. Two boxes contain
+        legal documents and deeds of both families; two are devoted to
+        materials on Laura Bassi, and the rest hold materials about her
+        husband Giuseppe Veratti, their son Paolo who became a physician and
+        an experimental physicist and like both parents, professor at the
+        University of Bologna, as well as additional family papers on the
+        Bassi and especially the Veratti families. These papers were donated
+        to the Archiginnasio in 1922-1924. In addition to scholarly writings
+        and legal papers, the archive holds correspondence and poetry
+        written in honor of accomplishments and noteworthy events in Bassi’s
+        life as well as materials commemorating her death, publications by
+        and about the family members, and medals.
+      </p>
+    terms_of_use_text_html: |
+      Copyright @ Biblioteca dell’Archiginnasio. All rights are reserved to Biblioteca dell'Archiginnasio, Comune di Bologna. 
+      The images can only be printed by using this page and for personal/scholarly use. Any other use must be requested in 
+      writing to Biblioteca dell'Archiginnasio: archiginnasio@comune.bologna.it.
+    project_history_text_html: |
+      <p>
+        The online Bassi-Veratti Collection was first conceived in 2010
+        through discussion between the Stanford University Libraries, the
+        Archiginnasio, the Soprintendenza of the Region of Emilia-Romagna,
+        and Stanford Professor of History, Paula Findlen. Its development
+        has truly been a international collaboration, with the Archiginnasio
+        providing the archive itself, its inventory and expertise about the
+        collection’s contents, history, and arrangement, and Stanford
+        librarians and digital technology specialists transforming the
+        inventory into a digital finding aid, managing the digitization work
+        from afar, and conceptualizing and creating the bilingual interface.
+      </p>
+      <p>
+        The online Bassi-Veratti Collection brings historical primary source
+        materials to scholars and students around the world. It consists of
+        an online interface offering access to the digitized versions of all
+        of the materials of the Bassi-Veratti Collection at the
+        Archiginnasio in Bologna. Access is via a detailed archival
+        inventory, or finding aid. This inventory has been tagged so that
+        researchers can search using keywords and index terms. Because the
+        inventory’s contents are linked to the corresponding digital images,
+        scholars can easily navigate from the descriptions of the materials
+        to the digital facsimiles.
+      </p>
+    project_team_stanford_text_html: |
+      Project Team Stanford   
+    project_team_italy_text_html: |
+      Project Team Bologna
+    acknowledgements_text_html: |
+      Acknowledgements

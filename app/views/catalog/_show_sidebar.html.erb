@@ -1,0 +1,14 @@
+<div id="sidebar-nav">
+	<%= render :partial => 'show_actions' %>
+
+	<%- # Deferring bookmark feature for now -%>
+	<%#= render :partial => 'bookmarks_history' -%>
+
+  <%-
+   # Only using a couple of the default Blacklight features that
+   # reside in the show_tools partial, and we don't want to use
+   # the Tools header, so we've just extracted the tools features
+   # we want and include them in the show_actions partial.
+  %>
+  <%#= render :partial => 'show_tools' %>
+</div>

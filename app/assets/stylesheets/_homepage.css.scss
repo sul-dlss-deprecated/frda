@@ -1,0 +1,89 @@
+.highlights-link {
+  float: right;
+  font-size: 12px;
+  text-transform: none;
+  a {
+    background-color: $header_bg_color;
+    border: 1px solid darken($header_bg_color, 5%);
+    border-radius: 6px;
+    padding: 5px 12px;
+    margin-right: 2px;
+    line-height: 14px
+  }
+  a:hover {
+    background-color: darken($header_bg_color, 5%);
+    text-decoration: none;
+  }
+}
+
+.featured-collections {
+  margin-bottom: 30px;
+  h3.collection-title {
+    margin-bottom: 0;
+    margin-top: 6px;
+    padding: 0;
+    > a {color: #000;}
+  }
+  img {
+    max-height: 200px;
+    width: 90%;
+  }
+  span {
+    color: #555;
+    font-size: 12px;
+  }
+}
+.about-dl {
+  p {width: 95%;}
+  img {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+.overview.tabbable {
+  display: inline-block;
+  margin-left: 30px;
+  margin-top: -4px;
+  float: right;
+  font-size: 13px;
+  .nav-pills {
+    margin-bottom: 0;
+    li > a {
+      background-color: $header_bg_color;
+      border: 1px solid darken($header_bg_color, 5%);
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    li > a:hover {
+      background-color: darken($header_bg_color, 5%);
+    }
+    .active > a, .active > a:hover {
+      background-color: darken($header_bg_color, 10%);
+      border: 1px solid darken($header_bg_color, 10%);
+      color: $active_link_color;
+    }
+  }
+}
+
+.overview-area {
+  border: 2px solid darken($header_bg_color, 8%);
+  clear: both;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+#result_map {
+	height: 375px;
+	width: 100%;
+}
+
+#result_map img { max-width:none; }
+
+@media (max-width: 767px) {
+  .featured-collections .featured-collection {
+    margin-bottom: 20px;
+    &:last-child {margin-bottom: 0;}
+    img {max-width: 300px;}
+  }
+}

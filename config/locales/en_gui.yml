@@ -1,0 +1,122 @@
+en:
+  blacklight:
+    application_name: 'French Revolution Digital Archive'
+  frda:
+    facet:
+      personal_name: 'Personal Name'
+      location: 'Location'
+      corporate_name: 'Corporate Name'
+      family_name: 'Family Name'
+      start_year: 'Start Year'
+      end_year: 'End Year'
+      all_fields: 'All Fields'
+    nav:
+      frda_collection: 'French Revolution Digital Archive'      
+      about: 'About'
+      contact: 'Contact'
+      contact_us: 'Contact Us'
+      use_policy: 'Use Policy'
+      home: 'Home'
+      report_problem: 'Report a Problem'
+      project_history: 'Project History'
+      project_overview: 'Project Overview'
+      project_team_stanford: 'Project Team: Stanford'
+      project_team_italy: 'Project Team: Bologna'
+      acknowledgments: 'Acknowledgments'      
+      collections: 'Collection Highlights'
+      background: 'Background'
+      content_inventory: 'Content Inventory'
+      terms_of_use_message: "Copyright @ Biblioteca dell’Archiginnasio. All rights are reserved to Biblioteca dell'Archiginnasio, Comune di Bologna. The images can only be printed by using this page and for personal/scholarly use. Any other use must be requested in writing to Biblioteca dell'Archiginnasio: archiginnasio@comune.bologna.it."
+      terms_of_use_acknowledgement: 'By clicking agree and continuing to use the website, you acknowledge and agree to abide by these terms.'
+      terms_continue: 'Agree'
+      terms_disagree: 'Return without agreeing'
+      close: 'Close'
+    about:
+      project_title: 'About the French Revolution Digital Archive'
+      contact_title: 'Contact Us'
+      contact_message_sent: 'Thanks - your message has been sent.'
+      contact_error: 'You need to enter some message text.'
+      laura_bassi_title: 'Laura Bassi and the Bassi-Veratti Collection'
+      terms_of_use_title: 'Terms of Use'
+      terms_dialog_title: 'Terms of Use'
+      acknowledgements_title: 'Acknowledgements'
+      stanford_team_title: 'Project Team: Stanford'
+      italy_team_title: 'Project Team: Bologna'
+      history_title: 'Project History'
+    collection:
+      collection_detail: 'Collection Detail'
+      member_detail: 'Item Detail'
+    collection_members:
+      items_name: 'image'
+    show:
+      box: 
+        word: 'Box'
+        one: '1 Box'
+        other: "%{count} Boxes"
+      folder: 
+        word: 'Folder'        
+        one: '1 Folder'
+        other: "%{count} Folders"
+      series:
+        word: 'Series'
+      item: 
+        one: '1 Item'
+        other: "%{count} Items"
+      more: 'more'
+      less: 'less'
+      date: 'Date'
+      map: 'Map'
+      show_map: 'Show on Map'
+      description: 'Physical Description'
+      people: 'People'
+      level: 'Level'
+      families: 'Families'
+      locations: 'Locations'
+      corporations: 'Corporations'
+      notes: 'Notes'
+      previous: 'prev page'
+      next: 'next page'
+      showing: 'Showing page'
+      of: 'of'
+      show_in_inventory: "Show this %{item} in Content Inventory"
+      view_in_inventory: "View this %{item} in Content Inventory"
+      citation: 'Citation'
+      all_items_in_folder: "Other Items In This Folder"       
+    collection_members_grid:
+      members_link: 'View All Collection Items'
+      collection_link: 'View this collection'
+      collection_text: 'Collection Items'
+      sibling_text: "Other items in the %{collection} collection"
+    inventory:
+      title: 'Content Inventory'
+    search:
+      search_results: 'Results'
+      gallery_toggle:
+        default: 'Results'
+        gallery: 'Gallery'
+        text: 'Text only'
+        map: 'Map'
+      search_label: 'Search'
+      facets:
+        title: 'Browse'
+    sidebar:
+      actions:
+        title: 'Actions'
+        view_in_inventory: 'View in Content Inventory'
+        print: 'Print Item Details'
+        cite: 'Cite this Item'
+        bookmark: 'Bookmark'
+      navigation:
+        title: 'Navigation'
+        all_collections: 'All Collections'
+      history:
+        title: 'History'
+        search_history: 'Search History'
+      finding_aid:
+        title: 'Finding Aid'
+        download_pdf: 'PDF'
+        download_ead: 'EAD XML'
+      inventory:
+        title: 'Inventory Contents'
+      background:
+        title: 'Background Information'

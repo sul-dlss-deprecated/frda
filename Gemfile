@@ -10,7 +10,8 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem "blacklight", '~> 4.0.0'
-gem 'eadsax', :git => "https://github.com/sul-dlss/eadsax.git"
+#gem 'eadsax', :git => "https://github.com/sul-dlss/eadsax.git"
+gem 'ffi'
 
 # Gems used only for assets and not required
 # in production environments by default.

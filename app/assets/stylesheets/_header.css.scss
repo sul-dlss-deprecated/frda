@@ -42,12 +42,21 @@
   }
   h1 {
     border-bottom: none;
-    font-size: 3.3em;
-    font-family: "cronos-pro-subhead","news-gothic-std","Helvetica","Arial",sans-serif;
+    font-size: 2em;
+    font-family: $heading_font_family;
     margin: 0;
-  	line-height: 1.5em;
     padding-bottom: 0;
-  }  
+  }
+  h2 {
+    border: none;
+    clear: left;
+    color: #999;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: normal;
+    padding-top: 12px;
+    text-transform: none;
+  }
   .navbar-inner {
     background: $header_bg_color;
     background-image: none;
@@ -70,12 +79,14 @@
       float: left;
       max-width: 80px;
     }
+    h1 {
+      font-size: 1.4em;
+      float: none;
+      margin-top: 10px;
+    }
+    h2 {display: none;}
     &.navbar {
       .site-header-content {text-align: center;}
-      h1 {
-        font-size: 2.5em;
-        float: none;
-      }
       .language-toggle {text-align: center;}
       .nav > li:last-child > a {padding-right: 25px}
     }
@@ -89,8 +100,12 @@
       float: right;
       max-width: 120px;
     }
+    h1 {
+      font-size: 1.6em;
+      margin-top: 10px;
+    }
     &.navbar {
-      .site-header-content {margin-left: 30px;}
+      h2 {font-size: 0.9em;}
       .language-toggle {text-align: left;}
     }
   }

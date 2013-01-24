@@ -13,7 +13,8 @@
       img {
         max-height: 125px;
         display: block;
-        margin: auto;
+        float: left;
+        margin-right: 10px;
       }
     }
     .nav {
@@ -67,7 +68,7 @@
   #header-navbar-static-top {
     .logo img {
       float: left;
-      max-width: 60px;
+      max-width: 80px;
     }
     &.navbar {
       .site-header-content {text-align: center;}
@@ -86,7 +87,7 @@
   #header-navbar-static-top {
     .logo img {
       float: right;
-      max-width: 60px;
+      max-width: 120px;
     }
     &.navbar {
       .site-header-content {margin-left: 30px;}

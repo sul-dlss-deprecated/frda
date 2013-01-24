@@ -46,7 +46,6 @@ $constraint_border_active_color: #FFD27A !default;
   font-family: $heading_font_family;
   margin-top: 0;
   padding-top: 10px;
-  text-transform: uppercase;
 }
 
 @mixin member-section-header {
@@ -123,7 +122,7 @@ h1 {
 }
 h2 {
   @include page-header;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	line-height: 1.5em;
 }
 h3 {

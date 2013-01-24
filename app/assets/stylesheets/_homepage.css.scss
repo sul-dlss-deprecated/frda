@@ -17,7 +17,7 @@
 }
 
 .featured-collections {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   h3.collection-title {
     margin-bottom: 0;
     margin-top: 6px;
@@ -35,9 +35,16 @@
 }
 .about-dl {
   p {width: 95%;}
+  a.heading-link {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
   img {
+    border: 1px solid #CCC;
     float: left;
-    margin-right: 20px;
+    margin: 7px 15px 7px 0;
+    padding: 4px;
   }
 }
 

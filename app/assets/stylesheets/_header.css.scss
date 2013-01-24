@@ -7,7 +7,7 @@
 #header-navbar-static-top {
   border-bottom: 1px solid $nav_border_color;
   &.navbar {
-      font-family: "Helvetica","Arial",sans-serif;
+      font-family: $text_font_family;
     .logo {
       text-align: center;
       img {
@@ -18,26 +18,29 @@
       }
     }
     .nav {
-      border-bottom: 1px solid $nav_border_color;
-      border-top: 1px solid $nav_border_color;
+//      border-bottom: 1px solid $nav_border_color;
+//      border-top: 1px solid $nav_border_color;
       clear: left;
       margin-top: 6px;
       padding-bottom: 3px;
       > li {
-        &.active > a {color: $active_nav_link_color;}
+        &.active > a {
+          background-color: #eeeeee;
+          color: $active_nav_link_color;
+        }
         > a {
           background-color: $header_bg_color;
           box-shadow: none;
           color: $inactive_nav_link_color;
-        	font-weight: 700;
-        	text-transform: uppercase;
-        	font-size: 0.965em;
-        	-webkit-font-smoothing: antialiased;
-          padding: 8px 25px 5px 3px;
-          &:hover, &:focus {color: $active_nav_link_color;}
+          font-size: 1em;
+          padding: 5px 14px 5px 14px;
+          &:hover, &:focus {
+            background-color: #eeeeee;
+            color: $active_nav_link_color;
+          }
         }
       }
-      > li:last-child > a {padding-right: 0}
+//      > li:last-child > a {padding-right: 0}
     }
   }
   h1 {
@@ -51,6 +54,7 @@
     border: none;
     clear: left;
     color: #999;
+    font-family: $text_font_family;
     font-size: 1em;
     font-style: italic;
     font-weight: normal;
@@ -84,8 +88,8 @@
       float: none;
       margin-top: 10px;
     }
-    h2 {display: none;}
     &.navbar {
+      h2 {display: none;}
       .site-header-content {text-align: center;}
       .language-toggle {text-align: center;}
       .nav > li:last-child > a {padding-right: 25px}

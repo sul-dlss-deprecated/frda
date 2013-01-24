@@ -13,6 +13,7 @@ $heading_color: #555;
 $sidebar_header_color: #ddd;
 $text_color: #333;
 $heading_font_family: "news-gothic-std","Helvetica","Arial",sans-serif;
+$text_font_family: "Optima", "Geneva", "Arial", "Helvetica", sans-serif;
 
 $active_link_color: #820000;
 $hover_link_color: lighten($active_link_color, 10%);
@@ -105,25 +106,7 @@ a:hover {
 	color: $hover_link_color;
 	text-decoration: underline;
 }
-#news-gothic .normal {
-	font-family: "news-gothic-std","Helvetica","Arial",sans-serif;
-	font-weight: 400;
-}
-#news-gothic .bold {
-	font-family: "news-gothic-std","Helvetica","Arial",sans-serif;
-	font-weight: 700;
-}
-#chaparral-pro .normal {
-	font-family: "chaparral-pro","Georgia","Times New Roman",serif;
-	font-weight: 400;
-}
-#chaparral-pro .bold {
-	font-family: "chaparral-pro","Georgia","Times New Roman",serif;
-	font-weight: 700;
-}
-#helvetica {
-	font-family: "Helvetica","Arial",sans-serif;
-}
+
 h1 {
 	display: block;
 	float: left;
@@ -149,7 +132,7 @@ h3 {
 	line-height: 1.5em;
 }
 p {
-  font-family: "Palatino", "Palatino Linotype", "URW Palladio L", serif;
+  font-family: $text_font_family;
   color: #333333;
 //  font-size: 0.8em;
   font-size: 13px;

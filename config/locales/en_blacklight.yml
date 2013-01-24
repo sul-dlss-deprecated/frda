@@ -4,9 +4,9 @@ en:
       feedback: 'Feedback'
     attributes:
       feedback:
-        name: 'Your Name'
-        email: 'Your Email'
-        message: 'Your Message'
+        name: 'Your name'
+        email: 'Your email'
+        message: 'Your message'
   views:
     pagination:
       first: '&laquo; First'
@@ -22,9 +22,9 @@ en:
   blacklight:
     header_links:
       login: 'Login'
-      logout: 'Log Out'
+      logout: 'Log out'
       bookmarks: 'Bookmarks'
-      saved_searches: 'Saved Searches'
+      saved_searches: 'Saved searches'
       search_history: 'History'
 
     welcome: 'Welcome!'
@@ -34,7 +34,7 @@ en:
     bookmarks:
       collection:
         add:
-          button: 'Add to Bookmarks'
+          button: 'Add to bookmarks'
       title: 'Bookmarks'
       no_bookmarks: 'You have no bookmarks'
       add:
@@ -49,12 +49,12 @@ en:
         failure: 'Sorry, there was a problem removing the bookmarks.'
         action_confirm: 'Remove this bookmark?'
       clear:
-        action_title: 'Clear Bookmarks'
+        action_title: 'Clear bookmarks'
         action_confirm: 'Clear your bookmarks?'
         success: 'Cleared your bookmarks.'
         failure: 'Sorry, there was a problem clearing your bookmarks.'
       need_login: 'Please log in to manage and view your bookmarks.'
-      list_title: 'Your Bookmarks'
+      list_title: 'Your bookmarks'
       delete: 'Remove'
 
     feedback:
@@ -75,11 +75,11 @@ en:
         success: 'Successfully removed that saved search.'
         failure: 'There was a problem removing your search.'
       clear:
-        action_title: 'Clear Saved Searches'
+        action_title: 'Clear saved searches'
         action_confirm: 'Clear your saved searches?'
         success: 'Cleared your saved searches.'
         failure: 'There was a problem clearing your searches.'
-      title: 'Saved Searches'
+      title: 'Saved searches'
       need_login: 'Please log in to manage and view your saved searches.'
       no_searches: 'You have no saved searches'
       list_title: 'Your saved searches'
@@ -87,11 +87,11 @@ en:
 
     search_history:
       clear:
-        action_title: 'Clear Search History'
+        action_title: 'Clear search history'
         action_confirm: 'Clear your search history?'
         success: 'Cleared your search history.'
         failure: 'There was a problem clearing your search history.'
-      title: 'Search History'
+      title: 'Search history'
       no_history: 'You have no search history'
       recent: 'Your recent searches'
       forget: 'forget'
@@ -103,8 +103,8 @@ en:
       endnote: 'Export to EndNote'
       refworks: 'Export to Refworks'
       email: 'Email'
-      sms: 'SMS This'
-      librarian_view: 'Librarian View'
+      sms: 'SMS this'
+      librarian_view: 'Librarian view'
       clear: 'Clear'
 
     citation:
@@ -114,7 +114,7 @@ en:
 
     email:
       form:
-        title: 'Email This'
+        title: 'Email this'
         to: 'Email:'
         message: 'Message:'
         submit: 'Send'
@@ -124,7 +124,7 @@ en:
         format: 'Format: %{value}'
         language: 'Language: %{value}'
         subject:
-          one: 'Item Record: %{title}'
+          one: 'Item record: %{title}'
           other: 'Item records'
         url: 'URL: %{url}'
         message: 'Message: %{message}'
@@ -135,8 +135,8 @@ en:
           blank: 'You must enter a recipient in order to send this message'
     sms:
       form:
-        title: 'SMS This'
-        to: 'Phone Number:'
+        title: 'SMS this'
+        to: 'Phone number:'
         carrier: 'Carrier'
         carrier_prompt: 'Please select your carrier'
         submit: 'Send'
@@ -151,13 +151,13 @@ en:
         carrier:
           blank: 'You must select a carrier'
 
-    back_to_search: 'Back to Search'
-    back_to_bookmarks: 'Back to Bookmarks'
+    back_to_search: 'Back to search'
+    back_to_bookmarks: 'Back to bookmarks'
 
     search:
-      title: '%{application_name} Search Results'
-      search_results_header: 'Search Results'
-      search_results: 'Search Results'
+      title: '%{application_name} Search results'
+      search_results_header: 'Search results'
+      search_results: 'Search results'
       errors:
         request_error: "Sorry, I don't understand your search."
         invalid_solr_id: "Sorry, you have requested a record that doesn't exist."
@@ -192,8 +192,8 @@ en:
       facets:
         title: 'Limit your search'
         sort:
-          count: 'Numerical Sort'
-          index: 'A-Z Sort'
+          count: 'Numerical sort'
+          index: 'A-Z sort'
         count: '%{number}'
         more: 'more »'
         selected:

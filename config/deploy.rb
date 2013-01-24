@@ -74,7 +74,7 @@ namespace :db do
     run "cd #{deploy_to}/current && rake db:fixtures:load RAILS_ENV=#{rails_env}"
   end
   task :symlink_sqlite do
-    run "ln -s #{shared_path}/#{rails_env}.sqlite3 #{release_path}/db/#{rails_env}.sqlite3"
+    run "ln -fs #{shared_path}/#{rails_env}.sqlite3 #{release_path}/db/#{rails_env}.sqlite3"
   end  
 end
 

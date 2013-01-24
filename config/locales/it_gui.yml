@@ -2,6 +2,7 @@ it:
   blacklight:
     application_name: 'Inventario Laura Bassi'
   frda:
+    application_name_subtitle: 'A collaboration of the Stanford University Libraries and the Bibliothèque nationale de France'
     nav:
       frda_collection: 'Inventario Laura Bassi'
       about: 'About'

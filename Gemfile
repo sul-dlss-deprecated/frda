@@ -32,10 +32,10 @@ end
 
 group :development, :staging, :test do
   gem 'jettywrapper'
-  gem 'rest-client'
   gem 'sqlite3'
 end
 
+gem 'rest-client'
 gem 'geocoder'
 gem 'jquery-rails'
 

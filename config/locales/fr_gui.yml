@@ -1,10 +1,10 @@
 fr:
   blacklight:
-    application_name: 'Inventario Laura Bassi'
+    application_name: 'French Revolution Digital Archive'
   frda:
     application_name_subtitle: 'A collaboration of the Stanford University Libraries and the Bibliothèque nationale de France'
     nav:
-      frda_collection: 'Inventario Laura Bassi'
+      frda_collection: 'French Revolution Digital Archive'
       about: 'About'
       home: 'Home'
       report_problem: 'Report a Problem'
@@ -16,9 +16,9 @@ fr:
       contact: 'Contact'
       contact_us: 'Contact Us'
       use_policy: 'Use Policy'      
-      collections: 'Collection Highlights'
-      background: 'Background'
-      content_inventory: 'Content Inventory'
+      collections: 'Collection highlights'
+      collection_ap: 'Archives Parlementaires'
+      collection_images: 'Images'
       terms_of_use_message: "Copyright © Biblioteca dell'Archiginnasio. La Biblioteca dell'Archiginnasio del Comune di Bologna possiede tutti i diritti su questa immagine. L'immagine non può essere copiata o estratta in altro modo eccetto che stampando la pagina ed esclusivamente per finalità di studio privato. Per ogni altro utilizzo deve essere richiesta un'autorizzazione specifica alla Biblioteca dell'Archiginnasio scrivendo a: archiginnasio@comune.bologna.it."
       terms_of_use_acknowledgement: 'By clicking agree and continuing to use the website, you acknowledge and agree to abide by these terms.'
       terms_continue: 'Agree'     

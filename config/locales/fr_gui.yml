@@ -1,10 +1,10 @@
 fr:
   blacklight:
-    application_name: 'Inventario Laura Bassi'
+    application_name: 'French Revolution Digital Archive'
   frda:
     application_name_subtitle: 'A collaboration of the Stanford University Libraries and the Bibliothèque nationale de France'
     nav:
-      frda_collection: 'Inventario Laura Bassi'
+      frda_collection: 'French Revolution Digital Archive'
       about: 'About'
       home: 'Home'
       report_problem: 'Report a Problem'

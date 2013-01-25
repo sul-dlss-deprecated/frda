@@ -6,5 +6,5 @@ role :web, deployment_host
 role :app, deployment_host
 role :db,  deployment_host, :primary => true
 
-before "deploy:migrate", "db:symlink_sqlite"
+after "deploy:update_code", "db:symlink_sqlite"
 after "deploy", "db:loadfixtures"

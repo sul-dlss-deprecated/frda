@@ -13,5 +13,5 @@ namespace :deploy do
   end
 end
 
-before "deploy:migrate", "db:symlink_sqlite"
+after "deploy:update_code", "db:symlink_sqlite"
 after "deploy", "db:loadfixtures"

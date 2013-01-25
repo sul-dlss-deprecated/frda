@@ -7,4 +7,3 @@ role :app, deployment_host
 role :db,  deployment_host, :primary => true
 
 after "deploy:update_code", "db:symlink_sqlite"
-after "deploy", "db:loadfixtures"

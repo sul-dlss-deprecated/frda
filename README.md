@@ -14,7 +14,7 @@ This is a Blacklight application for the FRDA Collection at Stanford University.
         cp deploy/.rvmrc.example deploy/.rvmrc
         cd ..
         cd frda
-[accept gemfile]
+        [accept gemfile]
 
 1. Install dependencies via bundler for both the main and deploy directories:
 
@@ -33,8 +33,8 @@ This is a Blacklight application for the FRDA Collection at Stanford University.
 
         rake db:migrate
         rake db:migrate RAILS_ENV=test
-				rake db:seed
-				rake db:seed RAILS_ENV=test
+        rake db:seed
+        rake db:seed RAILS_ENV=test
 
 1. Start solr and load the fixtures: (you should first stop any other jetty processes if you have multiple jetty-related projects):
 

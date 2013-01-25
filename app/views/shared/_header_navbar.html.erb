@@ -16,39 +16,40 @@
       </a>
       <div class="row">
         <div class="span3">
-          <%= link_to(image_tag("BVP.jpg", :alt => t('blacklight.application_name')), root_path, :class => "logo") %>
+          <%= link_to(image_tag("frda-logo.jpg", :alt => t('blacklight.application_name')), root_path, :class => "logo") %>
         </div>
 
         <div class="span8 site-header-content">
           <div class="language-toggle">
             <% if I18n.locale == :en %>
-              English
+              in english
             <% else %>
-              <%= link_to "English", :locale=>'en'%>
+              <%= link_to "in english", :locale=>'en'%>
             <% end %>
               |
-            <% if I18n.locale == :it %>
-              Italiano
+            <% if I18n.locale == :fr %>
+              en français
             <% else %>
-              <%= link_to "Italiano", :locale=>'it'%>
+              <%= link_to "en français", :locale=>'fr'%>
             <% end %>
           </div>
           <h1><%= t('blacklight.application_name') %></h1>
+          <h2><%= t('frda.application_name_subtitle') %></h2>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="<%="active" if on_home_page%>">
-                <%= link_to t('frda.nav.home').upcase, root_path %>
+                <%= link_to t('frda.nav.home'), root_path %>
               </li>
               <li class="<%="active" if on_collection_highlights_page%>">
-                <%= link_to t('frda.nav.collections').upcase, collection_highlights_path%>
+                <%= link_to t('frda.nav.collections'), collection_highlights_path%>
               </li>
               <li class="<%="active" if on_background_page%>">
-                <%= link_to t('frda.nav.background').upcase, background_path%>
+                <%= link_to t('frda.nav.background'), background_path%>
               </li>
               <li class="<%="active" if on_inventory_pages || on_show_page || on_collections_pages %>">
-                <%= link_to t('frda.nav.content_inventory').upcase, inventory_path%>
+                <%= link_to t('frda.nav.content_inventory'), inventory_path%>
               </li>
-              <li class="<%="active" if on_about_pages%>"><%= link_to t('frda.nav.about').upcase, about_project_path %></li>
+              <li class="<%="active" if on_about_pages%>"><%= link_to t('frda.nav.about'), about_project_path %></li>
             </ul>
           </div>
         </div>

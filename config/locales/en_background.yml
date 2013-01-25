@@ -1,5 +1,5 @@
 en:
-  bassi:
+  frda:
     background:
       respository: 'Repository'
       repository_text: "Biblioteca dell'Archginnasio"
@@ -11,7 +11,7 @@ en:
       extent_text: '12.0 boxes (~6,000 digital objects)'
       language: 'Language'      
       language_text: 'Italian'
-      title: Background
+      title: 'Background'
       extent_description_title: 'Extent Description'      
       extent_description_text_html: |
         <p>Each series is described here by indicating the dates and the numbering of the boxes that contain the series.</p>

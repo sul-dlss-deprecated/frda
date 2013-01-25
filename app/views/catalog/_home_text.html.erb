@@ -8,7 +8,8 @@
   <div class="row featured-collections">
 		<% @highlights.each do |highlight| %>
       <div class="span3 featured-collection">
-        <%= link_to(image_tag(highlight.image_url, :class => 'highlight-poster-image'),catalog_index_path(params_for_collection_highlight(highlight)))  %>
+        <%#= link_to(image_tag(highlight.image_url, :class => 'highlight-poster-image'),catalog_index_path(params_for_collection_highlight(highlight)))  %>
+        <%= link_to(image_tag("http://placehold.it/360x220", :class => 'highlight-poster-image'),catalog_index_path(params_for_collection_highlight(highlight)))  %>
         <h3 class="collection-title"><%= link_to_collection_highlight(highlight) %></h3>
         <span>(<%=t('frda.show.item',:count=>highlight.collection_highlight_items.size)%>)</span>
       </div>
@@ -18,39 +19,29 @@
 
   <div class="row">
     <div class="span9 about-dl">
-      <h3 class="section-heading">About the Collection</h3>
+      <h3 class="section-heading"><%= t('frda.home.about_collections_html') %></h3>
       <p>
-        <%= link_to image_tag('bv-sample.png', :width => '120'), about_project_path %>
         <%= t('frda.home.about_text_html') %>
       </p>
       <p>
-        <%= link_to t('blacklight.search.facets.more'), about_project_path %>
+        <%= link_to image_tag('archives.png', :width => '120'), "#" %>
+        <%= link_to "Archives parlementaires / Parliamentary archives", "#", :class => "heading-link" %>
+        <%= t('frda.home.about_text_ap_html') %>
+      </p>
+      <p>
+        <%= link_to image_tag('images.jpg', :width => '120'), "#" %>
+        <%= link_to "Images de la Révolution française / Images of the French Revolution", "#", :class => "heading-link" %>
+        <%= t('frda.home.about_text_images_html') %>
       </p>
     </div>
   </div>
 
   <div class="row">
     <div class="span9 overview">
-      <h3 class="section-heading"><%=t('frda.home.overview_by')%>
-        <div class="overview tabbable tabs-below">
-          <ul class="nav nav-pills">
-            <li><%= link_to t('frda.home.location'), '#tab1', "data-toggle" => "pill" %></li>
-            <li><%= link_to t('frda.home.document_type'), '#tab2', "data-toggle" => "pill" %></li>
-          </ul>
-        </h3>
-
-          <div class="overview-area tab-content">
-
-            <div class="tab-pane fade" id="tab1">
-              <%= render :partial => 'overview_map' %>
-            </div>
-
-            <div class="tab-pane fade" id="tab2">
-	             VIEW BY DOCUMENT TYPE VIZ HERE
-            </div>
-
-          </div><!-- end overview-area -->
-        </div><!-- end tabbable -->
+      <h3 class="section-heading"><%=t('frda.home.overview_by')%></h3>
+        <div>
+          -- TIMELINE EXHIBIT GOES HERE --
+        </div>
     </div>
   </div>
 

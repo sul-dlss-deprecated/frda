@@ -13,9 +13,9 @@ end
 CollectionHighlight.find(:all).each {|h| h.destroy}
 CollectionHighlightItem.find(:all).each {|hi| hi.destroy}
 
-c1=CollectionHighlight.create(sort_order:1,name_en:'University Correspondence',name_it:'University Correspondance',description_en:'Items from university correspondance.',description_it:'Items from university correspondance.',image_url:'bv-sample.png')
-c2=CollectionHighlight.create(sort_order:2,name_en:'Official Documents',name_it:'Official Documents',description_en:'Items from official documents.',description_it:'Items from official documents.',image_url:'bv-sample-2.png')
-c3=CollectionHighlight.create(sort_order:3,name_en:'Personal Letters',name_it:'Personal Letters',description_en:'Items from personal letters.',description_it:'Items from personal letters.',image_url:'bv-sample-3.png')
+c1=CollectionHighlight.create(sort_order:1,name_en:'University Correspondence',name_fr:'University Correspondance',description_en:'Items from university correspondance.',description_fr:'Items from university correspondance.',image_url:'bv-sample.png')
+c2=CollectionHighlight.create(sort_order:2,name_en:'Official Documents',name_fr:'Official Documents',description_en:'Items from official documents.',description_fr:'Items from official documents.',image_url:'bv-sample-2.png')
+c3=CollectionHighlight.create(sort_order:3,name_en:'Personal Letters',name_fr:'Personal Letters',description_en:'Items from personal letters.',description_fr:'Items from personal letters.',image_url:'bv-sample-3.png')
 
 c1_items=%w{ref18 ref22 ref25 ref46}
 c2_items=%w{ref100 ref106 ref114}

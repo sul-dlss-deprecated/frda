@@ -1,10 +1,11 @@
-en:
+fr:
   frda:
     home:
-      overview_by: Timeline of the Revolution
-      collection_highlights: Collection highlights
-      more_highlights: More highlights
-      about_collections_html: About the collections
+      location: Location
+      document_type: Document Type      
+      overview_by: Overview By      
+      collection_highlights: Collection Highlights
+      more_highlights: More Highlights
       about_text_html: |
         <p>
           The French Revolution Digital Archive (FRDA) is a multi-year collaboration of the Stanford University

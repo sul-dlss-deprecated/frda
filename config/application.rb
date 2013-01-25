@@ -32,7 +32,7 @@ module Frda
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
-    config.allowed_locales = [:en,:it]
+    config.allowed_locales = [:en,:fr]
     config.i18n.fallbacks = true
     # rails will fallback to en, no matter what is set as config.i18n.default_locale
     config.i18n.fallbacks = [:en]

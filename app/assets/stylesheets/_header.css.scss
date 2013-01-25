@@ -7,46 +7,60 @@
 #header-navbar-static-top {
   border-bottom: 1px solid $nav_border_color;
   &.navbar {
-      font-family: "Helvetica","Arial",sans-serif;
+      font-family: $text_font_family;
     .logo {
       text-align: center;
       img {
         max-height: 125px;
         display: block;
-        margin: auto;
+        float: left;
+        margin-right: 10px;
       }
     }
     .nav {
-      border-bottom: 1px solid $nav_border_color;
-      border-top: 1px solid $nav_border_color;
+//      border-bottom: 1px solid $nav_border_color;
+//      border-top: 1px solid $nav_border_color;
       clear: left;
       margin-top: 6px;
       padding-bottom: 3px;
       > li {
-        &.active > a {color: $active_nav_link_color;}
+        &.active > a {
+          background-color: #eeeeee;
+          color: $active_nav_link_color;
+        }
         > a {
           background-color: $header_bg_color;
           box-shadow: none;
           color: $inactive_nav_link_color;
-        	font-weight: 700;
-        	text-transform: uppercase;
-        	font-size: 0.965em;
-        	-webkit-font-smoothing: antialiased;
-          padding: 8px 25px 5px 3px;
-          &:hover, &:focus {color: $active_nav_link_color;}
+          font-size: 1em;
+          padding: 5px 14px 5px 14px;
+          &:hover, &:focus {
+            background-color: #eeeeee;
+            color: $active_nav_link_color;
+          }
         }
       }
-      > li:last-child > a {padding-right: 0}
+//      > li:last-child > a {padding-right: 0}
     }
   }
   h1 {
     border-bottom: none;
-    font-size: 3.3em;
-    font-family: "cronos-pro-subhead","news-gothic-std","Helvetica","Arial",sans-serif;
+    font-size: 2em;
+    font-family: $heading_font_family;
     margin: 0;
-  	line-height: 1.5em;
     padding-bottom: 0;
-  }  
+  }
+  h2 {
+    border: none;
+    clear: left;
+    color: #999;
+    font-family: $text_font_family;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: normal;
+    padding-top: 12px;
+    text-transform: none;
+  }
   .navbar-inner {
     background: $header_bg_color;
     background-image: none;
@@ -67,14 +81,16 @@
   #header-navbar-static-top {
     .logo img {
       float: left;
-      max-width: 60px;
+      max-width: 80px;
+    }
+    h1 {
+      font-size: 1.4em;
+      float: none;
+      margin-top: 10px;
     }
     &.navbar {
+      h2 {display: none;}
       .site-header-content {text-align: center;}
-      h1 {
-        font-size: 2.5em;
-        float: none;
-      }
       .language-toggle {text-align: center;}
       .nav > li:last-child > a {padding-right: 25px}
     }
@@ -86,10 +102,14 @@
   #header-navbar-static-top {
     .logo img {
       float: right;
-      max-width: 60px;
+      max-width: 120px;
+    }
+    h1 {
+      font-size: 1.6em;
+      margin-top: 10px;
     }
     &.navbar {
-      .site-header-content {margin-left: 30px;}
+      h2 {font-size: 0.9em;}
       .language-toggle {text-align: left;}
     }
   }

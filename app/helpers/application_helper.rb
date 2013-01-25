@@ -8,7 +8,7 @@ module ApplicationHelper
   def show_series_language_description(mvf,language)
     notes=[]
     mvf.each_with_index do |note,index|
-      notes << note if (((index % 2) == 0 && language == :it) || ((index % 2) == 1 && language == :en))
+      notes << note if (((index % 2) == 0 && language == :fr) || ((index % 2) == 1 && language == :en))
     end
     return notes.join('<br /><br />')
   end

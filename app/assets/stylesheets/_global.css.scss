@@ -5,22 +5,24 @@
 
 $body_bg_color: #fff;
 
-$header_bg_color: #f8f6f1;
-$nav_border_color: #e3dbce;
+$header_bg_color: #fff;
+$nav_border_color: #eee;
 
-$container_bg_color: #fdfdfb;
-$heading_color: #6d5b48;
-$sidebar_header_color: #AA7D17;
-$text_color: #4e4134;
+$container_bg_color: #fff;
+$heading_color: #555;
+$sidebar_header_color: #ddd;
+$text_color: #333;
+$heading_font_family: "news-gothic-std","Helvetica","Arial",sans-serif;
+$text_font_family: "Optima", "Geneva", "Arial", "Helvetica", sans-serif;
 
-$active_link_color: #6d5b48;
-$hover_link_color: #c08e1a;
-$active_nav_link_color: #836d56;
+$active_link_color: #820000;
+$hover_link_color: lighten($active_link_color, 10%);
+$active_nav_link_color: lighten($active_link_color, 10%);
 $inactive_nav_link_color: $text_color;
 
 $facet_box_background_color: lighten($header_bg_color, 1%);
-$facet_link_color: #946c14;
-$facet_selected_color: #c08e1a;
+$facet_link_color: $active_link_color;
+$facet_selected_color: darken($facet_link_color, 10%);
 
 /* constraint (you searched for:) details: */
 $constraint_bg_color: #ece7da;
@@ -28,27 +30,26 @@ $constraint_border_color: darken($constraint_bg_color, 20%);
 $constraint_border_active_color: #FFD27A !default;
 
 /* Mixins */
-@mixin red-top_border {
-  border-top: 5px solid #AA7D17;
+@mixin sidebar-top-border {
+  border-top: 5px solid desaturate($active_link_color, 50%);
   padding-top: 10px;
 }
 
-@mixin gray-top_border {
-  border-top: 5px solid darken($header_bg_color, 8%);
+@mixin main-top-border {
+  border-top: 5px solid darken($header_bg_color, 15%);
   padding-top: 10px;
 }
 
 @mixin page-header {
-  @include gray-top_border;
+  @include main-top_border;
   color: $heading_color;
-  font-family: "cronos-pro-subhead","news-gothic-std","Helvetica","Arial",sans-serif;
+  font-family: $heading_font_family;
   margin-top: 0;
   padding-top: 10px;
-  text-transform: uppercase;
 }
 
 @mixin member-section-header {
-  @include gray-top_border;
+  @include main-top_border;
   color: #990000;
   margin-top: 0;
   padding-top: 10px;
@@ -64,7 +65,7 @@ html {
 }
 
 body {
-  font-family: "Palatino", "Palatino Linotype", "URW Palladio L", serif;
+  font-family: $heading_font_family;
   background: $container_bg_color;
   font-size: 0.85em;
   line-height: 18px;
@@ -72,7 +73,7 @@ body {
   height: auto;
 }
 
-#sidebar {@include red-top_border;}
+#sidebar {@include sidebar-top-border;}
 #sidebar-nav > .nav-list {
   margin-bottom: 20px;
   padding-left: 5px;
@@ -104,29 +105,11 @@ a:hover {
 	color: $hover_link_color;
 	text-decoration: underline;
 }
-#news-gothic .normal {
-	font-family: "news-gothic-std","Helvetica","Arial",sans-serif;
-	font-weight: 400;
-}
-#news-gothic .bold {
-	font-family: "news-gothic-std","Helvetica","Arial",sans-serif;
-	font-weight: 700;
-}
-#chaparral-pro .normal {
-	font-family: "chaparral-pro","Georgia","Times New Roman",serif;
-	font-weight: 400;
-}
-#chaparral-pro .bold {
-	font-family: "chaparral-pro","Georgia","Times New Roman",serif;
-	font-weight: 700;
-}
-#helvetica {
-	font-family: "Helvetica","Arial",sans-serif;
-}
+
 h1 {
 	display: block;
 	float: left;
-	font-family: "cronos-pro-subhead","news-gothic-std","Helvetica","Arial",sans-serif;
+	font-family: $heading_font_family;
 	font-weight: 700;
 	font-size: 1.5em;
 	line-height: 1.1em;
@@ -139,16 +122,16 @@ h1 {
 }
 h2 {
   @include page-header;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	line-height: 1.5em;
 }
 h3 {
-  font-family: "cronos-pro-subhead","news-gothic-std","Helvetica","Arial",sans-serif;
+  font-family: $heading_font_family;
 	font-size: 1.125em;
 	line-height: 1.5em;
 }
 p {
-  font-family: "Palatino", "Palatino Linotype", "URW Palladio L", serif;
+  font-family: $text_font_family;
   color: #333333;
 //  font-size: 0.8em;
   font-size: 13px;

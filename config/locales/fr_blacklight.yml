@@ -1,4 +1,4 @@
-it:
+fr:
   active_record:
     models:
       feedback: 'Feedback'

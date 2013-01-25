@@ -1,6 +1,6 @@
 Frda::Application.routes.draw do
   
-  scope "(:locale)", :locale => /en|it/ do
+  scope "(:locale)", :locale => /en|fr/ do
   
     Blacklight.add_routes(self)
     

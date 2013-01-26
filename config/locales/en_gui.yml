@@ -24,7 +24,8 @@ en:
       project_team_stanford: 'Project team: Stanford'
       project_team_bnf: 'Project team: BnF'
       acknowledgments: 'Acknowledgments'      
-      collections: 'Collection highlights'
+      collection_highlights: 'Collection highlights'
+      collection: 'Collection'
       collection_ap: 'Archives Parlementaires'
       collection_images: 'Images'
       terms_of_use_message: "This image(s) is a digital reproduction of works from the collections of the Bibliothèque nationale de France that are no longer protected by intellectual property rights. The use of these contents for commercial purposes is subject to payment and covered by a license. Commercial use includes the resale of the contents in the form of prepared products or the supply of services. For commercial use, contact: utilisation.commerciale@bnf.fr. The use of these contents for non-commercial purposes is free of charge, subject to compliance with applicable French legislation and notably the inclusion of the source’s statement."
@@ -82,7 +83,7 @@ en:
       show_in_inventory: "Show this %{item} in content inventory"
       view_in_inventory: "View this %{item} in content inventory"
       citation: 'Citation'
-      all_items_in_folder: "Other items in this folder"
+      all_pages_in_volume: "Other pages in this volume"
     collection_members_grid:
       members_link: 'View all collection items'
       collection_link: 'View this collection'

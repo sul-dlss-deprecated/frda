@@ -64,16 +64,15 @@
 
 </div>
 
-
-<% if @document.folder_siblings.documents.size > 0%>
+<% if @document.pages and @document.pages.documents.size > 0%>
 <div class="row">
   <div class="span9">
 		<h3>
-		  <%=t('frda.show.all_items_in_folder')%>  (<%=@document.folder_siblings.documents.size%>)
+		  <%=t('frda.show.all_pages_in_volume')%>  (<%=@document.pages.documents.size%>)
 		  <span class="highlights-link"><%= link_to t('frda.show.view_in_inventory', :item => 'folder'), inventory_path(:anchor => "box#{@document.box}-folder#{@document.folder}") %></span>
 		</h3>
 		<ul class="preview-folder-items">
-  		<% @document.folder_siblings.documents.each do |sibling| %>
+  		<% @document.pages.documents.each do |sibling| %>
   		  <li>
   				<%= link_to(image_tag(sibling.first_image(:square),:alt=>sibling.title,:title=>sibling.title,:border=>0), catalog_path(sibling[:id])) %>
   			</li>

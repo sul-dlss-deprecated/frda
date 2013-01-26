@@ -92,95 +92,6 @@ class SolrDocument
                 :thumb => "_thumb" }
    end
   
-  def series?
-    self.has_key?(blacklight_config.series_identifying_field) and 
-      self[blacklight_config.series_identifying_field].include?(blacklight_config.series_identifying_value)
-  end
-  
-  def folder?
-    self.has_key?(blacklight_config.folder_identifier_field) and 
-      self[blacklight_config.folder_identifier_field].include?(blacklight_config.folder_identifier_value)
-  end
-  
-  def folders
-    return nil unless series?
-    @folders ||= CollectionMembers.new(
-                              Blacklight.solr.select(
-                                :params => {
-                                  :fq => "#{blacklight_config.folder_identifier_field}:\"#{blacklight_config.folder_identifier_value}\" AND 
-                                          #{blacklight_config.folder_in_series_identifying_field}:\"#{self[SolrDocument.unique_key]}\"",
-                                  :rows => blacklight_config.collection_member_grid_items.to_s
-                                }
-                              )
-                            )
-  end
-
-  def parent
-    return nil if series?
-    @parent ||= SolrDocument.new(
-                      Blacklight.solr.select(
-                        :params => {
-                          :fq => "#{SolrDocument.unique_key}:\"#{self[blacklight_config.children_identifying_field].first}\""
-                        }
-                      )["response"]["docs"].first
-                    )
-  end
-
-  def children
-    if folder?
-      @children ||= CollectionMembers.new(
-                                Blacklight.solr.select(
-                                  :params => {
-                                    :fq => "#{blacklight_config.parent_folder_identifying_field}:\"#{self[SolrDocument.unique_key]}\"",
-                                    :rows => blacklight_config.collection_member_grid_items.to_s
-                                  }
-                                )
-                              )    
-    else
-      @children ||= CollectionMembers.new(
-                                Blacklight.solr.select(
-                                  :params => {
-                                    :fq => "#{blacklight_config.children_identifying_field}:\"#{self[SolrDocument.unique_key]}\"",
-                                    :rows => blacklight_config.collection_member_grid_items.to_s
-                                  }
-                                )
-                              )
-    end
-    
-  end
-  
-  def box_siblings
-    @box_siblings ||= CollectionMembers.new(
-                              Blacklight.solr.select(
-                                :params => {
-                                  :fq => "#{blacklight_config.box_identifying_field}:\"#{self[blacklight_config.box_identifying_field].first}\"",
-                                  :rows => blacklight_config.collection_member_grid_items.to_s
-                                }
-                              )
-                            )
-  end
-
-  def folder_siblings
-    @folder_siblings ||= CollectionMembers.new(
-                              Blacklight.solr.select(
-                                :params => {
-                                  :fq => "#{blacklight_config.box_identifying_field}:\"#{self.box}\" AND
-                                          #{blacklight_config.folder_identifying_field}:\"#{self.folder}\" AND NOT id:\"#{self.id}\" AND NOT id:\"box#{self.box}-folder#{self.folder}\""                                }
-                              )
-                            )
-  end
-
-  def all_series
-    @all_series ||= Blacklight.solr.select(
-      :params => {
-        :fq => "#{blacklight_config.series_identifying_field}:\"#{blacklight_config.series_identifying_value}\"",
-        :rows => "20"
-      }
-    )["response"]["docs"].map do |document|
-      SolrDocument.new(document)
-    end
-  end
-
 
   def collection?
     self.has_key?(blacklight_config.collection_identifying_field) and 
@@ -192,16 +103,23 @@ class SolrDocument
       !self[blacklight_config.collection_member_identifying_field].blank?
   end
   
-  # return this current document's series title (unless it is already a series)
-  def series_title
-    return self.title if self.series?
-    @doc=SolrDocument.new(Blacklight.solr.select(:params => {:fq => "#{SolrDocument.unique_key}:#{self.series}"})["response"]["docs"].first)  
-    return @doc.title
+  def volume?
+    self.has_key?(blacklight_config.volume_identifying_field) and 
+      self[blacklight_config.volume_identifying_field] == blacklight_config.volume_identifying_value
   end
   
-  def series_number
-    series_title[0]
+  def pages
+    return nil unless volume?
+    @pages ||= CollectionMembers.new(
+                 Blacklight.solr.select(
+                   :params => {
+                     :fq => "#{blacklight_config.pages_identifying_field}:\"#{self[SolrDocument.unique_key]}\"",
+                     :rows => blacklight_config.collection_member_grid_items.to_s
+                   }
+                 )
+               )
   end
+  
   
   # Return a SolrDocument object of the parent collection of a collection member
   def collection
@@ -209,7 +127,7 @@ class SolrDocument
     @collection ||= SolrDocument.new(
                       Blacklight.solr.select(
                         :params => {
-                          :fq => "#{SolrDocument.unique_key}:\"#{self[blacklight_config.collection_member_identifying_field].first}\""
+                          :fq => "#{SolrDocument.unique_key}:\"#{self[blacklight_config.collection_member_identifying_field]}\""
                         }
                       )["response"]["docs"].first
                     )
@@ -217,7 +135,7 @@ class SolrDocument
   
   # Return a CollectionMembers object of all the members of a collection
   def collection_members
-    return nil unless collection?
+    return nil unless collection? or volume?
     @collection_members ||= CollectionMembers.new(
                               Blacklight.solr.select(
                                 :params => {

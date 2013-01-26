@@ -75,8 +75,8 @@ class CatalogController < ApplicationController
     config.series_identifying_field = "level_ssim"
     config.series_identifying_value = "series"
     
-    config.collection_identifying_field = "format_ssim"
-    config.collection_identifying_value = "Collection"
+    config.collection_identifying_field = "type_ssi"
+    config.collection_identifying_value = "collection"
         
     # needs to be stored so we can retreive it for display.
     # needs to be in field list for all request handlers.
@@ -86,7 +86,12 @@ class CatalogController < ApplicationController
     # needs to be in field list for all request handlers so we can identify collection members in the search results.
     config.children_identifying_field = "direct_parent_ssim"
     
-    config.collection_member_identifying_field = "is_member_of_ssim"
+    config.volume_identifying_field = "type_ssi"
+    config.volume_identifying_value = "volume"
+    
+    config.pages_identifying_field = "tome_ssi"
+    
+    config.collection_member_identifying_field = "collection_ssi"
     
     
     config.box_identifying_field = "box_ssim"
@@ -150,14 +155,12 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
-    config.add_facet_field 'personal_name_ssim', :label => I18n.t('frda.facet.personal_name'), :limit => 10
-    config.add_facet_field 'geographic_name_ssim', :label => I18n.t('frda.facet.location'), :limit => 10
-    config.add_facet_field 'corporate_name_ssim', :label => I18n.t('frda.facet.corporate_name'), :limit => 10
-    config.add_facet_field 'family_name_ssim', :label => I18n.t('frda.facet.family_name')
-    config.add_facet_field 'begin_year_itsim', :label => I18n.t('frda.facet.start_year'), :limit => 10
-    config.add_facet_field 'end_year_itsim', :label => I18n.t('frda.facet.end_year'), :limit => 10
+    config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection', :query => {
+      :ap => { :label => "Archives parlementaires", :fq => "collection_ssi:(ap-collection) AND type_ssi:(volume)" },
+      :image => { :label => "Images de la Révolution française", :fq => "collection_ssi:(images-collection)" }
+    }
 
-    config.add_facet_field 'highlight_ssim', :label => I18n.t('frda.nav.collections'), :show => false,  :query => collection_highlights
+    config.add_facet_field 'highlight_ssim', :label => I18n.t('frda.nav.collection_highlights'), :show => false,  :query => collection_highlights
 
     # config.add_facet_field 'example_query_facet_field', :label => 'Publish Date', :query => {
     #    :years_5 => { :label => 'within 5 Years', :fq => "pub_date:[#{Time.now.year - 5 } TO *]" },

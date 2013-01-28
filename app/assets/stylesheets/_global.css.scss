@@ -25,7 +25,7 @@ $facet_link_color: $active_link_color;
 $facet_selected_color: darken($facet_link_color, 10%);
 
 /* constraint (you searched for:) details: */
-$constraint_bg_color: #ece7da;
+$constraint_bg_color: #eee;
 $constraint_border_color: darken($constraint_bg_color, 20%);
 $constraint_border_active_color: #FFD27A !default;
 
@@ -65,7 +65,7 @@ html {
 }
 
 body {
-  font-family: $heading_font_family;
+  font-family: $text_font_family;
   background: $container_bg_color;
   font-size: 0.85em;
   line-height: 18px;

@@ -10,7 +10,7 @@ $nav_border_color: #eee;
 
 $container_bg_color: #fff;
 $heading_color: #555;
-$sidebar_header_color: #ddd;
+$sidebar_header_color: #555;
 $text_color: #333;
 $heading_font_family: "news-gothic-std","Helvetica","Arial",sans-serif;
 $text_font_family: "Optima", "Geneva", "Arial", "Helvetica", sans-serif;
@@ -20,7 +20,7 @@ $hover_link_color: lighten($active_link_color, 10%);
 $active_nav_link_color: lighten($active_link_color, 10%);
 $inactive_nav_link_color: $text_color;
 
-$facet_box_background_color: lighten($header_bg_color, 1%);
+$facet_box_background_color: darken($header_bg_color, 5%);
 $facet_link_color: $active_link_color;
 $facet_selected_color: darken($facet_link_color, 10%);
 

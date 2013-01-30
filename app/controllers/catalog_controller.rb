@@ -111,15 +111,17 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
+
     config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection', :query => {
-      :ap => { :label => "Archives parlementaires", :fq => "collection_ssi:(ap-collection) AND type_ssi:(volume)" },
-      :image => { :label => "Images de la Révolution française", :fq => "collection_ssi:(images-collection)" }
+      :"#{Frda::Application.config.ap_id}" => { :label => "Archives parlementaires", :fq => "collection_ssi:(#{Frda::Application.config.ap_id}) AND type_ssi:(volume)" },
+      :"#{Frda::Application.config.images_id}" => { :label => "Images de la Révolution française", :fq => "collection_ssi:(#{Frda::Application.config.images_id})" }
     }
 
+    
     config.add_facet_field 'medium_ssi', :label => 'frda.show.medium'
     config.add_facet_field 'publisher_ssi', :label => 'frda.show.publisher', :limit => 10
     config.add_facet_field 'person_ssim', :label => 'frda.show.people', :limit => 10
-    config.add_facet_field 'subject_ssim', :label => 'frda.show_subject', :limit => 10
+    config.add_facet_field 'subject_ssim', :label => 'frda.show.subject', :limit => 10
     config.add_facet_field 'format_ssim', :label => 'frda.show.format'
     config.add_facet_field 'year_iti', :label => 'frda.show.date'
 

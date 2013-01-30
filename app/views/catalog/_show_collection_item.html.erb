@@ -1,9 +1,10 @@
-    <div class="span6">
-			Collection Item
+<div class="span6 member-image">
+    <div class="item active">
+      <%= image_tag(@document.first_image, :alt => "Image") %>
     </div>
+</div>
 
     <div class="span6 metadata">
-      <%= render_document_heading(:h4).html_safe %>
-    	Collection Metadata
+			<%=show_formatted_list(@document.description)%>
 		</div>
 

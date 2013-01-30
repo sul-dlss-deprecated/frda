@@ -50,7 +50,7 @@ class SolrDocument
   end
   
   def purl
-    "#{Frda::Application.config.purl}/#{self.id}"
+    "#{Frda::Application.config.purl}/#{self.id}" unless self.collection?
   end
     
 	def multivalue_field(name)
@@ -61,10 +61,11 @@ class SolrDocument
     return [] unless self.has_key?(blacklight_config.image_identifier_field)
     stacks_url = Frda::Application.config.stacks_url
     self[blacklight_config.image_identifier_field].map do |image_id|
-      "#{stacks_url}/#{self["id"]}/#{image_id.chomp('.jp2')}#{SolrDocument.image_dimensions[size]}.jpg"
+      image_druid=(self.collection? ? "" : "#{self["id"]}/")  # collections include the druid of the image to use, items don't need it since we know the druid
+      "#{stacks_url}/#{image_druid}#{image_id.chomp('.jp2')}#{SolrDocument.image_dimensions[size]}.jpg"
     end
   end
-
+  
   def first_image(size=:default)
     return "http://placehold.it/100x100" unless self.has_key?(blacklight_config.image_identifier_field)
     stacks_url = Frda::Application.config.stacks_url
@@ -78,11 +79,11 @@ class SolrDocument
    end
 
    def ap_item?
-     self.has_key?(blacklight_config.collection_member_identifying_field) and self[blacklight_config.collection_member_identifying_field]=='ap-collection' 
+     self.has_key?(blacklight_config.collection_member_identifying_field) and self[blacklight_config.collection_member_identifying_field]==Frda::Application.config.ap_id
    end
   
    def images_item?
-     self.has_key?(blacklight_config.collection_member_identifying_field) and self[blacklight_config.collection_member_identifying_field]=='images-collection'      
+     self.has_key?(blacklight_config.collection_member_identifying_field) and self[blacklight_config.collection_member_identifying_field]==Frda::Application.config.images_id    
    end
    
    def collection?

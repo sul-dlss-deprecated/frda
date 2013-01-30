@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   rescue_from Exception, :with=>:exception_on_website
   layout "frda"
   
-  helper_method :show_terms_dialog?, :on_home_page, :on_collection_highlights_page, :on_collections_pages, :on_about_pages, :on_show_page, :on_ap_page, :on_image_page, :on_search_page
+  helper_method :show_terms_dialog?, :on_home_page, :on_collection_highlights_page, :on_collections_pages, :on_about_pages, :on_show_page, :on_ap_page, :on_images_page, :on_search_page, :request_path
   
   before_filter :set_locale
 
@@ -60,15 +60,15 @@ class ApplicationController < ActionController::Base
   end
 
   def on_collection_highlights_page
-    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && %w{/collections /en/collections /it/collections}.include?(request.path)
+    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && %w{/collections /en/collections /fr/collections}.include?(request.path)
   end
   
-  def on_image_page
-    (request_path[:controller] == 'catalog' && request_path[:action] == 'index' && %w{/images /en/images /it/images}.include?(request.path)) || (@document && @document.collection? && @document.id=='images-collection') || (@document && @document.images_item?)
+  def on_images_page
+    (@document && @document.images_item?) || (on_search_page && params[:f]['collection_ssi']==[Frda::Application.config.images_id]) || (@document && @document.collection? && @document.id==Frda::Application.config.images_id)
   end
   
   def on_ap_page
-    (request_path[:controller] == 'catalog' && request_path[:action] == 'index' && %w{/ap /en/ap /it/ap}.include?(request.path))  || (@document && @document.collection? && @document.id=='ap-collection')  || (@document && @document.ap_item?)
+    (@document && @document.ap_item?) || (on_search_page && params[:f]['collection_ssi']==[Frda::Application.config.ap_id]) || (@document && @document.collection? && @document.id==Frda::Application.config.ap_id)
   end
   
   def on_show_page

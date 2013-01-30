@@ -1,12 +1,25 @@
+<script language="javascript">
+$(document).ready(function(){
+	$('.truncate').truncate({max_length: 700});
+});
+</script>
+
 <div id="sidebar" class="span3">
+  <% if on_images_page %>
+		<%= image_tag(Collection.images.first_image(:square), :alt => "Images Collection") %>    
+	<% elsif on_ap_page %>
+		<%= image_tag(Collection.ap.first_image(:square), :alt => "AP Collection") %>
+	<% end %>
   <%= render "search_form" %>
   <%= render :partial => 'constraints' if query_has_constraints? %>
   <%= render :partial=>'facets' %>
 </div>
 
+
 <div id="content" class="span9">
 
   <% unless has_search_parameters? %>
+
     <%# if there are no input/search related params, display the "home" or collection highlight partial -%>
 		<% if on_collection_highlights_page %>
 			<%= render 'highlights' %>
@@ -19,8 +32,15 @@
 
     <% extra_head_content << render_opensearch_response_metadata.html_safe %>
 
-		<h2 class="search-results"><%= t('blacklight.search.search_results_header') %></h2>
-
+    <% if on_images_page %>
+			<h2 class="search-results"><%= t('frda.nav.collection_images') %></h2>
+			<span class="truncate"><%=show_list(Collection.images.description)%></span>
+		<% elsif on_ap_page %>
+			<h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>
+			<span class="truncate"><%=show_list(Collection.ap.description)%></span>
+		<% else %>
+			<h2 class="search-results"><%= t('blacklight.search.search_results_header') %></h2>		
+		<% end %>
 		<div id="search-results-metadata">
 
 
@@ -28,7 +48,7 @@
       <%#= render :partial => 'constraints' %>
 		</div>
 
-    <%= render_document_index %>
+		<%= render_document_index %>
 
     <%= render 'results_pagination' %>
 

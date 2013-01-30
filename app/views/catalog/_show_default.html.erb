@@ -3,7 +3,11 @@
 <div class="document">
   <div class="row">
     <div class="span12">
-      <h2><%= t('frda.collection.member_detail') %></h2>
+		  <% if  @document.collection? %>
+      	<%= raw truncate(render_document_heading(:h2).html_safe,:length=>200) %>
+			<% else %>
+      	<h2><%= t('frda.collection.member_detail') %></h2>
+			<% end %>
     </div>
   </div>
 

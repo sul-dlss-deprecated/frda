@@ -36,39 +36,28 @@ fr:
       stanford_team_title: 'Project team: Stanford'
       bnf_team_title: 'Project team: BnF'
       technical_description_title: 'Technical description'
-    show:
-      box: 
-        word: 'Box'
-        one: '1 Box'
-        other: "%{count} Boxes"
-      folder: 
-        word: 'Folder'        
-        one: '1 Folder'
-        other: "%{count} Folders"
-      series:
-        word: 'Series'        
+    show:   
       item: 
         one: '1 Item'
         other: "%{count} Items"
       more: 'more'
       less: 'less'        
       date: 'Date'
-      map: 'Map'
-      show_map: 'Show on Map'
       description: 'Physical Description'
       people: 'People'
-      families: 'Families'
-      locations: 'Locations'
-      corporations: 'Corporations'
+      medium: 'Medium'
+      publisher: 'Publisher'
+      type: 'Type'
+      format: 'Format'
+      copyright: 'Copyright'
+      source: 'Source'
+      people: 'People'
       notes: 'Notes'
       previous: 'prev page'
       next: 'next page'
       showing: 'Showing page'
       of: 'of'
-      show_in_inventory: "Show this %{item} in Content Inventory"
-      view_in_inventory: "View this %{item} in Content Inventory"
       citation: 'Citation'
-      all_items_in_folder: "Other Items In This Folder"    
     collection:
       collection_detail: 'Collection Detail'
       member_detail: 'Item Detail'
@@ -79,22 +68,18 @@ fr:
       collection_link: 'View this collection'
       collection_text: 'Collection Items'
       sibling_text: "Other items in the %{collection} collection"
-    inventory:
-      title: 'Content Inventory'
     search:
       search_results: 'Results'
       gallery_toggle:
         default: 'Risultati'
         gallery: 'Gallery'
         text: 'Text only'
-        map: 'Map'
       search_label: 'Ricerca'
       facets:
         title: 'Limitare la ricerca'
     sidebar:
       actions:
         title: 'Actions'
-        view_in_inventory: 'View in Content Inventory'
         print: 'Print Item Details'
         cite: 'Cite this Item'
         bookmark: 'Segnalibro'
@@ -104,11 +89,5 @@ fr:
       history:
         title: 'History'
         search_history: 'Search History'
-      finding_aid:
-        title: 'Finding Aid'
-        download_pdf: 'PDF'
-        download_ead: 'EAD XML'
-      inventory:
-        title: 'Inventory Contents'
       background:
         title: 'Background Information'

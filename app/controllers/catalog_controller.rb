@@ -27,24 +27,6 @@ class CatalogController < ApplicationController
     
     if on_home_page
       @highlights=CollectionHighlight.order("sort_order").limit(3)
-    
-      # get all documents, iterate over those with coordinates, and build the content needed to show on the map
-      # this is all fragment cached, so its only done once
-      unless fragment_exist?(:controller=>'catalog',:action=>'index',:action_suffix => 'map')
-        @document_locations={}
-        location_facets=Blacklight.solr.get 'select',:params=>{:q=>'*:*',:rows=>0,:facet=>true,:'facet.field'=>'geographic_name_ssim'}
-        location_names=location_facets['facet_counts']['facet_fields']['geographic_name_ssim']
-        location_names.each_with_index do |location_name,index|
-          if index % 2 == 0
-            #puts "*** looking up #{location_name} with #{location_names[index+1]} numbers"
-            results=Geocoder.search(location_name)
-            sleep 0.1  # don't overload the geolookup API
-            if results.size > 0 
-              @document_locations.merge!(location_name=>{:lat=>results.first.latitude,:lon=>results.first.longitude,:count=>location_names[index+1]}) 
-            end
-          end
-        end
-      end
     end
     
     if on_collection_highlights_page
@@ -66,45 +48,19 @@ class CatalogController < ApplicationController
       :echoParams => "all"
     }
     
-    
     config.collection_highlight_field = "highlight_ssim"
-    
-    
-    # needs to be stored so we can retreive it
-    # needs to be in field list for all request handlers so we can identify collections in the search results.
-    config.series_identifying_field = "level_ssim"
-    config.series_identifying_value = "series"
-    
-    config.collection_identifying_field = "type_ssi"
-    config.collection_identifying_value = "collection"
         
     # needs to be stored so we can retreive it for display.
     # needs to be in field list for all request handlers.
     config.collection_description_field = "description_tsim"
     
-    # needs to be indexed so we can search it to return relationships.
-    # needs to be in field list for all request handlers so we can identify collection members in the search results.
-    config.children_identifying_field = "direct_parent_ssim"
-    
-    config.volume_identifying_field = "type_ssi"
-    config.volume_identifying_value = "volume"
-    
     config.pages_identifying_field = "tome_ssi"
+
+    config.collection_identifying_field = "type_ssi"
+    config.collection_identifying_value = "collection"
     
     config.collection_member_identifying_field = "collection_ssi"
-    
-    
-    config.box_identifying_field = "box_ssim"
-    config.folder_identifying_field = "folder_ssim"
-    
-    
-    config.folder_identifier_field = "level_ssim"
-    config.folder_identifier_value = "Folder"
-    
-    config.parent_folder_identifying_field = "parent_folder_ssim"
-    
-    config.folder_in_series_identifying_field = "series_ssim"
-    
+        
     # needs to be stored so we can retreive it for display
     # needs to be in field list for all request handlers
     config.collection_member_collection_title_field = "collection_ssim"
@@ -113,7 +69,7 @@ class CatalogController < ApplicationController
     
     # needs to be stored so we can retreive it
     # needs to be in field list for all request handlers so we can get images the document anywhere in the app.
-    config.image_identifier_field = "image_id_ssim"
+    config.image_identifier_field = "image_id_ssm"
 
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or 
     ## parameters included in the Blacklight-jetty document requestHandler.
@@ -159,6 +115,13 @@ class CatalogController < ApplicationController
       :ap => { :label => "Archives parlementaires", :fq => "collection_ssi:(ap-collection) AND type_ssi:(volume)" },
       :image => { :label => "Images de la Révolution française", :fq => "collection_ssi:(images-collection)" }
     }
+
+    config.add_facet_field 'medium_ssi', :label => 'frda.show.medium'
+    config.add_facet_field 'publisher_ssi', :label => 'frda.show.publisher', :limit => 10
+    config.add_facet_field 'person_ssim', :label => 'frda.show.people', :limit => 10
+    config.add_facet_field 'subject_ssim', :label => 'frda.show_subject', :limit => 10
+    config.add_facet_field 'format_ssim', :label => 'frda.show.format'
+    config.add_facet_field 'year_iti', :label => 'frda.show.date'
 
     config.add_facet_field 'highlight_ssim', :label => I18n.t('frda.nav.collection_highlights'), :show => false,  :query => collection_highlights
 

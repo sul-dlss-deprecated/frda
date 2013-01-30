@@ -1,0 +1,39 @@
+		<script type="text/javascript">
+		  $(document).ready(function(){
+		    $("#image_workspace").embedPurl({'server': '<%=Frda::Application.config.purl_plugin_server%>',
+		                                     'druid': '<%= @document[:id] %>',
+																				 'size': 'thumb',
+		                                     'width': 400,
+		                                     'height': 500});  
+		  });
+		</script>
+    <div class="span6 member-image">
+      <div id="image_workspace"></div>
+        <noscript>
+           <div class="item active">
+             <%= image_tag(@document.first_image, :alt => "Image 1") %>
+           </div>
+        </noscript>
+    </div>
+
+    <div class="span6 metadata">
+      <%= render_document_heading(:h4).html_safe %>
+      <dl class="dl-horizontal  dl-invert">
+        <% unless @document.medium.nil?%><dt><%=t('frda.show.medium')%>:</dt><dd><%=@document.medium%>&nbsp;</dd><% end %>
+				<% unless list_is_empty?(@document.person) %>
+          <dt><%=t('frda.show.people')%>:</dt><dd><%=show_formatted_list(@document.person)%></dd>
+        <% end %>
+        <% unless @document.publisher.nil?%><dt><%=t('frda.show.publisher')%>:</dt><dd><%=@document.publisher%>&nbsp;</dd><% end %>
+        <% unless @document.year.nil?%><dt><%=t('frda.show.date')%>:</dt><dd><%=@document.year%>&nbsp;</dd><% end %>
+        <% unless list_is_empty?(@document.subject) %>
+          <dt><%=t('frda.show.subject')%>:</dt><dd><%=show_formatted_list(@document.subject,:facet=>'subject_ssim')%></dd>
+        <% end %>
+        <% unless @document.type.nil?%><dt><%=t('frda.show.type')%>:</dt><dd><%=@document.type%>&nbsp;</dd><% end %>
+        <% unless list_is_empty?(@document.format) %>
+          <dt><%=t('frda.show.format')%>:</dt><dd><%=show_formatted_list(@document.format)%></dd>
+        <% end %>
+        <% unless @document.copyright.nil?%><dt><%=t('frda.show.copyright')%>:</dt><dd><%=@document.copyright%>&nbsp;</dd><% end %>
+        <% unless @document.source.nil?%><dt><%=t('frda.show.source')%>:</dt><dd><%=@document.source%>&nbsp;</dd><% end %>
+
+      </dl>
+    </div>

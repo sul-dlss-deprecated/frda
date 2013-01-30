@@ -9,15 +9,6 @@
               :alt => document.title, :title => document.title, :border => 0),
               catalog_path(document[:id])) %>
 
-        <ul class="inventory-ancestry breadcrumb">
-          <% if ['item','file','box'].include?(document.level) && !document.box.blank?%>
-            <li><%= link_to "#{t('frda.show.box.word')} #{document.box}",inventory_path(:anchor => "box#{document.box}") %></li>
-          <% end %>
-          <% if ['item','file'].include?(document.level) && !document.folder.blank? %>
-            <li>&#187; <%= link_to "#{t('frda.show.folder.word')} #{document.folder}",inventory_path(:anchor => "box#{document.box}-folder#{document.folder}") %></li>		
-          <% end %>
-        </ul>
-
         <!-- Not using the document_header partial here because we need to truncate title -->
         <div class="documentHeader clearfix">
           <h5 class="index_title">

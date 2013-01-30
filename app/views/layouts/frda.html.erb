@@ -22,11 +22,11 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="//use.typekit.net/iwp4xxc.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-		<script src="http://maps.googleapis.com/maps/api/js?key=<%=Frda::Application.config.google_api_key%>&sensor=false"></script>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= raw(render_head_content) %> 
+		<script type="text/javascript" src="<%=Frda::Application.config.purl_plugin_location%>"></script>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>

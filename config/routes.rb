@@ -11,17 +11,14 @@ Frda::Application.routes.draw do
   
     match 'collections', :to => 'catalog#index', :as => 'collection_highlights'
 
+    match 'ap', :to => 'catalog#index', :as =>'ap_collection', :defaults=>{:f=>{:collection_ssi=>['ap']}}
+    match 'images', :to => 'catalog#index', :as =>'image_collection', :defaults=>{:f=>{:collection_ssi=>['image']}}
+        
     # Handles all About pages.
     match 'about', :to => 'about#show', :as => 'about_project', :defaults => {:id=>'project'} # no page specified, go to project page
     match 'about/contact', :to=> 'about#contact' # specific contact us about page
     match 'about/:id', :to => 'about#show' # catch anything else and direct to show page with ID parameter of partial to show
 
-    # handle background page
-    match 'background', :to => 'about#background', :as => 'background' # catch the background route
- 
-    # handle content inventory pages
-    match 'inventory', :to => 'inventory#index', :as => 'inventory'
-    match 'inventory(/:action(/:id))(.:format)', :to=> 'inventory#:action'
  
     # helper routes to we can have a friendly URL for items and collections
     match 'item/:id', :to=> 'catalog#show', :as =>'item'

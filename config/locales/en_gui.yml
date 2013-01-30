@@ -51,60 +51,43 @@ en:
     collection_members:
       items_name: 'image'
     show:
-      box: 
-        word: 'Box'
-        one: '1 Box'
-        other: "%{count} Boxes"
-      folder: 
-        word: 'Folder'        
-        one: '1 Folder'
-        other: "%{count} Folders"
-      series:
-        word: 'Series'
       item: 
         one: '1 Item'
         other: "%{count} Items"
       more: 'more'
       less: 'less'
       date: 'Date'
-      map: 'Map'
-      show_map: 'Show on map'
       description: 'Physical description'
+      medium: 'Medium'
+      publisher: 'Publisher'
+      type: 'Type'
+      format: 'Format'
+      copyright: 'Copyright'
+      source: 'Source'
       people: 'People'
-      level: 'Level'
-      families: 'Families'
-      locations: 'Locations'
-      corporations: 'Corporations'
       notes: 'Notes'
       previous: 'prev page'
       next: 'next page'
       showing: 'Showing page'
       of: 'of'
-      show_in_inventory: "Show this %{item} in content inventory"
-      view_in_inventory: "View this %{item} in content inventory"
       citation: 'Citation'
-      all_pages_in_volume: "Other pages in this volume"
     collection_members_grid:
       members_link: 'View all collection items'
       collection_link: 'View this collection'
       collection_text: 'Collection items'
       sibling_text: "Other items in the %{collection} collection"
-    inventory:
-      title: 'Content inventory'
     search:
       search_results: 'Results'
       gallery_toggle:
         default: 'Results'
         gallery: 'Gallery'
         text: 'Text only'
-        map: 'Map'
       search_label: 'Search'
       facets:
         title: 'Browse'
     sidebar:
       actions:
         title: 'Actions'
-        view_in_inventory: 'View in content inventory'
         print: 'Print item details'
         cite: 'Cite this item'
         bookmark: 'Bookmark'
@@ -114,11 +97,5 @@ en:
       history:
         title: 'History'
         search_history: 'Search history'
-      finding_aid:
-        title: 'Finding aid'
-        download_pdf: 'PDF'
-        download_ead: 'EAD XML'
-      inventory:
-        title: 'Inventory contents'
       background:
         title: 'Background information'

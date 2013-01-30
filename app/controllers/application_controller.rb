@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   rescue_from Exception, :with=>:exception_on_website
   layout "frda"
   
-  helper_method :show_terms_dialog?, :on_home_page, :on_collection_highlights_page, :on_collections_pages, :on_background_page, :on_about_pages, :on_inventory_pages, :on_show_page
+  helper_method :show_terms_dialog?, :on_home_page, :on_collection_highlights_page, :on_collections_pages, :on_about_pages, :on_show_page, :on_ap_page, :on_image_page, :on_search_page
   
   before_filter :set_locale
 
@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
   
   def on_pages_that_do_not_require_terms_dialog
-    on_background_page || on_home_page || on_about_pages
+    on_home_page || on_about_pages
   end
   
   def seen_terms_dialog?
@@ -63,20 +63,24 @@ class ApplicationController < ActionController::Base
     request_path[:controller] == 'catalog' && request_path[:action] == 'index' && %w{/collections /en/collections /it/collections}.include?(request.path)
   end
   
+  def on_image_page
+    (request_path[:controller] == 'catalog' && request_path[:action] == 'index' && %w{/images /en/images /it/images}.include?(request.path)) || (@document && @document.collection? && @document.id=='images-collection') || (@document && @document.images_item?)
+  end
+  
+  def on_ap_page
+    (request_path[:controller] == 'catalog' && request_path[:action] == 'index' && %w{/ap /en/ap /it/ap}.include?(request.path))  || (@document && @document.collection? && @document.id=='ap-collection')  || (@document && @document.ap_item?)
+  end
+  
   def on_show_page
     request_path[:controller] == 'catalog' && request_path[:action] == 'show'
   end
-  
-  def on_background_page
-    request_path[:controller] == 'about' && request_path[:action] == 'background'
+
+  def on_search_page
+    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && !params[:f].blank? 
   end
   
   def on_about_pages
-    request_path[:controller] == 'about' && !on_background_page
-  end
-
-  def on_inventory_pages
-    request_path[:controller] == 'inventory'
+    request_path[:controller] == 'about' 
   end
       
   def exception_on_website(exception)

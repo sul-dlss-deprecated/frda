@@ -9,9 +9,6 @@
               catalog_path(document[:id])) %>
       </div>
       <div class="span7 results-metadata">
-        <ul class="inventory-ancestry breadcrumb">
-          <%= render :partial => "shared/ancestor_breadcrumb", :locals => {:document => document} %>
-        </ul>
     <%= render :partial => "document_header", :locals => {:document_counter => index, :document => document} %>
     <%= render_document_partial document, :index, :document_counter => index %>
       </div>

@@ -69,7 +69,6 @@ module Frda
   end
 end
 
-Frda::Application.config.google_api_key = ""
 Frda::Application.config.stacks_url = YAML.load_file("#{Rails.root}/config/stacks.yml")[Rails.env]["url"]
 Frda::Application.config.contact_us_topics = {'default'=>'Select a topic...', 'terms of use'=>'Terms of Use question', 'error'=>'Problem with the website','other'=>'Other questions'} # sets the list of topics shown in the contact us page
 Frda::Application.config.contact_us_recipients = {'default'=>'petucket@stanford.edu', 'error'=>'petucket@stanford.edu','terms of use'=>'petucket@stanford.edu','other'=>'petucket@stanford.edu'} # sets the email address for each contact us topic configed above

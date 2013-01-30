@@ -1,3 +1,5 @@
+
+
 <div class="document">
   <div class="row">
     <div class="span12">
@@ -6,59 +8,13 @@
   </div>
 
   <div class="row document-details">
-    <div class="span6 member-image">
-      <%if @document.images.size > 0 %>
-        <div id="image_workspace"></div>
-        <noscript>
-           <div class="item active">
-             <%= image_tag(@document.images.first, :alt => "Image 1 of #{@document.images.size}") %>
-           </div>
-        </noscript>
-      <% end %>
-    </div>
-
-    <div class="span6 metadata">
-      <%= render_document_heading(:h4).html_safe %>
-      <dl class="dl-horizontal  dl-invert">
-        <dt><%=t('frda.show.date')%>:</dt><dd><%=show_list(@document.date)%>&nbsp;</dd>
-				<% unless list_is_empty?(@document.description) %>
-          <dt><%=t('frda.show.description')%>:</dt><dd><%=show_formatted_list(@document.description)%></dd>
-        <% end %>
-        <% unless list_is_empty?(@document.people) %>
-          <dt><%=t('frda.show.people')%>:</dt><dd><%=show_formatted_list(@document.people,:facet=>'personal_name_ssim')%></dd>
-        <% end %>
-        <% unless list_is_empty?(@document.families) %>
-          <dt><%=t('frda.show.families')%>:</dt><dd><%=show_formatted_list(@document.families,:facet=>'family_name_ssim')%></dd>
-        <% end %>
-        <% unless list_is_empty?(@document.corporations) %>
-          <dt><%=t('frda.show.corporations')%>:</dt><dd><%=show_formatted_list(@document.corporations,:facet=>'corporate_name_ssim')%></dd>
-        <% end %>
-        <% unless list_is_empty?(@document.notes) %>
-          <dt><%=t('frda.show.notes')%>:</dt><dd><%=show_formatted_list(@document.notes)%></dd>
-        <% end %>
-        <% unless @document.purl.blank? %>
-          <dt><%=t('frda.show.citation')%>:</dt><dd><%=link_to @document.purl,@document.purl%></dd>
-        <% end %>
-      </dl>
-    </div>
+		<% if @document.images_item? %>
+			<%= render :partial=>'show_images_item' %>
+		<% elsif @document.ap_item? %>
+			<%= render :partial=>'show_ap_item' %>
+		<% else %>
+			<%= render :partial=>'show_collection_item' %>
+		<% end %>
   </div>
-
-  <% if @document.pages and @document.pages.documents.size > 0%>
-    <div class="row">
-      <div class="span12">
-        <h3>
-          <%=t('frda.show.all_pages_in_volume')%>  (<%=@document.pages.documents.size%>)
-          <span class="highlights-link"><%= link_to t('frda.show.view_in_inventory', :item => 'folder'), inventory_path(:anchor => "box#{@document.box}-folder#{@document.folder}") %></span>
-        </h3>
-        <ul class="preview-folder-items">
-          <% @document.pages.documents.each do |sibling| %>
-            <li>
-              <%= link_to(image_tag(sibling.first_image(:square),:alt=>sibling.title,:title=>sibling.title,:border=>0), catalog_path(sibling[:id])) %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
 
 </div>

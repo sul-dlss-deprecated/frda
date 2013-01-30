@@ -1,7 +1,5 @@
 <ul class="nav nav-list">
   <li class="nav-header"><%= t('frda.sidebar.actions.title') %></li>
-  <li><%= link_to t('frda.sidebar.actions.view_in_inventory'), inventory_path(:anchor => "box#{@document.box}-folder#{@document.folder}") %></li>
-  <!-- <li><%#= link_to t('frda.sidebar.actions.print'), '#' %></li> -->
   <li><%= link_to t('frda.sidebar.actions.cite'), '#' %></li>
 
   <%- # extracted from show_tools partial %>

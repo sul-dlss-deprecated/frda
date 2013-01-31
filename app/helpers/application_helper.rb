@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def on_scrollspy_page?
-    false
+    on_about_pages
   end
 
   # series descriptions always come in pairs, the first in italian, the second in english...depending on tbe language, show a particular version

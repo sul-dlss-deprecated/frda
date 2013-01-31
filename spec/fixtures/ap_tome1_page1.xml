@@ -1,5 +1,6 @@
 <doc>
   <field name="id">ap-tome1-page1</field>
+  <field name="druid_ssi"></field>
   <field name="title_tsi">Page 1</field>
   <field name="collection_ssi">ap-collection</field>
   <field name="tome_ssi">ap-thome1</field>

@@ -28,7 +28,7 @@ set :ssh_options, {
 }
 
 set :destination, "/home/lyberadmin"
-set :application, "frda-lib"
+set :application, "frda-app"
 
 set :scm, :git
 set :copy_cache, true

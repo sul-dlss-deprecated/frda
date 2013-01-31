@@ -1,33 +1,33 @@
 fr:
   frda:
-    curator_heading_html: 'From the curator'
+    curator_heading: 'From the curator'
     curator_text_html: |
       <div class="truncate">
         <p>
           [Needs translation]
         </p>
       </div>
-    project_team_stanford_heading_html: 'Project team: Stanford'
+    project_team_stanford_heading: 'Project team: Stanford'
     project_team_stanford_text_html: |
       <p>
         [Needs translation]
       </p>
-    project_team_bnf_heading_html: 'Project team: BnF'
+    project_team_bnf_heading: 'Project team: BnF'
     project_team_bnf_text_html: |
       <p>
         [Needs translation]
       </p>
-    technical_description_heading_html: 'Technical description'
+    technical_description_heading: 'Technical description'
     technical_description_text_html: |
       <p>
         [Needs translation]
       </p>
-    acknowledgements_heading_html: 'Acknowledgements'
+    acknowledgements_heading: 'Acknowledgements'
     acknowledgements_text_html: |
       <p>
         [Needs translation]
       </p>
-    use_and_reproduction_heading_html: 'Use and reproduction'
+    use_and_reproduction_heading: 'Use and reproduction'
     use_and_reproduction_text_html: |
       <p>
         [Needs translation]

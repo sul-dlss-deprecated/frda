@@ -10,6 +10,6 @@
 <%# List of section names in application_helper %>
 <%# Section names should match what's used in locale_about.yml %>
 <% about_sections.each do |section| %>
-  <h2 id="<%= section %>"><%= t("frda.#{section}_heading_html") %></h2>
+  <h2 id="<%= section %>"><%= t("frda.#{section}_heading") %></h2>
   <%= t("frda.#{section}_text_html") %>
 <% end %>

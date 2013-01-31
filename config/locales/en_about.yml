@@ -1,6 +1,6 @@
 en:
   frda:
-    curator_heading_html: 'From the curator'
+    curator_heading: 'From the curator'
     curator_text_html: |
       <div class="truncate">
         <p>
@@ -149,22 +149,22 @@ en:
           history.
         </p>
       </div>
-    project_team_stanford_heading_html: 'Project team: Stanford'
+    project_team_stanford_heading: 'Project team: Stanford'
     project_team_stanford_text_html: |
       <p>
         Project team Stanford - text to be provided
       </p>
-    project_team_bnf_heading_html: 'Project team: BnF'
+    project_team_bnf_heading: 'Project team: BnF'
     project_team_bnf_text_html: |
       <p>
         Project team BnF - text to be provided
       </p>
-    technical_description_heading_html: 'Technical description'
+    technical_description_heading: 'Technical description'
     technical_description_text_html: |
       <p>
         Technical description - text to be provided
       </p>
-    acknowledgements_heading_html: 'Acknowledgements'
+    acknowledgements_heading: 'Acknowledgements'
     acknowledgements_text_html: |
       <p>
         The FRDA was first conceived in 2006 by Stanford French professor Dan Edelstein,
@@ -174,7 +174,7 @@ en:
         University’s Division of Languages, Cultures, and Literatures, Stanford
         University Department of History, and the Bibliothèque nationale de France.
       </p>
-    use_and_reproduction_heading_html: 'Use and reproduction'
+    use_and_reproduction_heading: 'Use and reproduction'
     use_and_reproduction_text_html: |
         <p>
           This image(s) is a digital reproduction of works from the collections of the

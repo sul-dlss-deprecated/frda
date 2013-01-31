@@ -1,13 +1,13 @@
 <div id="sidebar" class="span3">
 	<div id="sidebar-nav">
-	  <ul class="nav nav-list">
+	  <ul class="nav nav-list affix">
 	    <li class="nav-header"><%=t('frda.nav.about')%></li>
-			<li><%= link_to t('frda.nav.project_overview'), :controller => "about",  :action => "show", :id => "project" %></li>
-			<li><%= link_to t('frda.nav.project_team_stanford'), :controller => "about",  :action => "show", :id => "stanford_team" %></li>
-			<li><%= link_to t('frda.nav.project_team_bnf'), :controller => "about",  :action => "show", :id => "bnf_team" %></li>
-			<li><%= link_to t('frda.nav.technical_description'), :controller => "about",  :action => "show", :id => "technical_description" %></li>
-			<li><%= link_to t('frda.nav.acknowledgements'), :controller => "about",  :action => "show", :id => "acknowledgements" %></li>
-			<li><%= link_to t('frda.nav.use_policy'), :controller => "about", :action => "show", :id=> "terms_of_use" %></li>
+			<li><%= link_to t('frda.nav.project_overview'), about_project_path(:anchor => 'curator') %></li>
+			<li><%= link_to t('frda.nav.project_team_stanford'), about_project_path(:anchor => 'project_team_stanford') %></li>
+			<li><%= link_to t('frda.nav.project_team_bnf'), about_project_path(:anchor => 'project_team_bnf') %></li>
+			<li><%= link_to t('frda.nav.technical_description'), about_project_path(:anchor => 'technical_description') %></li>
+			<li><%= link_to t('frda.nav.acknowledgements'), about_project_path(:anchor => 'acknowledgements') %></li>
+			<li><%= link_to t('frda.nav.use_policy'), about_project_path(:anchor => 'use_and_reproduction') %></li>
 	  </ul>
 
     <%#= Leave this for now, pending decision on how we will present contact information %>

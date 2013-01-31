@@ -78,6 +78,7 @@ body {
   margin-bottom: 20px;
   padding-left: 5px;
   li > a {padding: 1px 15px;}
+  &.affix {width: 228px;}
 }
 
 a:focus {
@@ -203,4 +204,9 @@ span.content-type {
 @media (max-width: 767px) {
   .pagination {clear: both;}
   .search_form .btn {float: left;}
+}
+@media (min-width: 1200px) {
+  #sidebar-nav > .nav-list.affix {
+    width: 258px;
+  }
 }

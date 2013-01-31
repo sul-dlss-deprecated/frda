@@ -24,12 +24,8 @@ class AboutController < ApplicationController
     @page_name='project' unless lookup_context.exists?(@page_name, 'about', true) # default to project page if requested partial doesn't exist
     @page_title=t("frda.about.#{@page_name}_title") # set the page title
     @params=params
-    @no_nav=(@page_name=='terms_dialog' ? true : false)
+    @no_nav=(@page_name=='terms_dialog' || @page_name=='contact' ? true : false)
     render :show
-  end
-  
-  def background
-    @page_title=t("frda.background.title") # set the page title
   end
   
 end

@@ -20,7 +20,7 @@ body {
       padding-left: 0px;
       padding-right: 0px;
       // don't fix position toc nav (since no sidebar) on phones
-      .background-toc.affix, .inventory-toc.affix {position: relative;}
+      #sidebar-nav .affix {position: relative;}
     }
 }
 #header-navbar-static-top {

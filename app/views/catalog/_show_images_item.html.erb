@@ -1,39 +1,78 @@
-		<script type="text/javascript">
-		  $(document).ready(function(){
-		    $("#image_workspace").embedPurl({'server': '<%=Frda::Application.config.purl_plugin_server%>',
-		                                     'druid': '<%= @document[:id] %>',
-																				 'size': 'thumb',
-		                                     'width': 400,
-		                                     'height': 500});  
-		  });
-		</script>
-    <div class="span6 member-image">
-      <div id="image_workspace"></div>
-        <noscript>
-           <div class="item active">
-             <%= image_tag(@document.first_image, :alt => "Image") %>
-           </div>
-        </noscript>
-    </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#image_workspace").embedPurl({'server': '<%=Frda::Application.config.purl_plugin_server%>',
+                                     'druid': '<%= @document[:id] %>',
+                                     'size': 'thumb',
+                                     'width': 400,
+                                     'height': 500});
+  });
+</script>
 
-    <div class="span6 metadata">
-      <%= render_document_heading(:h4).html_safe %>
-      <dl class="dl-horizontal  dl-invert">
-        <% unless @document.medium.nil?%><dt><%=t('frda.show.medium')%>:</dt><dd><%=@document.medium%>&nbsp;</dd><% end %>
-				<% unless list_is_empty?(@document.person) %>
-          <dt><%=t('frda.show.people')%>:</dt><dd><%=show_formatted_list(@document.person)%></dd>
-        <% end %>
-        <% unless @document.publisher.nil?%><dt><%=t('frda.show.publisher')%>:</dt><dd><%=@document.publisher%>&nbsp;</dd><% end %>
-        <% unless @document.year.nil?%><dt><%=t('frda.show.date')%>:</dt><dd><%=@document.year%>&nbsp;</dd><% end %>
-        <% unless list_is_empty?(@document.subject) %>
-          <dt><%=t('frda.show.subject')%>:</dt><dd><%=show_formatted_list(@document.subject,:facet=>'subject_ssim')%></dd>
-        <% end %>
-        <% unless @document.type.nil?%><dt><%=t('frda.show.type')%>:</dt><dd><%=@document.type%>&nbsp;</dd><% end %>
-        <% unless list_is_empty?(@document.format) %>
-          <dt><%=t('frda.show.format')%>:</dt><dd><%=show_formatted_list(@document.format)%></dd>
-        <% end %>
-        <% unless @document.copyright.nil?%><dt><%=t('frda.show.copyright')%>:</dt><dd><%=@document.copyright%>&nbsp;</dd><% end %>
-        <% unless @document.source.nil?%><dt><%=t('frda.show.source')%>:</dt><dd><%=@document.source%>&nbsp;</dd><% end %>
+<div class="row">
+  <div class="span12">
+    <h2><%= t('frda.image.detail.title') %></h2>
+    <ul class="item breadcrumb">
+      <li>[-- item breadcrumb goes here --]</li>
+    </ul>
+    <pre>
+      [-- prev | next navigation bar goes here but doesn't seem to be working --]
+    </pre>
+    <%= render 'previous_next_doc' %>
+  </div>
+</div>
 
-      </dl>
-    </div>
+<div class="row document-details">
+  <div class="span6 member-image">
+    <div id="image_workspace"></div>
+      <noscript>
+         <div class="item active">
+           <%= image_tag(@document.first_image, :alt => "Image") %>
+         </div>
+      </noscript>
+  </div>
+
+  <div class="span6 metadata">
+    <dl class="dl-invert">
+      <% unless @document.title.nil?%>
+        <dt>Title</dt>
+        <%= render_document_heading(:dd).html_safe %>
+      <% end %>
+      <% unless @document.medium.nil?%>
+        <dt><%=t('frda.show.medium')%></dt>
+        <dd><%=@document.medium%></dd>
+      <% end %>
+      <% unless list_is_empty?(@document.person) %>
+        <dt><%=t('frda.show.people')%></dt>
+        <dd><%=show_formatted_list(@document.person)%></dd>
+      <% end %>
+      <% unless @document.publisher.nil?%>
+        <dt><%=t('frda.show.publisher')%></dt>
+        <dd><%=@document.publisher%>&nbsp;</dd>
+      <% end %>
+      <% unless @document.year.nil?%>
+        <dt><%=t('frda.show.date')%></dt>
+        <dd><%=@document.year%>&nbsp;</dd>
+      <% end %>
+      <% unless list_is_empty?(@document.subject) %>
+        <dt><%=t('frda.show.subject')%></dt>
+        <dd><%=show_formatted_list(@document.subject,:facet=>'subject_ssim')%></dd>
+      <% end %>
+      <% unless @document.type.nil?%>
+        <dt><%=t('frda.show.type')%></dt>
+        <dd><%=@document.type%>&nbsp;</dd>
+      <% end %>
+      <% unless list_is_empty?(@document.format) %>
+        <dt><%=t('frda.show.format')%></dt>
+        <dd><%=show_formatted_list(@document.format)%></dd>
+      <% end %>
+      <% unless @document.copyright.nil?%>
+        <dt><%=t('frda.show.copyright')%></dt>
+        <dd><%=@document.copyright%>&nbsp;</dd>
+      <% end %>
+      <% unless @document.source.nil?%>
+        <dt><%=t('frda.show.source')%></dt>
+        <dd><%=@document.source%>&nbsp;</dd>
+      <% end %>
+    </dl>
+  </div>
+</div>

@@ -90,3 +90,6 @@ fr:
         search_history: 'Search History'
       background:
         title: 'Background Information'
+    image:
+      detail:
+        title: 'Images de la Révolution française'

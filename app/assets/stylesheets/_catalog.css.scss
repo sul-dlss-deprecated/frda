@@ -105,6 +105,20 @@
     margin-left: 0;
     margin-bottom: 0;
   }
+  ul.item.breadcrumb {
+    margin: 0;
+    padding: 0 0 15px;
+  }
+  // override image_viewer plugin styles
+  .pe-h-nav {
+    background: none;
+    border: 1px solid darken($header_bg_color, 8%);
+    width: 98%;
+  }
+  .pe-purl-url {
+    border: none;
+    bottom: -4px;
+  }
 }
 
 

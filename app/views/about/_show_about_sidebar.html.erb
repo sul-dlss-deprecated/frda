@@ -8,14 +8,12 @@
 			<li><%= link_to t('frda.nav.technical_description'), about_project_path(:anchor => 'technical_description') %></li>
 			<li><%= link_to t('frda.nav.acknowledgements'), about_project_path(:anchor => 'acknowledgements') %></li>
 			<li><%= link_to t('frda.nav.use_policy'), about_project_path(:anchor => 'use_and_reproduction') %></li>
+
+			<li class="nav-header"><%=t('frda.nav.contact')%></li>
+			<li>Sarah Sussman</li>
+			<li>Curator of French and Italian Collections
+	      <span class="contact-link"><%= mail_to "TBD@TBD.stanford.edu" %></span>
+	    </li>
 	  </ul>
-
-    <%#= Leave this for now, pending decision on how we will present contact information %>
-    <!-- <ul class="nav nav-list">
-      <li class="nav-header"><%=t('frda.nav.contact')%></li>
-      <li><%#= link_to t('frda.nav.contact_us'), :controller => "about", :action => "contact" %></li>
-      <li><%#= link_to t('frda.nav.report_problem'), :controller => "about", :action => "contact" %></li>
-    </ul> -->
-
 	</div>
 </div>

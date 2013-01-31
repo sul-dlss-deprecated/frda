@@ -9,6 +9,10 @@ class SolrDocument
     self[:title_tsi]
   end
   
+  def druid
+    self[:druid_ssi]
+  end
+  
   def description(language=I18n.default_locale)
     multivalue_field("description_#{language}_tsim")
   end
@@ -50,7 +54,7 @@ class SolrDocument
   end
   
   def purl
-    "#{Frda::Application.config.purl}/#{self.id}" unless self.collection?
+    "#{Frda::Application.config.purl}/#{self.druid}" unless self.collection?
   end
     
 	def multivalue_field(name)
@@ -61,7 +65,7 @@ class SolrDocument
     return [] unless self.has_key?(blacklight_config.image_identifier_field)
     stacks_url = Frda::Application.config.stacks_url
     self[blacklight_config.image_identifier_field].map do |image_id|
-      image_druid=(self.collection? ? "" : "#{self["id"]}/")  # collections include the druid of the image to use, items don't need it since we know the druid
+      image_druid=(self.collection? ? "" : "#{self.druid}/")  # collections include the druid of the image to use, items don't need it since we know the druid
       "#{stacks_url}/#{image_druid}#{image_id.chomp('.jp2')}#{SolrDocument.image_dimensions[size]}.jpg"
     end
   end

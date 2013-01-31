@@ -9,8 +9,8 @@ class SolrDocument
     self[:title_tsi]
   end
   
-  def description
-    multivalue_field('description_tsim')
+  def description(language=I18n.default_locale)
+    multivalue_field("description_#{language}_tsim")
   end
 
   def subject

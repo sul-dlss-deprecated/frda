@@ -34,10 +34,10 @@ $(document).ready(function(){
 
     <% if on_images_page %>
 			<h2 class="search-results"><%= t('frda.nav.collection_images') %></h2>
-			<span class="truncate"><%=show_list(Collection.images.description)%></span>
+			<span class="truncate"><%=show_list(Collection.images.description(I18n.locale))%></span>
 		<% elsif on_ap_page %>
 			<h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>
-			<span class="truncate"><%=show_list(Collection.ap.description)%></span>
+			<span class="truncate"><%=show_list(Collection.ap.description(I18n.locale))%></span>
 		<% else %>
 			<h2 class="search-results"><%= t('blacklight.search.search_results_header') %></h2>		
 		<% end %>

@@ -1,6 +1,6 @@
 <doc>
   <field name="id">ap-thome1</field>
-  <field name="druid_ssi"></field>
+  <field name="druid_ssi">ap-thome1</field>
   <field name="title_tsi">Tome 1 : 1789 – General States</field>
   <field name="type_ssi">volume</field>
   <field name="collection_ssi">ap-collection</field>

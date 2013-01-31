@@ -2,6 +2,12 @@
 
 #brandbar {
   background: #585754;
+  #report-problem {
+    float: right;
+    font-size: 0.85em;
+    margin-top: 9px;
+    a {color: #ddd;}
+  }
 }
 #global-footer, #global-footer .container {
   background: #8A887D;

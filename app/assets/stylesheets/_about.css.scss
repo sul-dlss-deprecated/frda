@@ -27,6 +27,9 @@
     text-indent: -9999px;
     background: $active_link_color;
   }
+  blockquote {
+    width: 80%;
+  }
 
   // Make textarea wide as reasonable given viewport size
   @media (min-width: 980px) {

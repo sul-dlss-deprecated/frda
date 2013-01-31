@@ -44,4 +44,12 @@ module ApplicationHelper
     {:f => {blacklight_config.collection_highlight_field.to_sym => ["highlight_#{highlight.id}"]}}
   end
 
+  # sections for About page
+  # element names should match what's used in locale_about.yml
+  def about_sections
+    section_list = ['curator', 'project_team_stanford',
+                    'project_team_bnf', 'technical_description',
+                    'acknowledgements', 'use_and_reproduction']
+  end
+
 end

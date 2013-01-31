@@ -1,30 +1,34 @@
 fr:
   frda:
-    about_text_html: |
-      <p>
-        [FRDA about text]
-      </p>
+    curator_heading_html: 'From the curator'
     curator_text_html: |
+      <div class="truncate">
+        <p>
+          [Needs translation]
+        </p>
+      </div>
+    project_team_stanford_heading_html: 'Project team: Stanford'
+    project_team_stanford_text_html: |
       <p>
-        [From the curator text]
+        [Needs translation]
       </p>
-    terms_of_use_text_html: |
+    project_team_bnf_heading_html: 'Project team: BnF'
+    project_team_bnf_text_html: |
       <p>
-        This image(s) is a digital reproduction of works from the collections of the Bibliothèque
-        nationale de France that are no longer protected by intellectual property rights. The use of
-        these contents for commercial purposes is subject to payment and covered by a license.
-        Commercial use includes the resale of the contents in the form of prepared products or the
-        supply of services. For commercial use, contact: utilisation.commerciale@bnf.fr. The use of
-        these contents for non-commercial purposes is free of charge, subject to compliance with
-        applicable French legislation and notably the inclusion of the source’s statement.
+        [Needs translation]
       </p>
+    technical_description_heading_html: 'Technical description'
     technical_description_text_html: |
       <p>
-      [To be provided]
+        [Needs translation]
       </p>
-    project_team_stanford_text_html: |
-      Project team Stanford   
-    project_team_bnf_text_html: |
-      Project team BnF
+    acknowledgements_heading_html: 'Acknowledgements'
     acknowledgements_text_html: |
-      Acknowledgements
+      <p>
+        [Needs translation]
+      </p>
+    use_and_reproduction_heading_html: 'Use and reproduction'
+    use_and_reproduction_text_html: |
+      <p>
+        [Needs translation]
+      </p>

@@ -1,30 +1,190 @@
 en:
   frda:
-    about_text_html: |
-      <p>
-        [FRDA about text]
-      </p>
+    curator_heading_html: 'From the curator'
     curator_text_html: |
+      <div class="truncate">
+        <p>
+          The French Revolution Digital Archive emerged from the expressed need by
+          scholars of the French Revolution to gain greater and more flexible access to their
+          sources. The French Revolution itself produced scores of documents by participants,
+          spectators, and critics. These materials include texts of all sorts – legal
+          documents, pamphlet literature, belles lettres, musical compositions, and a rich
+          imagery. Dispersed in libraries and archives, hidden in documental series and in
+          short individual pamphlets, this diverse documentary heritage can now be offered to
+          scholars in a digital format. The French Revolution Digital Archive brings together
+          two foundational sources for research: the Archives parlementaires (hereafter AP)
+          and a vast collection of images selected from the collections of the Bibliothèque
+          nationale de France.
+        </p>
+        <p>
+          The Archives parlementaires is a chronologically-ordered edited collection of sources
+          of archival and published source on the French Revolution It was conceived in the
+          mid 19th century as a definitive record of parliamentary deliberations, with both
+          intellectual and political aims, as described in the preface to the second edition:
+        </p>
+        <blockquote>
+          What a most useful and brilliant school for the friends of
+          liberty, whose numbers in Europe are increasing daily, what a most pleasant method
+          of instruction for them, than a work in which they can collect all that our
+          intellectuals, publicists, legislators, philosophers said and published to
+          regenerate, develop, and complete a revolution whose happy influence has already
+          made itself felt by all peoples!”
+        </blockquote>
+        <p>
+          While the AP started as a
+          curatorial endeavor spearheaded by government archivists, it later became a
+          scholarly project under the direction of leading historians. This massive
+          collection of historical sources was initiated in 1862 at the request of the French
+          legislature, and by 1914 had reached 82 volumes, each around 800 double-columned
+          pages, covering the years 1789-1794. After a long period of dormancy, the project
+          was taken up again in 1962 by the Institut d’histoire de la Revolution française at
+          the Université de Paris I; its progress is ongoing. The current digital archive
+          contains only the first 82 volumes from the first series of the Archives
+          parlementaires, published before the Great War. These volumes roughly cover the
+          first five years of the French Revolution, from the Cahiers des états généraux of
+          1789 until 15 nivôse an II (4 January 1794). They record the events ranging from
+          the convening of the Estates General through the first half of the Terror.
+        </p>
+        <p>
+          The Archives parlementaires provide an unparalleled view into the workings of
+          the Revolution through the thoughts and actions of its participants. The work is a
+          day-to-day record of debates and discussions held by the three parliamentary bodies
+          that legislated for France between 1789 and 1794. The first seven volumes of the AP
+          present the Cahiers de doléances sent to the Estates General in 1789. Subsequent
+          volumes draw primarily on official minutes of parliamentary debates, but also
+          include journalistic accounts of the proceedings, speeches prepared for delivery
+          but never presented, as well as letters, reports, and other documents received or
+          reviewed by the assembly. Fragmented power, multiple authorities, and accounts from
+          various and conflicting perspectives further complicate the record. Given the
+          Revolution’s rapid pace, the AP’s detailed and layered chronological organization
+          of Revolutionary sources provides an invaluable narrative to scholars. Over the
+          decades, the AP has come to be accepted by scholars as the functional equivalent of
+          primary documentation, and it is virtually all scholars’ first recourse for
+          research into the deliberative record of the Revolution through 1794.
+        </p>
+        <p>
+          While the digitized version of the AP offers the most comprehensive way of accessing and
+          analyzing the Revolution’s vast textual production, the French Revolution also
+          produced a rich visual corpus of great importance. Because language was constantly
+          exercised in new ways, because language really mattered to the Revolutionaries, and
+          because events were unprecedented, the image-based record plays a significant role
+          in helping researchers today understand the physical and intellectual universe of
+          the Revolution. In effect, images of speakers, actors, debates and events help
+          enormously to explain what surviving texts mean. Moreover, the visual material and
+          iconography were a way for the revolutionaries to represent themselves and the
+          Revolution while the events were taking place, and to spread their vision of the
+          Revolution to the people of France and the world. </p> <p>The FRDA provides access
+          to the most complete searchable digital archive of French Revolution images
+          available. Images de la Révolution française is a benchmark image-base undertaken
+          by the Bibliothèque nationale de France on the occasion of the Revolution’s
+          bicentennial in 1989. It aimed to “allow the reader to explore the relationships,
+          articulations and confrontations between the ideas of the Revolution and their
+          metaphorical embodiment, the constant cross-fertilization of ideology and
+          make-believe…” For this project the BnF created over 38,000 separate views of over
+          12,000 individual images, showing closeups and dividing documents with discrete
+          iconographic materials into appropriate sections. Originally offered in analog
+          format on laserdisc, for over a decade the Images have been functionally
+          inaccessible, the victim of rapid technological change. For the French Revolution
+          Digital Archive about half of the original images were completely rescanned at high
+          resolution. For the remaining images where rescanning was not an option, new JPEG
+          files were created directly from the original videodisk. Now all of these images
+          are available online as part of the FRDA.
+        </p>
+        <p>
+          Over 12,000 image-based items,
+          primarily prints from the Departement des Estampes et de la Photographie, but also
+          illustrations, medals, coins, and other objects, were selected for inclusion from
+          across the BnF’s departments. Many originally entered the BnF on legal deposit, but
+          others come from important collections acquired in the 19th and early 20th century.
+          Two of these collections deserve special attention. The collection of Michel Hennin
+          is notable not only for its size, but because it includes many prints omitted from
+          the legal deposit that Hennin amassed during his time in Italy working for the
+          Viceroy, Prince Eugène de Beauharnais. The print collection of Carl de Vinck, a
+          Belgian diplomat, grew out of his father’s infatuation in Marie-Antoinette and
+          expanded to focus more generally on visual representations of France during the
+          century from Marie-Antoinette’s marriage to Louis XVI in 1770 until the Paris
+          Commune of 1870.
+        </p>
+        <p>
+          The images selected for the digital archive concentrate
+          solely on the period from 1787 through 1799, from the years immediately preceding
+          the outbreak of the Revolution through the emergence of Napoleon. Only visual
+          materials directly tied to the Revolution itself are included. While the texts of
+          the AP are primarily of interest to serious students and scholars of the
+          Revolution, these images expand the FRDA’s audience to the general public. The
+          creators of the initial incarnation of the Images anticipated that scholars would
+          use them for their research and teaching purposes, and that the public at large
+          would find in them an important way of learning more about this foundational moment
+          for the French nation. </p> <p>How does the French Revolution Digital Archive
+          further scholars’ research through the digitized Archives parlementaires and the
+          Images? The French Revolution was a messy and complicated event, and its
+          documentary record reflects this. This project offers scholars new ways of using
+          the old materials in their research by allowing them to search more effectively and
+          efficiently across several years’ worth of key visual and written sources, using
+          both free text and indexed searching.
+        </p>
+        <p>
+          For the AP, personal names of
+          speakers, dates, as well as the terms appearing in the AP’s published indexes have
+          all been tagged in the text, allowing for more powerful searching capabilities.
+          Search results are displayed so that scholars can more easily contextualize the use
+          of selected terms and efficiently analyze the large body of texts. </p> <p>Prior to
+          the development of the Images digital collection, the images of FRDA were
+          classified and described in disparate specialized catalogs which separated the
+          images by provenance rather than grouping them by subject. The 1989 Images project
+          brought these visual materials together into a single catalog and created highly
+          indexed descriptive metadata using a controlled vocabulary for artists,
+          iconographic genres, places of publication, and subject terms. In their new
+          incarnation as part of the FRDA, the digital format allows scholars to harness the
+          intellectual power of this specialized metadata to search through the entire corpus
+          of images.
+        </p>
+        <p>
+          More importantly, scholars will be able to search each
+          collection separately, and across both collections - the Images and the Archives
+          parlementaires. By bringing the French Revolution’s textual and visual
+          representations together virtually into a single curated collection with powerful
+          means to search, analyze, and display the information, scholars and students will
+          be able to advance our knowledge and understanding of this crucial period in world
+          history.
+        </p>
+      </div>
+    project_team_stanford_heading_html: 'Project team: Stanford'
+    project_team_stanford_text_html: |
       <p>
-        [From the curator text]
+        Project team Stanford - text to be provided
       </p>
-    terms_of_use_text_html: |
+    project_team_bnf_heading_html: 'Project team: BnF'
+    project_team_bnf_text_html: |
       <p>
-        This image(s) is a digital reproduction of works from the collections of the Bibliothèque
-        nationale de France that are no longer protected by intellectual property rights. The use of
-        these contents for commercial purposes is subject to payment and covered by a license.
-        Commercial use includes the resale of the contents in the form of prepared products or the
-        supply of services. For commercial use, contact: utilisation.commerciale@bnf.fr. The use of
-        these contents for non-commercial purposes is free of charge, subject to compliance with
-        applicable French legislation and notably the inclusion of the source’s statement.
+        Project team BnF - text to be provided
       </p>
+    technical_description_heading_html: 'Technical description'
     technical_description_text_html: |
       <p>
-      [To be provided]
+        Technical description - text to be provided
       </p>
-    project_team_stanford_text_html: |
-      Project team Stanford   
-    project_team_bnf_text_html: |
-      Project team BnF
+    acknowledgements_heading_html: 'Acknowledgements'
     acknowledgements_text_html: |
-      Acknowledgements
+      <p>
+        The FRDA was first conceived in 2006 by Stanford French professor Dan Edelstein,
+        with input from other scholars and librarians, and was launched in spring 2013.
+        It has been supported by grants and collaboration from The Gladys Krieble Delmas
+        Foundation, the ARTFL project, Stanford University Libraries, Stanford
+        University’s Division of Languages, Cultures, and Literatures, Stanford
+        University Department of History, and the Bibliothèque nationale de France.
+      </p>
+    use_and_reproduction_heading_html: 'Use and reproduction'
+    use_and_reproduction_text_html: |
+        <p>
+          This image(s) is a digital reproduction of works from the collections of the
+          Bibliothèque nationale de France that are no longer protected by intellectual
+          property rights. The use of these contents for commercial purposes is subject to
+          payment and covered by a license. Commercial use includes the resale of the
+          contents in the form of prepared products or the supply of services. For
+          commercial use, contact: <a
+          href="mailto:utilisation.commerciale@bnf.fr">utilisation.commerciale@bnf.fr</a>.
+          The use of these contents for non-commercial purposes is free of charge, subject
+          to compliance with applicable French legislation and notably the inclusion of
+          the source’s statement.
+        </p>

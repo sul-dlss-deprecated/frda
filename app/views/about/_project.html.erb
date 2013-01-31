@@ -1,1 +1,15 @@
-<%=t('frda.about_text_html') %>
+<%# max_length below matches length of first paragraph
+    of from_the_curator description. Need to adjust if first
+    paragraph is edited and length changes. %>
+<script language="JavaScript">
+	$(document).ready(function(){
+			$(".truncate").truncate({max_length: 848,  less: '&laquo; <%=t('frda.show.less')%>', more: '<%=t('frda.show.more')%> &raquo;'});
+	});
+</script>
+
+<%# List of section names in application_helper %>
+<%# Section names should match what's used in locale_about.yml %>
+<% about_sections.each do |section| %>
+  <h2><%= t("frda.#{section}_heading_html") %></h2>
+  <%= t("frda.#{section}_text_html") %>
+<% end %>

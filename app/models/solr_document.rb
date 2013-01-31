@@ -10,7 +10,7 @@ class SolrDocument
   end
   
   def druid
-    self[:druid_ssi]
+    self[:druid]
   end
   
   def description(language=I18n.default_locale)

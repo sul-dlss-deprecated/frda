@@ -56,7 +56,7 @@
     <requestParsers enableRemoteStreaming="false" multipartUploadLimitInKB="2048" />
   </requestDispatcher>
   
-  <requestHandler name="standard" class="solr.StandardRequestHandler" default="true">
+  <requestHandler name="search" class="solr.StandardRequestHandler" default="true">
     <lst name="defaults">
       <str name="defType">edismax</str>
       <str name="q.alt">*:*</str>

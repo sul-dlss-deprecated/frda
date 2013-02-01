@@ -8,6 +8,7 @@
   <field name="publisher_ssi">[s.n.]</field>
   <field name="subject_ssim">Paris, France</field>
   <field name="type_description_ssi">image fixe,estampe</field>
+  <field name="type_ssi">image</field>    
 	<field name="format_ssim">image/jpeg</field>
 	<field name="format_ssim">1 est. : eau-forte ; 14,5 x 10 cm (tr. c.)</field>
 	<field name="copyright_ssi">domaine public</field>

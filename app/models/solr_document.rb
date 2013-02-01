@@ -45,12 +45,20 @@ class SolrDocument
     self[:type_description_ssi]
   end
   
+  def type
+    self[:type_ssi]
+  end
+  
   def medium
     self[:medium_ssi]
   end
 
   def publisher
     self[:publisher_ssi]
+  end
+  
+  def volume
+    self[:volume_ssi]
   end
   
   def purl
@@ -93,6 +101,26 @@ class SolrDocument
    def collection?
      self.has_key?(blacklight_config.collection_identifying_field) and 
        self[blacklight_config.collection_identifying_field].include?(blacklight_config.collection_identifying_value)
+   end
+
+   # return the items whose id is equal to my volume id
+   def parents
+     query="id:\"#{self[blacklight_config.parent_identifying_field.to_sym]}\""
+     ancestors = Blacklight.solr.select(
+                                 :params => {
+                                   :fq => query  }
+                               )
+     return ancestors["response"]["docs"].map{|d| SolrDocument.new(d) }
+   end
+
+   # return the items whose volume id is equal to my id
+   def children
+     query="#{blacklight_config.parent_identifying_field}:\"#{self.id}\""
+     ancestors = Blacklight.solr.select(
+                                 :params => {
+                                   :fq => query  }
+                               )
+     return ancestors["response"]["docs"].map{|d| SolrDocument.new(d) }
    end
      
   # The following shows how to setup this blacklight document to display marc documents

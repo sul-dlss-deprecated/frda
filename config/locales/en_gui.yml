@@ -78,10 +78,10 @@ en:
     search:
       results_heading_image: 'Images of the French Revolution'
       search_results: 'Results'
-      gallery_toggle:
+      view_toggle:
         default: 'Results'
         gallery: 'Gallery'
-        text: 'Text only'
+        list: 'List'
       search_label: 'Search'
       facets:
         title: 'Browse'

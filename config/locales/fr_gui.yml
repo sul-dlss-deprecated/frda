@@ -70,10 +70,10 @@ fr:
     search:
       results_heading_image: 'Images de la Révolution française'
       search_results: 'Results'
-      gallery_toggle:
+      view_toggle:
         default: 'Risultati'
         gallery: 'Gallery'
-        text: 'Text only'
+        list: 'List'
       search_label: 'Ricerca'
       facets:
         title: 'Limitare la ricerca'

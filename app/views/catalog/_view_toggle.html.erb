@@ -2,9 +2,8 @@
   <div class="span9 view-toggle">
     <div class='gallery_toggle tabbable tabs-below'>
       <ul class="nav nav-pills">
-        <li><%= link_to(t('frda.search.gallery_toggle.default'), catalog_index_path(params.merge(:view => 'default')), :class=>"#{'active' if params[:view] == 'default' or params[:view].nil? }") %></li>
-        <li><%= link_to(t('frda.search.gallery_toggle.text'), catalog_index_path(params.merge(:view => 'brief')), :class=>"#{'active' if params[:view] == 'brief'}") %></li>
-        <li><%= link_to(t('frda.search.gallery_toggle.gallery'), catalog_index_path(params.merge(:view => 'gallery')), :class=>"#{'active' if params[:view] == 'gallery'}") %></li>
+        <li><%= link_to(t('frda.search.view_toggle.gallery'), catalog_index_path(params.merge(:view => 'gallery')), :class=>"#{'active' if params[:view] == 'gallery'}") %></li>
+        <li><%= link_to(t('frda.search.view_toggle.list'), catalog_index_path(params.merge(:view => 'list')), :class=>"#{'active' if params[:view] == 'list'}") %></li>
       </ul>
     </div>
   </div>

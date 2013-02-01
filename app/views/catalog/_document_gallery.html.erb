@@ -14,6 +14,7 @@
             <%= link_to(truncate(document.title, :length => 55),
                   catalog_path(document[:id])) %>
           </h5>
+          <span><%= document.year %></span>
           <% # bookmark functions for items/docs -%>
           <%#= render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
         </div>

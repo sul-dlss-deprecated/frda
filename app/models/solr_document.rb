@@ -14,7 +14,7 @@ class SolrDocument
   end
   
   def description(language=I18n.default_locale)
-    multivalue_field("description_#{language}_tsim")
+    multivalue_field("description_#{language[0]}tsim")
   end
 
   def subject
@@ -41,8 +41,8 @@ class SolrDocument
     self[:source_ssi]
   end
 
-  def type
-    self[:type_ssi]
+  def type_description
+    self[:type_description_ssi]
   end
   
   def medium

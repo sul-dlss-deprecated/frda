@@ -8,7 +8,7 @@
   <field name="publisher_ssi">Bureau des Révolutions de Paris (Paris)</field>
   <field name="subject_ssim">Duel</field>
   <field name="subject_ssim">Paris, France</field>
-  <field name="type_ssi">image fixe,estampe</field>
+  <field name="type_description_ssi">image fixe,estampe</field>
 	<field name="format_ssim">image/jpeg</field>
 	<field name="format_ssim">eau-forte</field>
 	<field name="copyright_ssi">domaine public</field>

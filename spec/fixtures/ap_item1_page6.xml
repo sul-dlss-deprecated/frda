@@ -1,0 +1,30 @@
+<doc>
+  <field name="id">wb029sv4796_00_0006</field>    <!-- pb/@id -->
+  <field name="ocr_id_ssm">wb029sv4796_00_0006.txt</field>
+  <field name="collection_ssi">ap-collection</field>
+  <field name="page_num_ssi">2</field>    <!-- pb/@n -->
+  <field name="type_ssi">page</field>    <!-- pb implies -->
+  <field name="doc_type_ssi">session</field>    <!-- from parent div/@type -->
+  <field name="volume_ssi">wb029sv4796</field>    <!-- ancestor div1[@type="volume"]/@n   or   /@number  -->
+  <field name="session_ssi">1793-04-01am</field>    <!-- ancestor div2[@type="session"] date -->
+  <!-- p and sp until next pb;  you may be starting in the middle of an sp -->
+  <field name="text_ftsimv">La séance est ouverte à dix heures du matin. </field>
+  <!-- p before any sp -->
+  <field name="speaker_ssim">M. Dorizy.</field>
+  <field name="spoken_text_ftsimv">M. Dorizy. Pour concilier tous les esprits, on peut, en
+    faisant mention honorable de 1 adresse, mettre dans le procès-verbal « sans approuver le mot
+    loi qui est inconstitutionnel. » (Murmures.)</field>
+  <field name="speaker_ssim">M. Gohier.</field>
+  <field name="spoken_text_ftsimv">M. Gohier. L'opinion seule de M. Ghéron est
+    inconstitutionnelle. Par l'article 1er de la section relative aux pouvoirs et fonctions de
+    l'Assemblée nationale législative, la Constitution délègue exclusivement au Corps législatif
+    le pouvoir de proposer et de décréter les lois. Les décrets rendus par le Corps législatif
+    sont donc véritablement des lois décrétées. L'article 6 de la section III sur la sanction
+    royale ajoute que les décrets sanctionnés par le roi et ceux qui lui auront été présentés par
+    trois législatures consécutives, ont force de loi et portent le nom et l'intitulé de lois.
+    Cela veut dire que, pour que les décrets aient force de loi, il faut, ou qu'ils obtiennent la
+    sanction, ou qu'ils aient été présentés par trois législatures. Mais cela n'empeche pas qu'ils
+    ne soient des lois. Le roi a seulement le droit de suspendre l'exécution de la loi, mais elle
+    est faite par le Corps législatif. Je demande donc l'ordre du jour sur la motion de M. Ghéron.</field>
+	  <field name="image_id_ssm">wb029sv4796_00_0006.jp2</field>
+</doc>

@@ -1,0 +1,18 @@
+<doc>
+  <field name="id">zm624rx7420_24</field>    <!-- pb/@id -->
+  <field name="ocr_id_ssm">zm624rx7420_99_0023.txt</field>
+  <field name="collection_ssi">Archives parlementaires</field>
+  <field name="page_num_ssi">19</field>    <!-- pb/@n -->
+  <field name="type_ssi">page</field>    <!-- pb implies -->
+  <field name="doc_type_ssi">session</field>    <!-- from parent div/@type -->
+  <field name="volume_ssi">zm624rx7420</field>    <!-- ancestor div1[@type="volume"]/@n   or   /@number  -->
+  <field name="session_ssi">1793-02-06pm</field>   <!-- ancestor div2[@type="session"] date -->
+  <!-- p and sp until next pb;  you may be starting in the middle of an sp -->
+  <field name="text_ftsimv">le bouef sur la toit</field>
+  <!-- p before any sp -->
+  <field name="speaker_ssim">M. Cramer</field>
+  <field name="spoken_text_ftsimv">M. Cramer is it done yet?</field>
+  <field name="speaker_ssim">M. Keck</field>
+  <field name="spoken_text_ftsimv">M. Keck. i don't have a spec yet.</field>
+  <field name="image_id_ssm">zm624rx7420_00_0023.jp2</field>
+</doc>

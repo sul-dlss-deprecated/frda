@@ -34,6 +34,7 @@ namespace :frda do
     cp("#{Rails.root}/solr_conf/solr.xml","#{Rails.root}/jetty/")
     cp("#{Rails.root}/solr_conf/conf/schema.xml","#{Rails.root}/jetty/solr/blacklight-core/conf")
     cp("#{Rails.root}/solr_conf/conf/solrconfig.xml","#{Rails.root}/jetty/solr/blacklight-core/conf")    
+    cp_r("#{Rails.root}/solr_conf/lang","#{Rails.root}/jetty/solr/blacklight-core/conf")    
   end
   
   desc "restore jetty to initial state"

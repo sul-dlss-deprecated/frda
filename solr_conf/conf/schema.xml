@@ -1,23 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema name="sunspot" version="1.5">
+<schema name="frda" version="1.5">
   <uniqueKey>id</uniqueKey>
-  <!-- defaultSearchField is DEPRECATED; use df in requestHandler -->
-  <defaultSearchField>text</defaultSearchField>
-  <!-- defaultOperator is DEPRECATED; use q.op in requestHandler -->
-  <solrQueryParser defaultOperator="AND"/>
-
+  
   <fields>
-
-
+    <!-- for SolrCloud -->
+    <field name="_version_" type="long" indexed="true" stored="true" multiValued="false"/> 
+    
     <field name="id" type="string" stored="true" indexed="true" multiValued="false" required="true"/>
-    <field name="_version_" type="long"     indexed="true"  stored="true"/>
     <field name="timestamp" type="date" indexed="true" stored="true" default="NOW" multiValued="false"/>
-
-    <field name="text" type="text" stored="false" indexed="true" multiValued="true"/>
-
+    
     <field name="lat" type="tdouble" stored="true" indexed="true" multiValued="false"/>
     <field name="lng" type="tdouble" stored="true" indexed="true" multiValued="false"/>
 
+    <!-- english text -->
+    <dynamicField name="*_eti" type="text_en" stored="false" indexed="true" multiValued="false"/>
+    <dynamicField name="*_etim" type="text_en" stored="false" indexed="true" multiValued="true"/>
+    <dynamicField name="*_ets" type="text_en" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_etsm" type="text_en" stored="true" indexed="false" multiValued="true"/>
+    <dynamicField name="*_etsi" type="text_en" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_etsim" type="text_en" stored="true" indexed="true" multiValued="true"/>
+    <dynamicField name="*_etiv" type="text_en" stored="false" indexed="true" multiValued="false" termVectors="true" termPositions="true" termOffsets="true"/>
+    <dynamicField name="*_etimv" type="text_en" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    <dynamicField name="*_etsiv" type="text_en" stored="true" indexed="true" multiValued="false" termVectors="true" termPositions="true" termOffsets="true"/>
+    <dynamicField name="*_etsimv" type="text_en" stored="true" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    
+    <!-- french text -->
+    <dynamicField name="*_fti" type="text_fr" stored="false" indexed="true" multiValued="false"/>
+    <dynamicField name="*_ftim" type="text_fr" stored="false" indexed="true" multiValued="true"/>
+    <dynamicField name="*_fts" type="text_fr" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_ftsm" type="text_fr" stored="true" indexed="false" multiValued="true"/>
+    <dynamicField name="*_ftsi" type="text_fr" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_ftsim" type="text_fr" stored="true" indexed="true" multiValued="true"/>
+    <dynamicField name="*_ftiv" type="text_fr" stored="false" indexed="true" multiValued="false" termVectors="true" termPositions="true" termOffsets="true"/>
+    <dynamicField name="*_ftimv" type="text_fr" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    <dynamicField name="*_ftsiv" type="text_fr" stored="true" indexed="true" multiValued="false" termVectors="true" termPositions="true" termOffsets="true"/>
+    <dynamicField name="*_ftsimv" type="text_fr" stored="true" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+
+    <!-- english or french text -->
     <dynamicField name="*_ti" type="text" stored="false" indexed="true" multiValued="false"/>
     <dynamicField name="*_tim" type="text" stored="false" indexed="true" multiValued="true"/>
     <dynamicField name="*_ts" type="text" stored="true" indexed="false" multiValued="false"/>
@@ -35,6 +54,7 @@
     <dynamicField name="*_ssm" type="string" stored="true" indexed="false" multiValued="true"/>
     <dynamicField name="*_ssi" type="string" stored="true" indexed="true" multiValued="false"/>
     <dynamicField name="*_ssim" type="string" stored="true" indexed="true" multiValued="true"/>
+    <dynamicField name="*_ssort" type="string" stored="false" indexed="true" multiValued="false"/>
     
     <dynamicField name="*_ii" type="int" stored="false" indexed="true" multiValued="false"/>
     <dynamicField name="*_iim" type="int" stored="false" indexed="true" multiValued="true"/>
@@ -42,6 +62,7 @@
     <dynamicField name="*_ism" type="int" stored="true" indexed="false" multiValued="true"/>
     <dynamicField name="*_isi" type="int" stored="true" indexed="true" multiValued="false"/>
     <dynamicField name="*_isim" type="int" stored="true" indexed="true" multiValued="true"/>
+    <dynamicField name="*_isort" type="int" stored="false" indexed="true" multiValued="false"/>
     
     <dynamicField name="*_iti" type="tint" stored="false" indexed="true" multiValued="false"/>
     <dynamicField name="*_itim" type="tint" stored="false" indexed="true" multiValued="true"/>
@@ -56,6 +77,7 @@
     <dynamicField name="*_dsm" type="date" stored="true" indexed="false" multiValued="true"/>
     <dynamicField name="*_dsi" type="date" stored="true" indexed="true" multiValued="false"/>
     <dynamicField name="*_dsim" type="date" stored="true" indexed="true" multiValued="true"/>
+    <dynamicField name="*_dsort" type="date" stored="false" indexed="true" multiValued="false"/>
     
     <dynamicField name="*_dti" type="tdate" stored="false" indexed="true" multiValued="false"/>
     <dynamicField name="*_dtim" type="tdate" stored="false" indexed="true" multiValued="true"/>
@@ -78,8 +100,18 @@
     <dynamicField name="*_llsm" type="location" stored="true" indexed="false" multiValued="true"/>
     <dynamicField name="*_llsi" type="location" stored="true" indexed="true" multiValued="false"/>
     <dynamicField name="*_llsim" type="location" stored="true" indexed="true" multiValued="true"/>
+
+    <!-- you must define copyField source fields or schemaBrowser doesn't work -->
+    <field name="text_ftsimv" type="text_fr" stored="true" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    <field name="spoken_text_ftsimv" type="text_fr" stored="true" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    <!-- you must define copyField destination fields or schemaBrowser doesn't work -->
+    <field name="all_text_timv" type="text" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    
   </fields>
 
+  <!-- copy fields -->
+  <copyField source="text_ftsimv" dest="all_text_timv" />
+  <copyField source="spoken_text_ftsimv" dest="all_text_timv" />
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
@@ -98,7 +130,7 @@
     <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" positionIncrementGap="0"/>
     <fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" positionIncrementGap="0"/>
     
-    <!-- The format for this date field is of the form 1995-12-31T23:59:59Z
+    <!-- The format for this date field is 1995-12-31T23:59:59Z
          Optional fractional seconds are allowed: 1995-12-31T23:59:59.999Z
       -->
     <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
@@ -133,6 +165,7 @@
       <analyzer>
         <tokenizer class="solr.ICUTokenizerFactory"/>
         <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <filter class="solr.TrimFilterFactory"/>
       </analyzer>
     </fieldType>
     
@@ -140,6 +173,7 @@
     <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
       <analyzer>
         <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.TrimFilterFactory"/>
       </analyzer>
     </fieldType>
         
@@ -166,6 +200,18 @@
       </analyzer>
     </fieldType>
         
+    <!-- French -->
+    <fieldType name="text_fr" class="solr.TextField" positionIncrementGap="100">
+      <analyzer> 
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+        <!-- removes l', etc -->
+        <filter class="solr.ElisionFilterFactory" ignoreCase="true" articles="lang/contractions_fr.txt"/>
+        <filter class="solr.FrenchLightStemFilterFactory"/>
+        <!-- less aggressive: <filter class="solr.FrenchMinimalStemFilterFactory"/> -->
+        <!-- more aggressive: <filter class="solr.SnowballPorterFilterFactory" language="French"/> -->
+      </analyzer>
+    </fieldType>
     
     <!-- queries for paths match documents at that path, or in descendent paths -->
     <fieldType name="descendent_path" class="solr.TextField">

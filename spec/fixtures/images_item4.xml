@@ -7,7 +7,7 @@
   <field name="person_ssim">Person Name Goes Here</field>
   <field name="publisher_ssi">Bureau des Révolutions de Paris (Paris)</field>
   <field name="subject_ssim">Duel</field>
-  <field name="type_ssi">Scènes historiques -- 1789-1799,image fixe,estampe</field>
+  <field name="type_description_ssi">Scènes historiques -- 1789-1799,image fixe,estampe</field>
 	<field name="format_ssim">image/jpeg</field>
 	<field name="format_ssim">1 est. : eau-forte ; 14,5 x 10 cm (tr. c.)</field>
 	<field name="copyright_ssi">domaine public</field>

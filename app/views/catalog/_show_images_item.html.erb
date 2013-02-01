@@ -57,9 +57,9 @@
         <dt><%=t('frda.show.subject')%></dt>
         <dd><%=show_formatted_list(@document.subject,:facet=>'subject_ssim')%></dd>
       <% end %>
-      <% unless @document.type.nil?%>
+      <% unless @document.type_description.nil?%>
         <dt><%=t('frda.show.type')%></dt>
-        <dd><%=@document.type%>&nbsp;</dd>
+        <dd><%=@document.type_description%>&nbsp;</dd>
       <% end %>
       <% unless list_is_empty?(@document.format) %>
         <dt><%=t('frda.show.format')%></dt>

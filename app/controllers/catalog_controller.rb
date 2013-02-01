@@ -48,25 +48,15 @@ class CatalogController < ApplicationController
       :echoParams => "all"
     }
     
-    config.collection_highlight_field = "highlight_ssim"
-        
-    # needs to be stored so we can retreive it for display.
-    # needs to be in field list for all request handlers.
-    config.collection_description_field = "description_tsim"
+    config.collection_highlight_field = "highlight_ssim" # ????
     
-    config.pages_identifying_field = "tome_ssi"
+    config.pages_identifying_field = "tome_ssi" # ???
 
-    config.collection_identifying_field = "type_ssi"
-    config.collection_identifying_value = "collection"
+    config.collection_identifying_field = "type_ssi"  # this tells us what kind of item we are within a collection (e.g. "page", "volume", "image")
+    config.collection_identifying_value = "collection" # items of this type are the overall collection items (e.g. "ap-collection" or "images-collection")
     
-    config.collection_member_identifying_field = "collection_ssi"
-        
-    # needs to be stored so we can retreive it for display
-    # needs to be in field list for all request handlers
-    config.collection_member_collection_title_field = "collection_ssim"
-    
-    config.collection_member_grid_items = 1000
-    
+    config.collection_member_identifying_field = "collection_ssi"  # this identifies what overall collection we are in (e.g. "ap-collection" or "images-collection") 
+            
     # needs to be stored so we can retreive it
     # needs to be in field list for all request handlers so we can get images the document anywhere in the app.
     config.image_identifier_field = "image_id_ssm"
@@ -75,14 +65,15 @@ class CatalogController < ApplicationController
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
     config.default_document_solr_params = {
-     :qt => 'standard',
+     :qt => 'search',
      :fl => '*',
      :rows => 1,
      :q => '{!raw f=id v=$id}' 
     }
     
-    config.document_index_view_types = ["default", "gallery", "brief", "map"]
+    config.document_index_view_types = ["default", "gallery", "brief"]
 
+    # NOT SURE THESE ARE RELEVANT SINCE WE HAVE CUSTOM VIEWS FOR ALL ITEMS  Peter 2/1/2013
     # solr field configuration for search results/index views
     config.index.show_link = 'title_tsi'
     config.index.record_display_type = 'format_ssim'
@@ -117,7 +108,6 @@ class CatalogController < ApplicationController
       :"#{Frda::Application.config.images_id}" => { :label => "Images de la Révolution française", :fq => "collection_ssi:(#{Frda::Application.config.images_id})" }
     }
 
-    
     config.add_facet_field 'medium_ssi', :label => 'frda.show.medium'
     config.add_facet_field 'publisher_ssi', :label => 'frda.show.publisher', :limit => 10
     config.add_facet_field 'person_ssim', :label => 'frda.show.people', :limit => 10

@@ -76,6 +76,7 @@ en:
       collection_text: 'Collection items'
       sibling_text: "Other items in the %{collection} collection"
     search:
+      results_heading_image: 'Images of the French Revolution'
       search_results: 'Results'
       gallery_toggle:
         default: 'Results'

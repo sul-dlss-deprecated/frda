@@ -1,15 +1,15 @@
 <script language="javascript">
 $(document).ready(function(){
-	$('.truncate').truncate({max_length: 700});
+  $('.truncate').truncate({max_length: 700});
 });
 </script>
 
 <div id="sidebar" class="span3">
   <% if on_images_page %>
-		<%= image_tag(Collection.images.first_image(:square), :alt => "Images Collection") %>    
-	<% elsif on_ap_page %>
-		<%= image_tag(Collection.ap.first_image(:square), :alt => "AP Collection") %>
-	<% end %>
+    <%= image_tag(Collection.images.first_image(:square), :alt => "Images Collection") %>
+  <% elsif on_ap_page %>
+    <%= image_tag(Collection.ap.first_image(:square), :alt => "AP Collection") %>
+  <% end %>
   <%= render "search_form" %>
   <%= render :partial => 'constraints' if query_has_constraints? %>
   <%= render :partial=>'facets' %>
@@ -21,11 +21,11 @@ $(document).ready(function(){
   <% unless has_search_parameters? %>
 
     <%# if there are no input/search related params, display the "home" or collection highlight partial -%>
-		<% if on_collection_highlights_page %>
-			<%= render 'highlights' %>
-		<% else %>
-			<%= render 'home' %>
-		<% end %>
+    <% if on_collection_highlights_page %>
+      <%= render 'highlights' %>
+    <% else %>
+      <%= render 'home' %>
+    <% end %>
   <% else %>
 
     <% @page_title = t('frda.search.search_label') %>
@@ -33,23 +33,30 @@ $(document).ready(function(){
     <% extra_head_content << render_opensearch_response_metadata.html_safe %>
 
     <% if on_images_page %>
-			<h2 class="search-results"><%= t('frda.nav.collection_images') %></h2>
-			<span class="truncate"><%=show_list(Collection.images.description(I18n.locale))%></span>
-		<% elsif on_ap_page %>
-			<h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>
-			<span class="truncate"><%=show_list(Collection.ap.description(I18n.locale))%></span>
-		<% else %>
-			<h2 class="search-results"><%= t('blacklight.search.search_results_header') %></h2>		
-		<% end %>
-		<div id="search-results-metadata">
+      <h2 class="search-results"><%= t('frda.search.results_heading_image') %></h2>
+      <span class="truncate"><%=show_list(Collection.images.description(I18n.locale))%></span>
+    <% elsif on_ap_page %>
+      <h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>
+      <span class="truncate"><%=show_list(Collection.ap.description(I18n.locale))%></span>
+    <% else %>
+      <h2 class="search-results"><%= t('blacklight.search.search_results_header') %></h2>
+    <% end %>
+    <div id="search-results-metadata">
 
-
-	    <%= render :partial => 'did_you_mean' %>
+      <%= render :partial => 'did_you_mean' %>
       <%#= render :partial => 'constraints' %>
-		</div>
+    </div>
 
-		<%= render_document_index %>
+    <%# bar with prev|next and per-page %>
+    <%= render "results_controls" %>
 
+    <%# tabs to switch view of results %>
+    <%= render "view_toggle" %>
+
+    <%# search results items %>
+    <%= render_document_index %>
+
+    <%# results pagination at bottom of page %>
     <%= render 'results_pagination' %>
 
   <% end %>

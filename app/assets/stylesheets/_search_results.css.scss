@@ -109,7 +109,9 @@ ul.inventory-ancestry {
     }
   }
 }
-
+p.ap-summary, p.images-summary {
+  width: 95%;
+}
 .prev-next {
   margin-left: 5px;
   margin-top: 5px;

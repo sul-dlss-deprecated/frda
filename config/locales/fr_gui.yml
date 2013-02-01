@@ -68,6 +68,7 @@ fr:
       collection_text: 'Collection Items'
       sibling_text: "Other items in the %{collection} collection"
     search:
+      results_heading_image: 'Images de la Révolution française'
       search_results: 'Results'
       gallery_toggle:
         default: 'Risultati'

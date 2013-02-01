@@ -33,7 +33,7 @@ $(document).ready(function(){
     <% extra_head_content << render_opensearch_response_metadata.html_safe %>
 
     <% if on_images_page %>
-			<h2 class="search-results"><%= t('frda.nav.collection_images') %></h2>
+			<h2 class="search-results"><%= t('frda.search.results_heading_image') %></h2>
 			<span class="truncate"><%=show_list(Collection.images.description(I18n.locale))%></span>
 		<% elsif on_ap_page %>
 			<h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>

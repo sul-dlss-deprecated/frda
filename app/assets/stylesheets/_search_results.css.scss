@@ -67,12 +67,17 @@ ul.inventory-ancestry {
 
 /* Results paging/controls */
 .row.results-controls {
-  margin-bottom: 5px;
+  background: darken($header_bg_color, 5%);
+  border-radius: 8px;
+  margin-bottom: 25px;
+  margin-left: 0;
   margin-top: 20px;
+  padding: 8px 3px;
 }
-.gallery_toggle {
+.view_toggle {
   font-size: 12px;
   float: right;
+  margin-bottom: 3px;
 	.active {
 		color: black;
 		cursor: default;
@@ -84,7 +89,7 @@ ul.inventory-ancestry {
     margin-bottom: 0;
     li > a {
       background-color: $header_bg_color;
-      border: 1px solid darken($header_bg_color, 5%);
+      border: 1px solid darken($header_bg_color, 20%);
       font-weight: 600;
       margin-left: 6px;
       padding-top: 4px;
@@ -102,8 +107,10 @@ ul.inventory-ancestry {
 }
 
 .prev-next {
+  margin-left: 5px;
   margin-top: 5px;
 }
+.page-pulldown {margin-left: 0;}
 #sort-drowpdown, #per_page-dropdown {
   margin-top: 3px;
   z-index: 9999;
@@ -116,7 +123,7 @@ ul.inventory-ancestry {
 span.constraints-label {margin-right: 0.5em;}
 
 #sortAndPerPage {
-  background-color: $body_bg_color;
+  background-color: darken($header_bg_color, 5%);
   border: none;
   box-shadow: none;
   margin-bottom: 0;

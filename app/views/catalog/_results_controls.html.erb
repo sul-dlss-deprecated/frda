@@ -1,6 +1,6 @@
 <div class="row results-controls">
 
-  <div class="span4 prev-next">
+  <div class="span5 prev-next">
     <% if paginate_params(@response).num_pages > 1 %>
     <%= paginate_rsolr_response @response, :theme => :blacklight_compact %>
     <% else %>
@@ -8,7 +8,7 @@
     <% end %>
   </div>
 
-  <div class="span5 page-pulldown">
+  <div class="span4 page-pulldown">
     <%= render 'sort_and_per_page' %>
   </div>
 

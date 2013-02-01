@@ -10,7 +10,7 @@ class SolrDocument
   end
   
   def druid
-    self[:druid]
+    self[:druid_ssi]
   end
   
   def description(language=I18n.default_locale)
@@ -54,7 +54,7 @@ class SolrDocument
   end
   
   def purl
-    "#{Frda::Application.config.purl}/#{self.druid}" unless self.collection?
+    "#{Frda::Application.config.purl}/#{self.druid}" if self.druid?
   end
     
 	def multivalue_field(name)

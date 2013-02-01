@@ -113,7 +113,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'person_ssim', :label => 'frda.show.people', :limit => 10
     config.add_facet_field 'subject_ssim', :label => 'frda.show.subject', :limit => 10
     config.add_facet_field 'format_ssim', :label => 'frda.show.format'
-    config.add_facet_field 'year_iti', :label => 'frda.show.date'
+    config.add_facet_field 'year_isi', :label => 'frda.show.date'
 
     config.add_facet_field 'highlight_ssim', :label => I18n.t('frda.nav.collection_highlights'), :show => false,  :query => collection_highlights
 

@@ -34,7 +34,7 @@ class SolrDocument
   end
 
   def year
-    self[:year_ssi]
+    self[:year_isi]
   end
 
   def source

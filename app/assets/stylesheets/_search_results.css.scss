@@ -22,11 +22,14 @@
   }
 }
 
-/* Brief/Text Only View */
-#documents.brief {
+/* List/Text Only View */
+#documents.list {
   .row {
     margin-bottom: 20px;
     padding-left: 10px;
+    span {
+      display: block;
+    }
   }
   .documentHeader {
     .index_title {max-width: 600px;}

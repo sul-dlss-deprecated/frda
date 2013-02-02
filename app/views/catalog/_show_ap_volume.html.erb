@@ -13,7 +13,7 @@
 
   <div class="span6 metadata">
 		<h3><%=@document.volume_name%></h3>
-		<%= pluralize(@document.children.size, 'page')%>
+		<%= t('frda.show.item',:count=>@document.children.size) %>
 		<ul>
 		<% @document.children.each do |child| %>
 			<li><%= link_to child.title, catalog_path(child.id)%></li>

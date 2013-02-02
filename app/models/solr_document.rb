@@ -82,7 +82,7 @@ class SolrDocument
     stacks_url = Frda::Application.config.stacks_url
     self[blacklight_config.image_identifier_field].map do |image_id|
       image_druid=(self.collection? ? "" : "#{self.druid}/")  # collections include the druid of the image to use, items don't need it since we know the druid
-      "#{stacks_url}/#{image_druid}#{image_id.chomp('.jp2')}#{SolrDocument.image_dimensions[size]}.jpg"
+      "#{stacks_url}/#{image_druid}#{image_id.chomp(File.extname(image_id))}#{SolrDocument.image_dimensions[size]}.jpg"
     end
   end
   

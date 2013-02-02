@@ -1,9 +1,10 @@
 <doc>
   <field name="id">wb029sv4796_00_0006</field>    <!-- pb/@id -->
+  <field name="title_tsi">Page 6</field>
   <field name="druid_ssi">wb029sv4796</field>
   <field name="ocr_id_ssm">wb029sv4796_00_0006.txt</field>
   <field name="collection_ssi">ap-collection</field>
-  <field name="page_num_ssi">2</field>    <!-- pb/@n -->
+  <field name="page_num_ssi">6</field>    <!-- pb/@n -->
   <field name="type_ssi">page</field>    <!-- pb implies -->
   <field name="doc_type_ssi">session</field>    <!-- from parent div/@type -->
   <field name="volume_ssi">wb029sv4796</field>    <!-- ancestor div1[@type="volume"]/@n   or   /@number  -->

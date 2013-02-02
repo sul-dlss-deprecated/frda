@@ -16,7 +16,7 @@
 		<%= pluralize(@document.children.size, 'page')%>
 		<ul>
 		<% @document.children.each do |child| %>
-			<li><%= link_to "Page #{child.page_number}", catalog_path(child.id)%></li>
+			<li><%= link_to child.title, catalog_path(child.id)%></li>
 		<% end %>
 		</ul>
   </div>

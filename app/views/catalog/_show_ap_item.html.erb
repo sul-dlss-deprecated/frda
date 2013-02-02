@@ -1,8 +1,6 @@
-<% @page_title = "Page #{@document.page_number}"%>
-
 <div class="row">
   <div class="span12">
-      <h2><%= @page_title %></h2>
+    <%= raw truncate(render_document_heading(:h2).html_safe,:length=>200) %>
   </div>
 </div>
 

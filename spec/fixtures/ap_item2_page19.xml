@@ -7,7 +7,7 @@
   <field name="page_num_ssi">19</field>    <!-- pb/@n -->
   <field name="type_ssi">page</field>    <!-- pb implies -->
   <field name="doc_type_ssi">session</field>    <!-- from parent div/@type -->
-  <field name="volume_ssi">zm624rx7420</field>    <!-- ancestor div1[@type="volume"]/@n   or   /@number  -->
+  <field name="volume_ssi">zm624rx7420_sv1</field>    <!-- ancestor div1[@type="volume"]/@n   or   /@number  -->
   <field name="session_ssi">1793-02-06pm</field>   <!-- ancestor div2[@type="session"] date -->
   <!-- p and sp until next pb;  you may be starting in the middle of an sp -->
   <field name="text_ftsimv">le bouef sur la toit</field>

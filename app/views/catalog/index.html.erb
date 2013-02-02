@@ -5,11 +5,13 @@ $(document).ready(function(){
 </script>
 
 <div id="sidebar" class="span3">
-  <% if on_images_page %>
-    <%= image_tag(Collection.images.first_image(:square), :alt => "Images Collection") %>
-  <% elsif on_ap_page %>
-    <%= image_tag(Collection.ap.first_image(:square), :alt => "AP Collection") %>
-  <% end %>
+  <div class="collection-image">
+    <% if on_images_page %>
+      <%= image_tag(Collection.images.first_image(:square), :alt => "Images Collection", :class => "images-collection-image") %>
+    <% elsif on_ap_page %>
+      <%= image_tag(Collection.ap.first_image(:square), :alt => "AP Collection", :class => "ap-collection-image") %>
+    <% end %>
+  </div>
   <%= render "search_form" %>
   <%= render :partial => 'constraints' if query_has_constraints? %>
   <%= render :partial=>'facets' %>

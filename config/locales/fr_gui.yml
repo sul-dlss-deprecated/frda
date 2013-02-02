@@ -74,6 +74,7 @@ fr:
         default: 'Risultati'
         gallery: 'Gallery'
         list: 'List'
+        covers: 'Covers'
       search_label: 'Ricerca'
       facets:
         title: 'Limitare la ricerca'

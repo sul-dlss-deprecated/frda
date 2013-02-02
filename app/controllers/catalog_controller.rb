@@ -71,7 +71,7 @@ class CatalogController < ApplicationController
      :q => '{!raw f=id v=$id}' 
     }
     
-    config.document_index_view_types = ["gallery", "list"]
+    config.document_index_view_types = ["gallery", "covers", "list"]
 
     # NOT SURE THESE ARE RELEVANT SINCE WE HAVE CUSTOM VIEWS FOR ALL ITEMS  Peter 2/1/2013
     # solr field configuration for search results/index views

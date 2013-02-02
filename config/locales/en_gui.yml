@@ -82,6 +82,7 @@ en:
         default: 'Results'
         gallery: 'Gallery'
         list: 'List'
+        covers: 'Covers'
       search_label: 'Search'
       facets:
         title: 'Browse'

@@ -109,6 +109,16 @@ ul.inventory-ancestry {
     }
   }
 }
+
+.collection-image {margin-right: 18px;}
+img.ap-collection-image, img.images-collection-image {
+  float: left;
+  margin: 0 0 20px 0;
+  padding: 7px;
+  border: 1px solid #CCC;
+  box-shadow: 1px 1px 5px #CCC;
+  width: 100%;
+}
 p.ap-summary, p.images-summary {
   width: 95%;
 }
@@ -192,4 +202,5 @@ span.constraints-label {margin-right: 0.5em;}
     .dl-horizontal dt {float: left;}
     .results-image {margin-bottom: 10px;}
   }
+  img.ap-collection-image, img.images-collection-image, .page-pulldown {display: none;}
 }

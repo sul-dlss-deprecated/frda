@@ -5,11 +5,13 @@ $(document).ready(function(){
 </script>
 
 <div id="sidebar" class="span3">
-  <% if on_images_page %>
-    <%= image_tag(Collection.images.first_image(:square), :alt => "Images Collection") %>
-  <% elsif on_ap_page %>
-    <%= image_tag(Collection.ap.first_image(:square), :alt => "AP Collection") %>
-  <% end %>
+  <div class="collection-image">
+    <% if on_images_page %>
+      <%= image_tag(Collection.images.first_image(:square), :alt => "Images Collection", :class => "images-collection-image") %>
+    <% elsif on_ap_page %>
+      <%= image_tag(Collection.ap.first_image(:square), :alt => "AP Collection", :class => "ap-collection-image") %>
+    <% end %>
+  </div>
   <%= render "search_form" %>
   <%= render :partial => 'constraints' if query_has_constraints? %>
   <%= render :partial=>'facets' %>
@@ -34,16 +36,20 @@ $(document).ready(function(){
 
     <% if on_images_page %>
       <h2 class="search-results"><%= t('frda.search.results_heading_image') %></h2>
-      <span class="truncate"><%=show_list(Collection.images.description(I18n.locale))%></span>
+      <p class="images-summary truncate">
+        <%=show_list(Collection.images.description(I18n.locale))%>
+      </p>
     <% elsif on_ap_page %>
       <h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>
-      <span class="truncate"><%=show_list(Collection.ap.description(I18n.locale))%></span>
+      <p class="ap-summary truncate">
+        <%=show_list(Collection.ap.description(I18n.locale))%>
+      </p>
     <% else %>
       <h2 class="search-results"><%= t('blacklight.search.search_results_header') %></h2>
     <% end %>
     <div id="search-results-metadata">
 
-      <%= render :partial => 'did_you_mean' %>
+      <%#= render :partial => 'did_you_mean' %>
       <%#= render :partial => 'constraints' %>
     </div>
 

@@ -16,16 +16,20 @@
     float: left;
     margin-bottom: 10px;
     margin-right: 20px;
-    min-height: 360px;
+    min-height: 380px;
+    text-align: center;
     width: 205px;
   }
 }
 
-/* Brief/Text Only View */
-#documents.brief {
+/* List/Text Only View */
+#documents.list {
   .row {
     margin-bottom: 20px;
     padding-left: 10px;
+    span {
+      display: block;
+    }
   }
   .documentHeader {
     .index_title {max-width: 600px;}
@@ -67,12 +71,17 @@ ul.inventory-ancestry {
 
 /* Results paging/controls */
 .row.results-controls {
-  margin-bottom: 5px;
+  background: darken($header_bg_color, 5%);
+  border-radius: 8px;
+  margin-bottom: 25px;
+  margin-left: 0;
   margin-top: 20px;
+  padding: 8px 3px;
 }
-.gallery_toggle {
+.view_toggle {
   font-size: 12px;
   float: right;
+  margin-bottom: 3px;
 	.active {
 		color: black;
 		cursor: default;
@@ -84,7 +93,7 @@ ul.inventory-ancestry {
     margin-bottom: 0;
     li > a {
       background-color: $header_bg_color;
-      border: 1px solid darken($header_bg_color, 5%);
+      border: 1px solid darken($header_bg_color, 20%);
       font-weight: 600;
       margin-left: 6px;
       padding-top: 4px;
@@ -101,9 +110,23 @@ ul.inventory-ancestry {
   }
 }
 
+.collection-image {margin-right: 18px;}
+img.ap-collection-image, img.images-collection-image {
+  float: left;
+  margin: 0 0 20px 0;
+  padding: 7px;
+  border: 1px solid #CCC;
+  box-shadow: 1px 1px 5px #CCC;
+  width: 100%;
+}
+p.ap-summary, p.images-summary {
+  width: 95%;
+}
 .prev-next {
+  margin-left: 5px;
   margin-top: 5px;
 }
+.page-pulldown {margin-left: 0;}
 #sort-drowpdown, #per_page-dropdown {
   margin-top: 3px;
   z-index: 9999;
@@ -116,7 +139,7 @@ ul.inventory-ancestry {
 span.constraints-label {margin-right: 0.5em;}
 
 #sortAndPerPage {
-  background-color: $body_bg_color;
+  background-color: darken($header_bg_color, 5%);
   border: none;
   box-shadow: none;
   margin-bottom: 0;
@@ -179,4 +202,5 @@ span.constraints-label {margin-right: 0.5em;}
     .dl-horizontal dt {float: left;}
     .results-image {margin-bottom: 10px;}
   }
+  img.ap-collection-image, img.images-collection-image, .page-pulldown {display: none;}
 }

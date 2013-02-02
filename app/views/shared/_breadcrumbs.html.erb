@@ -28,8 +28,15 @@
 	<% elsif on_ap_page %>
 		&#187; <li><%= link_to t('frda.nav.collection_ap'),ap_collection_path %></li>
 	<% end %>
+
+	<% if on_show_page %>
+		<% @document.parents.each do |parent| %>
+			&#187; <li><%= link_to(raw(truncate(parent.title)),catalog_path(parent.id)) %></li>
+		<% end %>
+		&#187; <li><%= raw truncate(@page_title) %></li>
+	<% end %>
 	
-	<% if on_search_page || on_show_page %>
+	<% if on_search_page %>
 		&#187; <li><%= raw truncate(@page_title) %></li>
 	<% end %>
 	

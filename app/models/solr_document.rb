@@ -9,6 +9,10 @@ class SolrDocument
     self[:title_tsi]
   end
   
+  def page_number
+    self[:page_num_ssi]
+  end
+  
   def druid
     self[:druid_ssi]
   end
@@ -59,6 +63,10 @@ class SolrDocument
   
   def volume
     self[:volume_ssi]
+  end
+
+  def volume_name
+    self[:volume_name_ssi]
   end
   
   def purl

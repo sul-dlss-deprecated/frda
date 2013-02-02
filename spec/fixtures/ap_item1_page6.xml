@@ -1,5 +1,6 @@
 <doc>
   <field name="id">wb029sv4796_00_0006</field>    <!-- pb/@id -->
+  <field name="druid_ssi">wb029sv4796</field>
   <field name="ocr_id_ssm">wb029sv4796_00_0006.txt</field>
   <field name="collection_ssi">ap-collection</field>
   <field name="page_num_ssi">2</field>    <!-- pb/@n -->

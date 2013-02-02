@@ -1,21 +1,20 @@
+<% @page_title = "Page #{@document.page_number}"%>
+
 <div class="row">
   <div class="span12">
-    <% if  @document.collection? %>
-      <%= raw truncate(render_document_heading(:h2).html_safe,:length=>200) %>
-    <% else %>
-      <h2><%= t('frda.collection.member_detail') %></h2>
-    <% end %>
+      <h2><%= @page_title %></h2>
   </div>
 </div>
 
 <div class="row document-details">
   <div class="span6">
-    AP Item
+    <div class="item active">
+      <%= image_tag(@document.first_image, :alt => "Image") %>
+    </div>
   </div>
 
   <div class="span6 metadata">
-    <%= render_document_heading(:h4).html_safe %>
 
-  AP Metadata
+  Page Level Metadata
   </div>
 </div>

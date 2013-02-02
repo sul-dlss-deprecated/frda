@@ -3,7 +3,7 @@
 		<%= render :partial=>'show_images_item' %>
 	<% elsif @document.ap_item? %>
 		
-		<%= render :partial=>'show_ap_volume' if @document.type == 'volume' %>
+		<%= render :partial=>'show_ap_volume' if %w{volume subvolume}.include? @document.type %>
 
 		<%= render :partial=>'show_ap_item' if @document.type == 'page' %>
 		

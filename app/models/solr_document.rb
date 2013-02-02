@@ -111,14 +111,27 @@ class SolrDocument
        self[blacklight_config.collection_identifying_field].include?(blacklight_config.collection_identifying_value)
    end
 
-   # return the items whose id is equal to my volume id
-   def parents
+   # TODO this must be a better way to do this via solr -- this method only works with two levels of hierarchy ??
+   def ancestors
+     ancestors = []
+     parent=self.parent
+     if parent 
+       grandparent = parent.parent
+       ancestors << grandparent if grandparent
+       ancestors << parent
+     end
+     return ancestors
+   end
+   
+   # return the item whose id is equal to my volume id
+   def parent
      query="id:\"#{self[blacklight_config.parent_identifying_field.to_sym]}\""
-     ancestors = Blacklight.solr.select(
+     parents = Blacklight.solr.select(
                                  :params => {
                                    :fq => query  }
                                )
-     return ancestors["response"]["docs"].map{|d| SolrDocument.new(d) }
+     docs=parents["response"]["docs"].map{|d| SolrDocument.new(d) }
+     docs.size == 0 ? nil : docs.first
    end
 
    # return the items whose volume id is equal to my id

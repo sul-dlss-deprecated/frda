@@ -44,6 +44,7 @@ en:
       stanford_team_title: 'Project team: Stanford'
       bnf_team_title: 'Project team: BnF'
       technical_description_title: 'Technical description'
+      version_title: 'Application Version'            
     collection:
       collection_detail: 'Collection detail'
       member_detail: 'Item detail'

@@ -9,6 +9,8 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+VERSION = File.read('VERSION')
+
 module Frda
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -65,9 +67,11 @@ module Frda
     config.assets.compress = !Rails.env.development?
 
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'
+    config.assets.version = VERSION
   end
 end
+
+Frda::Application.config.version = VERSION # read from VERSION file at base of website
 
 Frda::Application.config.ap_id = "ap-collection"  # the solr doc ID of the ap collection object, each associated item must reference this collection-id in collection_ssi
 Frda::Application.config.images_id = "images-collection"  # the solr doc ID of the images collection object, each associated item must reference this collection-id in collection_ssi

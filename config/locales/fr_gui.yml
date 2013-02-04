@@ -35,6 +35,7 @@ fr:
       stanford_team_title: 'Project team: Stanford'
       bnf_team_title: 'Project team: BnF'
       technical_description_title: 'Technical description'
+      version_title: 'Application Version'      
     show:   
       item: 
         one: '1 Item'

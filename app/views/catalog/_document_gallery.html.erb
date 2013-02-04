@@ -3,16 +3,18 @@
   <ul class="image-grid">
     <%- documents.each_with_index do |document, index| -%>
       <li class="image-item">
-        <%= link_to(image_tag(document.first_image(:thumb),
-              :alt => document.title, :title => document.title, :border => 0),
-              catalog_path(document[:id])) %>
-
+        <%= link_to_document document, 
+                             :label => image_tag(document.first_image(:thumb),
+                                                 :alt => document.title, 
+                                                 :title => document.title,
+                                                 :border => 0),
+                             :counter => (index + 1 + @response.params[:start].to_i) %>
         <!-- Not using the document_header partial here because we need to truncate title -->
         <div class="documentHeader clearfix">
           <h5 class="index_title">
-            <%#= link_to_document document, :label=> document_show_link_field %>
-            <%= link_to(truncate(document.title, :length => 55),
-                  catalog_path(document[:id])) %>
+            <%= link_to_document document, 
+                                 :label=> truncate(document.title, :length => 55), 
+                                 :counter => (index + 1 + @response.params[:start].to_i) %>
           </h5>
           <span><%= document.year %></span>
           <% # bookmark functions for items/docs -%>

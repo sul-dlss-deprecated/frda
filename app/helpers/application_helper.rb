@@ -4,6 +4,13 @@ module ApplicationHelper
     on_about_pages
   end
 
+  # take in a hash of options for the contact us form, and then pass the values of the hash through the translation engine
+  def translate_options(options)
+    result={}
+    options.each {|k,v| result.merge!({k=>I18n.t(v)})}
+    return result
+  end
+  
   # series descriptions always come in pairs, the first in italian, the second in english...depending on tbe language, show a particular version
   def show_series_language_description(mvf,language)
     notes=[]

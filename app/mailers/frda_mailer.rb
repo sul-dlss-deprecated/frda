@@ -6,7 +6,9 @@ class FrdaMailer < ActionMailer::Base
     @email=opts[:email]
     @name=opts[:name]
     @subject=opts[:subject]
-    mail(:to=>Frda::Application.config.contact_us_recipients[@subject], :subject=>"Contact Message from the French Revolution Digital Archive - #{@subject}") 
+    to=Frda::Application.config.contact_us_recipients[@subject]
+    bcc=Frda::Application.config.contact_us_bcc_recipients[@subject]    
+    mail(:to=>to,:bcc=>bcc, :subject=>"Contact Message from the French Revolution Digital Archive - #{@subject}") 
   end
 
   def error_notification(opts={})

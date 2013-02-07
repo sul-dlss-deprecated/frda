@@ -19,10 +19,10 @@ fr:
       collections: 'Collection Highlights'
       background: 'Background'
       content_inventory: 'Content Inventory'
-      terms_of_use_message: "This image(s) is a digital reproduction of works from the collections of the Bibliothèque nationale de France that are no longer protected by intellectual property rights. The use of these contents for commercial purposes is subject to payment and covered by a license. Commercial use includes the resale of the contents in the form of prepared products or the supply of services. For commercial use, contact: utilisation.commerciale@bnf.fr. The use of these contents for non-commercial purposes is free of charge, subject to compliance with applicable French legislation and notably the inclusion of the source’s statement."
-      terms_of_use_acknowledgement: 'By clicking agree and continuing to use the website, you acknowledge and agree to abide by these terms.'
-      terms_continue: 'Agree'     
-      terms_disagree: 'Return without agreeing'       
+      terms_of_use_message: "This website is currently in development and may continue errors or incorrect data.  This message will only be shown once per day."
+      terms_of_use_acknowledgement: 'By continuing, you acknowledge you understand.'
+      terms_continue: 'Continue'
+      terms_disagree: 'Do not continue'
       close: 'Close'    
     about:
       project_title: 'From the curator'
@@ -30,7 +30,7 @@ fr:
       contact_message_sent: 'Thanks - your message has been sent.'
       contact_error: 'You need to enter some message text.'
       terms_of_use_title: 'Use and reproduction'
-      terms_dialog_title: 'Terms of Use'      
+      terms_dialog_title: 'Notice'      
       acknowledgements_title: 'Acknowledgements'
       stanford_team_title: 'Project team: Stanford'
       bnf_team_title: 'Project team: BnF'

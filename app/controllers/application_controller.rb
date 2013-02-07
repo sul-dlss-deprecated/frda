@@ -31,11 +31,11 @@ class ApplicationController < ActionController::Base
   end
   
   def show_terms_dialog?
-    false  # never need terms dialog
+    %w{staging}.include?(Rails.env) && !seen_terms_dialog?   # we are using the terms dialog to show a warning to users who are viewing the site on staging
   end
   
   def accept_terms
-    cookies[:seen_terms] = { :value => true, :expires => 10.years.from_now } # they've seen it now!
+    cookies[:seen_terms] = { :value => true, :expires => 1.day.from_now } # they've seen it now!
     if params[:return_to].blank?
       render :nothing=>true
     else

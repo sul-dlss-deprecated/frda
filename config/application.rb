@@ -77,5 +77,6 @@ Frda::Application.config.ap_id = "ap-collection"  # the solr doc ID of the ap co
 Frda::Application.config.images_id = "images-collection"  # the solr doc ID of the images collection object, each associated item must reference this collection-id in collection_ssi
 
 Frda::Application.config.stacks_url = YAML.load_file("#{Rails.root}/config/stacks.yml")[Rails.env]["url"]
-Frda::Application.config.contact_us_topics = {'default'=>'Select a topic...', 'terms of use'=>'Terms of Use question', 'error'=>'Problem with the website','other'=>'Other questions'} # sets the list of topics shown in the contact us page
-Frda::Application.config.contact_us_recipients = {'default'=>'petucket@stanford.edu', 'error'=>'petucket@stanford.edu','terms of use'=>'petucket@stanford.edu','other'=>'petucket@stanford.edu'} # sets the email address for each contact us topic configed above
+Frda::Application.config.contact_us_topics = {'default'=>'frda.contact.select_topic', 'error'=>'frda.contact.problem','other'=>'frda.contact.other_questions'} # sets the list of topics shown in the contact us page
+Frda::Application.config.contact_us_recipients = {'default'=>'digcoll@jirasul.stanford.edu', 'error'=>'digcoll@jirasul.stanford.edu','other'=>'digcoll@jirasul.stanford.edu'} # sets the email address for each contact us topic configed above
+Frda::Application.config.contact_us_bcc_recipients = {'default'=>'frda-other@jirasul.stanford.edu', 'error'=>'frda-problems@jirasul.stanford.edu','other'=>'frda-other@jirasul.stanford.edu'} # sets the BCC email address for each contact us topic configed above

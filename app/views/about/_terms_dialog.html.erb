@@ -3,7 +3,7 @@
 	 <p><%=t('frda.nav.terms_of_use_acknowledgement')%></p>
    
 		<p><form action="<%=accept_terms_path(:return_to=>(@params[:return_to] || root_url))%>" method="post">
-			<a href="<%=root_url%>"><input type="button" class="btn" name="<%=t('frda.nav.terms_disagree')%>" value="<%=t('frda.nav.terms_disagree')%>"></a>
+			<a href="http://www.stanford.edu"><input type="button" class="btn" name="<%=t('frda.nav.terms_disagree')%>" value="<%=t('frda.nav.terms_disagree')%>"></a>
 			<input type="submit" class="btn" name="<%=t('frda.nav.terms_continue')%>" value="<%=t('frda.nav.terms_continue')%>">
 		</form>
 		</p>

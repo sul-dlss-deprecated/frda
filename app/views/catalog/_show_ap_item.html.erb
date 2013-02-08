@@ -1,6 +1,6 @@
 <div class="row">
   <div class="span12">
-    <%= raw truncate(render_document_heading(:h2).html_safe,:length=>200) %>
+		<h2><%= raw truncate(@document.title,:length=>200) %></h2>
   </div>
 </div>
 

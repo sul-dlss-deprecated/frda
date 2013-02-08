@@ -6,7 +6,21 @@ class SolrDocument
   self.unique_key = 'id'
 
   def title
-    self[:title_tsi]
+    case self.type
+      when "page"
+        self.page_title
+      when "volume"
+        self.volume_name
+      when "image"
+        self[:title_tsi]
+      else
+        self[:title_tsi]
+      end
+  end
+  
+  # for AP page items
+  def page_title 
+    "#{self.volume_name} - p. #{self.page_number}"
   end
   
   def page_number
@@ -62,11 +76,11 @@ class SolrDocument
   end
   
   def volume
-    self[:volume_num_ssi]
+    self[:vol_num_ssi]
   end
 
   def volume_name
-    self[:volume_title_ssi]
+    self[:vol_title_ssi]
   end
   
   def purl

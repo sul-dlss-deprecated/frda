@@ -32,7 +32,7 @@
     <dl class="dl-invert">
       <% unless @document.title.nil?%>
         <dt>Title</dt>
-        <%= render_document_heading(:dd).html_safe %>
+        <%= @document.title %>
       <% end %>
       <% unless @document.medium.nil?%>
         <dt><%=t('frda.show.medium')%></dt>

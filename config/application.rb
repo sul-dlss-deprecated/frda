@@ -73,8 +73,8 @@ end
 
 Frda::Application.config.version = VERSION # read from VERSION file at base of website
 
-Frda::Application.config.ap_id = "ap-collection"  # the solr doc ID of the ap collection object, each associated item must reference this collection-id in collection_ssi
-Frda::Application.config.images_id = "images-collection"  # the solr doc ID of the images collection object, each associated item must reference this collection-id in collection_ssi
+Frda::Application.config.ap_id = "Archives parlementaires"  # the solr doc ID of the ap collection object, each associated item must reference this collection-id in collection_ssi
+Frda::Application.config.images_id = "Images"  # the solr doc ID of the images collection object, each associated item must reference this collection-id in collection_ssi
 
 Frda::Application.config.stacks_url = YAML.load_file("#{Rails.root}/config/stacks.yml")[Rails.env]["url"]
 Frda::Application.config.contact_us_topics = {'default'=>'frda.contact.select_topic', 'error'=>'frda.contact.problem','other'=>'frda.contact.other_questions'} # sets the list of topics shown in the contact us page

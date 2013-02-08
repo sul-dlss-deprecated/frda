@@ -48,14 +48,14 @@ class CatalogController < ApplicationController
       :echoParams => "all"
     }
     
-    config.collection_highlight_field = "highlight_ssim" # ????
+    config.collection_highlight_field = "highlight_ssim" 
     
     config.parent_identifying_field = "volume_ssi" # this field tells us who our parent is
     
     config.collection_identifying_field = "type_ssi"  # this tells us what kind of item we are within a collection (e.g. "page", "volume", "subvolume", "image")
     config.collection_identifying_value = "collection" # items of this type are the overall collection items (e.g. "ap-collection" or "images-collection")
     
-    config.collection_member_identifying_field = "collection_ssi"  # this identifies what overall collection we are in (e.g. "ap-collection" or "images-collection") 
+    config.collection_member_identifying_field = "collection_ssi"  # this identifies what overall collection we are in
             
     # needs to be stored so we can retreive it
     # needs to be in field list for all request handlers so we can get images the document anywhere in the app.
@@ -104,8 +104,8 @@ class CatalogController < ApplicationController
     # facet bar
 
     config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection', :query => {
-      :"#{Frda::Application.config.ap_id}" => { :label => "Archives parlementaires", :fq => "collection_ssi:(#{Frda::Application.config.ap_id}) AND type_ssi:(volume)" },
-      :"#{Frda::Application.config.images_id}" => { :label => "Images de la Révolution française", :fq => "collection_ssi:(#{Frda::Application.config.images_id})" }
+      :"#{Frda::Application.config.ap_id}" => { :label => "Archives parlementaires", :fq => "#{blacklight_config.collection_member_identifying_field}:(\"#{Frda::Application.config.ap_id}\")" },
+      :"#{Frda::Application.config.images_id}" => { :label => "Images de la Révolution française", :fq => "#{blacklight_config.collection_member_identifying_field}:(\"#{Frda::Application.config.images_id}\")" }
     }
 
     config.add_facet_field 'medium_ssi', :label => 'frda.show.medium'

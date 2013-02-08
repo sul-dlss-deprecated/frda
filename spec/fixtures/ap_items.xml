@@ -1,0 +1,238 @@
+<doc>
+  <field name="id">wb029sv4796_00_0006</field>
+  <field name="page_num_ss">2</field>
+  <field name="image_id_ss">wb029sv4796_00_0006.jp2</field>
+  <field name="ocr_id_ss">wb029sv4796_99_0006.txt</field>
+  <field name="druid_ssi">wb029sv4796</field>
+  <field name="collection_ssi">Archives parlementaires</field>
+  <field name="vol_num_ssi">36</field>
+  <field name="vol_title_ssi">Tome 36 : Du 11 décembre 1791 au 1er janvier 1792</field>
+  <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
+  <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+  <field name="type_ssi">page</field>
+  <field name="doc_type_ssim">séance</field>
+  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="session_date_val_ssi">1791-12-11</field>
+  <field name="session_date_dtsi">1791-12-11T00:00:00Z</field>
+  <field name="session_date_ftsiv">Séance du dimanche 11 décembre 1791 .</field>
+  <field name="session_prez_ssi">PRÉSIDENCE DE M. LEMONTEY.</field>
+  
+  <field name="speaker_ssim">M. Dorizy.</field>
+  <field name="spoken_text_timv">M. Dorizy. Pour concilier tous les esprits, on peut, en
+    faisant mention honorable de 1 adresse, mettre dans le procès-verbal « sans approuver le mot
+    loi qui est inconstitutionnel. » (Murmures.)</field>
+  <field name="speaker_ssim">M. Gohier.</field>
+  <field name="spoken_text_timv">M. Gohier. L'opinion seule de M. Ghéron est
+    inconstitutionnelle. Par l'article 1er de la section relative aux pouvoirs et fonctions de
+    l'Assemblée nationale législative, la Constitution délègue exclusivement au Corps législatif
+    le pouvoir de proposer et de décréter les lois. Les décrets rendus par le Corps législatif
+    sont donc véritablement des lois décrétées. L'article 6 de la section III sur la sanction
+    royale ajoute que les décrets sanctionnés par le roi et ceux qui lui auront été présentés par
+    trois législatures consécutives, ont force de loi et portent le nom et l'intitulé de lois.
+    Cela veut dire que, pour que les décrets aient force de loi, il faut, ou qu'ils obtiennent la
+    sanction, ou qu'ils aient été présentés par trois législatures. Mais cela n'empeche pas qu'ils
+    ne soient des lois. Le roi a seulement le droit de suspendre l'exécution de la loi, mais elle
+    est faite par le Corps législatif. Je demande donc l'ordre du jour sur la motion de M. Ghéron.</field>
+  
+  <field name="text_tiv">ASSEMBLÉE NATIONALE LÉGISLATIVE. 
+    Séance du dimanche 11 décembre 1791 . 
+    PRÉSIDENCE DE M. LEMONTEY. 
+    La séance est ouverte à neuf heures du matin. 
+    M. Dorizy. 
+    Pour concilier tous les esprits, on peut, en
+    faisant mention honorable de 1 adresse, mettre dans le procès-verbal « sans approuver le mot
+    loi qui est inconstitutionnel. » (Murmures.) 
+    M. Gohier. 
+    L'opinion seule de M. Ghéron est
+    inconstitutionnelle. Par l'article 1er de la section relative aux pouvoirs et fonctions de
+    l'Assemblée nationale législative, la Constitution délègue exclusivement au Corps législatif
+    le pouvoir de proposer et de décréter les lois. Les décrets rendus par le Corps législatif
+    sont donc véritablement des lois décrétées. L'article 6 de la section III sur la sanction
+    royale ajoute que les décrets sanctionnés par le roi et ceux qui lui auront été présentés par
+    trois législatures consécutives, ont force de loi et portent le nom et l'intitulé de lois.
+    Cela veut dire que, pour que les décrets aient force de loi, il faut, ou qu'ils obtiennent la
+    sanction, ou qu'ils aient été présentés par trois législatures. Mais cela n'empeche pas qu'ils
+    ne soient des lois. Le roi a seulement le droit de suspendre l'exécution de la loi, mais elle
+    est faite par le Corps législatif. Je demande donc l'ordre du jour sur la motion de M. Ghéron.</field>
+</doc>
+
+<doc>
+  <field name="id">wb029sv4796_00_0111</field>
+  <field name="page_num_ss">102</field>
+  <field name="image_id_ss">wb029sv4796_00_0111.jp2</field>
+  <field name="ocr_id_ss">wb029sv4796_99_0111.txt</field>
+  <field name="druid_ssi">wb029sv4796</field>
+  <field name="collection_ssi">Archives parlementaires</field>
+  <field name="vol_num_ssi">36</field>
+  <field name="vol_title_ssi">Tome 36 : Du 11 décembre 1791 au 1er janvier 1792</field>
+  <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
+  <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+  <field name="type_ssi">page</field>
+  <field name="doc_type_ssim">séance</field>
+  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="session_date_val_ssi">1791-12-13</field>
+  <field name="session_date_dtsi">1791-12-13T00:00:00Z</field>
+  <field name="session_date_ftsiv">Séance du mardi 13 décembre 1791, au matin.</field>
+  <field name="session_prez_ssi">PRÉSIDENCE DE M. LEMONTEY.</field>
+
+  <field name="speaker_ssim">M. Gossuin.</field>
+  <field name="spoken_text_timv">M. Gossuin. Messieurs, dans la séance du 31 octobre dernier, l'Assemblée a renvoyé à son comité de
+    législation une motion de M. Lejosne (1) sur la question de savoir si les tribunaux criminels
+    seraient sédentaires où ambulants. Le rapport sur cette matière est très urgent. Il me semble</field>
+  <field name="speaker_ssim">M. Fauchet</field>
+  <field name="spoken_text_timv">M. Fauchet, secrétaire, donne lecture des lettres, adresses et pétitions suivantes :</field>    
+  <field name="spoken_text_timv">M. Fauchet 1° Lettre de M. Bertrand, ministre de la marine, par laquelle il communique à l'Assemblée</field>
+
+  <field name="text_tiv">ASSEMBLÉE NATIONALE LÉGISLATIVE. 
+    Séance du mardi 13 décembre 1791, au matin. 
+    PRÉSIDENCE DE M. LEMONTEY. 
+    La séance est ouverte à neuf heures du matin. 
+    Un de MM. les secrétaires fait lecture du procès-verbal de la séance du lundi 12 décembre.
+    M. Gossuin.
+    Messieurs, dans la séance du 31 octobre dernier, l'Assemblée a renvoyé à son comité de
+    législation une motion de M. Lejosne (1) sur la question de savoir si les tribunaux criminels
+    seraient sédentaires où ambulants. Le rapport sur cette matière est très urgent. Il me semble
+    M. Fauchet
+    secrétaire, donne lecture des lettres, adresses et pétitions suivantes :
+    1° Lettre de M. Bertrand, ministre de la marine, par laquelle il communique à l'Assemblée</field>
+</doc>
+
+<doc>
+  <field name="id">fy968nm6633_00_0648</field>
+  <field name="page_num_ss">637</field>
+  <field name="image_id_ss">fy968nm6633_00_0648.jp2</field>
+  <field name="ocr_id_ss">fy968nm6633_99_0648.txt</field>
+  <field name="druid_ssi">fy968nm6633</field>
+  <field name="collection_ssi">Archives parlementaires</field>
+  <field name="vol_num_ssi">11</field>
+  <field name="vol_title_ssi">Tome 11 : Du 24 décembre 1789 au 1er mars 1790</field>
+  <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
+  <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+  <field name="type_ssi">page</field>
+  <field name="doc_type_ssim">séance</field>
+  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE</field>
+  <field name="session_date_val_ssi">1790-02-18</field>
+  <field name="session_date_dtsi">1790-02-18T00:00:00Z</field>
+  <field name="session_date_ftsiv">Séance du jeudi 18 février 1790, au matin (1). </field>
+  <field name="session_prez_ssi">PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.</field>
+  
+  <field name="speaker_ssim">M. Guillotin</field>
+  <field name="spoken_text_timv">M. Guillotin. Vun de MM. les secrétaires, donne (1) Cette séance est incomplète au
+    Moniteur. lecture des procès-verbaux des deux séances du mardi</field>
+  <field name="speaker_ssim">M. le Président.</field>
+  <field name="spoken_text_timv">M. le Président. Le procès-verbal de la séance d'hier n'étant pas terminé, la lecture en est renvoyée à
+    demain.</field>    
+  <field name="spoken_text_timv">M. le Président. something something something.</field>
+
+  <field name="text_tiv">ASSEMBLÉE NATIONALE. 
+    Séance du jeudi 18 février 1790, au matin (1).  
+    PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.
+    M. Guillotin
+    Vun de MM. les secrétaires, donne (1) Cette séance est incomplète au
+    Moniteur. lecture des procès-verbaux des deux séances du mardi
+    M. le Président
+    Le procès-verbal de la séance d'hier n'étant pas terminé, la lecture en est renvoyée à
+    demain.
+    something something something.
+  </field>
+</doc>
+
+<doc>
+  <field name="id">fy968nm6633_00_0666</field>
+  <field name="page_num_ss">645</field>
+  <field name="image_id_ss">fy968nm6633_00_0666.jp2</field>
+  <field name="ocr_id_ss">fy968nm6633_99_0666.txt</field>
+  <field name="druid_ssi">fy968nm6633</field>
+  <field name="collection_ssi">Archives parlementaires</field>
+  <field name="vol_num_ssi">11</field>
+  <field name="vol_title_ssi">Tome 11 : Du 24 décembre 1789 au 1er mars 1790</field>
+  <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
+  <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+  <field name="type_ssi">page</field>
+  <field name="doc_type_ssim">séance</field>
+  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE</field>
+  <field name="session_date_val_ssi">1790-02-18</field>
+  <field name="session_date_dtsi">1790-02-18T00:00:00Z</field>
+  <field name="session_date_ftsiv">Séance du jeudi 18 février 1790, au soir (1). </field>
+  <field name="session_prez_ssi">PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.</field>
+  
+  <field name="text_tiv">ASSEMBLÉE NATIONALE. 
+    Séance du jeudi 18 février 1790, au soir (1).  
+    PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.
+    Un de MM. les secrétaires fait mention des adresses de félicitations, d'adhésion et de dons
+    patriotiques, dont la teneur suit : 
+    Adresse de la communauté d'Aumont, diocèse de Senlis ; elle fait le don patriotique du
+    produit de la contribution sur les ci-devant privilégiés.
+    Adresse de la ville de Pontarlier : elle a de nouveau consacré pour le maintien de la
+    Constitution, et la prospérité de l'empire français, un vœu qu'elle avait fait en 1620.
+    Adresses d'une multitude de communautés,       
+  </field>    
+</doc>
+
+<!-- contents -->
+<doc>
+  <field name="id">jt959wc5586_00_0782</field>
+  <field name="page_num_ss">783</field>
+  <field name="image_id_ss">jt959wc5586_00_0782.jp2</field>
+  <field name="ocr_id_ss">jt959wc5586_99_0782.txt</field>
+  <field name="druid_ssi">jt959wc5586</field>
+  <field name="collection_ssi">Archives parlementaires</field>
+  <field name="vol_num_ssi">1</field>
+  <field name="vol_title_ssi">Tome 1 : 1789 – Introduction - états généraux - préliminaires. Cahiers des sénéchaussées et baillages [Agen - Amont]</field>
+  <field name="vol_date_start_dti">1789-01-01T00:00:00Z</field>
+  <field name="vol_date_end_dti">1789-12-31T23:59:59Z</field>
+  <field name="type_ssi">page</field>
+  <field name="doc_type_ssim">table des matières</field>
+  
+  <field name="text_tiv">
+    ARCHIVES PARLEMENTAIRES.
+    PREMIÈRE SÉRIE. TABLE PAR ORDRE DES MATIÈRES DU TOME PREMIER.
+    Pages.
+    Avertissement......................................I
+    Avant propos........... ...................... 1
+  </field>    
+</doc>
+
+<!-- table_alpha -->
+<doc>
+  <field name="id">bm916nx5550_00_0006</field>
+  <field name="page_num_ss">V</field>
+  <field name="image_id_ss">bm916nx5550_00_0006.jp2</field>
+  <field name="ocr_id_ss">bm916nx5550_99_0006.txt</field>
+  <field name="druid_ssi">bm916nx5550</field>
+  <field name="collection_ssi">Archives parlementaires</field>
+  <field name="vol_num_ssi">8</field>
+  <field name="vol_title_ssi">Tome 8 : Du 5 mai 1789 au 15 septembre 1789</field>
+  <field name="vol_date_start_dti">1789-05-05T00:00:00Z</field>
+  <field name="vol_date_end_dti">1789-09-15T23:59:59Z</field>
+  <field name="type_ssi">page</field>
+  <field name="doc_type_ssim">liste</field>
+  
+  <field name="text_tiv">
+    LISTE 
+    DES NOMS ET QUALITÉS DE MESSIEURS LES DÉPUTÉS ET SUPPLÉANTS
+    A L'ASSEMBLÉE NATIONALE,
+    DRESSÉE PAR ORDRE ALPHABÉTIQUE DE SÉNÉCHAUSSÉES ET BAILLIAGES.
+  </field>    
+</doc>
+<doc>
+  <field name="id">mc666yy3026_00_0144</field>
+  <field name="page_num_ss">140</field>
+  <field name="image_id_ss">mc666yy3026_00_0144.jp2</field>
+  <field name="ocr_id_ss">mc666yy3026_99_0144.txt</field>
+  <field name="druid_ssi">mc666yy3026</field>
+  <field name="collection_ssi">Archives parlementaires</field>
+  <field name="vol_num_ssi">3</field>
+  <field name="vol_title_ssi">Tome 3 : 1789 – États généraux. Cahiers des sénéchaussées et baillages [Colmar et Schelestadt - Metz]</field>
+  <field name="vol_date_start_dti">1789-01-01T00:00:00Z</field>
+  <field name="vol_date_end_dti">1789-12-31T23:59:59Z</field>
+  <field name="type_ssi">page</field>
+  <field name="doc_type_ssim">liste</field>
+  
+  <field name="text_tiv">
+    Bailliage de Saint-Jean-de-Losne.
+    B
+    Bonneneontre. P. Soucelier.
+    Brazey. Philippon.
+  </field>    
+</doc>

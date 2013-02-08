@@ -52,35 +52,173 @@
   
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" /> 
 
+  <query>
+    <maxBooleanClauses>1024</maxBooleanClauses>
+    <filterCache class="solr.FastLRUCache" size="512" initialSize="512" autowarmCount="0"/>
+    <queryResultCache class="solr.LRUCache" size="512" initialSize="512" autowarmCount="0"/>
+    <documentCache class="solr.LRUCache" size="512" initialSize="512" autowarmCount="0"/>
+    <enableLazyFieldLoading>true</enableLazyFieldLoading>
+    <queryResultWindowSize>80</queryResultWindowSize>
+    <queryResultMaxDocsCached>200</queryResultMaxDocsCached>
+    <useColdSearcher>true</useColdSearcher>
+    <maxWarmingSearchers>1</maxWarmingSearchers>
+
+    <!-- a newSearcher event is fired whenever a new searcher is being prepared
+         and there is a current searcher handling requests (aka registered).
+         It should only have the most common facets -->
+    <listener event="newSearcher" class="solr.QuerySenderListener">
+      <arr name="queries">
+        <!-- default query for all objects, front page facets -->
+        <lst>
+          <int name="rows">0</int>
+          <str name="fl">score</str>
+          <bool name="facet">true</bool>
+          <int name="facet.mincount">1</int>
+          <str name="facet.field">collection_ssi</str>
+          <str name="facet.field">date_ssim</str>
+          <str name="facet.field">speaker_ssim</str>
+          <str name="facet.field">type_ssi</str>
+          <str name="facet.field">doc_type_ssi</str>
+          <str name="facet.field">session_govt_ssi</str>
+        </lst>
+        <!-- single object query to populate filter and fieldValue cache -->
+        <lst>
+          <str name="q">id:ns351vc7243_00_100</str>
+          <str name="qt">standard</str>
+          <int name="rows">0</int>
+          <str name="fl">score</str>
+          <bool name="facet">true</bool>
+          <int name="facet.mincount">1</int>
+          <int name="facet.limit">30</int>
+          <str name="facet.field">collection_ssi</str>
+          <str name="facet.field">date_ssim</str>
+          <str name="facet.field">speaker_ssim</str>
+          <str name="facet.field">type_ssi</str>
+          <str name="facet.field">doc_type_ssi</str>
+          <str name="facet.field">session_govt_ssi</str>
+        </lst>
+      </arr>
+    </listener>
+
+    <!-- a firstSearcher event is fired whenever a new searcher is being
+         prepared but there is no current registered searcher to handle
+         requests or to gain autowarming data from. ("fast warmup") -->
+    <listener event="firstSearcher" class="solr.QuerySenderListener">
+      <arr name="queries">
+        <!-- default query for all objects, front page facets -->
+        <lst>
+          <int name="rows">0</int>
+          <str name="fl">score</str>
+          <bool name="facet">true</bool>
+          <int name="facet.mincount">1</int>
+          <int name="facet.limit">30</int>
+          <str name="facet.field">collection_ssi</str>
+          <str name="facet.field">date_ssim</str>
+          <str name="facet.field">speaker_ssim</str>
+          <str name="facet.field">type_ssi</str>
+          <str name="facet.field">doc_type_ssi</str>
+          <str name="facet.field">session_govt_ssi</str>
+        </lst>
+        <!-- single object query to populate filter and fieldValue cache -->
+        <lst>
+          <str name="q">id:ns351vc7243_00_100</str>
+          <str name="qt">standard</str>
+          <int name="rows">0</int>
+          <str name="fl">score</str>
+          <bool name="facet">true</bool>
+          <int name="facet.mincount">1</int>
+          <int name="facet.limit">30</int>
+          <str name="facet.field">collection_ssi</str>
+          <str name="facet.field">date_ssim</str>
+          <str name="facet.field">speaker_ssim</str>
+          <str name="facet.field">type_ssi</str>
+          <str name="facet.field">doc_type_ssi</str>
+          <str name="facet.field">session_govt_ssi</str>
+        </lst>
+      </arr>
+    </listener>
+  </query>
+
   <requestDispatcher handleSelect="true" >
     <requestParsers enableRemoteStreaming="false" multipartUploadLimitInKB="2048" />
   </requestDispatcher>
   
-  <requestHandler name="search" class="solr.StandardRequestHandler" default="true">
+  <requestHandler name="search" class="solr.SearchHandler" default="true">
     <lst name="defaults">
       <str name="defType">edismax</str>
+      <str name="echoParams">explicit</str>
+      <str name="sort">score desc</str>
+      <int name="rows">20</int>
       <str name="q.alt">*:*</str>
+      <str name="mm">6&lt;-1 6&lt;90%</str>
+      <int name="qs">1</int>
+      <int name="ps">0</int>
+      <float name="tie">0.01</float>
       <str name="qf">
+        spoken_text_timv^5
+        spoken_text_ftsimv
+        text_timv^5
+        text_ftsimv
+        speaker_ssim
+        session_govt_ssi
+        date_ssim
+				doc_type_ssi
         id
-        title_tsi
-        extent_ssim
-        description_tsim
-        personal_name_ssim
-        geographic_name_ssim
-        corporate_name_ssim
-        family_name_ssim
-        unit_date_ssim
+        druid_ssi
       </str>
       <str name="pf">
-        title_tsi^50
-        description_tsim^40
-        personal_name_ssim^30
-        geographic_name_ssim^30
-        corporate_name_ssim^30
-        family_name_ssim^30
-        unit_date_ssim^20
+        spoken_text_timv^20
+        spoken_text_ftsimv^15
+        text_timv^20
+        text_ftsimv^10
       </str>
-    </lst>
+      <str name="qf_exact">
+        spoken_text_timv
+        text_timv
+        speaker_ssim
+        session_govt_ssi
+        date_ssim
+				doc_type_ssi
+      </str>
+      <str name="pf_exact">
+        spoken_text_timv^5
+        text_timv^5
+      </str>
+
+      <str name="qf_title">
+        title_timv^5
+        title_ftsimv
+      </str>
+      <str name="pf_title">
+        title_timv^10
+        title_ftsimv^5
+      </str>
+      <str name="qf_title_exact">
+        title_timv
+      </str>
+      <str name="pf_title_exact">
+        title_timv^5
+      </str>
+
+      <str name="qf_name">
+        speaker_ssim
+      </str>
+      <str name="pf_name">
+        speaker_ssim^5
+      </str>
+
+      <str name="fl">score, *</str>
+      
+      <bool name="facet">true</bool>
+      <int name="facet.mincount">1</int>
+      <int name="facet.limit">21</int>
+      <str name="facet.field">collection_ssi</str>
+      <str name="facet.field">date_ssim</str>
+      <str name="facet.field">speaker_ssim</str>
+      <str name="facet.field">type_ssi</str>
+      <str name="facet.field">doc_type_ssi</str>
+      <str name="facet.field">session_govt_ssi</str>
+    </lst>    
   </requestHandler>
   
   <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />

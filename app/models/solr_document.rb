@@ -10,7 +10,7 @@ class SolrDocument
   end
   
   def page_number
-    self[:page_num_ssi]
+    self[:page_num_ss]
   end
   
   def druid
@@ -62,11 +62,11 @@ class SolrDocument
   end
   
   def volume
-    self[:volume_ssi]
+    self[:volume_num_ssi]
   end
 
   def volume_name
-    self[:volume_name_ssi]
+    self[:volume_title_ssi]
   end
   
   def purl
@@ -125,23 +125,27 @@ class SolrDocument
    
    # return the item whose id is equal to my volume id
    def parent
-     query="id:\"#{self[blacklight_config.parent_identifying_field.to_sym]}\""
-     parents = Blacklight.solr.select(
-                                 :params => {
-                                   :fq => query  }
-                               )
-     docs=parents["response"]["docs"].map{|d| SolrDocument.new(d) }
-     docs.size == 0 ? nil : docs.first
+     # query="id:\"#{self[blacklight_config.parent_identifying_field.to_sym]}\""
+     #     parents = Blacklight.solr.select(
+     #                                 :params => {
+     #                                   :fq => query  }
+     #                               )
+     #     docs=parents["response"]["docs"].map{|d| SolrDocument.new(d) }
+     #     docs.size == 0 ? nil : docs.first
+    nil
+    # TODO FIX!
    end
 
    # return the items whose volume id is equal to my id
    def children
-     query="#{blacklight_config.parent_identifying_field}:\"#{self.id}\""
-     ancestors = Blacklight.solr.select(
-                                 :params => {
-                                   :fq => query  }
-                               )
-     return ancestors["response"]["docs"].map{|d| SolrDocument.new(d) }
+     # query="#{blacklight_config.parent_identifying_field}:\"#{self.id}\""
+     # ancestors = Blacklight.solr.select(
+     #                             :params => {
+     #                               :fq => query  }
+     #                           )
+     # return ancestors["response"]["docs"].map{|d| SolrDocument.new(d) }
+     nil
+    # TODO FIX!
    end
      
   # The following shows how to setup this blacklight document to display marc documents

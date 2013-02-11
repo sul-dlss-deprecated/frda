@@ -83,6 +83,10 @@ class SolrDocument
     self[:vol_title_ssi]
   end
   
+  def page_text
+    self[:text_ftsiv]
+  end
+  
   def purl
     "#{Frda::Application.config.purl}/#{self.druid}" if self.druid?
   end

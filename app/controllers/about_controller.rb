@@ -4,6 +4,7 @@ class AboutController < ApplicationController
   # If your action has logic that needs to be run before the view, create a method, call "show" at the end of it, create a view partical o match,
   # and add a custom route in the routes.rb file    
   def contact
+    @from=params[:from]
     if request.post?
       @subject=params[:subject]
       @name=params[:name]
@@ -11,7 +12,11 @@ class AboutController < ApplicationController
       @message=params[:message]
       unless @message.blank?
         FrdaMailer.contact_message(:subject=>@subject,:name=>@name,:email=>@email,:message=>@message).deliver 
-        flash.now[:notice]=t("frda.about.contact_message_sent")
+        flash[:notice]=t("frda.about.contact_message_sent")
+        unless @from.blank?
+          redirect_to(@from)
+          return
+        end
       else
         flash.now[:error]=t("frda.about.contact_error")
       end
@@ -24,7 +29,7 @@ class AboutController < ApplicationController
     @page_name='project' unless lookup_context.exists?(@page_name, 'about', true) # default to project page if requested partial doesn't exist
     @page_title=t("frda.about.#{@page_name}_title") # set the page title
     @params=params
-    @no_nav=(@page_name=='terms_dialog' || @page_name=='contact' ? true : false)
+    @no_nav=(@page_name=='terms_dialog' ? true : false)
     render :show
   end
   

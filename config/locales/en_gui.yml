@@ -35,7 +35,7 @@ en:
       close: 'Close'
     about:
       project_title: 'From the curator'
-      contact_title: 'Contact us'
+      contact_title: 'Report a Problem'
       contact_message_sent: 'Thanks - your message has been sent.'
       contact_error: 'You need to enter some message text.'
       terms_of_use_title: 'Use and reproduction'

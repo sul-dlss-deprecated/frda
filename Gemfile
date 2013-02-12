@@ -38,6 +38,8 @@ group :development, :staging, :test do
   gem 'meta_request'
 end
 
+gem 'json', '~> 1.7.7'
+
 gem 'rest-client'
 gem 'geocoder'
 gem 'jquery-rails'

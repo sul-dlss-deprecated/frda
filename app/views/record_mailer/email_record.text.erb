@@ -1,0 +1,5 @@
+<% @documents.each do |document| %>
+<%= document.title %>
+<%= t('blacklight.email.text.url', :url =>item_url(:id=>document.id)) %>
+<% end %>
+<%= t('blacklight.email.text.message', :message => @message) %>

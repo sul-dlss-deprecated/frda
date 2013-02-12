@@ -38,37 +38,29 @@
         <dt><%=t('frda.show.medium')%></dt>
         <dd><%=@document.medium%></dd>
       <% end %>
-      <% unless list_is_empty?(@document.person) %>
-        <dt><%=t('frda.show.people')%></dt>
-        <dd><%=show_formatted_list(@document.person)%></dd>
+      <% unless list_is_empty?(@document.collector) %>
+        <dt><%=t('frda.show.collector')%></dt>
+        <dd><%=show_formatted_list(@document.collector,:facet=>'collector_ssim')%></dd>
       <% end %>
-      <% unless @document.publisher.nil?%>
-        <dt><%=t('frda.show.publisher')%></dt>
-        <dd><%=@document.publisher%>&nbsp;</dd>
+      <% unless list_is_empty?(@document.genre)%>
+        <dt><%=t('frda.show.genre')%></dt>
+        <dd><%=show_formatted_list(@document.genre,:facet=>'genre_ssim')%>&nbsp;</dd>
       <% end %>
-      <% unless @document.year.nil?%>
+      <% unless list_is_empty?(@document.speaker)%>
+        <dt><%=t('frda.show.speaker')%></dt>
+        <dd><%=show_formatted_list(@document.speaker,:facet=>'speaker_ssim')%>&nbsp;</dd>
+      <% end %>
+      <% unless list_is_empty?(@document.artist)%>
+        <dt><%=t('frda.show.artist')%></dt>
+        <dd><%=show_formatted_list(@document.artist,:facet=>'artist_ssim')%>&nbsp;</dd>
+      <% end %>
+      <% unless list_is_empty?(@document.year)%>
         <dt><%=t('frda.show.date')%></dt>
-        <dd><%=@document.year%>&nbsp;</dd>
-      <% end %>
-      <% unless list_is_empty?(@document.subject) %>
-        <dt><%=t('frda.show.subject')%></dt>
-        <dd><%=show_formatted_list(@document.subject,:facet=>'subject_ssim')%></dd>
-      <% end %>
-      <% unless @document.type_description.nil?%>
-        <dt><%=t('frda.show.type')%></dt>
-        <dd><%=@document.type_description%>&nbsp;</dd>
+        <dd><%=show_formatted_list(@document.year,:facet=>'date_issued_ssim')%>&nbsp;</dd>
       <% end %>
       <% unless list_is_empty?(@document.format) %>
         <dt><%=t('frda.show.format')%></dt>
-        <dd><%=show_formatted_list(@document.format)%></dd>
-      <% end %>
-      <% unless @document.copyright.nil?%>
-        <dt><%=t('frda.show.copyright')%></dt>
-        <dd><%=@document.copyright%>&nbsp;</dd>
-      <% end %>
-      <% unless @document.source.nil?%>
-        <dt><%=t('frda.show.source')%></dt>
-        <dd><%=@document.source%>&nbsp;</dd>
+        <dd><%=show_formatted_list(@document.format,:facet=>'doc_type_ssim')%></dd>
       <% end %>
     </dl>
   </div>

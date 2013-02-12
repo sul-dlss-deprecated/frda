@@ -5,16 +5,17 @@ class SolrDocument
   
   self.unique_key = 'id'
 
-  def title
+  def title(params={})
+    length=params[:short].nil? ? "long" : "short" 
     case self.type
       when "page"
         self.page_title
       when "volume"
         self.volume_name
       when "image"
-        self[:title_tsi]
+        self[:"title_#{length}_ssi"]
       else
-        self[:title_tsi]
+        self[:"title_#{length}_ssi"]
       end
   end
   
@@ -35,38 +36,34 @@ class SolrDocument
     multivalue_field("description_#{language[0]}tsim")
   end
 
-  def subject
-    multivalue_field('subject_ssim')
+  def collector
+    multivalue_field('collector_ssim')
   end
 
-  def person
-    multivalue_field('person_ssim')
-  end
-
-  def format
-    multivalue_field('format_ssim')
-  end
-
-  def copyright
-    self[:copyright_ssi]
-  end
-
-  def year
-    self[:year_isi]
-  end
-
-  def source
-    self[:source_ssi]
-  end
-
-  def type_description
-    self[:type_description_ssi]
-  end
-  
   def type
     self[:type_ssi]
   end
   
+  def format
+    multivalue_field('doc_type_ssim')
+  end
+
+  def genre
+    multivalue_field('genre_ssim')
+  end
+
+  def artist
+    multivalue_field('artist_ssim')
+  end
+
+  def year
+    multivalue_field('date_issued_ssim')
+  end
+
+  def speaker
+     multivalue_field('speaker_ssim')
+ end
+     
   def medium
     self[:medium_ssi]
   end
@@ -189,7 +186,7 @@ class SolrDocument
                          :title => "title_tsi",
                          :author => "author_display",
                          :language => "language_facet",
-                         :format => "format_ssim"
+                         :format => "doc_type_ssim"
                          )
 
                          

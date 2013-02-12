@@ -71,32 +71,13 @@ then run the tests, and then restart development jetty
 
 The following fields are important for the web app to work correctly and are required for each kind of item
 
-AP Volume Item:
-
-id - this should be set to the druid of the item
-druid_ssi - must be set to the druid of the item
-title_ssi - the title of the item
-type_ssi - must be "volume"
-collection_ssi - must be "ap-collection"
-image_id_ssm - optionally the base filename of the image to show  (e.g. "T00000001") - no .jp2 extension required
-
-AP SubVolume Item:
-
-id - can be anything
-druid_ssi - must be set to the druid of the parent volume item
-title_ssi - the title of the item
-type_ssi - must be "subvolume"
-collection_ssi - must be "ap-collection"
-volume_ssi - must be set to the id of the parent
-image_id_ssm - optionally the base filename of the image to show from the parent volume item (e.g. "T00000001") - no .jp2 extension required
-
 AP Page Item:
 
 id - can be anything
 druid_ssi - must be set to the druid of the top-level parent volume item
 title_ssi - the title of the item
 type_ssi - must be "page"
-collection_ssi - must be "ap-collection"
+collection_ssi - must be "Archives parlementaires"
 volume_ssi - must be set to the id of the parent (which could be the top level volume or could be a subvolume)
 image_id_ssm - must be the base filename of the image to show from the parent volume item (e.g. "T00000001") - no .jp2 extension required
 
@@ -104,8 +85,7 @@ Image Items:
 
 id - this should be set to the druid of the item
 druid_ssi - must be set to the druid of the item
-title_ssi - the title of the item
-collection_ssi - must be "images-collection"
+collection_ssi - must be "Images de la Révolution française"
 image_id_ssm - must be the base filename of the image to show (e.g. "T00000001") - no .jp2 extension required
 type_ssi - must be "image"
 

@@ -13,7 +13,6 @@
             <%#= link_to_document document, :label=> document_show_link_field %>
             <%= link_to document.title, catalog_path(document[:id]) %>
           </h5>
-          <span><%= document.year %></span>
           <% # bookmark functions for items/docs -%>
           <%#= render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
         </div>

@@ -3,7 +3,7 @@
   
   <% # main title container for doc partial view -%>
   <h5 class="index_title">
-    <%= link_to_document document, :label=>document_show_link_field %>
+    <%= link_to_document document, :label=>document.title(:length=>'short') %>
   </h5>
 
   <% # bookmark functions for items/docs -%>

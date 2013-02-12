@@ -1,0 +1,179 @@
+ <doc>
+   <field name="id">bb018fc7286</field>
+   <field name="image_id_ssm">T0000001.jp2</field>
+   <field name="druid_ssi">bb018fc7286</field>
+   <field name="collection_ssi">Images</field>
+   <field name="type_ssi">image</field>
+   <field name="doc_type_ssim">Image fixe</field>
+   <field name="doc_type_ssim">nonprojected graphic</field>
+   <field name="doc_type_ssim">print</field>
+   <field name="title_short_ssi">Pacte fédératif des Français le 14.e juillet 1790</field>
+   <field name="title_long_ssi">Pacte fédératif des Français le 14.e juillet 1790 : [estampe]</field> 
+   <field name="collector_ssim">Vinck, Carl de</field>
+   <field name="artist_ssim">Girardet, Abraham</field>
+   <field name="genre_ssim">picture</field>
+   <field name="genre_ssim">Scènes historiques-1789-1799</field>
+   <field name="medium_ssi">eau-forte</field>  
+   <field name="date_issued_ssim">1790</field>
+   <field name="date_issued_dtsim">1790-01-01T00:00:00Z</field>
+   <field name="catalog_heading_ftsimv">Aspects culturels et artistiques -- Fêtes et célébrations -- La Fête de la Fédération (14 juillet 1790) -- La cérémonie au Champ-de-Mars</field>
+   <field name="catalog_heading_etsimv">Themes in art and culture -- Festivals and celebrations -- The "Fête de la Fédération" (14 July 1790) -- The ceremony on the Champ-de-Mars</field>    
+ </doc>
+ 
+ <doc>
+   <field name="id">bb101kw2226</field>
+   <field name="image_id_ssm">T0000001.jp2</field>
+   <field name="druid_ssi">bb101kw2226</field>
+   <field name="collection_ssi">Images</field>
+   <field name="type_ssi">image</field>
+   <field name="doc_type_ssim">Image fixe</field>
+   <field name="doc_type_ssim">nonprojected graphic</field>
+   <field name="doc_type_ssim">print</field>
+   <field name="title_short_ssi">Palsangué Messieurs v'la le coup</field>
+   <field name="title_long_ssi">Palsangué Messieurs v'la le coup : c'est de votre faute il ne fallait pas proposer la partie : mafine y à assez long-temps que j'sommes toujours perdans avec vous... : [estampe]</field>
+   <field name="collector_ssim">Vinck, Carl de</field>
+   <field name="genre_ssim">picture</field>
+   <field name="genre_ssim">Scènes symboliques-1789-1799.</field>
+   <field name="medium_ssi">eau-forte, coul.</field>
+   <field name="date_issued_ssim">1789</field>
+   <field name="date_issued_dtsim">1789-01-01T00:00:00Z</field>
+   <field name="catalog_heading_ftsimv">spects culturels et artistiques -- Jeux et loisirs -- Jeux divers</field>
+   <field name="catalog_heading_etsimv">Themes in art and culture -- Games and leisure -- Other games</field>
+ </doc>
+ <doc>
+   <field name="id">bg698df3242</field>
+   <field name="image_id_ssm">T0000001.jp2</field>
+   <field name="druid_ssi">bg698df3242</field>
+   <field name="collection_ssi">Images</field>
+   <field name="type_ssi">image</field>
+   <field name="doc_type_ssim">Image fixe</field>
+   <field name="doc_type_ssim">nonprojected graphic</field>
+   <field name="doc_type_ssim">print</field>
+   <field name="title_short_ssi">M. Robbespierre</field>
+   <field name="title_long_ssi">M. Robbespierre : [estampe]</field>
+   <field name="collector_ssim">Vinck, Carl de</field>
+   <field name="artist_ssim">Jones, John</field>
+   <field name="genre_ssim">picture</field>
+   <field name="genre_ssim">Portraits-1789-1799.</field>
+   <field name="medium_ssi">eau-forte, pointillé</field>
+   <field name="speaker_ssim">Robespierre, Maximilien de</field>
+   <field name="date_issued_ssim">1794</field>
+   <field name="date_issued_dtsim">1794-01-01T00:00:00Z</field>
+   <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- R</field>
+   <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- R</field>
+ </doc>
+
+ <doc>
+   <field name="id">bb298qd7487</field>
+   <field name="image_id_ssm">T0000001.jp2</field>
+   <field name="druid_ssi">bb298qd7487</field>
+   <field name="collection_ssi">Images</field>
+   <field name="type_ssi">image</field>
+   <field name="doc_type_ssim">Image fixe</field>
+   <field name="doc_type_ssim">nonprojected graphic</field>
+   <field name="doc_type_ssim">print</field>   
+   <field name="title_short_ssi">Membre du Directoire exécutif dans son grand costume</field>
+   <field name="title_long_ssi">Membre du Directoire exécutif dans son grand costume : Membre du Directoire executif dans son costume ordinaire ; Membre du Conseil des Anciens ; Membre du Conseil des Cinq-Cent... : [estampe]</field>
+   <field name="collector_ssim">Vinck, Carl de</field>
+   <field name="genre_ssim">picture</field>
+   <field name="genre_ssim">Costume-1789-1799.</field>
+   <field name="medium_ssi">eau-forte, coul.</field>
+   <field name="date_issued_ssim">1795</field>
+   <field name="date_issued_dtsim">1795-01-01T00:00:00Z</field>
+   <field name="date_issued_ssim">1799</field>
+   <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
+ </doc>
+
+ <doc>
+   <field name="id">kb852bf7877</field>
+   <field name="image_id_ssm">T0000001.jp2</field>
+   <field name="druid_ssi">kb852bf7877</field>
+   <field name="collection_ssi">Images</field>
+   <field name="type_ssi">image</field>
+   <field name="doc_type_ssim">Image fixe</field>
+   <field name="doc_type_ssim">nonprojected graphic</field>
+   <field name="doc_type_ssim">print</field>
+   <field name="title_short_ssi">Journée célèbre du 18 fructidor an 5.eme de la République</field>
+   <field name="title_long_ssi">Journée célèbre du 18 fructidor an 5.eme de la République : [estampe]</field>
+   <field name="collector_ssim">Vinck, Carl de</field>
+   <field name="collector_ssim">Hennin, Michel</field>
+   <field name="artist_ssim">Berthault, Pierre-Gabriel.</field>
+   <field name="artist_ssim">Girardet, Abraham</field>
+   <field name="genre_ssim">Illustration</field>
+   <field name="genre_ssim">Scènes historiques-1789-1799</field>
+   <field name="medium_ssi">eau-forte, burin</field>
+   <field name="speaker_ssim">Ramel, Jean-Pierre</field>
+   <field name="date_issued_ssim">1802</field>
+   <field name="date_issued_dtsim">1802-01-01T00:00:00Z</field>
+   <field name="catalog_heading_ftsimv">Les événements de la Révolution -- Rivalités politiques et antagonismes sociaux -- Les luttes politiques -- De thermidor au coup d'état du 18 brumaire (novembre 1799)</field>
+   <field name="catalog_heading_etsimv">The events of the Revolution -- Political rivalries and social conflict -- Political struggles -- From 9 Thermidor (July 1794) to the "coup d'état" of 18 Brumaire (November 1799)</field>    
+ </doc>
+ 
+ <doc>
+   <field name="id">qv647nz8770</field>
+   <field name="image_id_ssm">T0000001.jp2</field>
+   <field name="druid_ssi">qv647nz8770</field>
+   <field name="collection_ssi">Images</field>
+   <field name="type_ssi">image</field>
+   <field name="doc_type_ssim">Image fixe</field>
+   <field name="doc_type_ssim">nonprojected graphic</field>
+   <field name="doc_type_ssim">print</field>
+   <field name="title_short_ssi">Le Point d'honneur</field>
+   <field name="title_long_ssi">Le Point d'honneur : [estampe]</field>
+   <field name="collector_ssim">Hennin, Michel</field>
+   <field name="artist_ssim">Brouwer, G.</field>
+   <field name="artist_ssim">Béricourt, E.</field>
+   <field name="genre_ssim">picture</field>
+   <field name="genre_ssim">Scènes de genre-1789-1799.</field>
+   <field name="medium_ssi">eau-forte, outils, coul. au repérage</field>
+   <field name="date_issued_ssim">1789</field>
+   <field name="date_issued_dtsim">1789-01-01T00:00:00Z</field>
+   <field name="catalog_heading_ftsimv">Les événements de la Révolution -- La politique au quotidien -- Les "types du jour" -- Les enfants</field>
+   <field name="catalog_heading_etsimv">The events of the Revolution -- Everyday politics -- Typical characters -- Children</field>    
+ </doc>
+ 
+ <doc>
+   <field name="id">zp486wj7751</field>
+   <field name="image_id_ssm">T0000001.jp2</field>
+   <field name="druid_ssi">zp486wj7751</field>
+   <field name="collection_ssi">Images</field>
+   <field name="type_ssi">image</field>
+   <field name="doc_type_ssim">Image fixe</field>
+   <field name="doc_type_ssim">nonprojected graphic</field>
+   <field name="doc_type_ssim">print</field>
+   <field name="title_short_ssi">Le Vendeur d'indulgence</field>
+   <field name="title_long_ssi">Le Vendeur d'indulgence : on fait argent de tout : [estampe]</field>
+   <field name="collector_ssim">Vinck, Carl de</field>
+   <field name="genre_ssim">picture</field>
+   <field name="genre_ssim">Caricatures et dessins humoristiques-1789-1799.</field>
+   <field name="medium_ssi">eau-forte, coul.</field>
+   <field name="date_issued_ssim">1790</field>
+   <field name="date_issued_dtsim">1790-01-01T00:00:00Z</field>
+   <field name="catalog_heading_ftsimv">Les événements de la Révolution -- La religion -- Le discrédit du clergé et de l'Église -- La critique des moeurs du clergé</field>
+   <field name="catalog_heading_etsimv">The events of the Revolution -- Religion -- The clergy and Church discredited -- The attack on priests' morals</field>
+ </doc>
+
+ <doc>
+   <field name="id">zp695fd1911</field>
+   <field name="image_id_ssm">T0000001.jp2</field>
+   <field name="druid_ssi">zp695fd1911</field>
+   <field name="collection_ssi">Images</field>
+   <field name="type_ssi">image</field>
+   <field name="doc_type_ssim">Image fixe</field>
+   <field name="doc_type_ssim">nonprojected graphic</field>
+   <field name="doc_type_ssim">print</field>
+   <field name="title_short_ssi">Bonaparte au Caire</field>
+   <field name="title_long_ssi">Bonaparte au Caire : [estampe]</field>
+   <field name="collector_ssim">Hennin, Michel</field>
+   <field name="genre_ssim">picture</field>
+   <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
+   <field name="medium_ssi">eau-forte, pointillé</field>
+   <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
+   <field name="date_issued_ssim">1798</field>
+   <field name="date_issued_ssim">1799</field>
+   <field name="date_issued_dtsim">1798-01-01T00:00:00Z</field>
+   <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
+   <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
+   <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
+ </doc>
+

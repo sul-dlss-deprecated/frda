@@ -53,7 +53,7 @@ class CatalogController < ApplicationController
     config.parent_identifying_field = "volume_ssi" # this field tells us who our parent is
     
     config.collection_identifying_field = "type_ssi"  # this tells us what kind of item we are within a collection (e.g. "page", "volume", "subvolume", "image")
-    config.collection_identifying_value = "collection" # items of this type are the overall collection items (e.g. "ap-collection" or "images-collection")
+    config.collection_identifying_value = "collection" # items of this type are the overall collection items 
     
     config.collection_member_identifying_field = "collection_ssi"  # this identifies what overall collection we are in
             
@@ -76,12 +76,10 @@ class CatalogController < ApplicationController
     # NOT SURE THESE ARE RELEVANT SINCE WE HAVE CUSTOM VIEWS FOR ALL ITEMS  Peter 2/1/2013
     # solr field configuration for search results/index views
     config.index.show_link = 'title_tsi'
-    config.index.record_display_type = 'format_ssim'
 
     # solr field configuration for document/show views
     config.show.html_title = 'title_tsi'
     config.show.heading = 'title_tsi'
-    config.show.display_type = 'format_ssim'
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -108,12 +106,12 @@ class CatalogController < ApplicationController
       :"#{Frda::Application.config.images_id}" => { :label => "Images de la Révolution française", :fq => "#{blacklight_config.collection_member_identifying_field}:(\"#{Frda::Application.config.images_id}\")" }
     }
 
+    config.add_facet_field 'date_issued_iim', :label => 'frda.show.year'
+    config.add_facet_field 'doc_type_ssim', :label => 'frda.show.type'
     config.add_facet_field 'medium_ssi', :label => 'frda.show.medium'
-    config.add_facet_field 'publisher_ssi', :label => 'frda.show.publisher', :limit => 10
-    config.add_facet_field 'person_ssim', :label => 'frda.show.people', :limit => 10
-    config.add_facet_field 'subject_ssim', :label => 'frda.show.subject', :limit => 10
-    config.add_facet_field 'format_ssim', :label => 'frda.show.format'
-    config.add_facet_field 'year_isi', :label => 'frda.show.date'
+    config.add_facet_field 'genre_ssim', :label => 'frda.show.genre', :limit => 10
+    config.add_facet_field 'artist_ssim', :label => 'frda.show.artist', :limit => 10
+    config.add_facet_field 'collector_ssim', :label => 'frda.show.collector', :limit => 10
 
     config.add_facet_field 'highlight_ssim', :label => I18n.t('frda.nav.collection_highlights'), :show => false,  :query => collection_highlights
 

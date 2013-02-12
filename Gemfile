@@ -30,12 +30,15 @@ group :test do
   gem 'capybara'
 end
 
+group :development do
+	gem 'better_errors'
+	gem 'binding_of_caller'
+	gem 'meta_request'
+end
+
 group :development, :staging, :test do
   gem 'jettywrapper'
   gem 'sqlite3'
-	gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'meta_request'
 end
 
 gem 'json', '~> 1.7.7'

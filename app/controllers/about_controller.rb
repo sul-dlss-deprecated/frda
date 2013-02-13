@@ -11,7 +11,7 @@ class AboutController < ApplicationController
       @email=params[:email]
       @message=params[:message]
       unless @message.blank?
-        FrdaMailer.contact_message(:subject=>@subject,:name=>@name,:email=>@email,:message=>@message).deliver 
+        FrdaMailer.contact_message(:params=>params,:request=>request).deliver 
         flash[:notice]=t("frda.about.contact_message_sent")
         unless @from.blank?
           redirect_to(@from)

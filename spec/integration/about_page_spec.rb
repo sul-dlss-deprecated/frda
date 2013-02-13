@@ -19,18 +19,18 @@ describe("About Pages",:type=>:request,:integration=>true) do
     page.should have_content(@curator_title)
   end
 
-  # it "should show the contact us page" do
-  #   visit '/about/contact'
-  #   page.should have_content(@contact_us_title)
-  #   fill_in 'name', :with=>'Spongebob Squarepants'
-  #   click_button 'Send'
-  #   find('div.alert').should have_content(I18n.t("frda.about.contact_error"))
-  #   fill_in 'message', :with=>'I live in a pineapple under the sea.'
-  #   FrdaMailer.stub_chain(:contact_message,:deliver).and_return('a mailer')
-  #   FrdaMailer.should_receive(:contact_message)
-  #   click_button 'Send'
-  #   find('div.alert').should have_content(I18n.t("frda.about.contact_message_sent"))
-  # end
+  it "should show the contact us page" do
+    visit '/about/contact'
+    page.should have_content(@contact_us_title)
+    fill_in 'name', :with=>'Spongebob Squarepants'
+    click_button 'Send'
+    find('div.alert').should have_content(I18n.t("frda.about.contact_error"))
+    fill_in 'message', :with=>'I live in a pineapple under the sea.'
+    FrdaMailer.stub_chain(:contact_message,:deliver).and_return('a mailer')
+    FrdaMailer.should_receive(:contact_message)
+    click_button 'Send'
+    find('div.alert').should have_content(I18n.t("frda.about.contact_message_sent"))
+  end
 
   it "should show a contact section" do
     visit '/about'

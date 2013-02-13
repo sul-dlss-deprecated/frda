@@ -5,8 +5,11 @@
   </head>
   <body>
 <p>Contact Us message from <%= t('blacklight.application_name')  %>:</p>
+<p>Time submitted: <%=Time.now%></p>
 <p>Subject: <%=@subject%></p>
 <p>Name: <%=@name%></p>
 <p>Email: <%=@email%></p>
 <p>Message: <%=@message%></p>
+<p>Source Page: <%=@from%></p>
+<p>User agent: <%=@request.env["HTTP_USER_AGENT"]%></p>
 </body></html>

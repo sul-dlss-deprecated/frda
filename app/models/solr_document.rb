@@ -35,6 +35,10 @@ class SolrDocument
   def description(language=I18n.default_locale)
     multivalue_field("description_#{language[0]}tsim")
   end
+  
+  def catalog_heading(language=I18n.default_locale)
+    multivalue_field("catalog_heading_#{language[0]}tsimv")
+  end
 
   def collector
     multivalue_field('collector_ssim')

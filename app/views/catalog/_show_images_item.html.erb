@@ -11,9 +11,11 @@
 <div class="row">
   <div class="span12">
     <h2><%= t('frda.image.detail.title') %></h2>
-    <ul class="item breadcrumb">
-      <li>[-- item breadcrumb goes here --]</li>
-    </ul>
+ 	 <% if @document.catalog_heading(I18n.locale).size > 0 %>
+	   <ul class="item breadcrumb">
+	      <li><%=@document.catalog_heading(I18n.locale).first%></li>
+	    </ul>
+	 <% end %>
     <%= render 'previous_next_doc' %>
   </div>
 </div>
@@ -29,11 +31,11 @@
   </div>
 
   <div class="span6 metadata">
+    <% unless @document.title.nil?%>
+      <h3><%= @document.title %></h3>
+    <% end %>
+
     <dl class="dl-invert">
-      <% unless @document.title.nil?%>
-        <dt>Title</dt>
-        <%= @document.title %>
-      <% end %>
       <% unless @document.medium.nil?%>
         <dt><%=t('frda.show.medium')%></dt>
         <dd><%=@document.medium%></dd>

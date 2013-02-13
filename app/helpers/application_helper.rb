@@ -25,6 +25,7 @@ module ApplicationHelper
   end
   
   def show_formatted_list(mvf,opts={})
+    mvf.reject!{|v| v.blank?}
     content_tag(:ul, :class => "item-mvf-list") do
       mvf.collect do |val|
         if opts[:facet]

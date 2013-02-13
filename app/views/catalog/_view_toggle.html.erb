@@ -3,11 +3,12 @@
     <div class='view_toggle tabbable tabs-below'>
       <ul class="nav nav-pills">
         <% if on_ap_page %>
-          <li><%= link_to(t('frda.search.view_toggle.covers'), catalog_index_path(params.merge(:view => 'covers')), :class=>"#{'active' if params[:view] == 'covers' or params[:view].nil? }") %></li>
+          <li><%= link_to('<i class="icon-book"></i>'.html_safe, catalog_index_path(params.merge(:view => 'covers')), :alt => 'Covers view of results', :title => 'Covers view of results', :class=>"#{'active' if params[:view] == 'covers' or params[:view].nil? }") %></li>
         <% elsif on_images_page %>
-          <li><%= link_to(t('frda.search.view_toggle.gallery'), catalog_index_path(params.merge(:view => 'gallery')), :class=>"#{'active' if params[:view] == 'gallery' or params[:view].nil? }") %></li>
+          <li><%= link_to('<i class="icon-picture"></i>'.html_safe, catalog_index_path(params.merge(:view => 'gallery')), :alt => 'Gallery view of results', :title => 'Gallery view of results', :class=>"#{'active' if params[:view] == 'gallery' or params[:view].nil? }") %></li>
+          <li><%= link_to('<i class="icon-tags"></i>'.html_safe, catalog_index_path(params.merge(:view => 'categories')), :alt => 'Categories view of results', :title => 'Categories view of results', :class=>"#{'active' if params[:view] == 'categories'}") %></li>
         <% end %>
-        <li><%= link_to(t('frda.search.view_toggle.list'), catalog_index_path(params.merge(:view => 'list')), :class=>"#{'active' if params[:view] == 'list'}") %></li>
+        <li><%= link_to('<i class="icon-align-justify"></i>'.html_safe, catalog_index_path(params.merge(:view => 'list')), :alt => 'List view of results', :title => 'List view of results', :class=>"#{'active' if params[:view] == 'list'}") %></li>
       </ul>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <div class="row results-controls">
 
-  <div class="span5 prev-next">
+  <div class="span4 prev-next">
     <% if paginate_params(@response).num_pages > 1 %>
     <%= paginate_rsolr_response @response, :theme => :blacklight_compact %>
     <% else %>
@@ -8,7 +8,21 @@
     <% end %>
   </div>
 
-  <div class="span4 page-pulldown">
+  <div class="span3 view-toggle">
+    <div class='view_toggle tabbable tabs-below'>
+      <ul class="nav nav-pills">
+        <% if on_ap_page %>
+          <li><%= link_to('<i class="icon-book"></i>'.html_safe, catalog_index_path(params.merge(:view => 'covers')), :alt => 'Covers view of results', :title => 'Covers view of results', :class=>"#{'active' if params[:view] == 'covers' or params[:view].nil? }") %></li>
+        <% elsif on_images_page %>
+          <li><%= link_to('<i class="icon-picture"></i>'.html_safe, catalog_index_path(params.merge(:view => 'gallery')), :alt => 'Gallery view of results', :title => 'Gallery view of results', :class=>"#{'active' if params[:view] == 'gallery' or params[:view].nil? }") %></li>
+          <li><%= link_to('<i class="icon-tags"></i>'.html_safe, catalog_index_path(params.merge(:view => 'categories')), :alt => 'Categories view of results', :title => 'Categories view of results', :class=>"#{'active' if params[:view] == 'categories'}") %></li>
+        <% end %>
+        <li><%= link_to('<i class="icon-align-justify"></i>'.html_safe, catalog_index_path(params.merge(:view => 'list')), :alt => 'List view of results', :title => 'List view of results', :class=>"#{'active' if params[:view] == 'list'}") %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="span2 page-pulldown">
     <%= render 'sort_and_per_page' %>
   </div>
 

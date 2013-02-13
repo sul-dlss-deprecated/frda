@@ -53,11 +53,8 @@ $(document).ready(function(){
       <%#= render :partial => 'constraints' %>
     </div>
 
-    <%# bar with prev|next and per-page %>
+    <%# bar with prev|next, views toggles, and per-page %>
     <%= render "results_controls" %>
-
-    <%# tabs to switch view of results %>
-    <%= render "view_toggle" %>
 
     <%# search results items %>
     <%= render_document_index %>

@@ -177,3 +177,74 @@
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
  </doc>
 
+<doc>
+   <field name="id">bb104kv7261</field>
+   <field name="image_id_ssm">T0000001.jp2</field>
+   <field name="druid_ssi">bb018fc7286</field>
+   <field name="collection_ssi">Images</field>
+   <field name="type_ssi">image</field>
+   <field name="doc_type_ssim">Image fixe</field>
+   <field name="doc_type_ssim">nonprojected graphic</field>
+   <field name="doc_type_ssim">print</field>
+   <field name="title_short_ssi">Jac. Delion de Surede: député du Poitou ne a Lyon le 7 juin 1738</field>
+   <field name="title_long_ssi">Jac. Delion de Surede: député du Poitou ne a Lyon le 7 juin 1738 : [estampe]: chez Le Vachez, A Paris, [1790]</field>
+   <field name="collector_ssim">Hennin, Michel</field>
+   <field name="genre_ssim">picture</field>
+   <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
+   <field name="medium_ssi">eau-forte, pointillé</field>
+   <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
+   <field name="date_issued_ssim">1798</field>
+   <field name="date_issued_ssim">1799</field>
+   <field name="date_issued_dtsim">1798-01-01T00:00:00Z</field>
+   <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
+   <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
+   <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
+ </doc>
+
+<doc>
+   <field name="id">bb039cc5395</field>
+   <field name="image_id_ssm">T0000001.jp2</field>
+   <field name="druid_ssi">bb039cc5395</field>
+   <field name="collection_ssi">Images</field>
+   <field name="type_ssi">image</field>
+   <field name="doc_type_ssim">Image fixe</field>
+   <field name="doc_type_ssim">nonprojected graphic</field>
+   <field name="doc_type_ssim">print</field>
+   <field name="title_short_ssi">Humanité et Sensibilité des Militaires au Bivouac entre Homberg et Walsach 13 Ventose An VII</field>
+   <field name="title_long_ssi">Humanité et Sensibilité des Militaires au Bivouac entre Homberg et Walsach 13 Ventose An VII [s.n.], Paris], 1800-1805</field>
+   <field name="collector_ssim">Hennin, Michel</field>
+   <field name="genre_ssim">picture</field>
+   <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
+   <field name="medium_ssi">eau-forte, pointillé</field>
+   <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
+   <field name="date_issued_ssim">1798</field>
+   <field name="date_issued_ssim">1799</field>
+   <field name="date_issued_dtsim">1798-01-01T00:00:00Z</field>
+   <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
+   <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
+   <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
+ </doc>
+
+<doc>
+   <field name="id">bb204rc7778</field>
+   <field name="image_id_ssm">T0000001.jp2</field>
+   <field name="druid_ssi">bb101kw2226</field>
+   <field name="collection_ssi">Images</field>
+   <field name="type_ssi">image</field>
+   <field name="doc_type_ssim">Image fixe</field>
+   <field name="doc_type_ssim">nonprojected graphic</field>
+   <field name="doc_type_ssim">print</field>
+   <field name="title_short_ssi">Buonaparte: general en chef de l'armée d'Italie</field>
+   <field name="title_long_ssi">Buonaparte: general en chef de l'armée d'Italie : [estampe]: chez l'auteur, A Paris, [ca 1797]</field>
+   <field name="collector_ssim">Hennin, Michel</field>
+   <field name="genre_ssim">picture</field>
+   <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
+   <field name="medium_ssi">eau-forte, pointillé</field>
+   <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
+   <field name="date_issued_ssim">1798</field>
+   <field name="date_issued_ssim">1799</field>
+   <field name="date_issued_dtsim">1798-01-01T00:00:00Z</field>
+   <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
+   <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
+   <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
+ </doc>

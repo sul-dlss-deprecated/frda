@@ -88,6 +88,7 @@ en:
       search_label: 'Search'
       facets:
         title: 'Browse'
+      select_all_on_page: 'Select all on page'
     sidebar:
       actions:
         title: 'Actions'

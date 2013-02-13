@@ -79,6 +79,7 @@ fr:
       search_label: 'Ricerca'
       facets:
         title: 'Limitare la ricerca'
+      select_all_on_page: 'Select all on page'
     sidebar:
       actions:
         title: 'Actions'

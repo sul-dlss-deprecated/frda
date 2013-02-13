@@ -10,6 +10,7 @@ fr:
       subject: 'Subject'
       message: 'Message'
       describe_problem: 'Please describe your question or problem.'
+      curator: 'Curator, French and Italian Collections'
     curator_heading: 'From the curator'
     curator_text_html: |
       <div class="truncate">

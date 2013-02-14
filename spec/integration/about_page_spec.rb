@@ -35,7 +35,7 @@ describe("About Pages",:type=>:request,:integration=>true) do
   it "should show a contact section" do
     visit '/about'
     page.should have_content(@contact)
-    page.should have_content("Curator of French and Italian Collections")
+    page.should have_content("Curator, French and Italian Collections")
   end
 
   it "should show the terms of use section" do

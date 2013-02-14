@@ -97,6 +97,7 @@ ul.inventory-ancestry {
       margin-left: 3px;
       padding-top: 4px;
       padding-bottom: 4px;
+      padding: 4px 10px 5px 10px;
     }
     li > a:hover {
       background-color: $header_bg_color;
@@ -214,7 +215,7 @@ span.constraints-label {margin-right: 0.5em;}
     width: 100%;
   }
   .prev-next {margin-bottom: 0;}
-  .gallery_toggle, #sortAndPerPage {margin-right: 20px;}
+  .view-toggle, #sortAndPerPage {margin-right: 20px;}
 }
 @media (max-width: 767px) {
   .blacklight-catalog-index #documents.default {

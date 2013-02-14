@@ -16,7 +16,7 @@ en:
       truncate: '…'
 
     pagination_compact:
-      previous: '&laquo; Previous'
+      previous: '&laquo; Prev'
       next: 'Next &raquo;'
 
   blacklight:

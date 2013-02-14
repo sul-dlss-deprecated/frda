@@ -16,8 +16,8 @@ fr:
       truncate: '…'
       
     pagination_compact:
-      previous: '&laquo; Precedente'
-      next: 'Prossimo &raquo;'
+      previous: '&laquo;'
+      next: '&raquo;'
 
   blacklight:
     active_record:
@@ -206,8 +206,8 @@ fr:
         no_items_found: '%{entry_name} non trovato(a)'
         single_item_found: 'Mostro <b>1</b> %{entry_name}'
         pages:
-          one: 'Mostro <b>tutti %{total_num}</b> %{entry_name}'
-          other: 'Mostro %{entry_name} <b>%{start_num} - %{end_num}</b> di <b>%{total_num}</b>'
+          one: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b>'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b>'
       entry_pagination_info:
         one: "Mostro l'unico risultato della ricerca"
         other: 'Mostro il risultato <b>%{current} di %{total}</b> della ricerca'

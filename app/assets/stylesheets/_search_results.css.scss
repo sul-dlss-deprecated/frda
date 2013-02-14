@@ -1,33 +1,51 @@
 #documents {
   border-top: 2px dotted darken($container_bg_color, 10%);
+  font-size: 12px;
   margin-top: 0;
   padding-top: 15px;
   h5.index_title {font-size: 13px;}
-  a {color: #333;}
+  a {}
+  em {
+    background-color: palegoldenrod;
+    border-radius: 2px;
+    font-style: normal;
+    padding: 1px 2px;
+  }
 }
 
 /* AP Default View */
 #documents.default {
-  .documentHeader {
-    display: inline-block;
-    .index_title {
-      float: left;
-      margin: 0;
-      max-width: 480px;
+  .oneresult {
+    margin-left: 15px;
+  }
+  .pageimg {
+    float: left;
+    text-align: center;
+  }
+  img {
+    border: 1px solid #CCC;
+    box-shadow: 1px 1px 5px #CCC;
+    margin: 7px;
+    padding: 7px;
+    vertical-align: top;
+    width: 110px;
+  }
+  h3 {
+    color: $active_heading_link_color;
+    font-size: 12px;
+    &.index_title {
+      max-width: 100%;
     }
+    a {color: $active_heading_link_color;}
   }
-  .row {margin-bottom: 20px; padding-left: 10px;}
-  dl {margin-top: 8px;}
-  dt {
-    text-align: left;
-    width: 50px;
+  .speaker {float: right;}
+  .pagenum {display: block;}
+  .snippet {
+    clear: right;
+    display: inline-block;
+    padding-top: 10px;
   }
-  dd {margin-left: 60px;}
-  img {vertical-align: top;}
-  .results-image {
-    margin-top: 2px;
-  }
-  .results-metadata {margin-left: 0;}
+  .frda-label {color: #CCC;}
 }
 
 
@@ -230,33 +248,21 @@ span.constraints-label {margin-right: 0.5em;}
 
 /* Responsive styles */
 @media (min-width: 768px) and (max-width: 979px) {
-//  .blacklight-catalog-index #documents.default {
-//    .results-image {padding-right: 10px;}
-//  }
-//  .prev-next, .page-pulldown, .view-toggle {
-//    display: block;
-//    margin-bottom: 10px;
-//    margin-right: 20px;
-//    width: 100%;
-//  }
-//  .prev-next {margin-bottom: 0;}
-//  .view-toggle, #sortAndPerPage {margin-right: 20px;}
-  .prev-next {
-//    display: inline-block;
-    width: 50%;
+  .blacklight-catalog-index {
+    #documents.default {
+      .results-image {margin-left: 5px;}
+      .results-metadata {margin-left: 25px;}
+    }
+    .prev-next {
+      width: 50%;
+    }
+    .view-toggle {
+      float: right;
+    }
   }
-  .view-toggle {
-    float: right;
-  }
-//  .view_toggle {display: inline-block;}
-
-
 }
+
 @media (max-width: 767px) {
-//  .blacklight-catalog-index #documents.default {
-//    .dl-horizontal dt {float: left;}
-//    .results-image {margin-bottom: 10px;}
-//  }
   img.ap-collection-image, img.images-collection-image, .page-pulldown {display: none;}
   .prev-next {
     display: inline-block;

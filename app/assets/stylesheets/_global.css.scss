@@ -19,6 +19,7 @@ $active_link_color: #820000;
 $hover_link_color: lighten($active_link_color, 10%);
 $active_nav_link_color: lighten($active_link_color, 10%);
 $inactive_nav_link_color: $text_color;
+$active_heading_link_color: #898579;
 
 $facet_box_background_color: darken($header_bg_color, 5%);
 $facet_link_color: $active_link_color;

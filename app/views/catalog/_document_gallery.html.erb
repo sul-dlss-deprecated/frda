@@ -13,11 +13,11 @@
                              :counter => (index + 1 + @response.params[:start].to_i) %>
         <!-- Not using the document_header partial here because we need to truncate title -->
         <div class="documentHeader clearfix">
-          <h5 class="index_title">
+          <h3 class="index_title">
             <%= link_to_document document, 
                                  :label=> truncate(document.title, :length => 55), 
                                  :counter => (index + 1 + @response.params[:start].to_i) %>
-          </h5>
+          </h3>
           <% # bookmark functions for items/docs -%>
           <%#= render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
         </div>

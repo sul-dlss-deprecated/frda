@@ -13,6 +13,9 @@ Frda::Application.routes.draw do
   
     match 'collections', :to => 'catalog#index', :as => 'collection_highlights'
 
+    match 'show_page', :to=>'catalog#show_page', :as =>'show_page'
+    match 'show_flipbook', :to=>'catalog#show_flipbook', :as=>'show_flipbook'
+    
     match 'ap', :to => 'catalog#index', :as =>'ap_collection', :defaults=>{:f=>{:collection_ssi=>[Frda::Application.config.ap_id]}}
     match 'images', :to => 'catalog#index', :as =>'image_collection', :defaults=>{:f=>{:collection_ssi=>[Frda::Application.config.images_id]}}
         

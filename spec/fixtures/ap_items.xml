@@ -1,6 +1,35 @@
 <doc>
+  <field name="id">wb029sv4796_00_0005</field>
+  <field name="page_num_ssi">1</field>
+  <field name="image_id_ssm">wb029sv4796_00_0005.jp2</field>
+  <field name="ocr_id_ss">wb029sv4796_99_0005.txt</field>
+  <field name="druid_ssi">wb029sv4796</field>
+  <field name="collection_ssi">Archives parlementaires</field>
+  <field name="vol_num_ssi">36</field>
+  <field name="vol_title_ssi">Tome 36 : Du 11 décembre 1791 au 1er janvier 1792</field>
+  <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
+  <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+  <field name="type_ssi">page</field>
+  <field name="doc_type_ssim">séance</field>
+  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="session_date_val_ssi">1791-12-11</field>
+  <field name="session_date_dtsi">1791-12-11T00:00:00Z</field>
+  <field name="session_date_ftsiv">Séance du dimanche 11 décembre 1791 .</field>
+  <field name="session_prez_ssi">PRÉSIDENCE DE M. LEMONTEY.</field>
+  
+  <field name="speaker_ssim">M. Dorizy.</field>
+  <field name="spoken_text_timv">M. Dorizy. Pour concilier tous les esprits, on peut, en
+    faisant mention honorable de 1 adresse, mettre dans le procès-verbal « sans approuver le mot
+    loi qui est inconstitutionnel. » (Murmures.)</field>
+  <field name="speaker_ssim">M. Gohier.</field>
+  <field name="spoken_text_timv">Page 1 spoken text</field>
+  
+  <field name="text_tiv">Page 1 text</field>
+</doc>
+
+<doc>
   <field name="id">wb029sv4796_00_0006</field>
-  <field name="page_num_ss">2</field>
+  <field name="page_num_ssi">2</field>
   <field name="image_id_ssm">wb029sv4796_00_0006.jp2</field>
   <field name="ocr_id_ss">wb029sv4796_99_0006.txt</field>
   <field name="druid_ssi">wb029sv4796</field>
@@ -57,8 +86,37 @@
 </doc>
 
 <doc>
+  <field name="id">wb029sv4796_00_0007</field>
+  <field name="page_num_ssi">3</field>
+  <field name="image_id_ssm">wb029sv4796_00_0007.jp2</field>
+  <field name="ocr_id_ss">wb029sv4796_99_0007.txt</field>
+  <field name="druid_ssi">wb029sv4796</field>
+  <field name="collection_ssi">Archives parlementaires</field>
+  <field name="vol_num_ssi">36</field>
+  <field name="vol_title_ssi">Tome 36 : Du 11 décembre 1791 au 1er janvier 1792</field>
+  <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
+  <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+  <field name="type_ssi">page</field>
+  <field name="doc_type_ssim">séance</field>
+  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="session_date_val_ssi">1791-12-11</field>
+  <field name="session_date_dtsi">1791-12-11T00:00:00Z</field>
+  <field name="session_date_ftsiv">Séance du dimanche 11 décembre 1791 .</field>
+  <field name="session_prez_ssi">PRÉSIDENCE DE M. LEMONTEY.</field>
+  
+  <field name="speaker_ssim">M. Dorizy.</field>
+  <field name="spoken_text_timv">M. Dorizy. Pour concilier tous les esprits, on peut, en
+    faisant mention honorable de 1 adresse, mettre dans le procès-verbal « sans approuver le mot
+    loi qui est inconstitutionnel. » (Murmures.)</field>
+  <field name="speaker_ssim">M. Gohier.</field>
+  <field name="spoken_text_timv">Page 3 spoken text</field>
+  
+  <field name="text_tiv">Page 3 text</field>
+</doc>
+
+<doc>
   <field name="id">wb029sv4796_00_0111</field>
-  <field name="page_num_ss">102</field>
+  <field name="page_num_ssi">4</field>
   <field name="image_id_ssm">wb029sv4796_00_0111.jp2</field>
   <field name="ocr_id_ss">wb029sv4796_99_0111.txt</field>
   <field name="druid_ssi">wb029sv4796</field>
@@ -99,7 +157,7 @@
 
 <doc>
   <field name="id">fy968nm6633_00_0648</field>
-  <field name="page_num_ss">637</field>
+  <field name="page_num_ssi">637</field>
   <field name="image_id_ssm">fy968nm6633_00_0648.jp2</field>
   <field name="ocr_id_ss">fy968nm6633_99_0648.txt</field>
   <field name="druid_ssi">fy968nm6633</field>
@@ -139,7 +197,7 @@
 
 <doc>
   <field name="id">fy968nm6633_00_0666</field>
-  <field name="page_num_ss">645</field>
+  <field name="page_num_ssi">645</field>
   <field name="image_id_ssm">fy968nm6633_00_0666.jp2</field>
   <field name="ocr_id_ss">fy968nm6633_99_0666.txt</field>
   <field name="druid_ssi">fy968nm6633</field>
@@ -172,7 +230,7 @@
 <!-- contents -->
 <doc>
   <field name="id">jt959wc5586_00_0782</field>
-  <field name="page_num_ss">783</field>
+  <field name="page_num_ssi">783</field>
   <field name="image_id_ssm">jt959wc5586_00_0782.jp2</field>
   <field name="ocr_id_ss">jt959wc5586_99_0782.txt</field>
   <field name="druid_ssi">jt959wc5586</field>
@@ -196,7 +254,7 @@
 <!-- table_alpha -->
 <doc>
   <field name="id">bm916nx5550_00_0006</field>
-  <field name="page_num_ss">V</field>
+  <field name="page_num_ssi">V</field>
   <field name="image_id_ssm">bm916nx5550_00_0006.jp2</field>
   <field name="ocr_id_ss">bm916nx5550_99_0006.txt</field>
   <field name="druid_ssi">bm916nx5550</field>
@@ -217,7 +275,7 @@
 </doc>
 <doc>
   <field name="id">mc666yy3026_00_0144</field>
-  <field name="page_num_ss">140</field>
+  <field name="page_num_ssi">140</field>
   <field name="image_id_ssm">mc666yy3026_00_0144.jp2</field>
   <field name="ocr_id_ss">mc666yy3026_99_0144.txt</field>
   <field name="druid_ssi">mc666yy3026</field>

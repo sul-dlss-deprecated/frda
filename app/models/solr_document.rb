@@ -21,11 +21,11 @@ class SolrDocument
   
   # for AP page items
   def page_title 
-    "#{self.volume_name} - p. #{self.page_number}"
+    "#{self.volume_name}"
   end
   
   def page_number
-    self[:page_num_ss]
+    self[:page_num_ssi]
   end
   
   def druid
@@ -129,17 +129,38 @@ class SolrDocument
      self.has_key?(blacklight_config.collection_identifying_field) and 
        self[blacklight_config.collection_identifying_field].include?(blacklight_config.collection_identifying_value)
    end
+   
+   def total_pages
+     self.images_item? ? 1 : Blacklight.solr.select(:params => {:fq => "druid_ssi:\"#{self.druid}\"",:rows=>0})["response"]["numFound"]
+   end
 
+
+   # the previous page for an AP item
+   def prev_page
+     @prev_page ||= get_page_offset(-1)
+   end
+   
+   # the next page for an AP item
+   def next_page
+     @next_page ||= get_page_offset(1)
+   end
+      
+   def get_page_offset(offset)
+     return nil unless self.ap_item?
+     docs = Blacklight.solr.select(:params => {:fq => "druid_ssi:\"#{self.druid}\" AND page_num_ssi:\"#{(self.page_number.to_i)+offset}\""})["response"]["docs"]
+     return (docs.empty? ? nil : SolrDocument.new(docs.first))         
+   end
+   
    # TODO this must be a better way to do this via solr -- this method only works with two levels of hierarchy ??
    def ancestors
      ancestors = []
-     parent=self.parent
-     if parent 
-       grandparent = parent.parent
-       ancestors << grandparent if grandparent
-       ancestors << parent
-     end
-     return ancestors
+     # parent=self.parent
+     # if parent 
+     #   grandparent = parent.parent
+     #   ancestors << grandparent if grandparent
+     #   ancestors << parent
+     # end
+     # return ancestors
    end
    
    # return the item whose id is equal to my volume id

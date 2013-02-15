@@ -5,15 +5,38 @@
 </div>
 
 <div class="row document-details">
-  <div class="span6">
-    <div class="item active">
-      <%= image_tag(@document.first_image, :alt => "Image") %>
-    </div>
-  </div>
+	<div class="span12" id="controls">
+	<% case @mode %>
+		<% when "ocr" %>
+			<%= link_to 'Image+Text',{:action=>'show_page',:id=>@document.druid,:page_num=>@document.page_number,:mode=>"image"},:remote=>true%>
+		<% else %>
+			<%= link_to 'Text only',{:action=>'show_page',:id=>@document.druid,:page_num=>@document.page_number,:mode=>"ocr"},:remote=>true%>
+	<% end %>
+	| 
+	<%= link_to 'Flipbook',show_flipbook_path(:id=>@document.druid,:page_num=>@document.page_number),:remote=>true,:class=>'hidden showOnLoad' %>
 
-  <div class="span6 metadata">
+	<% if @document.prev_page %>
+			<%= link_to '<-',{:action=>'show_page',:id=>@document.druid,:page_num=>((@document.page_number.to_i)-1).to_s,:mode=>@mode},:remote=>true%>
+	<% else %>
+			&nbsp;&nbsp;&nbsp;
+	<% end %>
+	Page <%=@document.page_number%> of <%=@document.total_pages%>
+	<% if @document.next_page %>
+		<%= link_to '->',{:action=>'show_page',:id=>@document.druid,:page_num=>((@document.page_number.to_i)+1).to_s,:mode=>@mode},:remote=>true%>
+	<% else %>
+			&nbsp;&nbsp;&nbsp;
+	<% end %>
+	</div>	
+	<% if @mode != 'ocr' %>
+	  <div class="span6">
+	    <div class="item active">
+	      <%= image_tag(@document.first_image, :alt => "Image") %>
+	    </div>
+	  </div>
+	<% end %>
+	
+  <div class="span<%= @mode == 'ocr' ? "12" : "6"%> metadata">
 		   <h3>Page Text</h3>
 			<%= simple_format(@document.page_text)%>
-
   </div>
 </div>

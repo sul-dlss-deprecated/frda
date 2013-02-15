@@ -12,22 +12,9 @@
 	}
 }
 
-#location-map.modal {
-  width: 630px;
-  p {margin-left: 20px;}
-	.modal-header {
-	  @include modal-header;
-	  padding: 0 0 9px;
-	  h3 {
-	    border-top: 1px solid #999;
-      color: #fff;
-	    font-size: 18px;
-	  }
-	}
-	.modal-footer {
-		padding: 15px;
-		text-align: center;
-	}
+#flipbook.modal {
+	width: 700px;
+	height: 700px;
 }
 
 #terms-dialog.modal {

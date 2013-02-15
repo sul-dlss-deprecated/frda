@@ -22,6 +22,7 @@
   font-size: 12px;
   margin-top: 0;
   padding-top: 15px;
+  h3.index_title {padding-top: 0;}
   h5.index_title {font-size: 13px;}
   a {
     border-bottom: 1px dotted $active_heading_link_color;
@@ -38,6 +39,7 @@
 /* Default View */
 #documents.default {
   @include result-title-styling;
+  .results-image > a {border-bottom: none;}
   .oneresult {
     margin-left: 15px;
   }
@@ -63,17 +65,24 @@
 /* Gallery View */
 #documents.gallery {
   @include result-title-styling;
-  ul.image-grid {list-style-type: none;}
+  ul.image-grid {
+    list-style-type: none;
+    margin-left: 5px;
+  }
   ul.image-grid li.image-item {
     float: left;
     margin-bottom: 10px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     min-height: 380px;
     text-align: center;
     width: 205px;
+    > a {border-bottom: none;}
     img {
       @include result-image-styling;
+      max-width: 90%;
     }
+    h3.index_title {margin-left: 14px;}
   }
 }
 
@@ -81,6 +90,7 @@
 #documents.list {
   @include result-title-styling;
   .row {
+    margin-bottom: 10px;
     padding-left: 10px;
     span {
       display: block;

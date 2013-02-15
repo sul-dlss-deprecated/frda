@@ -11,6 +11,14 @@ $(document).ready(function(){
 
 });
 
+function showMessage(message,style) {
+	$('.flash_messages').html('<div class="' + style + '">' + message + '<a class="close" data-dismiss="' + style + '" href="#">×</a></div>')
+}
+
+function clearMessages() {
+	$('.flash_messages').html('')	
+}
+
 function showOnLoad() {
 	$(".showOnLoad").show();
 	$('.showOnLoad').removeClass('hidden');	

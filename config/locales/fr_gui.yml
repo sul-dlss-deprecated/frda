@@ -37,6 +37,7 @@ fr:
       technical_description_title: 'Technical description'
       version_title: 'Application Version'      
     show:   
+      not_found: 'The selected page was not found.'    
       item: 
         one: '1 Item'
         other: "%{count} Items"

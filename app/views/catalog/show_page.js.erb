@@ -1,2 +1,8 @@
-$('#item_detail').html("<%= escape_javascript(render( :partial => "show_ap_item")).html_safe %>");
-showOnLoad();
+<%if @document%>
+	$('#item_detail').html("<%= escape_javascript(render( :partial => "show_ap_item")).html_safe %>");
+	clearMessages();
+	showOnLoad();
+<% else %>
+	showMessage('<%=t('frda.show.not_found')%>','alert');
+<%end%>
+

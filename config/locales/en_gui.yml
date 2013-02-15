@@ -51,6 +51,7 @@ en:
     collection_members:
       items_name: 'image'
     show:
+      not_found: 'The selected page was not found.'
       item: 
         one: '1 Item'
         other: "%{count} Items"

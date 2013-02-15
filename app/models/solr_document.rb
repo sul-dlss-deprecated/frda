@@ -134,7 +134,7 @@ class SolrDocument
      self.images_item? ? 1 : Blacklight.solr.select(:params => {:fq => "druid_ssi:\"#{self.druid}\"",:rows=>0})["response"]["numFound"]
    end
    
-   # TODO this must be a better way to do this via solr -- this method only works with two levels of hierarchy ??
+   # TODO FIX -- this must be a better way to do this via solr -- this method only works with two levels of hierarchy ??
    def ancestors
      ancestors = []
      # parent=self.parent

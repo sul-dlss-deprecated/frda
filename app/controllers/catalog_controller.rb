@@ -51,16 +51,24 @@ class CatalogController < ApplicationController
 
     # a call to show a new page for a given solr doc ID, when ajax will return just the partial, when non ajax will redirect to the correct page
   def show_page
+    from_id=params[:from_id]
     druid=params[:id]
     page_num=params[:page_num]
     @mode=params[:mode]
-    doc=Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_num_ssi:\"#{page_num}\""})["response"]["docs"].first
-    @document=SolrDocument.new(doc)
+    doc=Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_num_ssi:\"#{page_num}\""})["response"]["docs"]
+    @document=SolrDocument.new(doc.first) if doc.size > 0 # assuming we found this page
     if request.xhr?
       render 'show_page',:format=>:js
     else
-      redirect_to catalog_path(@document.id,:mode=>@mode)
+      unless @document
+        flash[:alert]=t('frda.show.not_found')
+        id=from_id
+      else
+        id=@document.id
+      end
+      redirect_to catalog_path(id,:mode=>@mode)
     end
+
   end
 
   

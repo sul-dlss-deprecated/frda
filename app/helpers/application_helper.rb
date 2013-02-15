@@ -1,5 +1,5 @@
 module ApplicationHelper
-  
+
   def on_scrollspy_page?
     on_about_pages
   end
@@ -10,7 +10,7 @@ module ApplicationHelper
     options.each {|k,v| result.merge!({k=>I18n.t(v)})}
     return result
   end
-  
+
   # series descriptions always come in pairs, the first in italian, the second in english...depending on tbe language, show a particular version
   def show_series_language_description(mvf,language)
     notes=[]
@@ -19,11 +19,11 @@ module ApplicationHelper
     end
     return notes.join('<br /><br />')
   end
-  
+
   def show_list(mvf)
     mvf.join(', ')
   end
-  
+
   def show_formatted_list(mvf,opts={})
     mvf.reject!{|v| v.blank?}
     content_tag(:ul, :class => "item-mvf-list") do
@@ -43,11 +43,11 @@ module ApplicationHelper
       return true
     end
   end
-  
+
   def link_to_collection_highlight(highlight)
     link_to("#{highlight.send("name_#{I18n.locale}")}", catalog_index_path(params_for_collection_highlight(highlight)))
   end
-  
+
   def params_for_collection_highlight(highlight)
     {:f => {blacklight_config.collection_highlight_field.to_sym => ["highlight_#{highlight.id}"]}}
   end
@@ -58,6 +58,20 @@ module ApplicationHelper
     section_list = ['curator', 'project_team_stanford',
                     'project_team_bnf', 'technical_description',
                     'acknowledgements', 'use_and_reproduction']
+  end
+
+  def link_to_search_result_view(icon, view_name, default_view)
+    if default_view
+      (params[:view] == "#{view_name}" or params[:view].nil?) ? view_state = 'active' : view_state = ''
+    else
+      params[:view] == "#{view_name}" ? view_state = 'active' : view_state = ''
+    end
+
+    link_to("<i class=#{icon}></i>".html_safe,
+      catalog_index_path(params.merge(:view => "#{view_name}")),
+      :alt => "#{view_name.titlecase} view of results",
+      :title => "#{view_name.titlecase} view of results",
+      :class => "#{view_state}")
   end
 
 end

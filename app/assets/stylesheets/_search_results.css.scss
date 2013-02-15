@@ -23,7 +23,10 @@
   margin-top: 0;
   padding-top: 15px;
   h5.index_title {font-size: 13px;}
-  a {}
+  a {
+    border-bottom: 1px dotted $active_heading_link_color;
+    text-decoration: none;
+  }
   em {
     background-color: palegoldenrod;
     border-radius: 2px;
@@ -78,7 +81,6 @@
 #documents.list {
   @include result-title-styling;
   .row {
-    margin-bottom: 20px;
     padding-left: 10px;
     span {
       display: block;
@@ -87,6 +89,9 @@
   .documentHeader {
     .index_title {max-width: 600px;}
     margin-top: 0;
+  }
+  span.year {
+    display: block;
   }
 }
 

@@ -5,6 +5,9 @@
     <div class="row">
       <div class="span9">
         <%= render :partial => "document_header", :locals => {:document_counter => index, :document => document} %>
+        <% unless list_is_empty?(document.year)%>
+          <span class="year"><%= show_list(document.year) %></span>
+        <% end %>
       </div>
     </div>
     <%#= render_document_partial document, :index, :document_counter => index %>

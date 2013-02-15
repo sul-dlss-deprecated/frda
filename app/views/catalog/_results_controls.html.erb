@@ -11,16 +11,28 @@
   <div class="span3 view-toggle">
     <div class='view_toggle tabbable tabs-below'>
       <ul class="nav nav-pills">
+
+        <%# AP-only results views %>
         <% if on_ap_page %>
-          <li><%= link_to('<i class="icon-th-list"></i>'.html_safe, catalog_index_path(params.merge(:view => 'default')), :alt => 'Default view of results', :title => 'Default view of results', :class=>"#{'active' if params[:view] == 'default' or params[:view].nil? }") %></li>
-          <li><%= link_to('<i class="icon-align-justify"></i>'.html_safe, catalog_index_path(params.merge(:view => 'text')), :alt => 'Text only of results', :title => 'Text only of results', :class=>"#{'active' if params[:view] == 'text'}") %></li>
-          <li><%= link_to('<i class="icon-th"></i>'.html_safe, catalog_index_path(params.merge(:view => 'covers')), :alt => 'Gallery view of results', :title => 'Gallery view of results', :class=>"#{'active' if params[:view] == 'covers'}") %></li>
-          <li><%= link_to('<i class="icon-signal"></i>'.html_safe, catalog_index_path(params.merge(:view => 'frequency')), :alt => 'Frequency view of results', :title => 'Frequency view of results', :class=>"#{'active' if params[:view] == 'frequency'}") %></li>
+          <li><%= link_to_search_result_view('icon-th', 'gallery', true) %></li>
+          <li><%= link_to_search_result_view('icon-align-justify', 'list', false) %></li>
+          <li><%= link_to_search_result_view('icon-th-list', 'default', false) %></li>
+          <li><%= link_to_search_result_view('icon-signal', 'frequency', false) %></li>
+
+        <%# Images-only results views %>
         <% elsif on_images_page %>
-          <li><%= link_to('<i class="icon-th"></i>'.html_safe, catalog_index_path(params.merge(:view => 'gallery')), :alt => 'Gallery view of results', :title => 'Gallery view of results', :class=>"#{'active' if params[:view] == 'gallery' or params[:view].nil? }") %></li>
-          <li><%= link_to('<i class="icon-align-justify"></i>'.html_safe, catalog_index_path(params.merge(:view => 'list')), :alt => 'List view of results', :title => 'List view of results', :class=>"#{'active' if params[:view] == 'list'}") %></li>
-          <li><%= link_to('<i class="icon-tags"></i>'.html_safe, catalog_index_path(params.merge(:view => 'categories')), :alt => 'Categories view of results', :title => 'Categories view of results', :class=>"#{'active' if params[:view] == 'categories'}") %></li>
+          <li><%= link_to_search_result_view('icon-th', 'gallery', true) %></li>
+          <li><%= link_to_search_result_view('icon-align-justify', 'list', false) %></li>
+          <li><%= link_to_search_result_view('icon-tags', 'categories', false) %></li>
+
+        <%# Combined results views %>
+        <% else %>
+          <li><%= link_to_search_result_view('icon-th', 'gallery', true) %></li>
+          <li><%= link_to_search_result_view('icon-th-list', 'default', false) %></li>
+          <li><%= link_to_search_result_view('icon-align-justify', 'list', false) %></li>
+          <li><%= link_to_search_result_view('icon-signal', 'frequency', false) %></li>
         <% end %>
+
       </ul>
     </div>
   </div>

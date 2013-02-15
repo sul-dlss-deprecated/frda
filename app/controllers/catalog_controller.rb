@@ -106,9 +106,7 @@ class CatalogController < ApplicationController
      :q => '{!raw f=id v=$id}' 
     }
     
-    #                                   top group is for AP, bottom group is for Images
-    config.document_index_view_types = ["default", "text", "covers", "frequency",
-                                        "gallery", "list", "categories"]
+    config.document_index_view_types = ["gallery", "list", "frequency", "default", "categories", "covers"]
 
     # NOT SURE THESE ARE RELEVANT SINCE WE HAVE CUSTOM VIEWS FOR ALL ITEMS  Peter 2/1/2013
     # solr field configuration for search results/index views

@@ -1,35 +1,12 @@
-#documents {
-  border-top: 2px dotted darken($container_bg_color, 10%);
-  font-size: 12px;
-  margin-top: 0;
-  padding-top: 15px;
-  h5.index_title {font-size: 13px;}
-  a {}
-  em {
-    background-color: palegoldenrod;
-    border-radius: 2px;
-    font-style: normal;
-    padding: 1px 2px;
-  }
+@mixin result-image-styling {
+  border: 1px solid #CCC;
+  box-shadow: 1px 1px 5px #CCC;
+  margin: 7px;
+  padding: 7px;
+  vertical-align: top;
 }
 
-/* AP Default View */
-#documents.default {
-  .oneresult {
-    margin-left: 15px;
-  }
-  .pageimg {
-    float: left;
-    text-align: center;
-  }
-  img {
-    border: 1px solid #CCC;
-    box-shadow: 1px 1px 5px #CCC;
-    margin: 7px;
-    padding: 7px;
-    vertical-align: top;
-    width: 110px;
-  }
+@mixin result-title-styling {
   h3 {
     color: $active_heading_link_color;
     font-size: 12px;
@@ -38,6 +15,43 @@
     }
     a {color: $active_heading_link_color;}
   }
+}
+
+#documents {
+  border-top: 2px dotted darken($container_bg_color, 10%);
+  font-size: 12px;
+  margin-top: 0;
+  padding-top: 15px;
+  h3.index_title {padding-top: 0;}
+  h5.index_title {font-size: 13px;}
+  a {
+    border-bottom: 1px dotted $active_heading_link_color;
+    text-decoration: none;
+  }
+  em {
+    background-color: palegoldenrod;
+    border-radius: 2px;
+    font-style: normal;
+    padding: 1px 2px;
+  }
+}
+
+/* Default View */
+#documents.default {
+  @include result-title-styling;
+  .results-image > a {border-bottom: none;}
+  .oneresult {
+    margin-left: 15px;
+  }
+  .pageimg {
+    float: left;
+    text-align: center;
+  }
+  img {
+    width: 110px;
+    @include result-image-styling;
+  }
+
   .speaker {float: right;}
   .pagenum {display: block;}
   .snippet {
@@ -48,47 +62,35 @@
   .frda-label {color: #CCC;}
 }
 
-
-/* AP Covers View */
-#documents.covers {
-  ul.image-grid {list-style-type: none;}
-  ul.image-grid li.image-item {
-    float: left;
-    margin-bottom: 10px;
-    margin-right: 20px;
-    min-height: 380px;
-    text-align: center;
-    width: 205px;
-  }
-}
-
-/* AP Text Only View */
-#documents.text {
-
-}
-
-/* AP Frequency View */
-#documents.frequency {
-
-}
-
-/* Images Gallery View */
+/* Gallery View */
 #documents.gallery {
-  ul.image-grid {list-style-type: none;}
+  @include result-title-styling;
+  ul.image-grid {
+    list-style-type: none;
+    margin-left: 5px;
+  }
   ul.image-grid li.image-item {
     float: left;
     margin-bottom: 10px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     min-height: 380px;
     text-align: center;
     width: 205px;
+    > a {border-bottom: none;}
+    img {
+      @include result-image-styling;
+      max-width: 90%;
+    }
+    h3.index_title {margin-left: 14px;}
   }
 }
 
-/* Images Text View */
+/* List View */
 #documents.list {
+  @include result-title-styling;
   .row {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding-left: 10px;
     span {
       display: block;
@@ -98,11 +100,19 @@
     .index_title {max-width: 600px;}
     margin-top: 0;
   }
+  span.year {
+    display: block;
+  }
+}
+
+/* Frequency View */
+#documents.frequency {
+  @include result-title-styling;
 }
 
 /* Images Categories View */
 #documents.categories {
-
+  @include result-title-styling;
 }
 
 

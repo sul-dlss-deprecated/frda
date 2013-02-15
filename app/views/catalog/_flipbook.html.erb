@@ -1,6 +1,7 @@
 <div class="modal hide fade" id="flipbook">
   <div class="modal-body">
-	<iframe src="http://sul-reader.stanford.edu/flipbook2/view.jsp?id=<%=@id%>#page/<%=@page_num%>/mode/1up" width="650" height="650"></iframe>
+		<iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/view.jsp?id=<%=@id%>#page/<%=@page_num%>/mode/1up" width="650" height="650"></iframe>
+		<span id="loading_message">Loading, please wait...</span>
   </div>
   <div class="modal-footer">
     <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>

@@ -15,13 +15,13 @@
 	| 
 	<%= link_to 'Flipbook',show_flipbook_path(:id=>@document.druid,:page_num=>@document.page_number),:remote=>true,:class=>'hidden showOnLoad' %>
 
-	<% if @document.prev_page %>
+	<% if @document.page_number.to_i > 1 %>
 			<%= link_to '<-',{:action=>'show_page',:id=>@document.druid,:page_num=>((@document.page_number.to_i)-1).to_s,:mode=>@mode},:remote=>true%>
 	<% else %>
 			&nbsp;&nbsp;&nbsp;
 	<% end %>
 	Page <%=@document.page_number%> of <%=@document.total_pages%>
-	<% if @document.next_page %>
+	<% if @document.page_number.to_i < @document.total_pages %>
 		<%= link_to '->',{:action=>'show_page',:id=>@document.druid,:page_num=>((@document.page_number.to_i)+1).to_s,:mode=>@mode},:remote=>true%>
 	<% else %>
 			&nbsp;&nbsp;&nbsp;

@@ -1,50 +1,121 @@
-<div class="row">
+<div class="row ap-item">
   <div class="span12">
-		<h2><%= raw truncate(@document.title,:length=>200) %></h2>
+    <h2><%= link_to "Archives parlementaires", ap_collection_path %></h2>
+    <ul class="item-breadcrumb">
+      <li><%= @document.title %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row ap-item">
+  <div class="span12 well" id="controls">
+
+    <div class="row">
+      <div class="span3 result-item-nav">
+        -- Result item nav --
+      </div>
+
+      <div class="span6 item-views btn-group">
+        <button class="btn btn-small">
+          <%= link_to 'side-by-side', show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"image"),:remote=>true%>
+        </button>
+
+         <button class="btn btn-small">
+          <%= link_to 'text only', show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"ocr"),:remote=>true%>
+         </button>
+
+        <button class="btn btn-small">
+          <%= link_to 'read in flipbook', show_flipbook_path(:id=>@document.druid,:page_num=>@document.page_number),:remote=>true,:class=>'hidden showOnLoad' %>
+        </button>
+
+        <button class="btn btn-small">
+          fullscreen
+        </button>
+      </div>
+
+      <div class="span3 item-actions">
+        <div id="item_actions-dropdown" class="dropdown pull-right  hidden-phone">
+          <span class="hide-text"><%= t('frda.show.item_actions') %></span>
+          <ul class="css-dropdown">
+            <li class="btn btn-small">
+              <%=t('frda.show.download')%>
+              <span class="caret"></span>
+              <ul>
+                <!-- <li><%#= link_to t('frda.sidebar.actions.print'), '#' %></li> -->
+                <li class="download-option">
+                 <%= link_to "-- Page -- ", "#", :class => 'downloadLink' %>
+                </li>
+                <li class="download-option">
+                 <%= link_to "-- Section -- ", "#", :class => 'downloadLink' %>
+                </li>
+                <li class="download-option">
+                 <%= link_to "-- Volume -- ", "#", :class => 'downloadLink' %>
+                </li>
+                <li class="download-option">
+                 <%= link_to "-- etc. -- ", "#", :class => 'downloadLink' %>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="btn btn-small">
+             <%= link_to t('frda.sidebar.actions.cite'), citation_catalog_path(:id => @document), {:id => 'citeLink', :class => 'lightboxLink cite'} %>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row ap-item">
+  <div class="span12 page-navigation">
+
+    <%= form_tag(show_page_path, :remote => true, :class => "form-inline") do%>
+      <%= hidden_field_tag :id,@document.druid %>
+      <%= hidden_field_tag :from_id,@document.id %>
+      <%= text_field_tag :page_num,'', :maxlength => 3, :class => 'span1' %>
+      <%= submit_tag "Go", :class => 'btn btn-mini'%>
+    <% end %>
+
+    <div class="btn-group">
+      <%# if @document.page_number.to_i > 1 %>
+        <%= link_to "&#60;".html_safe, show_page_path(:id=>@document.druid,
+            :page_num=>((@document.page_number.to_i)-1).to_s,
+            :mode=>@mode),:remote=>true,
+            :class => 'btn btn-mini' %>
+      <%# else %>
+          &nbsp;&nbsp;&nbsp;
+      <%# end %>
+      <%# if @document.page_number.to_i < @document.total_pages %>
+        <%= link_to "&#62;".html_safe, show_page_path(:id=>@document.druid,
+            :page_num=>((@document.page_number.to_i)+1).to_s,
+            :mode=>@mode),:remote=>true,
+            :class => 'btn btn-mini' %>
+      <%# else %>
+          &nbsp;&nbsp;&nbsp;
+      <%# end %>
+    </div>
+
+    <div class="btn-group">
+      <a class="btn btn-mini" href="#">&#43;</a>
+      <a class="btn btn-mini" href="#">&#45;</a>
+    </div>
+
   </div>
 </div>
 
 <div class="row document-details">
-	<div class="span12" id="controls">
-	<% case @mode %>
-		<% when "ocr" %>
-			<%= link_to 'Image+Text',show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"image"),:remote=>true%>
-		<% else %>
-			<%= link_to 'Text only',show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"ocr"),:remote=>true%>
-	<% end %>
-	| 
-	<%= link_to 'Flipbook',show_flipbook_path(:id=>@document.druid,:page_num=>@document.page_number),:remote=>true,:class=>'hidden showOnLoad' %>
+  <% if @mode != 'ocr' %>
+    <div class="span6">
+      <div class="item image-box active">
+        <%= image_tag(@document.first_image(:full), :alt => "Image") %>
+      </div>
+    </div>
+  <% end %>
 
-	<% if @document.page_number.to_i > 1 %>
-			<%= link_to '<-',show_page_path(:id=>@document.druid,:page_num=>((@document.page_number.to_i)-1).to_s,:mode=>@mode),:remote=>true%>
-	<% else %>
-			&nbsp;&nbsp;&nbsp;
-	<% end %>
-	Page <%=@document.page_number%> of <%=@document.total_pages%>
-	<% if @document.page_number.to_i < @document.total_pages %>
-		<%= link_to '->',show_page_path(:id=>@document.druid,:page_num=>((@document.page_number.to_i)+1).to_s,:mode=>@mode),:remote=>true%>
-	<% else %>
-			&nbsp;&nbsp;&nbsp;
-	<% end %>
-	
-	<%= form_tag(show_page_path, :remote => true) do%>
-		<%= hidden_field_tag :id,@document.druid %>
-		<%= hidden_field_tag :from_id,@document.id %>
-		<%= text_field_tag :page_num,'',:maxlength=>3,:size=>3%>
-		<%= submit_tag "Go to page"%> 
-	<% end %>
-	
-	</div>	
-	<% if @mode != 'ocr' %>
-	  <div class="span6">
-	    <div class="item active">
-	      <%= image_tag(@document.first_image, :alt => "Image") %>
-	    </div>
-	  </div>
-	<% end %>
-	
   <div class="span<%= @mode == 'ocr' ? "12" : "6"%> metadata">
-		   <h3>Page Text</h3>
-			<%= simple_format(@document.page_text)%>
+    <div class="ocr-box">
+      <%= simple_format(@document.page_text)%>
+    </div>
   </div>
 </div>

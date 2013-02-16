@@ -73,6 +73,7 @@ en:
       showing: 'Showing page'
       of: 'of'
       citation: 'Citation'
+      download: 'Download'
     collection_members_grid:
       members_link: 'View all collection items'
       collection_link: 'View this collection'

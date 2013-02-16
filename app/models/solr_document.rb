@@ -114,7 +114,8 @@ class SolrDocument
    def self.image_dimensions
      options = {:default => "_thumb",
                 :square   => "_square",
-                :thumb => "_thumb" }
+                :thumb => "_thumb",
+                :full => "" }
    end
 
    def ap_item?

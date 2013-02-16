@@ -121,6 +121,32 @@
   }
 }
 
+/* AP Item Details */
+.blacklight-catalog-show .show-document .ap-item {
+ h2 {
+   border: none;
+   font-size: 14px;
+   font-weight: normal;
+   a {color: #3F3C30;}
+ }
+ ul.item-breadcrumb {
+   list-style-type: none;
+   margin-bottom: 20px;
+ }
+ .well {
+   padding: 6px 15px;
+ }
+ .page-navigation .form-inline {
+   display: inline-block;
+   margin-bottom: 0;
+ }
+}
+.image-box, .ocr-box {
+  border: 1px solid #CCC;
+  padding: 7px;
+}
+.image-box {margin-right: 20px;}
+.ocr-box p {margin-top: 0;}
 
 /* Responsive styles */
 @media (max-width: 767px) {

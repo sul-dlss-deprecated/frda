@@ -59,6 +59,7 @@ fr:
       showing: 'Showing page'
       of: 'of'
       citation: 'Citation'
+      download: 'Download'
     collection:
       collection_detail: 'Collection Detail'
       member_detail: 'Item Detail'

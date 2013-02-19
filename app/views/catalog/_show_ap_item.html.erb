@@ -119,7 +119,7 @@
     </div>
   <% end %>
 
-  <div class="span<%= ['ocr','flipbook'].include? @mode ? "12" : "6"%> metadata">
+  <div class="span<%= ['ocr','flipbook'].include?(@mode) ? "12" : "6"%> metadata">
 		<% if @mode == 'flipbook' %>
 		<span id="loading_message">Loading, please wait...</span>
 	    <div class="flipbook">

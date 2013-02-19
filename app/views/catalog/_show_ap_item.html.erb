@@ -16,18 +16,24 @@
       </div>
 
       <div class="span6 item-views btn-group">
-        <button class="btn btn-small">
-          <%= link_to 'side-by-side', show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"image"),:remote=>true%>
-        </button>
+          <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"image"),:remote=>true do%>
+						<button class="btn btn-small">
+		        	side-by-side
+		        </button>
+					<% end %>
 
-         <button class="btn btn-small">
-          <%= link_to 'text only', show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"ocr"),:remote=>true%>
-         </button>
-
-        <button class="hidden showOnLoad btn btn-small">
-          <%= link_to 'read in flipbook', show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"flipbook"),:remote=>true%>
-        </button>
-
+          <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"ocr"),:remote=>true do%>
+	         <button class="btn btn-small">
+							text-only
+	         </button>
+					<% end %>
+					
+					<%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"flipbook"),:remote=>true do%>        
+		        <button class="hidden showOnLoad btn btn-small">
+							read in flipbook
+		        </button>
+					<% end %>
+					
         <button class="btn btn-small">
           fullscreen
         </button>

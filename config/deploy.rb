@@ -45,12 +45,6 @@ set :branch do
   tag
 end
 
-namespace :app do
-  task :add_date_to_version do
-    run "cd #{deploy_to}/current && echo 'Date deployed:' `date` >> VERSION"
-  end
-end
-
 namespace :jetty do
   task :config do
     run "cd #{deploy_to}/current && rake frda:config RAILS_ENV=#{rails_env}"
@@ -94,4 +88,3 @@ namespace :deploy do
 end
 
 after "deploy", "deploy:migrate"
-after "deploy", "app:add_date_to_version"

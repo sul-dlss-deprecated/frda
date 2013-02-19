@@ -41,13 +41,6 @@ class CatalogController < ApplicationController
      @mode=params[:mode] # can be set to "ocr" to show only ocr text on AP pages
      super
    end
-  
-  # an ajax call to show the flipbook in a modal window
-  def show_flipbook
-    @id=params[:id]
-    @page_num=params[:page_num]
-    render 'show_flipbook',:format=>:js
-  end
 
     # a call to show a new page for a given solr doc ID, when ajax will return just the partial, when non ajax will redirect to the correct page
   def show_page

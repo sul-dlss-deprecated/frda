@@ -24,8 +24,8 @@
           <%= link_to 'text only', show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"ocr"),:remote=>true%>
          </button>
 
-        <button class="btn btn-small">
-          <%= link_to 'read in flipbook', show_flipbook_path(:id=>@document.druid,:page_num=>@document.page_number),:remote=>true,:class=>'hidden showOnLoad' %>
+        <button class="hidden showOnLoad btn btn-small">
+          <%= link_to 'read in flipbook', show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"flipbook"),:remote=>true%>
         </button>
 
         <button class="btn btn-small">
@@ -105,7 +105,7 @@
 </div>
 
 <div class="row document-details">
-  <% if @mode != 'ocr' %>
+  <% if @mode.blank? || @mode == 'image' %>
     <div class="span6">
       <div class="item image-box active">
         <%= image_tag(@document.first_image(:full), :alt => "Image") %>
@@ -113,9 +113,17 @@
     </div>
   <% end %>
 
-  <div class="span<%= @mode == 'ocr' ? "12" : "6"%> metadata">
-    <div class="ocr-box">
-      <%= simple_format(@document.page_text)%>
-    </div>
+  <div class="span<%= ['ocr','flipbook'].include? @mode ? "12" : "6"%> metadata">
+		<% if @mode == 'flipbook' %>
+		<span id="loading_message">Loading, please wait...</span>
+	    <div class="flipbook">
+				<iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/view.jsp?id=<%=@document.druid%>#page/<%=@document.page_number%>/mode/1up" width="750" height="650"></iframe>
+	    </div>
+	  <% end %>
+		<% if @mode != 'flipbook' %>
+	    <div class="ocr-box">
+	      <%= simple_format(@document.page_text)%>
+	    </div>
+		<% end %>
   </div>
 </div>

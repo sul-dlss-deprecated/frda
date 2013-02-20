@@ -84,26 +84,16 @@
     <% end %>
 
     <div class="btn-group">
-      <% if @document.page_number.to_i > 1 %>
-        <%= link_to "&#60;".html_safe, show_page_path(:id=>@document.druid,
-            :page_num=>((@document.page_number.to_i)-1).to_s,
-            :mode=>@mode),:remote=>true,
-            :class => 'btn btn-mini' %>
-      <% else %>
-        <%= button_tag "&#60;".html_safe,
-            :class => 'btn btn-mini',
-            :disabled => true %>
-      <% end %>
-      <% if @document.page_number.to_i < @document.total_pages %>
-        <%= link_to "&#62;".html_safe, show_page_path(:id=>@document.druid,
-            :page_num=>((@document.page_number.to_i)+1).to_s,
-            :mode=>@mode),:remote=>true,
-            :class => 'btn btn-mini' %>
-      <% else %>
-        <%= button_tag "&#62;".html_safe,
-            :class => 'btn btn-mini',
-            :disabled => true %>
-      <% end %>
+      <%= link_to "&#60;".html_safe, show_page_path(:id=>@document.druid,
+          :page_num=>((@document.page_number.to_i)-1).to_s,
+          :mode=>@mode),:remote=>true,
+          :class => 'btn btn-mini',
+          :disabled => @document.page_number.to_i > 1 ? false : true %>
+      <%= link_to "&#62;".html_safe, show_page_path(:id=>@document.druid,
+          :page_num=>((@document.page_number.to_i)+1).to_s,
+          :mode=>@mode),:remote=>true,
+          :class => 'btn btn-mini',
+          :disabled => @document.page_number.to_i < @document.total_pages ? false : true %>
     </div>
 
     <div class="btn-group">

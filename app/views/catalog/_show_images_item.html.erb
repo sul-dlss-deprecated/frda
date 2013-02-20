@@ -25,7 +25,12 @@
     <div id="image_workspace"></div>
       <noscript>
          <div class="item active">
-           <%= image_tag(@document.first_image, :alt => "Image") %>
+             <%= link_to image_tag(@document.images.first, :alt => "#{t('frda.collection_members.items_name')} 1 of #{@document.images.size}"),@document.purl %>
+		        <% unless @document.purl.blank? %>
+		          <div>Permanent URL<%= " (click to view all item images)" if @document.images.size > 1 %>:
+		            <span><%= link_to @document.purl, @document.purl, :class => 'purl-link' %></span>
+		          </div>
+				<% end %>			 
          </div>
       </noscript>
   </div>

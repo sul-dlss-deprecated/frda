@@ -89,7 +89,7 @@ class SolrDocument
   end
   
   def purl
-    "#{Frda::Application.config.purl}/#{self.druid}" if self.druid?
+    "#{Frda::Application.config.purl}/#{self.druid}" unless self.druid.blank?
   end
     
 	def multivalue_field(name)

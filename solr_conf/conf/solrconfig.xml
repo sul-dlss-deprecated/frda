@@ -27,7 +27,9 @@
 	<lib dir="../lib/contrib/extraction/lib" />
 	<lib dir="../lib/contrib/analysis-extras/lib" />
 	<lib dir="../lib/contrib/analysis-extras/lucene-libs" />
+	<lib dir="/usr/lib/solr/4.0.0/" /> 
 
+	
   <!--  The DirectoryFactory to use for indexes.
         solr.StandardDirectoryFactory, the default, is filesystem based.
         solr.RAMDirectoryFactory is memory based, not persistent, and doesn't work with replication. -->
@@ -78,7 +80,7 @@
           <str name="facet.field">date_ssim</str>
           <str name="facet.field">speaker_ssim</str>
           <str name="facet.field">type_ssi</str>
-          <str name="facet.field">doc_type_ssi</str>
+          <str name="facet.field">doc_type_ssim</str>
           <str name="facet.field">session_govt_ssi</str>
         </lst>
         <!-- single object query to populate filter and fieldValue cache -->
@@ -94,7 +96,7 @@
           <str name="facet.field">date_ssim</str>
           <str name="facet.field">speaker_ssim</str>
           <str name="facet.field">type_ssi</str>
-          <str name="facet.field">doc_type_ssi</str>
+          <str name="facet.field">doc_type_ssim</str>
           <str name="facet.field">session_govt_ssi</str>
         </lst>
       </arr>
@@ -116,7 +118,7 @@
           <str name="facet.field">date_ssim</str>
           <str name="facet.field">speaker_ssim</str>
           <str name="facet.field">type_ssi</str>
-          <str name="facet.field">doc_type_ssi</str>
+          <str name="facet.field">doc_type_ssim</str>
           <str name="facet.field">session_govt_ssi</str>
         </lst>
         <!-- single object query to populate filter and fieldValue cache -->
@@ -132,7 +134,7 @@
           <str name="facet.field">date_ssim</str>
           <str name="facet.field">speaker_ssim</str>
           <str name="facet.field">type_ssi</str>
-          <str name="facet.field">doc_type_ssi</str>
+          <str name="facet.field">doc_type_ssim</str>
           <str name="facet.field">session_govt_ssi</str>
         </lst>
       </arr>
@@ -157,32 +159,32 @@
       <str name="qf">
         spoken_text_timv^5
         spoken_text_ftsimv
-        text_timv^5
-        text_ftsimv
+        text_tiv^5
+        text_ftsiv
         speaker_ssim
         session_govt_ssi
         date_ssim
-				doc_type_ssi
+				doc_type_ssim
         id
         druid_ssi
       </str>
       <str name="pf">
         spoken_text_timv^20
         spoken_text_ftsimv^15
-        text_timv^20
-        text_ftsimv^10
+        text_tiv^20
+        text_ftsiv^10
       </str>
       <str name="qf_exact">
         spoken_text_timv
-        text_timv
+        text_tiv
         speaker_ssim
         session_govt_ssi
         date_ssim
-				doc_type_ssi
+				doc_type_ssim
       </str>
       <str name="pf_exact">
         spoken_text_timv^5
-        text_timv^5
+        text_tiv^5
       </str>
 
       <str name="qf_title">
@@ -216,7 +218,7 @@
       <str name="facet.field">date_ssim</str>
       <str name="facet.field">speaker_ssim</str>
       <str name="facet.field">type_ssi</str>
-      <str name="facet.field">doc_type_ssi</str>
+      <str name="facet.field">doc_type_ssim</str>
       <str name="facet.field">session_govt_ssi</str>
     </lst>    
   </requestHandler>

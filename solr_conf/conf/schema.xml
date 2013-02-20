@@ -102,10 +102,10 @@
     <dynamicField name="*_llsim" type="location" stored="true" indexed="true" multiValued="true"/>
 
     <!-- you must define copyField source fields or schemaBrowser doesn't work -->
-    <field name="text_timv" type="text" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    <field name="text_tiv" type="text" stored="false" indexed="true" multiValued="false" termVectors="true" termPositions="true" termOffsets="true"/>
     <field name="spoken_text_timv" type="text" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
     <!-- you must define copyField destination fields or schemaBrowser doesn't work -->
-    <field name="text_ftsimv" type="text_fr" stored="true" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
+    <field name="text_ftsiv" type="text_fr" stored="true" indexed="true" multiValued="false" termVectors="true" termPositions="true" termOffsets="true"/>
     <field name="spoken_text_ftsimv" type="text_fr" stored="true" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
     
   </fields>

@@ -17,21 +17,21 @@
 
       <div class="span6 item-views btn-group">
           <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"image"),:remote=>true do%>
-						<button class="btn btn-small">
-		        	side-by-side
-		        </button>
+		        <%= button_tag "side-by-side",
+                :class => 'btn btn-small',
+                :disabled => ['image', nil].include?(@mode) ? true : false %>
 					<% end %>
 
           <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"ocr"),:remote=>true do%>
-	         <button class="btn btn-small">
-							text-only
-	         </button>
+	        <%= button_tag "text-only",
+              :class => 'btn btn-small',
+              :disabled => ['ocr'].include?(@mode) ? true : false %>
 					<% end %>
 					
 					<%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"flipbook"),:remote=>true do%>        
-		        <button class="hidden showOnLoad btn btn-small">
-							read in flipbook
-		        </button>
+	        <%= button_tag "read in flipbook",
+              :class => 'btn btn-small',
+              :disabled => ['flipbook'].include?(@mode) ? true : false %>
 					<% end %>
 					
         <button class="btn btn-small">

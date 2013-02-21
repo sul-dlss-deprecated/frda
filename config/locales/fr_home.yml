@@ -1,17 +1,17 @@
 fr:
   frda:
     home:
-      overview_by: Timeline of the Revolution
-      collection_highlights: Collection highlights
-      more_highlights: More highlights
-      about_collections_html: About the collections
+      overview_by: Chronologie de la Révolution
+      collection_highlights: Sélections
+      more_highlights: encore de
+      about_collections_html: Aperçu the collections
       about_text_html: |
         <p>
           [To be translated] The French Revolution Digital Archive (FRDA) is a multi-year collaboration of the Stanford University
-          Libraries and the Bibliothèque nationale de France (BnF) to produce a digital version of the key
+          Libraries and the Biblioth√®que nationale de France (BnF) to produce a digital version of the key
           research sources of the French Revolution and make them available to the international scholarly
           community. The archive is based around two main resources, the Archives parlementaires and a vast
-          corpus of images first brought together in 1989 and known as the Images de la Revolution française.
+          corpus of images first brought together in 1989 and known as the Images de la Revolution fran√ßaise.
         </p>
       about_text_ap_html: |
           The Archives parlementaires is a chronologically-ordered, edited collection of sources on
@@ -24,7 +24,7 @@ fr:
       about_text_images_html: |
           The Images are composed of high-resolution digital images of approximately 12,000 individual
           visual items, primarily prints, but also illustrations, medals, coins, and other objects,
-          that display aspects of the Revolution. These materials were selected from across the BnF’s
+          that display aspects of the Revolution. These materials were selected from across the BnF‚Äôs
           departments, and include thousands of images for the important collections entitled Hennin
           and De Vinck. Detailed metadata exists for the images, so that researchers can search by
           artist, subject, genre, and place.

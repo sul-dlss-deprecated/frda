@@ -28,7 +28,7 @@ describe SolrDocument do
       end
     end
     it "should return the requested dimentsion when one is specified" do
-      SolrDocument.new({:image_id_ssm => ["abc123", "cba321"]}).images(:large).each do |image|
+      SolrDocument.new({:image_id_ssm => ["abc123", "cba321"]}).images(:size=>:large).each do |image|
         image.should =~ /#{SolrDocument.image_dimensions[:large]}/
       end
     end

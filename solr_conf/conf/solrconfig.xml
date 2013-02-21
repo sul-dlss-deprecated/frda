@@ -167,12 +167,16 @@
 				doc_type_ssim
         id
         druid_ssi
+        catalog_heading_ftsimv
+        catalog_heading_etsimv
       </str>
       <str name="pf">
         spoken_text_timv^20
         spoken_text_ftsimv^15
         text_tiv^20
         text_ftsiv^10
+        catalog_heading_etsimv^20
+        catalog_heading_ftsimv^10
       </str>
       <str name="qf_exact">
         spoken_text_timv

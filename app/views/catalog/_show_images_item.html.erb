@@ -13,7 +13,7 @@
     <h2><%= t('frda.image.detail.title') %></h2>
  	 <% if @document.catalog_heading(I18n.locale).size > 0 %>
 	   <ul class="item breadcrumb">
-	      <li><%=@document.catalog_heading(I18n.locale).first%></li>
+	      <li><%= link_to_catalog_heading(@document.catalog_heading(I18n.locale).first).join(" &rang; ").html_safe %></li>
 	    </ul>
 	 <% end %>
     <%= render 'previous_next_doc' %>

@@ -1,44 +1,44 @@
 fr:
   frda:
     contact:
-      select_topic: 'Select a topic...'
-      problem: 'Problem with the website.'
-      other_questions: 'Other questions.'
-      name: 'Your nom'
-      email: 'Your email'
-      email_address: 'Email address'
-      subject: 'Subject'
+      select_topic: "Objet du message : choisir l'un des thèmes"
+      problem: 'Site Web : problèmes techniques'
+      other_questions: 'Autres questions'
+      name: 'Votre nom'
+      email: 'Votre courriel'
+      email_address: 'Courriel'
+      subject: 'Object du message'
       message: 'Message'
-      describe_problem: 'Please describe your question or problem.'
-      curator: 'Curator, French and Italian Collections'
-    curator_heading: 'From the curator'
+      describe_problem: 'Saisir le texte du message'
+      curator: 'Conservatrice des collections françaises et italiennes'
+    curator_heading: 'Message de la conservatrice'
     curator_text_html: |
       <div class="truncate">
         <p>
           [Needs translation]
         </p>
       </div>
-    project_team_stanford_heading: 'Project team: Stanford'
+    project_team_stanford_heading: 'Équipe de projet : Stanford'
     project_team_stanford_text_html: |
       <p>
         [Needs translation]
       </p>
-    project_team_bnf_heading: 'Project team: BnF'
+    project_team_bnf_heading: 'Équipe de projet : BnF'
     project_team_bnf_text_html: |
       <p>
         [Needs translation]
       </p>
-    technical_description_heading: 'Technical description'
+    technical_description_heading: 'Informations techniques'
     technical_description_text_html: |
       <p>
         [Needs translation]
       </p>
-    acknowledgements_heading: 'Acknowledgements'
+    acknowledgements_heading: 'Remerciements'
     acknowledgements_text_html: |
       <p>
         [Needs translation]
       </p>
-    use_and_reproduction_heading: 'Use and reproduction'
+    use_and_reproduction_heading: "Conditions d'utilisation"
     use_and_reproduction_text_html: |
       <p>
         [Needs translation]

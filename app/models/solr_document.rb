@@ -37,7 +37,11 @@ class SolrDocument
   end
   
   def catalog_heading(language=I18n.default_locale)
-    multivalue_field("catalog_heading_#{language[0]}tsimv")
+    multivalue_field("catalog_heading_#{language[0]}tsimv").map do |field|
+      field.split("--").map do |value|
+        value.strip
+      end
+    end
   end
 
   def collector

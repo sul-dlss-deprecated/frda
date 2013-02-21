@@ -27,4 +27,16 @@ describe ApplicationHelper do
     
   end
   
+  describe "catalog_heading linking" do
+    it "should turn the array into a series of linked entries" do
+      headings = ["Something", "Something Else", "Another Something"]
+      links = link_to_catalog_heading(headings)
+      links.length.should == 3
+      headings.each do |heading|
+        encoded_heading = heading.gsub(" ", '\\\+')
+        links.join.should match(/<a href=.*#{encoded_heading}.*>#{heading}<\/a>/)
+      end
+    end
+  end
+  
 end

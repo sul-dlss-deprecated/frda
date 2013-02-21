@@ -8,6 +8,27 @@ describe SolrDocument do
     doc.should respond_to :export_formats
   end
   
+  describe "catalog_heading" do
+    it "should get the correct field based on the locale passed in" do
+      doc = SolrDocument.new(:id => "12345", :catalog_heading_etsimv => ["Something -- Something English"], :catalog_heading_ftsimv => ["Something -- Something French"])
+      en_heading = doc.catalog_heading(:en)
+      fr_heading = doc.catalog_heading(:fr)
+      en_heading.length.should == 1 
+      fr_heading.length.should == 1
+      en_heading.first.should include "Something English" and en_heading.first.should_not include "Something French"
+      fr_heading.first.should include "Something French" and fr_heading.first.should_not include "Something English"
+    end
+    it "should split the catalog heading field on double dashes" do
+      doc = SolrDocument.new(:id => "12345", :catalog_heading_etsimv => ["Something -- Something Else -- Yet Another thing"])
+      heading = doc.catalog_heading(:en)
+      heading.length.should == 1
+      heading.first.length.should == 3
+      ["Something", "Something Else", "Yet Another thing"].each do |phrase|
+        heading.first.should include phrase
+      end
+    end
+  end
+  
   describe "images" do
     before(:all) do
       @images = SolrDocument.new({:image_id_ssm => ["abc123", "cba321"]}).images

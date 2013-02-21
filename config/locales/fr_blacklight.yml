@@ -1,137 +1,137 @@
 fr:
   active_record:
     models:
-      feedback: 'Feedback'
+      feedback: 'Bibliothèque nationale de France'
     attributes:
       feedback:
-        name: 'Nome'
-        email: 'Indirizzo email' 
-        message: 'Messaggio' 
+        name: 'Votre nom'
+        email: 'Votre courriel'
+        message: 'Message'
   views:
     pagination:
-      first: '&laquo; Primo' 
-      last: 'Ultimo &raquo;' 
-      previous: '&laquo; Precedente' 
-      next: 'Prossimo &raquo;' 
+      first: '&laquo; première'
+      last: 'dernière &raquo;'
+      previous: '&lsaquo; précédente'
+      next: 'suivante &rsaquo;'
       truncate: '…'
-      
+
     pagination_compact:
-      previous: '&laquo;'
-      next: '&raquo;'
+      previous: '&lsaquo; précédente'
+      next: 'suivante &rsaquo;'
 
   blacklight:
     active_record:
       models:
-        feedback: 'Feedback'
+        feedback: 'Votre avis nous intéresse'
       attributes:
         feedback:
-          name: 'Nome'
-          email: 'Indirizzo email' 
-          message: 'Messaggio' 
+          name: 'Votre nom'
+          email: 'Votre courriel'
+          message: 'Message'
     views:
       pagination:
-        first: '&laquo; Primo' 
-        last: 'Ultimo &raquo;' 
-        previous: '&laquo; Precedente' 
-        next: 'Prossimo &raquo;' 
-        truncate: '…' 
+        first: '&laquo; première'
+        last: 'dernière &raquo;'
+        previous: '&lsaquo; précédente'
+        next: 'suivante &rsaquo;'
+        truncate: '…'
 
     header_links:
-      login: 'Effettuare il login' 
-      logout: 'Effettuare il logout'
-      bookmarks: 'Segnalibri'
-      saved_searches: 'Ricerche salvate' 
-      selected_items: 'Dati selezionati' 
-      search_history: 'Cronologia di ricerca' 
+      login: 'Connexion'
+      logout: 'Déconnexion'
+      bookmarks: 'Vos favoris'
+      saved_searches: 'Recherches sauvegardées'
+      selected_items: 'Documents selectionnés'
+      search_history: 'Historique de recherche'
 
-    welcome: 'Benvenuto!' 
-    and: 'e'
-    or: 'o' 
+    welcome: 'Bienvenue!'
+    and: 'et'
+    or: 'ou'
 
     bookmarks:
       collection:
         add:
-          button: 'Aggiungi ai segnalibri' 
-      title: 'Segnalibri' 
-      no_bookmarks: "Non c'è nessun segnalibro"
+          button: 'Ajouter aux favoris'
+      title: 'Favoris'
+      no_bookmarks: "Vous n’avez aucun favori"
       add:
-        button: 'Mettere il segnalibro'
+        button: 'Ajouter aux favoris'
         success:
-          one: 'Segnalibro aggiunto con successo' 
-          other: 'Segnalibri aggiunti con successo'
-        failure:  "Spiacente, c'è stato un problema durante il salvataggio dei segnalibri"
+          one: 'Favori ajouté'
+          other: 'Favoris ajoutés'
+        failure:  "Désolé, une erreur s’est produite en effectuant la sauvegarde des favoris"
       remove:
-        button: 'Rimuovi segnalibri'
-        success: 'Segnalibro rimosso con successo'
-        failure: "Spiacente, c'è stato un problema durante la cancellazione dei segnalibri"
-        action_confirm: 'Rimuovi questo segnalibro?'
+        button: 'Supprimer le favori'
+        success: 'Favori supprimé avec succès'
+        failure: "Désolé, une erreur s’est produite en effectuant la suppression des favoris"
+        action_confirm: 'Supprimer ce favori ?'
       clear:
-        action_title: 'Cancella segnalibri'
-        action_confirm: 'Cancella i segnalibri?'
-        success: 'I segnalibri sono stati cancellati'
-        failure: "Spiacente, c'è stato un problema durante la cancellazione dei signalibri"
-      need_login: "Effetua il login per gestire e visualizzare i segnalibri."
-      list_title: 'Segnalibri'
-      delete: 'Rimuovi'
+        action_title: 'Supprimer les favoris'
+        action_confirm: 'Supprimer vos favoris ?'
+        success: 'Les favoris ont été supprimés'
+        failure: "Désolé, une erreur s’est produite en effectuant la suppression de vos favoris"
+      need_login: "Identifiez-vous pour gérer et afficher vos favoris"
+      list_title: 'Mes favoris'
+      delete: 'Supprimer'
 
       feedback:
-      valid_name: 'È richiesto un nome valido'
-      valid_email: 'È richiesto un indirizzo email valido'
+      valid_name: 'Un alias valide est exigé'
+      valid_email: 'Une adresse courriel valide est exigée'
 
-      need_message: 'È richiesto un messaggio'
-      submit: 'Inviare!'
+      need_message: 'Un message est exigé'
+      submit: 'Envoyer'
       errors:
-        title: 'Correggi i seguenti errori di forma:'
+        title: 'Merci de corriger les erreurs suivantes :'
       complete:
-        title: 'Grazie per il suggerimento'
+        title: 'Merci pour vos remarques'
 
     folder:
-      title: 'Dati selezionati' 
+      title: 'Documents selectionnées'
       add:
-        success: '%{title} aggiunto con successo agli dati selezionati'
+        success: '%{title} ajouté aux documents selectionnés'
       remove:
-        success: '%{title} rimosso con successo dagli dati selezionati'
+        success: '%{title} supprimé des documents sélectionnés'
       clear:
-        success: 'I dati selezionati sono stati cancellati' 
+        success: 'Les documents sélectionnés ont été supprimés'
 
     saved_searches:
       add:
-        success: 'Ricerca salvata con successo'
-        failure: "C'è stato un problema durante il salvataggio della ricerca"
+        success: 'Votre recherche a été sauvegardée'
+        failure: "Désolé, une erreur s’est produite en effectuant le sauvegarde de votre recherche"
       remove:
-        success: 'La ricerca salvata è stata rimossa con successo'
-        failure: "C'è stato un problema durante la rimozione della ricerca"
+        success: 'Suppression de la recherche sauvegardée'
+        failure: "Une erreur a empêché la suppression de votre recherche"
       clear:
-        action_title: 'Cancella ricerche salvate'
-        action_confirm: 'Cancella ricerche salvate?'
-        success: 'Le ricerche salvate sono state cancellate'
-        failure: "C'è stato un problema durante la cancellazione della ricerca"
-      title: 'Ricerche salvate'
-      need_login: 'Effetua il login per gestire e visualizzare le ricerche salvate'
-      no_searches: 'Non ci sono ricerche salvate'
-      list_title: 'Ricerche salvate'
-      delete: 'Cancellare'
+        action_title: 'Supprimer vos recherches sauvegardées'
+        action_confirm: 'Supprimer vos recherches sauvegardées?'
+        success: 'Vos recherches sauvegardées ont été supprimés'
+        failure: "Une erreur s’est produite en effectuant la suppression de vos recherches"
+      title: 'Recherches sauvegardées'
+      need_login: 'Merci de vous connecter pour gérer et afficher vos recherches sauvegardées'
+      no_searches: 'Vous n’avez pas de recherches sauvegardées'
+      list_title: 'Vos recherches sauvegardées'
+      delete: 'Supprimer'
 
     search_history:
       clear:
-        action_title: 'Cancella cronologia di ricerca'
-        action_confirm: 'Cancella cronologia di ricerca?'
-        success: 'La cronologia di ricerca è stata cancellata.'
-        failure: "C'è stato un problema durante la cancellazione della cronologia di ricerca"
-      title: 'Cronologia di ricerca'
-      no_history: "Non c'è nessuna cronologia di ricerca"
-      recent: 'Ricerche recenti'
-      forget: 'Cancellare'
-      save: 'Salvare'
+        action_title: 'Supprimer l’historique de recherche'
+        action_confirm: 'Supprimer votre historique de recherche ?'
+        success: 'Votre historique de recherche a été supprimé'
+        failure: "Un problème a empêché la suppression de l’historique de vos recherches"
+      title: 'Historique de recherche'
+      no_history: "Vous n’avez pas d’historique de recherche"
+      recent: 'Recherches récentes'
+      forget: 'Effacer'
+      save: 'Sauvegarder'
 
     tools:
-      cite: 'Citare'
-      endnote: 'Esportare in formato EndNote'
-      refworks: 'Esportare in formato Refworks'
-      email: 'Email'
-      sms: 'Invia come SMS'
-      librarian_view: 'Vista per bibliotecari'
-      clear: 'Cancellare'
+      cite: 'Citer'
+      endnote: 'Exporter dans EndNote'
+      refworks: 'Exporter dans Refworks'
+      email: 'Courriel'
+      sms: 'Envoyer par SMS'
+      librarian_view: 'Affichage pour les professionnels'
+      clear: 'Annuler'
 
     citation:
       mla: 'MLA'
@@ -140,109 +140,109 @@ fr:
 
     email:
       form:
-        title: 'Invia come Email'
-        to: 'Email:'
-        message: 'Messaggio:'
-        submit: 'Inviare'
+        title: 'Envoyer par courriel'
+        to: 'Courriel :'
+        message: 'Message :'
+        submit: 'Envoyer'
       text:
-        title: 'Titolo: %{value}'
-        author: 'Autore: %{value}'
-        format: 'Formato: %{value}'
-        language: 'Lingua: %{value}'
+        title: 'Titre : %{value}'
+        author: 'Auteur : %{value}'
+        format: 'Format : %{value}'
+        language: 'Langue : %{value}'
         subject:
-          one: 'Record del dato: %{title}'
-          other: 'I Record del dato'
-        url: 'URL: %{url}'
-        message: 'Messaggio: %{message}'
+          one: 'Notice pour : %{title}'
+          other: 'Notices'
+        url: 'URL : %{url}'
+        message: 'Message : %{message}'
 
       errors:
         to:
-          invalid: 'È necessario inserire un indirizzo email valido'
-          blank: 'È necessario inserire un destinatario per inviare questo messaggio'
+          invalid: 'Une adresse courriel valide est exigée'
+          blank: 'Vous devez saisir un destinataire pour pouvoir envoyer ce message'
     sms:
       form:
-        title: 'Invia come SMS'
-        to: 'Numero di telefono:'
-        carrier: 'Fornitore di servizio telefonico'
-        carrier_prompt: 'Si prega di selezionare il fornitore di servizio telefonico'
-        submit: 'Inviare'
+        title: 'Envoyer par SMS'
+        to: 'Numéro de téléphone :'
+        carrier: 'Opérateur téléphonique :'
+        carrier_prompt: 'Selectionner votre opérateur téléphonique'
+        submit: 'Envoyer'
       text:
         title: '%{value}'
-        author: 'Di %{value}'
-        url: 'Collegamento: %{url}'
+        author: 'Par %{value}'
+        url: 'Lien : %{url}'
       errors:
         to:
-          invalid: 'Si deve immettere un numero di telefono di 10 cifre'
-          blank: 'È necessario immettere il numero di telefono del destinatario per inviare questo messaggio'
+          invalid: 'Un numéro de téléphone à 10 chiffres est exigée'
+          blank: 'Vous devez saisir le numéro de téléphone du déstinataire pour envoyer ce message'
         carrier:
-          blank: 'È necessario selezionare un fornitore di servizio telefonico'
+          blank: 'Un opérateur téléphonique est exigée'
 
-    back_to_search: 'Torna a ricerca'
+    back_to_search: 'Retour à la recherche'
 
     search:
-      title: '%{application_name} Risultati di ricerca'
-      search_results_header: 'Risultati di Ricerca'
-      search_results: 'Risultati di ricerca'
+      title: '%{application_name} Résultats de recherche'
+      search_results_header: 'Résultats de recherche'
+      search_results: 'Résultats de recherche'
       errors:
-        request_error: 'Spiacente, la ricerca richiesta non è stata capita'
-        invalid_solr_id: 'Spiacente, il record richiesto non esiste'
+        request_error: 'Désolé, je ne comprends pas votre recherche'
+        invalid_solr_id: 'Désolé, la notice que vous avez demandée n’existe pas'
       per_page:
-        label: '%{count}<span class="hide-text"> per pagina</span>'
-        title: 'Numero dei risultati da indicare per pagina'
-        button_label: '%{count} per pagina'
-        submit: 'Aggiornare'
+        label: '%{count}<span class="hide-text"> par page</span>'
+        title: 'Afficher par page'
+        button_label: '%{count} par page'
+        submit: 'Actualiser'
       sort:
-        label: 'Ordina per %{select}'
-        submit: 'Ordina i risultati'
+        label: 'Classer par %{select}'
+        submit: 'Classer les résultats'
       form:
         search_field:
-          label: 'in'
-          title: 'Scelta mirata di ricerca'
-        q: 'Ricerca...'
-        submit: 'Cercare'
+          label: 'dans'
+          title: 'Recherches avancées'
+        q: 'Recherche...'
+        submit: 'Chercher'
       pagination:
-        title: 'Navigazione dei risultati'
+        title: 'Les résultats'
       pagination_info:
-        no_items_found: '%{entry_name} non trovato(a)'
-        single_item_found: 'Mostro <b>1</b> %{entry_name}'
+        no_items_found: '%{entry_name} non trouvé(e)'
+        single_item_found: '<b>1</b> %{entry_name} trouvé(e)'
         pages:
-          one: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b>'
-          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b>'
+          one: 'Mostro <b>tutti %{total_num}</b> %{entry_name}'
+          other: 'Mostro %{entry_name} <b>%{start_num} - %{end_num}</b> di <b>%{total_num}</b>'
       entry_pagination_info:
         one: "Mostro l'unico risultato della ricerca"
         other: 'Mostro il risultato <b>%{current} di %{total}</b> della ricerca'
       documents:
         counter: '%{counter}. '
       folder:
-        select: 'Selezionare'
-        unselect: 'Deselezionare'
+        select: 'Sélectionner'
+        unselect: 'Déselectionner'
       facets:
-        title: 'Limitare la ricerca'
+        title: 'Affiner votre recherche'
         sort:
-          count: 'Ordinamento numerico'
-          index: 'Ordinamento alfabetico'
+          count: 'Classer par ordre numérique'
+          index: 'Classer par ordre alphabétique'
         count: '(%{number})'
-        more: 'di più »'
+        more: 'Plus'
         selected:
-          remove: '[rimuovere]'
+          remove: '[supprimer]'
       filters:
-        title: 'Si è cercato:'
-        label: '%{label}:'
+        title: 'Vous avez cherché :'
+        label: '%{label} :'
         remove:
-          value: 'Rimuovere vincolo %{value}'
-          label_value: 'Rimuovere vincolo %{label}: %{value}'
+          value: 'Enlever le filtre %{value}'
+          label_value: 'Enlever le filtre %{label} : %{value}'
       librarian_view:
-        title: 'Vista per bibliotecari'
+        title: 'Affichage pour les professionnels'
         leader: 'LEADER %{leader}'
-      start_over: 'Ricominciare'
+      start_over: 'Recommencer'
       show:
         title: '%{document_title} - %{application_name}'
-      rss_feed: 'RSS per i risultati'
-      atom_feed: 'Atom per i risultati'
+      rss_feed: 'Flux RSS pour les résultats'
+      atom_feed: 'Atom pour les résultats'
       fields:
-        default: 'Parola chiave'
+        default: 'Mot clé'
 
     entry_name:
-      default: 'Inserimento'
+      default: 'Saisir'
 
-    did_you_mean: 'Forse intendevi inserire: %{options}?'
+    did_you_mean: 'Peut-être vous voulez dire : %{options}?'

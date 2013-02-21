@@ -20,6 +20,8 @@
 @import "blacklight/modal";
 @import "improved-modal/bootstrap-modal";
 
+@import "zpr";
+
 @import "global";
 @import "layout";
 @import "header";
@@ -49,7 +51,7 @@
 }
 
 #ap_page_image {
-	height: 500px;
-	width: 500px;
+	height: 600px;
+	width: 100%;
 }
 

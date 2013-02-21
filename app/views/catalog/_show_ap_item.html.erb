@@ -94,18 +94,13 @@
           :disabled => @document.page_number.to_i < @document.total_pages ? false : true %>
     </div>
 
-    <div class="btn-group">
-      <a class="btn btn-mini" href="#">&#43;</a>
-      <a class="btn btn-mini" href="#">&#45;</a>
-    </div>
-
   </div>
 </div>
 
 <div class="row document-details">
   <% if @mode.blank? || @mode == 'image' %>
     <div class="span6">
-	       <div id="ap_page_image" style="position:relative;"></div>
+	       <div id="ap_page_image" class="item image-box active hidden showOnLoad" style="position:relative;"></div>
 					<noscript>
 							<div class="item image-box active">
 		        	<%= image_tag(@document.first_image(:size=>:medium), :alt => @document.title) %>

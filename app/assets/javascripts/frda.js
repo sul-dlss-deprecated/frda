@@ -11,16 +11,12 @@ $(document).ready(function(){
 
 });
 
-function getImageDimensions(imageURL) {
-	$.getJSON(imageURL + '.json',function(data) {window.alert('got here');})
-}
-
 function showImageViewer(imageURL,target) {
 	// create a new ZPR instance
 	var z = new zpr(target, {
 	'imageStacksURL': imageURL,
-	'width': 2677,
-	'height': 4126
+	'width': 2700,
+	'height': 4200
 	});
 }
 

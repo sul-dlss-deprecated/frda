@@ -11,7 +11,7 @@ en:
     pagination:
       first: '&laquo; First'
       last: 'Last &raquo;'
-      previous: '&laquo; Previous'
+      previous: '&laquo; Prev'
       next: 'Next &raquo;'
       truncate: '…'
 

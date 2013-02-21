@@ -74,4 +74,12 @@ module ApplicationHelper
       :class => "#{view_state}")
   end
 
+  def link_to_catalog_heading(heading)
+    buffer = []
+    heading.map do |head|
+      buffer << head
+      link_to(head, catalog_index_path(:q => "\"#{buffer.join(' ')}\""))
+    end
+  end
+
 end

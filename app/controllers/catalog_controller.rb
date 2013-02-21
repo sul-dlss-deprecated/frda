@@ -55,10 +55,11 @@ class CatalogController < ApplicationController
     @document=SolrDocument.new(doc.first) if doc.size > 0 # assuming we found this page
 
     if download_ocr_text 
-      send_data(@document.page_text, :filename => "#{@document.title}.txt")
+      send_data(@document.page_text, :filename => "#{@document.title.parameterize}.txt")
       return
     else
       if request.xhr?
+        setup_next_and_previous_documents
         render 'show_page',:format=>:js
       else
         unless @document

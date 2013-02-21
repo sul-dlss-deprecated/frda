@@ -3,7 +3,8 @@
     $("#image_workspace").embedPurl({'server': '<%=Frda::Application.config.purl_plugin_server%>',
                                      'druid': '<%= @document[:id] %>',
                                      'size': 'thumb',
-                                     'width': 400,
+                                     'layout': 'thin-nav-bottom',
+                                     'width': 425,
                                      'height': 500});
   });
 </script>
@@ -16,11 +17,15 @@
 	      <li><%= link_to_catalog_heading(@document.catalog_heading(I18n.locale).first).join(" &rang; ").html_safe %></li>
 	    </ul>
 	 <% end %>
-    <%= render 'previous_next_doc' %>
   </div>
 </div>
 
-<div class="row document-details">
+<div class="row images-item well well-small">
+  <%= render 'previous_next_doc' %>>
+  <%= render :partial => 'show_actions' %>
+</div>
+
+<div class="row document-details images-item">
   <div class="span6 member-image">
     <div id="image_workspace"></div>
       <noscript>
@@ -30,7 +35,7 @@
 		          <div>Permanent URL<%= " (click to view all item images)" if @document.images.size > 1 %>:
 		            <span><%= link_to @document.purl, @document.purl, :class => 'purl-link' %></span>
 		          </div>
-				<% end %>			 
+				<% end %>
          </div>
       </noscript>
   </div>

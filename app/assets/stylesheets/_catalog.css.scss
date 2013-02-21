@@ -85,10 +85,8 @@
     }
   }
   h3 {
-    border-top: 3px solid darken($header_bg_color, 5%);
     color: $heading_color;
     font-size: 1.25em;
-    padding-top: 10px;
   }
   ul.preview-folder-items {
     margin-left: 0;
@@ -152,7 +150,30 @@
 .image-box {margin-right: 20px;}
 .ocr-box p {margin-top: 0;}
 
+/* Images Item Details */
+.blacklight-catalog-show .show-document .images-item {
+  &.well {
+    margin-left: 0;
+    #previousNextDocument {
+      display: inline-block;
+      float: left;
+      margin: 0px;
+      vertical-align: middle;
+    }
+  }
+}
+
 /* Responsive styles */
+@media (max-width: 979px) {
+  .blacklight-catalog-show .images-item .member-image {float: none;}
+  .blacklight-catalog-show .images-item .metadata {
+    float: none;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    width: 90%;
+  }
+}
+
 @media (max-width: 767px) {
   .slideshow img {margin-bottom: 20px;}
   .blacklight-catalog-show .dl-horizontal {

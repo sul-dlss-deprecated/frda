@@ -49,17 +49,11 @@
               <ul>
                 <!-- <li><%#= link_to t('frda.sidebar.actions.print'), '#' %></li> -->
                 <li class="download-option">
-                 <%= link_to "-- Page -- ", "#", :class => 'downloadLink' %>
+                 <%= link_to "Page (image)", @document.first_image(:download=>true), :class => 'downloadLink' %>
                 </li>
                 <li class="download-option">
-                 <%= link_to "-- Section -- ", "#", :class => 'downloadLink' %>
-                </li>
-                <li class="download-option">
-                 <%= link_to "-- Volume -- ", "#", :class => 'downloadLink' %>
-                </li>
-                <li class="download-option">
-                 <%= link_to "-- etc. -- ", "#", :class => 'downloadLink' %>
-                </li>
+                 <%= link_to "Page (text)", show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:download_ocr_text=>true), :class => 'downloadLink' %>
+                </li>				
               </ul>
             </li>
           </ul>
@@ -79,7 +73,7 @@
     <%= form_tag(show_page_path, :remote => true, :class => "form-inline") do%>
       <%= hidden_field_tag :id,@document.druid %>
       <%= hidden_field_tag :from_id,@document.id %>
-      <%= text_field_tag :page_num,'', :maxlength => 3, :class => 'span1' %>
+      <%= text_field_tag :page_num,@document.page_number, :maxlength => 3, :class => 'span1' %>
       <%= submit_tag "Go", :class => 'btn btn-mini'%>
     <% end %>
 
@@ -117,9 +111,9 @@
 <div class="row document-details">
   <% if @mode.blank? || @mode == 'image' %>
     <div class="span6">
-      <div class="item image-box active">
-        <%= image_tag(@document.first_image(:full), :alt => "Image") %>
-      </div>
+	       <div class="item image-box active">
+	        <%= image_tag(@document.first_image(:size=>:medium), :alt => @document.title) %>
+	      </div>
     </div>
   <% end %>
 

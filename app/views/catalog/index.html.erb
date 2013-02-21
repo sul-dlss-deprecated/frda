@@ -7,9 +7,9 @@ $(document).ready(function(){
 <div id="sidebar" class="span3">
   <div class="collection-image">
     <% if on_images_page %>
-      <%= image_tag(Collection.images.first_image(:square), :alt => "Images Collection", :class => "images-collection-image") %>
+      <%= image_tag(Collection.images.first_image(:size=>:square), :alt => "Images Collection", :class => "images-collection-image") %>
     <% elsif on_ap_page %>
-      <%= image_tag(Collection.ap.first_image(:square), :alt => "AP Collection", :class => "ap-collection-image") %>
+      <%= image_tag(Collection.ap.first_image(:size=>:square), :alt => "AP Collection", :class => "ap-collection-image") %>
     <% end %>
   </div>
   <%= render "search_form" %>

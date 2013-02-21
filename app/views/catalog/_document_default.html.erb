@@ -5,7 +5,7 @@
     <div class="row">
       <div class="span2 results-image">
         <%= link_to_document document,
-             :label => image_tag(document.first_image(:thumb),
+             :label => image_tag(document.first_image(:size=>:thumb),
                                  :alt => document.title,
                                  :title => document.title,
                                  :border => 0),

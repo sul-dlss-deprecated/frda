@@ -37,34 +37,41 @@ class CatalogController < ApplicationController
     
   end
 
+    
    def show
-     @mode=params[:mode] # can be set to "ocr" to show only ocr text on AP pages
+     @mode=params[:mode] # can be set to "ocr" or "flipbook" to show only ocr text or flipbook on AP pages
      super
    end
 
-    # a call to show a new page for a given solr doc ID, when ajax will return just the partial, when non ajax will redirect to the correct page
+    # a call to show a new AP page for a given solr doc ID, when ajax will return just the partial, when non ajax will redirect to the correct page
   def show_page
     from_id=params[:from_id]
     druid=params[:id]
     page_num=params[:page_num]
+    download_ocr_text=params[:download_ocr_text]
+
     @mode=params[:mode]
     doc=Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_num_ssi:\"#{page_num}\""})["response"]["docs"]
     @document=SolrDocument.new(doc.first) if doc.size > 0 # assuming we found this page
-    if request.xhr?
-      render 'show_page',:format=>:js
-    else
-      unless @document
-        flash[:alert]=t('frda.show.not_found')
-        id=from_id
-      else
-        id=@document.id
-      end
-      redirect_to catalog_path(id,:mode=>@mode)
-    end
 
+    if download_ocr_text 
+      send_data(@document.page_text, :filename => "#{@document.title}.txt")
+      return
+    else
+      if request.xhr?
+        render 'show_page',:format=>:js
+      else
+        unless @document
+          flash[:alert]=t('frda.show.not_found')
+          id=from_id
+        else
+          id=@document.id
+        end
+        redirect_to catalog_path(id,:mode=>@mode)
+      end
+    end
   end
 
-  
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = { 

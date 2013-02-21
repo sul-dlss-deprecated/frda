@@ -1,3 +1,9 @@
+<script type="text/javascript">
+ $(document).ready(function() {
+		showImageViewer('<%=@document.first_image(:size=>:full,:format=>"none")%>','ap_page_image');
+	});
+</script>
+
 <div class="row ap-item">
   <div class="span12">
     <h2><%= link_to "Archives parlementaires", ap_collection_path %></h2>
@@ -99,9 +105,12 @@
 <div class="row document-details">
   <% if @mode.blank? || @mode == 'image' %>
     <div class="span6">
-	       <div class="item image-box active">
-	        <%= image_tag(@document.first_image(:size=>:medium), :alt => @document.title) %>
-	      </div>
+	       <div id="ap_page_image" style="position:relative;"></div>
+					<noscript>
+							<div class="item image-box active">
+		        	<%= image_tag(@document.first_image(:size=>:medium), :alt => @document.title) %>
+						</div>
+					</noscript>
     </div>
   <% end %>
 

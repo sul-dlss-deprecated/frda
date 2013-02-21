@@ -99,7 +99,6 @@ class SolrDocument
   def images(params={})
     return [] unless self.has_key?(blacklight_config.image_identifier_field)
     size=params[:size] || :default
-    zoom=params[:zoom] || ""
     download=params[:download] || false
     format=params[:format] || "jpg"
     size=:full if download
@@ -107,13 +106,16 @@ class SolrDocument
     self[blacklight_config.image_identifier_field].map do |image_id|
       image_druid=(self.collection? ? "" : "#{self.druid}/")  # collections include the druid of the image to use, items don't need it since we know the druid
       url="#{stacks_url}/#{image_druid}#{image_id.chomp(File.extname(image_id))}#{SolrDocument.image_dimensions[size]}"
-      url += (download ? "?action=download" : ".#{format}?")
-      url +="&zoom=#{zoom}" unless zoom.blank?
+      if download
+        url += "?action=download" 
+      else  
+        url += ".#{format}" unless format == 'none'
+      end
       url
     end
   end
   
-  def first_image(params)
+  def first_image(params={})
     return "http://placehold.it/100x100" unless self.has_key?(blacklight_config.image_identifier_field)
     stacks_url = Frda::Application.config.stacks_url
     images(params).first

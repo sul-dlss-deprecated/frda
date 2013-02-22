@@ -96,6 +96,14 @@ class SolrDocument
     "#{Frda::Application.config.purl}/#{self.druid}" unless self.druid.blank?
   end
     
+  def pdf_file
+    "https://stacks.stanford.edu/file/druid:#{self.druid}/#{druid}.pdf" unless self.druid.blank?    
+  end
+    
+  def tei_file
+    "https://stacks.stanford.edu/file/druid:#{self.druid}/#{druid}.xml" unless self.druid.blank?          
+  end  
+  
 	def multivalue_field(name)
 	  self[name.to_sym].nil? ? ['']: self[name.to_sym]
   end

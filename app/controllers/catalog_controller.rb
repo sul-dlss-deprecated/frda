@@ -148,6 +148,8 @@ class CatalogController < ApplicationController
     config.add_facet_field 'genre_ssim', :label => 'frda.show.genre', :limit => 10
     config.add_facet_field 'artist_ssim', :label => 'frda.show.artist', :limit => 10
     config.add_facet_field 'collector_ssim', :label => 'frda.show.collector', :limit => 10
+    config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume', :show => false
+    config.add_facet_field 'session_date_si', :label => 'frda.show.session', :show => false
 
     config.add_facet_field 'highlight_ssim', :label => I18n.t('frda.nav.collection_highlights'), :show => false,  :query => collection_highlights
 

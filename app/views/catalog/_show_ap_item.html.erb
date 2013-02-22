@@ -8,7 +8,7 @@
   <div class="span12">
     <h2><%= link_to "Archives parlementaires", ap_collection_path %></h2>
     <ul class="item-breadcrumb">
-      <li><%= @document.title %></li>
+      <li><%= link_to(@document.title, catalog_index_path(params_for_volume(@document.volume_name))) %> &rang; <%= link_to(@document.session_date, catalog_index_path(params_for_session(@document.session_date))) %> &rang; <%= t('frda.show.page') %> <%= @document.page_number %></li>
     </ul>
   </div>
 </div>

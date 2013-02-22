@@ -109,8 +109,7 @@ class SolrDocument
   end  
   
 	def multivalue_field(name)
-	  result = (self[name.to_sym].nil? ? ['']: self[name.to_sym])
-    result.class == Array ? result : result.split(',')
+	 self[name.to_sym].nil? ? ['']: self[name.to_sym]
   end
 
   def images(params={})

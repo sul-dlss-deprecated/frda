@@ -15,6 +15,8 @@
   <field name="session_date_val_ssim">1791-12-11</field>
   <field name="session_date_dtsim">1791-12-11T00:00:00Z</field>
   <field name="session_date_ftsimv">Séance du dimanche 11 décembre 1791 .</field>
+  <field name="session_date_ftsimv">Séance du dimanche 11 décembre 1792 .</field>
+  
   <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
   
   <field name="speaker_ssim">M. Dorizy.</field>

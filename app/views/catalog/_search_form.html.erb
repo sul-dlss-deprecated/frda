@@ -1,8 +1,69 @@
 <h4><%= t('frda.search.search_label') %></h4>
+
 <%= form_tag search_action_url, :method => :get, :class => 'search_form' do %>
-  <%= search_as_hidden_fields(:omit_keys => [:q, :search_field, :qt, :page]).html_safe %> 
+  <%= search_as_hidden_fields(:omit_keys => [:q, :search_field, :qt, :page]).html_safe %>
   <label for="q" class="hide-text"><%= t('blacklight.search.form.q') %></label>
-  <%= text_field_tag :q, params[:q], :class => "search_q q", :id => "q" %>
+  <div class="accordion" id="search-options">
+    <div class="accordion-group">
+      <div id="options-toggle">
+        <%= text_field_tag :q, params[:q], :class => "search_q q", :id => "q" %>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSearch">
+          + options
+        </a>
+      </div>
+      <div id="collapseSearch" class="accordion-body collapse">
+        <div class="accordion-inner well">
+          <label>
+            <%= check_box_tag 'dates' %>on or between<br>
+            <%= text_field_tag 'date-start', nil, :class => 'input-mini date', :placeholder => "1787" %>
+            to
+            <%= text_field_tag 'date-end', nil, :class => 'input-mini date', :placeholder => "1860" %>
+          </label>
+
+          <label>
+            <%= check_box_tag 'speeches' %>
+            in speeches by
+            <%= text_field_tag 'by-speaker', nil, :class => 'input-mini' %>
+         </label>
+
+          <label>
+            <%= check_box_tag 'prox' %>
+            separated by
+            <%= select_tag "words",
+                "<option>1</option>
+                 <option>2</option>
+                 <option>3</option>
+                 <option>4</option>
+                 <option>5</option>".html_safe %>
+            words
+          </label>
+
+          <label>
+            <%= check_box_tag 'terms' %>
+            in title &amp; key terms only
+          </label>
+
+          <label>
+            <%= check_box_tag 'exact' %>
+            exact match (no stemming)
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <%= submit_tag(t('blacklight.search.form.q'), :class=>'hide') %>
-  <button type="submit" class="btn btn-small"><%= t('blacklight.search.form.submit') %></button>
+  <div class="btn-group">
+    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+      <%= t('blacklight.search.form.submit') %>
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><%= link_to t('frda.search.results_heading_combined'), '#', :class => "search-link" %></li>
+      <li><%= link_to t('frda.search.results_heading_ap'), ap_collection_path, :class => "search-link" %></li>
+      <li><%= link_to t('frda.search.results_heading_image'), image_collection_path, :class => "search-link" %></li>
+    </ul>
+  </div>
+
 <%- end -%>
+

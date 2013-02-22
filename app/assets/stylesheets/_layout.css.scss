@@ -11,10 +11,87 @@ body {
   background: $container_bg_color;
   color: #666;
   font-size: 13px;
-  margin-bottom:6px;
+  margin-bottom: 6px;
   margin-left: 5px;
 }
 
+//.search_form .btn {float: right;}
+/* Search Form */
+#sidebar .search_form {
+  margin-bottom: 55px;
+  input.hide {
+    position:absolute;
+    left: -1000px;
+  }
+  input[type='text'] {
+    margin-bottom: 2px;
+    width: 93%;
+    @media(max-width: 767px){
+      width: 98%;
+    }
+  }
+  .dropdown-menu li > a:hover,
+  .dropdown-menu li > a:focus,
+  .dropdown-submenu:hover > a {
+    background-color: #eee;
+    background-image: none;
+    color: $text_color;
+  }
+  .search-link {
+    font-style: italic;
+  }
+}
+
+#search-options {
+  margin-bottom: 0;
+  .accordion-group {
+    border: none;
+    margin: 0;
+  #options-toggle {
+    margin-bottom: 6px;
+    text-align: right;
+  }
+  a.accordion-toggle {
+    border-bottom: none;
+    @include link-uncolored;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+  .accordion-inner ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;}
+  }
+  #collapseSearch label {font-size: 0.85em;}
+  #collapseSearch input[type="checkbox"] {
+    display: inline;
+    margin: 0 4px 0 0;
+    &.dates {clear: left;}
+  }
+  #collapseSearch select {
+    display: inline;
+    font-size: 0.9em;
+    height: 22px;
+    width: 40px;
+  }
+  #collapseSearch input[type="text"] {
+    display: inline;
+    font-size: 1em;
+    height: 15px;
+    width: 7.5em;
+    &#date-start {margin-left: 18px;}
+  }
+  #collapseSearch input.date {
+    font-size: 1em;
+    width: 4em;
+  }
+  #collapseSearch .accordion-inner {
+    padding: 7px;
+    border-top: none;
+  }
+}
+
+/* Responsive styles */
 body {
   @media (max-width: 767px) {
       padding-left: 0px;

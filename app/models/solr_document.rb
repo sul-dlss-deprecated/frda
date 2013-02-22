@@ -80,6 +80,10 @@ class SolrDocument
     self[:publisher_ssi]
   end
   
+  def session_date
+    self[:session_date_ftsiv]
+  end
+  
   def volume
     self[:vol_num_ssi]
   end

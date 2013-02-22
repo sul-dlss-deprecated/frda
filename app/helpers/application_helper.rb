@@ -52,6 +52,14 @@ module ApplicationHelper
     {:f => {blacklight_config.collection_highlight_field.to_sym => ["highlight_#{highlight.id}"]}}
   end
 
+  def params_for_volume(volume)
+    {:f => {:vol_title_ssi => [volume]}}
+  end
+  
+  def params_for_session(session)
+    {:f => {:session_date_si => [session]}}
+  end
+
   # sections for About page
   # element names should match what's used in locale_about.yml
   def about_sections

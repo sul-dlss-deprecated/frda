@@ -74,6 +74,8 @@ en:
       of: 'of'
       citation: 'Citation'
       download: 'Download'
+      cite:
+        title: 'Cite this item'
     collection_members_grid:
       members_link: 'View all collection items'
       collection_link: 'View this collection'

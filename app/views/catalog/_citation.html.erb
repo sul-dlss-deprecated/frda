@@ -1,0 +1,10 @@
+<% @documents.each do |document| %>
+  <div class="modal-body">
+    <p>
+      [citation details here]
+      <% unless document.purl.blank? %>
+        <%= link_to document.purl %>
+      <% end %>
+    </p>
+  </div>
+<% end %>

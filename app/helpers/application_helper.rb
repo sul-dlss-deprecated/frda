@@ -57,7 +57,7 @@ module ApplicationHelper
   end
   
   def params_for_session(session)
-    {:f => {:session_date_si => [session]}}
+    {:f => {:session_date_sim => [session]}}
   end
 
   # sections for About page

@@ -81,7 +81,7 @@ class SolrDocument
   end
   
   def session_date
-    self[:session_date_ftsiv]
+    multivalue_field('session_date_ftsimv')
   end
   
   def volume
@@ -109,7 +109,8 @@ class SolrDocument
   end  
   
 	def multivalue_field(name)
-	  self[name.to_sym].nil? ? ['']: self[name.to_sym]
+	  result = (self[name.to_sym].nil? ? ['']: self[name.to_sym])
+    result.class == Array ? result : result.split(',')
   end
 
   def images(params={})

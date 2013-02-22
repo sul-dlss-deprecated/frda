@@ -11,11 +11,11 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
-  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
-  <field name="session_date_val_ssi">1791-12-11</field>
-  <field name="session_date_dtsi">1791-12-11T00:00:00Z</field>
-  <field name="session_date_ftsiv">Séance du dimanche 11 décembre 1791 .</field>
-  <field name="session_prez_ssi">PRÉSIDENCE DE M. LEMONTEY.</field>
+  <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="session_date_val_ssim">1791-12-11</field>
+  <field name="session_date_dtsim">1791-12-11T00:00:00Z</field>
+  <field name="session_date_ftsimv">Séance du dimanche 11 décembre 1791 .</field>
+  <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
   
   <field name="speaker_ssim">M. Dorizy.</field>
   <field name="spoken_text_timv">M. Dorizy. Pour concilier tous les esprits, on peut, en
@@ -40,11 +40,12 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
-  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
-  <field name="session_date_val_ssi">1791-12-11</field>
-  <field name="session_date_dtsi">1791-12-11T00:00:00Z</field>
-  <field name="session_date_ftsiv">Séance du dimanche 11 décembre 1791 .</field>
-  <field name="session_prez_ssi">PRÉSIDENCE DE M. LEMONTEY.</field>
+  <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="session_date_val_ssim">1791-12-11</field>
+  <field name="session_date_dtsim">1791-12-11T00:00:00Z</field>
+  <field name="session_date_ftsimv">Séance du dimanche 11 décembre 1791 .</field>
+  
+  <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
   
   <field name="speaker_ssim">M. Dorizy.</field>
   <field name="spoken_text_timv">M. Dorizy. Pour concilier tous les esprits, on peut, en
@@ -98,11 +99,11 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
-  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
-  <field name="session_date_val_ssi">1791-12-11</field>
-  <field name="session_date_dtsi">1791-12-11T00:00:00Z</field>
-  <field name="session_date_ftsiv">Séance du dimanche 11 décembre 1791 .</field>
-  <field name="session_prez_ssi">PRÉSIDENCE DE M. LEMONTEY.</field>
+  <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="session_date_val_ssim">1791-12-11</field>
+  <field name="session_date_dtsim">1791-12-11T00:00:00Z</field>
+  <field name="session_date_ftsimv">Séance du dimanche 11 décembre 1791 .</field>
+  <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
   
   <field name="speaker_ssim">M. Dorizy.</field>
   <field name="spoken_text_timv">M. Dorizy. Pour concilier tous les esprits, on peut, en
@@ -127,11 +128,11 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
-  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
-  <field name="session_date_val_ssi">1791-12-13</field>
-  <field name="session_date_dtsi">1791-12-13T00:00:00Z</field>
-  <field name="session_date_ftsiv">Séance du mardi 13 décembre 1791, au matin.</field>
-  <field name="session_prez_ssi">PRÉSIDENCE DE M. LEMONTEY.</field>
+  <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="session_date_val_ssim">1791-12-13</field>
+  <field name="session_date_dtsim">1791-12-13T00:00:00Z</field>
+  <field name="session_date_ftsimv">Séance du mardi 13 décembre 1791, au matin.</field>
+  <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
 
   <field name="speaker_ssim">M. Gossuin.</field>
   <field name="spoken_text_timv">M. Gossuin. Messieurs, dans la séance du 31 octobre dernier, l'Assemblée a renvoyé à son comité de
@@ -168,11 +169,11 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
-  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE</field>
-  <field name="session_date_val_ssi">1790-02-18</field>
-  <field name="session_date_dtsi">1790-02-18T00:00:00Z</field>
-  <field name="session_date_ftsiv">Séance du jeudi 18 février 1790, au matin (1). </field>
-  <field name="session_prez_ssi">PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.</field>
+  <field name="session_govt_ssim">ASSEMBLÉE NATIONALE</field>
+  <field name="session_date_val_ssim">1790-02-18</field>
+  <field name="session_date_dtsim">1790-02-18T00:00:00Z</field>
+  <field name="session_date_ftsimv">Séance du jeudi 18 février 1790, au matin (1). </field>
+  <field name="session_prez_ssim">PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.</field>
   
   <field name="speaker_ssim">M. Guillotin</field>
   <field name="spoken_text_timv">M. Guillotin. Vun de MM. les secrétaires, donne (1) Cette séance est incomplète au
@@ -208,11 +209,11 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
-  <field name="session_govt_ssi">ASSEMBLÉE NATIONALE</field>
-  <field name="session_date_val_ssi">1790-02-18</field>
-  <field name="session_date_dtsi">1790-02-18T00:00:00Z</field>
-  <field name="session_date_ftsiv">Séance du jeudi 18 février 1790, au soir (1). </field>
-  <field name="session_prez_ssi">PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.</field>
+  <field name="session_govt_ssim">ASSEMBLÉE NATIONALE</field>
+  <field name="session_date_val_ssim">1790-02-18</field>
+  <field name="session_date_dtsim">1790-02-18T00:00:00Z</field>
+  <field name="session_date_ftsimv">Séance du jeudi 18 février 1790, au soir (1). </field>
+  <field name="session_prez_ssim">PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.</field>
   
   <field name="text_tiv">ASSEMBLÉE NATIONALE. 
     Séance du jeudi 18 février 1790, au soir (1).  

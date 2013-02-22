@@ -136,13 +136,11 @@
 
 </div>
 
-<div class="row">
-	<div class="span12">
-		<div id="physical">
-			<a href="http://searchworks.stanford.edu/view/1071767">Find this volume in SearchWorks</a>
-		</div>
-		<div id="purl">
-			<%= link_to @document.purl, @document.purl%>
-		</div>
+<div class="row ext-links">
+	<div id="physical" class="span6 pull-right">
+		<a href="http://searchworks.stanford.edu/view/1071767">Find this volume in SearchWorks</a>
+	</div>
+	<div id="purl" class="span6">
+		<%= link_to @document.purl, @document.purl%>
 	</div>
 </div>

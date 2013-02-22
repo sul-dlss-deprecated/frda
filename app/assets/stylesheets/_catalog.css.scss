@@ -53,12 +53,13 @@
   #document, #document h4 {
     margin-top: 0;
     .document-details {
-      margin-bottom: 50px;
+      margin-bottom: 10px;
       margin-top: 10px;
       dt {
         color: $heading_color;
         font-weight: bold;
       }
+      a {@include link-uncolored-border;}
     }
   }
   h2 {@include page-header;}
@@ -129,17 +130,21 @@
 /* AP Item Details */
 .blacklight-catalog-show .show-document .ap-item {
  h2 {
-   border: none;
-   font-size: 14px;
-   font-weight: normal;
+   //border: none;
+   //font-size: 14px;
+   //font-weight: normal;
    a {color: #3F3C30;}
  }
  ul.item-breadcrumb {
+   font-size: 0.9em;
    list-style-type: none;
    margin-bottom: 20px;
+   a {@include link-uncolored-border;}
  }
  .well {
    padding: 6px 15px;
+   a {@include link-uncolored-border;}
+   button > a, .item-views a {border-bottom: none;}
  }
  .page-navigation .form-inline {
    display: inline-block;
@@ -152,9 +157,17 @@
 }
 .image-box {margin-right: 20px;}
 .ocr-box p {margin-top: 0;}
+#physical {text-align: right;}
+.ext-links a {
+  @include link-uncolored-border;
+  font-size: 0.9em;
+}
 
 /* Images Item Details */
 .blacklight-catalog-show .show-document .images-item {
+  h2 {
+    a {color: #3F3C30;}
+  }
   ul.item-breadcrumb {
     font-size: 0.9em;
     list-style-type: none;

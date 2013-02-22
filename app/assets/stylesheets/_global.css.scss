@@ -57,6 +57,22 @@ $constraint_border_active_color: #FFD27A !default;
   text-transform: uppercase;
 }
 
+/* Styling for breadcrumbs and other elements
+   where we want to indicate it is a link but
+   not show text in link color */
+@mixin link-uncolored-border {
+  border-bottom: 1px dotted $text_color;
+  color: $text_color;
+  text-decoration: none;
+}
+
+/* Styling for buttons and other elements
+   where it is obviously a clickable element
+   so we don't want to show text in link color */
+@mixin link-uncolored {
+  color: $text_color;
+}
+
 /* --- */
 
 html {

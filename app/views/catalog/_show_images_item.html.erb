@@ -9,11 +9,11 @@
   });
 </script>
 
-<div class="row">
+<div class="row images-item">
   <div class="span12">
     <h2><%= t('frda.image.detail.title') %></h2>
  	 <% if @document.catalog_heading(I18n.locale).size > 0 %>
-	   <ul class="item breadcrumb">
+	   <ul class="item-breadcrumb">
 	      <li><%= link_to_catalog_heading(@document.catalog_heading(I18n.locale).first).join(" &rang; ").html_safe %></li>
 	    </ul>
 	 <% end %>
@@ -21,8 +21,12 @@
 </div>
 
 <div class="row images-item well well-small">
-  <%= render 'previous_next_doc' %>>
-  <%= render :partial => 'show_actions' %>
+  <%= render 'previous_next_doc' %>
+  <%# if we want to show the Send email action, use partial below instead of button below that %>
+  <%#= render :partial => 'show_actions' %>
+  <button class="btn btn-small">
+     <%= link_to t('frda.sidebar.actions.cite'), citation_catalog_path(:id => @document), {:id => 'citeLink', :class => 'lightboxLink cite'} %>
+  </button>
 </div>
 
 <div class="row document-details images-item">

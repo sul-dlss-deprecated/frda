@@ -55,7 +55,10 @@
     .document-details {
       margin-bottom: 50px;
       margin-top: 10px;
-      dt {color: $active_nav_link_color;}
+      dt {
+        color: $heading_color;
+        font-weight: bold;
+      }
     }
   }
   h2 {@include page-header;}
@@ -152,8 +155,22 @@
 
 /* Images Item Details */
 .blacklight-catalog-show .show-document .images-item {
+  ul.item-breadcrumb {
+    font-size: 0.9em;
+    list-style-type: none;
+    margin-bottom: 20px;
+    a {@include link-uncolored-border;}
+  }
   &.well {
     margin-left: 0;
+    button {
+      float: right;
+      a {border-bottom: none;}
+      a:hover, a:active {text-decoration: none;}
+    }
+    a {
+      @include link-uncolored-border;
+    }
     #previousNextDocument {
       display: inline-block;
       float: left;

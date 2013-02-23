@@ -14,7 +14,7 @@ $(document).ready(function(){
   </div>
   <%= render "search_form" %>
   <%= render :partial => 'constraints' if query_has_constraints? %>
-  <%= render :partial=>'facets' %>
+  <%= render :partial=>'facets' unless on_collection_highlights_page %>
 </div>
 
 

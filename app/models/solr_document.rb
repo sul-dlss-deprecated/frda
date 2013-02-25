@@ -13,9 +13,9 @@ class SolrDocument
       when "volume"
         self.volume_name
       when "image"
-        self[:"title_#{length}_ssi"]
+        self[:"title_#{length}_ftsi"]
       else
-        self[:"title_#{length}_ssi"]
+        self[:"title_#{length}_ftsi"]
       end
   end
   

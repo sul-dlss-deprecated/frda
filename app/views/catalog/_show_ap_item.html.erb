@@ -87,6 +87,19 @@
 <div class="row ap-item">
   <div class="span12 page-navigation">
 
+    <div class="btn-group">
+      <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+        Select session
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a>Séance du dimanche 11 décembre 1791</a></li>
+        <li><a>Séance du lundi 12 décembre 1791</a></li>
+        <li><a>Séance du mercredi 14 décembre 1791</a></li>
+        <li><a>etc....</a></li>
+      </ul>
+    </div>
+
     <%= form_tag(show_page_path, :remote => true, :class => "form-inline") do%>
       <%= hidden_field_tag :id,@document.druid %>
       <%= hidden_field_tag :from_id,@document.id %>

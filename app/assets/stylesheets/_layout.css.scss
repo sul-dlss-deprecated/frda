@@ -109,6 +109,13 @@ body {
   }
 }
 
+.dropdown-menu li a {
+  &:hover {
+	  background: whiteSmoke;
+	  color: $text_color;
+  }
+}
+
 /* Responsive styles */
 body {
   @media (max-width: 767px) {

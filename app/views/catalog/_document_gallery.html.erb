@@ -18,6 +18,9 @@
                                  :label=> truncate(document.title, :length => 55), 
                                  :counter => (index + 1 + @response.params[:start].to_i) %>
           </h3>
+          <% unless list_is_empty?(document.year)%>
+            <span class="year"><%= show_list(document.year) %></span>
+          <% end %>
           <% # bookmark functions for items/docs -%>
           <%#= render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
         </div>

@@ -53,15 +53,15 @@
   </div>
 
   <%= submit_tag(t('blacklight.search.form.q'), :class=>'hide') %>
-  <div class="btn-group">
+  <div class="btn-group search-drop-down">
     <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
       <%= t('blacklight.search.form.submit') %>
       <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
-      <li><%= link_to t('frda.search.results_heading_combined'), '#', :class => "search-link" %></li>
-      <li><%= link_to t('frda.search.results_heading_ap'), ap_collection_path, :class => "search-link" %></li>
-      <li><%= link_to t('frda.search.results_heading_image'), image_collection_path, :class => "search-link" %></li>
+      <li><%= submit_tag(t('frda.search.results_heading_combined'), :name => "combined") %></li>
+      <li><%= submit_tag(t('frda.search.results_heading_ap'), :name => "ap") %></li>
+      <li><%= submit_tag(t('frda.search.results_heading_image'), :name => "image") %></li>
     </ul>
   </div>
 

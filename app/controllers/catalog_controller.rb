@@ -34,7 +34,7 @@ class CatalogController < ApplicationController
     if on_collection_highlights_page
       @highlights=CollectionHighlight.order("sort_order")
     end
-puts params.inspect
+    
     super
     
   end

@@ -5,6 +5,8 @@ class CatalogController < ApplicationController
 
   include Blacklight::Catalog
   
+  CatalogController.solr_search_params_logic += [:add_year_range_query]
+  
   before_filter :capture_split_button_options, :only => :index
   
   def self.collection_highlights
@@ -288,6 +290,15 @@ class CatalogController < ApplicationController
     u
   end
   
+  def add_year_range_query(solr_params, user_params)
+    if user_params["dates"] and (!user_params["date-start"].blank? and !user_params["date-end"].blank?)
+      if solr_params[:fq]
+        solr_params[:fq] << "date_issued_ssim:[#{user_params['date-start']} TO #{user_params['date-end']}]"
+      else
+        solr_params[:fq] = ["date_issued_ssim:[#{user_params['date-start']} TO #{user_params['date-end']}]"]
+      end
+    end
+  end
   
   # used to capture and transform the parameters passed in the split button options.
   def capture_split_button_options

@@ -1,7 +1,7 @@
 <h4><%= t('frda.search.search_label') %></h4>
 
 <%= form_tag search_action_url, :method => :get, :class => 'search_form' do %>
-  <%= search_as_hidden_fields(:omit_keys => [:q, :search_field, :qt, :page]).html_safe %>
+  <%= search_as_hidden_fields(:omit_keys => [:q, :search_field, :qt, :page, :dates, :"date-start", :"date-end"]).html_safe %>
   <label for="q" class="hide-text"><%= t('blacklight.search.form.q') %></label>
   <div class="accordion" id="search-options">
     <div class="accordion-group">
@@ -15,9 +15,9 @@
         <div class="accordion-inner well">
           <label>
             <%= check_box_tag 'dates' %>on or between<br>
-            <%= text_field_tag 'date-start', nil, :class => 'input-mini date', :placeholder => "1787" %>
+            <%= text_field_tag 'date-start', params["date-start"], :class => 'input-mini date', :placeholder => "1787" %>
             to
-            <%= text_field_tag 'date-end', nil, :class => 'input-mini date', :placeholder => "1860" %>
+            <%= text_field_tag 'date-end', params["date-end"], :class => 'input-mini date', :placeholder => "1860" %>
           </label>
 
           <label>

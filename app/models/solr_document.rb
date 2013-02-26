@@ -21,13 +21,23 @@ class SolrDocument
   
   # for AP page items
   def page_title 
-    "#{self.volume_name}"
+    title="#{self.volume_name}"
+    title+=" - p #{self.page_number}" if self.page_number
+    return title
   end
   
   def page_number
     self[:page_num_ssi]
   end
+
+  def page_sequence
+    self[:page_sequence_isi]
+  end
   
+  def total_pages
+    self[:total_pages_is]
+  end
+      
   def druid
     self[:druid_ssi]
   end
@@ -101,15 +111,23 @@ class SolrDocument
   end
     
   def pdf_file
-    "https://stacks.stanford.edu/file/druid:#{self.druid}/#{druid}.pdf" unless self.druid.blank?    
+    "https://stacks.stanford.edu/file/druid:#{self.druid}/#{self[:vol_pdf_name_ss]}" unless self[:vol_pdf_name_ss].blank? || self.druid.blank?
   end
     
   def tei_file
-    "https://stacks.stanford.edu/file/druid:#{self.druid}/#{druid}.xml" unless self.druid.blank?          
+    "https://stacks.stanford.edu/file/druid:#{self.druid}/#{self[:vol_tei_name_ss]}" unless self[:vol_tei_name_ss].blank? || self.druid.blank?
   end  
+
+  def pdf_file_size
+    self[:vol_pdf_size_is]
+  end
+    
+  def tei_file_size
+    self[:vol_tei_size_is]
+  end
   
 	def multivalue_field(name)
-	 self[name.to_sym].nil? ? ['']: self[name.to_sym]
+	 self[name.to_sym].nil? ? []: self[name.to_sym]
   end
 
   def images(params={})
@@ -156,10 +174,6 @@ class SolrDocument
    def collection?
      self.has_key?(blacklight_config.collection_identifying_field) and 
        self[blacklight_config.collection_identifying_field].include?(blacklight_config.collection_identifying_value)
-   end
-   
-   def total_pages
-     self.images_item? ? 1 : Blacklight.solr.select(:params => {:fq => "druid_ssi:\"#{self.druid}\"",:rows=>0})["response"]["numFound"]
    end
    
    # TODO FIX -- this must be a better way to do this via solr -- this method only works with two levels of hierarchy ??

@@ -1,6 +1,8 @@
 <doc>
   <field name="id">wb029sv4796_00_0005</field>
   <field name="page_num_ssi">1</field>
+  <field name="page_sequence_isi">1</field>
+  <field name="total_pages_is">4</field>
   <field name="image_id_ssm">wb029sv4796_00_0005.jp2</field>
   <field name="ocr_id_ss">wb029sv4796_99_0005.txt</field>
   <field name="druid_ssi">wb029sv4796</field>
@@ -9,6 +11,10 @@
   <field name="vol_title_ssi">Tome 36 : Du 11 décembre 1791 au 1er janvier 1792</field>
   <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+	<field name="vol_pdf_name_ss">wb029sv4796.pdf</field>
+	<field name="vol_tei_name_ss">wb029sv4796.xml</field>
+	<field name="vol_pdf_size_is">2300000</field>
+	<field name="vol_tei_size_is">4000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
@@ -32,6 +38,8 @@
 <doc>
   <field name="id">wb029sv4796_00_0006</field>
   <field name="page_num_ssi">2</field>
+  <field name="page_sequence_isi">2</field>
+  <field name="total_pages_is">4</field>
   <field name="image_id_ssm">wb029sv4796_00_0006.jp2</field>
   <field name="ocr_id_ss">wb029sv4796_99_0006.txt</field>
   <field name="druid_ssi">wb029sv4796</field>
@@ -40,6 +48,10 @@
   <field name="vol_title_ssi">Tome 36 : Du 11 décembre 1791 au 1er janvier 1792</field>
   <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+	<field name="vol_pdf_name_ss">wb029sv4796.pdf</field>
+	<field name="vol_tei_name_ss">wb029sv4796.xml</field>
+	<field name="vol_pdf_size_is">2300000</field>
+	<field name="vol_tei_size_is">4000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
@@ -90,7 +102,8 @@
 
 <doc>
   <field name="id">wb029sv4796_00_0007</field>
-  <field name="page_num_ssi">3</field>
+  <field name="page_sequence_isi">3</field>
+  <field name="total_pages_is">4</field>
   <field name="image_id_ssm">wb029sv4796_00_0007.jp2</field>
   <field name="ocr_id_ss">wb029sv4796_99_0007.txt</field>
   <field name="druid_ssi">wb029sv4796</field>
@@ -99,6 +112,10 @@
   <field name="vol_title_ssi">Tome 36 : Du 11 décembre 1791 au 1er janvier 1792</field>
   <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+	<field name="vol_pdf_name_ss">wb029sv4796.pdf</field>
+	<field name="vol_tei_name_ss">wb029sv4796.xml</field>
+	<field name="vol_pdf_size_is">2300000</field>
+	<field name="vol_tei_size_is">4000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
@@ -120,6 +137,8 @@
 <doc>
   <field name="id">wb029sv4796_00_0111</field>
   <field name="page_num_ssi">4</field>
+  <field name="page_sequence_isi">4</field>
+  <field name="total_pages_is">4</field>
   <field name="image_id_ssm">wb029sv4796_00_0111.jp2</field>
   <field name="ocr_id_ss">wb029sv4796_99_0111.txt</field>
   <field name="druid_ssi">wb029sv4796</field>
@@ -128,6 +147,10 @@
   <field name="vol_title_ssi">Tome 36 : Du 11 décembre 1791 au 1er janvier 1792</field>
   <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+	<field name="vol_pdf_name_ss">wb029sv4796.pdf</field>
+	<field name="vol_tei_name_ss">wb029sv4796.xml</field>
+	<field name="vol_pdf_size_is">2300000</field>
+	<field name="vol_tei_size_is">4000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
@@ -161,6 +184,8 @@
 <doc>
   <field name="id">fy968nm6633_00_0648</field>
   <field name="page_num_ssi">637</field>
+  <field name="page_sequence_isi">1</field>
+  <field name="total_pages_is">2</field>
   <field name="image_id_ssm">fy968nm6633_00_0648.jp2</field>
   <field name="ocr_id_ss">fy968nm6633_99_0648.txt</field>
   <field name="druid_ssi">fy968nm6633</field>
@@ -169,6 +194,10 @@
   <field name="vol_title_ssi">Tome 11 : Du 24 décembre 1789 au 1er mars 1790</field>
   <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+	<field name="vol_pdf_name_ss">fy968nm6633.pdf</field>
+	<field name="vol_tei_name_ss">fy968nm6633.xml</field>
+	<field name="vol_pdf_size_is">6000000</field>
+	<field name="vol_tei_size_is">3000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE</field>
@@ -201,6 +230,8 @@
 <doc>
   <field name="id">fy968nm6633_00_0666</field>
   <field name="page_num_ssi">645</field>
+  <field name="page_sequence_isi">2</field>
+  <field name="total_pages_is">2</field>
   <field name="image_id_ssm">fy968nm6633_00_0666.jp2</field>
   <field name="ocr_id_ss">fy968nm6633_99_0666.txt</field>
   <field name="druid_ssi">fy968nm6633</field>
@@ -209,6 +240,10 @@
   <field name="vol_title_ssi">Tome 11 : Du 24 décembre 1789 au 1er mars 1790</field>
   <field name="vol_date_start_dti">1789-12-24T12:00:01Z</field>
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
+	<field name="vol_pdf_name_ss">fy968nm6633.pdf</field>
+	<field name="vol_tei_name_ss">fy968nm6633.xml</field>
+	<field name="vol_pdf_size_is">6000000</field>
+	<field name="vol_tei_size_is">3000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE</field>
@@ -234,6 +269,8 @@
 <doc>
   <field name="id">jt959wc5586_00_0782</field>
   <field name="page_num_ssi">783</field>
+  <field name="page_sequence_isi">1</field>
+  <field name="total_pages_is">1</field>
   <field name="image_id_ssm">jt959wc5586_00_0782.jp2</field>
   <field name="ocr_id_ss">jt959wc5586_99_0782.txt</field>
   <field name="druid_ssi">jt959wc5586</field>
@@ -242,6 +279,10 @@
   <field name="vol_title_ssi">Tome 1 : 1789 – Introduction - états généraux - préliminaires. Cahiers des sénéchaussées et baillages [Agen - Amont]</field>
   <field name="vol_date_start_dti">1789-01-01T00:00:00Z</field>
   <field name="vol_date_end_dti">1789-12-31T23:59:59Z</field>
+	<field name="vol_pdf_name_ss">jt959wc5586.pdf</field>
+	<field name="vol_tei_name_ss">jt959wc5586.xml</field>
+	<field name="vol_pdf_size_is">4500000</field>
+	<field name="vol_tei_size_is">4000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">table des matières</field>
   
@@ -258,6 +299,8 @@
 <doc>
   <field name="id">bm916nx5550_00_0006</field>
   <field name="page_num_ssi">V</field>
+  <field name="page_sequence_isi">1</field>
+  <field name="total_pages_is">1</field>
   <field name="image_id_ssm">bm916nx5550_00_0006.jp2</field>
   <field name="ocr_id_ss">bm916nx5550_99_0006.txt</field>
   <field name="druid_ssi">bm916nx5550</field>
@@ -266,6 +309,10 @@
   <field name="vol_title_ssi">Tome 8 : Du 5 mai 1789 au 15 septembre 1789</field>
   <field name="vol_date_start_dti">1789-05-05T00:00:00Z</field>
   <field name="vol_date_end_dti">1789-09-15T23:59:59Z</field>
+	<field name="vol_pdf_name_ss">bm916nx5550.pdf</field>
+	<field name="vol_tei_name_ss">bm916nx5550.xml</field>
+	<field name="vol_pdf_size_is">3500000</field>
+	<field name="vol_tei_size_is">2000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">liste</field>
   
@@ -279,6 +326,8 @@
 <doc>
   <field name="id">mc666yy3026_00_0144</field>
   <field name="page_num_ssi">140</field>
+  <field name="page_sequence_isi">1</field>
+  <field name="total_pages_is">1</field>
   <field name="image_id_ssm">mc666yy3026_00_0144.jp2</field>
   <field name="ocr_id_ss">mc666yy3026_99_0144.txt</field>
   <field name="druid_ssi">mc666yy3026</field>
@@ -287,6 +336,10 @@
   <field name="vol_title_ssi">Tome 3 : 1789 – États généraux. Cahiers des sénéchaussées et baillages [Colmar et Schelestadt - Metz]</field>
   <field name="vol_date_start_dti">1789-01-01T00:00:00Z</field>
   <field name="vol_date_end_dti">1789-12-31T23:59:59Z</field>
+	<field name="vol_pdf_name_ss">mc666yy3026.pdf</field>
+	<field name="vol_tei_name_ss">mc666yy3026.xml</field>
+	<field name="vol_pdf_size_is">5500000</field>
+	<field name="vol_tei_size_is">34000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">liste</field>
   

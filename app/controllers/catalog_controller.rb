@@ -51,7 +51,7 @@ class CatalogController < ApplicationController
     download_ocr_text=params[:download_ocr_text]
 
     @mode=params[:mode]
-    doc=Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_num_ssi:\"#{page_num}\""})["response"]["docs"]
+    doc=Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_sequence_isi:\"#{page_num}\""})["response"]["docs"]
     @document=SolrDocument.new(doc.first) if doc.size > 0 # assuming we found this page
 
     if download_ocr_text 

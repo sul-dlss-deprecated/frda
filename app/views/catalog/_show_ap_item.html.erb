@@ -4,15 +4,20 @@
 	});
 </script>
 
+<% 
+link_next_page=@document.page_sequence.to_i < @document.total_pages ? true : false
+link_prev_page=@document.page_sequence.to_i > 1 ? true : false
+%>
+
 <div class="row ap-item">
   <div class="span12">
     <h2><%= link_to "Archives parlementaires", ap_collection_path %></h2>
     <ul class="item-breadcrumb">
       <li><%= link_to(@document.title, catalog_index_path(params_for_volume(@document.volume_name))) %> &rang; 
-		  <% @document.session_date.each do |session|%>
-			  <%= link_to(session, catalog_index_path(params_for_session(session))) %> &rang; 		  
-		  <% end %>
-		  <%= t('frda.show.page') %> <%= @document.page_number %>
+					<% @document.session_date.each do |session|%>
+			  		<%= link_to(session, catalog_index_path(params_for_session(session))) %> &rang; 		  
+		  		<% end %>
+		  <%= t('frda.show.page') %> <%= @document.page_sequence %>
 	 </li>
     </ul>
   </div>
@@ -27,19 +32,19 @@
       </div>
 
       <div class="span6 item-views btn-group">
-          <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"image"),:remote=>true do%>
+          <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"image"),:remote=>true do%>
 		        <%= button_tag "side-by-side",
                 :class => 'btn btn-small',
                 :disabled => ['image', nil].include?(@mode) ? true : false %>
 					<% end %>
 
-          <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"ocr"),:remote=>true do%>
+          <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"ocr"),:remote=>true do%>
 	        <%= button_tag "text-only",
               :class => 'btn btn-small',
               :disabled => ['ocr'].include?(@mode) ? true : false %>
 					<% end %>
 
-		 <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:mode=>"flipbook"),:remote=>true,:class=>'hidden showOnLoad' do%>        
+		 <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"flipbook"),:remote=>true,:class=>'hidden showOnLoad' do%>        
 	        <%= button_tag "read in flipbook",
               :class => 'btn btn-small hidden showOnLoad',
               :disabled => ['flipbook'].include?(@mode) ? true : false %>
@@ -64,13 +69,17 @@
                 </li>
                 <li class="download-option">
                  <%= link_to "Page (text)", show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:download_ocr_text=>true), :class => 'downloadLink' %>
-                </li>				
-                <li class="download-option">
-                 <%= link_to "Volume (PDF)", @document.pdf_file, :class => 'downloadLink' %>
                 </li>
-                <li class="download-option">
-                 <%= link_to "Volume (TEI)", @document.tei_file, :class => 'downloadLink' %>
+								<% if @document.pdf_file %>
+	                <li class="download-option">
+	                 <%= link_to "Volume (PDF) - #{number_to_human_size(@document.pdf_file_size)}", @document.pdf_file, :class => 'downloadLink' %>
+	                </li>
+								<% end %>
+								<% if @document.tei_file %>
+               <li class="download-option">
+                 <%= link_to "Volume (TEI XML) - #{number_to_human_size(@document.tei_file_size)}", @document.tei_file, :class => 'downloadLink' %>
                 </li>
+								<% end %>
               </ul>
             </li>
           </ul>
@@ -90,19 +99,19 @@
     <%= form_tag(show_page_path, :remote => true, :class => "form-inline") do%>
       <%= hidden_field_tag :id,@document.druid %>
       <%= hidden_field_tag :from_id,@document.id %>
-      <%= text_field_tag :page_num,@document.page_number, :maxlength => 3, :class => 'span1' %>
+      <%= text_field_tag :page_num,@document.page_sequence, :maxlength => 3, :class => 'span1' %>
       <%= submit_tag "Go", :class => 'btn btn-mini'%>
     <% end %>
 
     <div class="btn-group">
-      <%= link_to "&#60;".html_safe, show_page_path(:id=>@document.druid,:page_num=>((@document.page_number.to_i)-1).to_s,:from_id=>@document.id,:mode=>@mode),
+      <%= link_to "&#60;".html_safe, (link_prev_page ? show_page_path(:id=>@document.druid,:page_num=>((@document.page_sequence.to_i)-1).to_s,:from_id=>@document.id,:mode=>@mode) : '#'),
 		  :remote=>true,
           :class => 'btn btn-mini',
-          :disabled => @document.page_number.to_i > 1 ? false : true %>
-      <%= link_to "&#62;".html_safe, show_page_path(:id=>@document.druid,:page_num=>((@document.page_number.to_i)+1).to_s,:from_id=>@document.id,:mode=>@mode),
+          :disabled => !link_prev_page %>
+      <%= link_to "&#62;".html_safe, (link_next_page ? show_page_path(:id=>@document.druid,:page_num=>((@document.page_sequence.to_i)+1).to_s,:from_id=>@document.id,:mode=>@mode) : '#'),
 		  :remote=>true,
           :class => 'btn btn-mini',
-          :disabled => @document.page_number.to_i < @document.total_pages ? false : true %>
+          :disabled => !link_next_page %>
     </div>
 
   </div>
@@ -124,7 +133,7 @@
 		<% if @mode == 'flipbook' %>
 		<span id="loading_message">Loading, please wait...</span>
 	    <div class="flipbook">
-				<iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/view.jsp?id=<%=@document.druid%>#page/<%=@document.page_number%>/mode/1up" width="750" height="650"></iframe>
+				<iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/view.jsp?id=<%=@document.druid%>#page/<%=@document.page_sequence%>/mode/1up" width="750" height="650"></iframe>
 	    </div>
 	  <% end %>
 		<% if @mode != 'flipbook' %>

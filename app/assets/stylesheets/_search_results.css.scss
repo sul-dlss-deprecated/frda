@@ -187,7 +187,10 @@ p.ap-summary, p.images-summary {
 .css-dropdown li {
   font-size: 12px;
   padding: 2px 10px;
-  > a {padding: 2px;}
+  > a {
+    color: $text_color;
+    padding: 2px;
+  }
 }
 .select_all-pulldown {
   margin: 0;
@@ -198,12 +201,12 @@ p.ap-summary, p.images-summary {
   margin: 1px 0 0 15px;
   vertical-align: top;
   .label-text, .dropdown-menu li > a {
-    color: $active_link_color;
+    color: $text_color;
     font-family: $text_font_family;
     font-size: 12px;
     text-decoration: none;
     &:hover {
-      color: $hover_link_color;
+      color: $text_color;
       background: #eee;
     }
   }

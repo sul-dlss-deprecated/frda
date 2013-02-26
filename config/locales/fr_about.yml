@@ -18,15 +18,58 @@ fr:
           [Needs translation]
         </p>
       </div>
-    project_team_stanford_heading: 'Équipe de projet : Stanford'
+    project_team_stanford_heading: 'Équipe de projet: Stanford'
     project_team_stanford_text_html: |
-      <p>
-        [Needs translation]
+      <dl class="project-team dl-horizontal">
+        <dt>Michael A. Keller</dt><dd>University Librarian</dd>
+        <dt>Dan Edelstein</dt><dd>Faculty Advisor</dd>
+        <dt>John Haeger</dt><dd>Project Director</dd>
+      </dl>
+      <dl class="project-team dl-horizontal">
+        <dt>Catherine Aster</dt><dd>Project Manager</dd>
+        <dt>Tony Calavano</dt><dd>Digitization Lab Manager</dd>
+        <dt>Doris Cheung</dt><dd>Production Coordinator</dd>
+        <dt>Naomi Dushay</dt><dd>Discovery Engineer</dd>
+        <dt>Gary Geisler</dt><dd>Web Application Developer</dd>
+        <dt>Jessie Keck</dt><dd>Web Application Developer</dd>
+        <dt>Peter Mangiafico</dt><dd>Web Application Developer</dd>
+        <dt>Matt Pearson</dt><dd>Image Quality Assurance Specialist</dd>
+        <dt>Jon Lavigne</dt><dd>Accessioning Engineer</dd>
+        <dt>Sarah Sussman</dt><dd>Curator, French and Italian Collections</dd>
+        <dt>Jennifer Vine</dt><dd>User Experience Designer</dd>
+        <dt>Glen Worthey</dt><dd>Digital Humanities Librarian</dd>
+      </dl>
+      <p class="project-team">Special thanks are due to the following:
+      <ul class="project-team">
+        <li>Stanford University PhD candidates in History: Katherine McDonough, Heather Otto.</li>
+        <li>Stanford University Libraries, Digital Libraries Systems and Services staff: Ben Albritton, Tom
+        Cramer, Christopher Jesudurai, Charles Kerns, Linda Lam, Lynn McRae, Tony Navarrete, Matt Pearson, Stuart
+        Snydman, Wayne Vanderkuil.</li>
+        <li>Stanford Libraries staff Andrew Herkovic, Casey Mullin, Robert Schwarzwalder, Vitus Tang.</li>
+      </ul>
       </p>
-    project_team_bnf_heading: 'Équipe de projet : BnF'
+    project_team_bnf_heading: 'Équipe de projet: Bibliothèque nationale de France'
     project_team_bnf_text_html: |
-      <p>
-        [Needs translation]
+      <dl class="project-team bnf fr">
+        <dt>Président</dt><dd>Bruno Racine</dd>
+        <dt>Directrice générale</dt><dd>Jacqueline Sanson</dd>
+        <dt>Directeur des Collections</dt><dd>Denis Bruckmann</dd>
+        <dt>Directeur des Services et réseaux</dt><dd>Arnaud Beaufort</dd>
+        <dt>Directrice du département des Estampes et de la photographie</dt><dd>Sylvie Aubenas</dd>
+      </dl>
+      <dl class="project-team bnf fr">
+        <dt>Marie Thompson</dt><dd>conservateur, chargée du projet au département des Estampes et de la photographie</dd>
+        <dt>Corinne Le Bitouzé</dt><dd>conservateur, chargée des collections XVIIIe siècle au
+            département des Estampes et de la photographie</dd>
+      </dl>
+      <p class="project-team">La création du portail "French Revolution Digital Archive" n’aurait pas été
+        possible sans le travail de l’équipe qui, de 1987 à 1989, a conçu et réalisé le vidéodisque "Images de la
+        Révolution française."</p>
+      <p class="project-team">
+        Que soient également remerciés les services de la BnF qui ont apporté leur concours précieux, en
+        particulier le département des Systèmes d’information (Mireille Pouget, responsable de la cellule Données
+        bibliothéconomiques et François Talbot, du service Supports et production), le département de la
+        Reproduction et le département de la Conservation (Dominique Maillet, expert en numérisation).
       </p>
     technical_description_heading: 'Informations techniques'
     technical_description_text_html: |

@@ -127,6 +127,9 @@ en:
     search:
       results_heading_combined: 'combined collections'
       results_heading_ap: 'Parliamentary archives'
+      occurrence:
+        one: "1 occurrence"
+        other: "%{count} occurrences"
       results_heading_image: 'Images of the French Revolution'
       search_results: 'Results'
       view_toggle:

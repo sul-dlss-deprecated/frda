@@ -118,6 +118,9 @@ fr:
     search:
       results_heading_combined: 'combined collections'
       results_heading_ap: 'Archives parlementaires'
+      occurrence:
+        one: "1 occurrence"
+        other: "%{count} occurrences"
       results_heading_image: 'Images de la Révolution française'
       search_results: 'Results'
       view_toggle:

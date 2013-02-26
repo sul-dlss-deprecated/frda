@@ -1,9 +1,11 @@
 # -*- encoding : utf-8 -*-
 require 'blacklight/catalog'
+require 'frda/solr_helper'
 
 class CatalogController < ApplicationController  
 
   include Blacklight::Catalog
+  include Frda::SolrHelper
   
   CatalogController.solr_search_params_logic += [:add_year_range_query]
   
@@ -37,8 +39,20 @@ class CatalogController < ApplicationController
       @highlights=CollectionHighlight.order("sort_order")
     end
     
-    super
     
+    extra_head_content << view_context.auto_discovery_link_tag(:rss, url_for(params.merge(:format => 'rss')), :title => t('blacklight.search.rss_feed') )
+    extra_head_content << view_context.auto_discovery_link_tag(:atom, url_for(params.merge(:format => 'atom')), :title => t('blacklight.search.atom_feed') )
+
+    (@response, @document_list) = get_grouped_search_results
+
+    @filters = params[:f] || []
+
+    respond_to do |format|
+      format.html { save_current_search_params }
+      format.rss  { render :layout => false }
+      format.atom { render :layout => false }
+    end
+
   end
 
     

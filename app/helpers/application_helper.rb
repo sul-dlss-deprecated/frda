@@ -81,6 +81,12 @@ module ApplicationHelper
       :title => "#{view_name.titlecase} view of results",
       :class => "#{view_state}")
   end
+  
+  # This can be used to link the group heading in search results
+  # We don't really have this ID naming convention in Image so it won't work there.
+  def link_to_tome_from_search_result(text, id, options={})
+    link_to(text, catalog_path("#{id}_00_0001"), options)
+  end
 
   def link_to_catalog_heading(heading)
     buffer = []

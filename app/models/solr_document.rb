@@ -10,8 +10,6 @@ class SolrDocument
     case self.type
       when "page"
         self.page_title
-      when "volume"
-        self.volume_name
       when "image"
         self[:"title_#{length}_ftsi"]
       else

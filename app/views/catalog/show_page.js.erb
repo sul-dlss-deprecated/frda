@@ -3,6 +3,8 @@
 	clearMessages();
 	showOnLoad();
 	showImageViewer('<%=@document.first_image(:size=>:full,:format=>"none")%>','ap_page_image');
+	window.history.pushState({}, "<%=@document.title%>", "<%=catalog_path(@document.id,:mode=>@mode)%>");
+	document.title = '<%="#{t('blacklight.application_name')}: #{@document.title}"%>';
 <% else %>
 	showMessage('<%=t('frda.show.not_found')%>','alert');
 <%end%>

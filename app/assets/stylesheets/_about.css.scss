@@ -38,6 +38,17 @@
     margin-left: 5px;
     vertical-align: top;
   }
+  .project-team.bnf {
+    dt {width: 240px;}
+    dd {margin-left: 260px;}
+    &.fr {
+      dt {width: 90%;}
+      dd {
+        margin-left: 12px;
+        margin-bottom: 6px;
+      }
+    }
+  }
 
   // Make textarea wide as reasonable given viewport size
   @media (min-width: 980px) {

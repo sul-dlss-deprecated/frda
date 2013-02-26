@@ -13,9 +13,9 @@ link_prev_page=@document.page_sequence.to_i > 1 ? true : false
   <div class="span12">
     <h2><%= link_to "Archives parlementaires", ap_collection_path %></h2>
     <ul class="item-breadcrumb">
-      <li><%= link_to(@document.title, catalog_index_path(params_for_volume(@document.volume_name))) %> &rang; 
+      <li><%= link_to(@document.title, catalog_index_path(params_for_volume(@document.volume_name))) %>  » 
 					<% @document.session_date.each do |session|%>
-			  		<%= link_to(session, catalog_index_path(params_for_session(session))) %> &rang; 		  
+			  		<%= link_to(session, catalog_index_path(params_for_session(session))) %>  » 		  
 		  		<% end %>
 		  <%= t('frda.show.page') %> <%= @document.page_sequence %>
 	 </li>
@@ -49,7 +49,7 @@ link_prev_page=@document.page_sequence.to_i > 1 ? true : false
               :class => 'btn btn-small hidden showOnLoad',
               :disabled => ['flipbook'].include?(@mode) ? true : false %>
 					<% end %>
-					
+
         <button class="btn btn-small">
           fullscreen
         </button>
@@ -68,7 +68,7 @@ link_prev_page=@document.page_sequence.to_i > 1 ? true : false
                  <%= link_to "Page (image)", @document.first_image(:download=>true), :class => 'downloadLink' %>
                 </li>
                 <li class="download-option">
-                 <%= link_to "Page (text)", show_page_path(:id=>@document.druid,:page_num=>@document.page_number,:download_ocr_text=>true), :class => 'downloadLink' %>
+                 <%= link_to "Page (text)", show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:download_ocr_text=>true), :class => 'downloadLink' %>
                 </li>
 								<% if @document.pdf_file %>
 	                <li class="download-option">
@@ -95,6 +95,19 @@ link_prev_page=@document.page_sequence.to_i > 1 ? true : false
 
 <div class="row ap-item">
   <div class="span12 page-navigation">
+
+    <div class="btn-group">
+      <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+        Select session
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a>Séance du dimanche 11 décembre 1791</a></li>
+        <li><a>Séance du lundi 12 décembre 1791</a></li>
+        <li><a>Séance du mercredi 14 décembre 1791</a></li>
+        <li><a>etc....</a></li>
+      </ul>
+    </div>
 
     <%= form_tag(show_page_path, :remote => true, :class => "form-inline") do%>
       <%= hidden_field_tag :id,@document.druid %>

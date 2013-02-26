@@ -162,13 +162,55 @@ en:
       </div>
     project_team_stanford_heading: 'Project team: Stanford'
     project_team_stanford_text_html: |
-      <p>
-        Project team Stanford - text to be provided
+      <dl class="project-team dl-horizontal">
+        <dt>Michael A. Keller</dt><dd>University Librarian</dd>
+        <dt>Dan Edelstein</dt><dd>Faculty Advisor</dd>
+        <dt>John Haeger</dt><dd>Project Director</dd>
+      </dl>
+      <dl class="project-team dl-horizontal">
+        <dt>Catherine Aster</dt><dd>Project Manager</dd>
+        <dt>Tony Calavano</dt><dd>Digitization Lab Manager</dd>
+        <dt>Doris Cheung</dt><dd>Production Coordinator</dd>
+        <dt>Naomi Dushay</dt><dd>Discovery Engineer</dd>
+        <dt>Gary Geisler</dt><dd>Web Application Developer</dd>
+        <dt>Jessie Keck</dt><dd>Web Application Developer</dd>
+        <dt>Peter Mangiafico</dt><dd>Web Application Developer</dd>
+        <dt>Matt Pearson</dt><dd>Image Quality Assurance Specialist</dd>
+        <dt>Jon Lavigne</dt><dd>Accessioning Engineer</dd>
+        <dt>Sarah Sussman</dt><dd>Curator, French and Italian Collections</dd>
+        <dt>Jennifer Vine</dt><dd>User Experience Designer</dd>
+        <dt>Glen Worthey</dt><dd>Digital Humanities Librarian</dd>
+      </dl>
+      <p class="project-team">Special thanks are due to the following:
+      <ul class="project-team">
+        <li>Stanford University PhD candidates in History: Katherine McDonough, Heather Otto.</li>
+        <li>Stanford University Libraries, Digital Libraries Systems and Services staff: Ben Albritton, Tom
+        Cramer, Christopher Jesudurai, Charles Kerns, Linda Lam, Lynn McRae, Tony Navarrete, Matt Pearson, Stuart
+        Snydman, Wayne Vanderkuil.</li>
+        <li>Stanford Libraries staff Andrew Herkovic, Casey Mullin, Robert Schwarzwalder, Vitus Tang.</li>
+      </ul>
       </p>
-    project_team_bnf_heading: 'Project team: BnF'
+    project_team_bnf_heading: 'Project team: Bibliothèque nationale de France'
     project_team_bnf_text_html: |
-      <p>
-        Project team BnF - text to be provided
+      <dl class="project-team bnf dl-horizontal">
+        <dt>President</dt><dd>Bruno Racine</dd>
+        <dt>Director</dt><dd>Jacqueline Sanson</dd>
+        <dt>Head of Collections</dt><dd>Denis Bruckmann</dd>
+        <dt>Director of Services and the Networks</dt><dd>Arnaud Beaufort</dd>
+        <dt>Head of Prints and Photographs</dt><dd>Sylvie Aubenas</dd>
+      </dl>
+      <dl class="project-team bnf dl-horizontal">
+        <dt>Marie Thompson</dt><dd>curator, in charge of the project at the Prints and Photographs Department</dd>
+        <dt>Corinne Le Bitouzé</dt><dd>curator, 18th Century Collections at the Prints and Photographs Department</dd>
+      </dl>
+      <p class="project-team">Special thanks to the team who between 1987 and 1989 worked on the
+        videodisc "Images de la Révolution française" and made the new project possible.</p>
+      <p class="project-team">Thanks are due to the following:
+      <ul class="project-team">
+        <li>Mireille Pouget and François Talbot at the Information Technologies Division of the BnF</li>
+        <li>Reproduction Department of the BnF</li>
+        <li>Dominique Maillet at the Preservation Department of the BnF</li>
+      </ul>
       </p>
     technical_description_heading: 'Technical description'
     technical_description_text_html: |

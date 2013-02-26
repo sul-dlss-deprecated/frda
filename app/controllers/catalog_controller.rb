@@ -5,6 +5,8 @@ class CatalogController < ApplicationController
 
   include Blacklight::Catalog
   
+  before_filter :capture_split_button_options, :only => :index
+  
   def self.collection_highlights
     opts = {}
     CollectionHighlight.find(:all,:order=>:sort_order).each do |highlight|
@@ -292,6 +294,19 @@ class CatalogController < ApplicationController
     u = User.create
     u.save
     u
+  end
+  
+  
+  # used to capture and transform the parameters passed in the split button options.
+  def capture_split_button_options
+    unless (params.dup.keys & ["ap", "image"]).blank?
+      ap = params["ap"] ? "Archives parlementaires" : nil
+      image = params["image"] ? "Images" : nil
+      params[:f] = {"collection_ssi" => [ap || image]}
+    end
+    params.delete("ap")
+    params.delete("image")
+    params.delete("combined")
   end
   
   

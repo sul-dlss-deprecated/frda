@@ -90,6 +90,30 @@ body {
     padding: 7px;
     border-top: none;
   }
+
+}
+
+/* split button drop down */
+.search-drop-down {
+  ul {
+	  input[type="submit"] {
+		  background: none;
+		  border: none;
+		  display: block;
+		  width: 100%;
+		  text-align: left;
+		  &:hover {
+			  background: whiteSmoke;
+		  }
+	  }
+  }
+}
+
+.dropdown-menu li a {
+  &:hover {
+	  background: whiteSmoke;
+	  color: $text_color;
+  }
 }
 
 /* Responsive styles */

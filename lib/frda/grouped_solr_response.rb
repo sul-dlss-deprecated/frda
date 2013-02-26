@@ -1,0 +1,66 @@
+require "blacklight/mash" unless defined?(Mash)
+
+class Frda::GroupedSolrResponse < Mash
+  
+  attr_reader :request_params
+  def initialize(data, request_params)
+    super(data)
+    @request_params = request_params
+    
+    extend Blacklight::SolrResponse::Facets
+  end
+  
+  class SolrGroup
+    attr_reader :group, :total, :start, :docs
+    def initialize group, total, start, docs
+      @group = group
+      @total = total
+      @start = start
+      @docs = docs.map{|doc| SolrDocument.new(doc) }
+    end
+  end
+
+  def response
+    self[:grouped]
+  end
+
+  def total
+    response[grouping_field]["ngroups"].to_s.to_i
+  end
+  
+  def total_docs
+    response[grouping_field]["matches"].to_s.to_i
+  end
+  
+  def docs
+    groups
+  end
+  
+  def start
+    params["start"].to_s.to_i
+  end
+
+  def header
+    self['responseHeader']
+  end
+  
+  def params
+    (header and header['params']) ? header['params'] : request_params
+  end
+  
+  def rows
+    # better way to get rows?  params['rows'] seems to be an array sometimes.
+    [request_params["rows"], params["rows"]].flatten.delete_if{|r| r.to_i == 0}.first.to_s.to_i
+  end
+    
+  def groups
+    @groups ||= response[grouping_field]["groups"].map do |group|
+      SolrGroup.new(group["groupValue"], group["doclist"]["numFound"], group["doclist"]["start"], group["doclist"]["docs"]) 
+    end
+  end
+
+  def grouping_field
+    "vol_title_ssi"
+  end
+
+end

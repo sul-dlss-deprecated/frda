@@ -14,11 +14,9 @@
     margin-top: 20px;
     img {
       @include image-border;
+      float: right;
       margin-right: 10px;
-    }
-    .highlight-desc {
-      padding-left: 20px;
-      box-sizing: border-box;
+      width: 90%;
     }
   }
   span {
@@ -31,11 +29,9 @@
 @media (max-width: 767px) {
   .collection-highlights .highlight {
     img {
+      float: none;
       margin-bottom: 10px;
       max-width: 250px;
-    }
-    .highlight-desc {
-      padding-left: 5px;
     }
   }
 }

@@ -22,7 +22,7 @@ c1=CollectionHighlight.create(
   sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
   placerat eleifend leo.',
   description_fr:'Items from university correspondance. In French',
-  image_url:'https://stacks.stanford.edu/image/bb101kw2226/T0000001_thumb.jpg'
+  image_url:'https://stacks.stanford.edu/image/bb298qd7487/T0000001_thumb.jpg'
 )
 c2=CollectionHighlight.create(
   sort_order:2,
@@ -33,7 +33,7 @@ c2=CollectionHighlight.create(
   amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
   eleifend leo.',
   description_fr:'Items from official documents. In French',
-  image_url:'https://stacks.stanford.edu/image/qv647nz8770/T0000001_thumb.jpg'
+  image_url:'https://stacks.stanford.edu/image/kb852bf7877/T0000001_thumb.jpg'
 )
 c3=CollectionHighlight.create(
   sort_order:3,
@@ -44,11 +44,11 @@ c3=CollectionHighlight.create(
   amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
   eleifend leo.',
   description_fr:'Items from personal letters. In French',
-  image_url:'https://stacks.stanford.edu/image/bb018fc7286/T0000001_thumb.jpg'
+  image_url:'https://stacks.stanford.edu/image/qv647nz8770/T0000001_thumb.jpg'
 )
 
-c1_items=%w{kb852bf7877 zp486wj7751 bb298qd7487 bb039cc5395}
-c2_items=%w{qv647nz8770 bb204rc7778 zp486wj7751}
+c1_items=%w{qv647nz8770 zp486wj7751 bb298qd7487 bb039cc5395}
+c2_items=%w{kb852bf7877 bb204rc7778 zp486wj7751}
 c3_items=%w{zp695fd1911 bb298qd7487 bb039cc5395 bb204rc7778}
 
 add_items(c1_items,c1)

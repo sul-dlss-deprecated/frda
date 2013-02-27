@@ -8,8 +8,7 @@
   <div class="row featured-collections">
 		<% @highlights.each do |highlight| %>
       <div class="span3 featured-collection">
-        <%#= link_to(image_tag(highlight.image_url, :class => 'highlight-poster-image'),catalog_index_path(params_for_collection_highlight(highlight)))  %>
-        <%= link_to(image_tag("http://placehold.it/360x220", :class => 'highlight-poster-image'),catalog_index_path(params_for_collection_highlight(highlight)))  %>
+        <%= link_to(image_tag(highlight.image_url, :class => 'highlight-poster-image'),catalog_index_path(params_for_collection_highlight(highlight)))  %>
         <h3 class="collection-title"><%= link_to_collection_highlight(highlight) %></h3>
         <span>(<%=t('frda.show.item',:count=>highlight.collection_highlight_items.size)%>)</span>
       </div>

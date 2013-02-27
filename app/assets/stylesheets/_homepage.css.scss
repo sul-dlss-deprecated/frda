@@ -20,17 +20,26 @@
   margin-bottom: 10px;
   h3.collection-title {
     margin-bottom: 0;
+    margin-left: 5px;
     margin-top: 6px;
     padding: 0;
-    > a {color: #999;}
+    > a {
+      color: $active_heading_link_color;
+      &:hover {
+        border-bottom: 1px dotted $active_heading_link_color;
+        text-decoration: none;
+      }
+    }
   }
   img {
     max-height: 200px;
     width: 90%;
+    @include image-border;
   }
   span {
     color: #555;
     font-size: 12px;
+    margin-left: 5px;
   }
 }
 .about-dl {

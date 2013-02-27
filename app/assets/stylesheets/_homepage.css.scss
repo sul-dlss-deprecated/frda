@@ -34,16 +34,21 @@
   }
 }
 .about-dl {
-  p {width: 95%;}
+  div {margin-top: 20px;}
+  p {
+    width: 95%;
+    &.collection-desc {margin-top: 6px;}
+  }
   a.heading-link {
-    display: block;
+    border-bottom: 1px dotted $active_heading_link_color;
+    color: $active_heading_link_color;
     font-weight: bold;
-    margin-bottom: 0;
+    text-decoration: none;
   }
   img {
     border: 1px solid #CCC;
     float: left;
-    margin: 0 15px 7px 0;
+    margin: 0 15px 10px 0;
     padding: 4px;
   }
 }

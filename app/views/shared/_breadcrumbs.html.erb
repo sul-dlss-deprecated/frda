@@ -30,9 +30,6 @@
 	<% end %>
 
 	<% if on_show_page %>
-		<% @document.ancestors.each do |parent| %>
-			&#187; <li><%= link_to(raw(truncate(parent.title)),catalog_path(parent.id)) %></li>
-		<% end %>
 		&#187; <li><%= raw truncate(@document.title) %></li>
 	<% end %>
 	

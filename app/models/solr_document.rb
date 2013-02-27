@@ -40,10 +40,6 @@ class SolrDocument
     self[:druid_ssi]
   end
   
-  def description(language=I18n.default_locale)
-    multivalue_field("description_#{language[0]}tsim")
-  end
-  
   def catalog_heading(language=I18n.default_locale)
     multivalue_field("catalog_heading_#{language[0]}tsimv").map do |field|
       field.split("--").map do |value|
@@ -136,8 +132,7 @@ class SolrDocument
     size=:full if download
     stacks_url = Frda::Application.config.stacks_url
     self[blacklight_config.image_identifier_field].map do |image_id|
-      image_druid=(self.collection? ? "" : "#{self.druid}/")  # collections include the druid of the image to use, items don't need it since we know the druid
-      url="#{stacks_url}/#{image_druid}#{image_id.chomp(File.extname(image_id))}#{SolrDocument.image_dimensions[size]}"
+      url="#{stacks_url}/#{self.druid}/#{image_id.chomp(File.extname(image_id))}#{SolrDocument.image_dimensions[size]}"
       if download
         url += "?action=download" 
       else  
@@ -167,48 +162,6 @@ class SolrDocument
   
    def images_item?
      self.has_key?(blacklight_config.collection_member_identifying_field) and self[blacklight_config.collection_member_identifying_field]==Frda::Application.config.images_id    
-   end
-   
-   def collection?
-     self.has_key?(blacklight_config.collection_identifying_field) and 
-       self[blacklight_config.collection_identifying_field].include?(blacklight_config.collection_identifying_value)
-   end
-   
-   # TODO FIX -- this must be a better way to do this via solr -- this method only works with two levels of hierarchy ??
-   def ancestors
-     ancestors = []
-     # parent=self.parent
-     # if parent 
-     #   grandparent = parent.parent
-     #   ancestors << grandparent if grandparent
-     #   ancestors << parent
-     # end
-     # return ancestors
-   end
-   
-   # return the item whose id is equal to my volume id
-   def parent
-     # query="id:\"#{self[blacklight_config.parent_identifying_field.to_sym]}\""
-     #     parents = Blacklight.solr.select(
-     #                                 :params => {
-     #                                   :fq => query  }
-     #                               )
-     #     docs=parents["response"]["docs"].map{|d| SolrDocument.new(d) }
-     #     docs.size == 0 ? nil : docs.first
-    nil
-    # TODO FIX!
-   end
-
-   # return the items whose volume id is equal to my id
-   def children
-     # query="#{blacklight_config.parent_identifying_field}:\"#{self.id}\""
-     # ancestors = Blacklight.solr.select(
-     #                             :params => {
-     #                               :fq => query  }
-     #                           )
-     # return ancestors["response"]["docs"].map{|d| SolrDocument.new(d) }
-     nil
-    # TODO FIX!
    end
      
   # The following shows how to setup this blacklight document to display marc documents

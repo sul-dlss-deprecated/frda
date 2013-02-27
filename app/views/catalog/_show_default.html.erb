@@ -2,14 +2,16 @@
 
 <div id="item_detail" class="document">
 	<% if @document.images_item? %>
+	
 		<%= render :partial=>'show_images_item' %>
+	
 	<% elsif @document.ap_item? %>
 		
-		<%= render :partial=>'show_ap_volume' if %w{volume subvolume}.include? @document.type %>
-
 		<%= render :partial=>'show_ap_item' if @document.type == 'page' %>
 		
 	<% else %>
+		
 		<%= render :partial=>'show_collection_item' %>
+	
 	<% end %>
 </div>

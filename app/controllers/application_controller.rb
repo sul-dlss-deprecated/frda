@@ -60,11 +60,11 @@ class ApplicationController < ActionController::Base
   end
   
   def on_images_page
-    (@document && @document.images_item?) || (on_search_page && params[:f]['collection_ssi']==[Frda::Application.config.images_id]) || (@document && @document.collection? && @document.id==Frda::Application.config.images_id)
+    (@document && @document.images_item?) || (on_search_page && params[:f]['collection_ssi']==[Frda::Application.config.images_id])
   end
   
   def on_ap_page
-    (@document && @document.ap_item?) || (on_search_page && params[:f]['collection_ssi']==[Frda::Application.config.ap_id]) || (@document && @document.collection? && @document.id==Frda::Application.config.ap_id)
+    (@document && @document.ap_item?) || (on_search_page && params[:f]['collection_ssi']==[Frda::Application.config.ap_id])
   end
   
   def on_show_page

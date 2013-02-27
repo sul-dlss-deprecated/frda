@@ -87,16 +87,9 @@ class CatalogController < ApplicationController
     }
     
     config.collection_highlight_field = "highlight_ssim" 
-    
-    config.parent_identifying_field = "volume_ssi" # this field tells us who our parent is
-    
-    config.collection_identifying_field = "type_ssi"  # this tells us what kind of item we are within a collection (e.g. "page", "volume", "subvolume", "image")
-    config.collection_identifying_value = "collection" # items of this type are the overall collection items 
-    
+            
     config.collection_member_identifying_field = "collection_ssi"  # this identifies what overall collection we are in
             
-    # needs to be stored so we can retreive it
-    # needs to be in field list for all request handlers so we can get images the document anywhere in the app.
     config.image_identifier_field = "image_id_ssm"
 
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or 
@@ -114,7 +107,6 @@ class CatalogController < ApplicationController
     # NOT SURE THESE ARE RELEVANT SINCE WE HAVE CUSTOM VIEWS FOR ALL ITEMS  Peter 2/1/2013
     # solr field configuration for search results/index views
     config.index.show_link = 'title_tsi'
-
     # solr field configuration for document/show views
     config.show.html_title = 'title_tsi'
     config.show.heading = 'title_tsi'

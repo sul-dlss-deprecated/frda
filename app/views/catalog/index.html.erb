@@ -7,9 +7,9 @@ $(document).ready(function(){
 <div id="sidebar" class="span3">
   <div class="collection-image">
     <% if on_images_page %>
-      <%= image_tag(Collection.images.first_image(:size=>:square), :alt => "Images Collection", :class => "images-collection-image") %>
+      <%= image_tag("https://stacks.stanford.edu/image/bb916fh9631/E0000001_medium.jpg", :alt => "Images Collection", :class => "images-collection-image") %>
     <% elsif on_ap_page %>
-      <%= image_tag(Collection.ap.first_image(:size=>:square), :alt => "AP Collection", :class => "ap-collection-image") %>
+      <%= image_tag("https://stacks.stanford.edu/image/bb817rw7289/T0000001_medium.jpg", :alt => "AP Collection", :class => "ap-collection-image") %>
     <% end %>
   </div>
   <%= render "search_form" %>
@@ -37,12 +37,12 @@ $(document).ready(function(){
     <% if on_images_page %>
       <h2 class="search-results"><%= t('frda.search.results_heading_image') %></h2>
       <p class="images-summary truncate">
-        <%=show_list(Collection.images.description(I18n.locale))%>
+        <%=t('frda.home.about_text_images_html')%>
       </p>
     <% elsif on_ap_page %>
       <h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>
       <p class="ap-summary truncate">
-        <%=show_list(Collection.ap.description(I18n.locale))%>
+        <%=t('frda.home.about_text_ap_html')%>
       </p>
     <% else %>
       <h2 class="search-results"><%= t('blacklight.search.search_results_header') %></h2>

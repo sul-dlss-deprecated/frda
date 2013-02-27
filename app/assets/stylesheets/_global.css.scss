@@ -73,6 +73,11 @@ $constraint_border_active_color: #FFD27A !default;
   color: $text_color;
 }
 
+@mixin image-border {
+  border: 1px solid #cccccc;
+  padding: 4px;
+}
+
 /* --- */
 
 html {

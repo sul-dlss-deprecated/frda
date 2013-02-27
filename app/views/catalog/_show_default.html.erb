@@ -8,10 +8,6 @@
 	<% elsif @document.ap_item? %>
 		
 		<%= render :partial=>'show_ap_item' if @document.type == 'page' %>
-		
-	<% else %>
-		
-		<%= render :partial=>'show_collection_item' %>
 	
 	<% end %>
 </div>

@@ -43,8 +43,9 @@ fr:
         other: "%{count} Items"
       more: 'more'
       less: 'less'        
-      date: 'Date'
+      date: 'Date of publication'
       description: 'Physical description'
+      genre: 'Subjects'
       medium: 'Medium'
       publisher: 'Publisher'
       type: 'Type'

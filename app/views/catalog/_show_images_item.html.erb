@@ -14,7 +14,7 @@
     <h2><%= link_to t('frda.image.detail.title'), image_collection_path %></h2>
  	 <% if @document.catalog_heading(I18n.locale).size > 0 %>
 	   <ul class="item-breadcrumb">
-	      <li><%= link_to_catalog_heading(@document.catalog_heading(I18n.locale).first).join(" &rang; ").html_safe %></li>
+	      <li><%= link_to_catalog_heading(@document.catalog_heading(I18n.locale).first).join(" » ").html_safe %></li>
 	    </ul>
 	 <% end %>
   </div>
@@ -60,19 +60,19 @@
       <% end %>
       <% unless list_is_empty?(@document.genre)%>
         <dt><%=t('frda.show.genre')%></dt>
-        <dd><%=show_formatted_list(@document.genre,:facet=>'genre_ssim')%>&nbsp;</dd>
+        <dd><%=show_formatted_list(@document.genre,:facet=>'genre_ssim')%></dd>
       <% end %>
       <% unless list_is_empty?(@document.speaker)%>
         <dt><%=t('frda.show.speaker')%></dt>
-        <dd><%=show_formatted_list(@document.speaker,:facet=>'speaker_ssim')%>&nbsp;</dd>
+        <dd><%=show_formatted_list(@document.speaker,:facet=>'speaker_ssim')%></dd>
       <% end %>
       <% unless list_is_empty?(@document.artist)%>
         <dt><%=t('frda.show.artist')%></dt>
-        <dd><%=show_formatted_list(@document.artist,:facet=>'artist_ssim')%>&nbsp;</dd>
+        <dd><%=show_formatted_list(@document.artist,:facet=>'artist_ssim')%></dd>
       <% end %>
       <% unless list_is_empty?(@document.year)%>
         <dt><%=t('frda.show.date')%></dt>
-        <dd><%=show_formatted_list(@document.year,:facet=>'date_issued_ssim')%>&nbsp;</dd>
+        <dd><%=show_formatted_list(@document.year,:facet=>'date_issued_ssim')%></dd>
       <% end %>
       <% unless list_is_empty?(@document.format) %>
         <dt><%=t('frda.show.format')%></dt>

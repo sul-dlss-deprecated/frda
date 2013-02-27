@@ -13,7 +13,7 @@ class CatalogController < ApplicationController
     opts = {}
     CollectionHighlight.find(:all,:order=>:sort_order).each do |highlight|
       opts[:"highlight_#{highlight.id}"] = {:label => highlight.send("name_#{I18n.locale}"), :fq => "id:(#{highlight.query.gsub('or', 'OR')})"}
-    end
+    end if ActiveRecord::Base.connection.table_exists? 'collection_highlights'
     opts
   end
     

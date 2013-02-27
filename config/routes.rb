@@ -16,7 +16,7 @@ Frda::Application.routes.draw do
     match 'show_page', :to=>'catalog#show_page', :as =>'show_page'
     
     match 'ap', :to => 'catalog#index', :as =>'ap_collection', :defaults=>{:f=>{:collection_ssi=>[Frda::Application.config.ap_id]}}
-    match 'images', :to => 'catalog#index', :as =>'image_collection', :defaults=>{:f=>{:collection_ssi=>[Frda::Application.config.images_id]}}
+    match 'images', :to => 'catalog#index', :as =>'images_collection', :defaults=>{:f=>{:collection_ssi=>[Frda::Application.config.images_id]}}
         
     # Handles all About pages.
     match 'about', :to => 'about#show', :as => 'about_project', :defaults => {:id=>'project'} # no page specified, go to project page

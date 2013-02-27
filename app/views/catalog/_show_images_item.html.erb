@@ -11,7 +11,7 @@
 
 <div class="row images-item">
   <div class="span12">
-    <h2><%= link_to t('frda.image.detail.title'), image_collection_path %></h2>
+    <h2><%= link_to t('frda.image.detail.title'), images_collection_path %></h2>
  	 <% if @document.catalog_heading(I18n.locale).size > 0 %>
 	   <ul class="item-breadcrumb">
 	      <li><%= link_to_catalog_heading(@document.catalog_heading(I18n.locale).first).join(" » ").html_safe %></li>

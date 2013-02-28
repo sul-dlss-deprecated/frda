@@ -38,7 +38,18 @@
 
 /* Default View */
 #documents.default {
+  h2 {
+    border-top: none;
+    color: $active_heading_link_color;
+    padding-bottom: 10px;
+    padding-top: 0;
+    a {
+      color: $active_heading_link_color;
+    }
+  }
   @include result-title-styling;
+  .icon-book {margin: 4px 5px;}
+  .icon-list-alt {margin-right: 5px;}
   .results-image > a {border-bottom: none;}
   .oneresult {
     margin-left: 15px;
@@ -50,6 +61,7 @@
   img {
     width: 110px;
     @include result-image-styling;
+    margin-top: 2px;
   }
 
   .speaker {float: right;}
@@ -57,9 +69,9 @@
   .snippet {
     clear: right;
     display: inline-block;
-    padding-top: 10px;
+    padding-top: 18px;
   }
-  .frda-label {color: #CCC;}
+  .frda-label {color: #aaa;}
 }
 
 /* Gallery View */
@@ -88,6 +100,13 @@
 
 /* List View */
 #documents.list {
+  h2 {
+    border-top: none;
+    color: $active_heading_link_color;
+    padding-bottom: 10px;
+    padding-top: 0;
+    a {color: $active_heading_link_color;}
+  }
   @include result-title-styling;
   .row {
     margin-bottom: 10px;

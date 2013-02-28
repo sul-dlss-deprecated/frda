@@ -3,7 +3,7 @@
 <div id="documents" class="list">
   <%- documents.each_with_index do |grouping, index| -%>
     <%- if grouping.group -%>
-      <h4><%= grouping.group %> (<%= t('frda.search.occurrence', :count => grouping.total) %>)</h4>
+      <h2><%= grouping.group %> (<%= t('frda.search.occurrence', :count => grouping.total) %>)</h2>
     <%- end -%>
     <%- grouping.docs.each do |document| -%>
       <div class="row">

@@ -99,7 +99,8 @@ class CatalogController < ApplicationController
       :rows => 10,
       :fl => "*",
       :"facet.mincount" => 1,
-      :echoParams => "all"
+      :echoParams => "all",
+      :"json.nl" => "map"
     }
     
     config.collection_highlight_field = "highlight_ssim" 

@@ -25,11 +25,11 @@ class Frda::GroupedSolrResponse < Mash
   end
 
   def total
-    response[grouping_field]["ngroups"].to_s.to_i
+    group_element["ngroups"].to_s.to_i
   end
   
   def total_docs
-    response[grouping_field]["matches"].to_s.to_i
+    group_element["matches"].to_s.to_i
   end
   
   def docs
@@ -54,8 +54,17 @@ class Frda::GroupedSolrResponse < Mash
   end
     
   def groups
-    @groups ||= response[grouping_field]["groups"].map do |group|
+    @groups ||= group_element["groups"].map do |group|
       SolrGroup.new(group["groupValue"], group["doclist"]["numFound"], group["doclist"]["start"], group["doclist"]["docs"]) 
+    end
+  end
+
+  # Abstract the group element from different RSolr response formats
+  def group_element
+    if response.is_a?(Array)
+      return response[1]
+    else
+      return response[grouping_field]
     end
   end
 

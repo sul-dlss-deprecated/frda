@@ -9,6 +9,8 @@ Frda::Application.routes.draw do
     match 'logout',  :to => 'catalog#index', :as => 'destroy_user_session'
     match 'account', :to => 'catalog#index', :as => 'edit_user_registration'
 
+    match 'search', :to=> 'catalog#index', :as=>'search'
+
     match 'version', :to=>'about#show', :defaults => {:id=>'version'}, :as => 'version'
   
     match 'collections', :to => 'catalog#index', :as => 'collection_highlights'

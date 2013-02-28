@@ -42,7 +42,18 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     page.should have_content("le 14.e juillet 1790 : [estampe]")
     page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/bb018fc7286/T0000001_thumb.jpg']")
     page.should have_xpath("//a/@href['/en/catalog?f%5Bdate_issued_ssim%5D%5B%5D=1790']")
-    
+  end
+  
+  it "should search for an Images item" do
+    visit search_path(:q=>'bonaparte')
+    page.should have_content("Bonaparte au Caire")
+    page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/zp695fd1911/T0000001_thumb.jpg']")    
+  end
+
+  it "should search for an AP item" do
+    visit search_path(:q=>'tome')
+    page.should have_content("Tome 1 : 1789 – Introduction")
+    page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/jt959wc5586/jt959wc5586_00_0782_thumb.jpg']")    
   end
   
   describe "grouped search results" do

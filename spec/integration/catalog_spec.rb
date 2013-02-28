@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'spec_helper'
 
 describe("Search Pages",:type=>:request,:integration=>true) do
@@ -42,6 +43,19 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/bb018fc7286/T0000001_thumb.jpg']")
     page.should have_xpath("//a/@href['/en/catalog?f%5Bdate_issued_ssim%5D%5B%5D=1790']")
     
+  end
+  
+  describe "grouped search results" do
+    it "should group AP items together by tome/volume" do
+      visit catalog_index_path(:q => "*:*", :view => "default")
+      page.should have_xpath("//h4[text()='Tome 36 : Du 11 décembre 1791 au 1er janvier 1792 (4 occurrences)']")
+    end
+    describe "facets" do
+      pending
+    end
+    describe "pagination" do
+      pending
+    end
   end
   
 end

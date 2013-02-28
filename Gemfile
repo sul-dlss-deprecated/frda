@@ -43,6 +43,10 @@ group :development, :staging, :test do
   gem 'sqlite3'
 end
 
+group :staging, :production do
+  gem 'mysql', "2.8.1"
+end
+
 gem 'json', '~> 1.7.7'
 
 gem 'rest-client'

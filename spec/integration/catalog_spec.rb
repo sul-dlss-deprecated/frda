@@ -16,7 +16,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   it "should show the AP home page" do
     visit ap_collection_path
     page.should have_content("The Archives parlementaires is a chronologically-ordered edited collection of sources on the French Revolution.")
-    page.should have_content("1 - 9 of 9")
+    page.should have_content("1 - 5 of 5 volumes")
     page.should have_css('ul.image-grid')
     page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/wb029sv4796/wb029sv4796_00_0005_thumb.jpg']")
   end
@@ -24,7 +24,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   it "should show the Images home page" do
     visit images_collection_path    
     page.should have_content("The Images are composed of high-resolution digital images of approximately 12,000 individual visual items, primarily prints")
-    page.should have_content("1 - 10 of 11")
+    page.should have_content("1 to 1 of 1 volume")
     page.should have_css('ul.image-grid')
     page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/bb018fc7286/T0000001_thumb.jpg']")    
   end

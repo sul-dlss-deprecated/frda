@@ -7,7 +7,7 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Frda::SolrHelper
   
-  CatalogController.solr_search_params_logic += [:add_year_range_query]
+  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches]
   
   before_filter :capture_split_button_options, :only => :index
   
@@ -312,6 +312,13 @@ class CatalogController < ApplicationController
       else
         solr_params[:fq] = ["date_issued_ssim:[#{user_params['date-start']} TO #{user_params['date-end']}]"]
       end
+    end
+  end
+  
+  def search_within_speaches(solr_params, user_params)
+    unless user_params["speeches"].blank? and user_params["by-speaker"].blank?
+      solr_params[:q] = "\"#{user_params['by-speaker']} #{user_params['q']}\""
+      solr_params[:qs] = 10000
     end
   end
   

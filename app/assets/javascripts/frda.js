@@ -40,7 +40,7 @@ function showOnLoad() {
 // to not use the Bootstrap version, but this will do for now.
 function toggleSearchOptions(){
 	$("input[type='text'], input[type='checkbox']", $("#collapseSearch")).each(function(){
-		if($(this).attr("type") == "chekbox" && $(this).is(":checked")){
+		if($(this).attr("type") == "checkbox" && $(this).is(":checked")){
 			$("#collapseSearch").height("auto");
 			return false;
 		}else if($(this).attr("type") == "text" && $(this).attr("value") != ""){

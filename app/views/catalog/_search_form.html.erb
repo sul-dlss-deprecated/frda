@@ -27,14 +27,14 @@
          </label>
 
           <label>
-            <%= check_box_tag 'prox', 1, false, :disabled => true %>
+            <%= check_box_tag 'prox', 1, !params["prox"].blank? %>
             separated by
             <%= select_tag "words",
                 "<option>1</option>
                  <option>2</option>
                  <option selected>3</option>
                  <option>4</option>
-                 <option>5</option>".html_safe, :disabled => true %>
+                 <option>5</option>".html_safe %>
             words
           </label>
 

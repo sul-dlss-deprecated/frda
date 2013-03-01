@@ -62,7 +62,12 @@ describe("Search Pages",:type=>:request,:integration=>true) do
       page.should have_xpath("//h4[text()='Tome 36 : Du 11 décembre 1791 au 1er janvier 1792 (4 occurrences)']")
     end
     describe "facets" do
-      pending
+      it "should properly extend the facets module from Blacklight to return facets from the response correctly" do
+        visit root_path
+        click_link 'nonprojected graphic'
+        page.should have_content("1 to 1 of 1 volume")
+        page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/bb018fc7286/T0000001_thumb.jpg']")
+      end
     end
     describe "pagination" do
       pending

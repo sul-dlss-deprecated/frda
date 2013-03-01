@@ -41,6 +41,7 @@
   h2 {
     border-top: none;
     color: $active_heading_link_color;
+    font-size: 1.25em;
     padding-bottom: 10px;
     padding-top: 0;
     a {
@@ -53,6 +54,7 @@
   .results-image > a {border-bottom: none;}
   .oneresult {
     margin-left: 15px;
+    margin-top: 6px;
   }
   .pageimg {
     float: left;
@@ -76,25 +78,45 @@
 
 /* Gallery View */
 #documents.gallery {
+  h2 {
+    border-top: none;
+    color: $active_heading_link_color;
+    clear: both;
+    font-size: 1.25em;
+    padding-top: 0;
+    a {color: $active_heading_link_color;}
+  }
   @include result-title-styling;
+  .icon-book {margin: 4px 5px;}
   ul.image-grid {
     list-style-type: none;
-    margin-left: 5px;
+    margin-left: 12px;
   }
   ul.image-grid li.image-item {
     float: left;
     margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    min-height: 380px;
+    min-height: 230px;
     text-align: center;
-    width: 205px;
+    width: 105px;
     > a {border-bottom: none;}
     img {
       @include result-image-styling;
       max-width: 90%;
     }
-    h3.index_title {margin-left: 14px;}
+    h3.index_title {
+      margin-left: 14px;
+      span.year {display: block;}
+    }
+  }
+  // Overrides for Images version of Gallery view
+  &.images{
+    ul.image-grid {margin-left: 5px;}
+    ul.image-grid li.image-item {
+      min-height: 380px;
+      width: 205px;
+    }
   }
 }
 
@@ -103,24 +125,50 @@
   h2 {
     border-top: none;
     color: $active_heading_link_color;
-    padding-bottom: 10px;
-    padding-top: 0;
+    font-size: 1.25em;
+//    padding-bottom: 10px;
+    padding-top: 30px;
     a {color: $active_heading_link_color;}
   }
   @include result-title-styling;
+  .icon-book {margin: 4px 5px;}
+  .icon-list-alt {margin-right: 5px;}
   .row {
-    margin-bottom: 10px;
-    padding-left: 10px;
     span {
       display: block;
+      &.speaker, &.frda-label {
+        display: inline;
+      }
+      &.frda-label {color: #aaa;}
+    }
+    .page-speaker {
+      display: inline;
+      float: right;
     }
   }
   .documentHeader {
     .index_title {max-width: 600px;}
+    display: inline;
+    margin-left: 40px;
     margin-top: 0;
+  }
+  .result-context {
+    display: inline;
+    padding-left: 25px;
   }
   span.year {
     display: block;
+  }
+  // Overrides for Images version of Gallery view
+  &.images{
+    .row {
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
+    .documentHeader {
+      display: block;
+      margin-left: 0;
+    }
   }
 }
 

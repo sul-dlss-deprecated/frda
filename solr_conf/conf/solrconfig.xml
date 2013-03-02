@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--
- Licensed to the Apache Software Foundation (ASF) under one or more
- contributor license agreements.  See the NOTICE file distributed with
- this work for additional information regarding copyright ownership.
- The ASF licenses this file to You under the Apache License, Version 2.0
- (the "License"); you may not use this file except in compliance with
- the License.  You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
--->
-
-<!--
- This is a stripped down config file used for a simple example...  
- It is *not* a good example to work from. 
--->
 <config>
+  <!-- NOTE: various comments and unused configuration possibilities have been purged
+     from this file.  Please refer to http://wiki.apache.org/solr/SolrConfigXml,
+     as well as the default solrconfig file included with Solr -->
+
+  <abortOnConfigurationError>${solr.abortOnConfigurationError:true}</abortOnConfigurationError>
+
   <luceneMatchVersion>LUCENE_40</luceneMatchVersion>
 
 	<lib dir="../lib"/>
@@ -166,6 +151,10 @@
       <int name="ps">0</int>
       <float name="tie">0.01</float>
       <str name="qf">
+				title_short_ti^5
+				title_long_ti^5
+				title_short_ftsi
+				title_long_ftsi
         catalog_heading_timv^3
         catalog_heading_ftsimv
         catalog_heading_etsimv
@@ -179,9 +168,12 @@
 				doc_type_ssim
         id
         druid_ssi
-				title_long_ftsi
       </str>
       <str name="pf">
+				title_short_ti^20
+				title_long_ti^20
+				title_short_ftsi^15
+				title_long_ftsi^15
         spoken_text_timv^20
         spoken_text_ftsimv^15
         text_tiv^20
@@ -191,6 +183,8 @@
         catalog_heading_etsimv^15
       </str>
       <str name="qf_exact">
+				title_short_ti
+				title_long_ti
         catalog_heading_timv
         spoken_text_timv
         text_tiv
@@ -200,24 +194,32 @@
 				doc_type_ssim
       </str>
       <str name="pf_exact">
+				title_short_ti^5
+				title_long_ti^5
         catalog_heading_timv^5
         spoken_text_timv^5
         text_tiv^5
       </str>
 
       <str name="qf_title">
-        title_timv^5
-        title_ftsimv
+				title_short_ti^5
+				title_long_ti^5
+				title_short_ftsi
+				title_long_ftsi
       </str>
       <str name="pf_title">
-        title_timv^10
-        title_ftsimv^5
+				title_short_ti^10
+				title_long_ti^10
+				title_short_ftsi^5
+				title_long_ftsi^5
       </str>
       <str name="qf_title_exact">
-        title_timv
+				title_short_ti
+				title_long_ti
       </str>
       <str name="pf_title_exact">
-        title_timv^5
+				title_short_ti^5
+				title_long_ti^5
       </str>
 
       <str name="qf_name">
@@ -304,22 +306,21 @@
   </requestHandler>
     
   <requestHandler name="/update" class="solr.UpdateRequestHandler" startup="lazy" />
-  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
+  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />  
   <requestHandler name="/admin/" class="org.apache.solr.handler.admin.AdminHandlers" />
-     
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
     <lst name="invariants">
-      <str name="q">solrpingquery</str>
-    </lst>
-    <lst name="defaults">
-      <str name="echoParams">all</str>
+      <str name="q">ping test query</str>
+      <str name="qt">search</str>
     </lst>
   </requestHandler>
-   
-  <!-- config for the admin interface --> 
+  <requestHandler name="/get" class="solr.RealTimeGetHandler">
+    <lst name="defaults">
+      <str name="omitHeader">true</str>
+    </lst>
+  </requestHandler>
   <admin>
-    <defaultQuery>solr</defaultQuery>
+    <defaultQuery>admin test query</defaultQuery>
   </admin>
 
 </config>
-

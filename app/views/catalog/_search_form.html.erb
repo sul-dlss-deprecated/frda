@@ -1,7 +1,7 @@
 <h4><%= t('frda.search.search_label') %></h4>
 
 <%= form_tag search_action_url, :method => :get, :class => 'search_form' do %>
-  <%= search_as_hidden_fields(:omit_keys => [:q, :search_field, :qt, :page, :dates, :"date-start", :"date-end"]).html_safe %>
+  <%= search_as_hidden_fields(:omit_keys => frda_search_omit_keys).html_safe %>
   <label for="q" class="hide-text"><%= t('blacklight.search.form.q') %></label>
   <div class="accordion" id="search-options">
     <div class="accordion-group">
@@ -14,20 +14,20 @@
       <div id="collapseSearch" class="accordion-body collapse">
         <div class="accordion-inner well">
           <label>
-            <%= check_box_tag 'dates' %>on or between<br>
+            <%= check_box_tag 'dates', 1, !params['dates'].blank? %>on or between<br>
             <%= text_field_tag 'date-start', params["date-start"], :class => 'input-mini date', :placeholder => "1787" %>
             to
             <%= text_field_tag 'date-end', params["date-end"], :class => 'input-mini date', :placeholder => "1860" %>
           </label>
 
           <label>
-            <%= check_box_tag 'speeches' %>
+            <%= check_box_tag 'speeches', 1, !params['speeches'].blank? %>
             in speeches by
-            <%= text_field_tag 'by-speaker', nil, :class => 'input-mini' %>
+            <%= text_field_tag 'by-speaker', params["by-speaker"], :class => 'input-mini' %>
          </label>
 
           <label>
-            <%= check_box_tag 'prox' %>
+            <%= check_box_tag 'prox', 1, !params["prox"].blank? %>
             separated by
             <%= select_tag "words",
                 "<option>1</option>
@@ -39,12 +39,12 @@
           </label>
 
           <label>
-            <%= check_box_tag 'terms' %>
+            <%= check_box_tag 'terms', 1, false, :disabled => true %>
             in title &amp; key terms only
           </label>
 
           <label>
-            <%= check_box_tag 'exact' %>
+            <%= check_box_tag 'exact', 1 ,false, :disabled => true %>
             exact match (no stemming)
           </label>
         </div>

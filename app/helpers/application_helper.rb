@@ -95,5 +95,9 @@ module ApplicationHelper
       link_to(head, catalog_index_path(:q => "\"#{buffer.join(' ')}\""))
     end
   end
+  
+  def frda_search_omit_keys
+    [:q, :search_field, :qt, :page, :dates, :"date-start", :"date-end", :speeches, :"by-speaker", :prox, :words, :terms, :exact]
+  end
 
 end

@@ -3,7 +3,11 @@
 <div id="documents" class="default">
   <%- documents.each_with_index do |grouping, index| -%>
     <%- if grouping.group -%>
-      <h4><%= grouping.group %> (<%= t('frda.search.occurrence', :count => grouping.total) %>)</h4>
+      <h2>
+        <i class="icon-book"></i>
+        <%= link_to(grouping.group, "#") %>
+        <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
+      </h2>
     <%- end -%>
     <%- grouping.docs.each do |document| -%>
       <div class="row">
@@ -18,16 +22,15 @@
         <div class="span7 results-metadata">
 
           <div class="oneresult">
-            <%= render :partial => "document_header",
-                        :locals => {:document_counter => index, :document => document} %>
             <div class="page-speaker">
               <span class="speaker">
                   <% unless list_is_empty?(document.speaker)%>
-                    <span class="frda-label">Speaker: </span>
+                    <span class="frda-label">Speaker:&nbsp;</span>
                     <%=show_list(document.speaker)%>
                   <% end %>
                 </span>
               <span class="pagenum">
+                <i class="icon-list-alt"></i>
                 <%= link_to "page #{document.page_number}", document %>
               </span>
             </div>

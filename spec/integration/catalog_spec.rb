@@ -45,6 +45,8 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   end
   
   it "should search for an Images item" do
+    pending
+    # we aren't printing titles in the search results for the Image items at the moment.
     visit search_path(:q=>'bonaparte')
     page.should have_content("Bonaparte au Caire")
     page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/zp695fd1911/T0000001_thumb.jpg']")    
@@ -58,11 +60,16 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   
   describe "grouped search results" do
     it "should group AP items together by tome/volume" do
-      visit catalog_index_path(:q => "*:*", :view => "default")
-      page.should have_xpath("//h4[text()='Tome 36 : Du 11 décembre 1791 au 1er janvier 1792 (4 occurrences)']")
+      visit catalog_index_path(:q => "*:*")
+      page.should have_xpath("//h2/a[text()='Tome 36 : Du 11 décembre 1791 au 1er janvier 1792']")
     end
     describe "facets" do
-      pending
+      it "should properly extend the facets module from Blacklight to return facets from the response correctly" do
+        visit root_path
+        click_link 'nonprojected graphic'
+        page.should have_content("1 to 1 of 1 volume")
+        page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/bb018fc7286/T0000001_thumb.jpg']")
+      end
     end
     describe "pagination" do
       pending

@@ -7,7 +7,7 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Frda::SolrHelper
   
-  CatalogController.solr_search_params_logic += [:add_year_range_query]
+  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches, :proximity_search]
   
   before_filter :capture_split_button_options, :only => :index
   
@@ -99,8 +99,7 @@ class CatalogController < ApplicationController
       :rows => 10,
       :fl => "*",
       :"facet.mincount" => 1,
-      :echoParams => "all",
-      :"json.nl" => "map"
+      :echoParams => "all"
     }
     
     config.collection_highlight_field = "highlight_ssim" 
@@ -312,6 +311,20 @@ class CatalogController < ApplicationController
       else
         solr_params[:fq] = ["date_issued_ssim:[#{user_params['date-start']} TO #{user_params['date-end']}]"]
       end
+    end
+  end
+  
+  def search_within_speaches(solr_params, user_params)
+    unless user_params["speeches"].blank? and user_params["by-speaker"].blank?
+      solr_params[:q] = "\"#{user_params['by-speaker']} #{user_params['q']}\""
+      solr_params[:qs] = 10000
+    end
+  end
+  
+  def proximity_search(solr_params, user_params)
+    if user_params["prox"] and !user_params["words"].blank?
+      solr_params[:q] = "\"#{user_params["q"].gsub('"', '')}\""
+      solr_params[:qs] = user_params["words"]
     end
   end
   

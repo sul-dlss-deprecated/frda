@@ -8,7 +8,8 @@ $(document).ready(function(){
 	//  useful when you have non javascript friendly DOM elements you need to hide for no JS browsers so you can include a <noscript> tag with
 	//   non JS versions
   showOnLoad();
-
+  
+  toggleSearchOptions()
 });
 
 function showImageViewer(imageURL,target) {
@@ -31,4 +32,20 @@ function clearMessages() {
 function showOnLoad() {
 	$(".showOnLoad").show();
 	$('.showOnLoad').removeClass('hidden');	
+}
+
+
+// Toggle the searchOptions section of the search form.
+// I think we'll need to eventually re-write the whole thing
+// to not use the Bootstrap version, but this will do for now.
+function toggleSearchOptions(){
+	$("input[type='text'], input[type='checkbox']", $("#collapseSearch")).each(function(){
+		if($(this).attr("type") == "checkbox" && $(this).is(":checked")){
+			$("#collapseSearch").height("auto");
+			return false;
+		}else if($(this).attr("type") == "text" && $(this).attr("value") != ""){
+			$("#collapseSearch").height("auto");
+			return false;
+		}
+	});
 }

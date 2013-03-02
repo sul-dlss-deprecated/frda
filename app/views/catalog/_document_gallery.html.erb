@@ -1,27 +1,44 @@
-<%# This is an Images results view %>
+<%# This is an Combined results view %>
 
-<div id="documents" class="gallery">
+<div id="documents" class="gallery<%= ' images' if on_images_page %>">
+  <%- documents.each_with_index do |grouping, index| -%>
+    <%- if grouping.group -%>
+      <h2>
+        <i class="icon-book"></i>
+        <%= link_to(grouping.group, "#") %>
+        <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
+      </h2>
+    <%- end -%>
 
-  <ul class="image-grid">
-    <%- documents.each_with_index do |grouping, index| -%>
+    <ul class="image-grid">
       <%- grouping.docs.each do |document| -%>
         <li class="image-item">
-          <%= link_to_document document, 
+          <%= link_to_document document,
                                :label => image_tag(document.first_image(:size=>:thumb),
-                                                   :alt => document.title, 
+                                                   :alt => document.title,
                                                    :title => document.title,
                                                    :border => 0),
                                :counter => (index + 1 + @response.params[:start].to_i) %>
-          <!-- Not using the document_header partial here because we need to truncate title -->
+
           <div class="documentHeader clearfix">
             <h3 class="index_title">
-              <%= link_to_document document, 
-                                   :label=> truncate(document.title, :length => 55), 
-                                   :counter => (index + 1 + @response.params[:start].to_i) %>
+              <% if on_images_page %>
+                <%# title format for Images %>
+                <%= link_to_document document,
+                                     :label=> truncate(document.title, :length => 55),
+                                     :counter => (index + 1 + @response.params[:start].to_i) %>
+                <% unless list_is_empty?(document.year)%>
+                 <span class="year"><%= show_list(document.year) %></span>
+                <% end %>
+
+              <% else %>
+                <%# title format for AP %>
+                <%= link_to_document document,
+                                    :label=> "page #{document.page_number}",
+                                    :counter => (index + 1 + @response.params[:start].to_i) %>
+              <% end %>
             </h3>
-            <% unless list_is_empty?(document.year)%>
-              <span class="year"><%= show_list(document.year) %></span>
-            <% end %>
+
             <% # bookmark functions for items/docs -%>
             <%#= render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
           </div>
@@ -29,6 +46,7 @@
           <%#= render_document_partial document, :index, :document_counter => index %>
         </li>
       <%- end -%>
-    <%- end -%>
-  </ul>
+    </ul>
+
+  <%- end -%>
 </div>

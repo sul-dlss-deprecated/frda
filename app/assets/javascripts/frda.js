@@ -43,6 +43,9 @@ function handleSearchFormSubmit(){
 			$(this).submit();
 		}
 	});
+	$("[data-hide-submit='true']").each(function(){
+		$(this).toggleClass("hide");
+	});
 }
 
 // Toggle the searchOptions section of the search form.

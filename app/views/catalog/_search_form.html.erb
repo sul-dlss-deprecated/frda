@@ -50,8 +50,8 @@
     </div>
   </div>
 
-  <%= submit_tag(t('blacklight.search.form.q'), :class=>'hide') %>
-  <div class="btn-group search-drop-down">
+  <%= submit_tag(t('blacklight.search.form.q'), :"data-hide-submit"=>'true') %>
+  <div class="btn-group search-drop-down showOnLoad hidden">
     <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
       <%= t('blacklight.search.form.submit') %>
       <span class="caret"></span>

@@ -9,7 +9,7 @@ class SolrDocument
     length=params[:short].nil? ? "long" : "short" 
     case self.type.downcase
       when "page"
-        length == "short" ? "p #{self.page_number}" : "#{self.volume_name} - p #{self.page_number}"  
+        length == "short" ? "page #{self.page_number}" : "#{self.volume_name} - page #{self.page_number}"
       when "image"
         self[:"title_#{length}_ftsi"]
       else

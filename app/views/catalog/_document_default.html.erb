@@ -22,30 +22,37 @@
         <div class="span7 results-metadata">
 
           <div class="oneresult">
-            <% unless list_is_empty?(document.session_date)%>
-              <span class="session">
-                <%= link_to show_list(document.session_date), document %>
-              </span>
+
+            <% if document.type == 'image' %>
+              <h2><%= link_to document.title(:short=>true), document %></h2>
+
+            <% else %>
+              <% unless list_is_empty?(document.session_date)%>
+                <span class="session">
+                  <%= link_to show_list(document.session_date), document %>
+                </span>
+              <% end %>
+              <div class="page-speaker">
+                <% unless list_is_empty?(document.speaker) || document.type == 'image' %>
+                  <span class="speaker">
+                    <span class="frda-label">Speaker:&nbsp;</span>
+                    <%=show_list(document.speaker)%>
+                  </span>
+                <% end %>
+                <span class="pagenum">
+                  <i class="icon-list-alt"></i>
+                  <%= link_to document.title(:short=>true), document %>
+                </span>
+              </div>
+              <div class="snippet">
+                <% unless document.page_text.blank? %>
+                  <span class="longtext">
+                    <%= truncate(document.page_text, :length => 600) %>
+                  </span>
+                <% end %>
+              </div>
             <% end %>
-            <div class="page-speaker">
-              <% unless list_is_empty?(document.speaker)%>
-                <span class="speaker">
-                  <span class="frda-label">Speaker:&nbsp;</span>
-                  <%=show_list(document.speaker)%>
-                </span>
-              <% end %>
-              <span class="pagenum">
-                <i class="icon-list-alt"></i>
-                <%= link_to document.title(:short=>true), document %>
-              </span>
-            </div>
-            <div class="snippet">
-              <% unless document.page_text.blank? %>
-                <span class="longtext">
-                  <%= truncate(document.page_text, :length => 600) %>
-                </span>
-              <% end %>
-            </div>
+
           </div>
 
           <%= render_document_partial document, :index, :document_counter => index %>

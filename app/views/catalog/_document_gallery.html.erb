@@ -34,7 +34,7 @@
               <% else %>
                 <%# title format for AP %>
                 <%= link_to_document document,
-                                    :label=> document.title,
+                                    :label=> document.title(:short=>true),
                                     :counter => (index + 1 + @response.params[:start].to_i) %>
               <% end %>
             </h3>

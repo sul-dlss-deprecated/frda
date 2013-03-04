@@ -24,7 +24,7 @@
             <%# title format for AP %>
             <div class="documentHeader">
               <%= link_to_document document,
-                                  :label=> document.title,
+                                  :label=> document.title(:short=>true),
                                   :counter => (index + 1 + @response.params[:start].to_i) %>
               <div class="result-context">
                 -- result context text goes here--

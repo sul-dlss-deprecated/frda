@@ -31,7 +31,7 @@
                 </span>
               <span class="pagenum">
                 <i class="icon-list-alt"></i>
-                <%= link_to "page #{document.page_number}", document %>
+                <%= link_to document.title(:short=>true), document %>
               </span>
             </div>
             <div class="snippet">

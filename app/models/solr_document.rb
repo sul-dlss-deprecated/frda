@@ -9,7 +9,7 @@ class SolrDocument
     length=params[:short].nil? ? "long" : "short" 
     case self.type
       when "page"
-        self.page_title
+        length == "short" ? "p #{self.page_number}" : "#{self.volume_name} - p #{self.page_number}"  
       when "image"
         self[:"title_#{length}_ftsi"]
       else
@@ -17,15 +17,8 @@ class SolrDocument
       end
   end
   
-  # for AP page items
-  def page_title 
-    title="#{self.volume_name}"
-    title+=" - p #{self.page_number}" if self.page_number
-    return title
-  end
-  
   def page_number
-    self[:page_num_ssi]
+    self[:page_num_ssi] || self.page_sequence
   end
 
   def page_sequence

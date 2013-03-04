@@ -5,8 +5,13 @@
 </script>
 
 <% 
-link_next_page=@document.page_sequence.to_i < @document.total_pages ? true : false
-link_prev_page=@document.page_sequence.to_i > 1 ? true : false
+if @document.total_pages == nil || @document.page_sequence == nil 
+	link_next_page=false
+	link_prev_page=false
+else	
+	link_next_page=@document.page_sequence.to_i < @document.total_pages ? true : false
+	link_prev_page=@document.page_sequence.to_i > 1 ? true : false
+end
 %>
 
 <div class="row ap-item">

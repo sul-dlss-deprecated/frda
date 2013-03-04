@@ -58,6 +58,45 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/jt959wc5586/jt959wc5586_00_0782_thumb.jpg']")    
   end
   
+  describe "search options" do
+    describe "date range" do
+      it "should limit the results by the dates specified" do
+        visit root_path
+        fill_in "q", :with => "*:*"
+        check("dates")
+        fill_in :"date-start", :with => "1790"
+        fill_in :"date-end", :with => "1800"
+        find(:css, "[value='Search...']").click
+        
+        # we should get 8 items
+        page.all(:css, ".image-item").length.should == 8
+
+        fill_in :"date-start", :with => "1799"
+        find(:css, "[value='Search...']").click
+        
+        # we should be limited to just 5 items
+        page.all(:css, ".image-item").length.should == 5
+      end
+    end
+    
+    describe "collection drop down" do
+      it "should limit the search to the given collection" do
+        visit root_path
+        fill_in "q", :with => "*:*"
+        select "Parliamentary archives", :from => "search_collection"
+        find(:css, "[value='Search...']").click
+        
+        page.should have_content "1 - 5 of 5 volumes"
+        
+        select "Images of the French Revolution", :from => "search_collection"
+        find(:css, "[value='Search...']").click
+        
+        page.should have_content "1 to 1 of 1 volume"
+      end
+    end
+  end
+  
+  
   describe "grouped search results" do
     it "should group AP items together by tome/volume" do
       visit catalog_index_path(:q => "*:*")

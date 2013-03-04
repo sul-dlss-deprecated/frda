@@ -22,7 +22,7 @@
 
           <div class="documentHeader clearfix">
             <h3 class="index_title">
-              <% if on_images_page %>
+              <% if document.type == 'image' %>
                 <%# title format for Images %>
                 <%= link_to_document document,
                                      :label=> truncate(document.title, :length => 55),

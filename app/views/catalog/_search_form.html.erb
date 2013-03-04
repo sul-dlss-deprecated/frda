@@ -50,6 +50,7 @@
     </div>
   </div>
 
+  <%= select_tag "search_collection", options_for_select([[t('frda.search.results_heading_combined'), "combined"], [t('frda.search.results_heading_ap'), "ap"], [t('frda.search.results_heading_image'), "image"]]), :"data-hide-submit"=>'true' %>
   <%= submit_tag(t('blacklight.search.form.q'), :"data-hide-submit"=>'true') %>
   <div class="btn-group search-drop-down showOnLoad hidden">
     <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">

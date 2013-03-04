@@ -7,7 +7,7 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Frda::SolrHelper
   
-  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches, :proximity_search]
+  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches, :proximity_search, :transform_search_collection_param]
   
   before_filter :capture_split_button_options, :only => :index
   
@@ -321,6 +321,13 @@ class CatalogController < ApplicationController
     if user_params["prox"] and !user_params["words"].blank?
       solr_params[:q] = "\"#{user_params["q"].gsub('"', '')}\""
       solr_params[:qs] = user_params["words"]
+    end
+  end
+
+  # This is only used when there is no JS and is handling mapping drop-down options to f params.
+  def transform_search_collection_param(solr_params, user_params)
+    if user_params["search_collection"] and user_params["search_collection"] != "combined"
+      solr_params[:f].deep_merge({:collection_ssi => [user_params["search_collection"]]})
     end
   end
   

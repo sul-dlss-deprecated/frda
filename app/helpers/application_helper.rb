@@ -97,7 +97,7 @@ module ApplicationHelper
   end
   
   def frda_search_omit_keys
-    [:q, :search_field, :qt, :page, :dates, :"date-start", :"date-end", :speeches, :"by-speaker", :prox, :words, :terms, :exact]
+    [:q, :search_field, :qt, :page, :dates, :"date-start", :"date-end", :speeches, :"by-speaker", :prox, :words, :terms, :exact, :search_collection]
   end
 
 end

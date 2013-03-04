@@ -9,7 +9,8 @@ $(document).ready(function(){
 	//   non JS versions
   showOnLoad();
   
-  toggleSearchOptions()
+  toggleSearchOptions();
+
 });
 
 function showImageViewer(imageURL,target) {
@@ -34,18 +35,25 @@ function showOnLoad() {
 	$('.showOnLoad').removeClass('hidden');	
 }
 
-
 // Toggle the searchOptions section of the search form.
-// I think we'll need to eventually re-write the whole thing
-// to not use the Bootstrap version, but this will do for now.
 function toggleSearchOptions(){
-	$("input[type='text'], input[type='checkbox']", $("#collapseSearch")).each(function(){
-		if($(this).attr("type") == "checkbox" && $(this).is(":checked")){
-			$("#collapseSearch").height("auto");
+	var options_link = $("[data-collapse-search='true']")
+	if(options_link.length > 0) {
+	  options_link.show();
+	  var search_options = $(options_link.attr("data-collapse-element"));
+	  search_options.hide();
+		options_link.click(function(){
+			search_options.slideToggle();
 			return false;
-		}else if($(this).attr("type") == "text" && $(this).attr("value") != ""){
-			$("#collapseSearch").height("auto");
-			return false;
-		}
-	});
+		});
+		$("input[type='text'], input[type='checkbox']", $("#collapseSearch")).each(function(){
+			if($(this).attr("type") == "checkbox" && $(this).is(":checked")){
+				search_options.show();
+				return false;
+			}else if($(this).attr("type") == "text" && $(this).attr("value") != ""){
+				search_options.show();
+				return false;
+			}
+		});	
+	}
 }

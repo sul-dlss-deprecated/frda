@@ -1,15 +1,15 @@
 <script language="javascript">
 $(document).ready(function(){
-  $('.truncate').truncate({max_length: 700});
+  $('.truncate').truncate({max_length: 1035});
 });
 </script>
 
 <div id="sidebar" class="span3">
   <div class="collection-image">
     <% if on_images_page %>
-      <%= image_tag("https://stacks.stanford.edu/image/bb916fh9631/E0000001_medium.jpg", :alt => "Images Collection", :class => "images-collection-image") %>
+      <%= image_tag(asset_url("images_image_cropped.jpg"), :alt => "Images Collection", :class => "images-collection-image") %>
     <% elsif on_ap_page %>
-      <%= image_tag("https://stacks.stanford.edu/image/bb817rw7289/T0000001_medium.jpg", :alt => "AP Collection", :class => "ap-collection-image") %>
+      <%= image_tag(asset_url("ap_cover_cropped.jpg"), :alt => "AP Collection", :class => "ap-collection-image") %>
     <% end %>
   </div>
   <%= render "search_form" %>

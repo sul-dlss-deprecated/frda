@@ -11,6 +11,7 @@ $(document).ready(function(){
   
   toggleSearchOptions();
 
+  handleSearchFormSubmit();
 });
 
 function showImageViewer(imageURL,target) {
@@ -33,6 +34,15 @@ function clearMessages() {
 function showOnLoad() {
 	$(".showOnLoad").show();
 	$('.showOnLoad').removeClass('hidden');	
+}
+
+// Allow form to be submitted with enter/return key.
+function handleSearchFormSubmit(){
+	$("form.search_form").bind("keypress", function(e){
+		if(e.keyCode === 13){
+			$(this).submit();
+		}
+	});
 }
 
 // Toggle the searchOptions section of the search form.

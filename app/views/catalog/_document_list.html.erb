@@ -24,7 +24,7 @@
             <%# title format for AP %>
             <div class="documentHeader">
               <%= link_to_document document,
-                                  :label=> "page #{document.page_number}",
+                                  :label=> document.title,
                                   :counter => (index + 1 + @response.params[:start].to_i) %>
               <div class="result-context">
                 -- result context text goes here--

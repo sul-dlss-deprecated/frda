@@ -34,7 +34,7 @@
               <% else %>
                 <%# title format for AP %>
                 <%= link_to_document document,
-                                    :label=> "page #{document.page_number}",
+                                    :label=> document.title,
                                     :counter => (index + 1 + @response.params[:start].to_i) %>
               <% end %>
             </h3>

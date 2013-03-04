@@ -7,9 +7,9 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Frda::SolrHelper
   
-  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches, :proximity_search, :transform_search_collection_param]
+  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches, :proximity_search]
   
-  before_filter :capture_split_button_options, :only => :index
+  before_filter :capture_split_button_options, :capture_drop_down_options, :only => :index
   
   def self.collection_highlights
     opts = {}
@@ -325,17 +325,17 @@ class CatalogController < ApplicationController
   end
 
   # This is only used when there is no JS and is handling mapping drop-down options to f params.
-  def transform_search_collection_param(solr_params, user_params)
-    if user_params["search_collection"] and user_params["search_collection"] != "combined"
-      solr_params[:f].deep_merge({:collection_ssi => [user_params["search_collection"]]})
+  def capture_drop_down_options
+    if params["search_collection"] and params["search_collection"] != "combined"
+      params[:f] = {"collection_ssi" => [params["search_collection"]]}
     end
   end
   
   # used to capture and transform the parameters passed in the split button options.
   def capture_split_button_options
     unless (params.dup.keys & ["ap", "image"]).blank?
-      ap = params["ap"] ? "Archives parlementaires" : nil
-      image = params["image"] ? "Images" : nil
+      ap = params["ap"] ? Frda::Application.config.ap_id : nil
+      image = params["image"] ? Frda::Application.config.images_id : nil
       params[:f] = {"collection_ssi" => [ap || image]}
     end
     params.delete("ap")

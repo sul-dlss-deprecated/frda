@@ -156,10 +156,13 @@
     }
   }
   .documentHeader {
-    .index_title {max-width: 600px;}
+    .index_title {
+      margin-bottom: 6px;
+      max-width: 600px;
+    }
     display: inline;
-    margin-left: 40px;
     margin-top: 0;
+    &.ap {margin-left: 40px;}
   }
   .result-context {
     display: inline;

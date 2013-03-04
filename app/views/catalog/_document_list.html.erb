@@ -22,7 +22,7 @@
 
             <% else %>
               <%# title format for AP %>
-              <div class="documentHeader">
+              <div class="documentHeader ap">
                 <%= link_to_document document,
                                     :label=> document.title(:short=>true),
                                     :counter => (index + 1 + @response.params[:start].to_i) %>

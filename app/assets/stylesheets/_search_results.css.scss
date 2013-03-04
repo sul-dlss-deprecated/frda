@@ -126,13 +126,14 @@
     border-top: none;
     color: $active_heading_link_color;
     font-size: 1.25em;
-//    padding-bottom: 10px;
-    padding-top: 30px;
+    padding-top: 0;
     a {color: $active_heading_link_color;}
   }
   @include result-title-styling;
   .icon-book {margin: 4px 5px;}
   .icon-list-alt {margin-right: 5px;}
+  .document-group {padding-bottom: 30px;}
+  &.images .document-group {padding-bottom: 0;}
   .row {
     span {
       display: block;

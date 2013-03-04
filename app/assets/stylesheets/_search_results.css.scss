@@ -65,7 +65,14 @@
     @include result-image-styling;
     margin-top: 2px;
   }
-
+  .session {
+    display: block;
+    font-size: 13px;
+    padding-bottom: 10px;
+    a {
+      color: $active_heading_link_color;
+    }
+  }
   .speaker {float: right;}
   .pagenum {display: block;}
   .snippet {

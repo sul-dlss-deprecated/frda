@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -74,7 +76,7 @@ end
 Frda::Application.config.version = VERSION # read from VERSION file at base of website
 
 Frda::Application.config.ap_id = "Archives parlementaires"  # the solr doc ID of the ap collection object, each associated item must reference this collection-id in collection_ssi
-Frda::Application.config.images_id = "Images"  # the solr doc ID of the images collection object, each associated item must reference this collection-id in collection_ssi
+Frda::Application.config.images_id = "Images de la Révolution française"  # the solr doc ID of the images collection object, each associated item must reference this collection-id in collection_ssi
 
 Frda::Application.config.stacks_url = YAML.load_file("#{Rails.root}/config/stacks.yml")[Rails.env]["url"]
 Frda::Application.config.contact_us_topics = {'error'=>'frda.contact.problem'} # sets the list of topics shown in the contact us page

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 Frda::Application.routes.draw do
   
   scope "(:locale)", :locale => /en|fr/ do

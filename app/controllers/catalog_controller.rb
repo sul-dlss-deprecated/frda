@@ -147,11 +147,7 @@ class CatalogController < ApplicationController
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
 
-    config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection', :query => {
-      :"#{Frda::Application.config.ap_id}" => { :label => "Archives parlementaires", :fq => "#{blacklight_config.collection_member_identifying_field}:(\"#{Frda::Application.config.ap_id}\")" },
-      :"#{Frda::Application.config.images_id}" => { :label => "Images de la Révolution française", :fq => "#{blacklight_config.collection_member_identifying_field}:(\"#{Frda::Application.config.images_id}\")" }
-    }
-
+    config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection'
     config.add_facet_field 'date_issued_iim', :label => 'frda.show.year'
     config.add_facet_field 'doc_type_ssim', :label => 'frda.show.type'
     config.add_facet_field 'medium_ssi', :label => 'frda.show.medium'

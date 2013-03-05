@@ -23,4 +23,13 @@
 			@include datepicker-active;
 		}
 	}
+	.datepicker-years {
+	  .switch {
+	    cursor: default;
+	  }
+	  span.year{
+	    padding: 4px 4px;
+			@include datepicker-active;
+	  }
+	}
 }

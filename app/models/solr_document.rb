@@ -6,10 +6,10 @@ class SolrDocument
   self.unique_key = 'id'
 
   def title(params={})
-    length=params[:short].nil? ? "long" : "short" 
+    length=params[:length].nil? ? "long" : "short"
     case self.type
       when :page
-        length == "short" ? "p #{self.page_number}" : "#{self.volume_name} - p #{self.page_number}"  
+        length == "short" ? "page #{self.page_number}" : "#{self.volume_name} - page #{self.page_number}"  
       when :images
         self[:"title_#{length}_ftsi"]
       else
@@ -18,7 +18,7 @@ class SolrDocument
   end
   
   def page_number
-    self[:page_num_ssi] || self.page_sequence
+    self[:page_num_ssi] || self.page_sequence || "1"
   end
 
   def page_sequence

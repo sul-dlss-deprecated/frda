@@ -1,46 +1,47 @@
-<%# This is an Images results view %>
+<%# This results view is used for both AP and Images %>
 
 <div id="documents" class="list<%= ' images' if on_images_page %>">
   <%- documents.each_with_index do |grouping, index| -%>
-    <%- if grouping.group -%>
-      <h2>
-        <i class="icon-book"></i>
-        <%= link_to(grouping.group, "#") %>
-        <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
-      </h2>
-    <%- end -%>
-    <%- grouping.docs.each do |document| -%>
-      <div class="row">
-        <div class="span9">
-          <% if document.images_item? %>
-            <%# title format for Images %>
-            <%= render :partial => "document_header", :locals => {:document_counter => index, :document => document} %>
+    <div class="document-group">
+      <%- if grouping.group -%>
+        <h2>
+          <i class="icon-book"></i>
+          <%= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
+          <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
+        </h2>
+      <%- end -%>
+      <%- grouping.docs.each do |document| -%>
+        <div class="row">
+          <div class="span9">
+            <% if document.images_item? %>
+              <%# title format for Images %>
+              <%= render :partial => "document_header", :locals => {:document_counter => index, :document => document} %>
+                <% unless list_is_empty?(document.year)%>
+                  <span class="year"><%= show_list(document.year) %></span>
+                <% end %>
 
-            <% unless list_is_empty?(document.year)%>
-              <span class="year"><%= show_list(document.year) %></span>
-            <% end %>
-
-          <% else %>
-            <%# title format for AP %>
-            <div class="documentHeader">
-              <%= link_to_document document,
-                                  :label=> document.title(:short=>true),
-                                  :counter => (index + 1 + @response.params[:start].to_i) %>
-              <div class="result-context">
-                -- result context text goes here--
+            <% else %>
+              <%# title format for AP %>
+              <div class="documentHeader ap">
+                <%= link_to_document document,
+                                    :label=> document.title(:length=>"short"),
+                                    :counter => (index + 1 + @response.params[:start].to_i) %>
+                <div class="result-context">
+                  -- result context text goes here--
+                </div>
+                <div class="page-speaker">
+                  <span class="speaker">
+                    <% unless list_is_empty?(document.speaker)%>
+                      <span class="frda-label">Speaker:&nbsp;</span>
+                      <%=show_list(document.speaker)%>
+                    <% end %>
+                  </span>
+                </div>
               </div>
-              <div class="page-speaker">
-                <span class="speaker">
-                  <% unless list_is_empty?(document.speaker)%>
-                    <span class="frda-label">Speaker:&nbsp;</span>
-                    <%=show_list(document.speaker)%>
-                  <% end %>
-                </span>
-              </div>
-            </div>
-          <%- end -%>
+            <%- end -%>
+          </div>
         </div>
-      </div>
-    <%- end -%>
+      <%- end -%>
+    </div>
   <%- end -%>
 </div>

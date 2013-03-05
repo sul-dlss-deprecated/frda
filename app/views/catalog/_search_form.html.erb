@@ -7,11 +7,9 @@
     <div class="accordion-group">
       <div id="options-toggle">
         <%= text_field_tag :q, params[:q], :class => "search_q q", :id => "q" %>
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSearch">
-          + options
-        </a>
+        <a href='#' class='accordion-toggle' data-collapse-search='true' data-collapse-element='#collapseSearch' style='display:none;'>+ options</a>
       </div>
-      <div id="collapseSearch" class="accordion-body collapse">
+      <div id="collapseSearch">
         <div class="accordion-inner well">
           <label>
             <%= check_box_tag 'dates', 1, !params['dates'].blank? %>on or between<br>
@@ -52,8 +50,9 @@
     </div>
   </div>
 
-  <%= submit_tag(t('blacklight.search.form.q'), :class=>'hide') %>
-  <div class="btn-group search-drop-down">
+  <%= select_tag "search_collection", options_for_select(frda_search_collection_options, params["search_collection"]), :"data-hide-submit"=>'true' %>
+  <%= submit_tag(t('blacklight.search.form.q'), :"data-hide-submit"=>'true') %>
+  <div class="btn-group search-drop-down showOnLoad hidden">
     <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
       <%= t('blacklight.search.form.submit') %>
       <span class="caret"></span>

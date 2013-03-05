@@ -5,7 +5,7 @@
     <%- if grouping.group -%>
       <h2>
         <i class="icon-book"></i>
-        <%= link_to(grouping.group, "#") %>
+        <%= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
         <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
       </h2>
     <%- end -%>
@@ -22,25 +22,37 @@
         <div class="span7 results-metadata">
 
           <div class="oneresult">
-            <div class="page-speaker">
-              <span class="speaker">
-                  <% unless list_is_empty?(document.speaker)%>
+
+            <% if document.images_item? %>
+              <h2><%= link_to document.title(:length=>"short"), document %></h2>
+
+            <% else %>
+              <% unless list_is_empty?(document.session_date)%>
+                <span class="session">
+                  <%= link_to show_list(document.session_date), document %>
+                </span>
+              <% end %>
+              <div class="page-speaker">
+                <% unless list_is_empty?(document.speaker) || document.images_item? %>
+                  <span class="speaker">
                     <span class="frda-label">Speaker:&nbsp;</span>
                     <%=show_list(document.speaker)%>
-                  <% end %>
-                </span>
-              <span class="pagenum">
-                <i class="icon-list-alt"></i>
-                <%= link_to document.title(:short=>true), document %>
-              </span>
-            </div>
-            <div class="snippet">
-              <span class="longtext">
-                <% unless document.page_text.blank? %>
-                  <%= truncate(document.page_text, :length => 600) %>
+                  </span>
                 <% end %>
-              </span>
-            </div>
+                <span class="pagenum">
+                  <i class="icon-list-alt"></i>
+                  <%= link_to document.title(:length=>"short"), document %>
+                </span>
+              </div>
+              <div class="snippet">
+                <% unless document.page_text.blank? %>
+                  <span class="longtext">
+                    <%= truncate(document.page_text, :length => 600) %>
+                  </span>
+                <% end %>
+              </div>
+            <% end %>
+
           </div>
 
           <%= render_document_partial document, :index, :document_counter => index %>

@@ -65,7 +65,15 @@
     @include result-image-styling;
     margin-top: 2px;
   }
-
+  .session {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    a {
+      color: $active_heading_link_color;
+    }
+  }
   .speaker {float: right;}
   .pagenum {display: block;}
   .snippet {
@@ -126,13 +134,14 @@
     border-top: none;
     color: $active_heading_link_color;
     font-size: 1.25em;
-//    padding-bottom: 10px;
-    padding-top: 30px;
+    padding-top: 0;
     a {color: $active_heading_link_color;}
   }
   @include result-title-styling;
   .icon-book {margin: 4px 5px;}
   .icon-list-alt {margin-right: 5px;}
+  .document-group {padding-bottom: 30px;}
+  &.images .document-group {padding-bottom: 0;}
   .row {
     span {
       display: block;
@@ -147,10 +156,13 @@
     }
   }
   .documentHeader {
-    .index_title {max-width: 600px;}
+    .index_title {
+      margin-bottom: 6px;
+      max-width: 600px;
+    }
     display: inline;
-    margin-left: 40px;
     margin-top: 0;
+    &.ap {margin-left: 40px;}
   }
   .result-context {
     display: inline;

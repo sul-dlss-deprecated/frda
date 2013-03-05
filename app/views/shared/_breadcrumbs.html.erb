@@ -29,12 +29,8 @@
 		&#187; <li><%= link_to t('frda.nav.collection_ap'),ap_collection_path %></li>
 	<% end %>
 
-	<% if on_show_page %>
-		&#187; <li><%= raw truncate(@document.title) %></li>
-	<% end %>
-	
-	<% if on_search_page %>
+	<% if on_show_page || on_search_page%>
 		&#187; <li><%= raw truncate(@page_title) %></li>
 	<% end %>
-	
+		
 </ul>

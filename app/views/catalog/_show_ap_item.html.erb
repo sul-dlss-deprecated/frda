@@ -18,11 +18,11 @@ end
   <div class="span12">
     <h2><%= link_to "Archives parlementaires", ap_collection_path %></h2>
     <ul class="item-breadcrumb">
-      <li><%= link_to(@document.title, catalog_index_path(params_for_volume(@document.volume_name))) %>  » 
+      <li><%= link_to(@document.volume_name, show_page_path(:id=>@document.druid,:page_num=>"1")) %>  » 
 					<% @document.session_date.each do |session|%>
 			  		<%= link_to(session, catalog_index_path(params_for_session(session))) %>  » 		  
 		  		<% end %>
-		  <%= t('frda.show.page') %> <%= @document.page_sequence %>
+		  page <%= @document.page_number %>
 	 </li>
     </ul>
   </div>

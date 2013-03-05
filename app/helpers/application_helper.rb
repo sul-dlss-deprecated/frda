@@ -96,8 +96,15 @@ module ApplicationHelper
     end
   end
   
+  def frda_search_collection_options
+    [[t('frda.search.results_heading_combined'), "combined"],
+     [t('frda.search.results_heading_ap'), Frda::Application.config.ap_id],
+     [t('frda.search.results_heading_image'), Frda::Application.config.images_id]
+    ]
+  end
+  
   def frda_search_omit_keys
-    [:q, :search_field, :qt, :page, :dates, :"date-start", :"date-end", :speeches, :"by-speaker", :prox, :words, :terms, :exact]
+    [:q, :search_field, :qt, :page, :dates, :"date-start", :"date-end", :speeches, :"by-speaker", :prox, :words, :terms, :exact, :search_collection]
   end
 
 end

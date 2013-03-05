@@ -64,18 +64,18 @@ describe("Search Pages",:type=>:request,:integration=>true) do
         visit root_path
         fill_in "q", :with => "*:*"
         check("dates")
-        fill_in :"date-start", :with => "1790"
-        fill_in :"date-end", :with => "1800"
+        fill_in :"date-start", :with => "1780-05-19"
+        fill_in :"date-end", :with => "1799-04-25"
         find(:css, "[value='Search...']").click
         
-        # we should get 8 items
-        page.all(:css, ".image-item").length.should == 8
+        # we should get 6 items
+        page.all(:css, ".image-item").length.should == 6
 
-        fill_in :"date-start", :with => "1799"
+        fill_in :"date-start", :with => "1790-04-25"
         find(:css, "[value='Search...']").click
         
-        # we should be limited to just 5 items
-        page.all(:css, ".image-item").length.should == 5
+        # we should be limited to just 4 items
+        page.all(:css, ".image-item").length.should == 4
       end
     end
     

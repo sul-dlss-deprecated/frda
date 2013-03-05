@@ -13,9 +13,9 @@
         <div class="accordion-inner well">
           <label>
             <%= check_box_tag 'dates', 1, !params['dates'].blank? %>on or between<br>
-            <%= text_field_tag 'date-start', params["date-start"], :class => 'input-mini date', :placeholder => "1787" %>
+            <%= text_field_tag 'date-start', params["date-start"], :class => 'input-mini date', :placeholder => "1780-05-18", :"data-date-picker" => true %>
             to
-            <%= text_field_tag 'date-end', params["date-end"], :class => 'input-mini date', :placeholder => "1860" %>
+            <%= text_field_tag 'date-end', params["date-end"], :class => 'input-mini date', :placeholder => "1799-04-26", :"data-date-picker" => true %>
           </label>
 
           <label>

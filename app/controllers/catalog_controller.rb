@@ -288,10 +288,13 @@ class CatalogController < ApplicationController
   
   def add_year_range_query(solr_params, user_params)
     if user_params["dates"] and (!user_params["date-start"].blank? and !user_params["date-end"].blank?)
+      start_date = "#{DateTime.parse(user_params['date-start']).strftime("%Y-%m-%d")}T00:00:00Z"
+      end_date = "#{(DateTime.parse(user_params['date-end']) + 1.day).strftime("%Y-%m-%d")}T00:00:00Z"
+      range_query = "session_date_dtsim:[#{start_date} TO #{end_date}]"
       if solr_params[:fq]
-        solr_params[:fq] << "date_issued_ssim:[#{user_params['date-start']} TO #{user_params['date-end']}]"
+        solr_params[:fq] << range_query
       else
-        solr_params[:fq] = ["date_issued_ssim:[#{user_params['date-start']} TO #{user_params['date-end']}]"]
+        solr_params[:fq] = [range_query]
       end
     end
   end

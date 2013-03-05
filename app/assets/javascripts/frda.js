@@ -12,6 +12,8 @@ $(document).ready(function(){
   toggleSearchOptions();
 
   handleSearchFormSubmit();
+
+  searchOptionsDatePicker();
 });
 
 function showImageViewer(imageURL,target) {
@@ -68,5 +70,26 @@ function toggleSearchOptions(){
 				return false;
 			}
 		});	
+	}
+}
+
+function searchOptionsDatePicker(){
+	if($("[data-date-picker='true']").length > 0) {
+		$("[data-date-picker='true']").each(function(){
+			$(this).datepicker({
+				format: "yyyy-mm-dd"
+			});
+			$(this).click(function(){
+				if($(this).attr("value") == "") {
+					$(this).attr("value", $(this).attr("placeholder"));
+					$(this).datepicker("update");
+				}
+			});
+			$(this).bind('blur', function(){
+				if($(this).attr("value") == $(this).attr("placeholder")) {
+					$(this).attr("value", "");
+				}
+			});
+		});
 	}
 }

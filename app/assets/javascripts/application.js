@@ -21,5 +21,6 @@
 //= require bootstrap-scrollspy
 //= require bootstrap-tab
 //= require bootstrap-dropdown
+//= require bootstrap-datepicker
 //
 //= require_tree .

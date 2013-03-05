@@ -42,6 +42,8 @@ GEM
       rails (~> 3.2)
       rsolr (~> 1.0.6)
       sass-rails
+    bootstrap-datepicker-rails (1.0.0)
+      railties (>= 3.0)
     bootstrap-sass (2.2.2.0)
       sass (~> 3.2)
     builder (3.0.4)
@@ -188,6 +190,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   blacklight (~> 4.0.0)
+  bootstrap-datepicker-rails
   bootstrap-sass
   bundler (>= 1.2.0)
   capybara

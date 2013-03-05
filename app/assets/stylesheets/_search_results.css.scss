@@ -108,6 +108,7 @@
     min-height: 230px;
     text-align: center;
     width: 105px;
+    &.images {min-height: 250px;}
     > a {border-bottom: none;}
     img {
       @include result-image-styling;

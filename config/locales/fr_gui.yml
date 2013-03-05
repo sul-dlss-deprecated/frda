@@ -3,6 +3,10 @@ fr:
     application_name: 'French Revolution Digital Archive'
   frda:
     application_name_subtitle: 'A collaboration of the Stanford University Libraries and the Bibliothèque nationale de France'
+    facet:
+      exact: 'Exact match'
+      title: 'Title & key terms'
+      exact_title: 'Exact match in title & key terms'
     nav:
       frda_collection: 'French Revolution Digital Archive'
       about: 'About'

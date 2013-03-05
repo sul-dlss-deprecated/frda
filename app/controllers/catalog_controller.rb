@@ -9,7 +9,7 @@ class CatalogController < ApplicationController
   
   CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches, :proximity_search]
   
-  before_filter :capture_split_button_options, :capture_drop_down_options, :only => :index
+  before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
   
   def self.collection_highlights
     opts = {}
@@ -204,44 +204,30 @@ class CatalogController < ApplicationController
     
     config.add_search_field 'all_fields', :label => "#{I18n.t('frda.facet.all_fields')}:"
     
+    config.add_search_field('title_terms') do |field|
+      field.label = I18n.t('frda.facet.title')
+      field.solr_local_parameters = {
+        :qf => '$qf_title',
+        :pf => '$pf_title'
+      }
+    end
+    
+    config.add_search_field('exact') do |field|
+      field.label = I18n.t('frda.facet.exact')
+      field.solr_local_parameters = {
+        :qf => '$qf_exact',
+        :pf => '$pf_exact'
+      }
+    end
+    
+    config.add_search_field('exact_title') do |field|
+      field.label = I18n.t('frda.facet.exact_title')
+      field.solr_local_parameters = {
+        :qf => '$qf_title_exact',
+        :pf => '$pf_title_exact'
+      }
+    end
 
-    # Now we see how to over-ride Solr request handler defaults, in this
-    # case for a BL "search field", which is really a dismax aggregate
-    # of Solr search fields. 
-    
-    config.add_search_field('title') do |field|
-      # solr_parameters hash are sent to Solr as ordinary url query params. 
-      field.solr_parameters = { :'spellcheck.dictionary' => 'title' }
-
-      # :solr_local_parameters will be sent using Solr LocalParams
-      # syntax, as eg {! qf=$title_qf }. This is neccesary to use
-      # Solr parameter de-referencing like $title_qf.
-      # See: http://wiki.apache.org/solr/LocalParams
-      field.solr_local_parameters = { 
-        :qf => '$title_qf',
-        :pf => '$title_pf'
-      }
-    end
-    
-    config.add_search_field('author') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'author' }
-      field.solr_local_parameters = { 
-        :qf => '$author_qf',
-        :pf => '$author_pf'
-      }
-    end
-    
-    # Specifying a :qt only to show it's possible, and so our internal automated
-    # tests can test it. In this case it's the same as 
-    # config[:default_solr_parameters][:qt], so isn't actually neccesary. 
-    config.add_search_field('subject') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
-      field.qt = 'search'
-      field.solr_local_parameters = { 
-        :qf => '$subject_qf',
-        :pf => '$subject_pf'
-      }
-    end
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
@@ -321,6 +307,20 @@ class CatalogController < ApplicationController
     if user_params["prox"] and !user_params["words"].blank?
       solr_params[:q] = "\"#{user_params["q"].gsub('"', '')}\""
       solr_params[:qs] = user_params["words"]
+    end
+  end
+
+  def title_and_exact_search
+    if params["terms"] or params["exact"]
+      if params["terms"]
+        params[:search_field] = "title_terms"
+      end
+      if params["exact"]
+        params[:search_field] = "exact"
+      end
+      if params["terms"] and params["exact"]
+        params[:search_field] = "exact_title"
+      end
     end
   end
 

@@ -37,12 +37,12 @@
           </label>
 
           <label>
-            <%= check_box_tag 'terms', 1, false, :disabled => true %>
+            <%= check_box_tag 'terms', 1, !params["terms"].blank? %>
             in title &amp; key terms only
           </label>
 
           <label>
-            <%= check_box_tag 'exact', 1 ,false, :disabled => true %>
+            <%= check_box_tag 'exact', 1, !params["exact"].blank? %>
             exact match (no stemming)
           </label>
         </div>

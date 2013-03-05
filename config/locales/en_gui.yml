@@ -11,6 +11,9 @@ en:
       start_year: 'Start year'
       end_year: 'End year'
       all_fields: 'All fields'
+      exact: 'Exact match'
+      title: 'Title & key terms'
+      exact_title: 'Exact match in title & key terms'
     nav:
       frda_collection: 'French Revolution Digital Archive'      
       about: 'About'

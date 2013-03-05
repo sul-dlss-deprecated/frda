@@ -12,7 +12,7 @@
     <%- grouping.docs.each do |document| -%>
       <div class="row">
         <div class="span9">
-          <% if document.type=='image' %>
+          <% if document.images_item? %>
             <%# title format for Images %>
             <%= render :partial => "document_header", :locals => {:document_counter => index, :document => document} %>
 

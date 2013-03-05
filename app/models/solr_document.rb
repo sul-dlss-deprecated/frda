@@ -7,10 +7,10 @@ class SolrDocument
 
   def title(params={})
     length=params[:short].nil? ? "long" : "short" 
-    case self.type.downcase
-      when "page"
+    case self.type
+      when :page
         length == "short" ? "p #{self.page_number}" : "#{self.volume_name} - p #{self.page_number}"  
-      when "image"
+      when :images
         self[:"title_#{length}_ftsi"]
       else
         self[:"title_#{length}_ftsi"]
@@ -46,7 +46,7 @@ class SolrDocument
   end
 
   def type
-    self[:type_ssi]
+    self[:type_ssi] == "page" ? :page : :image
   end
   
   def format

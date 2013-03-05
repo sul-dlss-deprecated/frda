@@ -61,7 +61,7 @@ class CatalogController < ApplicationController
      super
    end
 
-    # a call to show a new AP page for a given solr doc ID, when ajax will return just the partial, when non ajax will redirect to the correct page
+  # a call to show a new AP page for a given solr doc ID, when ajax will return just the partial, when non ajax will redirect to the correct page
   def show_page
     from_id=params[:from_id]
     druid=params[:id]

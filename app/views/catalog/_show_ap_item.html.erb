@@ -1,8 +1,10 @@
-<script type="text/javascript">
- $(document).ready(function() {
-		showImageViewer('<%=@document.first_image(:size=>:full,:format=>"none")%>','ap_page_image');
-	});
-</script>
+<% if ['flipbook', 'ocr'].include?(@mode) == false%>
+	<script type="text/javascript">
+	 $(document).ready(function() {
+			showImageViewer('<%=@document.first_image(:size=>:full,:format=>"none")%>','ap_page_image');
+		});
+	</script>
+<% end %>
 
 <% 
 if @document.total_pages == nil || @document.page_sequence == nil 
@@ -40,7 +42,7 @@ end
           <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"image"),:remote=>true do%>
 		        <%= button_tag "side-by-side",
                 :class => 'btn btn-small',
-                :disabled => ['image', nil].include?(@mode) ? true : false %>
+                :disabled => ['flipbook', 'ocr'].include?(@mode) ? false : true %>
 					<% end %>
 
           <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"ocr"),:remote=>true do%>
@@ -136,7 +138,7 @@ end
 </div>
 
 <div class="row document-details">
-  <% if @mode.blank? || @mode == 'image' %>
+  <% if ['flipbook', 'ocr'].include?(@mode) == false%>
     <div class="span6">
 	       <div id="ap_page_image" class="item image-box active hidden showOnLoad" style="position:relative;"></div>
 					<noscript>
@@ -154,7 +156,7 @@ end
 				<iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/view.jsp?id=<%=@document.druid%>#page/<%=@document.page_sequence%>/mode/1up" width="750" height="650"></iframe>
 	    </div>
 	  <% end %>
-		<% if @mode != 'flipbook' %>
+		<% if ['image', nil, '', 'ocr'].include?(@mode) %>
 	    <div class="ocr-box">
 	      <%= simple_format(@document.page_text)%>
 	    </div>

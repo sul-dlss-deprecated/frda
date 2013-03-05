@@ -2,7 +2,7 @@
 	$('#item_detail').html("<%= escape_javascript(render( :partial => "show_ap_item")).html_safe %>");
 	clearMessages();
 	showOnLoad();
-	showImageViewer('<%=@document.first_image(:size=>:full,:format=>"none")%>','ap_page_image');
+	<% if ['flipbook', 'ocr'].include?(@mode) == false%>showImageViewer('<%=@document.first_image(:size=>:full,:format=>"none")%>','ap_page_image');<% end %>
 	window.history.pushState({}, "<%=@document.title%>", "<%=catalog_path(@document.id,:mode=>@mode)%>");
 	document.title = '<%="#{t('blacklight.application_name')}: #{@document.title}"%>';
 <% else %>

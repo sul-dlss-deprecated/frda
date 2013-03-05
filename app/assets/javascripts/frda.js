@@ -32,8 +32,8 @@ function clearMessages() {
 }
 
 function showOnLoad() {
-	$(".showOnLoad").show();
 	$('.showOnLoad').removeClass('hidden');	
+	$('.showOnLoad').show();
 }
 
 // Allow form to be submitted with enter/return key.

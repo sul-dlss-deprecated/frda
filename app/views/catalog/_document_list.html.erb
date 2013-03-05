@@ -9,13 +9,24 @@
           <%= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
           <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
         </h2>
+      <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the
+          Images group title. Will need to detect whether group is Images and if so,
+          use the appropriate icon instead of icon-book. %>
+      <%- else -%>
+        <%# Only show the Images group heading if we're in the combined results view %>
+        <% unless on_images_page %>
+          <h2>
+            <i class="icon-picture"></i>
+            <%= t('frda.search.results_heading_image') %>
+          </h2>
+        <%- end -%>
       <%- end -%>
       <%- grouping.docs.each do |document| -%>
         <div class="row">
           <div class="span9">
             <% if document.images_item? %>
               <%# title format for Images %>
-              <%= render :partial => "document_header", :locals => {:document_counter => index, :document => document} %>
+              <%= render :partial => "document_header", :locals => {:document_counter => index, :document => document, :class_name => 'images-item' } %>
                 <% unless list_is_empty?(document.year)%>
                   <span class="year"><%= show_list(document.year) %></span>
                 <% end %>

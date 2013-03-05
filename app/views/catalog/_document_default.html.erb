@@ -8,6 +8,14 @@
         <%= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
         <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
       </h2>
+    <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the
+        Images group title. Will need to detect whether group is Images and if so,
+        use the appropriate icon instead of icon-book. %>
+    <%- else -%>
+      <h2>
+        <i class="icon-picture"></i>
+        <%= t('frda.search.results_heading_image') %>
+      </h2>
     <%- end -%>
     <%- grouping.docs.each do |document| -%>
       <div class="row">

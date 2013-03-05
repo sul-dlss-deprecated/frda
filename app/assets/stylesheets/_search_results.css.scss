@@ -49,7 +49,8 @@
     }
   }
   @include result-title-styling;
-  .icon-book {margin: 4px 5px;}
+  .icon-book, {margin: 4px 5px;}
+  .icon-picture {margin: 3px 5px;}
   .icon-list-alt {margin-right: 5px;}
   .results-image > a {border-bottom: none;}
   .oneresult {
@@ -96,6 +97,7 @@
   }
   @include result-title-styling;
   .icon-book {margin: 4px 5px;}
+  .icon-picture {margin: 3px 5px;}
   ul.image-grid {
     list-style-type: none;
     margin-left: 12px;
@@ -140,6 +142,7 @@
   }
   @include result-title-styling;
   .icon-book {margin: 4px 5px;}
+  .icon-picture {margin: 3px 5px;}
   .icon-list-alt {margin-right: 5px;}
   .document-group {padding-bottom: 30px;}
   &.images .document-group {padding-bottom: 0;}
@@ -162,9 +165,10 @@
       margin-bottom: 6px;
       max-width: 600px;
     }
-    display: inline;
+//    display: inline;
+    margin-left: 40px;
     margin-top: 0;
-    &.ap {margin-left: 40px;}
+    &.ap {display: inline;}
   }
   .result-context {
     display: inline;

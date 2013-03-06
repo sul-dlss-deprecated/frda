@@ -115,4 +115,13 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     end
   end
   
+  describe "non grouped results" do
+    it "should be returned when we're on a faceted search for vol_title_ssi" do
+      visit catalog_index_path(:f => {:vol_title_ssi => ["Tome 36 : Du 11 décembre 1791 au 1er janvier 1792"]})
+      page.should_not have_xpath("//h2/a[text()='Tome 36 : Du 11 décembre 1791 au 1er janvier 1792']")
+      # make sure we're also getting results
+      page.all(:css, ".image-item").length.should == 4
+    end
+  end
+  
 end

@@ -43,7 +43,11 @@ class CatalogController < ApplicationController
     extra_head_content << view_context.auto_discovery_link_tag(:rss, url_for(params.merge(:format => 'rss')), :title => t('blacklight.search.rss_feed') )
     extra_head_content << view_context.auto_discovery_link_tag(:atom, url_for(params.merge(:format => 'atom')), :title => t('blacklight.search.atom_feed') )
 
-    (@response, @document_list) = get_grouped_search_results
+    if group_response?
+      (@response, @document_list) = get_grouped_search_results
+    else
+      (@response, @document_list) = get_search_results
+    end
 
     @filters = params[:f] || []
 
@@ -278,6 +282,16 @@ class CatalogController < ApplicationController
       end
     end
   end
+  
+  def group_response?
+    !(params and params[:f] and params[:f][:vol_title_ssi] and !params[:f][:vol_title_ssi].blank?)
+  end
+  helper_method :"group_response?"
+  
+  def response_is_grouped?
+    @response and @response.is_a?(Frda::GroupedSolrResponse)
+  end
+  helper_method :"response_is_grouped?"
 
   private
   def create_guest_user

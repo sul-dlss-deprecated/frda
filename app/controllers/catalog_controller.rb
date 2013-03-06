@@ -1,14 +1,16 @@
 # -*- encoding : utf-8 -*-
 require 'blacklight/catalog'
 require 'frda/solr_helper'
-require 'frda/range_query_dates'
 
 class CatalogController < ApplicationController  
 
   include Blacklight::Catalog
   include Frda::SolrHelper
+  include BlacklightDates2SVG
   
-  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speeches, :proximity_search, :result_view]
+  # The logic to handle the date range queries is being set by the BlacklightDates2SVG gem.
+  # If we remove that, but still want date processing, we'll need to explicity require and use the DateRangeSolrQuery gem.
+  CatalogController.solr_search_params_logic += [:search_within_speeches, :proximity_search, :result_view]
   
   before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
 
@@ -143,6 +145,8 @@ class CatalogController < ApplicationController
       :"hl.usePhraseHighlighter" => true
     }
     
+    config.search_date_field = "search_date_dtsim"
+
     config.collection_highlight_field = "highlight_ssim" 
             
     config.collection_member_identifying_field = "collection_ssi"  # this identifies what overall collection we are in
@@ -198,6 +202,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'collector_ssim', :label => 'frda.show.collector', :limit => 15
     config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume', :limit => 15
     config.add_facet_field 'session_title_sim', :label => 'frda.show.session', :show => false
+    config.add_facet_field 'search_date_dtsim', :label => "frda.show.date", :show => false
 
     config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["result_group_ssi", "session_title_sim"]
 
@@ -364,18 +369,7 @@ class CatalogController < ApplicationController
     u.save
     u
   end
-  
-  def add_year_range_query(solr_params, user_params)
-    if user_params["dates"] and !user_params["date-start"].blank?
-      range_query = Frda::RangeQueryDates.new(user_params['date-start'], user_params['date-end']).range_query
-      if solr_params[:fq]
-        solr_params[:fq] << range_query
-      else
-        solr_params[:fq] = [range_query]
-      end
-    end
-  end
-  
+
   def search_within_speeches(solr_params, user_params)
     unless user_params["speeches"].blank? and user_params["by-speaker"].blank?
       solr_params[:q] = "spoken_text_ftsimv:\"#{user_params['by-speaker']} #{user_params['q']}\"~10000"

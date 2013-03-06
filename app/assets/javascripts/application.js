@@ -23,4 +23,7 @@
 //= require bootstrap-dropdown
 //= require bootstrap-datepicker
 //
+// Required by BlacklightDates2SVG:
+//= require blacklight_dates2svg/svgMonthGridSelector
+//= require blacklight_dates2svg/blacklight_dates2svg
 //= require_tree .

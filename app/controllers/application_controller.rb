@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
   end
   
   def on_home_page
-    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && params[:f].blank? && params[:q].blank? && !on_collection_highlights_page
+    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && params[:f].blank? && params[:q].blank? && params[:"date-start"].blank? && params[:"date-end"].blank? && !on_collection_highlights_page
   end
   
   def on_collections_pages

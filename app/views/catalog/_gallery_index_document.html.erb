@@ -1,0 +1,33 @@
+<li class="image-item<%= ' images' if document.images_item? %>">
+  <%= link_to_document document,
+                       :label => image_tag(document.first_image(:size=>:thumb),
+                                           :alt => document.title,
+                                           :title => document.title,
+                                           :border => 0),
+                       :counter => (index + 1 + @response.params[:start].to_i) %>
+
+  <div class="documentHeader clearfix">
+    <h3 class="index_title">
+      <% if document.images_item? %>
+        <%# title format for Images %>
+        <%= link_to_document document,
+                             :label=> truncate(document.title(:length=>"short"), :length => 35),
+                             :counter => (index + 1 + @response.params[:start].to_i) %>
+        <% unless list_is_empty?(document.year)%>
+         <span class="year"><%= show_list(document.year) %></span>
+        <% end %>
+
+      <% else %>
+        <%# title format for AP %>
+        <%= link_to_document document,
+                            :label=> document.title(:length=>"short"),
+                            :counter => (index + 1 + @response.params[:start].to_i) %>
+      <% end %>
+    </h3>
+
+    <% # bookmark functions for items/docs -%>
+    <%#= render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
+  </div>
+
+  <%#= render_document_partial document, :index, :document_counter => index %>
+</li>

@@ -1,8 +1,7 @@
 <%# This is an Combined results view %>
-
 <div id="documents" class="gallery<%= ' images' if on_images_page %>">
-  <%- documents.each_with_index do |grouping, index| -%>
-    <%- if response_is_grouped? -%>
+  <%- if response_is_grouped? -%>
+    <%- documents.each_with_index do |grouping, index| -%>
       <%- if grouping.group -%>
         <h2>
           <i class="icon-book"></i>
@@ -10,9 +9,9 @@
           <%#= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
           <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
         </h2>
-      <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the
-          Images group title. Will need to detect whether group is Images and if so,
-          use the appropriate icon instead of icon-book. %>
+        <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the
+            Images group title. Will need to detect whether group is Images and if so,
+            use the appropriate icon instead of icon-book. %>
       <%- else -%>
         <%# Only show the Images group heading if we're in the combined results view %>
         <% unless on_images_page %>
@@ -22,45 +21,20 @@
           </h2>
         <%- end -%>
       <%- end -%>
+      <ul class="image-grid">
+        <%- grouping.docs.each_with_index do |document| -%>
+          <%= render :partial => "gallery_index_document", :locals => {:document => document, :index => index} %>
+        <%- end -%>
+      </ul>
+      
     <%- end -%>
+  
+  <%- else -%>
     <ul class="image-grid">
-      <%- doc_list = response_is_grouped? ? grouping.docs : [grouping] -%>
-      <%- doc_list.each do |document| -%>
-        <li class="image-item<%= ' images' if document.images_item? %>">
-          <%= link_to_document document,
-                               :label => image_tag(document.first_image(:size=>:thumb),
-                                                   :alt => document.title,
-                                                   :title => document.title,
-                                                   :border => 0),
-                               :counter => (index + 1 + @response.params[:start].to_i) %>
-
-          <div class="documentHeader clearfix">
-            <h3 class="index_title">
-              <% if document.images_item? %>
-                <%# title format for Images %>
-                <%= link_to_document document,
-                                     :label=> truncate(document.title(:length=>"short"), :length => 35),
-                                     :counter => (index + 1 + @response.params[:start].to_i) %>
-                <% unless list_is_empty?(document.year)%>
-                 <span class="year"><%= show_list(document.year) %></span>
-                <% end %>
-
-              <% else %>
-                <%# title format for AP %>
-                <%= link_to_document document,
-                                    :label=> document.title(:length=>"short"),
-                                    :counter => (index + 1 + @response.params[:start].to_i) %>
-              <% end %>
-            </h3>
-
-            <% # bookmark functions for items/docs -%>
-            <%#= render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
-          </div>
-
-          <%#= render_document_partial document, :index, :document_counter => index %>
-        </li>
+      <%- documents.each_with_index do |document, index| -%>
+        <%= render :partial => "gallery_index_document", :locals => {:document => document, :index => index} %>
       <%- end -%>
     </ul>
-
   <%- end -%>
+    
 </div>

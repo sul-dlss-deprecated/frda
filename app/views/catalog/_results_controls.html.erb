@@ -1,6 +1,6 @@
 <div class="row results-controls well">
 
-  <div class="span2 prev-next">
+  <div class="span4 prev-next">
     <% if paginate_params(@response).num_pages > 1 %>
     <%= paginate_rsolr_response @response, :theme => :blacklight_compact %>
     <% else %>
@@ -8,8 +8,8 @@
     <% end %>
   </div>
 
-  <div class="span3 view-toggle">
-    <div class='view_toggle tabbable tabs-below'>
+  <div class="span5 view-switcher">
+    <div class='view-toggle tabbable tabs-below'>
       <ul class="nav nav-pills">
 
         <%# AP-only results views %>
@@ -36,9 +36,9 @@
     </div>
   </div>
 
-  <div class="span4 select_all-pulldown visible-desktop">
-    <%= render 'sort_and_per_page' %>
-    <%= render 'select_all_on_page' %>
-  </div>
+  <!-- <div class="span4 select_all-pulldown visible-desktop">
+    <%#= render 'sort_and_per_page' %>
+    <%#= render 'select_all_on_page' %>
+  </div> -->
 
 </div>

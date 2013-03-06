@@ -3,28 +3,31 @@ fr:
     home:
       overview_by: Chronologie de la Révolution
       collection_highlights: Sélections
-      more_highlights: encore de
-      about_collections_html: Aperçu the collections
+      more_highlights: voir plus
+      about_collections_html: À propos des Archives
       about_text_html: |
         <p>
-          [To be translated] The French Revolution Digital Archive (FRDA) is a multi-year collaboration of the Stanford University
-          Libraries and the Biblioth√®que nationale de France (BnF) to produce a digital version of the key
-          research sources of the French Revolution and make them available to the international scholarly
-          community. The archive is based around two main resources, the Archives parlementaires and a vast
-          corpus of images first brought together in 1989 and known as the Images de la Revolution fran√ßaise.
+          Les <em>Archives numériques de la Révolution française (ANRF)</em> sont issues d’une collaboration
+          de plusieurs années entre les bibliothèques de l’Université de Stanford et la Bibliothèque
+          nationale de France (BnF), visant à créer une version numérisée des principales sources d’étude de
+          la Révolution française et à les mettre à disposition de la communauté académique internationale.
+          Les <em>Archives</em> s’appuient sur deux sources principales, les <em>Archives parlementaires</em>
+          et un vaste corpus d’images réuni pour la première fois en 1989 et intitulé <em>Images de la
+          Révolution française</em>.
         </p>
       about_text_ap_html: |
-          [To be translated] The Archives parlementaires is a chronologically-ordered, edited collection of sources on
-          the French Revolution. It was conceived in the mid-19th century as a project to produce a
-          definitive record of parliamentary deliberations and also includes letters, reports,
-          speeches, and other first-hand accounts from a great variety of published and archival
-          sources. Because of copyright limitations, FRDA contains the AP volumes covering the years
-          1787-1794. The text of these volumes has been marked up using TEI so that speakers, places,
-          dates, and terms in the published index can be easily found.
+          Les <em>Archives parlementaires</em> sont une collection de sources relatives à la Révolution
+          française, organisées de façon chronologique. Elles ont été créées au milieu du XIXe siècle pour
+          constituer un recueil précis des délibérations parlementaires, et incluent également des lettres,
+          des rapports, des discours et autres comptes-rendus directs issus d’une multitude de sources
+          d’archive et publiées. En raison de restrictions en termes de droits d’auteur, les <em>ANRF</em>
+          contiennent uniquement les volumes des AP couvrant les années 1787 à 1794. Le texte de ces volumes
+          a été codé en TEI de façon à pouvoir rechercher plus facilement les orateurs, les lieux, les dates
+          et les termes dans l’index. Les utilisateurs ont accès à des numérisations des AP à la fois en mode
+          image et en mode texte.
       about_text_images_html: |
-          [To be translated] The Images are composed of high-resolution digital images of approximately 12,000 individual
-          visual items, primarily prints, but also illustrations, medals, coins, and other objects,
-          that display aspects of the Revolution. These materials were selected from across the BnF‚Äôs
-          departments, and include thousands of images for the important collections entitled Hennin
-          and De Vinck. Detailed metadata exists for the images, so that researchers can search by
-          artist, subject, genre, and place.
+          Le corpus des <em>Images</em> est constitué d’images numériques haute résolution correspondant à environ 14 000 documents, essentiellement des gravures,
+          mais également des illustrations, des médailles, des monnaies et d’autres objets, représentant différents aspects de la Révolution. Ces matériaux
+          proviennent en majorité des collections du département des Estampes et de la photographie mais ont également été sélectionnées dans d’autres départements
+          de la BnF. Plusieurs milliers de ces images sont extraites des collections Hennin et De Vinck, sources majeures pour la période. Des métadonnées
+          détaillées existent pour chaque image, permettant aux chercheurs de rechercher par artiste, par sujet, par genre et par lieu.

@@ -32,7 +32,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   
   it "should show an AP detail page" do
     visit catalog_path(:id=>'wb029sv4796_00_0006')
-    page.should have_content("Pour concilier tous les esprits, on peut, en")
+    page.should have_content("M. le secrétaire, continuant la lecture des lettres, adresses et pétitions :")
     page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/wb029sv4796/wb029sv4796_00_0006_medium.jpg']")
     page.should have_xpath("//a/@href['/en/catalog?f%5Bvol_title_ssi%5D%5B%5D=Tome+36+%3A+Du+11+d%C3%A9cembre+1791+au+1er+janvier+1792']")    
   end

@@ -1,4 +1,6 @@
 # -*- encoding : utf-8 -*-
+require 'open-uri'
+
 class SolrDocument 
 
   include Blacklight::Solr::Document
@@ -88,6 +90,10 @@ class SolrDocument
   def volume_name
     self[:vol_title_ssi]
   end
+
+  def formatted_page_text
+    return open(txt_file).read
+  end
   
   def page_text
     self[:text_ftsiv]
@@ -104,6 +110,10 @@ class SolrDocument
   def tei_file
     "https://stacks.stanford.edu/file/druid:#{self.druid}/#{self[:vol_tei_name_ss]}" unless self[:vol_tei_name_ss].blank? || self.druid.blank?
   end  
+  
+  def txt_file
+    "https://stacks.stanford.edu/file/druid:#{self.druid}/#{self[:ocr_id_ss]}" unless self[:ocr_id_ss].blank? || self.druid.blank?    
+  end
 
   def pdf_file_size
     self[:vol_pdf_size_is]

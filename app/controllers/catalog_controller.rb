@@ -7,10 +7,10 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Frda::SolrHelper
   
-  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches, :proximity_search]
+  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches, :proximity_search, :toggle_collection_facet]
   
   before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
-  
+
   def self.collection_highlights
     opts = {}
     CollectionHighlight.find(:all,:order=>:sort_order).each do |highlight|
@@ -70,29 +70,24 @@ class CatalogController < ApplicationController
     from_id=params[:from_id]
     druid=params[:id]
     page_num=params[:page_num]
-    download_ocr_text=params[:download_ocr_text]
     @mode=params[:mode]
     
     doc=Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_sequence_isi:\"#{page_num}\""})["response"]["docs"]
     @document=SolrDocument.new(doc.first) if doc.size > 0 # assuming we found this page
 
-    if download_ocr_text 
-      send_data(@document.page_text, :filename => "#{@document.title.parameterize}.txt")
-      return
+    if request.xhr?
+      setup_next_and_previous_documents
+      render 'show_page',:format=>:js
     else
-      if request.xhr?
-        setup_next_and_previous_documents
-        render 'show_page',:format=>:js
+      unless @document
+        flash[:alert]=t('frda.show.not_found')
+        id=from_id
       else
-        unless @document
-          flash[:alert]=t('frda.show.not_found')
-          id=from_id
-        else
-          id=@document.id
-        end
-        redirect_to catalog_path(id,:mode=>@mode)
+        id=@document.id
       end
+      redirect_to catalog_path(id,:mode=>@mode)
     end
+
   end
 
   configure_blacklight do |config|
@@ -294,6 +289,14 @@ class CatalogController < ApplicationController
   helper_method :"response_is_grouped?"
 
   private
+  def remove_collection_facet
+    config.remove_facet_field 'collection_ssi', :label => 'frda.nav.collection'
+  end
+  
+  def add_collection_facet
+    config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection'    
+  end
+  
   def create_guest_user
     u = User.create
     u.save
@@ -311,6 +314,10 @@ class CatalogController < ApplicationController
         solr_params[:fq] = [range_query]
       end
     end
+  end
+  
+  def toggle_collection_facet(solr_params, user_params)
+    solr_params[:"facet.field"].delete('collection_ssi') if on_home_page      
   end
   
   def search_within_speaches(solr_params, user_params)

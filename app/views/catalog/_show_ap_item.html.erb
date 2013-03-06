@@ -75,7 +75,7 @@ end
                  <%= link_to "Page (image)", @document.first_image(:download=>true), :class => 'downloadLink' %>
                 </li>
                 <li class="download-option">
-                 <%= link_to "Page (text)", show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:download_ocr_text=>true), :class => 'downloadLink' %>
+                 <%= link_to "Page (text)", @document.txt_file, :class => 'downloadLink' %>
                 </li>
 								<% if @document.pdf_file %>
 	                <li class="download-option">
@@ -158,7 +158,7 @@ end
 	  <% end %>
 		<% if ['image', nil, '', 'ocr'].include?(@mode) %>
 	    <div class="ocr-box">
-	      <%= simple_format(@document.page_text)%>
+	      <%= simple_format(@document.formatted_page_text)%>
 	    </div>
 		<% end %>
   </div>

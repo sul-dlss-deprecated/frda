@@ -22,10 +22,6 @@ class ApplicationController < ActionController::Base
     { :locale => I18n.locale }
   end
   
-  def on_pages_that_do_not_require_terms_dialog
-    on_home_page || on_about_pages
-  end
-  
   def seen_terms_dialog?
     cookies[:seen_terms] || false
   end

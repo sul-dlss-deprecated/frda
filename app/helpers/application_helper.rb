@@ -88,6 +88,14 @@ module ApplicationHelper
     link_to(text, catalog_path("#{id}_00_0001"), options)
   end
 
+  def link_to_volume_facet(volume, options={})
+    link_params = {}
+    link_params.merge!(options[:params]) if options[:params]
+    volume_facet_params = {:f => {:vol_title_ssi => [volume]}}
+    options.delete(:params)
+    link_to(volume, catalog_index_path(link_params.deep_merge(volume_facet_params)), options)
+  end
+
   def link_to_catalog_heading(heading)
     buffer = []
     heading.map do |head|

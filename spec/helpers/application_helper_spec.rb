@@ -39,4 +39,26 @@ describe ApplicationHelper do
     end
   end
   
+  describe "link_to_volume_facet" do
+    it "should link to the volume text passed" do
+      link_to_volume_facet("A Volume Title").should match(/^<a href=.*>A Volume Title<\/a>$/)
+    end
+    it "should link to the volume facet" do
+      link_to_volume_facet("A Volume Title").should match(/^<a href=.*vol_title_ssi.*=A\+Volume\+Title.*<\/a>$/)
+    end
+    it "should pass non-params options along to link_to" do
+      link_to_volume_facet("A Volume Title", :class => "some-class").should match(/^<a.*class="some-class".*<\/a>$/)
+    end
+    it "should merge the params if sent through the options" do
+      link = link_to_volume_facet("A Volume Title", {:params => {:q => "Hello"}})
+      link.should match(/^<a href=.*vol_title_ssi.*=A\+Volume\+Title.*<\/a>$/)
+      link.should match(/^<a href=.*q=Hello.*<\/a>$/)
+    end
+    it "should deep merge faceting" do
+      link = link_to_volume_facet("A Volume Title", {:params => {:f => {:some_facet => ["A Value"]}}})
+      link.should match(/^<a href=.*vol_title_ssi.*=A\+Volume\+Title.*<\/a>$/)
+      link.should match(/^<a href=.*some_facet.*=A\+Value.*<\/a>$/)
+    end
+  end
+  
 end

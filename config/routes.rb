@@ -18,6 +18,7 @@ Frda::Application.routes.draw do
     match 'collections', :to => 'catalog#index', :as => 'collection_highlights'
 
     match 'show_page', :to=>'catalog#show_page', :as =>'show_page'
+    match 'speaker_suggest', :to=>'catalog#speaker_suggest', :as => 'speaker_suggest'
     
     get 'catalog/:id/mods', :to => "catalog#mods", :as => "mods_view"
     

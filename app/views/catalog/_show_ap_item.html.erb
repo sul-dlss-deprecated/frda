@@ -57,9 +57,6 @@ end
               :disabled => ['flipbook'].include?(@mode) ? true : false %>
 					<% end %>
 
-        <button class="btn btn-small">
-          fullscreen
-        </button>
       </div>
 
       <div class="span3 item-actions">
@@ -100,7 +97,7 @@ end
   </div>
 </div>
 
-<div class="row ap-item">
+<div id="page-navigation" class="row ap-item">
   <div class="span12 page-navigation">
 
     <div class="btn-group">
@@ -153,7 +150,7 @@ end
 		<% if @mode == 'flipbook' %>
 		<span id="loading_message">Loading, please wait...</span>
 	    <div class="flipbook">
-				<iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/view.jsp?id=<%=@document.druid%>#page/<%=@document.page_sequence%>/mode/1up" width="750" height="650"></iframe>
+				<iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/view.jsp?id=<%=@document.druid%>#page/<%=@document.page_sequence%>/mode/1up" width="100%" height="800"></iframe>
 	    </div>
 	  <% end %>
 		<% if ['image', nil, '', 'ocr'].include?(@mode) %>

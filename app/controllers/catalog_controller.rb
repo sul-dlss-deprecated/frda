@@ -90,6 +90,13 @@ class CatalogController < ApplicationController
 
   end
 
+  # an ajax call to get speaker name suggestions for autocomplete on the speaker search box
+  def speaker_suggest
+    name=params[:name]
+    results=Blacklight.solr.select(:params =>{:q => "#{@name}",:qt=>'suggest'})
+    @suggestions = (results['spellcheck']['suggestions'].empty? ? [] : results['spellcheck']['suggestions'][1]['suggestion'])
+  end
+  
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = { 

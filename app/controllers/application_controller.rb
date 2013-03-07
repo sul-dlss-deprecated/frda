@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
   end
   
   def on_home_page
-    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && params[:f].blank? && !on_collection_highlights_page
+    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && params[:f].blank? && params[:q].blank? && !on_collection_highlights_page
   end
   
   def on_collections_pages
@@ -56,11 +56,11 @@ class ApplicationController < ActionController::Base
   end
   
   def on_images_page
-    (@document && @document.images_item?) || (on_search_page && params[:f]['collection_ssi']==[Frda::Application.config.images_id])
+    (@document && @document.images_item?) || (on_search_page && params[:f] && params[:f]['collection_ssi']==[Frda::Application.config.images_id])
   end
   
   def on_ap_page
-    (@document && @document.ap_item?) || (on_search_page && params[:f]['collection_ssi']==[Frda::Application.config.ap_id])
+    (@document && @document.ap_item?) || (on_search_page && params[:f] && params[:f]['collection_ssi']==[Frda::Application.config.ap_id])
   end
   
   def on_show_page
@@ -68,7 +68,7 @@ class ApplicationController < ActionController::Base
   end
 
   def on_search_page
-    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && !params[:f].blank? 
+    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && !on_home_page
   end
   
   def on_about_pages

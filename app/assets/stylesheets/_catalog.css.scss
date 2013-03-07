@@ -144,6 +144,9 @@
    padding: 6px 15px;
    a {@include link-uncolored-border;}
    button > a, .item-views a {border-bottom: none;}
+   .item-views {
+     text-align: center;
+   }
  }
  .page-navigation .form-inline {
    display: inline-block;
@@ -156,6 +159,7 @@
 }
 .image-box {margin-right: 20px;}
 .ocr-box p {margin-top: 0;}
+.flipbook {text-align: center;}
 #physical {text-align: right;}
 .ext-links a {
   @include link-uncolored-border;

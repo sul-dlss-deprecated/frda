@@ -122,6 +122,11 @@ fr:
         title: 'Citer'
       select_session: "Séances"
       go: 'ok'
+      ap:
+        buttons:
+          side_by_side: "côte à côte"
+          text_only: "texte"
+          flipbook: "feuilleter en plein écran"
     collection:
       collection_detail: 'Collection Detail'
       member_detail: 'Item Detail'

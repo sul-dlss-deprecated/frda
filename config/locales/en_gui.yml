@@ -127,6 +127,11 @@ en:
         title: 'Cite this item'
       select_session: "Select session"
       go: 'Go'
+      ap:
+        buttons:
+          side_by_side: "side-by-side"
+          text_only: "text only"
+          flipbook: "read in flipbook"
     collection_members_grid:
       members_link: 'View all collection items'
       collection_link: 'View this collection'

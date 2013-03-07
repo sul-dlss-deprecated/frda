@@ -1,18 +1,18 @@
 <% if ['flipbook', 'ocr'].include?(@mode) == false%>
-	<script type="text/javascript">
-	 $(document).ready(function() {
-			showImageViewer('<%=@document.first_image(:size=>:full,:format=>"none")%>','ap_page_image');
-		});
-	</script>
+  <script type="text/javascript">
+   $(document).ready(function() {
+      showImageViewer('<%=@document.first_image(:size=>:full,:format=>"none")%>','ap_page_image');
+    });
+  </script>
 <% end %>
 
-<% 
-if @document.total_pages == nil || @document.page_sequence == nil 
-	link_next_page=false
-	link_prev_page=false
-else	
-	link_next_page=@document.page_sequence.to_i < @document.total_pages ? true : false
-	link_prev_page=@document.page_sequence.to_i > 1 ? true : false
+<%
+if @document.total_pages == nil || @document.page_sequence == nil
+  link_next_page=false
+  link_prev_page=false
+else
+  link_next_page=@document.page_sequence.to_i < @document.total_pages ? true : false
+  link_prev_page=@document.page_sequence.to_i > 1 ? true : false
 end
 %>
 
@@ -20,12 +20,12 @@ end
   <div class="span12">
     <h2><%= link_to "Archives parlementaires", ap_collection_path %></h2>
     <ul class="item-breadcrumb">
-      <li><%= link_to(@document.volume_name, show_page_path(:id=>@document.druid,:page_num=>"1")) %>  » 
-					<% @document.session_date.each do |session|%>
-			  		<%= link_to(session, catalog_index_path(params_for_session(session))) %>  » 		  
-		  		<% end %>
-		  page <%= @document.page_number %>
-	 </li>
+      <li><%= link_to(@document.volume_name, show_page_path(:id=>@document.druid,:page_num=>"1")) %>  »
+          <% @document.session_date.each do |session|%>
+            <%= link_to(session, catalog_index_path(params_for_session(session))) %>  »
+          <% end %>
+      page <%= @document.page_number %>
+   </li>
     </ul>
   </div>
 </div>
@@ -34,35 +34,34 @@ end
   <div class="span12 well" id="controls">
 
     <div class="row">
-      <div class="span3 result-item-nav">
+      <div class="span5 result-item-nav">
         <%= render 'previous_next_doc' %>
       </div>
 
-      <div class="span6 item-views btn-group">
+      <div class="span2 item-views btn-group">
           <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"image"),:remote=>true do%>
-		        <%= button_tag "side-by-side",
+            <%= button_tag "<i class='icon-pause'></i>".html_safe,
+                :title => t('frda.show.ap.buttons.side_by_side'),
                 :class => 'btn btn-small',
                 :disabled => ['flipbook', 'ocr'].include?(@mode) ? false : true %>
-					<% end %>
+          <% end %>
 
           <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"ocr"),:remote=>true do%>
-	        <%= button_tag "text-only",
+          <%= button_tag "<i class='icon-font'></i>".html_safe,
+              :title => t('frda.show.ap.buttons.text_only'),
               :class => 'btn btn-small',
               :disabled => ['ocr'].include?(@mode) ? true : false %>
-					<% end %>
+          <% end %>
 
-		 <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"flipbook"),:remote=>true,:class=>'hidden showOnLoad' do%>        
-	        <%= button_tag "read in flipbook",
+     <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"flipbook"),:remote=>true,:class=>'hidden showOnLoad' do%>
+          <%= button_tag "<i class='icon-fullscreen'></i>".html_safe,
+              :title => t('frda.show.ap.buttons.flipbook'),
               :class => 'btn btn-small hidden showOnLoad',
               :disabled => ['flipbook'].include?(@mode) ? true : false %>
-					<% end %>
-
-        <button class="btn btn-small">
-          fullscreen
-        </button>
+          <% end %>
       </div>
 
-      <div class="span3 item-actions">
+      <div class="span5 item-actions">
         <div id="item_actions-dropdown" class="dropdown pull-right  hidden-phone">
           <span class="hide-text"><%= t('frda.show.item_actions') %></span>
           <ul class="css-dropdown">
@@ -77,16 +76,16 @@ end
                 <li class="download-option">
                  <%= link_to t('frda.show.download_options.page_text'), @document.txt_file, :class => 'downloadLink' %>
                 </li>
-								<% if @document.pdf_file %>
-	                <li class="download-option">
-	                 <%= link_to "#{t('frda.show.volume')} PDF - #{number_to_human_size(@document.pdf_file_size)}", @document.pdf_file, :class => 'downloadLink' %>
-	                </li>
-								<% end %>
-								<% if @document.tei_file %>
+                <% if @document.pdf_file %>
+                  <li class="download-option">
+                   <%= link_to "#{t('frda.show.volume')} PDF - #{number_to_human_size(@document.pdf_file_size)}", @document.pdf_file, :class => 'downloadLink' %>
+                  </li>
+                <% end %>
+                <% if @document.tei_file %>
                <li class="download-option">
                  <%= link_to "#{t('frda.show.volume')} (TEI XML) - #{number_to_human_size(@document.tei_file_size)}", @document.tei_file, :class => 'downloadLink' %>
                 </li>
-								<% end %>
+                <% end %>
               </ul>
             </li>
           </ul>
@@ -124,12 +123,12 @@ end
     <% end %>
 
     <div class="btn-group">
-      <%= link_to "&#60;".html_safe, (link_prev_page ? show_page_path(:id=>@document.druid,:page_num=>((@document.page_sequence.to_i)-1).to_s,:from_id=>@document.id,:mode=>@mode) : '#'),
-		  :remote=>true,
+      <%= link_to "<i class='icon-chevron-left'></i>".html_safe, (link_prev_page ? show_page_path(:id=>@document.druid,:page_num=>((@document.page_sequence.to_i)-1).to_s,:from_id=>@document.id,:mode=>@mode) : '#'),
+      :remote=>true,
           :class => 'btn btn-mini',
           :disabled => !link_prev_page %>
-      <%= link_to "&#62;".html_safe, (link_next_page ? show_page_path(:id=>@document.druid,:page_num=>((@document.page_sequence.to_i)+1).to_s,:from_id=>@document.id,:mode=>@mode) : '#'),
-		  :remote=>true,
+      <%= link_to "<i class='icon-chevron-right'></i>".html_safe, (link_next_page ? show_page_path(:id=>@document.druid,:page_num=>((@document.page_sequence.to_i)+1).to_s,:from_id=>@document.id,:mode=>@mode) : '#'),
+      :remote=>true,
           :class => 'btn btn-mini',
           :disabled => !link_next_page %>
     </div>
@@ -140,36 +139,36 @@ end
 <div class="row document-details">
   <% if ['flipbook', 'ocr'].include?(@mode) == false%>
     <div class="span6">
-	       <div id="ap_page_image" class="item image-box active hidden showOnLoad" style="position:relative;"></div>
-					<noscript>
-							<div class="item image-box active">
-		        	<%= image_tag(@document.first_image(:size=>:medium), :alt => @document.title) %>
-						</div>
-					</noscript>
+       <div id="ap_page_image" class="item image-box active hidden showOnLoad" style="position:relative;"></div>
+        <noscript>
+          <div class="item image-box active">
+            <%= image_tag(@document.first_image(:size=>:medium), :alt => @document.title) %>
+          </div>
+        </noscript>
     </div>
   <% end %>
 
   <div class="span<%= ['ocr','flipbook'].include?(@mode) ? "12" : "6"%> metadata">
-		<% if @mode == 'flipbook' %>
-		<span id="loading_message">Loading, please wait...</span>
-	    <div class="flipbook">
-				<iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/view.jsp?id=<%=@document.druid%>#page/<%=@document.page_sequence%>/mode/1up" width="750" height="650"></iframe>
-	    </div>
-	  <% end %>
-		<% if ['image', nil, '', 'ocr'].include?(@mode) %>
-	    <div class="ocr-box">
-	      <%= simple_format(@document.formatted_page_text)%>
-	    </div>
-		<% end %>
+    <% if @mode == 'flipbook' %>
+    <span id="loading_message">Loading, please wait...</span>
+      <div class="flipbook">
+        <iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/embed.jsp?id=<%=@document.druid%>#page/<%=@document.page_sequence%>/mode/1up" width="750" height="650"></iframe>
+      </div>
+    <% end %>
+    <% if ['image', nil, '', 'ocr'].include?(@mode) %>
+      <div class="ocr-box">
+        <%= simple_format(@document.formatted_page_text)%>
+      </div>
+    <% end %>
   </div>
 
 </div>
 
 <div class="row ext-links">
-	<div id="physical" class="span6 pull-right">
-		<a href="http://searchworks.stanford.edu/view/1071767">Find this volume in SearchWorks</a>
-	</div>
-	<div id="purl" class="span6">
-		<%= link_to @document.purl, @document.purl%>
-	</div>
+  <div id="physical" class="span6 pull-right">
+    <a href="http://searchworks.stanford.edu/view/1071767">Find this volume in SearchWorks</a>
+  </div>
+  <div id="purl" class="span6">
+    <%= link_to @document.purl, @document.purl%>
+  </div>
 </div>

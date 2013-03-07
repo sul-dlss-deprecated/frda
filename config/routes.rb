@@ -19,6 +19,8 @@ Frda::Application.routes.draw do
 
     match 'show_page', :to=>'catalog#show_page', :as =>'show_page'
     
+    get 'catalog/:id/mods', :to => "catalog#mods", :as => "mods_view"
+    
     match 'ap', :to => 'catalog#index', :as =>'ap_collection', :defaults=>{:f=>{:collection_ssi=>[Frda::Application.config.ap_id]}}
     match 'images', :to => 'catalog#index', :as =>'images_collection', :defaults=>{:f=>{:collection_ssi=>[Frda::Application.config.images_id]}}
     

@@ -278,6 +278,14 @@ class CatalogController < ApplicationController
     end
   end
   
+  def mods
+    @response, @documents = get_solr_response_for_field_values(SolrDocument.unique_key,params[:id])
+    respond_to do |format|
+      format.html
+      format.js { render :layout => false }
+    end
+  end
+  
   def group_response?
     !(params and params[:f] and params[:f][:vol_title_ssi] and !params[:f][:vol_title_ssi].blank?)
   end

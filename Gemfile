@@ -13,6 +13,8 @@ gem "blacklight", '~> 4.0.0'
 #gem 'eadsax', :git => "https://github.com/sul-dlss/eadsax.git"
 gem 'ffi'
 
+gem "coderay"
+
 gem 'stanford-mods'
 
 gem 'bootstrap-datepicker-rails'

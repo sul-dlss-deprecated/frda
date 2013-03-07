@@ -1,0 +1,2 @@
+<%- document = @documents.first -%>
+<%= CodeRay::Duo[:xml, :div].highlight(document[:mods_xml]).html_safe %>

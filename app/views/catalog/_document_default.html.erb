@@ -58,7 +58,9 @@
               <div class="snippet">
                 <% unless document.page_text.blank? %>
                   <span class="longtext">
-                    <%= truncate(document.page_text, :length => 600) %>
+                    <%= document.page_text.map do |text|
+                          truncate_highlight(text, :around => 20, :length => 600)
+                      end.join("<br/>").html_safe %>
                   </span>
                 <% end %>
               </div>
@@ -66,7 +68,7 @@
 
           </div>
 
-          <%= render_document_partial document, :index, :document_counter => index %>
+          <%#= render_document_partial document, :index, :document_counter => index %>
         </div>
       </div>
     <%- end -%>

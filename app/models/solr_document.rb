@@ -99,7 +99,7 @@ class SolrDocument
     if self.highlight_field(:text_ftsiv)
       self.highlight_field(:text_ftsiv)
     else
-      self[:text_ftsiv]
+      [self[:text_ftsiv]]
     end
   end
   

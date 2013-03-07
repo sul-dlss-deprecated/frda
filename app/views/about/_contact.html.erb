@@ -7,7 +7,7 @@
 	<div class="control-group">
 	  <label class="control-label" for="name"><%=t('frda.contact.name')%></label>
 	  <div class="controls">
-	    <%=text_field_tag 'name', nil, :placeholder => "Name" %>
+	    <%=text_field_tag 'name', nil, :placeholder => t('frda.contact.name_placeholder') %>
 	  </div>
 	</div>
 
@@ -39,7 +39,7 @@
 
 	<div class="control-group">
 	  <div class="controls">
-	    <%=submit_tag 'Send', :class => 'btn' %>
+	    <%=submit_tag t('blacklight.email.form.submit'), :class => 'btn' %>
 	  </div>
 	</div>
 <% end %>

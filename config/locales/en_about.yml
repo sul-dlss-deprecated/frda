@@ -5,6 +5,7 @@ en:
       problem: 'Problem with the website'
       other_questions: 'Other questions'
       name: 'Your name'
+      name_placeholder: 'Name'
       email: 'Your email'
       email_address: 'Email address'
       subject: 'Subject'

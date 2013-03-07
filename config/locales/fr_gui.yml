@@ -2,7 +2,7 @@ fr:
   blacklight:
       application_name: 'Archives numériques de la Révolution française'
   frda:
-    application_name_subtitle: 'A collaboration of the Stanford University Libraries and the Bibliothèque nationale de France'
+    application_name_subtitle: 'Une collaboration entre les bibliothèques de l’Université de Stanford et la Bibliothèque nationale de France'
     facet:
       personal_name: 'Personal name'
       location: 'Location'
@@ -27,6 +27,7 @@ fr:
       contact: 'Contact'
       contact_us: 'Nous écrire'
       use_policy: Conditions d'utilisation
+      collection_highlights: 'Sélections'
       collections: 'Les sélections'
       background: 'Fond'
       content_inventory: 'Inventaire'
@@ -113,9 +114,14 @@ fr:
       showing: 'Page'
       of: 'sur'
       citation: 'Citation'
-      download: 'Download'
+      download: 'Télécharger'
+      download_options:
+        page_image: "Cette page (l'image)"
+        page_text: "Cette page (le texte)"
       cite:
-        title: 'Cite this item'
+        title: 'Citer'
+      select_session: "Séances"
+      go: 'ok'
     collection:
       collection_detail: 'Collection Detail'
       member_detail: 'Item Detail'
@@ -139,15 +145,17 @@ fr:
         gallery: 'Affichage mosaïque'
         list: 'Affichage synthétique'
         covers: 'Couvertures'
-      search_label: 'Résultats'
+      search_label: 'Rechercher'
       facets:
         title: 'Affiner'
       select_all_on_page: 'Select all on page'
+      results:
+        speaker: 'Locuteur'
     sidebar:
       actions:
         title: 'Actions'
         print: 'Print Item Details'
-        cite: 'Cite this Item'
+        cite: 'Citer'
         bookmark: 'Segnalibro'
       navigation:
         title: 'Navigation'

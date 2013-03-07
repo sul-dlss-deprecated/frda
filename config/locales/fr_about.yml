@@ -4,7 +4,8 @@ fr:
       select_topic: "Objet du message : choisir l'un des thèmes"
       problem: 'Site Web : problèmes techniques'
       other_questions: 'Autres questions'
-      name: 'Votre nom'
+      name: 'Nom et prénom'
+      name_placeholder: 'Nom'
       email: 'Votre courriel'
       email_address: 'Courriel'
       subject: 'Object du message'

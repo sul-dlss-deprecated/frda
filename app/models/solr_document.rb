@@ -96,7 +96,11 @@ class SolrDocument
   end
   
   def page_text
-    self[:text_ftsiv]
+    if self.highlight_field(:text_ftsiv)
+      self.highlight_field(:text_ftsiv)
+    else
+      self[:text_ftsiv]
+    end
   end
   
   def purl

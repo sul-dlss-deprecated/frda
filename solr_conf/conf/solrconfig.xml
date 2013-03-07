@@ -240,6 +240,10 @@
       <str name="facet.field">type_ssi</str>
       <str name="facet.field">doc_type_ssim</str>
       <str name="facet.field">session_govt_ssim</str>
+
+      <str name="hl">on</str>
+      <str name="hl.fl">text_ftsiv</str>
+      <str name="hl.fragsize">0</str>
     </lst>    
   </requestHandler>
   

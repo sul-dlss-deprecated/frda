@@ -120,8 +120,18 @@ en:
       of: 'of'
       citation: 'Citation'
       download: 'Download'
+      download_options:
+        page_image: 'Page (image)'
+        page_text: "Page (text)"
       cite:
         title: 'Cite this item'
+      select_session: "Select session"
+      go: 'Go'
+      ap:
+        buttons:
+          side_by_side: "side-by-side"
+          text_only: "text only"
+          flipbook: "read in flipbook"
     collection_members_grid:
       members_link: 'View all collection items'
       collection_link: 'View this collection'
@@ -144,6 +154,8 @@ en:
       facets:
         title: 'Browse'
       select_all_on_page: 'Select all on page'
+      results:
+        speaker: 'Speaker'
     sidebar:
       actions:
         title: 'Actions'

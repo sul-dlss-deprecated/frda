@@ -44,6 +44,35 @@ module ApplicationHelper
     end
   end
 
+  def truncate_highlight(text, options={})
+    unless (text.include?("<em>") and text.include?("</em>"))
+      options[:length] = text.length unless options[:length]
+      return truncate(text, options)
+    end
+
+    first_position = text.index("<em>")
+    last_position = text.enum_for(:scan, /<\/em>/).map{ Regexp.last_match.begin(0) }.last + 4
+    if options[:before]
+      first_position -= options[:before].to_i
+    end
+    if options[:after]
+      last_position += options[:after].to_i
+    end
+    if options[:around]
+      first_position -= options[:around].to_i
+      last_position += options[:around].to_i
+    end
+    first_position = 0 if first_position < 0
+    omission = "..."
+    omission = options[:omission] if options[:omission]
+
+    "#{omission}#{text[first_position..last_position]}#{omission}"
+  end
+
+  def highlight_text(doc, field)
+    doc.highlight_field(field) ? doc.highlight_field(field).first : doc[field]
+  end
+
   def link_to_collection_highlight(highlight)
     link_to("#{highlight.send("name_#{I18n.locale}")}", catalog_index_path(params_for_collection_highlight(highlight)))
   end

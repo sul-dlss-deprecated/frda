@@ -12,11 +12,11 @@ class Frda::GroupedSolrResponse < Mash
   
   class SolrGroup
     attr_reader :group, :total, :start, :docs
-    def initialize group, total, start, docs
+    def initialize group, total, start, docs, response
       @group = group
       @total = total
       @start = start
-      @docs = docs.map{|doc| SolrDocument.new(doc) }
+      @docs = docs.map{|doc| SolrDocument.new(doc, response) }
     end
   end
 
@@ -55,7 +55,7 @@ class Frda::GroupedSolrResponse < Mash
     
   def groups
     @groups ||= group_element["groups"].map do |group|
-      SolrGroup.new(group["groupValue"], group["doclist"]["numFound"], group["doclist"]["start"], group["doclist"]["docs"]) 
+      SolrGroup.new(group["groupValue"], group["doclist"]["numFound"], group["doclist"]["start"], group["doclist"]["docs"], self) 
     end
   end
 

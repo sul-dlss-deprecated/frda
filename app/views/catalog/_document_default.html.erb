@@ -46,7 +46,7 @@
               <div class="page-speaker">
                 <% unless list_is_empty?(document.speaker) || document.images_item? %>
                   <span class="speaker">
-                    <span class="frda-label">Speaker:&nbsp;</span>
+                    <span class="frda-label"><%=t('frda.search.results.speaker')%>:&nbsp;</span>
                     <%=show_list(document.speaker)%>
                   </span>
                 <% end %>

@@ -61,4 +61,34 @@ describe ApplicationHelper do
     end
   end
   
+  describe "truncate_hightlight" do
+    before(:all) do
+      @no_highlight = "Hello, this is a string that does not have any highlighting."
+      @single_highlight = "Hello, <em>this string</em> has a single highlight in it."
+      @multi_highlights = "Hello, <em>this string</em> has <em>multiple</em> highlights in it."
+    end
+    it "should preserve fields w/o highlighting" do
+      truncate_highlight(@no_highlight).should == @no_highlight
+    end
+    it "should send on the parameters to truncate for non highlighted text" do
+      truncate_highlight(@no_highlight, :length => 8).should == "Hello..."
+    end
+    it "should truncate around the first and last em if no options are passed" do
+      truncate_highlight(@single_highlight).should == "...<em>this string</em>..."
+      truncate_highlight(@multi_highlights).should == "...<em>this string</em> has <em>multiple</em>..."
+    end
+    it "should grab the requested number of characters before the highlighting" do
+      truncate_highlight(@single_highlight, :before => 3).should == "...o, <em>this string</em>..."
+      truncate_highlight(@multi_highlights, :before => 3).should == "...o, <em>this string</em> has <em>multiple</em>..."
+    end
+    it "should grab the requested number of characters after the highlighting" do
+      truncate_highlight(@single_highlight, :after => 3).should == "...<em>this string</em> ha..."
+      truncate_highlight(@multi_highlights, :after => 3).should == "...<em>this string</em> has <em>multiple</em> hi..."
+    end
+    it "should grab the requested number of characters around the highlighting" do
+      truncate_highlight(@single_highlight, :around => 3).should == "...o, <em>this string</em> ha..."
+      truncate_highlight(@multi_highlights, :around => 3).should == "...o, <em>this string</em> has <em>multiple</em> hi..."
+    end
+  end
+
 end

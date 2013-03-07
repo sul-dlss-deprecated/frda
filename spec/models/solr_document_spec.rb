@@ -64,4 +64,22 @@ describe SolrDocument do
     end
   end
   
+  describe "mods" do
+    before(:all) do
+      @mods_doc = SolrDocument.new({:id => "12345", :mods_xml => "<?xml version='1.0'?><mods><note>This is the first note.</note><note>This is the second note.</note></mods>"})
+      @no_mods_doc = SolrDocument.new({:id => "54321"})
+    end
+    it "should return a Nokogiri::XML::Document when mods_xml is available" do
+      @mods_doc.mods.should be_a Nokogiri::XML::Document
+    end
+    it "should provide an easy API to the elements in the XML" do
+      @mods_doc.mods.note.length.should == 2
+      @mods_doc.mods.note.first.text.should == "This is the first note."
+      @mods_doc.mods.note.last.text.should == "This is the second note."
+    end
+    it "should return nil in the absence of mods_xml" do
+      @no_mods_doc.mods.should be_nil
+    end
+  end
+  
 end

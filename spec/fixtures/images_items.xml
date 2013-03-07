@@ -18,6 +18,8 @@
    <field name="date_issued_dtsim">1790-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Aspects culturels et artistiques -- Fêtes et célébrations -- La Fête de la Fédération (14 juillet 1790) -- La cérémonie au Champ-de-Mars</field>
    <field name="catalog_heading_etsimv">Themes in art and culture -- Festivals and celebrations -- The "Fête de la Fédération" (14 July 1790) -- The ceremony on the Champ-de-Mars</field>    
+   
+   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>An nonprojected graphic by Abraham Giradret</note></mods>]]></field>
  </doc>
  
  <doc>
@@ -39,6 +41,8 @@
    <field name="date_issued_dtsim">1789-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Aspects culturels et artistiques -- Jeux et loisirs -- Jeux divers</field>
    <field name="catalog_heading_etsimv">Themes in art and culture -- Games and leisure -- Other games</field>
+   
+   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>A print that was collected by Carl de Vinck</note></mods>]]></field>
  </doc>
  <doc>
    <field name="id">bg698df3242</field>
@@ -61,6 +65,8 @@
    <field name="date_issued_dtsim">1794-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- R</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- R</field>
+   
+   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>An image of Maximilien de Rebespierre speaking</note></mods>]]></field>
  </doc>
 
  <doc>
@@ -82,6 +88,8 @@
    <field name="date_issued_dtsim">1795-01-01T00:00:00Z</field>
    <field name="date_issued_ssim">1799</field>
    <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
+   
+   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><title><titleInfo>Membre du Directoire exécutif dans son grand costume</titleInfo></title></mods>]]></field>
  </doc>
 
  <doc>
@@ -107,6 +115,8 @@
    <field name="date_issued_dtsim">1802-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Les événements de la Révolution -- Rivalités politiques et antagonismes sociaux -- Les luttes politiques -- De thermidor au coup d'état du 18 brumaire (novembre 1799)</field>
    <field name="catalog_heading_etsimv">The events of the Revolution -- Political rivalries and social conflict -- Political struggles -- From 9 Thermidor (July 1794) to the "coup d'état" of 18 Brumaire (November 1799)</field>    
+   
+   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
  </doc>
  
  <doc>
@@ -130,6 +140,8 @@
    <field name="date_issued_dtsim">1789-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Les événements de la Révolution -- La politique au quotidien -- Les "types du jour" -- Les enfants</field>
    <field name="catalog_heading_etsimv">The events of the Revolution -- Everyday politics -- Typical characters -- Children</field>    
+   
+   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>An image by Brouwer, G.</note><note>An image by Béricourt, E.</note></mods>]]></field>
  </doc>
  
  <doc>
@@ -151,6 +163,8 @@
    <field name="date_issued_dtsim">1790-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Les événements de la Révolution -- La religion -- Le discrédit du clergé et de l'Église -- La critique des moeurs du clergé</field>
    <field name="catalog_heading_etsimv">The events of the Revolution -- Religion -- The clergy and Church discredited -- The attack on priests' morals</field>
+   
+   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
  </doc>
 
  <doc>
@@ -175,6 +189,8 @@
    <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
+   
+   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
  </doc>
 
 <doc>
@@ -199,6 +215,8 @@
    <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
+   
+   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>A portrait of Napoleon</note></mods>]]></field>
  </doc>
 
 <doc>
@@ -223,6 +241,8 @@
    <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
+   
+   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
  </doc>
 
 <doc>
@@ -247,4 +267,6 @@
    <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
+   
+   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
  </doc>

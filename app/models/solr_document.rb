@@ -151,6 +151,12 @@ class SolrDocument
     images(params).first
   end
   
+  
+  def mods
+    return nil unless self[:mods_xml]
+    @mods ||= Stanford::Mods::Record.new.from_str(self[:mods_xml], false)
+  end
+  
    def self.image_dimensions
      options = {:default => "_thumb",
                 :square   => "_square",

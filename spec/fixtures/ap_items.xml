@@ -33,6 +33,8 @@
   <field name="spoken_text_timv">Page 1 spoken text</field>
   
   <field name="text_tiv">Page 1 text</field>
+  
+  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><title><titleInfo>ASSEMBLÉE NATIONALE LÉGISLATIVE.</titleInfo></title></mods>]]></field>
 </doc>
 
 <doc>
@@ -98,6 +100,8 @@
     sanction, ou qu'ils aient été présentés par trois législatures. Mais cela n'empeche pas qu'ils
     ne soient des lois. Le roi a seulement le droit de suspendre l'exécution de la loi, mais elle
     est faite par le Corps législatif. Je demande donc l'ordre du jour sur la motion de M. Ghéron.</field>
+    
+    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
 </doc>
 
 <doc>
@@ -132,6 +136,8 @@
   <field name="spoken_text_timv">Page 3 spoken text</field>
   
   <field name="text_tiv">Page 3 text</field>
+  
+  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>Speech by M. Dorizy</note></mods>]]></field>
 </doc>
 
 <doc>
@@ -179,6 +185,8 @@
     M. Fauchet
     secrétaire, donne lecture des lettres, adresses et pétitions suivantes :
     1° Lettre de M. Bertrand, ministre de la marine, par laquelle il communique à l'Assemblée</field>
+    
+    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>Sessions from December 1791 - January 1792</note></mods>]]></field>
 </doc>
 
 <doc>
@@ -225,6 +233,8 @@
     demain.
     something something something.
   </field>
+  
+  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note></note></mods>]]></field>
 </doc>
 
 <doc>
@@ -263,6 +273,8 @@
     Constitution, et la prospérité de l'empire français, un vœu qu'elle avait fait en 1620.
     Adresses d'une multitude de communautés,       
   </field>    
+  
+  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>National Assemble</note></mods>]]></field>
 </doc>
 
 <!-- contents -->
@@ -292,7 +304,9 @@
     Pages.
     Avertissement......................................I
     Avant propos........... ...................... 1
-  </field>    
+  </field>   
+  
+  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>Contents of Introduction</note><note>Table of Contents</note></mods>]]></field> 
 </doc>
 
 <!-- table_alpha -->
@@ -321,7 +335,9 @@
     DES NOMS ET QUALITÉS DE MESSIEURS LES DÉPUTÉS ET SUPPLÉANTS
     A L'ASSEMBLÉE NATIONALE,
     DRESSÉE PAR ORDRE ALPHABÉTIQUE DE SÉNÉCHAUSSÉES ET BAILLIAGES.
-  </field>    
+  </field> 
+  
+  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>   
 </doc>
 <doc>
   <field name="id">mc666yy3026_00_0144</field>
@@ -348,5 +364,7 @@
     B
     Bonneneontre. P. Soucelier.
     Brazey. Philippon.
-  </field>    
+  </field>  
+  
+  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note></note></mods>]]></field>  
 </doc>

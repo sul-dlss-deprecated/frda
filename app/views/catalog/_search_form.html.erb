@@ -11,20 +11,19 @@
       </div>
       <div id="collapseSearch">
         <div class="accordion-inner well">
-          <label>
-            <%= check_box_tag 'dates', 1, !params['dates'].blank? %>on or between<br>
+            <p class="form_label"><%= check_box_tag 'dates', 1, !params['dates'].blank? %>on or between<br>
             <%= text_field_tag 'date-start', params["date-start"], :class => 'input-mini date', :placeholder => "1780-05-18", :"data-date-picker" => true %>
             to
             <%= text_field_tag 'date-end', params["date-end"], :class => 'input-mini date', :placeholder => "1799-04-26", :"data-date-picker" => true %>
-          </label>
-
-          <label>
+					</p>
+					
+					<p class="form_label">
             <%= check_box_tag 'speeches', 1, !params['speeches'].blank? %>
             in speeches by
             <%= text_field_tag 'by-speaker', params["by-speaker"], :class => 'input-mini' %>
-         </label>
-
-          <label>
+					</p>
+					
+					<p class="form_label">
             <%= check_box_tag 'prox', 1, !params["prox"].blank? %>
             separated by
             <%= select_tag "words",
@@ -34,17 +33,17 @@
                  <option>4</option>
                  <option>5</option>".html_safe %>
             words
-          </label>
-
-          <label>
+					</p>
+					
+					<p class="form_label">
             <%= check_box_tag 'terms', 1, !params["terms"].blank? %>
             in title &amp; key terms only
-          </label>
-
-          <label>
+					</p>
+					
+					<p class="form_label">
             <%= check_box_tag 'exact', 1, !params["exact"].blank? %>
             exact match (no stemming)
-          </label>
+					</p>
         </div>
       </div>
     </div>

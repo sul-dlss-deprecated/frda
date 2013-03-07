@@ -14,6 +14,7 @@ $(document).ready(function(){
   handleSearchFormSubmit();
 
   searchOptionsDatePicker();
+	searchOptionsToggles();
 });
 
 function showImageViewer(imageURL,target) {
@@ -71,6 +72,32 @@ function toggleSearchOptions(){
 			}
 		});	
 	}
+}
+
+// enable/disable certain advanced search options that are incompatible with each other
+function searchOptionsToggles(){
+	$('#prox').click(function(){ 
+		if ($('#prox').attr('checked'))
+			{ // proximity search checked, uncheck "in speeches" fields and clear values
+				$('#speeches').attr('checked',false);	
+				$('#by-speaker').attr('value','');	
+			}
+	}
+ )
+
+	$('#speeches').click(function(){ 
+		if ($('#speeches').attr('checked'))
+			{ // in speeches by field checked, uncheck "separated by" fields
+				$('#prox').attr('checked',false);	
+			}
+	}
+ )
+
+	$('#by-speaker').click(function(){ 
+		$('#speeches').attr('checked',true);
+		$('#prox').attr('checked',false);	
+	}
+ )
 }
 
 function searchOptionsDatePicker(){

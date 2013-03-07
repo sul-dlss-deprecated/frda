@@ -6,9 +6,9 @@
 		showImageViewer('<%=@document.first_image(:size=>:full,:format=>"none")%>','ap_page_image');
 	<% end %>
 	<% if @mode=='flipbook'%>
-		$('#page-navigation').hide();
+		$('#page-navigation').addClass('hidden');
 	<% else %>
-		$('#page-navigation').show();
+		$('#page-navigation').removeClass('hidden');
 	<% end %>
 	window.history.pushState({}, "<%=@document.title%>", "<%=catalog_path(@document.id,:mode=>@mode)%>");
 	document.title = '<%="#{t('blacklight.application_name')}: #{@document.title}"%>';

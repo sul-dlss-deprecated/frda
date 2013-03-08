@@ -9,7 +9,7 @@
     <field name="id" type="string" stored="true" indexed="true" multiValued="false" required="true"/>
     <field name="timestamp" type="date" indexed="true" stored="true" default="NOW" multiValued="false"/>
     <field name="mods_xml" type="string" stored="true" indexed="false" multiValued="false"/>
-   
+    
     <!-- english text -->
     <dynamicField name="*_eti" type="text_en" stored="false" indexed="true" multiValued="false"/>
     <dynamicField name="*_etim" type="text_en" stored="false" indexed="true" multiValued="true"/>
@@ -107,6 +107,7 @@
 
   <!-- copy fields -->
   <copyField source="session_date_ftsimv" dest="session_date_sim" />
+  <copyField source="session_date_dtsim" dest="search_date_dtsim" />
   <copyField source="text_tiv" dest="text_ftsiv" />
   <copyField source="spoken_text_timv" dest="spoken_text_ftsimv" />
   <copyField source="title_short_ftsi" dest="title_short_ti" />
@@ -114,7 +115,7 @@
   <copyField source="vol_title_ssi" dest="result_group_ssi" />
 
   <types>
-	  <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+    <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>    
     <fieldType name="rand" class="solr.RandomSortField" omitNorms="true"/>
     
@@ -136,7 +137,7 @@
     <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
     <!-- A Trie based date field for faster date range queries and date faceting. -->
     <fieldType name="tdate" class="solr.TrieDateField" precisionStep="6" positionIncrementGap="0"/>
-
+        
 	   <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType"
 	     geo="true" distErrPct="0.025" maxDistErr="0.000009" units="degrees" />
 

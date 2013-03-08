@@ -3,6 +3,7 @@
    <field name="image_id_ssm">T0000001.jp2</field>
    <field name="druid_ssi">bb018fc7286</field>
    <field name="collection_ssi">Images de la Révolution française</field>
+	 <field name="result_group_ssi">Images de la Révolution française</field>
    <field name="type_ssi">image</field>
    <field name="doc_type_ssim">Image fixe</field>
    <field name="doc_type_ssim">nonprojected graphic</field>
@@ -27,6 +28,7 @@
    <field name="image_id_ssm">T0000001.jp2</field>
    <field name="druid_ssi">bb101kw2226</field>
    <field name="collection_ssi">Images de la Révolution française</field>
+	 <field name="result_group_ssi">Images de la Révolution française</field>
    <field name="type_ssi">image</field>
    <field name="doc_type_ssim">Image fixe</field>
    <field name="doc_type_ssim">nonprojected graphic</field>
@@ -49,6 +51,7 @@
    <field name="image_id_ssm">T0000001.jp2</field>
    <field name="druid_ssi">bg698df3242</field>
    <field name="collection_ssi">Images de la Révolution française</field>
+	 <field name="result_group_ssi">Images de la Révolution française</field>
    <field name="type_ssi">image</field>
    <field name="doc_type_ssim">Image fixe</field>
    <field name="doc_type_ssim">nonprojected graphic</field>
@@ -74,6 +77,7 @@
    <field name="image_id_ssm">T0000001.jp2</field>
    <field name="druid_ssi">bb298qd7487</field>
    <field name="collection_ssi">Images de la Révolution française</field>
+	 <field name="result_group_ssi">Images de la Révolution française</field>
    <field name="type_ssi">image</field>
    <field name="doc_type_ssim">Image fixe</field>
    <field name="doc_type_ssim">nonprojected graphic</field>
@@ -97,6 +101,7 @@
    <field name="image_id_ssm">T0000001.jp2</field>
    <field name="druid_ssi">kb852bf7877</field>
    <field name="collection_ssi">Images de la Révolution française</field>
+	 <field name="result_group_ssi">Images de la Révolution française</field>
    <field name="type_ssi">image</field>
    <field name="doc_type_ssim">Image fixe</field>
    <field name="doc_type_ssim">nonprojected graphic</field>
@@ -124,6 +129,7 @@
    <field name="image_id_ssm">T0000001.jp2</field>
    <field name="druid_ssi">qv647nz8770</field>
    <field name="collection_ssi">Images de la Révolution française</field>
+	 <field name="result_group_ssi">Images de la Révolution française</field>
    <field name="type_ssi">image</field>
    <field name="doc_type_ssim">Image fixe</field>
    <field name="doc_type_ssim">nonprojected graphic</field>
@@ -149,6 +155,7 @@
    <field name="image_id_ssm">T0000001.jp2</field>
    <field name="druid_ssi">zp486wj7751</field>
    <field name="collection_ssi">Images de la Révolution française</field>
+	 <field name="result_group_ssi">Images de la Révolution française</field>
    <field name="type_ssi">image</field>
    <field name="doc_type_ssim">Image fixe</field>
    <field name="doc_type_ssim">nonprojected graphic</field>
@@ -172,6 +179,7 @@
    <field name="image_id_ssm">T0000001.jp2</field>
    <field name="druid_ssi">zp695fd1911</field>
    <field name="collection_ssi">Images de la Révolution française</field>
+	 <field name="result_group_ssi">Images de la Révolution française</field>
    <field name="type_ssi">image</field>
    <field name="doc_type_ssim">Image fixe</field>
    <field name="doc_type_ssim">nonprojected graphic</field>
@@ -198,6 +206,7 @@
    <field name="image_id_ssm">T0000001.jp2</field>
    <field name="druid_ssi">bb018fc7286</field>
    <field name="collection_ssi">Images de la Révolution française</field>
+	 <field name="result_group_ssi">Images de la Révolution française</field>
    <field name="type_ssi">image</field>
    <field name="doc_type_ssim">Image fixe</field>
    <field name="doc_type_ssim">nonprojected graphic</field>
@@ -224,6 +233,7 @@
    <field name="image_id_ssm">T0000001.jp2</field>
    <field name="druid_ssi">bb039cc5395</field>
    <field name="collection_ssi">Images de la Révolution française</field>
+	 <field name="result_group_ssi">Images de la Révolution française</field>
    <field name="type_ssi">image</field>
    <field name="doc_type_ssim">Image fixe</field>
    <field name="doc_type_ssim">nonprojected graphic</field>
@@ -250,6 +260,7 @@
    <field name="image_id_ssm">T0000001.jp2</field>
    <field name="druid_ssi">bb101kw2226</field>
    <field name="collection_ssi">Images de la Révolution française</field>
+	 <field name="result_group_ssi">Images de la Révolution française</field>
    <field name="type_ssi">image</field>
    <field name="doc_type_ssim">Image fixe</field>
    <field name="doc_type_ssim">nonprojected graphic</field>

@@ -184,6 +184,7 @@ span.content-type {
 .nav > li > a  {border-radius: 6px;}
 
 .hidden {display: none;}
+.off-screen {position: absolute; left: -100000px;}
 
 // Override Blacklight theme pagination styling
 .pagination {

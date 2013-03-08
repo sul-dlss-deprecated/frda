@@ -190,8 +190,10 @@ en:
         speaker: 'Speaker'
       options:
         between: "on or between"
-        to: "to"
+        start_date: "start date"
+        to: "to<span class='off-screen'> end date</span>"
         speeches: "in speeches by"
+        speaker_name: "speaker name"
         separated: "separated by"
         words: "words"
         in_title: "in title & key terms only"

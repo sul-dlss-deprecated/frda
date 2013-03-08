@@ -198,9 +198,11 @@ fr:
       results:
         speaker: 'Locuteur'
       options:
-        between: "en ou de"
-        to: "à"
+        between: "par date"
+        start_date: "du"
+        to: "au"
         speeches: "dans les discours de"
+        speaker_name: "nom du locuteur"
         separated: "à"
         words: "mots d'écart"
         in_title: "par? titres et tables/légends"

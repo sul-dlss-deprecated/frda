@@ -6,20 +6,24 @@ en:
       more_highlights: More highlights
       about_collections_html: About the collections
       about_text_html: |
-        <p>
-          The French Revolution Digital Archive (FRDA) is a multi-year collaboration of the Stanford University
-          Libraries and the Bibliothèque nationale de France (BnF) to produce a digital version of the key
-          research sources of the French Revolution and make them available to the international scholarly
-          community. The archive is based around two main resources, the Archives parlementaires and a vast
-          corpus of images first brought together in 1989 and known as the Images de la Revolution française.
-        </p>
+        <p>The <em>French Revolution Digital Archive</em> (<em>FRDA</em>) is a multi-year collaboration of the
+        Stanford University Libraries and the <em>Bibliothèque nationale de France</em> (BnF) to produce a digital
+        version of the key research sources of the French Revolution and make them available to the international
+        scholarly community. The archive is based around two main resources, the <em>Archives parlementaires </em>and
+        a vast corpus of images first brought together in 1989 and known as the <em>Images de la Revolution française.
+        </em></p>
       about_text_ap_html: |
-          The Archives parlementaires is a chronologically-ordered edited collection of sources on the French Revolution. 
-          It was conceived in the mid 19th century as a project to produce a definitive record of parliamentary deliberations and also includes letters, 
-          reports, speeches, and other first-hand accounts from a great variety of published and archival sources. Because of copyright limitations, 
-          FRDA contains the AP volumes covering the years 1787-1794. The text of these volumes has been marked up using TEI so that speakers, 
-          places, dates, and terms in the published index can be easily found.
+        <p>The <em>Archives parlementaires</em> is a chronologically-ordered edited collection of sources on the
+        French Revolution. It was conceived in the mid 19th century as a project to produce a definitive record of
+        parliamentary deliberations and also includes letters, reports, speeches, and other first-hand accounts from a
+        great variety of published and archival sources. Because of copyright limitations, <em>FRDA</em> contains the
+        <em>AP</em> volumes covering the years 1787-1794. The text of these volumes has been marked up using TEI so
+        that speakers, places, dates, and terms in the published index can be easily found. Users can see both scanned
+        images of the <em>AP</em> pages or just the texts. </p>
       about_text_images_html: |
-          The Images are composed of high-resolution digital images of approximately 12,000 individual visual items, primarily prints, but also illustrations, medals, coins, and other 
-          objects, which display aspects of the Revolution. These materials were selected from across the BnF’s departments,  and include thousands of images for the important collections
-          entitled Hennin and De Vinck. Detailed metadata exists for the images, so that researchers can search by artist, subject, genre, and place.
+        <p>The <em>Images</em> are composed of high-resolution digital images of approximately 14&nbsp;000 individual
+        visual items, primarily prints, but also illustrations, medals, coins, and other objects, which display
+        aspects of the Revolution. These materials were selected, mainly from the collections of the Département des
+        Estampes et de la photographie, but also from other BnF departments, and include thousands of images for the
+        important collections entitled Hennin and De Vinck. Detailed metadata exists for the images, so that
+        researchers can search by artist, subject, genre, and place. </p>

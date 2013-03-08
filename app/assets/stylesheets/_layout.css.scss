@@ -62,7 +62,7 @@ body {
     padding: 0px;
     margin: 0px;}
   }
-  #collapseSearch label {font-size: 0.85em;}
+  #collapseSearch label {display: inline; font-size: 1em;}
   #collapseSearch input[type="checkbox"] {
     display: inline;
     margin: 0 4px 0 0;

@@ -161,7 +161,6 @@ class CatalogController < ApplicationController
     # facet bar
 
     config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection'
-    config.add_facet_field 'date_issued_iim', :label => 'frda.show.year'
     config.add_facet_field 'doc_type_ssim', :label => 'frda.show.type'
     config.add_facet_field 'medium_ssi', :label => 'frda.show.medium'
     config.add_facet_field 'genre_ssim', :label => 'frda.show.genre', :limit => 10
@@ -335,7 +334,7 @@ class CatalogController < ApplicationController
     if user_params["dates"] and (!user_params["date-start"].blank? and !user_params["date-end"].blank?)
       start_date = "#{DateTime.parse(user_params['date-start']).strftime("%Y-%m-%d")}T00:00:00Z"
       end_date = "#{(DateTime.parse(user_params['date-end']) + 1.day).strftime("%Y-%m-%d")}T00:00:00Z"
-      range_query = "session_date_dtsim:[#{start_date} TO #{end_date}]"
+      range_query = "search_date_dtsim:[#{start_date} TO #{end_date}]"
       if solr_params[:fq]
         solr_params[:fq] << range_query
       else

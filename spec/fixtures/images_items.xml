@@ -15,8 +15,7 @@
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Scènes historiques-1789-1799</field>
    <field name="medium_ssi">eau-forte</field>  
-   <field name="date_issued_ssim">1790</field>
-   <field name="date_issued_dtsim">1790-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1790-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Aspects culturels et artistiques -- Fêtes et célébrations -- La Fête de la Fédération (14 juillet 1790) -- La cérémonie au Champ-de-Mars</field>
    <field name="catalog_heading_etsimv">Themes in art and culture -- Festivals and celebrations -- The "Fête de la Fédération" (14 July 1790) -- The ceremony on the Champ-de-Mars</field>    
    
@@ -39,8 +38,7 @@
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Scènes symboliques-1789-1799.</field>
    <field name="medium_ssi">eau-forte, coul.</field>
-   <field name="date_issued_ssim">1789</field>
-   <field name="date_issued_dtsim">1789-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1789-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Aspects culturels et artistiques -- Jeux et loisirs -- Jeux divers</field>
    <field name="catalog_heading_etsimv">Themes in art and culture -- Games and leisure -- Other games</field>
    
@@ -64,8 +62,7 @@
    <field name="genre_ssim">Portraits-1789-1799.</field>
    <field name="medium_ssi">eau-forte, pointillé</field>
    <field name="speaker_ssim">Robespierre, Maximilien de</field>
-   <field name="date_issued_ssim">1794</field>
-   <field name="date_issued_dtsim">1794-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1794-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- R</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- R</field>
    
@@ -88,10 +85,8 @@
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Costume-1789-1799.</field>
    <field name="medium_ssi">eau-forte, coul.</field>
-   <field name="date_issued_ssim">1795</field>
-   <field name="date_issued_dtsim">1795-01-01T00:00:00Z</field>
-   <field name="date_issued_ssim">1799</field>
-   <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1795-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1799-01-01T00:00:00Z</field>
    
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><title><titleInfo>Membre du Directoire exécutif dans son grand costume</titleInfo></title></mods>]]></field>
  </doc>
@@ -116,8 +111,7 @@
    <field name="genre_ssim">Scènes historiques-1789-1799</field>
    <field name="medium_ssi">eau-forte, burin</field>
    <field name="speaker_ssim">Ramel, Jean-Pierre</field>
-   <field name="date_issued_ssim">1802</field>
-   <field name="date_issued_dtsim">1802-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1802-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Les événements de la Révolution -- Rivalités politiques et antagonismes sociaux -- Les luttes politiques -- De thermidor au coup d'état du 18 brumaire (novembre 1799)</field>
    <field name="catalog_heading_etsimv">The events of the Revolution -- Political rivalries and social conflict -- Political struggles -- From 9 Thermidor (July 1794) to the "coup d'état" of 18 Brumaire (November 1799)</field>    
    
@@ -142,8 +136,7 @@
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Scènes de genre-1789-1799.</field>
    <field name="medium_ssi">eau-forte, outils, coul. au repérage</field>
-   <field name="date_issued_ssim">1789</field>
-   <field name="date_issued_dtsim">1789-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1789-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Les événements de la Révolution -- La politique au quotidien -- Les "types du jour" -- Les enfants</field>
    <field name="catalog_heading_etsimv">The events of the Revolution -- Everyday politics -- Typical characters -- Children</field>    
    
@@ -166,8 +159,7 @@
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Caricatures et dessins humoristiques-1789-1799.</field>
    <field name="medium_ssi">eau-forte, coul.</field>
-   <field name="date_issued_ssim">1790</field>
-   <field name="date_issued_dtsim">1790-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1790-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Les événements de la Révolution -- La religion -- Le discrédit du clergé et de l'Église -- La critique des moeurs du clergé</field>
    <field name="catalog_heading_etsimv">The events of the Revolution -- Religion -- The clergy and Church discredited -- The attack on priests' morals</field>
    
@@ -191,10 +183,8 @@
    <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
    <field name="medium_ssi">eau-forte, pointillé</field>
    <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
-   <field name="date_issued_ssim">1798</field>
-   <field name="date_issued_ssim">1799</field>
-   <field name="date_issued_dtsim">1798-01-01T00:00:00Z</field>
-   <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1798-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1799-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
    
@@ -218,10 +208,7 @@
    <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
    <field name="medium_ssi">eau-forte, pointillé</field>
    <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
-   <field name="date_issued_ssim">1798</field>
-   <field name="date_issued_ssim">1799</field>
-   <field name="date_issued_dtsim">1798-01-01T00:00:00Z</field>
-   <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1798-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
    
@@ -245,10 +232,7 @@
    <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
    <field name="medium_ssi">eau-forte, pointillé</field>
    <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
-   <field name="date_issued_ssim">1798</field>
-   <field name="date_issued_ssim">1799</field>
-   <field name="date_issued_dtsim">1798-01-01T00:00:00Z</field>
-   <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1798-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
    
@@ -272,10 +256,7 @@
    <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
    <field name="medium_ssi">eau-forte, pointillé</field>
    <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
-   <field name="date_issued_ssim">1798</field>
-   <field name="date_issued_ssim">1799</field>
-   <field name="date_issued_dtsim">1798-01-01T00:00:00Z</field>
-   <field name="date_issued_dtsim">1799-01-01T00:00:00Z</field>
+   <field name="search_date_dtsim">1798-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
    

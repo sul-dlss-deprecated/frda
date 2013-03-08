@@ -63,8 +63,12 @@ class SolrDocument
     multivalue_field('artist_ssim')
   end
 
+  def date
+    multivalue_field('search_date_dtsim')
+  end
+  
   def year
-    multivalue_field('date_issued_ssim')
+    multivalue_field('search_date_dtsim').map {|d| d.to_date.year }
   end
 
   def speaker

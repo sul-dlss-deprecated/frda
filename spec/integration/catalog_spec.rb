@@ -41,7 +41,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     visit catalog_path(:id=>'bb018fc7286')
     page.should have_content("le 14.e juillet 1790 : [estampe]")
     page.should have_xpath("//img/@src['https://stacks.stanford.edu/image/bb018fc7286/T0000001_thumb.jpg']")
-    page.should have_xpath("//a/@href['/en/catalog?f%5Bdate_issued_ssim%5D%5B%5D=1790']")
+    page.should have_xpath("//a/@href['/en/catalog?f%5Bcollector_ssim%5D%5B%5D=Vinck%2C+Carl+de']")
   end
   
   it "should search for an Images item" do
@@ -84,13 +84,13 @@ describe("Search Pages",:type=>:request,:integration=>true) do
         find(:css, "[value='Search...']").click
         
         # we should get 6 items
-        page.all(:css, ".image-item").length.should == 6
+        page.all(:css, ".image-item").length.should == 19
 
-        fill_in :"date-start", :with => "1790-04-25"
+        fill_in :"date-start", :with => "1794-04-25"
         find(:css, "[value='Search...']").click
         
         # we should be limited to just 4 items
-        page.all(:css, ".image-item").length.should == 4
+        page.all(:css, ".image-item").length.should == 5
       end
     end
     

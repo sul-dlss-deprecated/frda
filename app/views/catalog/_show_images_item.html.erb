@@ -75,7 +75,7 @@
       <% end %>
       <% unless list_is_empty?(@document.year)%>
         <dt><%=t('frda.show.date')%></dt>
-        <dd><%=show_formatted_list(@document.year,:facet=>'date_issued_ssim')%></dd>
+        <dd><%=show_formatted_list(@document.year)%></dd>
       <% end %>
       <% unless list_is_empty?(@document.format) %>
         <dt><%=t('frda.show.format')%></dt>

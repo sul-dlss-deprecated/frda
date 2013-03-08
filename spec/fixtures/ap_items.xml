@@ -19,6 +19,7 @@
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="search_date_dtsim">1791-12-11T00:00:00Z</field>
   <field name="session_date_val_ssim">1791-12-11</field>
   <field name="session_date_dtsim">1791-12-11T00:00:00Z</field>
   <field name="session_date_ftsimv">Séance du dimanche 11 décembre 1791 .</field>
@@ -59,6 +60,7 @@
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="search_date_dtsim">1791-12-11T00:00:00Z</field>
   <field name="session_date_val_ssim">1791-12-11</field>
   <field name="session_date_dtsim">1791-12-11T00:00:00Z</field>
   <field name="session_date_ftsimv">Séance du dimanche 11 décembre 1791 .</field>
@@ -126,6 +128,7 @@
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="search_date_dtsim">1791-12-11T00:00:00Z</field>
   <field name="session_date_val_ssim">1791-12-11</field>
   <field name="session_date_dtsim">1791-12-11T00:00:00Z</field>
   <field name="session_date_ftsimv">Séance du dimanche 11 décembre 1791 .</field>
@@ -164,6 +167,7 @@
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE LÉGISLATIVE.</field>
+  <field name="search_date_dtsim">1791-12-13T00:00:00Z</field>
   <field name="session_date_val_ssim">1791-12-13</field>
   <field name="session_date_dtsim">1791-12-13T00:00:00Z</field>
   <field name="session_date_ftsimv">Séance du mardi 13 décembre 1791, au matin.</field>
@@ -214,6 +218,7 @@
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE</field>
+  <field name="search_date_dtsim">1790-02-18T00:00:00Z</field>
   <field name="session_date_val_ssim">1790-02-18</field>
   <field name="session_date_dtsim">1790-02-18T00:00:00Z</field>
   <field name="session_date_ftsimv">Séance du jeudi 18 février 1790, au matin (1). </field>
@@ -263,6 +268,7 @@
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
   <field name="session_govt_ssim">ASSEMBLÉE NATIONALE</field>
+  <field name="search_date_dtsim">1790-02-18T00:00:00Z</field>
   <field name="session_date_val_ssim">1790-02-18</field>
   <field name="session_date_dtsim">1790-02-18T00:00:00Z</field>
   <field name="session_date_ftsimv">Séance du jeudi 18 février 1790, au soir (1). </field>
@@ -298,6 +304,7 @@
 	<field name="result_group_ssi">Tome 1 : 1789 – Introduction - états généraux - préliminaires. Cahiers des sénéchaussées et baillages [Agen - Amont]</field> 
  <field name="vol_date_start_dti">1789-01-01T00:00:00Z</field>
   <field name="vol_date_end_dti">1789-12-31T23:59:59Z</field>
+  <field name="search_date_dtsim">1789-12-31T00:00:00Z</field>
 	<field name="vol_pdf_name_ss">jt959wc5586.pdf</field>
 	<field name="vol_tei_name_ss">jt959wc5586.xml</field>
 	<field name="vol_pdf_size_is">4500000</field>
@@ -331,6 +338,7 @@
   <field name="result_group_ssi">Tome 8 : Du 5 mai 1789 au 15 septembre 1789</field>
   <field name="vol_date_start_dti">1789-05-05T00:00:00Z</field>
   <field name="vol_date_end_dti">1789-09-15T23:59:59Z</field>
+  <field name="search_date_dtsim">1789-09-15T00:00:00Z</field>
 	<field name="vol_pdf_name_ss">bm916nx5550.pdf</field>
 	<field name="vol_tei_name_ss">bm916nx5550.xml</field>
 	<field name="vol_pdf_size_is">3500000</field>
@@ -361,6 +369,7 @@
   <field name="result_group_ssi">Tome 3 : 1789 – États généraux. Cahiers des sénéchaussées et baillages [Colmar et Schelestadt - Metz]</field>
   <field name="vol_date_start_dti">1789-01-01T00:00:00Z</field>
   <field name="vol_date_end_dti">1789-12-31T23:59:59Z</field>
+  <field name="search_date_dtsim">1789-12-31T00:00:00Z</field>
 	<field name="vol_pdf_name_ss">mc666yy3026.pdf</field>
 	<field name="vol_tei_name_ss">mc666yy3026.xml</field>
 	<field name="vol_pdf_size_is">5500000</field>

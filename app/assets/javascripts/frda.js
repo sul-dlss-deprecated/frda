@@ -9,6 +9,8 @@ $(document).ready(function(){
 	//   non JS versions
   showOnLoad();
   
+	changeFormFocus();
+
   toggleSearchOptions();
 
   handleSearchFormSubmit();
@@ -17,7 +19,7 @@ $(document).ready(function(){
 	searchOptionsToggles();
 	
 	setupSpeakerAutoComplete();
-	
+
 });
 
 function setupSpeakerAutoComplete() {
@@ -45,6 +47,19 @@ function clearMessages() {
 function showOnLoad() {
 	$('.showOnLoad').removeClass('hidden');	
 	$('.showOnLoad').show();
+}
+
+function changeFormFocus(){
+	if($("[data-post-check-focus]").length > 0) {
+	  $("[data-post-check-focus]").each(function(){
+		  $(this).change(function(){
+			  if($(this).is(":checked")){
+				  $($(this).attr("data-post-check-focus")).click();
+  				$($(this).attr("data-post-check-focus")).focus();
+			  }
+		  });
+		});	
+	}
 }
 
 // Allow form to be submitted with enter/return key.

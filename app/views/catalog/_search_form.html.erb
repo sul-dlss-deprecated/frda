@@ -12,7 +12,7 @@
       <div id="collapseSearch">
         <div class="accordion-inner well">
           <p class="form_label">
-            <%= check_box_tag 'dates', 1, !params['dates'].blank? %><%= label_tag('dates', t('frda.search.options.between')) %><br>
+            <%= check_box_tag 'dates', 1, !params['dates'].blank?, :"data-post-check-focus" => "#date-start" %><%= label_tag('dates', t('frda.search.options.between')) %><br>
             <%= label_tag('date-start', t('frda.search.options.start_date'), :class => "off-screen") %>
             <%= text_field_tag 'date-start', params["date-start"], :class => 'input-mini date', :placeholder => "1780-05-18", :"data-date-picker" => true %>
             <%= label_tag('date-end', t('frda.search.options.to').html_safe) %>
@@ -20,7 +20,7 @@
 					</p>
 					
 					<p class="form_label">
-            <%= check_box_tag 'speeches', 1, !params['speeches'].blank? %>
+            <%= check_box_tag 'speeches', 1, !params['speeches'].blank?, :"data-post-check-focus" => "#by-speaker" %>
             <%= label_tag('speeches', t('frda.search.options.speeches')) %>
             <%= label_tag('by-speaker', t('frda.search.options.speaker_name'), :class => "off-screen")%>
             <%= text_field_tag 'by-speaker', params["by-speaker"], :class => 'input-mini' %>

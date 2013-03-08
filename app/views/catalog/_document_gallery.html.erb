@@ -5,7 +5,7 @@
       <%- if grouping.group -%>
         <h2>
           <i class="icon-book"></i>
-          <%= link_to_volume_facet(grouping.group, {:params => params}) %>
+          <%= link_to_volume_facet(grouping.group, :params => params) %>
           <%#= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
           <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
         </h2>

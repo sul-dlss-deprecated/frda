@@ -143,6 +143,8 @@ en:
       occurrence:
         one: "1 occurrence"
         other: "%{count} occurrences"
+      occurrences: Occurrences
+      sequence: Sequence
       results_heading_image: 'Images of the French Revolution'
       search_results: 'Results'
       view_toggle:

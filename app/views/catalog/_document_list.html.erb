@@ -7,7 +7,7 @@
         <%- if grouping.group -%>
           <h2>
             <i class="icon-book"></i>
-            <%= link_to_volume_facet(grouping.group) %>
+            <%= link_to_volume_facet(grouping.group, :params => params) %>
             <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
           </h2>
         <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the

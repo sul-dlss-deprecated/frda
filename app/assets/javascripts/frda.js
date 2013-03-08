@@ -15,8 +15,16 @@ $(document).ready(function(){
 
   searchOptionsDatePicker();
 	searchOptionsToggles();
+	
+	setupSpeakerAutoComplete();
+	
 });
 
+function setupSpeakerAutoComplete() {
+	 $( "#by-speaker" ).autocomplete({
+	source: "/speaker_suggest.json",
+	minLength: 3	});	
+}
 function showImageViewer(imageURL,target) {
 	// create a new ZPR instance
 	var z = new zpr(target, {

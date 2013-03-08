@@ -324,30 +324,18 @@
     </lst>
   </requestHandler>
 
-<!-- suggester component for autocomplete of speakers -->
-	  <searchComponent class="solr.SpellCheckComponent" name="suggest">
-	    <lst name="spellchecker">
-	      <str name="name">suggest</str>
-	      <str name="classname">org.apache.solr.spelling.suggest.Suggester</str>
-	      <str name="lookupImpl">org.apache.solr.spelling.suggest.tst.TSTLookup</str>
-	      <str name="field">speaker_ssim</str>  <!-- the indexed field to derive suggestions from -->
-	      <float name="threshold">0.005</float>
-	      <str name="buildOnCommit">true</str>
-	    </lst>
-	  </searchComponent>
-	  <requestHandler class="org.apache.solr.handler.component.SearchHandler" name="suggest">
-	    <lst name="defaults">
-	      <str name="spellcheck">true</str>
-	      <str name="spellcheck.dictionary">suggest</str>
-	      <str name="spellcheck.onlyMorePopular">true</str>
-	      <str name="spellcheck.count">5</str>
-	      <str name="spellcheck.collate">false</str>
-	    </lst>
-	    <arr name="components">
-	      <str>suggest</str>
-	    </arr>
-	  </requestHandler>
-<!-- end suggester component for autocomplete of speakers -->
+<!-- terms component for autocomplete of speakers -->
+		<searchComponent name="termsComponent" class="org.apache.solr.handler.component.TermsComponent"/>
+
+		<requestHandler name="terms" class="org.apache.solr.handler.component.SearchHandler">
+		   <lst name="defaults">
+		    <bool name="terms">true</bool>
+		  </lst>    
+		  <arr name="components">
+		    <str>termsComponent</str>
+		  </arr>
+		</requestHandler>
+<!-- end terms component for autocomplete of speakers -->
 
   <admin>
     <defaultQuery>admin test query</defaultQuery>

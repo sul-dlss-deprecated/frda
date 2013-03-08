@@ -56,8 +56,8 @@
 	width: 100%;
 }
 
-html, body {
-	min-height: 100%;
+.ui-autocomplete-loading {
+	background: url('/images/ajax-loader.gif') right center no-repeat;
 }
 
 .flipbook {

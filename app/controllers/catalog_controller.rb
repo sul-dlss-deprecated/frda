@@ -168,6 +168,8 @@ class CatalogController < ApplicationController
     config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume', :show => false
     config.add_facet_field 'session_date_sim', :label => 'frda.show.session', :show => false
 
+    config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["vol_title_ssi", "session_date_sim"]
+
     config.add_facet_field 'highlight_ssim', :label => I18n.t('frda.nav.collection_highlights'), :show => false,  :query => collection_highlights
 
     # config.add_facet_field 'example_query_facet_field', :label => 'Publish Date', :query => {
@@ -300,7 +302,10 @@ class CatalogController < ApplicationController
   end
   
   def group_response?
-    !(params and params[:f] and params[:f][:vol_title_ssi] and !params[:f][:vol_title_ssi].blank?)
+    !(params and 
+        params[:f] and 
+          ((params[:f][:vol_title_ssi] and !params[:f][:vol_title_ssi].blank?) or
+           (params[:f][:session_date_sim] and !params[:f][:session_date_sim].blank?)))
   end
   helper_method :"group_response?"
   

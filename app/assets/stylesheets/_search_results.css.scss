@@ -196,6 +196,18 @@
 /* Frequency View */
 #documents.frequency {
   @include result-title-styling;
+
+  .heading {
+	  font-weight: bold;
+	  .occurrences {margin-right: 0}
+  }
+  li {
+	  list-style-type: none;
+  }
+  .occurrences {
+	  float: right;
+	  margin-right: 25px;
+  }
 }
 
 

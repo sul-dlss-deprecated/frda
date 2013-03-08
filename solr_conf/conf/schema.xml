@@ -87,22 +87,7 @@
     <dynamicField name="*_bi" type="boolean" stored="false" indexed="true" multiValued="false"/>
     <dynamicField name="*_bs" type="boolean" stored="true" indexed="false" multiValued="false"/>
     <dynamicField name="*_bsi" type="boolean" stored="true" indexed="true" multiValued="false"/>
-
-    <!-- you must define copyField source fields or schemaBrowser doesn't work (bug in Solr 4.0) -->
-    <field name="text_tiv" type="text" stored="false" indexed="true" multiValued="false" termVectors="true" termPositions="true" termOffsets="true"/>
-    <field name="spoken_text_timv" type="text" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
-    <field name="session_date_ftsimv" type="text_fr" stored="true" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
-    <field name="title_short_ftsi" type="text_fr" stored="true" indexed="true" multiValued="false"/>
-    <field name="title_long_ftsi" type="text_fr" stored="true" indexed="true" multiValued="false"/>
-    <field name="vol_title_ssi" type="string" stored="true" indexed="true" multiValued="false"/>
-    <!-- you must define copyField destination fields or schemaBrowser doesn't work (bug in Solr 4.0) -->
-    <field name="text_ftsiv" type="text_fr" stored="true" indexed="true" multiValued="false" termVectors="true" termPositions="true" termOffsets="true"/>
-    <field name="spoken_text_ftsimv" type="text_fr" stored="true" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
-    <field name="session_date_sim" type="string" stored="false" indexed="true" multiValued="true"/>
-    <field name="title_short_ti" type="text" stored="false" indexed="true" multiValued="false"/>
-    <field name="title_long_ti" type="text" stored="false" indexed="true" multiValued="false"/>
-    <field name="result_group_ssi" type="string" stored="true" indexed="true" multiValued="false"/>
-    
+        
   </fields>
 
   <!-- copy fields -->

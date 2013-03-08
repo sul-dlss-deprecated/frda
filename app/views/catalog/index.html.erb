@@ -36,14 +36,14 @@ $(document).ready(function(){
 
     <% if on_images_page %>
       <h2 class="search-results"><%= t('frda.search.results_heading_image') %></h2>
-      <p class="images-summary truncate">
+      <div class="images-summary truncate">
         <%=t('frda.about.images_html')%>
-      </p>
+      </div>
     <% elsif on_ap_page %>
       <h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>
-      <p class="ap-summary truncate">
+      <div class="ap-summary truncate">
         <%=t('frda.about.ap_html')%>
-      </p>
+      </div>
     <% else %>
       <h2 class="search-results"><%= t('blacklight.search.search_results_header') %></h2>
     <% end %>

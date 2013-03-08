@@ -59,6 +59,21 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   end
   
   describe "search options" do
+    
+    it "should return appropriate results for speaker autocomplete in json" do
+      get speaker_suggest_path(:term=>'m. d'),format: "json"
+      response.status.should == 200
+      response.body.should == '["M. Dorizy."]'
+
+      get speaker_suggest_path(:term=>'dor'),format: "json"
+      response.status.should == 200
+      response.body.should == '["M. Dorizy."]'  
+
+      get speaker_suggest_path(:term=>'go'),format: "json"
+      response.status.should == 200
+      response.body.should == '["M. Gohier.","M. Gossuin."]'          
+    end
+    
     describe "date range" do
       it "should limit the results by the dates specified" do
         visit root_path

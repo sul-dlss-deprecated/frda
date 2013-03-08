@@ -36,6 +36,9 @@
 
             <% if document.images_item? %>
               <h2><%= link_to document.title(:length=>"short"), document %></h2>
+              <% unless document.mods.note.blank? %>
+                <p><%= document.mods.note.text %></p>
+              <% end %>
 
             <% else %>
               <% unless list_is_empty?(document.session_date)%>

@@ -47,6 +47,9 @@
   <div class="span6 metadata">
     <% unless @document.title.nil?%>
       <h3><%= @document.title %></h3>
+      <% unless @document.mods.note.blank? %>
+        <p><%= @document.mods.note.text %></p>
+      <% end %>
     <% end %>
 
     <dl class="dl-invert">

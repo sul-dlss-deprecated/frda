@@ -90,7 +90,12 @@ body {
     padding: 7px;
     border-top: none;
   }
-
+  p.form_label {
+    font-size: 0.85em;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    line-height: 20px;
+  }
 }
 
 /* split button drop down */

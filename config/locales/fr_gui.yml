@@ -138,7 +138,7 @@ fr:
       collection_text: 'Collection Items'
       sibling_text: "Other items in the %{collection} collection"
     search:
-      results_heading_combined: 'combined collections'
+      results_heading_combined: 'dans les deux archives'
       results_heading_ap: 'Archives parlementaires'
       occurrence:
         one: "1 occurrence"
@@ -156,6 +156,14 @@ fr:
       select_all_on_page: 'Select all on page'
       results:
         speaker: 'Locuteur'
+      options:
+        between: "en ou de"
+        to: "à"
+        speeches: "dans les discours de"
+        separated: "à"
+        words: "mots d'écart"
+        in_title: "par? titres et tables/légends"
+        exact: "mots exacts (sans troncature)"
     sidebar:
       actions:
         title: 'Actions'

@@ -11,38 +11,38 @@
       </div>
       <div id="collapseSearch">
         <div class="accordion-inner well">
-            <p class="form_label"><%= check_box_tag 'dates', 1, !params['dates'].blank? %>on or between<br>
+            <p class="form_label"><%= check_box_tag 'dates', 1, !params['dates'].blank? %><%= t('frda.search.options.between') %><br>
             <%= text_field_tag 'date-start', params["date-start"], :class => 'input-mini date', :placeholder => "1780-05-18", :"data-date-picker" => true %>
-            to
+            <%= t('frda.search.options.to') %>
             <%= text_field_tag 'date-end', params["date-end"], :class => 'input-mini date', :placeholder => "1799-04-26", :"data-date-picker" => true %>
 					</p>
 					
 					<p class="form_label">
             <%= check_box_tag 'speeches', 1, !params['speeches'].blank? %>
-            in speeches by
+            <%= t('frda.search.options.speeches') %>
             <%= text_field_tag 'by-speaker', params["by-speaker"], :class => 'input-mini' %>
 					</p>
 					
 					<p class="form_label">
             <%= check_box_tag 'prox', 1, !params["prox"].blank? %>
-            separated by
+            <%= t('frda.search.options.separated') %>
             <%= select_tag "words",
                 "<option>1</option>
                  <option>2</option>
                  <option selected>3</option>
                  <option>4</option>
                  <option>5</option>".html_safe %>
-            words
+            <%= t('frda.search.options.words') %>
 					</p>
 					
 					<p class="form_label">
             <%= check_box_tag 'terms', 1, !params["terms"].blank? %>
-            in title &amp; key terms only
+            <%= t('frda.search.options.in_title') %>
 					</p>
 					
 					<p class="form_label">
             <%= check_box_tag 'exact', 1, !params["exact"].blank? %>
-            exact match (no stemming)
+            <%= t('frda.search.options.exact') %>
 					</p>
         </div>
       </div>

@@ -73,8 +73,28 @@ class SolrDocument
 
   def speaker
      multivalue_field('speaker_ssim')
- end
-     
+  end
+ 
+  def speeches
+    return nil unless self[:spoken_text_ftsimv]
+    fields = self.highlight_field(:spoken_text_ftsimv) ?
+               self.highlight_field(:spoken_text_ftsimv) :
+               self[:spoken_text_ftsimv]
+    fields.map do |speech|
+      Speech.new(speech)
+    end
+  end
+ 
+  def highlighted_speeches
+    return nil if speeches.blank?
+    highlights = []
+    self.speeches.each do |speech|
+      highlights << speech if speech.highlighted?
+    end
+    return self.speeches if highlights.blank?
+    highlights
+  end
+  
   def medium
     self[:medium_ssi]
   end

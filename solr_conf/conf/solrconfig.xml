@@ -339,19 +339,6 @@
     </lst>
   </requestHandler>
 
-<!-- terms component for autocomplete of speakers -->
-		<searchComponent name="termsComponent" class="org.apache.solr.handler.component.TermsComponent"/>
-
-		<requestHandler name="terms" class="org.apache.solr.handler.component.SearchHandler">
-		   <lst name="defaults">
-		    <bool name="terms">true</bool>
-		  </lst>    
-		  <arr name="components">
-		    <str>termsComponent</str>
-		  </arr>
-		</requestHandler>
-<!-- end terms component for autocomplete of speakers -->
-
   <admin>
     <defaultQuery>admin test query</defaultQuery>
   </admin>

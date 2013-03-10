@@ -4,6 +4,16 @@ $(document).ready(function(){
 
   $('.overview .nav-pills a:first').tab('show');
 
+  // Used for the search result views.
+  // 1. Toggles class that highlights the icon representing results view currently active
+  // 2. Adds a class to #documents to apply the appropriate CSS for the results view currently active
+  $('.view-switcher li a').click(function(){
+    $(this).parent().siblings('li').find('a').removeClass('active');
+    $(this).addClass('active');
+    $('#documents').removeClass('default gallery list frequency');
+    $('#documents').addClass($(this).data('view'));
+  });
+
 	// elements defined with these classes can be hidden by default and then show when the page loads
 	//  useful when you have non javascript friendly DOM elements you need to hide for no JS browsers so you can include a <noscript> tag with
 	//   non JS versions

@@ -17,6 +17,7 @@
   }
 }
 
+/* Baseline for all results views */
 #documents {
   border-top: 2px dotted darken($container_bg_color, 10%);
   font-size: 12px;
@@ -34,182 +35,209 @@
     font-style: normal;
     padding: 1px 2px;
   }
-}
-
-/* Default View */
-#documents.default {
-  h2 {
-    border-top: none;
-    color: $active_heading_link_color;
-    font-size: 1.25em;
-    padding-bottom: 10px;
-    padding-top: 0;
-    a {
-      color: $active_heading_link_color;
-    }
+  .result-group {
+    margin-left: 20px;
   }
-  @include result-title-styling;
-  .icon-book, {margin: 4px 5px;}
-  .icon-picture {margin: 3px 5px;}
-  .icon-list-alt {margin-right: 5px;}
-  .results-image > a {border-bottom: none;}
-  .oneresult {
-    margin-left: 15px;
-    margin-top: 6px;
+  .speaker .frda-label {color: #aaa;}
+
+  /* Overrides and styling for specific results views */
+  /* Default View */
+  &.default {
     h2 {
-      margin-bottom: 0;
-    }
-  }
-  .pageimg {
-    float: left;
-    text-align: center;
-  }
-  img {
-    width: 110px;
-    @include result-image-styling;
-    margin-top: 2px;
-  }
-  .session {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    padding-bottom: 10px;
-    a {
+      border-top: none;
       color: $active_heading_link_color;
-    }
-  }
-  .speaker {float: right;}
-  .pagenum {display: block;}
-  .snippet {
-    clear: right;
-    display: inline-block;
-    padding-top: 18px;
-  }
-  .frda-label {color: #aaa;}
-}
-
-/* Gallery View */
-#documents.gallery {
-  h2 {
-    border-top: none;
-    color: $active_heading_link_color;
-    clear: both;
-    font-size: 1.25em;
-    padding-top: 0;
-    a {color: $active_heading_link_color;}
-  }
-  @include result-title-styling;
-  .icon-book {margin: 4px 5px;}
-  .icon-picture {margin: 3px 5px;}
-  ul.image-grid {
-    list-style-type: none;
-    margin-left: 12px;
-  }
-  ul.image-grid li.image-item {
-    float: left;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    min-height: 230px;
-    text-align: center;
-    width: 105px;
-    &.images {min-height: 250px;}
-    > a {border-bottom: none;}
-    img {
-      @include result-image-styling;
-      max-width: 90%;
-    }
-    h3.index_title {
-      margin-left: 14px;
-      span.year {display: block;}
-    }
-  }
-  // Overrides for Images version of Gallery view
-  &.images{
-    ul.image-grid {margin-left: 5px;}
-    ul.image-grid li.image-item {
-      min-height: 380px;
-      width: 205px;
-    }
-  }
-}
-
-/* List View */
-#documents.list {
-  h2 {
-    border-top: none;
-    color: $active_heading_link_color;
-    font-size: 1.25em;
-    padding-top: 0;
-    a {color: $active_heading_link_color;}
-  }
-  @include result-title-styling;
-  .icon-book {margin: 4px 5px;}
-  .icon-picture {margin: 3px 5px;}
-  .icon-list-alt {margin-right: 5px;}
-  .document-group {padding-bottom: 30px;}
-  &.images .document-group {padding-bottom: 0;}
-  .row {
-    span {
-      display: block;
-      &.speaker, &.frda-label {
-        display: inline;
+      clear: left;
+      padding-top: 0;
+      a {
+        color: $active_heading_link_color;
       }
-      &.frda-label {color: #aaa;}
     }
-    .page-speaker {
-      display: inline;
+    h3 {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: bold;
+      padding-bottom: 10px;
+      padding-top: 0;
+      width: 100%;
+      margin: 6px 0;
+      a {
+        color: $active_heading_link_color;
+      }
+    }
+    .icon-book {margin: 4px 5px;}
+    .icon-picture {margin: 3px 5px;}
+    .oneresult {
+      clear: both;
+      margin-bottom: 50px;
+      padding-left: 135px;
+      .pageimg {
+        width: 100px;
+        text-align: center;
+        float: left;
+        margin: 3px 7px 14px -135px;
+        a {border-bottom: none;}
+        img {
+          @include result-image-styling;
+          margin-top: 3px;
+          width: 100px;
+        }
+      }
+      .speaker {float: right;}
+      .tome {display: none;}
+      .pagenum {display: block;}
+      .samepage .pagenum {display: none;}
+      .snippet {clear: right; display: inline-block; padding-top: 10px;}
+    }
+    .frequency-view, #frequencytable {display: none;}
+  } // end default
+
+  /* Gallery View */
+  &.gallery {
+    h2 {
+      border-top: none;
+      color: $active_heading_link_color;
+      clear: left;
+      padding-top: 0;
+      a {
+        color: $active_heading_link_color;
+      }
+    }
+    @include result-title-styling; //h3 styling
+    h3 {
+      margin-top: 0;
+      padding-top: 3px;
+    }
+    .icon-book {margin: 4px 5px;}
+    .icon-picture {margin: 3px 5px;}
+    .result-group {
+      .oneresult {
+        float: left;
+        width: 140px;
+        text-align: center;
+        margin: 0 0 15px 0;
+        min-height: 290px;
+        img {
+          @include result-image-styling;
+          width: 100px;
+        }
+        .pageimg {}
+        .pageimg {
+          > a {border-bottom: none;}
+          img {
+            @include result-image-styling;
+            width: 100px;
+          }
+        }
+        .speaker {display: none;}
+        .tome {
+          display: inline-block;
+          padding-right: 5px;
+        }
+        .pagenum {
+          display: inline-block;
+          padding-left: 5px;
+        }
+        .snippet {display: none;}
+        .images .snippet {margin-left: 6em;}
+        .longtext {display: none;}
+      }
+    }
+    .frequency-view, #frequencytable {display: none;}
+  } // end gallery
+
+   /* List View */
+  &.list {
+    h2 {
+      border-top: none;
+      margin-top: 0;
+      color: $active_heading_link_color;
+      clear: left;
+      padding-top: 0;
+      a {
+        color: $active_heading_link_color;
+      }
+    }
+    @include result-title-styling; //h3 styling
+    h3 {
+      margin-top: 12px;
+      padding-top: 3px;
+      &.image-item-title {
+        margin-bottom: 3px;
+      }
+    }
+    .icon-book {margin: 4px 5px;}
+    .icon-picture {margin: 3px 5px;}
+    .result-group {
+      margin-bottom: 30px;
+      .oneresult {
+        clear: both;
+        margin-left: 10px;
+        .pageimg {display: none;}
+        .pageimg img {display: none;}
+        .speaker {float: right;}
+        .speaker .frda-label {display: none;}
+        .tome {display: none;}
+        .pagenum {
+          float: left;
+          margin-left: 0;
+          width: 6em;
+        }
+        .snippet {
+          display: inline-block;
+          width: 70%;
+          }
+        .images .snippet {margin-left: 6em;}
+        .longtext {display: none;}
+      }
+    }
+     .frequency-view, #frequencytable {display: none;}
+  } // end list view
+
+  /* Frequency View */
+  &.frequency {
+    h2, h3 {display: none;}
+    font-size: 1em;
+    .heading {
+      font-weight: bold;
+    }
+    .occurrences {
       float: right;
-      margin-left: 100px;
+      margin-right: 0;
     }
-  }
-  .documentHeader {
-    .index_title {
-      margin-bottom: 6px;
-      max-width: 600px;
+    ul {
+      list-style: none;
+      li {
+        list-style-type: none;
+        .occurrences {
+          margin-right: 35px;
+        }
+        a {
+          border-bottom: none;
+          color: $active_heading_link_color;
+          &.sortseq {
+            width: 450px;
+          }
+        }
+      }
+      &#frequencytable {
+        clear: both;
+        display: block;
+        margin-left: 8px;
+        > li {
+            margin: 12px 0 15px;
+        }
+      }
     }
-//    display: inline;
-    margin-left: 40px;
-    margin-top: 0;
-    &.ap {display: inline;}
-  }
-  .result-context {
-    display: inline;
-    padding-left: 25px;
-  }
-  span.year {
-    display: block;
-  }
-  // Overrides for Images version of Gallery view
-  &.images{
-    .row {
-      margin-bottom: 10px;
-      padding-left: 10px;
-    }
-    .documentHeader {
-      display: block;
-      margin-left: 0;
+    .oneresult  {
+      display: none;
+      //.pageimg, .pageimg img, .speaker, .speaker .frda-label,
+      //.tome, .pagenum, .snippet, .images .snippet, .longtext
+      //  {
+      //    display: none;
+      //  }
     }
   }
 }
-
-/* Frequency View */
-#documents.frequency {
-  @include result-title-styling;
-
-  .heading {
-	  font-weight: bold;
-	  .occurrences {margin-right: 0}
-  }
-  li {
-	  list-style-type: none;
-  }
-  .occurrences {
-	  float: right;
-	  margin-right: 25px;
-  }
-}
-
 
 /* Breadcrumb-like single-line display of result's ancestors */
 ul.inventory-ancestry {

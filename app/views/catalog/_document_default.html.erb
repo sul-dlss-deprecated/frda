@@ -1,79 +1,111 @@
-<%# This is AP/Images combined results view %>
-
-<div id="documents" class="default">
-  <%- documents.each_with_index do |grouping, index| -%>
-    <%- if response_is_grouped? -%>
+<div id="documents" class="default<%= ' images' if on_images_page %>">
+  <%- if response_is_grouped? -%>
+    <%- documents.each_with_index do |grouping, index| -%>
       <%- if grouping.group -%>
         <h2>
           <i class="icon-book"></i>
-          <%= link_to_volume_facet(grouping.group, :params => params) %>
+          <%= link_to_volume_facet(grouping.group, {:params => params}) %>
+          <%#= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
           <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
         </h2>
-      <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the
-          Images group title. Will need to detect whether group is Images and if so,
-          use the appropriate icon instead of icon-book. %>
+        <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the
+            Images group title. Will need to detect whether group is Images and if so,
+            use the appropriate icon instead of icon-book. %>
       <%- else -%>
-        <h2>
-          <i class="icon-picture"></i>
-          <%= t('frda.search.results_heading_image') %>
-        </h2>
-      <%- end -%>
-    <%- end -%>
-    <%- doc_list = response_is_grouped? ? grouping.docs : [grouping] -%>
-    <%- doc_list.each do |document| -%>
-      <div class="row">
-        <div class="span2 results-image">
-          <%= link_to_document document,
-               :label => image_tag(document.first_image(:size=>:thumb),
-                                   :alt => document.title,
-                                   :title => document.title,
-                                   :border => 0),
-               :counter =>  (index + 1 + @response.params[:start].to_i) %>
-        </div>
-        <div class="span7 results-metadata">
+        <%# Only show the Images group heading if we're in the combined results view %>
+        <% unless on_images_page %>
+          <h2>
+            <i class="icon-picture"></i>
+            <%= t('frda.search.results_heading_image') %>
+          </h2>
+        <%- end -%>
+      <%- end -%> <%# end grouping-group %>
+
+      <div class="result-group">
+        <%- grouping.docs.each_with_index do |document| -%>
 
           <div class="oneresult">
-
+            <span class="pageimg">
+              <%= link_to_document document,
+                   :label => image_tag(document.first_image(:size=>:thumb),
+                                       :alt => document.title,
+                                       :title => document.title,
+                                       :border => 0),
+                   :counter =>  (index + 1 + @response.params[:start].to_i) %>
+            </span>
             <% if document.images_item? %>
-              <h2><%= link_to document.title(:length=>"short"), document %></h2>
-              <% unless document.mods.note.blank? %>
-                <p><%= document.mods.note.text %></p>
+              <h3 class="image-item-title"><%= link_to document.title(:length=>"short"), document %></h3>
+              <% unless list_is_empty?(document.year) %>
+                <span class="item-date"><%= document.year.first %></span>
               <% end %>
-
-            <% else %>
+            <% else %> <%# AP item %>
               <% unless list_is_empty?(document.session_date)%>
-                <span class="session">
+                <h3 class="session-title">
                   <%= link_to show_list(document.session_date), document %>
+                </h3>
+              <% end %>
+              <% unless list_is_empty?(document.speaker) || document.images_item? %>
+                <span class="speaker">
+                   <span class="frda-label"><%=t('frda.search.results.speaker')%>:&nbsp;</span>
+                   <%=show_list(document.speaker)%>
                 </span>
               <% end %>
-              <div class="page-speaker">
-                <% unless list_is_empty?(document.speaker) || document.images_item? %>
-                  <span class="speaker">
-                    <span class="frda-label"><%=t('frda.search.results.speaker')%>:&nbsp;</span>
-                    <%=show_list(document.speaker)%>
-                  </span>
-                <% end %>
                 <span class="pagenum">
                   <i class="icon-list-alt"></i>
                   <%= link_to document.title(:length=>"short"), document %>
                 </span>
-              </div>
-              <div class="snippet">
-                <% unless document.page_text.blank? %>
+
+              <% unless document.page_text.blank? %>
+                <div class="snippet">
                   <span class="longtext">
                     <%= document.page_text.map do |text|
                           truncate_highlight(text, :around => 20, :length => 600)
                       end.join("<br/>").html_safe %>
                   </span>
-                <% end %>
-              </div>
-            <% end %>
+                </div>
+              <% end %>
+            <% end %> <%# end document.images_item? %>
+          </div> <%# end oneresult div %>
+        <%- end -%> <%# end grouping.docs %>
+      </div> <%# end result-group div %>
 
-          </div>
+    <%- end -%> <%# end true portion of response_is_grouped? %>
 
-          <%#= render_document_partial document, :index, :document_counter => index %>
-        </div>
-      </div>
-    <%- end -%>
-  <%- end -%>
+  <%- else -%> <%# response is not grouped %>
+    <ul class="image-grid-ungrouped">
+      <%- documents.each_with_index do |document, index| -%>
+        <%= render :partial => "gallery_index_document", :locals => {:document => document, :index => index} %>
+      <%- end -%> <%# end non-grouped documents %>
+    </ul>
+  <%- end -%> <%# end response_is_grouped? %>
+
+  <%# Frequency View %>
+  <div class="row heading frequency-view">
+    <div class="span9">
+      <%= t('frda.search.sequence') %>
+      <span class="occurrences"><%= t('frda.search.occurrences') %></span>
+    </div>
+  </div>
+
+  <div class="row frequency-view">
+    <div class="span9">
+      <%- @response.facet_pivot.each do |_, tomes| -%>
+        <ul id="frequencytable">
+          <%- tomes.each do |tome| -%>
+            <li>
+              <%= link_to_volume_facet(tome["value"], :params => params.dup.delete_if{|k,v| k == "view"}) %> <span class="occurrences"><%= tome["count"]%></span>
+              <ul>
+                <%- tome["pivot"].each do |session| -%>
+                  <li>
+                    <%= link_to_session_facet(session["value"], :params => params.dup.delete_if{|k,v| k == "view"}) %> <span class="occurrences"><%= session["count"] %></span>
+                  </li>
+                <%- end -%>
+              </ul>
+            </li>
+          <%- end -%>
+        </ul>
+      <%- end -%>
+    </div>
+  </div>
+
 </div>

@@ -84,19 +84,20 @@ module ApplicationHelper
   def params_for_volume(volume)
     {:f => {:vol_title_ssi => [volume]}}
   end
-  
+
   def params_for_session(session)
     {:f => {:session_date_sim => [session]}}
   end
 
   # sections for About page
-  # element names should match what's used in locale_about.yml
+  # elementlink names should match what's used in locale_about.yml
   def about_sections
     section_list = ['curator', 'project_team_stanford',
                     'project_team_bnf', 'technical_description',
                     'acknowledgements', 'use_and_reproduction']
   end
 
+  # Used when search result views are in separate partials
   def link_to_search_result_view(icon, view_name, default_view)
     if default_view
       (params[:view] == "#{view_name}" or params[:view].nil?) ? view_state = 'active' : view_state = ''
@@ -110,7 +111,18 @@ module ApplicationHelper
       :title => "#{view_name.titlecase} view of results",
       :class => "#{view_state}")
   end
-  
+
+  # Used when search result views are in single partial
+  def search_result_view_switch(icon, view_name, default_view)
+    default_view ? view_state = 'active' : view_state = ''
+
+    link_to("<i class=#{icon}></i>".html_safe, "##{view_name}",
+      :data => {view: "#{view_name}"},
+      :alt => "#{view_name.titlecase} view of results",
+      :title => "#{view_name.titlecase} view of results",
+      :class => "#{view_state}")
+  end
+
   # This can be used to link the group heading in search results
   # We don't really have this ID naming convention in Image so it won't work there.
   def link_to_tome_from_search_result(text, id, options={})
@@ -124,7 +136,7 @@ module ApplicationHelper
     options.delete(:params)
     link_to(volume, catalog_index_path(link_params.deep_merge(volume_facet_params)), options)
   end
-  
+
   def link_to_session_facet(session, options={})
     link_params = {}
     link_params.merge!(options[:params]) if options[:params]
@@ -140,14 +152,14 @@ module ApplicationHelper
       link_to(head, catalog_index_path(:q => "\"#{buffer.join(' ')}\""))
     end
   end
-  
+
   def frda_search_collection_options
     [[t('frda.search.results_heading_combined'), "combined"],
      [t('frda.search.results_heading_ap'), Frda::Application.config.ap_id],
      [t('frda.search.results_heading_image'), Frda::Application.config.images_id]
     ]
   end
-  
+
   def frda_search_omit_keys
     [:q, :search_field, :qt, :page, :dates, :"date-start", :"date-end", :speeches, :"by-speaker", :prox, :words, :terms, :exact, :search_collection]
   end

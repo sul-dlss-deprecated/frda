@@ -181,8 +181,8 @@ fr:
       results_heading_ap: 'Archives parlementaires'
       occurrence:
         one: "1 occurrence"
-        other: "%{count} occurrences"
-      occurrences: Occurrences
+        other: "%{count} pages"
+      occurrences: Pages
       sequence: Sequence
       results_heading_image: 'Images de la Révolution française'
       search_results: 'Résultats'

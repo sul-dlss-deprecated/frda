@@ -204,7 +204,7 @@ fr:
         title: 'Les résultats'
       pagination_info:
         no_items_found: '%{entry_name} non trouvé(e)'
-        single_item_found: '<b>1</b> %{entry_name} trouvé(e)'
+        single_item_found: '<b>1</b> sur <b>1</b> sur <b>1</b> volume'
         pages:
           one: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
           other: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'

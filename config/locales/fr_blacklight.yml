@@ -206,11 +206,11 @@ fr:
         no_items_found: '%{entry_name} non trouvé(e)'
         single_item_found: '<b>1</b> %{entry_name} trouvé(e)'
         pages:
-          one: 'Mostro <b>tutti %{total_num}</b> %{entry_name}'
-          other: 'Mostro %{entry_name} <b>%{start_num} - %{end_num}</b> di <b>%{total_num}</b>'
+          one: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
       entry_pagination_info:
-        one: "Mostro l'unico risultato della ricerca"
-        other: 'Mostro il risultato <b>%{current} di %{total}</b> della ricerca'
+        one: '<b>1 sur 1</b>'
+        other: '<b>%{current}</b> sur <b>%{total}</b>'
       documents:
         counter: '%{counter}. '
       folder:

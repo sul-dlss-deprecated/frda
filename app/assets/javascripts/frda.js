@@ -4,6 +4,10 @@ $(document).ready(function(){
 
   $('.overview .nav-pills a:first').tab('show');
 
+  // Result view links are 'display: none' by default, to hide from no JS browsers
+  // Make them visible if browser has JS:
+  $('.view-switcher li a').css('display', 'inline-block');
+
   // Used for the search result views.
   // 1. Toggles class that highlights the icon representing results view currently active
   // 2. Adds a class to #documents to apply the appropriate CSS for the results view currently active

@@ -1,24 +1,27 @@
 <!-- <div id="content" class="span9"> -->
-	<div class="row">
-	  <div class="span9">
-	    <h2><%=t('frda.home.collection_highlights')%></h2>
-	  </div>
-	</div>
 
-  <div class="row featured-collections">
-		<% @highlights.each do |highlight| %>
+  <%# Collection Highlights section -%>
+  <!-- <div class="row">
+    <div class="span9">
+      <h2><%#=t('frda.home.collection_highlights')%></h2>
+    </div>
+  </div> -->
+
+  <!-- <div class="row featured-collections">
+    <%# @highlights.each do |highlight| %>
       <div class="span3 featured-collection">
-        <%= link_to(image_tag(highlight.image_url, :class => 'highlight-poster-image'),catalog_index_path(params_for_collection_highlight(highlight)))  %>
-        <h3 class="collection-title"><%= link_to_collection_highlight(highlight) %></h3>
-        <span>(<%=t('frda.show.item',:count=>highlight.collection_highlight_items.size)%>)</span>
+        <%#= link_to(image_tag(highlight.image_url, :class => 'highlight-poster-image'),catalog_index_path(params_for_collection_highlight(highlight)))  %>
+        <h3 class="collection-title"><%#= link_to_collection_highlight(highlight) %></h3>
+        <span>(<%#=t('frda.show.item',:count=>highlight.collection_highlight_items.size)%>)</span>
       </div>
-		<% end %>
-  </div>
+    <%# end %>
+  </div> -->
 
 
   <div class="row">
     <div class="span9 about-dl">
-      <h3 class="section-heading"><%= t('frda.home.about_collections_html') %></h3>
+      <%# TODO: Change the H2 tag below to H3 if we add back the Collection Highlights section above -%>
+      <h2 class="section-heading"><%= t('frda.home.about_collections_html') %></h2>
       <p>
         <%= t('frda.home.about_text_html') %>
       </p>

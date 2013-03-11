@@ -28,7 +28,7 @@ class SolrDocument
   end
   
   def total_pages
-    self[:total_pages_is]
+    self[:vol_total_pages_is]
   end
       
   def druid

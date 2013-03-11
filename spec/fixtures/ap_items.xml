@@ -2,7 +2,7 @@
   <field name="id">wb029sv4796_00_0005</field>
   <field name="page_num_ssi">1</field>
   <field name="page_sequence_isi">1</field>
-  <field name="total_pages_is">4</field>
+  <field name="vol_total_pages_is">4</field>
   <field name="image_id_ssm">wb029sv4796_00_0005.jp2</field>
   <field name="ocr_id_ss">wb029sv4796_99_0005.txt</field>
   <field name="druid_ssi">wb029sv4796</field>
@@ -43,7 +43,7 @@
   <field name="id">wb029sv4796_00_0006</field>
   <field name="page_num_ssi">2</field>
   <field name="page_sequence_isi">2</field>
-  <field name="total_pages_is">4</field>
+  <field name="vol_total_pages_is">4</field>
   <field name="image_id_ssm">wb029sv4796_00_0006.jp2</field>
   <field name="ocr_id_ss">wb029sv4796_99_0006.txt</field>
   <field name="druid_ssi">wb029sv4796</field>
@@ -111,7 +111,7 @@
 <doc>
   <field name="id">wb029sv4796_00_0007</field>
   <field name="page_sequence_isi">3</field>
-  <field name="total_pages_is">4</field>
+  <field name="vol_total_pages_is">4</field>
   <field name="image_id_ssm">wb029sv4796_00_0007.jp2</field>
   <field name="ocr_id_ss">wb029sv4796_99_0007.txt</field>
   <field name="druid_ssi">wb029sv4796</field>
@@ -150,7 +150,7 @@
   <field name="id">wb029sv4796_00_0111</field>
   <field name="page_num_ssi">4</field>
   <field name="page_sequence_isi">4</field>
-  <field name="total_pages_is">4</field>
+  <field name="vol_total_pages_is">4</field>
   <field name="image_id_ssm">wb029sv4796_00_0111.jp2</field>
   <field name="ocr_id_ss">wb029sv4796_99_0111.txt</field>
   <field name="druid_ssi">wb029sv4796</field>
@@ -201,7 +201,7 @@
   <field name="id">fy968nm6633_00_0648</field>
   <field name="page_num_ssi">637</field>
   <field name="page_sequence_isi">1</field>
-  <field name="total_pages_is">2</field>
+  <field name="vol_total_pages_is">2</field>
   <field name="image_id_ssm">fy968nm6633_00_0648.jp2</field>
   <field name="ocr_id_ss">fy968nm6633_99_0648.txt</field>
   <field name="druid_ssi">fy968nm6633</field>
@@ -251,7 +251,7 @@
   <field name="id">fy968nm6633_00_0666</field>
   <field name="page_num_ssi">645</field>
   <field name="page_sequence_isi">2</field>
-  <field name="total_pages_is">2</field>
+  <field name="vol_total_pages_is">2</field>
   <field name="image_id_ssm">fy968nm6633_00_0666.jp2</field>
   <field name="ocr_id_ss">fy968nm6633_99_0666.txt</field>
   <field name="druid_ssi">fy968nm6633</field>
@@ -294,7 +294,7 @@
   <field name="id">jt959wc5586_00_0782</field>
   <field name="page_num_ssi">783</field>
   <field name="page_sequence_isi">1</field>
-  <field name="total_pages_is">1</field>
+  <field name="vol_total_pages_is">1</field>
   <field name="image_id_ssm">jt959wc5586_00_0782.jp2</field>
   <field name="ocr_id_ss">jt959wc5586_99_0782.txt</field>
   <field name="druid_ssi">jt959wc5586</field>
@@ -328,7 +328,7 @@
   <field name="id">bm916nx5550_00_0006</field>
   <field name="page_num_ssi">V</field>
   <field name="page_sequence_isi">1</field>
-  <field name="total_pages_is">1</field>
+  <field name="vol_total_pages_is">1</field>
   <field name="image_id_ssm">bm916nx5550_00_0006.jp2</field>
   <field name="ocr_id_ss">bm916nx5550_99_0006.txt</field>
   <field name="druid_ssi">bm916nx5550</field>
@@ -359,7 +359,7 @@
   <field name="id">mc666yy3026_00_0144</field>
   <field name="page_num_ssi">140</field>
   <field name="page_sequence_isi">1</field>
-  <field name="total_pages_is">1</field>
+  <field name="vol_total_pages_is">1</field>
   <field name="image_id_ssm">mc666yy3026_00_0144.jp2</field>
   <field name="ocr_id_ss">mc666yy3026_99_0144.txt</field>
   <field name="druid_ssi">mc666yy3026</field>

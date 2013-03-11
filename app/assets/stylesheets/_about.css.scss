@@ -6,6 +6,10 @@
     font-size: 1.25em;
     margin-top: 30px;
   }
+  h2#curator {
+    @include main-top-border;
+    padding-top: 10px;
+  }
   p {
     font-family: $text_font_family;
   	font-weight: 400;

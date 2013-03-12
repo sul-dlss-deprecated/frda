@@ -63,6 +63,9 @@
       a {
         color: $active_heading_link_color;
       }
+      &.short-title {
+        display: none;
+      }
     }
     .icon-book {margin: 4px 5px;}
     .icon-picture {margin: 3px 5px;}
@@ -106,26 +109,25 @@
     h3 {
       margin-top: 0;
       padding-top: 3px;
+      &.long-title {
+        display: none;
+      }
     }
     .icon-book {margin: 4px 5px;}
     .icon-picture {margin: 3px 5px;}
-    .result-group {
+    .result-group, .flat-result-group {
       .oneresult {
         float: left;
-        width: 140px;
+        width: 225px;
         text-align: center;
         margin: 0 0 15px 0;
-        min-height: 290px;
-        img {
-          @include result-image-styling;
-          width: 100px;
-        }
+        min-height: 425px;
         .pageimg {}
         .pageimg {
           > a {border-bottom: none;}
           img {
             @include result-image-styling;
-            width: 100px;
+            width: 200px;
           }
         }
         .speaker {display: none;}
@@ -163,11 +165,14 @@
       padding-top: 3px;
       &.image-item-title {
         margin-bottom: 3px;
+        &.short-title {
+          display: none;
+        }
       }
     }
     .icon-book {margin: 4px 5px;}
     .icon-picture {margin: 3px 5px;}
-    .result-group {
+    .result-group, .flat-result-group {
       margin-bottom: 30px;
       .oneresult {
         clear: both;
@@ -209,7 +214,7 @@
       li {
         list-style-type: none;
         .occurrences {
-          margin-right: 35px;
+          margin-right: 11px;
         }
         a {
           border-bottom: none;

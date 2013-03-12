@@ -191,6 +191,10 @@ class CatalogController < ApplicationController
     config.add_index_field 'level_ssim', :label => "#{I18n.t('frda.show.level')}:"
     config.add_index_field 'unit_date_ssim', :label => "#{I18n.t('frda.show.date')}:"
     config.add_index_field 'text_ftsiv', :label => "Spoken Text:", :highlight => true #don't really need an i18n label here since it won't be used.
+    config.add_index_field 'spoken_text_ftsmiv', :label => "Spoken Text:", :highlight => true #don't really need an i18n label here since it won't be used.
+    config.add_index_field 'title_long_ftsi', :label => "Long Tilte:", :highlight => true #don't really need an i18n label here since it won't be used.
+    config.add_index_field 'title_short_ftsi', :label => "Short Title:", :highlight => true #don't really need an i18n label here since it won't be used.
+    
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 

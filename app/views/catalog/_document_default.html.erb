@@ -45,22 +45,35 @@
                 </h3>
               <% end %>
               <% unless list_is_empty?(document.speaker) || document.images_item? %>
+              <%# unless document.highlighted_speeches.blank? || document.images_item? %>
                 <span class="speaker">
                    <span class="frda-label"><%=t('frda.search.results.speaker')%>:&nbsp;</span>
-                   <%=show_list(document.speaker)%>
+                   <%= show_list(document.speaker)%>
+                   <%#= document.highlighted_speeches.map do |speech|
+                         speech.speaker
+                       end.join(", ") %>
                 </span>
               <% end %>
                 <span class="pagenum">
                   <i class="icon-list-alt"></i>
                   <%= link_to document.title(:length=>"short"), document %>
                 </span>
-
+              
               <% unless document.page_text.blank? %>
+              <%# unless document.highlighted_speeches.blank? %>
                 <div class="snippet">
+                  <span class="shorttext">
+                    <%#= document.highlighted_speeches.map do |speech|
+                          truncate_highlight(speech.speech, :around => 20, :length => 200)
+                        end.join("<br/>").html_safe %>
+                  </span>
                   <span class="longtext">
                     <%= document.page_text.map do |text|
                           truncate_highlight(text, :around => 20, :length => 600)
-                      end.join("<br/>").html_safe %>
+                        end.join("<br/>").html_safe %>
+                    <%#= document.highlighted_speeches.map do |speech|
+                          truncate_highlight(speech.speech, :around => 20, :length => 600)
+                        end.join("<br/>").html_safe %>
                   </span>
                 </div>
               <% end %>

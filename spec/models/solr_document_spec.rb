@@ -64,6 +64,56 @@ describe SolrDocument do
     end
   end
   
+  describe "speeches" do
+    before(:all) do
+      @speech_new = "M. Dorizy -|- This is a speech by a person."
+      @speech_old = "M. Dorizy This is a speech by a person."
+    end
+    it "should parse the speech split on the appropriate delimiter" do
+      speeches = SolrDocument.new({:spoken_text_ftsimv => [@speech_new]}, {}).speeches
+      speeches.should be_a Array
+      speeches.length.should == 1
+      speeches.first.speaker.should == "M. Dorizy"
+      speeches.first.speech.should == "This is a speech by a person."
+    end
+    it "should parse the speech split on the 2nd space if we're doing the old style parsing" do
+      speeches = SolrDocument.new({:spoken_text_ftsimv => [@speech_old]}, {}).speeches
+      speeches.should be_a Array
+      speeches.length.should == 1
+      speeches.first.speaker.should == "M. Dorizy"
+      speeches.first.speech.should == "This is a speech by a person."
+    end
+    it "should inform us if a speech has been highlighted" do
+      hl_response = {'highlighting' => {'1234'=>{'spoken_text_ftsimv'=>["M. Dorizy -|- This is a <em>speech</em> by a person."]}}}
+      speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech_new]}, hl_response).speeches
+      speeches.first.should be_highlighted
+      speeches.first.speech.should =~ /<em>/
+
+      speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech_new]}, {}).speeches
+      speeches.first.should_not be_highlighted
+    end
+    describe "highlighted_speeches" do
+      it "should return only the highlighed speeches" do
+        hl_response = {'highlighting' => {'1234'=>{'spoken_text_ftsimv'=>["M. Dorizy -|- This is a <em>speech</em> by a person."]}}}
+        speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech_new, @speech_old]}, hl_response).highlighted_speeches
+        speeches.should be_a Array
+        speeches.length.should == 1
+        speeches.first.should be_highlighted
+        speeches.first.speech.should =~ /<em>/
+      end
+      it "should return all the speeches if no highlighting is available" do
+        speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech_new, @speech_old]}, {}).highlighted_speeches
+        speeches.should be_a Array
+        speeches.length.should == 2
+        speeches.each do |speech|
+          speech.should_not =~ /<em>/
+          speech.should_not be_highlighted
+        end
+      end
+    end
+  end
+  
+  
   describe "mods" do
     before(:all) do
       @mods_doc = SolrDocument.new({:id => "12345", :mods_xml => "<?xml version='1.0'?><mods><note>This is the first note.</note><note>This is the second note.</note></mods>"})

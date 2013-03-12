@@ -132,7 +132,7 @@ module ApplicationHelper
   def link_to_volume_facet(volume, options={})
     link_params = {}
     link_params.merge!(options[:params]) if options[:params]
-    volume_facet_params = {:f => {:vol_title_ssi => [volume]}}
+    volume_facet_params = {"f" => {"vol_title_ssi" => [volume]}}
     options.delete(:params)
     link_to(volume, catalog_index_path(link_params.deep_merge(volume_facet_params)), options)
   end
@@ -140,7 +140,7 @@ module ApplicationHelper
   def link_to_session_facet(session, options={})
     link_params = {}
     link_params.merge!(options[:params]) if options[:params]
-    session_facet_params = {:f => {:session_date_sim => [session]}}
+    session_facet_params = {"f" => {"session_date_sim" => [session]}}
     options.delete(:params)
     link_to(session, catalog_index_path(link_params.deep_merge(session_facet_params)), options)
   end

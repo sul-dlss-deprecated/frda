@@ -257,7 +257,7 @@
       <str name="facet.field">session_govt_ssim</str>
 
       <str name="hl">on</str>
-      <str name="hl.fl">text_ftsiv</str>
+      <str name="hl.fl">spoken_text_ftsimv, title_long_ftsi, title_short_ftsi</str>
       <str name="hl.fragsize">0</str>
     </lst>    
   </requestHandler>

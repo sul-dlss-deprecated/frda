@@ -11,7 +11,7 @@ module FacetsHelper
   
   def facet_field_names
     keys = blacklight_config.facet_fields.keys
-    facet_patterns=%w{document_types_ssim periods_ssim highlight_ssim}
+    facet_patterns=%w{periods_ssim highlight_ssim}
     facet_patterns.each do |facet_pattern|
       keys.delete_if{|k| k.include?(facet_pattern) }
       keys.unshift("#{I18n.locale}_#{facet_pattern}") 

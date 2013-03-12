@@ -135,7 +135,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
       visit catalog_index_path(:f => {:vol_title_ssi => ["Tome 36 : Du 11 décembre 1791 au 1er janvier 1792"]})
       page.should_not have_xpath("//h2/a[text()='Tome 36 : Du 11 décembre 1791 au 1er janvier 1792']")
       # make sure we're also getting results
-      page.all(:css, ".image-item").length.should == 4
+      page.all(:css, ".oneresult").length.should == 4
     end
   end
   

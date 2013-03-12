@@ -56,7 +56,7 @@ end
 def grouped_response
   {"responseHeader" => {"params" =>{"rows" => 3}},
    "grouped" => 
-     {'vol_title_ssi' => 
+     {'result_group_ssi' => 
        {'groups' => [{'groupValue'=>"Group 1", 'doclist'=>{'numFound'=>2, 'docs'=>[{:id=>1}]}},
                      {'groupValue'=>"Group 2", 'doclist'=>{'numFound'=>3, 'docs'=>[{:id=>2}, :id=>3]}}
                     ],

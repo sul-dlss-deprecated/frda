@@ -63,6 +63,9 @@
       a {
         color: $active_heading_link_color;
       }
+      &.short-title {
+        display: none;
+      }
     }
     .icon-book {margin: 4px 5px;}
     .icon-picture {margin: 3px 5px;}
@@ -106,6 +109,9 @@
     h3 {
       margin-top: 0;
       padding-top: 3px;
+      &.long-title {
+        display: none;
+      }
     }
     .icon-book {margin: 4px 5px;}
     .icon-picture {margin: 3px 5px;}
@@ -163,6 +169,9 @@
       padding-top: 3px;
       &.image-item-title {
         margin-bottom: 3px;
+        &.short-title {
+          display: none;
+        }
       }
     }
     .icon-book {margin: 4px 5px;}

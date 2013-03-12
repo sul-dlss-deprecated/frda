@@ -34,7 +34,8 @@
                    :counter =>  (index + 1 + @response.params[:start].to_i) %>
             </span>
             <% if document.images_item? %>
-              <h3 class="image-item-title"><%= link_to document.title(:length=>"short"), document %></h3>
+              <h3 class="image-item-title long-title"><%= link_to document.title, document %></h3>
+              <h3 class="image-item-title short-title"><%= link_to document.title(:length=>"short"), document %></h3>
               <% unless list_is_empty?(document.year) %>
                 <span class="item-date"><%= document.year.first %></span>
               <% end %>

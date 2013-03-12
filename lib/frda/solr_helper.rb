@@ -24,7 +24,7 @@ module Frda::SolrHelper
   end
   
   def group_result_field
-    "vol_title_ssi"
+    "result_group_ssi"
   end
   
 end

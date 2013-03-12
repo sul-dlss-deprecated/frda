@@ -69,7 +69,7 @@ class Frda::GroupedSolrResponse < Mash
   end
 
   def grouping_field
-    "vol_title_ssi"
+    "result_group_ssi"
   end
 
 end

@@ -180,7 +180,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume', :show => false
     config.add_facet_field 'session_date_sim', :label => 'frda.show.session', :show => false
 
-    config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["vol_title_ssi", "session_date_sim"]
+    config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["result_group_ssi", "session_date_sim"]
 
     config.add_facet_field 'en_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('en')
     config.add_facet_field 'fr_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('fr')
@@ -322,10 +322,13 @@ class CatalogController < ApplicationController
   end
   
   def group_response?
-    !(params and 
-        params[:f] and 
-          ((params[:f][:vol_title_ssi] and !params[:f][:vol_title_ssi].blank?) or
-           (params[:f][:session_date_sim] and !params[:f][:session_date_sim].blank?)))
+    return true unless params["f"]
+    !(params and
+        params["f"] and
+          ((params["f"]["vol_title_ssi"] and !params["f"]["vol_title_ssi"].blank?) or
+           (params["f"]["session_date_sim"] and !params["f"]["session_date_sim"].blank?)) or
+           (params["f"]["collection_ssi"] and params["f"]["collection_ssi"].include?(Frda::Application.config.images_id)) or
+           (params["f"]["result_group_ssi"] and params["f"]["result_group_ssi"].include?(Frda::Application.config.images_id)))
   end
   helper_method :"group_response?"
   

@@ -81,8 +81,12 @@ module ApplicationHelper
     {:f => {"#{I18n.locale}_#{blacklight_config.collection_highlight_field}".to_sym => ["highlight_#{highlight.id}"]}}
   end
 
-  def params_for_volume(volume)
-    {:f => {:vol_title_ssi => [volume]}}
+  def params_for_volume_or_image(volume)
+    if volume == Frda::Application.config.images_id
+      {"f" => {"collection_ssi" => [volume]}}
+    else
+      {"f" => {"vol_title_ssi" => [volume]}}
+    end
   end
 
   def params_for_session(session)
@@ -132,7 +136,7 @@ module ApplicationHelper
   def link_to_volume_facet(volume, options={})
     link_params = {}
     link_params.merge!(options[:params]) if options[:params]
-    volume_facet_params = {"f" => {"vol_title_ssi" => [volume]}}
+    volume_facet_params = params_for_volume_or_image(volume)
     options.delete(:params)
     link_to(volume, catalog_index_path(link_params.deep_merge(volume_facet_params)), options)
   end

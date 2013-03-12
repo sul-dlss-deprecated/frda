@@ -89,6 +89,14 @@ module ApplicationHelper
     end
   end
 
+  def contextual_118n_key_for_pages(group)
+    if group == Frda::Application.config.images_id
+      "frda.search.image"
+    else
+      "frda.search.occurrence"
+    end
+  end
+
   def params_for_session(session)
     {:f => {:session_date_sim => [session]}}
   end

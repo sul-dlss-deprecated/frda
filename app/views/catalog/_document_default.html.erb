@@ -6,7 +6,7 @@
           <i class="icon-book"></i>
           <%= link_to_volume_facet(grouping.group, {:params => params}) %>
           <%#= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
-          <span>(<%= t('frda.search.occurrence', :count => grouping.total) %>)</span>
+          <span>(<%= t(contextual_118n_key_for_pages(grouping.group), :count => grouping.total) %>)</span>
         </h2>
         <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the
             Images group title. Will need to detect whether group is Images and if so,

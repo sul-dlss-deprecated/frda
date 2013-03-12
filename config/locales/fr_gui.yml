@@ -180,6 +180,9 @@ fr:
     search:
       results_heading_combined: 'dans les deux archives'
       results_heading_ap: 'Archives parlementaires'
+      image:
+        one: "1 image"
+        other: "%{count} images"
       occurrence:
         one: "1 occurrence"
         other: "%{count} pages"

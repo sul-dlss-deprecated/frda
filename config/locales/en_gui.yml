@@ -171,6 +171,9 @@ en:
     search:
       results_heading_combined: 'combined collections'
       results_heading_ap: 'Parliamentary archives'
+      image:
+        one: "1 image"
+        other: "%{count} images"
       occurrence:
         one: "1 page"
         other: "%{count} pages"

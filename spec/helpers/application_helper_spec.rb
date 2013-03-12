@@ -55,7 +55,7 @@ describe ApplicationHelper do
       link.should match(/^<a href=.*q=Hello.*<\/a>$/)
     end
     it "should deep merge faceting" do
-      link = link_to_volume_facet("A Volume Title", {:params => {:f => {:some_facet => ["A Value"]}}})
+      link = link_to_volume_facet("A Volume Title", {:params => {"f" => {"some_facet" => ["A Value"]}}})
       link.should match(/^<a href=.*vol_title_ssi.*=A\+Volume\+Title.*<\/a>$/)
       link.should match(/^<a href=.*some_facet.*=A\+Value.*<\/a>$/)
     end

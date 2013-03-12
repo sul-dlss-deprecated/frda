@@ -11,10 +11,21 @@ class CatalogController < ApplicationController
   
   before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
 
-  def self.collection_highlights
+  def self.political_periods_query(locale)
+    opts={}
+    PoliticalPeriod.find(:all,:order=>:sort_order).each do |period|
+      start_date = "#{DateTime.parse(period.start_date).strftime("%Y-%m-%d")}T00:00:00Z"
+      end_date = "#{(DateTime.parse(period.end_date) + 1.day).strftime("%Y-%m-%d")}T00:00:00Z"
+      range_query = "search_date_dtsim:[#{start_date} TO #{end_date}]"
+      opts[:"period_#{period.id}"] = {:label => period.send("name_#{locale}"), :fq => range_query}
+    end if ActiveRecord::Base.connection.table_exists? 'political_periods'
+    opts
+  end
+  
+  def self.collection_highlights(locale)
     opts = {}
     CollectionHighlight.find(:all,:order=>:sort_order).each do |highlight|
-      opts[:"highlight_#{highlight.id}"] = {:label => highlight.send("name_#{I18n.locale}"), :fq => "id:(#{highlight.query.gsub('or', 'OR')})"}
+      opts[:"highlight_#{highlight.id}"] = {:label => highlight.send("name_#{locale}"), :fq => "id:(#{highlight.query.gsub('or', 'OR')})"}
     end if ActiveRecord::Base.connection.table_exists? 'collection_highlights'
     opts
   end
@@ -171,8 +182,12 @@ class CatalogController < ApplicationController
 
     config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["vol_title_ssi", "session_date_sim"]
 
-    config.add_facet_field 'highlight_ssim', :label => I18n.t('frda.nav.collection_highlights'), :show => false,  :query => collection_highlights
+    config.add_facet_field 'en_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('en')
+    config.add_facet_field 'fr_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('fr')
 
+    config.add_facet_field 'en_periods_ssim', :label => 'frda.nav.timeline_of_events', :show => true,  :query => political_periods_query('en')
+    config.add_facet_field 'fr_periods_ssim', :label => 'frda.nav.timeline_of_events', :show => true,  :query => political_periods_query('fr')
+    
     # config.add_facet_field 'example_query_facet_field', :label => 'Publish Date', :query => {
     #    :years_5 => { :label => 'within 5 Years', :fq => "pub_date:[#{Time.now.year - 5 } TO *]" },
     #    :years_10 => { :label => 'within 10 Years', :fq => "pub_date:[#{Time.now.year - 10 } TO *]" },

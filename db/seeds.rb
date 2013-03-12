@@ -1,3 +1,5 @@
+# -*- encoding : utf-8 -*-
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -12,6 +14,7 @@ end
 
 CollectionHighlight.find(:all).each {|h| h.destroy}
 CollectionHighlightItem.find(:all).each {|hi| hi.destroy}
+PoliticalPeriod.find(:all).each {|p| p.destroy}
 
 c1=CollectionHighlight.create(
   sort_order:1,
@@ -54,3 +57,74 @@ c3_items=%w{zp695fd1911 bb298qd7487 bb039cc5395 bb204rc7778}
 add_items(c1_items,c1)
 add_items(c2_items,c2)
 add_items(c3_items,c3)
+
+PoliticalPeriod.create(
+  sort_order:1,
+  name_en: 'Assembly of Notables and preparation of Cahiers de doleances',
+  name_fr: 'Assemblée de Notables et préparations pour les Cahiers de doléances',
+  start_date: '1787-02-22',
+  end_date: '1789-01-24'
+)
+PoliticalPeriod.create(
+  sort_order:2,
+  name_en: 'Convocation of Estates-General through fall of the Bastille',
+  name_fr: 'Convocation des Etats-généraux et prise de la Bastille',
+  start_date: '1789-05-05',
+  end_date: '1789-07-14'
+)
+PoliticalPeriod.create(
+  sort_order:3,
+  name_en: 'Constituent Assembly',
+  name_fr: 'Assemblée constituente',
+  start_date: '1789-07-17',
+  end_date: '1791-09-30'
+)
+PoliticalPeriod.create(
+  sort_order:4,
+  name_en: 'Legislative Assembly',
+  name_fr: 'Assemblée législative',
+  start_date: '1791-10-01',
+  end_date: '1792-09-20'
+)
+PoliticalPeriod.create(
+  sort_order:5,
+  name_en: 'Girondin Convention',
+  name_fr: 'Convention girond',
+  start_date: '1792-09-21',
+  end_date: '1793-06-02'
+)
+PoliticalPeriod.create(
+  sort_order:6,
+  name_en: 'Jacobin Convention and Terror',
+  name_fr: 'Convention montagnarde et la Terreur',
+  start_date: '1793-06-02',
+  end_date: '1794-07-28'
+)
+PoliticalPeriod.create(
+  sort_order:7,
+  name_en: 'Thermidorian Convention',
+  name_fr: 'Convention thermidorienne',
+  start_date: '1794-07-28',
+  end_date: '1795-10-26'
+)
+PoliticalPeriod.create(
+  sort_order:8,
+  name_en: 'First Directory',
+  name_fr: 'Premier Directoire',
+  start_date: '1795-10-27',
+  end_date: '1797-09-04'
+)
+PoliticalPeriod.create(
+  sort_order:9,
+  name_en: 'Second Directory',
+  name_fr: 'Seconde Directoire',
+  start_date: '1797-09-04',
+  end_date: '1799-06-18'
+)
+PoliticalPeriod.create(
+  sort_order:10,
+  name_en: 'Third Directory and Coup d\'etat of 18 Brumaire',
+  name_fr: 'Troisième Directoire et coup d\'état du 18 Brumaire',
+  start_date: '1799-06-08',
+  end_date: '1799-11-11'
+)

@@ -78,7 +78,7 @@ module ApplicationHelper
   end
 
   def params_for_collection_highlight(highlight)
-    {:f => {blacklight_config.collection_highlight_field.to_sym => ["highlight_#{highlight.id}"]}}
+    {:f => {"#{I18n.locale}_#{blacklight_config.collection_highlight_field}".to_sym => ["highlight_#{highlight.id}"]}}
   end
 
   def params_for_volume(volume)

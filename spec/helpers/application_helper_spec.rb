@@ -12,9 +12,9 @@ describe ApplicationHelper do
       highlight.stub(:id).and_return("1")
       params = params_for_collection_highlight(highlight)
       params.should be_a(Hash)
-      params[:f][:highlight_field].should be_a(Array)
-      params[:f][:highlight_field].length.should == 1
-      params[:f][:highlight_field].first.should == "highlight_1"
+      params[:f][:en_highlight_field].should be_a(Array)
+      params[:f][:en_highlight_field].length.should == 1
+      params[:f][:en_highlight_field].first.should == "highlight_1"
     end
     
     it "should link to the appropriate collection highlight" do

@@ -159,12 +159,23 @@
 }
 .image-box {margin-right: 20px;}
 .ocr-box p {margin-top: 0;}
-.flipbook {text-align: center;}
+.flipbook {
+  height: 100%;
+  text-align: center;
+}
 #physical {text-align: right;}
 .ext-links a {
   @include link-uncolored-border;
   font-size: 0.9em;
 }
+#ap_page_image {
+	height: 600px;
+	width: 100%;
+}
+.ui-autocomplete-loading {
+	background: asset_url('ajax-loader.gif', image) right center no-repeat;
+}
+
 
 /* Images Item Details */
 .blacklight-catalog-show .show-document .images-item {

@@ -171,9 +171,9 @@ en:
       results_heading_combined: 'combined collections'
       results_heading_ap: 'Parliamentary archives'
       occurrence:
-        one: "1 occurrence"
-        other: "%{count} occurrences"
-      occurrences: Occurrences
+        one: "1 page"
+        other: "%{count} pages"
+      occurrences: Pages
       sequence: Sequence
       results_heading_image: 'Images of the French Revolution'
       search_results: 'Results'

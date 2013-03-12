@@ -73,9 +73,11 @@ end
                 <li class="download-option">
                  <%= link_to t('frda.show.download_options.page_image'), @document.first_image(:download=>true), :class => 'downloadLink' %>
                 </li>
-                <li class="download-option">
-                 <%= link_to t('frda.show.download_options.page_text'), @document.txt_file, :class => 'downloadLink' %>
-                </li>
+								<% unless @document.formatted_page_text.blank? %>
+	                <li class="download-option">
+	                 <%= link_to t('frda.show.download_options.page_text'), @document.txt_file, :class => 'downloadLink' %>
+	                </li>
+								<% end %>
                 <% if @document.pdf_file %>
                   <li class="download-option">
                    <%= link_to "#{t('frda.show.volume')} PDF - #{number_to_human_size(@document.pdf_file_size)}", @document.pdf_file, :class => 'downloadLink' %>

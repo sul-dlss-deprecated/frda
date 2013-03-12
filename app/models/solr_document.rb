@@ -94,10 +94,6 @@ class SolrDocument
   def volume_name
     self[:vol_title_ssi]
   end
-
-  def formatted_page_text
-    return open(txt_file).read
-  end
   
   def page_text
     if self.highlight_field(:text_ftsiv)
@@ -120,9 +116,31 @@ class SolrDocument
   end  
   
   def txt_file
-    "https://stacks.stanford.edu/file/druid:#{self.druid}/#{self[:ocr_id_ss]}" unless self[:ocr_id_ss].blank? || self.druid.blank?    
+    get_actual_text_file unless @txt_file
+    return @txt_file
   end
 
+  def formatted_page_text
+    get_actual_txt_file unless @formatted_page_text
+    return @formatted_page_text
+  end
+
+  def get_actual_txt_file
+    base_name="https://stacks.stanford.edu/file/druid:#{self.druid}/"     
+    possible_filenames=[self[:ocr_id_ss],self[:ocr_id_ss].gsub('_99_','_'),self[:ocr_id_ss].gsub('_99_','_00_')]
+    possible_filenames.each do |file| 
+      begin
+         full_path="#{base_name}#{file}"
+         @formatted_page_text=open(full_path).read
+         @txt_file=full_path
+         break
+       rescue
+         @formatted_page_text=""
+         @txt_file=""
+       end
+    end
+  end
+  
   def pdf_file_size
     self[:vol_pdf_size_is]
   end

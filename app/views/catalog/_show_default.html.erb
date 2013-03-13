@@ -1,4 +1,4 @@
-<% @page_title = @document.title %>
+<% @page_title = @document.title.is_a?(Array) ? @document.title.first : @document.title %>
 
 <div id="item_detail" class="document">
 	<% if @document.images_item? %>

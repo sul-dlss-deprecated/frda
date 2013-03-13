@@ -81,23 +81,28 @@ class CatalogController < ApplicationController
     from_id=params[:from_id]
     druid=params[:id]
     page_num=params[:page_num]
+    download_ocr_text=params[:download_ocr_text]
+
     @mode=params[:mode]
-    
+
     doc=Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_sequence_isi:\"#{page_num}\""})["response"]["docs"]
     @document=SolrDocument.new(doc.first) if doc.size > 0 # assuming we found this page
 
     if request.xhr?
-      setup_next_and_previous_documents
-      render 'show_page',:format=>:js
+        setup_next_and_previous_documents
+        render 'show_page',:format=>:js
+        return
+    elsif download_ocr_text 
+        send_data(@document.formatted_page_text, :filename => "#{@document.title}.txt")
+        return
+    elsif @document
+        id=@document.id
     else
-      unless @document
         flash[:alert]=t('frda.show.not_found')
         id=from_id
-      else
-        id=@document.id
-      end
-      redirect_to catalog_path(id,:mode=>@mode)
     end
+
+    redirect_to catalog_path(id,:mode=>@mode)
 
   end
 

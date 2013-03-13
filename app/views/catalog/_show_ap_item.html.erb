@@ -75,7 +75,7 @@ end
                 </li>
 								<% unless @document.formatted_page_text.blank? %>
 	                <li class="download-option">
-	                 <%= link_to t('frda.show.download_options.page_text'), @document.txt_file, :class => 'downloadLink' %>
+	                 <%= link_to t('frda.show.download_options.page_text'), show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:download_ocr_text=>true), :class => 'downloadLink' %>
 	                </li>
 								<% end %>
                 <% if @document.pdf_file %>

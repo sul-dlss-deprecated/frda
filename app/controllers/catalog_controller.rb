@@ -17,7 +17,7 @@ class CatalogController < ApplicationController
       start_date = "#{DateTime.parse(period.start_date).strftime("%Y-%m-%d")}T00:00:00Z"
       end_date = "#{(DateTime.parse(period.end_date) + 1.day).strftime("%Y-%m-%d")}T00:00:00Z"
       range_query = "search_date_dtsim:[#{start_date} TO #{end_date}]"
-      opts[:"period_#{period.id}"] = {:label => period.send("name_#{locale}"), :fq => range_query}
+      opts[:"period_#{period.id}"] = {:label => period.send("name_#{locale}").force_encoding("UTF-8"), :fq => range_query}
     end if ActiveRecord::Base.connection.table_exists? 'political_periods'
     opts
   end

@@ -29,12 +29,7 @@
 					<p class="form_label">
             <%= check_box_tag 'prox', 1, !params["prox"].blank? %>
             <%= label_tag('prox', t('frda.search.options.separated')) %>
-            <%= select_tag "words",
-                "<option>1</option>
-                 <option>2</option>
-                 <option selected>3</option>
-                 <option>4</option>
-                 <option>5</option>".html_safe %>
+            <%= select_tag("words", options_for_select(["1", "2", "3", "4", "5"], (params["words"] || "3"))) %>
             <%= label_tag('words', t('frda.search.options.words')) %>
 					</p>
 					

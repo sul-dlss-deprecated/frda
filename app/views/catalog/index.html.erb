@@ -14,7 +14,7 @@ $(document).ready(function(){
   </div>
   <%= render "search_form" %>
   <%= render :partial => 'constraints' if query_has_constraints? %>
-  <%= render :partial=>'facets' unless on_collection_highlights_page %>
+  <%= render :partial=> 'facets' unless on_collection_highlights_page %>
 </div>
 
 
@@ -53,17 +53,17 @@ $(document).ready(function(){
       <%#= render :partial => 'constraints' %>
     </div>
 
-    <%# bar with prev|next, views toggles, and per-page %>
+    <%# bar with response counts and view toggles %>
     <%= render "results_controls" %>
 
     <%# results pagination at top of page %>
-    <%= render 'results_pagination' %>
+    <%= render :partial => 'results_pagination', :locals => {:top_pagination => true} %>
 
     <%# search results items %>
     <%= render_document_index %>
 
     <%# results pagination at bottom of page %>
-    <%= render 'results_pagination' %>
+    <%= render :partial => 'results_pagination', :locals => {:top_pagination => false} %>
 
   <% end %>
 

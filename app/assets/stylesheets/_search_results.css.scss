@@ -19,11 +19,10 @@
 
 /* Baseline for all results views */
 #documents {
-  border-bottom: 2px dotted darken($container_bg_color, 10%);
   border-top: 2px dotted darken($container_bg_color, 10%);
   font-size: 12px;
   margin-top: 0;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   padding-top: 15px;
   h3.index_title {padding-top: 0;}
   h5.index_title {font-size: 13px;}
@@ -300,11 +299,19 @@ ul.inventory-ancestry {
     }
   }
 }
-
-.pagination {
-  border: none;
-  margin: 0;
-  padding: 0 0 4px;
+.record-padding {
+  border-top: 2px dotted darken($container_bg_color, 10%);
+  clear: left;
+  padding-top: 20px;
+  &.top {
+    border-top: none;
+    padding: 5px 0;
+  }
+  .pagination {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .collection-image {margin-right: 18px;}

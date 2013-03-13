@@ -177,7 +177,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'genre_ssim', :label => 'frda.show.genre', :limit => 10
     config.add_facet_field 'artist_ssim', :label => 'frda.show.artist', :limit => 10
     config.add_facet_field 'collector_ssim', :label => 'frda.show.collector', :limit => 10
-    config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume', :show => false
+    config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume'
     config.add_facet_field 'session_date_sim', :label => 'frda.show.session', :show => false
 
     config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["result_group_ssi", "session_date_sim"]

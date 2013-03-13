@@ -66,7 +66,7 @@ describe SolrDocument do
   
   describe "speeches" do
     before(:all) do
-      @speech_new = "M. Dorizy -|- This is a speech by a person."
+      @speech_new = "M. Dorizy-|-This is a speech by a person."
       @speech_old = "M. Dorizy This is a speech by a person."
     end
     it "should parse the speech split on the appropriate delimiter" do

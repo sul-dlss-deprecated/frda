@@ -8,15 +8,29 @@ class SolrDocument
   self.unique_key = 'id'
 
   def title(params={})
-    length=params[:length].nil? ? "long" : "short"
+    length = params[:length] || "long"
     case self.type
       when :page
-        length == "short" ? "page #{self.page_number}" : "#{self.volume_name} - page #{self.page_number}"  
+        page_title(length)
       when :images
-        self[:"title_#{length}_ftsi"]
+        self.send("#{length}_title")
       else
-        self[:"title_#{length}_ftsi"]
+        # this is the same as above,
+        # we really don't need when :images
+        self.send("#{length}_title")
       end
+  end
+  
+  def page_title(length = "long")
+    length == "short" ? "page #{self.page_number}" : "#{self.volume_name} - page #{self.page_number}"
+  end
+  
+  def short_title
+    highlighted_fields(:title_short_ftsi)
+  end
+  
+  def long_title
+    highlighted_fields(:title_long_ftsi)
   end
   
   def page_number
@@ -77,9 +91,7 @@ class SolrDocument
  
   def speeches
     return nil unless self[:spoken_text_ftsimv]
-    fields = self.highlight_field(:spoken_text_ftsimv) ?
-               self.highlight_field(:spoken_text_ftsimv) :
-               self[:spoken_text_ftsimv]
+    fields = highlighted_fields(:spoken_text_ftsimv)
     fields.map do |speech|
       Speech.new(speech)
     end
@@ -104,7 +116,7 @@ class SolrDocument
   end
   
   def session_date
-    multivalue_field('session_date_ftsimv')
+    highlighted_fields(:session_date_ftsimv)
   end
   
   def volume
@@ -247,6 +259,15 @@ class SolrDocument
 
                          
   private
+  
+  def highlighted_fields(key)
+    return [] unless self[key]
+    if self.highlight_field(key)
+      self.highlight_field(key)
+    else
+      [self[key]].flatten
+    end
+  end
   
   def blacklight_config
     CatalogController.blacklight_config

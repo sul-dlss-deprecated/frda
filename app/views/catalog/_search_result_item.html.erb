@@ -10,15 +10,15 @@
          :counter =>  (index + 1 + @response.params[:start].to_i) %>
   </span>
   <% if document.images_item? %>
-    <h3 class="image-item-title long-title"><%= link_to document.title, document %></h3>
-    <h3 class="image-item-title short-title"><%= link_to document.title(:length=>"short"), document %></h3>
+    <h3 class="image-item-title long-title"><%= link_to document.title.first.html_safe, document %></h3>
+    <h3 class="image-item-title short-title"><%= link_to document.title(:length=>"short").first.html_safe, document %></h3>
     <% unless list_is_empty?(document.year) %>
       <span class="item-date"><%= document.year.first %></span>
     <% end %>
   <% else %> <%# AP item %>
     <% unless list_is_empty?(document.session_date)%>
       <h3 class="session-title">
-        <%= link_to show_list(document.session_date), document %>
+        <%= link_to show_list(document.session_date).html_safe, document %>
       </h3>
     <% end %>
     <% unless list_is_empty?(document.speaker) || document.images_item? %>

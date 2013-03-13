@@ -214,6 +214,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'spoken_text_ftsmiv', :label => "Spoken Text:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'title_long_ftsi', :label => "Long Tilte:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'title_short_ftsi', :label => "Short Title:", :highlight => true #don't really need an i18n label here since it won't be used.
+    config.add_index_field 'session_date_ftsimv', :label => "Session Date:", :highlight => true #don't really need an i18n label here since it won't be used.
     
 
     # solr fields to be displayed in the show (single result) view

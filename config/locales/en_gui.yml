@@ -141,6 +141,7 @@ en:
       source: 'Source'
       collector: 'Collector'
       artist: 'Artist'
+      publisher: 'Publisher'
       volume: 'Volume'
       session: 'Session'
       page: 'page'

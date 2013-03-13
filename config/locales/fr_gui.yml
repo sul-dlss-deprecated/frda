@@ -145,6 +145,7 @@ fr:
       source: 'Origine'
       collector: 'Collectionneur'
       artist: 'Artiste'
+      publisher: 'Publisher'
       volume: 'Volume'
       session: 'Session'
       page: 'page'

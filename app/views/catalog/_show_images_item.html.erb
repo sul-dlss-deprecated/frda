@@ -57,6 +57,10 @@
         <dt><%=t('frda.show.medium')%></dt>
         <dd><%=@document.medium%></dd>
       <% end %>
+      <% unless @document.mods.origin_info.publisher.blank? %>
+        <dt><%=t('frda.show.publisher')%></dt>
+        <dd><%= @document.mods.origin_info.publisher.text %></dd>
+      <% end %>
       <% unless list_is_empty?(@document.collector) %>
         <dt><%=t('frda.show.collector')%></dt>
         <dd><%=show_formatted_list(@document.collector,:facet=>'collector_ssim')%></dd>

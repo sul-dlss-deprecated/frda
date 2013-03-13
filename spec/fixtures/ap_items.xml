@@ -14,7 +14,7 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
 	<field name="vol_pdf_name_ss">wb029sv4796.pdf</field>
 	<field name="vol_tei_name_ss">wb029sv4796.xml</field>
-	<field name="vol_pdf_size_is">2300000</field>
+	<field name="vol_pdf_size_ls">2300000</field>
 	<field name="vol_tei_size_is">4000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
@@ -55,7 +55,7 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
 	<field name="vol_pdf_name_ss">wb029sv4796.pdf</field>
 	<field name="vol_tei_name_ss">wb029sv4796.xml</field>
-	<field name="vol_pdf_size_is">2300000</field>
+	<field name="vol_pdf_size_ls">2300000</field>
 	<field name="vol_tei_size_is">4000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
@@ -123,7 +123,7 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
 	<field name="vol_pdf_name_ss">wb029sv4796.pdf</field>
 	<field name="vol_tei_name_ss">wb029sv4796.xml</field>
-	<field name="vol_pdf_size_is">2300000</field>
+	<field name="vol_pdf_size_ls">2300000</field>
 	<field name="vol_tei_size_is">4000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
@@ -162,7 +162,7 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
 	<field name="vol_pdf_name_ss">wb029sv4796.pdf</field>
 	<field name="vol_tei_name_ss">wb029sv4796.xml</field>
-	<field name="vol_pdf_size_is">2300000</field>
+	<field name="vol_pdf_size_ls">2300000</field>
 	<field name="vol_tei_size_is">4000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
@@ -213,7 +213,7 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
 	<field name="vol_pdf_name_ss">fy968nm6633.pdf</field>
 	<field name="vol_tei_name_ss">fy968nm6633.xml</field>
-	<field name="vol_pdf_size_is">6000000</field>
+	<field name="vol_pdf_size_ls">6000000</field>
 	<field name="vol_tei_size_is">3000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
@@ -263,7 +263,7 @@
   <field name="vol_date_end_dti">1790-03-01T23:59:59Z</field>
 	<field name="vol_pdf_name_ss">fy968nm6633.pdf</field>
 	<field name="vol_tei_name_ss">fy968nm6633.xml</field>
-	<field name="vol_pdf_size_is">6000000</field>
+	<field name="vol_pdf_size_ls">6000000</field>
 	<field name="vol_tei_size_is">3000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">séance</field>
@@ -307,7 +307,7 @@
   <field name="search_date_dtsim">1789-12-31T00:00:00Z</field>
 	<field name="vol_pdf_name_ss">jt959wc5586.pdf</field>
 	<field name="vol_tei_name_ss">jt959wc5586.xml</field>
-	<field name="vol_pdf_size_is">4500000</field>
+	<field name="vol_pdf_size_ls">4500000</field>
 	<field name="vol_tei_size_is">4000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">table des matières</field>
@@ -341,7 +341,7 @@
   <field name="search_date_dtsim">1789-09-15T00:00:00Z</field>
 	<field name="vol_pdf_name_ss">bm916nx5550.pdf</field>
 	<field name="vol_tei_name_ss">bm916nx5550.xml</field>
-	<field name="vol_pdf_size_is">3500000</field>
+	<field name="vol_pdf_size_ls">3500000</field>
 	<field name="vol_tei_size_is">2000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">liste</field>
@@ -372,7 +372,7 @@
   <field name="search_date_dtsim">1789-12-31T00:00:00Z</field>
 	<field name="vol_pdf_name_ss">mc666yy3026.pdf</field>
 	<field name="vol_tei_name_ss">mc666yy3026.xml</field>
-	<field name="vol_pdf_size_is">5500000</field>
+	<field name="vol_pdf_size_ls">5500000</field>
 	<field name="vol_tei_size_is">34000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">liste</field>

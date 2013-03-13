@@ -162,7 +162,7 @@ class SolrDocument
   end
   
   def pdf_file_size
-    self[:vol_pdf_size_is]
+    self[:vol_pdf_size_ls]
   end
     
   def tei_file_size

@@ -56,6 +56,9 @@ $(document).ready(function(){
     <%# bar with prev|next, views toggles, and per-page %>
     <%= render "results_controls" %>
 
+    <%# results pagination at top of page %>
+    <%= render 'results_pagination' %>
+
     <%# search results items %>
     <%= render_document_index %>
 

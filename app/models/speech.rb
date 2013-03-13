@@ -20,7 +20,7 @@ class Speech
   private
   
   def delimiter
-    " -|- "
+    "-|-"
   end
   
   def strip_highlighting(text)

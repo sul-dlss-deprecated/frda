@@ -159,7 +159,7 @@ end
 	  <% end %>
 		<% if ['image', nil, '', 'ocr'].include?(@mode) %>
 	    <div class="ocr-box">
-	      <%= simple_format(@document.formatted_page_text)%>
+	      <%= simple_format(h @document.formatted_page_text)%>
 	    </div>
 		<% end %>
   </div>

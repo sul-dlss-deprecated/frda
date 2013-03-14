@@ -132,7 +132,7 @@ en:
       less: 'less'
       date: 'Date of publication'
       description: 'Physical description'
-      genre: 'Subjects'
+      genre: 'Genre'
       medium: 'Medium'
       publisher: 'Publisher'
       type: 'Type'

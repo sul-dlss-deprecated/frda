@@ -136,7 +136,7 @@ fr:
       less: 'fermer'
       date: 'Date'
       description: 'Déscription'
-      genre: 'Subjects'
+      genre: 'Genre'
       medium: 'Médium'
       publisher: 'Éditeur'
       type: 'Type'

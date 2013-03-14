@@ -117,6 +117,9 @@
   .about-dl img {
     margin-bottom: 5px;
   }
+  #header-navbar-static-top h1 {
+    margin-right: 40px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -127,5 +130,9 @@
   }
   .about-dl img {
     max-width: 100px;
+  }
+  #header-navbar-static-top.navbar .logo img {
+    font-size: 1.75em;
+    max-width: 150px;
   }
 }

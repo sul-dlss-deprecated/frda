@@ -11,10 +11,10 @@
     .logo {
       text-align: center;
       img {
-        max-height: 125px;
         display: block;
         float: left;
         margin-right: 10px;
+        max-width: 95%;
       }
     }
     .nav {
@@ -101,17 +101,19 @@
    and site title and nav elements */
 @media (min-width: 768px) and (max-width: 979px) {
   #header-navbar-static-top {
-    .logo img {
-      float: right;
-      max-width: 120px;
-    }
-    h1 {
-      font-size: 1.6em;
-      margin-top: 10px;
-    }
-    &.navbar {
-      h2 {font-size: 0.9em;}
-      .language-toggle {text-align: left;}
+    margin: 0 auto;
+    width: 724px;
+    .navbar-inner {
+      padding-left: 0;
+      .site-header-content {
+        box-sizing: border-box;
+        float: right;
+        margin-left: 0;
+        padding-left: 30px;
+        .language-toggle {
+          text-align: left;
+        }
+      }
     }
   }
 }

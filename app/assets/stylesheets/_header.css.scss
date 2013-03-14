@@ -106,6 +106,7 @@
     .navbar-inner {
       padding-left: 0;
       .site-header-content {
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
         float: right;
         margin-left: 0;

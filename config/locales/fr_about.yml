@@ -172,14 +172,14 @@ fr:
       </p>
     project_team_bnf_heading: 'Équipe de projet: Bibliothèque nationale de France'
     project_team_bnf_text_html: |
-      <dl class="project-team bnf fr">
+      <dl class="project-team dl-horizontal bnf fr">
         <dt>Président</dt><dd>Bruno Racine</dd>
         <dt>Directrice générale</dt><dd>Jacqueline Sanson</dd>
         <dt>Directeur des Collections</dt><dd>Denis Bruckmann</dd>
         <dt>Directeur des Services et réseaux</dt><dd>Arnaud Beaufort</dd>
         <dt>Directrice du département des Estampes et de la photographie</dt><dd>Sylvie Aubenas</dd>
       </dl>
-      <dl class="project-team bnf fr">
+      <dl class="project-team dl-horizontal bnf fr">
         <dt>Marie Thompson</dt><dd>conservateur, chargée du projet au département des Estampes et de la photographie</dd>
         <dt>Corinne Le Bitouzé</dt><dd>conservateur, chargée des collections XVIIIe siècle au
             département des Estampes et de la photographie</dd>

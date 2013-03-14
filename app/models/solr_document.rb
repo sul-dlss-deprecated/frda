@@ -148,7 +148,7 @@ class SolrDocument
   end  
   
   def txt_file
-    get_actual_text_file unless @txt_file
+    get_actual_txt_file unless @txt_file
     return @txt_file
   end
 
@@ -163,7 +163,7 @@ class SolrDocument
     possible_filenames.each do |file| 
       begin
          full_path="#{base_name}#{file}"
-         @formatted_page_text=open(full_path).read
+         @formatted_page_text=open(full_path).read.encode!('UTF-8', 'UTF-8', :invalid => :replace)
          @txt_file=full_path
          break
        rescue

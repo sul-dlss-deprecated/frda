@@ -5,11 +5,7 @@ class Speech
       @speaker = strip_highlighting(speech.split(delimiter).first)
       @speech = speech.split(delimiter).last
     else
-      speech[/^(\w*\S* \w*\S*) (.*)$/]
-      if $1.nil? or $2.nil?
-        speech[/^(\w*\S*) (.*)$/]
-      end
-      @speaker, @speech = [strip_highlighting($1.strip), $2.strip]
+      return nil
     end
   end
   

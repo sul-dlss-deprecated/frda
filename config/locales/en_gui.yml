@@ -132,6 +132,7 @@ en:
       less: 'less'
       date: 'Date of publication'
       description: 'Physical description'
+      people: 'People'
       genre: 'Genre'
       medium: 'Medium'
       publisher: 'Publisher'

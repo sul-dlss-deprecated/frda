@@ -27,11 +27,11 @@
   
   <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
   
-  <field name="speaker_ssim">M. Dorizy.</field>
-  <field name="spoken_text_timv">M. Dorizy. -|- Pour concilier tous les esprits, on peut, en
+  <field name="speaker_ssim">Dorizy</field>
+  <field name="spoken_text_timv">Dorizy. -|- Pour concilier tous les esprits, on peut, en
     faisant mention honorable de 1 adresse, mettre dans le procès-verbal « sans approuver le mot
     loi qui est inconstitutionnel. » (Murmures.)</field>
-  <field name="speaker_ssim">M. Gohier.</field>
+  <field name="speaker_ssim">Gohier</field>
   <field name="spoken_text_timv">Page 1 spoken text</field>
   
   <field name="text_tiv">Page 1 text</field>
@@ -67,12 +67,12 @@
   
   <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
   
-  <field name="speaker_ssim">M. Dorizy.</field>
-  <field name="spoken_text_timv">M. Dorizy. -|- Pour concilier tous les esprits, on peut, en
+  <field name="speaker_ssim">Dorizy</field>
+  <field name="spoken_text_timv">Dorizy -|- Pour concilier tous les esprits, on peut, en
     faisant mention honorable de 1 adresse, mettre dans le procès-verbal « sans approuver le mot
     loi qui est inconstitutionnel. » (Murmures.)</field>
-  <field name="speaker_ssim">M. Gohier.</field>
-  <field name="spoken_text_timv">M. Gohier. -|- L'opinion seule de M. Ghéron est
+  <field name="speaker_ssim">Gohier</field>
+  <field name="spoken_text_timv">Gohier -|- L'opinion seule de M. Ghéron est
     inconstitutionnelle. Par l'article 1er de la section relative aux pouvoirs et fonctions de
     l'Assemblée nationale législative, la Constitution délègue exclusivement au Corps législatif
     le pouvoir de proposer et de décréter les lois. Les décrets rendus par le Corps législatif
@@ -134,11 +134,11 @@
   <field name="session_date_ftsimv">Séance du dimanche 11 décembre 1791 .</field>
   <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
   
-  <field name="speaker_ssim">M. Dorizy.</field>
-  <field name="spoken_text_timv">M. Dorizy. -|- Pour concilier tous les esprits, on peut, en
+  <field name="speaker_ssim">Dorizy</field>
+  <field name="spoken_text_timv">Dorizy -|- Pour concilier tous les esprits, on peut, en
     faisant mention honorable de 1 adresse, mettre dans le procès-verbal « sans approuver le mot
     loi qui est inconstitutionnel. » (Murmures.)</field>
-  <field name="speaker_ssim">M. Gohier.</field>
+  <field name="speaker_ssim">Gohier</field>
   <field name="spoken_text_timv">Page 3 spoken text</field>
   
   <field name="text_tiv">Page 3 text</field>
@@ -173,13 +173,13 @@
   <field name="session_date_ftsimv">Séance du mardi 13 décembre 1791, au matin.</field>
   <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
 
-  <field name="speaker_ssim">M. Gossuin.</field>
-  <field name="spoken_text_timv">M. Gossuin. -|- Messieurs, dans la séance du 31 octobre dernier, l'Assemblée a renvoyé à son comité de
+  <field name="speaker_ssim">Gossuin</field>
+  <field name="spoken_text_timv">Gossuin -|- Messieurs, dans la séance du 31 octobre dernier, l'Assemblée a renvoyé à son comité de
     législation une motion de M. Lejosne (1) sur la question de savoir si les tribunaux criminels
     seraient sédentaires où ambulants. Le rapport sur cette matière est très urgent. Il me semble</field>
-  <field name="speaker_ssim">M. Fauchet</field>
-  <field name="spoken_text_timv">M. Fauchet, -|- secrétaire, donne lecture des lettres, adresses et pétitions suivantes :</field>    
-  <field name="spoken_text_timv">M. Fauchet -|- 1° Lettre de M. Bertrand, ministre de la marine, par laquelle il communique à l'Assemblée</field>
+  <field name="speaker_ssim">Fauchet</field>
+  <field name="spoken_text_timv">Fauchet -|- secrétaire, donne lecture des lettres, adresses et pétitions suivantes :</field>    
+  <field name="spoken_text_timv">Fauchet -|- 1° Lettre de M. Bertrand, ministre de la marine, par laquelle il communique à l'Assemblée</field>
 
   <field name="text_tiv">ASSEMBLÉE NATIONALE LÉGISLATIVE. 
     Séance du mardi 13 décembre 1791, au matin. 
@@ -224,13 +224,13 @@
   <field name="session_date_ftsimv">Séance du jeudi 18 février 1790, au matin (1). </field>
   <field name="session_prez_ssim">PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.</field>
   
-  <field name="speaker_ssim">M. Guillotin</field>
-  <field name="spoken_text_timv">M. Guillotin. -|- Vun de MM. les secrétaires, donne (1) Cette séance est incomplète au
+  <field name="speaker_ssim">Guillotin</field>
+  <field name="spoken_text_timv">Guillotin -|- Vun de MM. les secrétaires, donne (1) Cette séance est incomplète au
     Moniteur. lecture des procès-verbaux des deux séances du mardi</field>
-  <field name="speaker_ssim">M. le Président.</field>
-  <field name="spoken_text_timv">M. le Président. -|- Le procès-verbal de la séance d'hier n'étant pas terminé, la lecture en est renvoyée à
+  <field name="speaker_ssim">Le Président</field>
+  <field name="spoken_text_timv">Le Président -|- Le procès-verbal de la séance d'hier n'étant pas terminé, la lecture en est renvoyée à
     demain.</field>    
-  <field name="spoken_text_timv">M. le Président. -|- something something something.</field>
+  <field name="spoken_text_timv">Le Président -|- something something something.</field>
 
   <field name="text_tiv">ASSEMBLÉE NATIONALE. 
     Séance du jeudi 18 février 1790, au matin (1).  

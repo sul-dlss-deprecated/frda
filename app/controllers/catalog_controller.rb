@@ -85,20 +85,20 @@ class CatalogController < ApplicationController
 
     @mode=params[:mode]
 
-    doc=Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_sequence_isi:\"#{page_num}\""})["response"]["docs"]
-    @document=SolrDocument.new(doc.first) if doc.size > 0 # assuming we found this page
-
-    if request.xhr?
+    response = Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_sequence_isi:\"#{page_num}\""})["response"]
+    @document = SolrDocument.new(response["docs"].first, response) if response["docs"].size > 0 # assuming we found this page
+        
+    if request.xhr? # coming an ajax call, just render the new page (or an error message if not found)
         setup_next_and_previous_documents
         render 'show_page',:format=>:js
         return
-    elsif download_ocr_text 
+    elsif download_ocr_text # user requested to download the OCR text, so give it to them
         send_data(@document.formatted_page_text, :filename => "#{@document.title}.txt")
         return
-    elsif @document
+    elsif @document # user needs to see the next page and is not coming an ajax call, we will redirect them on below to the new page
         id=@document.id
-    else
-        flash[:alert]=t('frda.show.not_found')
+    else # page was not found, so we will redirect back to where they started with an error message
+        flash[:alert]=t('frda.show.not_found') 
         id=from_id
     end
 

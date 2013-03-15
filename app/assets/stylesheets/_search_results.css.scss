@@ -214,8 +214,15 @@
       list-style: none;
       li {
         list-style-type: none;
+        .session-title {
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 95%;
+          white-space: nowrap;
+        }
         .occurrences {
-          margin-right: 11px;
+          margin-right: 2px;
         }
         a {
           border-bottom: none;

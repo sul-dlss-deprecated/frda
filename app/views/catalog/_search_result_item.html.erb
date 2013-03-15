@@ -2,12 +2,17 @@
     Oneresult == one search result item -%>
 <div class="oneresult">
   <span class="pageimg">
-    <%= link_to_document document,
-         :label => image_tag(document.first_image(:size=>:thumb),
-                             :alt => document.title,
-                             :title => document.title,
-                             :border => 0),
-         :counter =>  (index + 1 + @response.params[:start].to_i) %>
+      <%= link_to_document document,
+           :label => "<div data-lazy-load='true' data-src='#{document.first_image(:size=>:thumb)}' data-title='#{document.title}'></div>".html_safe,
+           :counter =>  (index + 1 + @response.params[:start].to_i) %>
+    <noscript>
+      <%= link_to_document document,
+           :label => image_tag(document.first_image(:size=>:thumb),
+                               :alt => document.title,
+                               :title => document.title,
+                               :border => 0),
+           :counter =>  (index + 1 + @response.params[:start].to_i) %>
+    </noscript>
   </span>
   <% if document.images_item? %>
     <h3 class="image-item-title long-title"><%= link_to document.title.first.html_safe, document %></h3>

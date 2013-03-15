@@ -191,7 +191,7 @@ span.content-type {
   border-top: 1px solid #dddddd;
   padding-top: 20px;
   ul {
-    margin-left: -20px;
+    font-size: 13px;
     -webkit-border-radius: 0;
        -moz-border-radius: 0;
             border-radius: 0;
@@ -205,6 +205,7 @@ span.content-type {
         border-right: 1px solid #ddd;
         color: #999999;
         line-height: 1.5em;
+        padding: 4px 10px;
       }
       > a:hover {
         color: $active_nav_link_color;

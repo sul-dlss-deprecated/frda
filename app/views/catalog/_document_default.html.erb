@@ -56,7 +56,10 @@
               <ul>
                 <%- tome["pivot"].each do |session| -%>
                   <li>
-                    <%= link_to_session_facet(session["value"], :params => params.dup.delete_if{|k,v| k == "view"}) %> <span class="occurrences"><%= session["count"] %></span>
+                    <span class="session-title">
+                      <%= link_to_session_facet(session["value"], :params => params.dup.delete_if{|k,v| k == "view"}, :title => session["value"]) %> 
+                    </span>
+                    <span class="occurrences"><%= session["count"] %></span>
                   </li>
                 <%- end -%>
               </ul>

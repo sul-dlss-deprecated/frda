@@ -40,22 +40,19 @@ end
 
       <div class="span2 item-views btn-group">
           <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"image"),:remote=>true do%>
-            <%= button_tag "<i class='icon-pause'></i>".html_safe,
-                :title => t('frda.show.ap.buttons.side_by_side'),
+            <%= button_tag t('frda.show.ap.buttons.side_by_side'),
                 :class => 'btn btn-small',
                 :disabled => ['flipbook', 'ocr'].include?(@mode) ? false : true %>
           <% end %>
 
           <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"ocr"),:remote=>true do%>
-          <%= button_tag "<i class='icon-font'></i>".html_safe,
-              :title => t('frda.show.ap.buttons.text_only'),
+          <%= button_tag t('frda.show.ap.buttons.text_only'),
               :class => 'btn btn-small',
               :disabled => ['ocr'].include?(@mode) ? true : false %>
           <% end %>
 
      <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"flipbook"),:remote=>true,:class=>'hidden showOnLoad' do%>
-          <%= button_tag "<i class='icon-fullscreen'></i>".html_safe,
-              :title => t('frda.show.ap.buttons.flipbook'),
+          <%= button_tag t('frda.show.ap.buttons.flipbook'),
               :class => 'btn btn-small hidden showOnLoad',
               :disabled => ['flipbook'].include?(@mode) ? true : false %>
 					<% end %>

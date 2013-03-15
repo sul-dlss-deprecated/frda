@@ -93,8 +93,8 @@ class SolrDocument
     return nil unless self[:spoken_text_ftsimv]
     fields = highlighted_fields(:spoken_text_ftsimv)
     fields.map do |speech|
-      Speech.new(speech)
-    end
+      Speech.new(speech) unless Speech.new(speech).speech.blank?
+    end.compact
   end
  
   def highlighted_speeches
@@ -103,7 +103,7 @@ class SolrDocument
     self.speeches.each do |speech|
       highlights << speech if speech.highlighted?
     end
-    return self.speeches if highlights.blank?
+    return nil if highlights.blank?
     highlights
   end
   
@@ -128,11 +128,7 @@ class SolrDocument
   end
   
   def page_text
-    if self.highlight_field(:text_ftsiv)
-      self.highlight_field(:text_ftsiv)
-    else
-      [self[:text_ftsiv]]
-    end
+    highlighted_fields(:text_ftsiv)
   end
   
   def purl

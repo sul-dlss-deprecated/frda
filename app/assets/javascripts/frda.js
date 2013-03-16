@@ -1,5 +1,7 @@
 $(document).ready(function(){
+
   $("[data-lazy-load]").lazyLoadImages();
+
   $('.scrollspy-content').scrollspy({offset: 30});
 
   $('.overview .nav-pills a:first').tab('show');
@@ -22,7 +24,7 @@ $(document).ready(function(){
 	//  useful when you have non javascript friendly DOM elements you need to hide for no JS browsers so you can include a <noscript> tag with
 	//   non JS versions
   showOnLoad();
-  
+
 	changeFormFocus();
 
   toggleSearchOptions();
@@ -66,10 +68,16 @@ function showOnLoad() {
 function changeFormFocus(){
 	if($("[data-post-check-focus]").length > 0) {
 	  $("[data-post-check-focus]").each(function(){
-		  $(this).change(function(){
-			  if($(this).is(":checked")){
-				  $($(this).attr("data-post-check-focus")).click();
-  				$($(this).attr("data-post-check-focus")).focus();
+		  var checkbox = $(this);
+		  checkbox.change(function(){
+			  if(checkbox.is(":checked")){
+				  $(checkbox.attr("data-post-check-focus")).click();
+  				$(checkbox.attr("data-post-check-focus")).focus();
+			  }
+		  });
+		  $(checkbox.attr("data-post-check-focus")).click(function(){
+			  if(!checkbox.is(":checked")) {
+				  checkbox.prop("checked", true);
 			  }
 		  });
 		});	

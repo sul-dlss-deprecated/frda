@@ -145,7 +145,9 @@ function searchOptionsDatePicker(){
 				format: "yyyy-mm-dd",
 				forceParse: false
 			}).on("show", function(event){
+				var original_value = $(this).attr("value");
 				$(this).datepicker('update', formattedDate($(this).attr("value")));
+				$(this).attr('value', original_value);
 			});
 			$(this).click(function(){
 				if($(this).attr("value") == "") {

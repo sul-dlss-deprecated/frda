@@ -8,6 +8,9 @@ module FacetsHelper
   #     config.add_facet_field "#{I18n.locale}_document_types_ssim", :label => 'bassi.facet.document_types'
   #   end
   # end
+  def facet_field_labels
+    Hash[*blacklight_config.facet_fields.map { |key, facet| [key, html_escape("#{t(facet.label)}")] }.flatten]
+  end
   
   def facet_field_names
     keys = blacklight_config.facet_fields.keys

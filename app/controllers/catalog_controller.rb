@@ -174,13 +174,13 @@ class CatalogController < ApplicationController
     # facet bar
 
     config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection'
-    config.add_facet_field 'speaker_ssim', :label => 'frda.show.people', :show => true
+    config.add_facet_field 'speaker_ssim', :label => 'frda.show.people', :show => true, :limit => 15
     
     config.add_facet_field 'doc_type_ssim', :label => 'frda.show.type'
-    config.add_facet_field 'medium_ssi', :label => 'frda.show.medium'
-    config.add_facet_field 'genre_ssim', :label => 'frda.show.genre', :limit => 10
-    config.add_facet_field 'artist_ssim', :label => 'frda.show.artist', :limit => 10
-    config.add_facet_field 'collector_ssim', :label => 'frda.show.collector', :limit => 10
+    config.add_facet_field 'medium_ssi', :label => 'frda.show.medium', :limit => 15
+    config.add_facet_field 'genre_ssim', :label => 'frda.show.genre', :limit => 15
+    config.add_facet_field 'artist_ssim', :label => 'frda.show.artist', :limit => 15
+    config.add_facet_field 'collector_ssim', :label => 'frda.show.collector', :limit => 15
     config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume'
     config.add_facet_field 'session_date_sim', :label => 'frda.show.session', :show => false
 

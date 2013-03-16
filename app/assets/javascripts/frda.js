@@ -143,7 +143,8 @@ function searchOptionsDatePicker(){
 		$("[data-date-picker='true']").each(function(){
 			$(this).datepicker({
 				format: "yyyy-mm-dd",
-				forceParse: false
+				forceParse: false,
+				autoclose: true
 			}).on("show", function(event){
 				var original_value = $(this).attr("value");
 				$(this).datepicker('update', formattedDate($(this).attr("value")));

@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 require 'blacklight/catalog'
 require 'frda/solr_helper'
+require 'frda/range_query_dates'
 
 class CatalogController < ApplicationController  
 
@@ -358,10 +359,8 @@ class CatalogController < ApplicationController
   end
   
   def add_year_range_query(solr_params, user_params)
-    if user_params["dates"] and (!user_params["date-start"].blank? and !user_params["date-end"].blank?)
-      start_date = "#{DateTime.parse(user_params['date-start']).strftime("%Y-%m-%d")}T00:00:00Z"
-      end_date = "#{(DateTime.parse(user_params['date-end']) + 1.day).strftime("%Y-%m-%d")}T00:00:00Z"
-      range_query = "search_date_dtsim:[#{start_date} TO #{end_date}]"
+    if user_params["dates"] and !user_params["date-start"].blank?
+      range_query = Frda::RangeQueryDates.new(user_params['date-start'], user_params['date-end']).range_query
       if solr_params[:fq]
         solr_params[:fq] << range_query
       else

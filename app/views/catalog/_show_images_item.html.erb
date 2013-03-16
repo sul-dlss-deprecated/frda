@@ -53,9 +53,9 @@
     <% end %>
 
     <dl class="dl-invert">
-      <% unless @document.medium.nil?%>
+      <% unless @document.mods.physical_description.extent.blank?%>
         <dt><%=t('frda.show.medium')%></dt>
-        <dd><%=@document.medium%></dd>
+        <dd><%=@document.mods.physical_description.extent.text %></dd>
       <% end %>
       <% unless @document.mods.origin_info.publisher.blank? %>
         <dt><%=t('frda.show.publisher')%></dt>
@@ -70,7 +70,7 @@
         <dd><%=show_formatted_list(@document.genre,:facet=>'genre_ssim')%></dd>
       <% end %>
       <% unless list_is_empty?(@document.speaker)%>
-        <dt><%=t('frda.show.speaker')%></dt>
+        <dt><%=t('frda.show.person')%></dt>
         <dd><%=show_formatted_list(@document.speaker,:facet=>'speaker_ssim')%></dd>
       <% end %>
       <% unless list_is_empty?(@document.artist)%>
@@ -84,6 +84,10 @@
       <% unless list_is_empty?(@document.format) %>
         <dt><%=t('frda.show.format')%></dt>
         <dd><%=show_formatted_list(@document.format,:facet=>'doc_type_ssim')%></dd>
+      <% end %>
+      <% unless @document.mods.related_item.location.url.blank? %>
+        <dt><%=t('frda.show.source')%></dt>
+        <dd><%= link_to_images_item_source(@document) %></dd>
       <% end %>
     </dl>
   </div>

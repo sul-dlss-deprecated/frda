@@ -176,4 +176,13 @@ module ApplicationHelper
     [:q, :search_field, :qt, :page, :dates, :"date-start", :"date-end", :speeches, :"by-speaker", :prox, :words, :terms, :exact, :search_collection]
   end
 
+  def link_to_images_item_source(doc)
+    if doc.mods.related_item.location.url.attr("displayLabel").value.blank?
+      display_label = doc.mods.related_item.location.url.text
+    else
+      display_label = doc.mods.related_item.location.url.attr("displayLabel").value
+    end
+      link_to(display_label, doc.mods.related_item.location.url.text)
+  end
+
 end

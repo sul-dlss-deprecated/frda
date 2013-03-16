@@ -133,6 +133,7 @@ en:
       date: 'Date of publication'
       description: 'Physical description'
       people: 'People'
+      person: 'Person'
       genre: 'Genre'
       medium: 'Medium'
       publisher: 'Publisher'

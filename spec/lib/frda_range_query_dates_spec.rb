@@ -55,7 +55,7 @@ describe Frda::RangeQueryDates do
     end
     it "should handle when the end date is nil" do
       range_query = Frda::RangeQueryDates.new("2013-03", nil).range_query
-      range_query.should match /\[2013-03-01.* TO 2013-03-32.*\]/
+      range_query.should match /\[2013-03-01.* TO 2013-03-31.*\]/
     end
   end
   

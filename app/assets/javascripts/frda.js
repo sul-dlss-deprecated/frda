@@ -139,9 +139,13 @@ function searchOptionsToggles(){
 
 function searchOptionsDatePicker(){
 	if($("[data-date-picker='true']").length > 0) {
+		var last_date = $("input#date-end").attr("placeholder");
 		$("[data-date-picker='true']").each(function(){
 			$(this).datepicker({
-				format: "yyyy-mm-dd"
+				format: "yyyy-mm-dd",
+				forceParse: false
+			}).on("show", function(event){
+				$(this).datepicker('update', formattedDate($(this).attr("value")));
 			});
 			$(this).click(function(){
 				if($(this).attr("value") == "") {
@@ -155,5 +159,18 @@ function searchOptionsDatePicker(){
 				}
 			});
 		});
+	}
+}
+
+function formattedDate(date){
+	var yearReg  = /^\d{4}$/;
+	var monthReg = /^\d{4}-\d{2}$/;
+	var dayReg   = /^\d{4}-\d{2}-\d{2}$/;
+	if(date.match(yearReg)) {
+		return date + "-01-01";
+	}else if(date.match(monthReg)){
+		return date + "-01";
+	}else if(date.match(dayReg)){
+		return date;
 	}
 }

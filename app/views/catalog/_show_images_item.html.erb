@@ -77,10 +77,10 @@
         <dt><%=t('frda.show.artist')%></dt>
         <dd><%=show_formatted_list(@document.artist,:facet=>'artist_ssim')%></dd>
       <% end %>
-      <% unless list_is_empty?(@document.year)%>
-        <dt><%=t('frda.show.date')%></dt>
-        <dd><%=show_formatted_list(@document.year)%></dd>
-      <% end %>
+      <% if mods_element_dateIssued_present?(@document) %>
+         <dt><%=t('frda.show.date')%></dt>
+         <dd><%= mods_element_dateIssued(@document) %></dd>
+       <% end %>
       <% unless list_is_empty?(@document.format) %>
         <dt><%=t('frda.show.format')%></dt>
         <dd><%=show_formatted_list(@document.format,:facet=>'doc_type_ssim')%></dd>

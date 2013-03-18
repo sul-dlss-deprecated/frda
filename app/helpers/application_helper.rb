@@ -185,4 +185,16 @@ module ApplicationHelper
       link_to(display_label, doc.mods.related_item.location.url.text)
   end
 
+  # Check to see if the mods element 'dateIssued', without "encoding = 'marc'", exits
+  def mods_element_dateIssued_present?(doc)
+    if doc.mods.origin_info.dateIssued.find {|n| n.attr("encoding") != 'marc'}.present?
+      return true
+    end
+  end
+
+  # Get the mods element 'dateIssued' where it is the dateIssued elment without "encoding = 'marc'"
+  def mods_element_dateIssued(doc)
+    doc.mods.origin_info.dateIssued.find {|n| n.attr("encoding") != 'marc'}.text
+  end
+
 end

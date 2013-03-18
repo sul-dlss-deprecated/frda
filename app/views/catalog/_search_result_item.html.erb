@@ -17,8 +17,8 @@
   <% if document.images_item? %>
     <h3 class="image-item-title long-title"><%= link_to document.title.first.html_safe, document %></h3>
     <h3 class="image-item-title short-title"><%= link_to document.title(:length=>"short").first.html_safe, document %></h3>
-    <% unless list_is_empty?(document.year) %>
-      <span class="item-date"><%= document.year.first %></span>
+    <% if mods_element_dateIssued_present?(document) %>
+      <span class="item-date"><%= mods_element_dateIssued(document) %></span>
     <% end %>
   <% else %> <%# AP item %>
     <% unless list_is_empty?(document.session_date)%>

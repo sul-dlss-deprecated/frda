@@ -132,7 +132,8 @@ module ApplicationHelper
       :data => {view: "#{view_name}"},
       :alt => "#{view_name.titlecase} view of results",
       :title => "#{view_name.titlecase} view of results",
-      :class => "#{view_state}")
+      :class => "#{view_state}",
+      :id => "result_view_#{view_name}")
   end
 
   # This can be used to link the group heading in search results

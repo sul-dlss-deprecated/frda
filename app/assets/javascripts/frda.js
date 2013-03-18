@@ -35,8 +35,25 @@ $(document).ready(function(){
 	searchOptionsToggles();
 	
 	setupSpeakerAutoComplete();
+	
+	switchToCorrectResultView();
 
 });
+
+function switchToCorrectResultView() {
+	
+	if (window.location.hash != '') {
+		showSearchResultView(window.location.hash.replace('#',''));
+	}
+	
+}
+
+function showSearchResultView(name) {
+	$("[id^=result_view]").removeClass("active");
+	$('#result_view_' + name).addClass('active');
+  $('#documents').removeClass('default gallery list frequency');
+  $('#documents').addClass(name);	
+}
 
 function setupSpeakerAutoComplete() {
 	 $( "#by-speaker" ).autocomplete({

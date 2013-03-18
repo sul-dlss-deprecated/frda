@@ -21,9 +21,9 @@
       <span class="item-date"><%= document.year.first %></span>
     <% end %>
   <% else %> <%# AP item %>
-    <% unless list_is_empty?(document.session_date)%>
+    <% unless list_is_empty?(document.session_title)%>
       <h3 class="session-title">
-        <%= link_to show_list(document.session_date).html_safe, document %>
+        <%= link_to show_list(document.session_title).html_safe, document %>
       </h3>
     <% end %>
     <% unless (document.highlighted_speeches.blank? && list_is_empty?(document.speaker)) || document.images_item? %>

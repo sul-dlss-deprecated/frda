@@ -21,7 +21,7 @@ end
     <h2><%= link_to "Archives parlementaires", ap_collection_path %></h2>
     <ul class="item-breadcrumb">
       <li><%= link_to(@document.volume_name, show_page_path(:id=>@document.druid,:page_num=>"1")) %>  »
-          <% @document.session_date.each do |session|%>
+          <% @document.session_title.each do |session|%>
             <%= link_to(session, catalog_index_path(params_for_session(session))) %>  »
           <% end %>
       page <%= @document.page_number %>
@@ -100,21 +100,28 @@ end
 
 <div id="page-navigation" class="<%="hidden" if @mode=='flipbook'%> row ap-item">
   <div class="span12 page-navigation">
-
-    <div class="btn-group">
-      <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
-        <%= t('frda.show.select_session') %>
-        <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a>Séance du dimanche 11 décembre 1791</a></li>
-        <li><a>Séance du lundi 12 décembre 1791</a></li>
-        <li><a>Séance du mercredi 14 décembre 1791</a></li>
-        <li><a>etc....</a></li>
-      </ul>
-    </div>
+    
+ 	<% unless list_is_empty?(@document.session_title)%>
+			<div class="btn-group showOnLoad hidden">
+	      <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+	        <%= t('frda.show.select_session') %>
+	        <span class="caret"></span>
+	      </a>
+	      <ul class="dropdown-menu">
+					<% @document.volume_sessions.each do |session| %>
+	        	<li><%=link_to session,show_page_path(:volume=>@document.volume,:session_title=>session)%></li>
+					<% end %>
+	      </ul>
+	    </div>
+		<% end %>
 
     <%= form_tag(show_page_path, :remote => true, :class => "form-inline") do%>
+	 		<% unless list_is_empty?(@document.session_title)%>
+				<noscript>
+					  <%= select_tag "session_title", options_for_select([t('frda.show.select_session')] + @document.volume_sessions), :"data-hide-submit"=>'true' %>
+				</noscript>		
+			<% end %>
+			<%= hidden_field_tag :volume,@document.volume %>
       <%= hidden_field_tag :id,@document.druid %>
       <%= hidden_field_tag :from_id,@document.id %>
       <%= text_field_tag :page_num,@document.page_sequence, :maxlength => 3, :class => 'span1' %>

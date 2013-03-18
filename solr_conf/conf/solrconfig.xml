@@ -12,13 +12,10 @@
 	<lib dir="../lib/contrib/extraction/lib" />
 	<lib dir="../lib/contrib/analysis-extras/lib" />
 	<lib dir="../lib/contrib/analysis-extras/lucene-libs" />
-	<lib dir="/usr/lib/solr/4.0.0/" /> 
+  <lib dir="/usr/lib/solr/4.0.0/" />
+  
+  <dataDir>${solr.data.dir:}</dataDir>
 
-	
-  <!--  The DirectoryFactory to use for indexes.
-        solr.StandardDirectoryFactory, the default, is filesystem based.
-        solr.RAMDirectoryFactory is memory based, not persistent, and doesn't work with replication. -->
-  <directoryFactory name="DirectoryFactory" class="${solr.directoryFactory:solr.StandardDirectoryFactory}"/>
   <indexConfig>
   	<maxFieldLength>2147483647</maxFieldLength>
     <unlockOnStartup>true</unlockOnStartup>
@@ -35,25 +32,14 @@
     </deletionPolicy>
 -->    
   </indexConfig>
-  <dataDir>${solr.core0.data.dir:}</dataDir>
 
+  <!-- See docs re: autoCommit -->
   <updateHandler class="solr.DirectUpdateHandler2">
     <updateLog>
-      <str name="dir">${solr.core0.data.dir:}</str>
+      <str name="dir">${solr.data.dir:}</str>
     </updateLog>
   </updateHandler>
-
-  <!-- realtime get handler, guaranteed to return the latest stored fields 
-    of any document, without the need to commit or open a new searcher. The current 
-    implementation relies on the updateLog feature being enabled. -->
-  <requestHandler name="/get" class="solr.RealTimeGetHandler">
-    <lst name="defaults">
-      <str name="omitHeader">true</str>
-    </lst>
-  </requestHandler>  
-  
-  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" /> 
-
+	
   <query>
     <maxBooleanClauses>1024</maxBooleanClauses>
     <filterCache class="solr.FastLRUCache" size="512" initialSize="512" autowarmCount="0"/>
@@ -76,12 +62,17 @@
           <str name="fl">score</str>
           <bool name="facet">true</bool>
           <int name="facet.mincount">1</int>
+          <int name="facet.limit">30</int>
           <str name="facet.field">collection_ssi</str>
-          <str name="facet.field">date_ssim</str>
-          <str name="facet.field">speaker_ssim</str>
-          <str name="facet.field">type_ssi</str>
           <str name="facet.field">doc_type_ssim</str>
-          <str name="facet.field">session_govt_ssim</str>
+          <str name="facet.field">speaker_ssim</str>
+          <str name="facet.field">session_date_sim</str>
+          <str name="facet.field">session_title_sim</str>
+          <str name="facet.field">vol_title_ssi</str>
+          <str name="facet.field">medium_ssi</str>
+          <str name="facet.field">genre_ssim</str>
+          <str name="facet.field">artist_ssim</str>
+          <str name="facet.field">collector_ssim</str>
         </lst>
         <!-- single object query to populate filter and fieldValue cache -->
         <lst>
@@ -93,11 +84,15 @@
           <int name="facet.mincount">1</int>
           <int name="facet.limit">30</int>
           <str name="facet.field">collection_ssi</str>
-          <str name="facet.field">date_ssim</str>
-          <str name="facet.field">speaker_ssim</str>
-          <str name="facet.field">type_ssi</str>
           <str name="facet.field">doc_type_ssim</str>
-          <str name="facet.field">session_govt_ssim</str>
+          <str name="facet.field">speaker_ssim</str>
+          <str name="facet.field">session_date_sim</str>
+          <str name="facet.field">session_title_sim</str>
+          <str name="facet.field">vol_title_ssi</str>
+          <str name="facet.field">medium_ssi</str>
+          <str name="facet.field">genre_ssim</str>
+          <str name="facet.field">artist_ssim</str>
+          <str name="facet.field">collector_ssim</str>
         </lst>
       </arr>
     </listener>
@@ -115,11 +110,15 @@
           <int name="facet.mincount">1</int>
           <int name="facet.limit">30</int>
           <str name="facet.field">collection_ssi</str>
-          <str name="facet.field">date_ssim</str>
-          <str name="facet.field">speaker_ssim</str>
-          <str name="facet.field">type_ssi</str>
           <str name="facet.field">doc_type_ssim</str>
-          <str name="facet.field">session_govt_ssim</str>
+          <str name="facet.field">speaker_ssim</str>
+          <str name="facet.field">session_date_sim</str>
+          <str name="facet.field">session_title_sim</str>
+          <str name="facet.field">vol_title_ssi</str>
+          <str name="facet.field">medium_ssi</str>
+          <str name="facet.field">genre_ssim</str>
+          <str name="facet.field">artist_ssim</str>
+          <str name="facet.field">collector_ssim</str>
         </lst>
         <!-- single object query to populate filter and fieldValue cache -->
         <lst>
@@ -131,11 +130,15 @@
           <int name="facet.mincount">1</int>
           <int name="facet.limit">30</int>
           <str name="facet.field">collection_ssi</str>
-          <str name="facet.field">date_ssim</str>
-          <str name="facet.field">speaker_ssim</str>
-          <str name="facet.field">type_ssi</str>
           <str name="facet.field">doc_type_ssim</str>
-          <str name="facet.field">session_govt_ssim</str>
+          <str name="facet.field">speaker_ssim</str>
+          <str name="facet.field">session_date_sim</str>
+          <str name="facet.field">session_title_sim</str>
+          <str name="facet.field">vol_title_ssi</str>
+          <str name="facet.field">medium_ssi</str>
+          <str name="facet.field">genre_ssim</str>
+          <str name="facet.field">artist_ssim</str>
+          <str name="facet.field">collector_ssim</str>
         </lst>
       </arr>
     </listener>
@@ -159,17 +162,17 @@
       <str name="defType">edismax</str>
       <str name="echoParams">explicit</str>
       <str name="sort">score desc</str>
-      <int name="rows">20</int>
+      <int name="rows">10</int>
       <str name="q.alt">*:*</str>
-			<str name="mm">6&lt;-1 6&lt;90%</str>
+      <str name="mm">6&lt;-1 6&lt;90%</str>
       <int name="qs">1</int>
       <int name="ps">0</int>
       <float name="tie">0.01</float>
       <str name="qf">
-				title_short_ti^5
-				title_long_ti^5
-				title_short_ftsi
-				title_long_ftsi
+        title_short_ti^5
+        title_long_ti^5
+        title_short_ftsi
+        title_long_ftsi
         catalog_heading_timv^3
         catalog_heading_ftsimv
         catalog_heading_etsimv
@@ -177,93 +180,118 @@
         spoken_text_ftsimv
         text_tiv^5
         text_ftsiv
+        session_title_sim^5
+        session_title_ftsim
         speaker_ssim
         session_govt_ssim
-        date_ssim
-				doc_type_ssim
+        doc_type_ssim
         id
         druid_ssi
       </str>
       <str name="pf">
-				title_short_ti^20
-				title_long_ti^20
-				title_short_ftsi^15
-				title_long_ftsi^15
+        title_short_ti^20
+        title_long_ti^20
+        title_short_ftsi^15
+        title_long_ftsi^15
         spoken_text_timv^20
         spoken_text_ftsimv^15
         text_tiv^20
         text_ftsiv^10
+        session_title_sim^20
+        session_title_ftsim^10
         catalog_heading_timv^20
         catalog_heading_ftsimv^15
         catalog_heading_etsimv^15
       </str>
       <str name="qf_exact">
-				title_short_ti
-				title_long_ti
+        title_short_ti
+        title_long_ti
         catalog_heading_timv
         spoken_text_timv
         text_tiv
+        session_title_sim
         speaker_ssim
         session_govt_ssim
-        date_ssim
-				doc_type_ssim
+        doc_type_ssim
       </str>
       <str name="pf_exact">
-				title_short_ti^5
-				title_long_ti^5
+        title_short_ti^5
+        title_long_ti^5
         catalog_heading_timv^5
         spoken_text_timv^5
+        session_title_sim^5
         text_tiv^5
       </str>
 
       <str name="qf_title">
-				title_short_ti^5
-				title_long_ti^5
-				title_short_ftsi
-				title_long_ftsi
+        title_short_ti^5
+        title_long_ti^5
+        title_short_ftsi
+        title_long_ftsi
       </str>
       <str name="pf_title">
-				title_short_ti^10
-				title_long_ti^10
-				title_short_ftsi^5
-				title_long_ftsi^5
+        title_short_ti^10
+        title_long_ti^10
+        title_short_ftsi^5
+        title_long_ftsi^5
       </str>
       <str name="qf_title_exact">
-				title_short_ti
-				title_long_ti
+        title_short_ti
+        title_long_ti
       </str>
       <str name="pf_title_exact">
-				title_short_ti^5
-				title_long_ti^5
+        title_short_ti^5
+        title_long_ti^5
       </str>
 
       <str name="qf_name">
         speaker_ssim
+        artist_ssim
+        collector_ssim
       </str>
       <str name="pf_name">
         speaker_ssim^5
+        artist_ssim^5
+        collector_ssim^5
       </str>
 
       <str name="fl">score, *</str>
       
       <bool name="facet">true</bool>
       <int name="facet.mincount">1</int>
-      <int name="facet.limit">21</int>
+      <int name="facet.limit">16</int>
       <str name="facet.field">collection_ssi</str>
-      <str name="facet.field">date_ssim</str>
-      <str name="facet.field">speaker_ssim</str>
-      <str name="facet.field">type_ssi</str>
       <str name="facet.field">doc_type_ssim</str>
-      <str name="facet.field">session_govt_ssim</str>
+      <str name="facet.field">speaker_ssim</str>
+      <str name="facet.field">session_title_sim</str>
+      <str name="facet.field">vol_title_ssi</str>
+      <str name="facet.field">medium_ssi</str>
+      <str name="facet.field">genre_ssim</str>
+      <str name="facet.field">artist_ssim</str>
+      <str name="facet.field">collector_ssim</str>
+      <str name="facet.pivot">result_group_ssi,session_title_sim</str>
+      <str name="facet.query">search_date_dtsim:[1787-02-22T00:00:00Z TO 1789-01-25T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1789-05-05T00:00:00Z TO 1789-07-15T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1789-07-17T00:00:00Z TO 1791-10-01T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1791-10-01T00:00:00Z TO 1792-09-21T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1792-09-21T00:00:00Z TO 1793-06-03T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1793-06-02T00:00:00Z TO 1794-07-29T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1794-07-28T00:00:00Z TO 1795-10-27T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1795-10-27T00:00:00Z TO 1797-09-05T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1797-09-04T00:00:00Z TO 1799-06-19T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1799-06-08T00:00:00Z TO 1799-11-12T00:00:00Z]</str>
+
+      <str name="group">false</str>
+      <str name="group.ngroups">true</str>
+      <str name="group.limit">10</str>
+      <str name="group.field">result_group_ssi</str>
 
       <str name="hl">on</str>
-      <str name="hl.fl">session_date_ftsimv, spoken_text_ftsimv, title_long_ftsi, title_short_ftsi, text_ftsiv</str>
+      <str name="hl.fl">spoken_text_ftsimv, title_long_ftsi, title_short_ftsi, text_ftsiv, session_title_ftsim</str>
       <str name="hl.fragsize">0</str>
     </lst>    
   </requestHandler>
-  
-  <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />
-  <requestHandler name="/update" class="solr.UpdateRequestHandler"  />
+	
   <!-- single document requests; use id=666 instead of q=id:666 -->
   <requestHandler name="document" class="solr.SearchHandler" >
     <lst name="defaults">
@@ -301,13 +329,36 @@
       
       <bool name="facet">true</bool>
       <int name="facet.mincount">1</int>
-      <int name="facet.limit">21</int>
+      <int name="facet.limit">16</int>
       <str name="facet.field">collection_ssi</str>
-      <str name="facet.field">date_ssim</str>
-      <str name="facet.field">speaker_ssim</str>
-      <str name="facet.field">type_ssi</str>
       <str name="facet.field">doc_type_ssim</str>
-      <str name="facet.field">session_govt_ssim</str>
+      <str name="facet.field">speaker_ssim</str>
+      <str name="facet.field">session_title_sim</str>
+      <str name="facet.field">vol_title_ssi</str>
+      <str name="facet.field">medium_ssi</str>
+      <str name="facet.field">genre_ssim</str>
+      <str name="facet.field">artist_ssim</str>
+      <str name="facet.field">collector_ssim</str>
+      <str name="facet.pivot">result_group_ssi,session_title_sim</str>
+      <str name="facet.query">search_date_dtsim:[1787-02-22T00:00:00Z TO 1789-01-25T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1789-05-05T00:00:00Z TO 1789-07-15T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1789-07-17T00:00:00Z TO 1791-10-01T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1791-10-01T00:00:00Z TO 1792-09-21T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1792-09-21T00:00:00Z TO 1793-06-03T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1793-06-02T00:00:00Z TO 1794-07-29T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1794-07-28T00:00:00Z TO 1795-10-27T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1795-10-27T00:00:00Z TO 1797-09-05T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1797-09-04T00:00:00Z TO 1799-06-19T00:00:00Z]</str>
+      <str name="facet.query">search_date_dtsim:[1799-06-08T00:00:00Z TO 1799-11-12T00:00:00Z]</str>
+      
+      <str name="group">true</str>
+      <str name="group.ngroups">true</str>
+      <str name="group.limit">10</str>
+      <str name="group.field">result_group_ssi</str>
+
+      <str name="hl">on</str>
+      <str name="hl.fl">spoken_text_ftsimv, title_long_ftsi, title_short_ftsi, text_ftsiv, session_title_ftsim</str>
+      <str name="hl.fragsize">0</str>
     </lst>
   </requestHandler>
 
@@ -338,7 +389,6 @@
       <str name="omitHeader">true</str>
     </lst>
   </requestHandler>
-
   <admin>
     <defaultQuery>admin test query</defaultQuery>
   </admin>

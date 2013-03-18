@@ -115,8 +115,8 @@ class SolrDocument
     self[:publisher_ssi]
   end
   
-  def session_date
-    highlighted_fields(:session_date_ftsimv)
+  def session_title
+    highlighted_fields(:session_title_ftsim)
   end
   
   def volume
@@ -181,6 +181,20 @@ class SolrDocument
 	 self[name.to_sym].nil? ? []: self[name.to_sym]
   end
 
+  def volume_sessions
+    response=Blacklight.solr.select(
+                                :params => {
+                                  :fq => "vol_num_ssi:#{self.volume}",
+                                  :"facet.field" => "session_date_title_ssim",
+                                  :"facet.limit"=> -1,
+                                  :"facet.sort" => "index", 
+                                  :rows => 0
+                                }
+                              )['facet_counts']['facet_fields']['session_date_title_ssim']
+    sessions=response.values_at(* response.each_index.select {|i| i.even?}) # now just extract the actual terms, and not the occurences
+    return sessions.map {|session| session.split("-|-")[1]}
+  end
+  
   def images(params={})
     return [] unless self.has_key?(blacklight_config.image_identifier_field)
     size=params[:size] || :default

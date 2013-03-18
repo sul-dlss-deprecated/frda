@@ -99,7 +99,7 @@
   </fields>
 
   <!-- copy fields -->
-  <copyField source="session_date_ftsimv" dest="session_date_sim" />
+  <copyField source="session_title_ftsim" dest="session_title_sim" />
   <copyField source="session_date_dtsim" dest="search_date_dtsim" />
   <copyField source="text_tiv" dest="text_ftsiv" />
   <copyField source="spoken_text_timv" dest="spoken_text_ftsimv" />

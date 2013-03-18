@@ -83,7 +83,9 @@ class CatalogController < ApplicationController
     druid=params[:id]
     page_num=params[:page_num]
     download_ocr_text=params[:download_ocr_text]
-
+    volume=params[:volume]
+    session_title=params[:session_title]
+    
     @mode=params[:mode]
 
     response = Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_sequence_isi:\"#{page_num}\""})["response"]
@@ -183,9 +185,9 @@ class CatalogController < ApplicationController
     config.add_facet_field 'artist_ssim', :label => 'frda.show.artist', :limit => 15
     config.add_facet_field 'collector_ssim', :label => 'frda.show.collector', :limit => 15
     config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume', :limit => 15
-    config.add_facet_field 'session_date_sim', :label => 'frda.show.session', :show => false
+    config.add_facet_field 'session_title_sim', :label => 'frda.show.session', :show => false
 
-    config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["result_group_ssi", "session_date_sim"]
+    config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["result_group_ssi", "session_title_sim"]
 
     config.add_facet_field 'en_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('en')
     config.add_facet_field 'fr_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('fr')
@@ -214,7 +216,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'spoken_text_ftsmiv', :label => "Spoken Text:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'title_long_ftsi', :label => "Long Tilte:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'title_short_ftsi', :label => "Short Title:", :highlight => true #don't really need an i18n label here since it won't be used.
-    config.add_index_field 'session_date_ftsimv', :label => "Session Date:", :highlight => true #don't really need an i18n label here since it won't be used.
+    config.add_index_field 'session_title_ftsim', :label => "Session:", :highlight => true #don't really need an i18n label here since it won't be used.
     
 
     # solr fields to be displayed in the show (single result) view
@@ -332,7 +334,7 @@ class CatalogController < ApplicationController
     !(params and
         params["f"] and
           ((params["f"]["vol_title_ssi"] and !params["f"]["vol_title_ssi"].blank?) or
-           (params["f"]["session_date_sim"] and !params["f"]["session_date_sim"].blank?)) or
+           (params["f"]["session_title_sim"] and !params["f"]["session_title_sim"].blank?)) or
            (params["f"]["collection_ssi"] and params["f"]["collection_ssi"].include?(Frda::Application.config.images_id)) or
            (params["f"]["result_group_ssi"] and params["f"]["result_group_ssi"].include?(Frda::Application.config.images_id)))
   end

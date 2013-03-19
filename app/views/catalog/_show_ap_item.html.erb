@@ -109,7 +109,7 @@ end
 	      </a>
 	      <ul class="dropdown-menu">
 					<% @document.volume_sessions.each do |session| %>
-	        	<li><%=link_to session,show_page_path(:volume=>@document.volume,:session_title=>session)%></li>
+	        	<li><%=link_to session,show_page_path(:volume=>@document.volume,:session_title=>session,:from_id=>@document.id)%></li>
 					<% end %>
 	      </ul>
 	    </div>

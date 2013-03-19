@@ -92,8 +92,12 @@ class CatalogController < ApplicationController
       response = Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_sequence_isi:\"#{page_num}\""})["response"]
       @document = SolrDocument.new(response["docs"].first, response) if response["docs"].size > 0 # assuming we found this page
     else # if a session_title is supplied, then this is a request to find the first page in that session/volume
-      response = Blacklight.solr.select(:params =>{:fq => "session_title_sim:\"#{session_title}\"",:facet=>false,:rows=>1,:fl=>"session_seq_first_isim"})["response"]["result"]["doc"]
-      
+      pages = Blacklight.solr.select(:params =>{:fq => "session_title_sim:\"#{session_title}\"",:"facet.field"=>"session_seq_first_isim",:rows=>0})['facet_counts']['facet_fields']['session_seq_first_isim']
+      if pages.size > 0 
+        page_num=pages.first # grab first page sequence number for the first session returned and then look up the page in the given voluem
+        response = Blacklight.solr.select(:params =>{:fq => "vol_num_ssi:\"#{volume}\" AND page_sequence_isi:\"#{page_num}\""})["response"]
+        @document = SolrDocument.new(response["docs"].first, response) if response["docs"].size > 0 # assuming we found this page
+      end
     end
         
     if request.xhr? # coming an ajax call, just render the new page (or an error message if not found)

@@ -159,7 +159,7 @@ class SolrDocument
     possible_filenames.each do |file| 
       begin
          full_path="#{base_name}#{file}"
-         @formatted_page_text=open(full_path).read.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+         @formatted_page_text=open(full_path).read.encode('UTF-16le', :invalid => :replace, :replace => '').encode('UTF-8')
          @txt_file=full_path
          break
        rescue

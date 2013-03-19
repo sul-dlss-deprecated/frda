@@ -88,8 +88,13 @@ class CatalogController < ApplicationController
     
     @mode=params[:mode]
 
-    response = Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_sequence_isi:\"#{page_num}\""})["response"]
-    @document = SolrDocument.new(response["docs"].first, response) if response["docs"].size > 0 # assuming we found this page
+    if session_title.blank? || session_title=='Select session' # if no session_title is supplied, this is a request for a specific page number for a given druid
+      response = Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_sequence_isi:\"#{page_num}\""})["response"]
+      @document = SolrDocument.new(response["docs"].first, response) if response["docs"].size > 0 # assuming we found this page
+    else # if a session_title is supplied, then this is a request to find the first page in that session/volume
+      response = Blacklight.solr.select(:params =>{:fq => "session_title_sim:\"#{session_title}\"",:facet=>false,:rows=>1,:fl=>"session_seq_first_isim"})["response"]["result"]["doc"]
+      
+    end
         
     if request.xhr? # coming an ajax call, just render the new page (or an error message if not found)
         setup_next_and_previous_documents

@@ -12,7 +12,12 @@ class ApplicationController < ActionController::Base
   helper_method :show_terms_dialog?, :on_home_page, :on_collection_highlights_page, :on_collections_pages, :on_about_pages, :on_show_page, :on_ap_page, :on_images_page, :on_search_page, :request_path
   
   before_filter :set_locale
-
+  before_filter :require_http
+  
+  def require_http
+    redirect_to :protocol => "http://" if (request.ssl?) 
+  end
+  
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end

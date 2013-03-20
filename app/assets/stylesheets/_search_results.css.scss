@@ -200,12 +200,13 @@
         .pagenum {
           float: left;
           margin-left: 0;
+          margin-right: 20px;
           width: 6em;
         }
         .snippet {
           display: inline-block;
           width: 70%;
-          }
+        }
         .images .snippet {margin-left: 6em;}
         .longtext {display: none;}
       }

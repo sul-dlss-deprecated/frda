@@ -242,6 +242,12 @@
           width: 95%;
           white-space: nowrap;
         }
+        &.tome-title {
+          font-weight: bold;
+          li, .occurrences {
+            font-weight: normal;
+          }
+        }
         .occurrences {
           margin-right: 2px;
         }

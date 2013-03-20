@@ -51,7 +51,7 @@
       <%- @response.facet_pivot.each do |_, tomes| -%>
         <ul id="frequencytable">
           <%- tomes.each do |tome| -%>
-            <li>
+            <li class="tome-title">
               <%= link_to_volume_facet(tome["value"], :params => params.dup.delete_if{|k,v| k == "view"}) %> <span class="occurrences"><%= tome["count"]%></span>
               <ul>
                 <%- tome["pivot"].each do |session| -%>

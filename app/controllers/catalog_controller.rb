@@ -120,9 +120,9 @@ class CatalogController < ApplicationController
 
   # an ajax call to get speaker name suggestions for autocomplete on the speaker search box
   def speaker_suggest
-    term=params[:term]
-    results=Blacklight.solr.alphaTerms(:params =>{:"terms.regex" => "#{term}.*",:qt=>'terms',:"terms.fl"=>'speaker_ssim',:"terms.regex.flag"=>'case_insensitive'}) # look for terms starting with what they enteted
-    suggestions=results['terms']['speaker_ssim']
+    term=params[:term].capitalize
+    results=Blacklight.solr.select(:params=>{:q=>'collection_ssi:"Archives parlementaires"',:facet=>true,:"facet.field"=>"speaker_ssim",:rows=>0,:"facet.mincount"=>1,:"facet.prefix"=>"#{term}"})
+    suggestions=results['facet_counts']['facet_fields']['speaker_ssim']
     @suggestions = suggestions.values_at(* suggestions.each_index.select {|i| i.even?}) # now just extract the actual terms, and not the occurences
     respond_to do |format|
       format.json { render :json => @suggestions }

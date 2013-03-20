@@ -60,14 +60,23 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   
   describe "search options" do
     
-    it "should return appropriate results for speaker autocomplete in json" do
-      get speaker_suggest_path(:term=>'dor'),format: "json"
+    it "should return appropriate results for speaker autocomplete in json case insensitive, but only for AP data" do
+      get speaker_suggest_path(:term=>'dor'),format: "json" # ap
       response.status.should == 200
       response.body.should == '["Dorizy"]'  
 
-      get speaker_suggest_path(:term=>'go'),format: "json"
+      get speaker_suggest_path(:term=>'go'),format: "json" # ap
       response.status.should == 200
       response.body.should == '["Gohier","Gossuin"]'          
+
+      get speaker_suggest_path(:term=>'Go'),format: "json" # ap
+      response.status.should == 200
+      response.body.should == '["Gohier","Gossuin"]'          
+
+      get speaker_suggest_path(:term=>'rob'),format: "json" #image
+      response.status.should == 200
+      response.body.should == '[]'          
+
     end
     
     describe "date range" do

@@ -3,7 +3,7 @@
  *
  * https://github.com/jkeck/lazyLoadImages
  *
- * VERSION 0.0.1
+ * VERSION 0.0.2
  *
 **/
 (function( $ ){
@@ -16,7 +16,7 @@
 		function loadImages(el){
 			el.each(function(){
 				if(element_is_visible($(this))) {
-					var image_html = "<img src='" + $(this).attr('data-src') + "' alt='" + $(this).attr('data-alt') + "' title='" + $(this).attr('data-title') + "' border='0' />";
+					var image_html = "<img src='" + $(this).attr('data-src') + "' alt='" + object_attribute($(this), 'data-alt') + "' title='" + object_attribute($(this), 'data-title') + "' border='0' />";
 					$(this).parent().html(image_html);
 				}
 			});
@@ -29,6 +29,13 @@
 		    var elem_bottom = elem_top + $(elem).height();
 
 		    return ((elem_bottom <= bottom) && (elem_top >= top));
+		}
+		function object_attribute(obj, attr) {
+			if(obj.attr(attr)) {
+				return obj.attr(attr);
+			}else{
+				return "";
+			}
 		}
 	};
 })( jQuery );

@@ -3,7 +3,7 @@
 <div class="oneresult">
   <span class="pageimg">
       <%= link_to_document document,
-           :label => "<div data-lazy-load='true' data-src='#{document.first_image(:size=>:thumb)}' data-title='#{document.title}'></div>".html_safe,
+           :label => "<div data-lazy-load='true' data-src='#{document.first_image(:size=>:thumb)}' data-alt='#{document.title}' data-title='#{document.title}'></div>".html_safe,
            :counter =>  (index + 1 + @response.params[:start].to_i) %>
     <noscript>
       <%= link_to_document document,

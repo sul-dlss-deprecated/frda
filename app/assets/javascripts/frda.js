@@ -10,14 +10,24 @@ $(document).ready(function(){
   // Make them visible if browser has JS:
   $('.view-switcher li a').css('display', 'inline-block');
 
-  // Used for the search result views.
-  // 1. Toggles class that highlights the icon representing results view currently active
-  // 2. Adds a class to #documents to apply the appropriate CSS for the results view currently active
+  // Pass the name of the search result view clicked, when user changes views
   $('.view-switcher li a').click(function(){
-    $(this).parent().siblings('li').find('a').removeClass('active');
-    $(this).addClass('active');
-    $('#documents').removeClass('default gallery list frequency');
-    $('#documents').addClass($(this).data('view'));
+    view_name = this.id.replace('result_view_','');
+
+    var view_class = 'default';
+    var classList = document.getElementById('documents').className.split(/\s+/);
+    for (var i = 0; i < classList.length; i++) {
+      if (classList[i] != 'images') { // any non-view_name class attached to #documents needs to go here
+        view_class = classList[i];
+      }
+    }
+
+    // Update the pagination links with the new view name so the view is persistent across pagination
+    $('.pagination a').each(function() {
+      this.href = this.href.replace(view_class, view_name);
+    });
+
+    showSearchResultView(view_name);
   });
 
 	// elements defined with these classes can be hidden by default and then show when the page loads
@@ -41,13 +51,14 @@ $(document).ready(function(){
 });
 
 function switchToCorrectResultView() {
-	
 	if (window.location.hash != '') {
 		showSearchResultView(window.location.hash.replace('#',''));
 	}
-	
 }
 
+// Used for the search result views.
+// 1. Toggles class that highlights the icon representing results view currently active
+// 2. Adds a class to #documents to apply the appropriate CSS for the results view currently active
 function showSearchResultView(name) {
 	$("[id^=result_view]").removeClass("active");
 	$('#result_view_' + name).addClass('active');

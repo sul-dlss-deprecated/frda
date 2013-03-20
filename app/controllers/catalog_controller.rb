@@ -8,7 +8,7 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Frda::SolrHelper
   
-  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches, :proximity_search, :toggle_collection_facet]
+  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches, :proximity_search, :toggle_collection_facet, :result_view]
   
   before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
 
@@ -410,6 +410,11 @@ class CatalogController < ApplicationController
         params[:search_field] = "exact_title"
       end
     end
+  end
+
+  # Value will be changed via JavaScript when user changes views
+  def result_view(solr_params, user_params)
+    params[:result_view] = params[:result_view] || "default"
   end
 
   # This is only used when there is no JS and is handling mapping drop-down options to f params.

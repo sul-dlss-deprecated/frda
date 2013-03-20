@@ -10,36 +10,22 @@
 
         <%# AP-only results views %>
         <% if on_ap_page %>
-          <!-- <li><%#= link_to_search_result_view('icon-th', 'gallery', true) %></li>
-          <li><%#= link_to_search_result_view('icon-align-justify', 'list', false) %></li>
-          <li><%#= link_to_search_result_view('icon-th-list', 'default', false) %></li>
-          <li><%#= link_to_search_result_view('icon-signal', 'frequency', false) %></li> -->
-
-          <li><%= search_result_view_switch('icon-th-list', 'default', true) %></li>
-          <li><%= search_result_view_switch('icon-th', 'gallery', false) %></li>
-          <li><%= search_result_view_switch('icon-align-justify', 'list', false) %></li>
-
+          <li><%= search_result_view_switch('icon-th-list', 'default') %></li>
+          <li><%= search_result_view_switch('icon-th', 'gallery') %></li>
+          <li><%= search_result_view_switch('icon-align-justify', 'list') %></li>
 
         <%# Images-only results views %>
         <% elsif on_images_page %>
-          <!-- <li><%#= link_to_search_result_view('icon-th', 'gallery', true) %></li>
-          <li><%#= link_to_search_result_view('icon-align-justify', 'list', false) %></li> -->
-
-          <li><%= search_result_view_switch('icon-th-list', 'default', true) %></li>
-          <li><%= search_result_view_switch('icon-th', 'gallery', false) %></li>
-          <li><%= search_result_view_switch('icon-align-justify', 'list', false) %></li>
+          <li><%= search_result_view_switch('icon-th-list', 'default') %></li>
+          <li><%= search_result_view_switch('icon-th', 'gallery') %></li>
+          <li><%= search_result_view_switch('icon-align-justify', 'list') %></li>
 
         <%# Combined results views %>
         <% else %>
-          <!-- <li><%#= link_to_search_result_view('icon-th', 'gallery', true) %></li>
-          <li><%#= link_to_search_result_view('icon-th-list', 'default', false) %></li>
-          <li><%#= link_to_search_result_view('icon-align-justify', 'list', false) %></li>
-          <li><%#= link_to_search_result_view('icon-signal', 'frequency', false) %></li> -->
-
-          <li><%= search_result_view_switch('icon-th-list', 'default', true) %></li>
-          <li><%= search_result_view_switch('icon-th', 'gallery', false) %></li>
-          <li><%= search_result_view_switch('icon-align-justify', 'list', false) %></li>
-          <li><%= search_result_view_switch('icon-signal', 'frequency', false) %></li>
+          <li><%= search_result_view_switch('icon-th-list', 'default') %></li>
+          <li><%= search_result_view_switch('icon-th', 'gallery') %></li>
+          <li><%= search_result_view_switch('icon-align-justify', 'list') %></li>
+          <li><%= search_result_view_switch('icon-signal', 'frequency') %></li>
 
         <% end %>
 

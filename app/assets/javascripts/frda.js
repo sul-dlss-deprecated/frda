@@ -13,6 +13,20 @@ $(document).ready(function(){
   // Pass the name of the search result view clicked, when user changes views
   $('.view-switcher li a').click(function(){
     view_name = this.id.replace('result_view_','');
+
+    var view_class = 'default';
+    var classList = document.getElementById('documents').className.split(/\s+/);
+    for (var i = 0; i < classList.length; i++) {
+      if (classList[i] != 'images') { // any non-view_name class attached to #documents needs to go here
+        view_class = classList[i];
+      }
+    }
+
+    // Update the pagination links with the new view name so the view is persistent across pagination
+    $('.pagination a').each(function() {
+      this.href = this.href.replace(view_class, view_name);
+    });
+
     showSearchResultView(view_name);
   });
 

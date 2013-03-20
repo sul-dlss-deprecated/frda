@@ -109,24 +109,11 @@ module ApplicationHelper
                     'acknowledgements', 'use_and_reproduction']
   end
 
-  # Used when search result views are in separate partials
-  def link_to_search_result_view(icon, view_name, default_view)
-    if default_view
-      (params[:view] == "#{view_name}" or params[:view].nil?) ? view_state = 'active' : view_state = ''
-    else
-      params[:view] == "#{view_name}" ? view_state = 'active' : view_state = ''
+  # Create links for search result view icon links
+  def search_result_view_switch(icon, view_name)
+    if view_name == params[:result_view]
+      view_state = 'active'
     end
-
-    link_to("<i class=#{icon}></i>".html_safe,
-      catalog_index_path(params.merge(:view => "#{view_name}")),
-      :alt => "#{view_name.titlecase} view of results",
-      :title => "#{view_name.titlecase} view of results",
-      :class => "#{view_state}")
-  end
-
-  # Used when search result views are in single partial
-  def search_result_view_switch(icon, view_name, default_view)
-    default_view ? view_state = 'active' : view_state = ''
 
     link_to("<i class=#{icon}></i>".html_safe, "##{view_name}",
       :data => {view: "#{view_name}"},

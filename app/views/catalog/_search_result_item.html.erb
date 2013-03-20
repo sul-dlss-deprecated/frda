@@ -1,6 +1,6 @@
 <%# This is used for all search result views. 
     Oneresult == one search result item -%>
-<div class="oneresult">
+<div class="oneresult <%= 'images' if document.images_item? %>">
   <span class="pageimg">
       <%= link_to_document document,
            :label => "<div data-lazy-load='true' data-src='#{document.first_image(:size=>:thumb)}' data-alt='#{document.title}' data-title='#{document.title}'></div>".html_safe,

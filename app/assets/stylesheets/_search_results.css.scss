@@ -205,10 +205,16 @@
         }
         .snippet {
           display: inline-block;
-          width: 70%;
+          width: 67%;
         }
         .images .snippet {margin-left: 6em;}
         .longtext {display: none;}
+        &.ap {
+          margin-bottom: 30px;
+          h3.session-title {
+            margin-bottom: 3px;
+          }
+        }
       }
     }
      .frequency-view, #frequencytable {display: none;}

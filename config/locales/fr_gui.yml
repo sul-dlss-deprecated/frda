@@ -193,6 +193,7 @@ fr:
       sequence: Sequence
       results_heading_image: 'Images de la Révolution française'
       search_results: 'Résultats'
+      view_all: "view all"
       view_toggle:
         default: 'Résultats'
         gallery: 'Affichage mosaïque'

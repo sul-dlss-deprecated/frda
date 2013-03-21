@@ -134,7 +134,11 @@ module ApplicationHelper
     link_params.merge!(options[:params]) if options[:params]
     volume_facet_params = params_for_volume_or_image(volume)
     options.delete(:params)
-    link_to(volume, catalog_index_path(link_params.deep_merge(volume_facet_params)), options)
+    if options[:count]
+      link_to(t('frda.search.view_all'), catalog_index_path(link_params.deep_merge(volume_facet_params)), options)
+    else
+      link_to(volume, catalog_index_path(link_params.deep_merge(volume_facet_params)), options)
+    end
   end
 
   def link_to_session_facet(session, options={})

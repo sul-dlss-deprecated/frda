@@ -89,7 +89,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
          find(:css, "[value='Search...']").click
          
          # we should get 6 items
-         page.all(:css, ".oneresult").length.should == 19
+         page.all(:css, ".oneresult").length.should == 18
     
          fill_in :"date-start", :with => "1794-04-25"
          find(:css, "[value='Search...']").click

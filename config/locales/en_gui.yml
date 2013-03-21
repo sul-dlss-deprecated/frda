@@ -184,6 +184,7 @@ en:
       sequence: Sequence
       results_heading_image: 'Images of the French Revolution'
       search_results: 'Results'
+      view_all: "view all"
       view_toggle:
         default: 'Results'
         gallery: 'Gallery'

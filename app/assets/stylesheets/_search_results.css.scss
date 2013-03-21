@@ -40,6 +40,9 @@
     margin-left: 20px;
   }
   .speaker .frda-label {color: #aaa;}
+  .group-count {
+    font-size: 13px;
+  }
 
   /* Overrides and styling for specific results views */
   /* Default View */
@@ -268,13 +271,8 @@
         }
       }
     }
-    .oneresult  {
+    .oneresult, .all-results {
       display: none;
-      //.pageimg, .pageimg img, .speaker, .speaker .frda-label,
-      //.tome, .pagenum, .snippet, .images .snippet, .longtext
-      //  {
-      //    display: none;
-      //  }
     }
   }
 }

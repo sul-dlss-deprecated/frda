@@ -16,7 +16,7 @@
   </span>
   <% if document.images_item? %>
     <h3 class="image-item-title long-title"><%= link_to document.title.first.html_safe, document %></h3>
-    <h3 class="image-item-title short-title"><%= link_to document.title(:length=>"short").first.html_safe, document %></h3>
+    <h3 class="image-item-title short-title"><%= link_to truncate(strip_tags(document.title(:length=>"short").first.html_safe), :length => 60), document %></h3>
     <% if mods_element_dateIssued_present?(document) %>
       <span class="item-date"><%= mods_element_dateIssued(document) %></span>
     <% end %>

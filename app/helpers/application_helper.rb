@@ -193,4 +193,8 @@ module ApplicationHelper
     documents.map {|doc| doc.group}.include?(Frda::Application.config.images_id)
   end
 
+  def grouped_response_includes_ap?(documents)
+    documents.map {|doc| doc.group}.include?(Frda::Application.config.ap_id)
+  end
+
 end

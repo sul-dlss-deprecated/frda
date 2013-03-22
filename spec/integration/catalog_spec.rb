@@ -61,22 +61,42 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   describe "search options" do
     
     it "should return appropriate results for speaker autocomplete in json case insensitive, but only for AP data" do
-      get speaker_suggest_path(:term=>'dor'),format: "json" # ap
+      get speaker_suggest_path(:term=>'dor'),format: "json" # ap should have one result only
       response.status.should == 200
       response.body.should == '["Dorizy"]'  
 
-      get speaker_suggest_path(:term=>'go'),format: "json" # ap
+      get speaker_suggest_path(:term=>'go'),format: "json" # ap should work lowercase letter first
       response.status.should == 200
       response.body.should == '["Gohier","Gossuin"]'          
 
-      get speaker_suggest_path(:term=>'Go'),format: "json" # ap
+      get speaker_suggest_path(:term=>'Go'),format: "json" # ap should work capital letter first
       response.status.should == 200
       response.body.should == '["Gohier","Gossuin"]'          
 
-      get speaker_suggest_path(:term=>'rob'),format: "json" #image
+      get speaker_suggest_path(:term=>'rob'),format: "json" #image data should yield no results
       response.status.should == 200
       response.body.should == '[]'          
 
+    end
+    
+    describe "in speeches by" do
+      it "should return the correct number of results for a specific term and specific speaker" do
+        visit root_path
+        fill_in "q", :with => "verbal"
+        check("speeches")
+        fill_in "by-speaker", :with=> "Le Président" 
+        find(:css, "[value='Search...']").click
+        page.all(:css, ".oneresult").length.should == 1
+        page.should have_content "1 to 1 of 1 volume"
+        page.should have_content "Séance du jeudi 18 février 1790, au matin (1). "
+      end
+      it "should return more results when not restricted by speaker" do
+        visit root_path
+        fill_in "q", :with => "verbal"
+        find(:css, "[value='Search...']").click
+        page.all(:css, ".oneresult").length.should == 5
+        page.should have_content "1 - 2 of 2 volumes "
+      end      
     end
     
     describe "date range" do
@@ -88,13 +108,11 @@ describe("Search Pages",:type=>:request,:integration=>true) do
          fill_in :"date-end", :with => "1799-04-25"
          find(:css, "[value='Search...']").click
          
-         # we should get 6 items
          page.all(:css, ".oneresult").length.should == 19
     
          fill_in :"date-start", :with => "1794-04-25"
          find(:css, "[value='Search...']").click
          
-         # we should be limited to just 4 items
          page.all(:css, ".oneresult").length.should == 5
        end
      end

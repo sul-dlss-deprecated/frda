@@ -8,7 +8,7 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Frda::SolrHelper
   
-  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speaches, :proximity_search, :toggle_collection_facet, :result_view]
+  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speeches, :proximity_search, :toggle_collection_facet, :result_view]
   
   before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
 
@@ -138,7 +138,7 @@ class CatalogController < ApplicationController
       :rows => 10,
       :fl => "*",
       :"facet.mincount" => 1,
-      :echoParams => "all"
+      :"hl.usePhraseHighlighter" => true
     }
     
     config.collection_highlight_field = "highlight_ssim" 
@@ -385,10 +385,10 @@ class CatalogController < ApplicationController
     solr_params[:"facet.field"].delete('collection_ssi') if on_home_page      
   end
   
-  def search_within_speaches(solr_params, user_params)
+  def search_within_speeches(solr_params, user_params)
     unless user_params["speeches"].blank? and user_params["by-speaker"].blank?
-      solr_params[:q] = "\"#{user_params['by-speaker']} #{user_params['q']}\""
-      solr_params[:qs] = 10000
+      solr_params[:q] = "spoken_text_ftsimv:\"#{user_params['by-speaker']} #{user_params['q']}\"~10000"
+      solr_params[:defType] = "lucene"
     end
   end
   

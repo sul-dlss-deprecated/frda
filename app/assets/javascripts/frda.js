@@ -24,7 +24,8 @@ $(document).ready(function(){
 
     // Update the pagination links with the new view name so the view is persistent across pagination
     // Also update the volume title and view all links to retain view when switching to volume-only results
-    $('.pagination a, a.volume-title').each(function() {
+    // And facet links
+    $('.pagination a, a.volume-title, a.facet_select').each(function() {
       this.href = this.href.replace(view_class, view_name);
     });
 

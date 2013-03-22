@@ -40,6 +40,9 @@
     margin-left: 20px;
   }
   .speaker .frda-label {color: #aaa;}
+  .group-count {
+    font-size: 13px;
+  }
 
   /* Overrides and styling for specific results views */
   /* Default View */
@@ -60,7 +63,7 @@
       padding-bottom: 10px;
       padding-top: 0;
       width: 100%;
-      margin: 6px 0;
+      margin: 6px 0 0;
       a {
         color: $active_heading_link_color;
       }
@@ -108,8 +111,9 @@
     }
     @include result-title-styling; //h3 styling
     h3 {
+      margin-bottom: 0;
       margin-top: 0;
-      padding-top: 3px;
+      padding: 5px 9px;
       &.long-title {
         display: none;
       }
@@ -128,6 +132,7 @@
           > a {border-bottom: none;}
           img {
             @include result-image-styling;
+            margin-bottom: 2px;
             width: 200px;
           }
         }
@@ -143,6 +148,18 @@
         .snippet {display: none;}
         .images .snippet {margin-left: 6em;}
         .longtext {display: none;}
+        // override oneresult styling to make Images rows less tall than AP
+        &.images {
+          min-height: 290px;
+          height: 290px;
+          .pageimg {
+            img {
+              max-height: 200px;
+              max-width: 200px;
+              width: auto;
+            }
+          }
+        }
       }
     }
     .frequency-view, #frequencytable {display: none;}
@@ -186,14 +203,21 @@
         .pagenum {
           float: left;
           margin-left: 0;
+          margin-right: 20px;
           width: 6em;
         }
         .snippet {
           display: inline-block;
-          width: 70%;
-          }
+          width: 67%;
+        }
         .images .snippet {margin-left: 6em;}
         .longtext {display: none;}
+        &.ap {
+          margin-bottom: 30px;
+          h3.session-title {
+            margin-bottom: 3px;
+          }
+        }
       }
     }
      .frequency-view, #frequencytable {display: none;}
@@ -221,6 +245,12 @@
           width: 95%;
           white-space: nowrap;
         }
+        &.tome-title {
+          font-weight: bold;
+          li, .occurrences {
+            font-weight: normal;
+          }
+        }
         .occurrences {
           margin-right: 2px;
         }
@@ -241,13 +271,8 @@
         }
       }
     }
-    .oneresult  {
+    .oneresult, .all-results {
       display: none;
-      //.pageimg, .pageimg img, .speaker, .speaker .frda-label,
-      //.tome, .pagenum, .snippet, .images .snippet, .longtext
-      //  {
-      //    display: none;
-      //  }
     }
   }
 }

@@ -4,9 +4,13 @@
       <%- if grouping.group -%>
         <h2>
           <i class="icon-book"></i>
-          <%= link_to_volume_facet(grouping.group, {:params => params}) %>
+          <%= link_to_volume_facet(grouping.group, {:params => params, :class => 'volume-title'}) %>
           <%#= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
-          <span>(<%= t(contextual_118n_key_for_pages(grouping.group), :count => grouping.total) %>)</span>
+          <span class="group-count">
+            <%# the 'if grouping.total > 10' value below is dependent on the value
+                of solr_helper.rb#group_results_params group.limit value being '9' %>
+            (<%= t(contextual_118n_key_for_pages(grouping.group), :count => grouping.total) %><% if grouping.total > 10 %><span class="all-results"> - <%= link_to_volume_facet(grouping.group, {:params => params, :count => grouping.total, :class => 'volume-title'}) %></span><% end %>)
+          </span>
         </h2>
         <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the
             Images group title. Will need to detect whether group is Images and if so,
@@ -51,7 +55,7 @@
       <%- @response.facet_pivot.each do |_, tomes| -%>
         <ul id="frequencytable">
           <%- tomes.each do |tome| -%>
-            <li>
+            <li class="tome-title">
               <%= link_to_volume_facet(tome["value"], :params => params.dup.delete_if{|k,v| k == "view"}) %> <span class="occurrences"><%= tome["count"]%></span>
               <ul>
                 <%- tome["pivot"].each do |session| -%>

@@ -188,5 +188,9 @@ module ApplicationHelper
   def mods_element_dateIssued(doc)
     doc.mods.origin_info.dateIssued.find {|n| n.attr("encoding") != 'marc'}.text
   end
+  
+  def grouped_response_includes_images?(documents)
+    documents.map {|doc| doc.group}.include?(Frda::Application.config.images_id)
+  end
 
 end

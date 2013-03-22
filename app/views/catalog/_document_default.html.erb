@@ -1,6 +1,6 @@
 <div id="documents" class="<%= params[:result_view] %><%= ' images' if on_images_page %>">
   <%- if response_is_grouped? -%>
-    <%- documents.each_with_index do |grouping, index| -%>
+ 	<%- documents.each_with_index do |grouping, index| -%>
       <%- if grouping.group -%>
         <h2>
           <i class="icon-book"></i>

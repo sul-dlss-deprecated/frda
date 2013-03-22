@@ -415,7 +415,11 @@ class CatalogController < ApplicationController
 
   # Value will be changed via JavaScript when user changes views
   def result_view(solr_params, user_params)
-    params[:result_view] = params[:result_view] || "default"
+    if on_images_page and params[:result_view]  == 'frequency'
+      params[:result_view] = "default"
+    else
+      params[:result_view] = params[:result_view] || "default"
+    end
   end
 
   # This is only used when there is no JS and is handling mapping drop-down options to f params.

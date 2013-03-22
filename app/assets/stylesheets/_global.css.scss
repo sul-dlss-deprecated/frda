@@ -215,11 +215,16 @@ span.content-type {
       &:last-child > a,
       &:last-child > span {border-right: none;}
     }
-    > .active > a,
+    > .active > a {
+      background-color: #f2f1f1;
+      color: #555;
+      font-weight: bold;
+    }
     > .active > span {
       background-color: transparent;
+      color: #999999;
       font-weight: bold;
-      &:hover {color: #999999;};
+      //&:hover {color: #999999;};
     }
   }
 }

@@ -34,8 +34,7 @@ class SolrDocument
   end
   
   def page_number
-   # self[:page_num_ssi] || self.page_sequence || "1"
-   self.page_sequence # for now, let's just show the page sequence, which is guaranteed to start at 1 and go up to X, page_num_isi is from the TEI and is messy
+   self[:page_num_ssi] || ".."
   end
 
   def page_sequence

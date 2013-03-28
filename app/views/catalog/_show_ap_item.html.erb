@@ -20,7 +20,7 @@ end
   <div class="span12">
     <h2><%= link_to "Archives parlementaires", ap_collection_path %></h2>
     <ul class="item-breadcrumb">
-      <li><%= link_to(@document.volume_name, show_page_path(:id=>@document.druid,:page_num=>"1")) %>  »
+      <li><%= link_to(@document.volume_name, show_page_path(:id=>@document.druid,:page_seq=>"1")) %>  »
           <% @document.session_title.each do |session|%>
             <%= link_to(session, catalog_index_path(params_for_session(session))) %>  »
           <% end %>
@@ -39,19 +39,19 @@ end
       </div>
 
       <div class="span2 item-views btn-group">
-          <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"image"),:remote=>true do%>
+          <%= link_to show_page_path(:id=>@document.druid,:page_seq=>@document.page_sequence,:mode=>"image"),:remote=>true do%>
             <%= button_tag t('frda.show.ap.buttons.side_by_side'),
                 :class => 'btn btn-small',
                 :disabled => ['flipbook', 'ocr'].include?(@mode) ? false : true %>
           <% end %>
 
-          <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"ocr"),:remote=>true do%>
+          <%= link_to show_page_path(:id=>@document.druid,:page_seq=>@document.page_sequence,:mode=>"ocr"),:remote=>true do%>
           <%= button_tag t('frda.show.ap.buttons.text_only'),
               :class => 'btn btn-small',
               :disabled => ['ocr'].include?(@mode) ? true : false %>
           <% end %>
 
-     <%= link_to show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:mode=>"flipbook"),:remote=>true,:class=>'hidden showOnLoad' do%>
+     <%= link_to show_page_path(:id=>@document.druid,:page_seq=>@document.page_sequence,:mode=>"flipbook"),:remote=>true,:class=>'hidden showOnLoad' do%>
           <%= button_tag t('frda.show.ap.buttons.flipbook'),
               :class => 'btn btn-small hidden showOnLoad',
               :disabled => ['flipbook'].include?(@mode) ? true : false %>
@@ -72,7 +72,7 @@ end
                 </li>
 								<% unless @document.txt_file.blank? %>
 	                <li class="download-option">
-	                 <%= link_to t('frda.show.download_options.page_text'), show_page_path(:id=>@document.druid,:page_num=>@document.page_sequence,:download_ocr_text=>true), :class => 'downloadLink' %>
+	                 <%= link_to t('frda.show.download_options.page_text'), show_page_path(:id=>@document.druid,:page_seq=>@document.page_sequence,:download_ocr_text=>true), :class => 'downloadLink' %>
 	                </li>
 								<% end %>
                 <% unless @document.pdf_file.blank? %>
@@ -124,16 +124,16 @@ end
 			<%= hidden_field_tag :volume,@document.volume %>
       <%= hidden_field_tag :id,@document.druid %>
       <%= hidden_field_tag :from_id,@document.id %>
-      <%= text_field_tag :page_num,@document.page_sequence, :maxlength => 3, :class => 'span1' %>
+      <%= text_field_tag :page_num,@document.page_number, :maxlength => 3, :class => 'span1' %>
       <%= submit_tag t('frda.show.go'), :class => 'btn btn-mini'%>
     <% end %>
 
     <div class="btn-group">
-      <%= link_to "<i class='icon-chevron-left'></i>".html_safe, (link_prev_page ? show_page_path(:id=>@document.druid,:page_num=>((@document.page_sequence.to_i)-1).to_s,:from_id=>@document.id,:mode=>@mode) : '#'),
+      <%= link_to "<i class='icon-chevron-left'></i>".html_safe, (link_prev_page ? show_page_path(:id=>@document.druid,:page_seq=>((@document.page_sequence.to_i)-1).to_s,:from_id=>@document.id,:mode=>@mode) : '#'),
       :remote=>true,
           :class => 'btn btn-mini',
           :disabled => !link_prev_page %>
-      <%= link_to "<i class='icon-chevron-right'></i>".html_safe, (link_next_page ? show_page_path(:id=>@document.druid,:page_num=>((@document.page_sequence.to_i)+1).to_s,:from_id=>@document.id,:mode=>@mode) : '#'),
+      <%= link_to "<i class='icon-chevron-right'></i>".html_safe, (link_next_page ? show_page_path(:id=>@document.druid,:page_seq=>((@document.page_sequence.to_i)+1).to_s,:from_id=>@document.id,:mode=>@mode) : '#'),
       :remote=>true,
           :class => 'btn btn-mini',
           :disabled => !link_next_page %>

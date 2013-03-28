@@ -34,7 +34,33 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     visit catalog_path(:id=>'wb029sv4796_00_0006')
     page.should have_content("M. le secrétaire, continuant la lecture des lettres, adresses et pétitions :")
     page.should have_xpath("//img[contains(@src, \"wb029sv4796/wb029sv4796_00_0006_medium.jpg\")]")
-    page.should have_xpath("//a[contains(@href, \"/en/show_page?id=wb029sv4796&page_num=1\")]")
+    page.should have_xpath("//a[contains(@href, \"/en/show_page?from_id=wb029sv4796_00_0006&id=wb029sv4796&page_seq=1\")]")
+  end
+
+  it "should go to a specific AP detail page by page sequence (like in paging controls)" do
+    visit show_page_path(:from_id=>'wb029sv4796_00_0006',:id=>'wb029sv4796',:page_seq=>'3')
+    current_path.should == catalog_path('en',:id=>'wb029sv4796_00_0007')
+  end
+
+  it "should return to the starting page if the specified page is not found" do
+    visit show_page_path(:from_id=>'wb029sv4796_00_0006',:id=>'wb029sv4796',:page_seq=>'5555')
+    current_path.should == catalog_path('en',:id=>'wb029sv4796_00_0006')
+    page.should have_content('The selected page was not found.')
+  end
+
+  it "should go to a specific AP detail page by specifing a specific page number" do
+    visit catalog_path(:id=>'wb029sv4796_00_0005')
+    fill_in "page_num", :with => "2"
+    click_button "Go"
+    current_path.should == catalog_path('en',:id=>'wb029sv4796_00_0006')
+  end
+
+  it "should return to the starting page if an invalid page number is entered" do
+    visit catalog_path(:id=>'wb029sv4796_00_0005')
+    fill_in "page_num", :with => "55555"
+    click_button "Go"
+    current_path.should == catalog_path('en',:id=>'wb029sv4796_00_0005')
+    page.should have_content('The selected page was not found.')
   end
   
   it "should show an Images detail page" do

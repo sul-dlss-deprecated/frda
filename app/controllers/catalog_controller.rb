@@ -82,22 +82,24 @@ class CatalogController < ApplicationController
     from_id=params[:from_id]
     druid=params[:id]
     page_num=params[:page_num]
+    page_seq=params[:page_seq]
     download_ocr_text=params[:download_ocr_text]
     volume=params[:volume]
     session_title=params[:session_title]
     
     @mode=params[:mode]
 
-    if session_title.blank? || session_title=='Select session' # if no session_title is supplied, this is a request for a specific page number for a given druid
-      response = Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND page_sequence_isi:\"#{page_num}\""})["response"]
-      @document = SolrDocument.new(response["docs"].first, response) if response["docs"].size > 0 # assuming we found this page
-    else # if a session_title is supplied, then this is a request to find the first page in that session/volume
+    if page_num.blank? && page_seq.blank? # if no page number or sequence given, this must be a search for a specific session, so look for the first page in that volume/session
       pages = Blacklight.solr.select(:params =>{:fq => "session_title_sim:\"#{session_title}\"",:"facet.field"=>"session_seq_first_isim",:rows=>0})['facet_counts']['facet_fields']['session_seq_first_isim']
       if pages.size > 0 
-        page_num=pages.first # grab first page sequence number for the first session returned and then look up the page in the given voluem
-        response = Blacklight.solr.select(:params =>{:fq => "vol_num_ssi:\"#{volume}\" AND page_sequence_isi:\"#{page_num}\""})["response"]
+        page_seq=pages.first # grab first page sequence number for the first session returned and then look up the page in the given voluem
+        response = Blacklight.solr.select(:params =>{:fq => "vol_num_ssi:\"#{volume}\" AND page_sequence_isi:\"#{page_seq}\""})["response"]
         @document = SolrDocument.new(response["docs"].first, response) if response["docs"].size > 0 # assuming we found this page
       end
+    else # if a page number or sequeunce is given, use that to find the specific page
+      page_query = (page_num.blank? ? "page_sequence_isi:\"#{page_seq}\"" : "page_num_ssi:\"#{page_num}\"")
+      response = Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND #{page_query}"})["response"]
+      @document = SolrDocument.new(response["docs"].first, response) if response["docs"].size > 0 # assuming we found this page
     end
         
     if request.xhr? # coming an ajax call, just render the new page (or an error message if not found)

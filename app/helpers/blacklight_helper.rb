@@ -6,4 +6,24 @@ module BlacklightHelper
     html_escape("#{t(index_fields[field].label)}:")
   end
   
+  # link_back_to_catalog(:label=>'Back to Search')
+  # Create a link back to the index screen, keeping the user's facet, query and paging choices intact by using session.
+  def link_back_to_catalog(opts={:label=>nil})
+    query_params = session[:search] ? session[:search].dup : {}
+    query_params.delete :counter
+    query_params.delete :total
+    link_url = url_for(query_params)
+    if link_url =~ /bookmarks/
+      opts[:label] ||= t('blacklight.back_to_bookmarks')
+    end
+
+    if query_params[:q]
+      opts[:label] ||= t('blacklight.back_to_search').html_safe + " (#{query_params[:q]})"
+    else
+      opts[:label] ||= t('blacklight.back_to_search').html_safe
+    end
+
+    link_to opts[:label], link_url
+  end
+
 end

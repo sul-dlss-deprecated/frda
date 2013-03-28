@@ -177,7 +177,7 @@ fr:
         carrier:
           blank: 'Un opérateur téléphonique est exigée'
 
-    back_to_search: 'Retour à la recherche'
+    back_to_search: '&laquo; résultats'
 
     search:
       title: '%{application_name} Résultats de recherche'

@@ -5,14 +5,18 @@ class AboutController < ApplicationController
   # and add a custom route in the routes.rb file    
   def contact
     @from=params[:from]
+    @subject=params[:subject]
+    @name=params[:name]
+    @email=params[:email]
+    @message=params[:message]
+    
     if request.post?
-      @subject=params[:subject]
-      @name=params[:name]
-      @email=params[:email]
-      @message=params[:message]
       unless @message.blank?
         FrdaMailer.contact_message(:params=>params,:request=>request).deliver 
         flash[:notice]=t("frda.about.contact_message_sent")
+        @message=nil
+        @name=nil
+        @email=nil        
         unless @from.blank?
           redirect_to(@from)
           return

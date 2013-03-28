@@ -89,7 +89,7 @@ class CatalogController < ApplicationController
     
     @mode=params[:mode]
 
-    if page_num.blank? && page_seq.blank? # if no page number or sequence given, this must be a search for a specific session, so look for the first page in that volume/session
+    if (page_num.blank? && page_seq.blank?) || !session_title.blank? # if no page number or sequence given, this must be a search for a specific session, so look for the first page in that volume/session
       pages = Blacklight.solr.select(:params =>{:fq => "session_title_sim:\"#{session_title}\"",:"facet.field"=>"session_seq_first_isim",:rows=>0})['facet_counts']['facet_fields']['session_seq_first_isim']
       if pages.size > 0 
         page_seq=pages.first # grab first page sequence number for the first session returned and then look up the page in the given voluem

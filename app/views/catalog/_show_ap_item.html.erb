@@ -118,7 +118,7 @@ end
     <%= form_tag(show_page_path, :remote => true, :class => "form-inline") do%>
 	 		<% unless list_is_empty?(@document.session_title)%>
 				<noscript>
-					  <%= select_tag "session_title", options_for_select([t('frda.show.select_session')] + @document.volume_sessions), :"data-hide-submit"=>'true' %>
+					  <%= select_tag "session_title", options_for_select([[t('frda.show.select_session'),'']] + @document.volume_sessions), :"data-hide-submit"=>'true' %>
 				</noscript>		
 			<% end %>
 			<%= hidden_field_tag :volume,@document.volume %>

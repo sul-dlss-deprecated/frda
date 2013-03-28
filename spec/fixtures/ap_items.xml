@@ -22,8 +22,8 @@
   <field name="search_date_dtsim">1791-12-11T00:00:00Z</field>
   <field name="session_date_val_ssim">1791-12-11</field>
   <field name="session_date_dtsim">1791-12-11T00:00:00Z</field>
-  <field name="session_title_ftsim">Séance du dimanche 11 décembre 1791 .</field>
-  <field name="session_title_ftsim">Séance du dimanche 11 décembre 1792 .</field>
+  <field name="session_title_ftsim">Séance du dimanche 11 décembre 1791</field>
+  <field name="session_title_ftsim">Séance du dimanche 11 décembre 1792</field>
   <field name="session_date_title_ssim">1791-12-11-|-Séance du dimanche 11 décembre 1791</field>
   <field name="session_date_title_ssim">1792-12-11-|-Séance du dimanche 11 décembre 1792</field>
   <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
@@ -65,7 +65,7 @@
   <field name="search_date_dtsim">1791-12-11T00:00:00Z</field>
   <field name="session_date_val_ssim">1791-12-11</field>
   <field name="session_date_dtsim">1791-12-11T00:00:00Z</field>
-  <field name="session_title_ftsim">Séance du dimanche 11 décembre 1791 .</field>
+  <field name="session_title_ftsim">Séance du dimanche 11 décembre 1791</field>
   <field name="session_date_title_ssim">1791-12-11-|-Séance du dimanche 11 décembre 1791</field>
   <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
   <field name="session_seq_first_isim">2</field>
@@ -133,7 +133,7 @@
   <field name="search_date_dtsim">1791-12-11T00:00:00Z</field>
   <field name="session_date_val_ssim">1791-12-11</field>
   <field name="session_date_dtsim">1791-12-11T00:00:00Z</field>
-  <field name="session_title_ftsim">Séance du dimanche 11 décembre 1791 .</field>
+  <field name="session_title_ftsim">Séance du dimanche 11 décembre 1791</field>
   <field name="session_date_title_ssim">1791-12-11-|-Séance du dimanche 11 décembre 1791</field>
   <field name="session_prez_ssim">PRÉSIDENCE DE M. LEMONTEY.</field>
   <field name="session_seq_first_isim">2</field>
@@ -225,7 +225,7 @@
   <field name="search_date_dtsim">1790-02-18T00:00:00Z</field>
   <field name="session_date_val_ssim">1790-02-18</field>
   <field name="session_date_dtsim">1790-02-18T00:00:00Z</field>
-  <field name="session_title_ftsim">Séance du jeudi 18 février 1790, au matin (1). </field>
+  <field name="session_title_ftsim">Séance du jeudi 18 février 1790, au matin (1).</field>
   <field name="session_date_title_ssim">1790-2-18-|-Séance du jeudi 18 février 1790, au matin (1).</field>
 
   <field name="session_prez_ssim">PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.</field>
@@ -278,7 +278,7 @@
   <field name="search_date_dtsim">1790-02-18T00:00:00Z</field>
   <field name="session_date_val_ssim">1790-02-18</field>
   <field name="session_date_dtsim">1790-02-18T00:00:00Z</field>
-  <field name="session_title_ftsim">Séance du jeudi 18 février 1790, au soir (1). </field>
+  <field name="session_title_ftsim">Séance du jeudi 18 février 1790, au soir (1).</field>
   <field name="session_date_title_ssim">1790-2-18-|-Séance du jeudi 18 février 1790, au soir (1).</field>
   <field name="session_seq_first_isim">1</field>
 
@@ -315,7 +315,7 @@
  <field name="vol_date_start_dti">1789-01-01T00:00:00Z</field>
   <field name="vol_date_end_dti">1789-12-31T23:59:59Z</field>
   <field name="search_date_dtsim">1789-12-31T00:00:00Z</field>
-  <field name="session_title_ftsim">Séance du jeudi 18 février 1790, au soir (1). </field>
+  <field name="session_title_ftsim">Séance du jeudi 18 février 1790, au soir (1).</field>
   <field name="session_date_title_ssim">1790-2-18-|-Séance du jeudi 18 février 1790, au soir (1).</field>
 	<field name="vol_pdf_name_ss">jt959wc5586.pdf</field>
 	<field name="vol_tei_name_ss">jt959wc5586.xml</field>
@@ -351,7 +351,7 @@
   <field name="vol_date_start_dti">1789-05-05T00:00:00Z</field>
   <field name="vol_date_end_dti">1789-09-15T23:59:59Z</field>
   <field name="search_date_dtsim">1789-09-15T00:00:00Z</field>
-  <field name="session_title_ftsim">Séance du jeudi 18 février 1790, au soir (1). </field>
+  <field name="session_title_ftsim">Séance du jeudi 18 février 1790, au soir (1).</field>
   <field name="session_date_title_ssim">1790-2-18-|-Séance du jeudi 18 février 1790, au soir (1).</field>
 	<field name="vol_pdf_name_ss">bm916nx5550.pdf</field>
 	<field name="vol_tei_name_ss">bm916nx5550.xml</field>

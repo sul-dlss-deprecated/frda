@@ -57,10 +57,17 @@ describe("Search Pages",:type=>:request,:integration=>true) do
 
   it "should return to the starting page if an invalid page number is entered" do
     visit catalog_path(:id=>'wb029sv4796_00_0005')
-    fill_in "page_num", :with => "55555"
+    fill_in "page_num", :with => "5555"
     click_button "Go"
     current_path.should == catalog_path('en',:id=>'wb029sv4796_00_0005')
     page.should have_content('The selected page was not found.')
+  end
+
+  it "should go to the first page of a new session when selected in the drop down" do
+    visit catalog_path(:id=>'wb029sv4796_00_0005')
+    select "Séance du dimanche 11 décembre 1792", :from => "session_title"
+    click_button "Go"
+    current_path.should == catalog_path('en',:id=>'wb029sv4796_00_0006')
   end
   
   it "should show an Images detail page" do

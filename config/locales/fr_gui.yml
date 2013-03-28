@@ -128,6 +128,7 @@ fr:
         grand public y verrait un moyen essentiel d’en savoir plus sur cette période fondatrice pour la nation
         française. </p>
     show:
+      wait: 'Loading, please wait...'
       not_found: 'The selected page was not found.'
       item:
         one: '1 résultat'

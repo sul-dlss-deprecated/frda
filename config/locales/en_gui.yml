@@ -124,6 +124,7 @@ en:
     collection_members:
       items_name: 'image'
     show:
+      wait: 'Loading, please wait...'
       not_found: 'The selected page was not found.'
       item:
         one: '1 Item'

@@ -156,7 +156,7 @@ end
 
   <div class="span<%= ['ocr','flipbook'].include?(@mode) ? "12" : "6"%> metadata">
 		<% if @mode == 'flipbook' %>
-		<span id="loading_message">Loading, please wait...</span>
+		<span id="loading_message"><%=t('frda.show.wait')%></span>
 	    <div class="flipbook">
 				<iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/view.jsp?id=<%=@document.druid%>#page/<%=@document.page_sequence%>/mode/1up" width="100%" height="800"></iframe>
 	    </div>

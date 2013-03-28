@@ -14,6 +14,8 @@ module FacetsHelper
   
   def facet_field_names
     keys = blacklight_config.facet_fields.keys
+    keys.delete('collection_ssi') if on_home_page
+    
     facet_patterns=%w{periods_ssim highlight_ssim}
     facet_patterns.each do |facet_pattern|
       keys.delete_if{|k| k.include?(facet_pattern) }

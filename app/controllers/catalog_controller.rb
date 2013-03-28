@@ -8,7 +8,7 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Frda::SolrHelper
   
-  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speeches, :proximity_search, :toggle_collection_facet, :result_view]
+  CatalogController.solr_search_params_logic += [:add_year_range_query, :search_within_speeches, :proximity_search, :result_view]
   
   before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
 
@@ -215,7 +215,7 @@ class CatalogController < ApplicationController
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
-    config.add_facet_fields_to_solr_request!
+    # config.add_facet_fields_to_solr_request!
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
@@ -356,13 +356,6 @@ class CatalogController < ApplicationController
   helper_method :"response_is_grouped?"
 
   private
-  def remove_collection_facet
-    config.remove_facet_field 'collection_ssi', :label => 'frda.nav.collection'
-  end
-  
-  def add_collection_facet
-    config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection'    
-  end
   
   def create_guest_user
     u = User.create
@@ -379,10 +372,6 @@ class CatalogController < ApplicationController
         solr_params[:fq] = [range_query]
       end
     end
-  end
-  
-  def toggle_collection_facet(solr_params, user_params)
-    solr_params[:"facet.field"].delete('collection_ssi') if on_home_page      
   end
   
   def search_within_speeches(solr_params, user_params)

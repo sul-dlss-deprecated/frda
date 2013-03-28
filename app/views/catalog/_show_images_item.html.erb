@@ -31,7 +31,7 @@
 
 <div class="row document-details images-item">
   <div class="span6 member-image">
-    <div id="image_workspace"></div>
+    <div id="image_workspace" class="hidden showOnLoad" ><%=t('frda.show.wait')%></div>
       <noscript>
          <div class="item active">
              <%= link_to image_tag(@document.first_image, :alt => "#{t('frda.collection_members.items_name')} 1 of #{@document.images.size}"),@document.purl %>

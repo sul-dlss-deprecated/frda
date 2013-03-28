@@ -54,6 +54,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
 
   it "should search for an AP item" do
     visit search_path(:q=>'tome')
+    page.should have_css("div.blacklight-collection_ssi") # should have collection facet
     page.should have_content("Tome 1 : 1789 – Introduction")
     page.should have_xpath("//img[contains(@src, \"jt959wc5586/jt959wc5586_00_0782_thumb\")]")  
   end

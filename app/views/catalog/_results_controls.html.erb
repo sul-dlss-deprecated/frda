@@ -26,8 +26,9 @@
           <li><%= search_result_view_switch('icon-th-list', 'default') %></li>
           <li><%= search_result_view_switch('icon-th', 'gallery') %></li>
           <li><%= search_result_view_switch('icon-align-justify', 'list') %></li>
-          <li><%= search_result_view_switch('icon-signal', 'frequency') %></li>
-
+          <% if response_includes_ap?(@response) %>
+            <li><%= search_result_view_switch('icon-signal', 'frequency') %></li>
+          <% end %>
         <% end %>
 
       </ul>

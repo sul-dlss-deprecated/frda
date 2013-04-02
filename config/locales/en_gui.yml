@@ -125,6 +125,8 @@ en:
       items_name: 'image'
     show:
       wait: 'Loading, please wait...'
+      open_in_full_screen: 'Open in full screen'
+      close: 'Close'
       not_found: 'The selected page was not found.'
       item:
         one: '1 Item'

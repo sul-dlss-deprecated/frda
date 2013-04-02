@@ -201,4 +201,8 @@ module ApplicationHelper
     response[:facet_counts][:facet_fields][:collection_ssi].any? { |c| c == 'Archives parlementaires' }
   end
 
+  def render_locale_class
+    "lang-#{I18n.locale}"
+  end
+
 end

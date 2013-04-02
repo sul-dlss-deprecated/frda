@@ -5,7 +5,15 @@
                                      'size': 'thumb',
                                      'layout': 'thin-nav-bottom',
                                      'width': 425,
-                                     'height': 500});
+                                     'height': 500,
+                                     'zoomOnClick': true,
+                                     'tooltipTexts': {
+                                     '<%= I18n.locale %>': {
+                                       'OpenInFullScreen': '<%= t('frda.show.open_in_full_screen') %>',
+                                       'Close': '<%= t('frda.show.close') %>'
+                                       }
+                                     }
+                                   });
   });
 </script>
 

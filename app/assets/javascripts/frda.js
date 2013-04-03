@@ -6,6 +6,24 @@ $(document).ready(function(){
 
   $('.overview .nav-pills a:first').tab('show');
 
+  // AP landing page - make volume titles expand to show session titles
+  if($("[data-collapse='true']").length > 0) {
+		$("ul", $("[data-collapse='true']")).each(function(){
+			var toggle_text = $(this).children("li[data-behavior='toggle-handler']");
+			toggle_text.each(function(){
+				var icon = $(this).children("i");
+				icon.toggle();
+			  var nested_list = $(this).next("li");
+				nested_list.hide();
+				$("a, i", $(this)).click(function(){
+					icon.toggleClass("icon-minus");
+					nested_list.slideToggle();
+					expandedType=nested_list.children().attr('class');
+				});
+			});
+		});
+	}
+
   // Result view links are 'display: none' by default, to hide from no JS browsers
   // Make them visible if browser has JS:
   $('.view-switcher li a').css('display', 'inline-block');

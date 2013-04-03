@@ -8,13 +8,13 @@ $(document).ready(function(){
   <div class="collection-image">
     <% if on_images_page %>
       <%= image_tag(asset_url("images_image_cropped.jpg"), :alt => "Images Collection", :class => "images-collection-image") %>
-    <% elsif on_ap_page %>
+    <% elsif on_ap_page || on_ap_landing_page %>
       <%= image_tag(asset_url("APcoverimage.jpg"), :alt => "AP Collection", :class => "ap-collection-image") %>
     <% end %>
   </div>
   <%= render "search_form" %>
-  <%= render :partial => 'constraints' if query_has_constraints? %>
-  <%= render :partial=> 'facets' unless on_collection_highlights_page %>
+  <%= render :partial => 'constraints' if query_has_constraints? && !on_ap_landing_page %>
+  <%= render :partial=> 'facets' unless on_collection_highlights_page or on_ap_landing_page %>
 </div>
 
 
@@ -39,7 +39,7 @@ $(document).ready(function(){
       <div class="images-summary truncate">
         <%=t('frda.about.images_html')%>
       </div>
-    <% elsif on_ap_page %>
+    <% elsif on_ap_page || on_ap_landing_page %>
       <h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>
       <div class="ap-summary truncate">
         <%=t('frda.about.ap_html')%>
@@ -47,23 +47,23 @@ $(document).ready(function(){
     <% else %>
       <h2 class="search-results"><%= t('blacklight.search.search_results_header') %></h2>
     <% end %>
-    <div id="search-results-metadata">
 
-      <%#= render :partial => 'did_you_mean' %>
-      <%#= render :partial => 'constraints' %>
-    </div>
+    <% unless on_ap_landing_page %>
+      <%# bar with response counts and view toggles %>
+      <%= render "results_controls" %>
 
-    <%# bar with response counts and view toggles %>
-    <%= render "results_controls" %>
+      <%# results pagination at top of page %>
+      <%= render :partial => 'results_pagination', :locals => {:top_pagination => true} %>
 
-    <%# results pagination at top of page %>
-    <%= render :partial => 'results_pagination', :locals => {:top_pagination => true} %>
+      <%# search results items %>
+      <%= render_document_index %>
 
-    <%# search results items %>
-    <%= render_document_index %>
+      <%# results pagination at bottom of page %>
+      <%= render :partial => 'results_pagination', :locals => {:top_pagination => false} %>
 
-    <%# results pagination at bottom of page %>
-    <%= render :partial => 'results_pagination', :locals => {:top_pagination => false} %>
+    <% else %>
+      <%= render "show_ap_landing_page" %>
+    <% end %>
 
   <% end %>
 

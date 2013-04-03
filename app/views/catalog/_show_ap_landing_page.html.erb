@@ -1,0 +1,27 @@
+<div class="row ap-browse">
+  <div class="span9">
+    <div data-collapse="true">
+      <%- @response.facet_pivot.each do |_, tomes| -%>
+        <ul id="volumes">
+          <%- tomes.each_with_index do |tome, index| -%>
+            <li class="tome-title" data-behavior='toggle-handler' data-reference-id="#<%= index %>">
+              <i style="display:none;" class="icon-plus"></i>
+              <%= link_to tome["value"], "##{index}" %>
+            </li>
+            <li>
+              <ul id="sessions">
+                <%- tome["pivot"].each do |session| -%>
+                  <li>
+                    <span class="session-title">
+                      &raquo;<%= link_to_session_facet(session["value"], :params => params.dup.delete_if{|k,v| k == "view"}, :title => session["value"]) %> 
+                    </span>
+                  </li>
+                <%- end -%>
+              </ul>
+            </li>
+          <%- end -%>
+        </ul>
+      <%- end -%>
+    </div>
+  </div>
+</div>

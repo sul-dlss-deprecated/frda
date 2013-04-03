@@ -50,7 +50,7 @@
               <!-- <li class="<%#="active" if on_collection_highlights_page%>">
                 <%#= link_to t('frda.nav.collection_highlights'), collection_highlights_path%>
               </li> -->
-              <li class="<%="active" if on_ap_page%>">
+              <li class="<%="active" if on_ap_page or on_ap_landing_page %>">
                 <%= link_to t('frda.nav.collection_ap'), ap_collection_path %>
               </li>
               <li class="<%="active" if on_images_page %>">

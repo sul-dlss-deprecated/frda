@@ -1,6 +1,7 @@
 <script language="javascript">
 $(document).ready(function(){
-  $('.truncate').truncate({max_length: 1035});
+  // $('.truncate').truncate({max_length: 1035});
+  $('.truncate').responsiveTruncate({lines: 8, more: '<%= t('frda.show.more') %>', less: '<%= t('frda.show.less') %>'});
 });
 </script>
 

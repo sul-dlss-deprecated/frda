@@ -382,6 +382,10 @@ img.ap-collection-image, img.images-collection-image {
 p.ap-summary, p.images-summary {
   width: 95%;
 }
+.ap-summary p, .images-summary p {
+  line-height: 1.5em;
+  margin-top: 0;
+}
 .prev-next {
   margin-left: 5px;
   margin-top: 5px;

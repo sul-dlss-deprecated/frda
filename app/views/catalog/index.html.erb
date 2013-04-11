@@ -7,15 +7,15 @@ $(document).ready(function(){
 
 <div id="sidebar" class="span3">
   <div class="collection-image">
-    <% if on_images_page %>
+    <% if on_images_page || on_images_landing_page %>
       <%= image_tag(asset_url("images_image_cropped.jpg"), :alt => "Images Collection", :class => "images-collection-image") %>
     <% elsif on_ap_page || on_ap_landing_page %>
       <%= image_tag(asset_url("APcoverimage.jpg"), :alt => "AP Collection", :class => "ap-collection-image") %>
     <% end %>
   </div>
   <%= render "search_form" %>
-  <%= render :partial => 'constraints' if query_has_constraints? && !on_ap_landing_page %>
-  <%= render :partial=> 'facets' unless on_collection_highlights_page or on_ap_landing_page %>
+  <%= render :partial => 'constraints' if query_has_constraints? && !on_ap_landing_page && !on_images_landing_page %>
+  <%= render :partial=> 'facets' unless on_collection_highlights_page or on_ap_landing_page or on_images_landing_page %>
 </div>
 
 
@@ -49,7 +49,7 @@ $(document).ready(function(){
       <h2 class="search-results"><%= t('blacklight.search.search_results_header') %></h2>
     <% end %>
 
-    <% unless on_ap_landing_page %>
+    <% unless on_ap_landing_page || on_images_landing_page %>
       <%# bar with response counts and view toggles %>
       <%= render "results_controls" %>
 
@@ -63,7 +63,8 @@ $(document).ready(function(){
       <%= render :partial => 'results_pagination', :locals => {:top_pagination => false} %>
 
     <% else %>
-      <%= render "show_ap_landing_page" %>
+      <%= render "show_ap_landing_page"     if on_ap_landing_page %>
+      <%= render "show_images_landing_page" if on_images_landing_page %>
     <% end %>
 
   <% end %>

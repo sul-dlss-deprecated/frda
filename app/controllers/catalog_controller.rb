@@ -52,6 +52,10 @@ class CatalogController < ApplicationController
     if on_collection_highlights_page
       @highlights=CollectionHighlight.order("sort_order")
     end
+
+    if on_images_landing_page
+      @headings = CatalogHeading.select("name_#{I18n.locale}").order("name_#{I18n.locale} asc")
+    end
     
     
     extra_head_content << view_context.auto_discovery_link_tag(:rss, url_for(params.merge(:format => 'rss')), :title => t('blacklight.search.rss_feed') )

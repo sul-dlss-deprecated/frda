@@ -8,6 +8,39 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+# query Solr, get Images catalog headings for one language, remove duplicates, store in array
+def get_catalog_headings(lang)
+  lang == 'en' ? facet = 'catalog_heading_etsimv' : facet = 'catalog_heading_ftsimv'
+  headings = Blacklight.solr.select(:params => {
+    :fq     => 'collection_ssi:"Images de la Révolution française"',
+    :rows   => '30000',
+    :fl     => "#{facet}",
+    :hl     => false
+  })
+  headings_array = []
+  headings['response']['docs'].each do |heading|
+     heading.each_value { |val| headings_array << val }
+  end
+  # headings_array.each { |heading| puts heading }
+  unique_headings = headings_array.uniq     # remove duplicates
+  unique_headings.reject! { |h| h.empty? }  # remove blank headings
+  # puts "\nTotal number of #{lang} headings: #{headings_array.length}\n\n"
+  # puts "Total number of unique #{lang} headings: #{unique_headings.length}\n"
+  return unique_headings
+end
+
+CatalogHeading.delete_all
+unique_headings_en = get_catalog_headings('en') # get English headings
+unique_headings_fr = get_catalog_headings('fr') # get French headings
+combined_headings = unique_headings_en.zip(unique_headings_fr) # interleave all headings
+
+# create record for each
+combined_headings.each do |h|
+  CatalogHeading.create(:name_en => h[0].join(""), :name_fr => h[1].join(""))
+end
+
+
 def add_items(items,coll)
   items.each {|item| coll.collection_highlight_items << CollectionHighlightItem.create(item_id:"#{item}")}
 end

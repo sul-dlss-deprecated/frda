@@ -63,11 +63,11 @@ PoliticalPeriod.create(
   name_en: 'Assembly of Notables and preparation of Cahiers de doleances',
   name_fr: 'Assemblée de Notables et préparations pour les Cahiers de doléances',
   start_date: '1787-02-22',
-  end_date: '1789-01-24'
+  end_date: '1789-05-04'
 )
 PoliticalPeriod.create(
   sort_order:2,
-  name_en: 'Convocation of Estates-General through fall of the Bastille',
+  name_en: 'Gathering of Estates-General through fall of the Bastille',
   name_fr: 'Convocation des Etats-généraux et prise de la Bastille',
   start_date: '1789-05-05',
   end_date: '1789-07-14'
@@ -88,15 +88,15 @@ PoliticalPeriod.create(
 )
 PoliticalPeriod.create(
   sort_order:5,
-  name_en: 'Girondin Convention',
-  name_fr: 'Convention girond',
+  name_en: 'National Convention (until purge of Girondins)',
+  name_fr: "Convention nationale (jusqu'a l'expulsion des girondins)",
   start_date: '1792-09-21',
   end_date: '1793-06-02'
 )
 PoliticalPeriod.create(
   sort_order:6,
-  name_en: 'Jacobin Convention and Terror',
-  name_fr: 'Convention montagnarde et la Terreur',
+  name_en: 'National Convention (until Thermidor)',
+  name_fr: "Convention nationale (jusqu'a thermidor)",
   start_date: '1793-06-02',
   end_date: '1794-07-28'
 )
@@ -123,8 +123,8 @@ PoliticalPeriod.create(
 )
 PoliticalPeriod.create(
   sort_order:10,
-  name_en: 'Third Directory and Coup d\'etat of 18 Brumaire',
-  name_fr: 'Troisième Directoire et coup d\'état du 18 Brumaire',
-  start_date: '1799-06-08',
+  name_en: "Third Directory and coup d'etat of 18 Brumaire",
+  name_fr: "Troisième Directoire et coup d'état du 18 Brumaire",
+  start_date: '1799-06-18',
   end_date: '1799-11-11'
 )

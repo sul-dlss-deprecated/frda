@@ -75,18 +75,6 @@ unique_headings_fr = get_catalog_headings('fr') # get French headings
 puts "\nTotal number of unique French catalog headings: #{unique_headings_fr.length}\n"
 store_catalog_headings(unique_headings_fr, 'Fr')
 
-
-CatalogHeading.delete_all
-unique_headings_en = get_catalog_headings('en') # get English headings
-unique_headings_fr = get_catalog_headings('fr') # get French headings
-combined_headings = unique_headings_en.zip(unique_headings_fr) # interleave all headings
-
-# create record for each
-combined_headings.each do |h|
-  CatalogHeading.create(:name_en => h[0].join(""), :name_fr => h[1].join(""))
-end
-
-
 def add_items(items,coll)
   items.each {|item| coll.collection_highlight_items << CollectionHighlightItem.create(item_id:"#{item}")}
 end

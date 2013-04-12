@@ -22,13 +22,59 @@ def get_catalog_headings(lang)
   headings['response']['docs'].each do |heading|
      heading.each_value { |val| headings_array << val }
   end
-  # headings_array.each { |heading| puts heading }
   unique_headings = headings_array.uniq     # remove duplicates
   unique_headings.reject! { |h| h.empty? }  # remove blank headings
-  # puts "\nTotal number of #{lang} headings: #{headings_array.length}\n\n"
-  # puts "Total number of unique #{lang} headings: #{unique_headings.length}\n"
   return unique_headings
 end
+
+# break up each catalog heading into level components and store in database as tree structure
+def store_catalog_headings(unique_headings, lang)
+  unique_headings.each do |heading|
+    category_model = "Category#{lang}".constantize # there are separate En and Fr versions of model
+    re = Regexp.new(/\s--\s/) # break up using ' -- ' as delimiter
+    chars = heading.join("").split("")
+    words = []
+    index = 0
+    chars.each_with_index do |c,i|
+      test = chars[i..i+3].join('')
+
+      if re.match(test)
+        words.push(chars[index..i-1].join(''))
+        index = i+4
+      end
+    end
+    words.push(chars[index..-1].join('')) # now have array of level elements
+
+    root_node = category_model.create!(:name => words[0]) # store first-level
+
+    unless words[1].nil?
+      first_child = category_model.create!(:name => words[1]) # store second-level
+      first_child.move_to_child_of(root_node)
+    end
+
+    unless words[2].nil?
+      second_child = category_model.create!(:name => words[2]) # store third-level
+      second_child.move_to_child_of(first_child)
+    end
+
+    unless words[3].nil?
+      third_child = category_model.create!(:name => words[3]) # store fourth-level
+      third_child.move_to_child_of(second_child)
+    end
+
+  end
+end
+
+CategoryEn.delete_all
+unique_headings_en = get_catalog_headings('en') # get English headings
+puts "\nTotal number of unique English catalog headings: #{unique_headings_en.length}\n"
+store_catalog_headings(unique_headings_en, 'En')
+
+CategoryFr.delete_all
+unique_headings_fr = get_catalog_headings('fr') # get French headings
+puts "\nTotal number of unique French catalog headings: #{unique_headings_fr.length}\n"
+store_catalog_headings(unique_headings_fr, 'Fr')
+
 
 CatalogHeading.delete_all
 unique_headings_en = get_catalog_headings('en') # get English headings

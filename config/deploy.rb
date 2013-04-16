@@ -85,3 +85,4 @@ namespace :deploy do
 end
 
 after "deploy", "deploy:migrate"
+after "deploy:update", "deploy:cleanup" 

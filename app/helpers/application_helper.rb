@@ -197,4 +197,12 @@ module ApplicationHelper
     documents.map {|doc| doc.group}.include?(Frda::Application.config.ap_id)
   end
 
+  def response_includes_ap?(response)
+    response[:facet_counts][:facet_fields][:collection_ssi].any? { |c| c == 'Archives parlementaires' }
+  end
+
+  def render_locale_class
+    "lang-#{I18n.locale}"
+  end
+
 end

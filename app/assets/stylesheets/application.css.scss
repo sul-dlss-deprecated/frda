@@ -1,4 +1,4 @@
-/*  
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -35,6 +35,8 @@
 @import "blacklight/dropdown";
 
 @import "modals";
+
+@import "blacklight_dates2svg/date_range_selector";
 
 @import "search_results";
 @import "highlights";

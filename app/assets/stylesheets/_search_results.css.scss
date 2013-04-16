@@ -277,6 +277,30 @@
   }
 }
 
+/* AP Landing Page */
+.ap-browse {
+  ul {
+    list-style-type: none;
+    margin-left: 10px;
+    margin-top: 15px;
+    li {
+      padding: 1px 0;
+      a {
+        margin-left: 4px;
+      }
+      &.tome-title {
+        a {
+          color: $active_heading_link_color;
+          font-weight: bold;
+        }
+      }
+    }
+    ul#sessions {
+      margin: 6px 10px 18px 22px;
+    }
+  }
+}
+
 /* Breadcrumb-like single-line display of result's ancestors */
 ul.inventory-ancestry {
   font-size: 12px;
@@ -357,6 +381,10 @@ img.ap-collection-image, img.images-collection-image {
 }
 p.ap-summary, p.images-summary {
   width: 95%;
+}
+.ap-summary p, .images-summary p {
+  line-height: 1.5em;
+  margin-top: 0;
 }
 .prev-next {
   margin-left: 5px;

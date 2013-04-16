@@ -28,7 +28,7 @@ fr:
       contact_us: 'Nous écrire'
       use_policy: Conditions d'utilisation
       collection_highlights: 'Sélections'
-      timeline_of_events: 'Timeline of Events'
+      timeline_of_events: 'Chronologie politique'
       collections: 'Les sélections'
       background: 'Fond'
       content_inventory: 'Inventaire'
@@ -129,6 +129,8 @@ fr:
         française. </p>
     show:
       wait: 'Loading, please wait...'
+      open_in_full_screen: 'Open in full screen'
+      close: 'Close'
       not_found: 'The selected page was not found.'
       item:
         one: '1 résultat'

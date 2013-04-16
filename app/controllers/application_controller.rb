@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   rescue_from Exception, :with=>:exception_on_website
   layout "frda"
   
-  helper_method :show_terms_dialog?, :on_home_page, :on_collection_highlights_page, :on_collections_pages, :on_about_pages, :on_show_page, :on_ap_page, :on_images_page, :on_search_page, :request_path
+  helper_method :show_terms_dialog?, :on_home_page, :on_collection_highlights_page, :on_collections_pages, :on_about_pages, :on_show_page, :on_ap_page, :on_ap_landing_page, :on_images_page, :on_search_page, :request_path
   
   before_filter :set_locale
   before_filter :require_http
@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
   end
   
   def on_home_page
-    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && params[:f].blank? && params[:q].blank? && !on_collection_highlights_page
+    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && params[:f].blank? && params[:q].blank? && params[:"date-start"].blank? && params[:"date-end"].blank? && !on_collection_highlights_page
   end
   
   def on_collections_pages
@@ -67,13 +67,17 @@ class ApplicationController < ActionController::Base
   def on_ap_page
     (@document && @document.ap_item?) || (on_search_page && params[:f] && params[:f]['collection_ssi']==[Frda::Application.config.ap_id])
   end
+
+  def on_ap_landing_page
+    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && %w{/en/ap /fr/ap}.include?(request.path) && !params[:q]
+  end
   
   def on_show_page
     request_path[:controller] == 'catalog' && request_path[:action] == 'show'
   end
 
   def on_search_page
-    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && !on_home_page
+    request_path[:controller] == 'catalog' && request_path[:action] == 'index' && !on_home_page && !on_ap_landing_page
   end
   
   def on_about_pages

@@ -15,6 +15,8 @@ gem "blacklight", '~> 4.0.0'
 #gem 'eadsax', :git => "https://github.com/sul-dlss/eadsax.git"
 gem 'ffi'
 
+gem 'blacklight_dates2svg'
+
 gem "coderay"
 
 gem 'stanford-mods'

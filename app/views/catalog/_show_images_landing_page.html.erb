@@ -1,7 +1,9 @@
 <div class="row ap-browse">
   <div class="span9">
-    <ul id="images-headings">
-
-    </ul>
+    <div>
+      <%= nested_li(@headings) do |heading| %>
+        <%= heading.name %>
+      <% end %>
+    </div>
   </div>
 </div>

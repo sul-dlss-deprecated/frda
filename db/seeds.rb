@@ -9,7 +9,39 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# query Solr, get Images catalog headings for one language, remove duplicates, store in array
+# -- Start Images Catalog Headings --
+#    1. Query Solr to get catalog_heading for each Images item
+#    2. Keep only distinct catalog headings
+#       Format: The events of the Revolution -- Everyday politics -- Demonstrations
+#    3. For each distinct heading, use ' -- ' to split string into tokens
+#    4. Store tokens in hash of hashes so each level is a key pointing to child level hash
+#    5. Go through keys and store each level in database, with pointer to parent id
+
+def add_string(headings_array, str)
+  headings_array.push(str)
+end
+
+# Put tokens into hash so each level is key to nested child level hash
+def collect_words(stored_data, words)
+  return stored_data if words.length == 0
+  w = words.shift
+  stored_data[w] ||= {}
+  stored_data[w] = collect_words(stored_data[w],words)
+  stored_data
+end
+
+# Store in database, using parent_id to create tree structure
+def store_words(data, parent_id, lang)
+  category_model = "Category#{lang}".constantize # there are separate En and Fr versions of model
+  return if data.keys.length == 0
+  data.keys.each do |k|
+    # puts "name = #{k}, parent_id = #{parent_id}"
+    cm = category_model.create!(:name => k, :parent_id => parent_id)
+    store_words(data[k], cm.id,lang)
+  end
+end
+
+# Query solr to get catalog_heading for all Images items
 def get_catalog_headings(lang)
   lang == 'en' ? facet = 'catalog_heading_etsimv' : facet = 'catalog_heading_ftsimv'
   headings = Blacklight.solr.select(:params => {
@@ -18,62 +50,61 @@ def get_catalog_headings(lang)
     :fl     => "#{facet}",
     :hl     => false
   })
+  # store each heading in array
   headings_array = []
   headings['response']['docs'].each do |heading|
-     heading.each_value { |val| headings_array << val }
+    array = heading.values
+    array.each do |v|
+      v = v[0]
+      if !v.is_a? String
+        puts "v is a #{v.class}: "
+      else
+        # puts "v is a string: #{v}"
+        headings_array << v
+      end
+    end
   end
   unique_headings = headings_array.uniq     # remove duplicates
   unique_headings.reject! { |h| h.empty? }  # remove blank headings
   return unique_headings
 end
 
-# break up each catalog heading into level components and store in database as tree structure
+# Split up each catalog heading into tokens and store in database as tree structure
 def store_catalog_headings(unique_headings, lang)
+  stored_data = {}
+  heading_records = []
   unique_headings.each do |heading|
-    category_model = "Category#{lang}".constantize # there are separate En and Fr versions of model
     re = Regexp.new(/\s--\s/) # break up using ' -- ' as delimiter
-    chars = heading.join("").split("")
+    chars = heading.split("")
     words = []
     index = 0
     chars.each_with_index do |c,i|
       test = chars[i..i+3].join('')
-
       if re.match(test)
-        words.push(chars[index..i-1].join(''))
+        word = chars[index..i-1].join('')
+        # puts "word = #{word}"
+        words.push(word)
         index = i+4
       end
     end
     words.push(chars[index..-1].join('')) # now have array of level elements
-
-    root_node = category_model.create!(:name => words[0]) # store first-level
-
-    unless words[1].nil?
-      first_child = category_model.create!(:name => words[1]) # store second-level
-      first_child.move_to_child_of(root_node)
-    end
-
-    unless words[2].nil?
-      second_child = category_model.create!(:name => words[2]) # store third-level
-      second_child.move_to_child_of(first_child)
-    end
-
-    unless words[3].nil?
-      third_child = category_model.create!(:name => words[3]) # store fourth-level
-      third_child.move_to_child_of(second_child)
-    end
-
+    stored_data = collect_words(stored_data, words)
   end
+  return stored_data
 end
 
-CategoryEn.delete_all
-unique_headings_en = get_catalog_headings('en') # get English headings
-puts "\nTotal number of unique English catalog headings: #{unique_headings_en.length}\n"
-store_catalog_headings(unique_headings_en, 'En')
+# Call methods to process and store catalog headings for given language
+def seed_catalog_headings(lang)
+  "Category#{lang}".constantize.delete_all
+  unique_headings_locale = get_catalog_headings(lang.downcase) # get headings for locale
+  puts "\nTotal number of unique #{lang} catalog headings: #{unique_headings_locale.length}\n"
+  words_to_store = store_catalog_headings(unique_headings_locale, lang)
+  store_words(words_to_store, nil, lang)
+end
 
-CategoryFr.delete_all
-unique_headings_fr = get_catalog_headings('fr') # get French headings
-puts "\nTotal number of unique French catalog headings: #{unique_headings_fr.length}\n"
-store_catalog_headings(unique_headings_fr, 'Fr')
+seed_catalog_headings('En')
+seed_catalog_headings('Fr')
+#-- end Images Catalog Headings --
 
 def add_items(items,coll)
   items.each {|item| coll.collection_highlight_items << CollectionHighlightItem.create(item_id:"#{item}")}

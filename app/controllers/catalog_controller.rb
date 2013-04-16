@@ -54,6 +54,7 @@ class CatalogController < ApplicationController
     end
 
     if on_images_landing_page
+      @headings = CategoryEn.order("lft ASC")
     end
 
 

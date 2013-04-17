@@ -6,7 +6,7 @@ $(document).ready(function(){
 
   $('.overview .nav-pills a:first').tab('show');
 
-  // AP landing page - make volume titles expand to show session titles
+  // AP and Images landing pages - browse tome/session and catalog heading hierarchies using expand/collapse
   if($("[data-collapse='true']").length > 0) {
 		$("ul", $("[data-collapse='true']")).each(function(){
 			var toggle_text = $(this).children("li[data-behavior='toggle-handler']");
@@ -15,13 +15,20 @@ $(document).ready(function(){
 				icon.toggle();
 			  var nested_list = $(this).next("li");
 				nested_list.hide();
-				$("a, i", $(this)).click(function(){
-					icon.toggleClass("icon-minus");
-					nested_list.slideToggle();
-					expandedType=nested_list.children().attr('class');
-				});
+				if ($('.images-browse').length) {
+          $("i", $(this)).click(function(){ // for Images, don't want to use 'a' for expand/collapse
+            icon.toggleClass("icon-minus");
+            nested_list.slideToggle();
+          });
+        }else{
+          $("a, i", $(this)).click(function(){ // for AP, use either 'i' or 'a' to expand/collapse
+            icon.toggleClass("icon-minus");
+            nested_list.slideToggle();
+          });
+        }
 			});
 		});
+	  $('.heading-root i').first().trigger('click'); // open the first Images group on page load
 	}
 
   // Result view links are 'display: none' by default, to hide from no JS browsers

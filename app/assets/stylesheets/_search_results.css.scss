@@ -277,8 +277,8 @@
   }
 }
 
-/* AP Landing Page */
-.ap-browse {
+/* AP and Images Landing Pages */
+.ap-browse, .images-browse {
   ul {
     list-style-type: none;
     margin-left: 10px;
@@ -288,15 +288,31 @@
       a {
         margin-left: 4px;
       }
-      &.tome-title {
+      &.tome-title, &.heading-root {
         a {
           color: $active_heading_link_color;
           font-weight: bold;
         }
       }
     }
-    ul#sessions {
-      margin: 6px 10px 18px 22px;
+    ul#sessions,
+    ul#headings-level1, ul#headings-level2, ul#headings-level3 {
+      margin: 6px 10px 12px 22px;
+    }
+    ul#headings-root {
+      margin-left: 0;
+    }
+    .terminal {
+      margin-left: 3px;
+      a {
+        padding-left: 8px;
+      }
+    }
+    .heading-root {
+      color: #777;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 8px;
     }
   }
 }

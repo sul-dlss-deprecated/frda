@@ -8,7 +8,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 # -- Start Images Catalog Headings --
 #    1. Query Solr to get catalog_heading for each Images item
 #    2. Keep only distinct catalog headings

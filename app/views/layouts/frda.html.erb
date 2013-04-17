@@ -43,10 +43,9 @@
 
   <body onload="<%= raw onload_text %>"
         class="<%= render_body_class %> <%= render_locale_class %><%= "scrollspy-content" if on_scrollspy_page? %>" data-spy="scroll" data-target=".sidebar-nav">
-
     <%= render(:partial => 'shared/terms_dialog') if show_terms_dialog?%>
     <noscript>
-      <% if show_terms_dialog? %><meta http-equiv="refresh" content="0; URL=/about/terms_dialog?return_to=<%=request.path%>"><% end %>
+      <% if show_terms_dialog? && request.path != '/about/terms_dialog'%><meta http-equiv="refresh" content="0; URL=/about/terms_dialog?return_to=<%=request.path%>"><% end %>
     </noscript>
 
     <div id="su-wrap"> <!-- #su-wrap start -->

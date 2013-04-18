@@ -202,7 +202,7 @@ function searchOptionsToggles(){
 
 function searchOptionsDatePicker(){
 	if($("[data-date-picker='true']").length > 0) {
-		var last_date = $("input#date-end").attr("placeholder");
+		var last_date = $("input#date-end").attr("data-placeholder");
 		$("[data-date-picker='true']").each(function(){
 			$(this).datepicker({
 				format: "yyyy-mm-dd",
@@ -215,12 +215,12 @@ function searchOptionsDatePicker(){
 			});
 			$(this).click(function(){
 				if($(this).attr("value") == "") {
-					$(this).attr("value", $(this).attr("placeholder"));
+					$(this).attr("value", $(this).attr("data-placeholder"));
 					$(this).datepicker("update");
 				}
 			});
 			$(this).bind('blur', function(){
-				if($(this).attr("value") == $(this).attr("placeholder")) {
+				if($(this).attr("value") == $(this).attr("data-placeholder")) {
 					$(this).attr("value", "");
 				}
 			});

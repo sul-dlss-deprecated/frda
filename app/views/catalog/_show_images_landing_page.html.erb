@@ -5,33 +5,33 @@
         <% @headings.roots.each_with_index do |root, index| %>
           <li class="heading-root" data-behavior='toggle-handler' data-reference-id="#<%= index %>">
             <i style="display:none;" class="icon-plus"></i>
-            <%= root.name %>
+            <%= root.name.force_encoding("UTF-8") %>
           </li>
           <li>
             <ul id="headings-level1">
               <% root.children.each_with_index do |level1, index| %>
                 <li class="heading-level1" data-behavior='toggle-handler' data-reference-id="#level1-<%= index %>">
                   <i id="#level1-<%= index %>" style="display:none;" class="icon-plus"></i>
-                  <%= link_for_catalog_heading_search(level1.name) %>
+                  <%= link_for_catalog_heading_search(level1.name.force_encoding("UTF-8")) %>
                 </li>
                 <li>
                   <ul id="headings-level2">
                     <% level1.children.each_with_index do |level2, index| %>
                       <% if level2.children.empty? %> <%# no further children %>
                         <li class="heading-level2 terminal" data-reference-id="#level2-<%= index %>">
-                          &raquo;<%= link_for_catalog_heading_search(level2.name) %>
+                          &raquo;<%= link_for_catalog_heading_search(level2.name.force_encoding("UTF-8")) %>
                         </li>
                       <% else %> <%# there are more children %>
                         <li class="heading-level2" data-behavior='toggle-handler' data-reference-id="#level2-<%= index %>">
                           <i id="#level2-<%= index %>" style="display:none;" class="icon-plus"></i>
-                          <%= link_for_catalog_heading_search(level2.name) %>
+                          <%= link_for_catalog_heading_search(level2.name.force_encoding("UTF-8")) %>
                         </li>
                         <li>
                           <ul id="headings-level3">
                             <% level2.children.each_with_index do |level3, index| %>
                               <li class="heading-level3 terminal" data-reference-id="#level3-<%= index %>">
                                 <i id="#level3-<%= index %>" style="display:none;" class="icon-plus"></i>
-                                &raquo;<%= link_for_catalog_heading_search(level3.name) %>
+                                &raquo;<%= link_for_catalog_heading_search(level3.name.force_encoding("UTF-8")) %>
                               </li>
                             <% end %>
                           </ul>

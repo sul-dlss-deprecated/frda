@@ -38,10 +38,16 @@ function zpr(viewFinderId, inputValues) {
     imgFrame = $('#' + imgFrameId);    
     currentLevel = getLevelForContainer(viewFinder.width(), viewFinder.height());
     
-    setImgFrameSize(currentLevel);            
+    if (typeof inputValues.zoomIncrement !== 'undefined') {
+        currentLevel = util.clampLevel(currentLevel + inputValues.zoomIncrement);
+        hasZoomIncrement = true;
+    }
+
+    setImgFrameSize(currentLevel);
     setupImgFrameDragging();
     storeRelativeLocation();
     addControlElements();
+    if (hasZoomIncrement) centerImgFrame();
   }
 
 

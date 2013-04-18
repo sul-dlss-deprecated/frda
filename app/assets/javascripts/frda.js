@@ -103,7 +103,9 @@ function showImageViewer(imageURL,target) {
 	var z = new zpr(target, {
 	'imageStacksURL': imageURL,
 	'width': 2700,
-	'height': 4200
+	'height': 4200,
+	'zoomIncrement': 1, // open at zoom+1
+	'marqueeImgSize': 125
 	});
 }
 

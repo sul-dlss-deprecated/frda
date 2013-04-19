@@ -1,0 +1,37 @@
+<%# This is used for all search result views. 
+    Oneresult == one search result item -%>
+<div class="oneresult ap">
+  <% unless list_is_empty?(document.session_title)%>
+    <h3 class="session-title">
+      <%= link_to show_list(document.session_title).html_safe, document %>
+    </h3>
+  <% end %>
+  <%- if document.highlighted_spoken_text? -%>
+    <%- document.highlighted_spoken_text.each do |spoken_text| -%>
+      <span class="speaker">
+        <span class="frda-label"><%=t('frda.search.results.speaker')%>:</span> <%= spoken_text.speaker %>
+      </span>
+      <span class="pageimg">
+        <%- image_link = link_to_document SolrDocument.new(:id => spoken_text.page_id),
+                           :label => "<div data-lazy-load='true' data-src='#{document.image_urls_for_page(:size=>:thumb)[spoken_text.page_id][:url]}' data-alt='#{document.image_urls_for_page[spoken_text.page_id][:page_number]}' data-title='#{document.image_urls_for_page[spoken_text.page_id][:page_number]}'></div>".html_safe,
+                           :counter =>  (index + 1 + @response.params[:start].to_i) -%>
+        <%= image_link %>
+        <noscript><%= image_link %></noscript>
+      </span>
+      <span class="pagenum">
+        <i class="icon-list-alt"></i>
+        <%= link_to document.image_urls_for_page[spoken_text.page_id][:page_number], document[:druid_ssi] %>
+      </span>
+      <div class="snippet">
+        <span class="shorttext">
+          <%= truncate_highlight(spoken_text.speech, :around => 20, :length => 200).html_safe %>
+        </span>
+        <span class="longtext">
+          <%= truncate_highlight(spoken_text.speech, :around => 20, :length => 600).html_safe %>
+        </span>
+      </div>
+    <%- end -%>
+  <%#- elsif document.highlighted_unsp -%>
+  <%- end -%>
+  
+</div> <%# end oneresult div %>

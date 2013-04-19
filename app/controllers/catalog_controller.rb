@@ -10,7 +10,7 @@ class CatalogController < ApplicationController
   
   # The logic to handle the date range queries is being set by the BlacklightDates2SVG gem.
   # If we remove that, but still want date processing, we'll need to explicity require and use the DateRangeSolrQuery gem.
-  CatalogController.solr_search_params_logic += [:search_within_speeches, :proximity_search, :result_view]
+  CatalogController.solr_search_params_logic += [:only_search_div2, :search_within_speeches, :proximity_search, :result_view]
   
   before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
 
@@ -373,6 +373,15 @@ class CatalogController < ApplicationController
     u = User.create
     u.save
     u
+  end
+
+  def only_search_div2(solr_params, user_params)
+    query = "-type_ssi:page"
+    if solr_params.has_key?(:fq)
+      solr_params[:fq] << query
+    else
+      solr_params[:fq] = [query]
+    end
   end
 
   def search_within_speeches(solr_params, user_params)

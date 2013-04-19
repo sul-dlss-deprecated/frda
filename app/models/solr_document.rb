@@ -89,22 +89,44 @@ class SolrDocument
      multivalue_field('speaker_ssim')
   end
  
-  def speeches
+  def spoken_text
     return nil unless self[:spoken_text_ftsimv]
     fields = highlighted_fields(:spoken_text_ftsimv)
-    fields.map do |speech|
-      Speech.new(speech) unless Speech.new(speech).speech.blank?
+    @spoken_text ||= fields.map do |speech|
+      SpokenText.new(speech) unless SpokenText.new(speech).speech.blank?
     end.compact
   end
  
-  def highlighted_speeches
-    return nil if speeches.blank?
+  def highlighted_spoken_text
+    return nil if spoken_text.blank?
     highlights = []
-    self.speeches.each do |speech|
+    spoken_text.each do |speech|
       highlights << speech if speech.highlighted?
     end
     return nil if highlights.blank?
     highlights
+  end
+  
+  def highlighted_spoken_text?
+    return false if spoken_text.blank?
+    spoken_text.any? do |speech|
+      speech.highlighted?
+    end
+  end
+  
+  def image_urls_for_page(options={})
+    return nil unless self[:pages_ssim]
+    urls = {}
+    self[:pages_ssim].map do |id_with_page|
+      image_id = id_with_page.split("-|-").first
+      page = id_with_page.split("-|-").last
+      size = options[:size] || :default
+      format = options[:format] || "jpg"
+      stacks_url = Frda::Application.config.stacks_url
+      urls[image_id] = {:url=>"#{stacks_url}/#{self[:druid_ssi]}/#{image_id.chomp(File.extname(image_id))}#{SolrDocument.image_dimensions[size]}.#{format}",
+                        :page_number => page}
+    end
+    urls
   end
   
   def medium
@@ -116,7 +138,7 @@ class SolrDocument
   end
   
   def session_title
-    highlighted_fields(:session_title_ftsim)
+    highlighted_fields(:session_title_ftsi)
   end
   
   def volume

@@ -1,0 +1,22 @@
+<%# This is used for all search result views. 
+    Oneresult == one search result item -%>
+<div class="oneresult images">
+  <span class="pageimg">
+      <%= link_to_document document,
+           :label => "<div data-lazy-load='true' data-src='#{document.first_image(:size=>:thumb)}' data-alt='#{document.title}' data-title='#{document.title}'></div>".html_safe,
+           :counter =>  (index + 1 + @response.params[:start].to_i) %>
+    <noscript>
+      <%= link_to_document document,
+           :label => image_tag(document.first_image(:size=>:thumb),
+                               :alt => document.title,
+                               :title => document.title,
+                               :border => 0),
+           :counter =>  (index + 1 + @response.params[:start].to_i) %>
+    </noscript>
+  </span>
+  <h3 class="image-item-title long-title"><%= link_to document.title.first.html_safe, document %></h3>
+  <h3 class="image-item-title short-title"><%= link_to truncate(strip_tags(document.title(:length=>"short").first.html_safe), :length => 60), document %></h3>
+  <% if mods_element_dateIssued_present?(document) %>
+    <span class="item-date"><%= mods_element_dateIssued(document) %></span>
+  <% end %>
+</div> <%# end oneresult div %>

@@ -101,6 +101,10 @@ module ApplicationHelper
     {:f => {:session_title_sim => [session]}}
   end
 
+  def params_for_volume(volume)
+    {:f => {:vol_title_ssi => [volume]}}
+  end
+
   # sections for About page
   # elementlink names should match what's used in locale_about.yml
   def about_sections

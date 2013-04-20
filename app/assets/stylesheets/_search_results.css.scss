@@ -293,6 +293,30 @@
           color: $active_heading_link_color;
           font-weight: bold;
         }
+        .static {
+          color: $active_heading_link_color;
+          font-weight: bold;
+          padding-left: 8px;
+        }
+        .rbullet {
+          padding-left: 3px;
+        }
+        a.tome-note {
+          color: $active_link_color;
+          border-bottom: 1px dotted $active_link_color;
+          font-weight: normal;
+          &:hover {
+            cursor: pointer;
+            text-decoration: none;
+          }
+        }
+        .tome-note-text {
+          margin: 6px 0 12px 24px;
+          a {
+            font-weight: normal;
+            color: $active_link_color;
+          }
+        }
       }
     }
     ul#sessions,

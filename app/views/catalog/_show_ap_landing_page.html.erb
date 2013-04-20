@@ -20,6 +20,17 @@
               </ul>
             </li>
           <%- end -%>
+          <% ap_static_tomes.each do |tome| %>
+            <li class="tome-title">
+              <span class="rbullet">&raquo;</span>
+              <span class="static"><%= tome[0]%></span>
+              <a href="<%= tome[1]%>"class="tome-note">note</a>
+              <p class="tome-note-text">
+                View this item in Searchworks:
+                <%= link_to tome[1], tome[1] %>
+              </p>
+            </li>
+          <% end%>
         </ul>
       <%- end -%>
     </div>

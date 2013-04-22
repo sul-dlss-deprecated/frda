@@ -216,10 +216,9 @@ module ApplicationHelper
   end
 
   def ap_static_tomes
-    [["Tome XX Placeholder for Static Tome 1799", "http://searchworks.stanford.edu/view/1071767"],
-     ["Tome YY Placeholder for Static Tome 1800", "http://searchworks.stanford.edu/view/1071767"],
-     ["Tome ZZ Placeholder for Static Tome 1801", "http://searchworks.stanford.edu/view/1071767"]
-    ]
+    ["Tome XX Placeholder for Static Tome 1799",
+     "Tome YY Placeholder for Static Tome 1800",
+     "Tome ZZ Placeholder for Static Tome 1801"]
   end
 
 end

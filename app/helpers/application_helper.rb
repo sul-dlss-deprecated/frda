@@ -206,8 +206,13 @@ module ApplicationHelper
   end
 
   def link_for_catalog_heading_search(string)
+    if I18n.locale == :fr
+      lang = "catalog_heading_ftsimv"
+    else
+      lang = "catalog_heading_etsimv"
+    end
     link_to(string, catalog_index_path( :q  => "#{string}",
-                                        :fl => 'catalog_heading_etsimv',
+                                        :fl => "#{lang}",
                                         :f  => {:collection_ssi=>[Frda::Application.config.images_id]}))
   end
 

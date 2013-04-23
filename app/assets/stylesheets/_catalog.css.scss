@@ -105,6 +105,9 @@
     list-style-type: none;
     margin-left: 0;
     margin-bottom: 0;
+    &.note li:last-child {
+      padding-bottom: 9px;
+    }
   }
   ul.item.breadcrumb {
     margin: 0;
@@ -185,6 +188,9 @@
 .blacklight-catalog-show .show-document .images-item {
   h2 {
     a {color: #3F3C30;}
+  }
+  h3 {
+    margin-bottom: 6px;
   }
   ul.item-breadcrumb {
     font-size: 0.9em;

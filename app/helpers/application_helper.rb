@@ -38,6 +38,50 @@ module ApplicationHelper
     end
   end
 
+  # element == MODS nodeset
+  def show_mods_element_as_list(doc, element)
+    content_tag(:ul, :class => "item-mvf-list #{element}") do
+      case element
+      when :note
+        nodeset = doc.mods.note
+        nodeset.collect do |n|
+          concat content_tag(:li, n.text)
+        end
+      when :creator
+        nodeset = doc.mods.plain_name
+        nodeset.collect do |n|
+          # convert marcrelator term to human-friendly label
+          rlabel = mods_creator_role_to_label(n.role.text)
+          # should have error handling if any value happens to be nil?
+          content_tag(:li) do
+            link_to("#{n.display_value}", catalog_index_path(:q => "\"#{n.display_value}\"")) +
+            " (#{n.date.text}), #{rlabel}"
+          end
+        end.join.html_safe
+      when :publication
+        nodeset = doc.mods.origin_info
+        place = mods_element_publication_place(doc)
+        date_issued = mods_element_dateIssued(doc)
+        # quick attempt at error handling if any value happens to be nil
+        # I'm sure this could be done better...
+        str = ""
+        str += "#{place} : " unless place.nil?
+        str += "#{nodeset.publisher.text}" unless nodeset.publisher.text.nil?
+        str += "#{date_issued}" unless date_issued.nil?
+        content_tag(:li) do
+          str
+        end
+      when :subject
+        subjects = mods_element_subject(doc)
+        subjects.collect do |n|
+          content_tag(:li) do
+            "#{n}"
+          end
+        end.join.html_safe
+      end # case
+    end # content_tag :ul
+  end
+
   def list_is_empty?(arry)
     if arry.all? { |element| element.blank? }
       return true
@@ -198,7 +242,57 @@ module ApplicationHelper
   def mods_element_dateIssued(doc)
     doc.mods.origin_info.dateIssued.find {|n| n.attr("encoding") != 'marc'}.text
   end
+
+  # Get the mods element 'placeTerm' where it is the placeTerm elment with "type = 'text'"
+  def mods_element_publication_place(doc)
+    doc.mods.origin_info.place.placeTerm.find {|n| n.attr("type") == 'text'}.text
+  end
+
+  def mods_element_note(doc)
+    doc.mods.origin_info.note.find {|n| n.attr("encoding") != 'marc'}.text
+  end
   
+  def mods_creator_role_to_label(role)
+    case role.strip
+    when "art"
+      rlabel = "Artist"
+    when "col"
+      rlabel = "Collector"
+    when "dnr"
+      rlabel = "Donor"
+    when "drm"
+      rlabel = "Draftsman"
+    when "egr"
+      rlabel = "Engraver"
+    when "ill"
+      rlabel = "Illustrator"
+    when "pbl"
+      rlabel = "Publisher"
+    when "scl"
+      rlabel = "Sculptor"
+    else
+      rlabel = ""
+    end
+    return rlabel
+  end
+
+  def mods_element_subject(doc)
+    subjects = []
+    doc.mods.subject.each do |subj|
+      # don't want: doc.mods.subject.displayLabel == 'Catalog heading'
+      if subj.topic && subj.displayLabel != 'Catalog heading'
+        subj.topic.each do |t|
+          subjects << t.text if !subj.topic.empty?
+        end
+      end
+      # don't want: doc.mods.subject.name_el.type_at == 'personal'
+      if subj.name_el && subj.name_el.type_at != 'personal'
+        subjects << subj.name_el.namePart.text if !subj.name_el.namePart.text.empty?
+      end
+    end
+    return subjects
+  end
+
   def grouped_response_includes_images?(documents)
     documents.map {|doc| doc.group}.include?(Frda::Application.config.images_id)
   end

@@ -74,7 +74,7 @@ describe SolrDocument do
       speeches.should be_a Array
       speeches.length.should == 1
       speeches.first.speaker.should == "M. Dorizy"
-      speeches.first.speech.should == "This is a speech by a person."
+      speeches.first.text.should == "This is a speech by a person."
     end
     it "should be blank if the speech is unparsable" do
       speeches = SolrDocument.new({:spoken_text_ftsimv => [@speech_bad]}, {}).spoken_text
@@ -86,7 +86,7 @@ describe SolrDocument do
       speeches.should be_a(Array)
       speeches.length.should == 1
       speeches.first.should be_highlighted
-      speeches.first.speech.should =~ /<em>/
+      speeches.first.text.should =~ /<em>/
 
       speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech]}, {}).spoken_text
       speeches.first.should_not be_highlighted
@@ -98,7 +98,7 @@ describe SolrDocument do
         speeches.should be_a Array
         speeches.length.should == 1
         speeches.first.should be_highlighted
-        speeches.first.speech.should =~ /<em>/
+        speeches.first.text.should =~ /<em>/
       end
       it "should return nil if no highlighting is available" do
         speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech, @speech_bad]}, {}).highlighted_spoken_text

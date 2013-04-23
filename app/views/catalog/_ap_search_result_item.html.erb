@@ -28,10 +28,10 @@
           <%- end -%>
           <div class="snippet">
             <span class="shorttext">
-              <%= truncate_highlight(frda_text.speech, :around => 20, :length => 200).html_safe %>
+              <%= truncate_highlight(frda_text.text, :around => 20, :length => 200).html_safe %>
             </span>
             <span class="longtext">
-              <%= truncate_highlight(frda_text.speech, :around => 40, :length => 600).html_safe %>
+              <%= truncate_highlight(frda_text.text, :around => 40, :length => 600).html_safe %>
             </span>
           </div>
         <%- end -%>

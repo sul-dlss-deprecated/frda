@@ -93,7 +93,7 @@ class SolrDocument
     return nil unless self[:spoken_text_ftsimv]
     fields = highlighted_fields(:spoken_text_ftsimv)
     @spoken_text ||= fields.map do |text|
-      SpokenText.new(text) unless SpokenText.new(text).speech.blank?
+      SpokenText.new(text) unless SpokenText.new(text).text.blank?
     end.compact
   end
   
@@ -101,7 +101,7 @@ class SolrDocument
     return nil unless self[:unspoken_text_ftsimv]
     fields = highlighted_fields(:unspoken_text_ftsimv)
     @unspoken_text ||= fields.map do |text|
-      UnspokenText.new(text) unless UnspokenText.new(text).speech.blank?
+      UnspokenText.new(text) unless UnspokenText.new(text).text.blank?
     end.compact
   end
   

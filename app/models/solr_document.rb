@@ -92,26 +92,43 @@ class SolrDocument
   def spoken_text
     return nil unless self[:spoken_text_ftsimv]
     fields = highlighted_fields(:spoken_text_ftsimv)
-    @spoken_text ||= fields.map do |speech|
-      SpokenText.new(speech) unless SpokenText.new(speech).speech.blank?
+    @spoken_text ||= fields.map do |text|
+      SpokenText.new(text) unless SpokenText.new(text).speech.blank?
     end.compact
   end
- 
-  def highlighted_spoken_text
-    return nil if spoken_text.blank?
-    highlights = []
-    spoken_text.each do |speech|
-      highlights << speech if speech.highlighted?
-    end
-    return nil if highlights.blank?
-    highlights
+  
+  def unspoken_text
+    return nil unless self[:unspoken_text_ftsimv]
+    fields = highlighted_fields(:unspoken_text_ftsimv)
+    @unspoken_text ||= fields.map do |text|
+      UnspokenText.new(text) unless UnspokenText.new(text).speech.blank?
+    end.compact
   end
   
   def highlighted_spoken_text?
-    return false if spoken_text.blank?
-    spoken_text.any? do |speech|
-      speech.highlighted?
+    return true unless highlighted_spoken_text.blank?
+  end
+  
+  def highlighted_spoken_text
+    highlighted_text_field(spoken_text)
+  end
+  
+  def highlighted_unspoken_text?
+    return true unless highlighted_unspoken_text.blank?
+  end
+  
+  def highlighted_unspoken_text
+    highlighted_text_field(unspoken_text)
+  end
+ 
+  def highlighted_text_field(text_field)
+    return nil if text_field.blank?
+    highlights = []
+    text_field.each do |text|
+      highlights << text if text.highlighted?
     end
+    return nil if highlights.blank?
+    highlights
   end
   
   def image_urls_for_page(options={})
@@ -129,6 +146,13 @@ class SolrDocument
     urls
   end
   
+  def truncated_full_text(options={})
+    return nil unless self[:text_ftsiv]
+    snippet = options[:length] || 100
+    return [self[:text_ftsiv]] if self[:text_ftsiv].length < ((snippet * 2) + (snippet / 2))
+    [self[:text_ftsiv][0..snippet], "...", self[:text_ftsiv][-snippet..-1]]
+  end
+  
   def medium
     self[:medium_ssi]
   end
@@ -138,7 +162,11 @@ class SolrDocument
   end
   
   def session_title
-    highlighted_fields(:session_title_ftsi)
+    if self[:session_title_ftsi]
+      highlighted_fields(:session_title_ftsi)
+    elsif self[:session_title_ftsim]
+      highlighted_fields(:session_title_ftsim)
+    end
   end
   
   def volume

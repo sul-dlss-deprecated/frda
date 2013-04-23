@@ -1,7 +1,7 @@
 class Frda::Text
   
   def highlighted?
-    @speech =~ /<em>/
+    @speech.include?("<em>")
   end
   
   private

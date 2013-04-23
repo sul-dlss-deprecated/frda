@@ -39,6 +39,7 @@ module ApplicationHelper
   end
 
   def list_is_empty?(arry)
+    return true if arry.nil?
     if arry.all? { |element| element.blank? }
       return true
     end

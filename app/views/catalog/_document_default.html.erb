@@ -42,36 +42,37 @@
     </div>
   <%- end -%> <%# end response_is_grouped? %>
 
+  <%# Hiding frequency view pending decision on whether it is still feasible 04-24-2013 %>
   <%# Frequency View %>
-  <div class="row heading frequency-view">
+  <!-- <div class="row heading frequency-view">
     <div class="span9">
-      <%= t('frda.search.sequence') %>
-      <span class="occurrences"><%= t('frda.search.occurrences') %></span>
+      <%#= t('frda.search.sequence') %>
+      <span class="occurrences"><%#= t('frda.search.occurrences') %></span>
     </div>
   </div>
 
   <div class="row frequency-view">
     <div class="span9">
-      <%- @response.facet_pivot.each do |_, tomes| -%>
+      <%# @response.facet_pivot.each do |_, tomes| -%>
         <ul id="frequencytable">
-          <%- tomes.each do |tome| -%>
+          <%# tomes.each do |tome| -%>
             <li class="tome-title">
-              <%= link_to_volume_facet(tome["value"], :params => params.dup.delete_if{|k,v| k == "view"}) %> <span class="occurrences"><%= tome["count"]%></span>
+              <%#= link_to_volume_facet(tome["value"], :params => params.dup.delete_if{|k,v| k == "view"}) %> <span class="occurrences"><%#= tome["count"]%></span>
               <ul>
-                <%- tome["pivot"].each do |session| -%>
+                <%# tome["pivot"].each do |session| -%>
                   <li>
                     <span class="session-title">
-                      <%= link_to_session_facet(session["value"], :params => params.dup.delete_if{|k,v| k == "view"}, :title => session["value"]) %> 
+                      <%#= link_to_session_facet(session["value"], :params => params.dup.delete_if{|k,v| k == "view"}, :title => session["value"]) %> 
                     </span>
-                    <span class="occurrences"><%= session["count"] %></span>
+                    <span class="occurrences"><%#= session["count"] %></span>
                   </li>
-                <%- end -%>
+                <%# end -%>
               </ul>
             </li>
-          <%- end -%>
+          <%# end -%>
         </ul>
-      <%- end -%>
+      <%# end -%>
     </div>
-  </div>
+  </div> -->
 
 </div>

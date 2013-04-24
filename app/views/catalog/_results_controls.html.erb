@@ -13,7 +13,8 @@
           <li><%= search_result_view_switch('icon-th-list', 'default') %></li>
           <li><%= search_result_view_switch('icon-th', 'gallery') %></li>
           <li><%= search_result_view_switch('icon-align-justify', 'list') %></li>
-          <li><%= search_result_view_switch('icon-signal', 'frequency') %></li>
+          <%# Hiding frequency view pending decision on whether it is still feasible 04-24-2013 %>
+          <!-- <li><%#= search_result_view_switch('icon-signal', 'frequency') %></li> -->
 
         <%# Images-only results views %>
         <% elsif on_images_page %>
@@ -27,7 +28,8 @@
           <li><%= search_result_view_switch('icon-th', 'gallery') %></li>
           <li><%= search_result_view_switch('icon-align-justify', 'list') %></li>
           <% if response_includes_ap?(@response) %>
-            <li><%= search_result_view_switch('icon-signal', 'frequency') %></li>
+            <%# Hiding frequency view pending decision on whether it is still feasible 04-24-2013 %>
+            <!-- <li><%#= search_result_view_switch('icon-signal', 'frequency') %></li> -->
           <% end %>
         <% end %>
 

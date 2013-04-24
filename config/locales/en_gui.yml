@@ -185,7 +185,7 @@ en:
         other: "%{count} images"
       occurrence:
         one: "1 page"
-        other: "%{count} pages"
+        other: "%{count} sessions"
       occurrences: Pages
       sequence: Sequence
       results_heading_image: 'Images of the French Revolution'

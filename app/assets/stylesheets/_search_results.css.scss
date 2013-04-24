@@ -75,25 +75,35 @@
     .icon-picture {margin: 3px 5px;}
     .oneresult {
       clear: both;
-      margin-bottom: 50px;
+      margin-top: 6px;
       padding-left: 135px;
       .pageimg {
         width: 100px;
         text-align: center;
         float: left;
-        margin: 3px 7px 14px -135px;
+        margin: 0 7px 14px -135px;
         a {border-bottom: none;}
         img {
           @include result-image-styling;
-          margin-top: 3px;
+          margin-top: 0;
           width: 100px;
         }
       }
-      .speaker {float: right;}
+      .speaker {
+        float: right;
+        padding-top: 10px;
+      }
       .tome {display: none;}
       .pagenum {display: block;}
       .samepage .pagenum {display: none;}
-      .snippet {clear: right; display: inline-block; padding-top: 10px;}
+      .snippet {
+        clear: right;
+        display: inline-block;
+        padding-top: 10px;
+        .shorttext {
+          display: none;
+        }
+      }
     }
     .frequency-view, #frequencytable {display: none;}
   } // end default

@@ -1,12 +1,13 @@
 <%- image_urls = document.image_urls_for_page(:size=>:thumb) -%>
 <%# This is used for all search result views. 
-    Oneresult == one search result item -%>
+    Oneresult == one search result item, which is a page in this display context -%>
+
+<% unless list_is_empty?(document.session_title)%>
+  <h3 class="session-title">
+    <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
+  </h3>
+<% end %>
 <div class="oneresult ap">
-  <% unless list_is_empty?(document.session_title)%>
-    <h3 class="session-title">
-      <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
-    </h3>
-  <% end %>
   <%- if document.highlighted_spoken_text? or document.highlighted_unspoken_text?  -%>
     <%- [document.highlighted_spoken_text, document.highlighted_unspoken_text].flatten.compact.group_by(&:page_id).each do |page_id, text_fields| -%>
       <div>
@@ -17,8 +18,7 @@
           <noscript><%= link_to(image_tag(image_urls[page_id][:url]), catalog_path(page_id)) %></noscript>
         </span>
         <span class="pagenum">
-          <i class="icon-list-alt"></i>
-          <%= link_to image_urls[page_id][:page_number], catalog_path(page_id) %>
+          <%= link_to "page " + image_urls[page_id][:page_number] + " »", catalog_path(page_id) %>
         </span>
         <%- text_fields.each do |frda_text| -%>
           <%- if frda_text.respond_to?(:speaker) -%>
@@ -49,8 +49,7 @@
         <noscript><%= image_link %></noscript>
       </span>
       <span class="pagenum">
-        <i class="icon-list-alt"></i>
-        <%= link_to([page_numbers.first, page_numbers.last].join(" - "), catalog_path(image_urls.first.first)) %>
+        <%= link_to("page " + [page_numbers.first, page_numbers.last].join(" - ") + " »", catalog_path(image_urls.first.first)) %>
       </span>
       <%= document.truncated_full_text(:length => 400).join("<br/>").html_safe -%>
     </div>

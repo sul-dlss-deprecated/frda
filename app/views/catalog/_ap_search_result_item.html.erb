@@ -3,22 +3,27 @@
     Oneresult == one search result item, which is a page in this display context -%>
 
 <% unless list_is_empty?(document.session_title)%>
-  <h3 class="session-title">
+  <h3 class="session-title display-top">
     <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
   </h3>
 <% end %>
 <div class="oneresult ap">
   <%- if document.highlighted_spoken_text? or document.highlighted_unspoken_text?  -%>
     <%- [document.highlighted_spoken_text, document.highlighted_unspoken_text].flatten.compact.group_by(&:page_id).each do |page_id, text_fields| -%>
-      <div>
+      <div class="oneresult-page">
         <span class="pageimg">
           <%= link_to_document SolrDocument.new(:id => page_id),
                 :label => "<div data-lazy-load='true' data-src='#{image_urls[page_id][:url]}' data-alt='#{image_urls[page_id][:page_number]}' data-title='#{image_urls[page_id][:page_number]}'></div>".html_safe,
                 :counter =>  (index + 1 + @response.params[:start].to_i) -%>
           <noscript><%= link_to(image_tag(image_urls[page_id][:url]), catalog_path(page_id)) %></noscript>
         </span>
+        <% unless list_is_empty?(document.session_title)%>
+          <h3 class="session-title display-bottom">
+            <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
+          </h3>
+        <% end %>
         <span class="pagenum">
-          <%= link_to "page " + image_urls[page_id][:page_number] + " »", catalog_path(page_id) %>
+          <%= link_to "page " + image_urls[page_id][:page_number], catalog_path(page_id) %>
         </span>
         <%- text_fields.each do |frda_text| -%>
           <%- if frda_text.respond_to?(:speaker) -%>
@@ -48,10 +53,22 @@
         <%= image_link %>
         <noscript><%= image_link %></noscript>
       </span>
+      <% unless list_is_empty?(document.session_title)%>
+        <h3 class="session-title display-bottom">
+          <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
+        </h3>
+      <% end %>
       <span class="pagenum">
-        <%= link_to("page " + [page_numbers.first, page_numbers.last].join(" - ") + " »", catalog_path(image_urls.first.first)) %>
+        <%= link_to("page " + [page_numbers.first, page_numbers.last].join(" - "), catalog_path(image_urls.first.first)) %>
       </span>
-      <%= document.truncated_full_text(:length => 400).join("<br/>").html_safe -%>
+      <div class="snippet">
+        <span class="longtext">
+          <%= document.truncated_full_text(:length => 400).join("<br/>").html_safe -%>
+        </span>
+        <span class="shorttext">
+          <%= document.truncated_full_text(:length => 200).join("<br/>").html_safe -%>
+        </span>
+      </div>
     </div>
   <%- end -%>
   

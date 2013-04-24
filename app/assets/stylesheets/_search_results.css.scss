@@ -67,7 +67,7 @@
       a {
         color: $active_heading_link_color;
       }
-      &.short-title {
+      &.short-title, &.display-bottom {
         display: none;
       }
     }
@@ -127,6 +127,9 @@
       &.long-title {
         display: none;
       }
+      &.display-top {
+        display: none;
+      }
     }
     .icon-book {margin: 4px 5px;}
     .icon-picture {margin: 3px 5px;}
@@ -137,7 +140,6 @@
         text-align: center;
         margin: 0 0 15px 0;
         min-height: 425px;
-        .pageimg {}
         .pageimg {
           > a {border-bottom: none;}
           img {
@@ -196,6 +198,9 @@
         &.short-title {
           display: none;
         }
+      }
+      &.display-bottom {
+        display: none;
       }
     }
     .icon-book {margin: 4px 5px;}

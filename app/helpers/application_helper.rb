@@ -315,10 +315,4 @@ module ApplicationHelper
     "lang-#{I18n.locale}"
   end
 
-  def ap_static_tomes
-    ["Tome XX Placeholder for Static Tome 1799",
-     "Tome YY Placeholder for Static Tome 1800",
-     "Tome ZZ Placeholder for Static Tome 1801"]
-  end
-
 end

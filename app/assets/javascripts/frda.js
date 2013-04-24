@@ -9,7 +9,7 @@ $(document).ready(function(){
   // AP landing page - show/hide the note for the static tomes
   $('.ap-browse .tome-note').each(function(){
      $('.tome-note-text').hide();
-     $('.tome-note').click(function(){
+     $('a.tome-note').click(function(){
        $(this).next('.tome-note-text').toggle();
        return false;
      });

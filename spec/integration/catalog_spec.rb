@@ -17,13 +17,13 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   it "should show the AP home page" do
     visit ap_collection_path
     page.should have_content("The Archives parlementaires is a chronologically-ordered edited collection of sources on the French Revolution.")
-    page.should have_content("1 to 1 of 1 volume")
+    page.should have_content("Results found in 1 volume")
     page.should have_css('div.oneresult')
     page.should have_xpath("//img[contains(@src, \"APcoverimage.jpg\")]")
   end
   
   it "should show the Images home page" do
-    visit images_collection_path    
+    visit images_collection_path
     page.should have_content("The Images are composed of high-resolution digital images of approximately 12,000 individual visual items, primarily prints")
     page.should have_content("1 - 10 of 11 volumes")
     page.should have_css('div.oneresult')
@@ -157,7 +157,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
         select "Parliamentary archives", :from => "search_collection"
         find(:css, "[value='Search...']").click
         
-        page.should have_content "1 to 1 of 1 volume"
+        page.should have_content "Results found in 1 volume"
         
         select "Images of the French Revolution", :from => "search_collection"
         find(:css, "[value='Search...']").click
@@ -177,7 +177,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
       it "should properly extend the facets module from Blacklight to return facets from the response correctly" do
         visit root_path
         click_link 'nonprojected graphic'
-        page.should have_content("1 to 1 of 1 volume")
+        page.should have_content("Results found in 1 volume")
         page.should have_xpath("//img[contains(@src, \"image/bb018fc7286/T0000001_thumb.jpg\")]")        
       end
     end

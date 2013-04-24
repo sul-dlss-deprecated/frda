@@ -193,9 +193,9 @@ fr:
         one: "1 image"
         other: "%{count} images"
       occurrence:
-        one: "1 occurrence"
+        one: "1 séance"
         other: "%{count} séances"
-      occurrences: Pages
+      occurrences: Séances
       sequence: Sequence
       results_heading_image: 'Images de la Révolution française'
       search_results: 'Résultats'

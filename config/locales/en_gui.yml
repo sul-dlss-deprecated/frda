@@ -124,6 +124,43 @@ en:
       member_detail: 'Item detail'
     collection_members:
       items_name: 'image'
+    pagination_info:
+      mixed:
+        no_items_found: 'No %{entry_name} found'
+        single_item_found: '<b>1</b> volume found'
+        pages:
+          one: '<b>%{total_num}</b> volumes found'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes found'
+      images_only:
+        no_items_found: 'No %{entry_name} found'
+        single_item_found: '<b>1</b> volume found'
+        pages:
+          one: '<b>%{total_num}</b> volumes found'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes found'
+        flat:
+          no_items_found: 'No %{entry_name} found'
+          single_item_found: '<b>1</b> image found'
+          pages:
+            one: '<b>%{total_num}</b> images found'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> images found'
+      ap_only:
+        no_items_found: 'No %{entry_name} found'
+        single_item_found: '<b>1</b> volume found'
+        pages:
+          one: '<b>%{total_num}</b> volumes found'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes found'
+        flat:
+          no_items_found: 'No %{entry_name} found'
+          single_item_found: '<b>1</b> section found'
+          pages:
+            one: '<b>%{total_num}</b> sessions found'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> sessions found'
+      search:
+        no_items_found: 'No %{entry_name} found'
+        single_item_found: 'Results found in <b>1</b> volume'
+        pages:
+          one: 'Results found in <b>%{total_num}</b> volumes'
+          other: 'Results found in <b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes'
     show:
       wait: 'Loading, please wait...'
       open_in_full_screen: 'Open in full screen'

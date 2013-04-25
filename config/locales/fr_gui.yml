@@ -128,6 +128,44 @@ fr:
         l’utilisation que les chercheurs en feraient à des fins d’étude et d’enseignement, mais aussi que le
         grand public y verrait un moyen essentiel d’en savoir plus sur cette période fondatrice pour la nation
         française. </p>
+
+    pagination_info:
+      mixed:
+        no_items_found: '%{entry_name} non trouvé(e)'
+        single_item_found: '<b>1</b> volume trouvé'
+        pages:
+          one: '<b>%{total_num}</b> volumes trouvé'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes trouvés'
+      images_only:
+        no_items_found: '%{entry_name} non trouvé(e)'
+        single_item_found: '<b>1</b> volume trouvé'
+        pages:
+          one: '<b>%{total_num}</b> volumes trouvé'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes trouvés'
+        flat:
+          single_item_found: '<b>1</b> volume trouvé'
+          pages:
+            one: '<b>%{total_num}</b> images trouvé'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> images trouvés'
+      ap_only:
+        no_items_found: '%{entry_name} non trouvé(e)'
+        single_item_found: '<b>1</b> volume trouvé'
+        pages:
+          one: '<b>%{total_num}</b> volumes trouvé'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes trouvés'
+        flat:
+          no_items_found: '%{entry_name} non trouvé(e)'
+          single_item_found: '<b>1</b> section trouvée'
+          pages:
+            one: '<b>%{total_num}</b> sections trouvées'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> sections trouvées'
+      search:
+        no_items_found: '%{entry_name} non trouvé(e)'
+        single_item_found: 'Results found in <b>1</b> volume'
+        pages:
+          one: 'Results found in <b>%{total_num}</b> volumes'
+          other: 'Results found in <b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
+
     show:
       wait: 'Loading, please wait...'
       open_in_full_screen: 'Open in full screen'

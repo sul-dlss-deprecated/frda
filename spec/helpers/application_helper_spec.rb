@@ -91,4 +91,49 @@ describe ApplicationHelper do
     end
   end
 
+  describe "determining collections in response" do
+
+    before(:all) do
+      @ap_only = [OpenStruct.new({:name => "collection_ssi",
+                                 :items => [
+                                   OpenStruct.new({:value => Frda::Application.config.ap_id})
+                                 ]
+                                }
+                               )
+                 ]
+      @image_only = [OpenStruct.new({:name => "collection_ssi",
+                                  :items => [
+                                    OpenStruct.new({:value => Frda::Application.config.images_id})
+                                  ]
+                                 }
+                                )
+                    ]
+      @mixed = [OpenStruct.new({:name => "collection_ssi",
+                                  :items => [
+                                    OpenStruct.new({:value => Frda::Application.config.ap_id}),
+                                    OpenStruct.new({:value => Frda::Application.config.images_id})
+                                  ]
+                                 }
+                                )
+               ]
+    end
+    it "search_result_ap_only? should return true if there is only an AP value in the collection_ssi facet" do
+      @response = mock('response')
+      @response.stub(:facets).and_return(@ap_only)
+      search_result_ap_only?.should be_true
+    end
+    it "search_result_images_only? should return true if there is only an Image value in the collection_ssi facet" do
+      @response = mock('response')
+      @response.stub(:facets).and_return(@image_only)
+      search_result_images_only?.should be_true
+    end
+    it "search_result_mixed? should return true if there are both (or more) collection values in the collection_ssi facet" do
+      @response = mock('response')
+      @response.stub(:facets).and_return(@mixed)
+      search_result_mixed?.should be_true
+      search_result_ap_only?.should be_false
+      search_result_images_only?.should be_false
+    end
+  end
+
 end

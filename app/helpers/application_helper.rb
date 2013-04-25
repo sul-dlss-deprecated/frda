@@ -299,16 +299,28 @@ module ApplicationHelper
     return subjects
   end
 
-  def grouped_response_includes_images?(documents)
-    documents.map {|doc| doc.group}.include?(Frda::Application.config.images_id)
-  end
-
-  def grouped_response_includes_ap?(documents)
-    documents.map {|doc| doc.group}.include?(Frda::Application.config.ap_id)
-  end
-
   def response_includes_ap?(response)
     response[:facet_counts][:facet_fields][:collection_ssi].any? { |c| c == 'Archives parlementaires' }
+  end
+
+  def search_result_ap_only?(response = @response)
+    response.facets.select do |facet|
+      facet.name == "collection_ssi"
+    end.first.items.all? do |item|
+      item.value == Frda::Application.config.ap_id
+    end
+  end
+
+  def search_result_images_only?(response = @response)
+    response.facets.select do |facet|
+      facet.name == "collection_ssi"
+    end.first.items.all? do |item|
+      item.value == Frda::Application.config.images_id
+    end
+  end
+
+  def search_result_mixed?(response = @response)
+    (!search_result_ap_only?(response) and !search_result_images_only?(response))
   end
 
   def render_locale_class

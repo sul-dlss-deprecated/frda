@@ -9,6 +9,7 @@
 <% end %>
 <%- unless @response.term_frequencies.blank? or @response.term_frequencies[document[:id]].blank? -%>
   <span class="frequency-counts">
+    - search term matches:
     <%- @response.term_frequencies[document[:id]].each do |term| -%>
       <%= term[:word] %> (<%= term[:frequency] %>)
     <%- end -%>
@@ -32,8 +33,8 @@
         <span class="pagenum">
           <%= link_to "page " + image_urls[page_id][:page_number], catalog_path(page_id) %>
         </span>
-        <%- text_fields.each do |frda_text| -%>
-          <div class="<%= 'un' unless frda_text.respond_to?(:speaker) %>spoken_text">
+        <%- text_fields.each_with_index do |frda_text, index| -%>
+          <div class="<%= 'un' unless frda_text.respond_to?(:speaker) %>spoken_text <%= 'sibling-text-field' unless index == 0  %>">
             <%- if frda_text.respond_to?(:speaker) -%>
               <span class="speaker">
                 <span class="frda-label"><%=t('frda.search.results.speaker')%>:</span> <%= frda_text.speaker %>

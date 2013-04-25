@@ -70,12 +70,18 @@
       &.short-title, &.display-bottom {
         display: none;
       }
+      &.display-top {
+        display: inline;
+      }
+      .frequency-counts {
+        font-weight: bold;
+      }
     }
     .icon-book {margin: 4px 5px;}
     .icon-picture {margin: 3px 5px;}
     .oneresult {
       clear: both;
-      margin-top: 6px;
+      margin-top: 20px;
       padding-left: 135px;
       .pageimg {
         width: 100px;
@@ -89,17 +95,25 @@
           width: 100px;
         }
       }
+      .oneresult-page {
+        border-top: 1px dotted #ddd;
+        margin-bottom: 30px;
+      }
       .speaker {
         float: right;
         padding-top: 10px;
       }
       .tome {display: none;}
-      .pagenum {display: block;}
+      .pagenum {
+        display: block;
+        padding-top: 6px;
+      }
       .samepage .pagenum {display: none;}
       .snippet {
         clear: right;
         display: inline-block;
         padding-top: 10px;
+        width: 75%;
         .shorttext {
           display: none;
         }
@@ -135,11 +149,13 @@
     .icon-picture {margin: 3px 5px;}
     .result-group, .flat-result-group {
       .oneresult {
-        float: left;
-        width: 225px;
-        text-align: center;
-        margin: 0 0 15px 0;
-        min-height: 425px;
+        &.images {
+          float: left;
+          width: 225px;
+          text-align: center;
+          margin: 0 0 15px 0;
+          min-height: 425px;
+        }
         .pageimg {
           > a {border-bottom: none;}
           img {
@@ -147,6 +163,13 @@
             margin-bottom: 2px;
             width: 200px;
           }
+        }
+        .oneresult-page {
+          float: left;
+          width: 225px;
+          text-align: center;
+          margin: 0 0 15px 0;
+//          min-height: 425px;
         }
         .speaker {display: none;}
         .tome {
@@ -174,7 +197,7 @@
         }
       }
     }
-    .frequency-view, #frequencytable {display: none;}
+    .frequency-view, #frequencytable, .frequency-counts {display: none;}
   } // end gallery
 
    /* List View */
@@ -199,6 +222,12 @@
           display: none;
         }
       }
+      &.display-top {
+        display: inline;
+      }
+      .frequency-counts {
+        font-weight: bold;
+      }
       &.display-bottom {
         display: none;
       }
@@ -215,11 +244,17 @@
         .speaker {float: right;}
         .speaker .frda-label {display: none;}
         .tome {display: none;}
+        &.ap .oneresult-page {
+          padding-bottom: 12px;
+        }
         .pagenum {
           float: left;
           margin-left: 0;
-          margin-right: 20px;
-          width: 6em;
+          margin-right: 1em;
+          width: 7em;
+        }
+        .sibling-text-field {
+          margin-left: 8em; // make equal to: .pagenum margin-right + width
         }
         .snippet {
           display: inline-block;
@@ -229,6 +264,7 @@
         .longtext {display: none;}
         &.ap {
           margin-bottom: 30px;
+          margin-top: 10px;
           h3.session-title {
             margin-bottom: 3px;
           }

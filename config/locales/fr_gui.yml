@@ -177,6 +177,7 @@ fr:
           side_by_side: "côte à côte"
           text_only: "texte"
           flipbook: "feuilleter en plein écran"
+      view_sw: "View this item in Searchworks:"
     collection:
       collection_detail: 'Collection Detail'
       member_detail: 'Item Detail'

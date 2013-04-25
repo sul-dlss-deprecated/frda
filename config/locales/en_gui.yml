@@ -173,6 +173,7 @@ en:
           side_by_side: "side-by-side"
           text_only: "text only"
           flipbook: "read in flipbook"
+      view_sw: "View this item in Searchworks:"
     collection_members_grid:
       members_link: 'View all collection items'
       collection_link: 'View this collection'

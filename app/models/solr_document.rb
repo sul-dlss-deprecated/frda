@@ -89,6 +89,11 @@ class SolrDocument
      multivalue_field('speaker_ssim')
   end
  
+  def highlighted_spoken_and_unspoken_text
+    return nil unless highlighted_spoken_text? or highlighted_unspoken_text?
+    [highlighted_spoken_text, highlighted_unspoken_text].flatten.compact.sort_by{ |text| text.page_id }.group_by(&:page_id)
+  end
+ 
   def spoken_text
     return nil unless self[:spoken_text_ftsimv]
     fields = highlighted_fields(:spoken_text_ftsimv)

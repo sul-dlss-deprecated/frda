@@ -16,8 +16,8 @@
   </span>
 <%- end -%>
 <div class="oneresult ap">
-  <%- if document.highlighted_spoken_text? or document.highlighted_unspoken_text?  -%>
-    <%- [document.highlighted_spoken_text, document.highlighted_unspoken_text].flatten.compact.group_by(&:page_id).each do |page_id, text_fields| -%>
+  <%- if !document.highlighted_spoken_and_unspoken_text.blank?  -%>
+    <%- document.highlighted_spoken_and_unspoken_text.each do |page_id, text_fields| -%>
       <div class="oneresult-page">
         <span class="pageimg">
           <%= link_to_document SolrDocument.new(:id => page_id),

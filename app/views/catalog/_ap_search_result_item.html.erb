@@ -2,11 +2,18 @@
 <%# This is used for all search result views. 
     Oneresult == one search result item, which is a page in this display context -%>
 
-<% unless list_is_empty?(document.session_title)%>
+<% unless list_is_empty?(document.session_title) %>
   <h3 class="session-title display-top">
     <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
   </h3>
 <% end %>
+<%- unless @response.term_frequencies.blank? or @response.term_frequencies[document[:id]].blank? -%>
+  <span class="frequency-counts">
+    <%- @response.term_frequencies[document[:id]].each do |term| -%>
+      <%= term[:word] %> (<%= term[:frequency] %>)
+    <%- end -%>
+  </span>
+<%- end -%>
 <div class="oneresult ap">
   <%- if document.highlighted_spoken_text? or document.highlighted_unspoken_text?  -%>
     <%- [document.highlighted_spoken_text, document.highlighted_unspoken_text].flatten.compact.group_by(&:page_id).each do |page_id, text_fields| -%>

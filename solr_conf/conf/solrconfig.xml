@@ -261,7 +261,7 @@
       <int name="facet.mincount">1</int>
       <int name="facet.limit">16</int>
       <str name="facet.field">collection_ssi</str>
-      <str name="facet.field">doc_type_ssim</str>
+      <str name="facet.field">doc_type_ssi</str>
       <str name="facet.field">speaker_ssim</str>
       <str name="facet.field">session_title_sim</str>
       <str name="facet.field">vol_title_ssi</str>

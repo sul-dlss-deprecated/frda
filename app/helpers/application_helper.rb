@@ -193,7 +193,7 @@ module ApplicationHelper
   def link_to_session_facet(session, options={})
     link_params = {}
     link_params.merge!(options[:params]) if options[:params]
-    session_facet_params = {"f" => {"session_title_sim" => [session]}}
+    session_facet_params = {"f" => {"session_title_si" => [session]}}
     options.delete(:params)
     link_to(session, catalog_index_path(link_params.deep_merge(session_facet_params)), options)
   end

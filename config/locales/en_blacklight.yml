@@ -157,6 +157,8 @@ en:
     search:
       title: '%{application_name} Search results'
       search_results_header: 'Search results'
+      search_results_header_ungrouped: 'Search results by session'
+      search_results_header_grouped: 'Search results grouped by volume'
       search_results: 'Search results'
       errors:
         request_error: "Sorry, I don't understand your search."

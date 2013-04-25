@@ -32,6 +32,18 @@ describe SolrResponseTermFrequencies do
                       }
                     }
                   }
+    @several_words = { :debug => {
+                         :explain => {
+                           "1234" => 'SomeText (MATCH) weight(text_tiv:this^1.0) score(maxDocs=1234 termFreq=5.0)  
+                                      Some Other Text (MATCH) weight(text_tiv:is^1.0) score(maxDocs=1234 termFreq=6.0)  
+                                      Even More Text (MATCH) weight(text_tiv:a^1.0) score(maxDocs=1234 termFreq=5.0)
+                                      More Text (MATCH) weight(text_tiv:several^1.0) score(maxDocs=1234 termFreq=5.0)
+                                      Some More Text (MATCH) weight(text_tiv:word^1.0) score(maxDocs=1234 termFreq=5.0)
+                                      Even More TextAgain (MATCH) weight(text_tiv:query^1.0) score(maxDocs=1234 termFreq=5.0)
+                                      More Text (MATCH) weight(text_tiv:"this is a several word query"^1.0) score(maxDocs=1234 termFreq=1.0)'
+                         }
+                       }
+                     }
   end
   it "should return a hash of term frequencies" do
     TestTermFrequency.new(@single).term_frequencies.should be_a Hash
@@ -55,5 +67,10 @@ describe SolrResponseTermFrequencies do
     freq["1234"].should be_a Array
     freq["1234"].length.should == 1
     freq["1234"].first.should == {:word => "paris", :frequency => "5"}
+  end
+  it "should handle several word queries correctly" do
+    freq = TestTermFrequency.new(@several_words).term_frequencies
+    freq["1234"].length.should == 7
+    freq["1234"].should include({ :word => '"this is a several word query"', :frequency => "1"})
   end
 end

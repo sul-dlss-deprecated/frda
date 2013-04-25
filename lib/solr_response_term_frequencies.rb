@@ -7,7 +7,7 @@ module SolrResponseTermFrequencies
       text_explain = explain.split("(MATCH)").select do |text|
         text =~ /weight\(#{text_frequency_field}:/
       end.map do |text|
-        {:word => text[/\(#{text_frequency_field}:("*\w+\s*\w*"*)/, 1], :frequency => (text[/termFreq=(\d+).\d/, 1] || text[/phraseFreq=(\d+).\d/, 1])}
+        {:word => text[/\(#{text_frequency_field}:(.*)\^/, 1], :frequency => (text[/termFreq=(\d+).\d/, 1] || text[/phraseFreq=(\d+).\d/, 1])}
       end
       frequencies[id] = text_explain
     end

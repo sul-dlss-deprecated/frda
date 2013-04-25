@@ -6,6 +6,7 @@ en:
     facet:
       personal_name: 'Personal name'
       location: 'Location'
+      medium: 'Medium'
       corporate_name: 'Corporate name'
       family_name: 'Family name'
       start_year: 'Start year'

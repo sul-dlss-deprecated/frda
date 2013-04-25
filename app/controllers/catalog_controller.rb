@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 require 'blacklight/catalog'
 require 'frda/solr_helper'
+require 'solr_response_term_frequencies'
 
 class CatalogController < ApplicationController  
 
@@ -200,8 +201,8 @@ class CatalogController < ApplicationController
     config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection'
     config.add_facet_field 'speaker_ssim', :label => 'frda.show.people', :show => true, :limit => 15
     
-    config.add_facet_field 'doc_type_ssim', :label => 'frda.show.type', :limit => 15
-    config.add_facet_field 'medium_ssi', :label => 'frda.show.medium', :limit => 15
+    config.add_facet_field 'doc_type_ssi', :label => 'frda.show.type', :limit => 15
+    config.add_facet_field 'medium_ssi', :label => 'frda.facet.medium', :limit => 15
     config.add_facet_field 'genre_ssim', :label => 'frda.show.genre', :limit => 15
     config.add_facet_field 'artist_ssim', :label => 'frda.show.artist', :limit => 15
     config.add_facet_field 'collector_ssim', :label => 'frda.show.collector', :limit => 15

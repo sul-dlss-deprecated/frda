@@ -33,18 +33,20 @@
           <%= link_to "page " + image_urls[page_id][:page_number], catalog_path(page_id) %>
         </span>
         <%- text_fields.each do |frda_text| -%>
-          <%- if frda_text.respond_to?(:speaker) -%>
-            <span class="speaker">
-              <span class="frda-label"><%=t('frda.search.results.speaker')%>:</span> <%= frda_text.speaker %>
-            </span>
-          <%- end -%>
-          <div class="snippet">
-            <span class="shorttext">
-              <%= truncate_highlight(frda_text.text, :around => 20, :length => 200).html_safe %>
-            </span>
-            <span class="longtext">
-              <%= truncate_highlight(frda_text.text, :around => 40, :length => 600).html_safe %>
-            </span>
+          <div class="<%= 'un' unless frda_text.respond_to?(:speaker) %>spoken_text">
+            <%- if frda_text.respond_to?(:speaker) -%>
+              <span class="speaker">
+                <span class="frda-label"><%=t('frda.search.results.speaker')%>:</span> <%= frda_text.speaker %>
+              </span>
+            <%- end -%>
+            <div class="snippet">
+              <span class="shorttext">
+                <%= truncate_highlight(frda_text.text, :around => 20, :length => 200).html_safe %>
+              </span>
+              <span class="longtext">
+                <%= truncate_highlight(frda_text.text, :around => 40, :length => 600).html_safe %>
+              </span>
+            </div>
           </div>
         <%- end -%>
         <div class="clearfix"></div>

@@ -36,21 +36,25 @@ $(document).ready(function(){
     <% extra_head_content << render_opensearch_response_metadata.html_safe %>
 
     <% if on_images_page %>
+      <h2 class="search-results"><%= t('blacklight.search.search_results') %></h2>
+    <% elsif on_images_landing_page %>
       <h2 class="search-results"><%= t('frda.search.results_heading_image') %></h2>
       <div class="images-summary truncate">
         <%=t('frda.about.images_html')%>
       </div>
-    <% elsif on_ap_page || on_ap_landing_page %>
-      <h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>
-      <div class="ap-summary truncate">
-        <%=t('frda.about.ap_html')%>
-      </div>
-    <% else %>
+    <% elsif on_ap_page %>
       <%- if response_is_grouped? -%>
         <h2 class="search-results"><%= t('blacklight.search.search_results_header_grouped') %></h2>
       <% else %>
         <h2 class="search-results"><%= t('blacklight.search.search_results_header_ungrouped') %></h2>
       <% end %>
+    <% elsif on_ap_landing_page %>
+      <h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>
+      <div class="ap-summary truncate">
+        <%=t('frda.about.ap_html')%>
+      </div>
+    <% else %> <%# combined search %>
+        <h2 class="search-results"><%= t('blacklight.search.search_results_header_grouped') %></h2>
     <% end %>
 
     <% unless on_ap_landing_page || on_images_landing_page %>

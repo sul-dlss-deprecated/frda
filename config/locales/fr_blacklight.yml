@@ -182,9 +182,9 @@ fr:
     search:
       title: '%{application_name} Résultats de recherche'
       search_results_header: 'Résultats de recherche'
-      search_results_header_ungrouped: 'Search results by session'
-      search_results_header_grouped: 'Search results grouped by volume'
-      search_results: 'Résultats de recherche'
+      search_results_header_ungrouped: 'Résultats groupés par section'
+      search_results_header_grouped: 'Résultats groupés par volume'
+      search_results: 'Résultats'
       errors:
         request_error: 'Désolé, je ne comprends pas votre recherche'
         invalid_solr_id: 'Désolé, la notice que vous avez demandée n’existe pas'

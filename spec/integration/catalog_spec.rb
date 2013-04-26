@@ -171,7 +171,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   describe "grouped search results" do
     it "should group AP items together by tome/volume" do
       visit catalog_index_path(:q => "*:*")
-      page.should have_xpath("//h2/a[text()='Tome 8 : Du 5 mai 1789 au 15 septembre 1789']")
+      page.should have_xpath("//li/a[text()='Tome 8 : Du 5 mai 1789 au 15 septembre 1789']")
     end
     describe "facets" do
       it "should properly extend the facets module from Blacklight to return facets from the response correctly" do

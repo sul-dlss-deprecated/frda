@@ -153,8 +153,8 @@ en:
           no_items_found: 'No %{entry_name} found'
           single_item_found: '<b>1</b> section found'
           pages:
-            one: '<b>%{total_num}</b> sessions found'
-            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> sessions found'
+            one: '<b>%{total_num}</b> sections found'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> sections found'
       search:
         no_items_found: 'No %{entry_name} found'
         single_item_found: 'Results found in <b>1</b> volume'

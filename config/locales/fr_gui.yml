@@ -227,6 +227,7 @@ fr:
       collection_text: 'Collection Items'
       sibling_text: "Other items in the %{collection} collection"
     search:
+      page: 'page'
       results_heading_combined: 'dans les deux archives'
       results_heading_ap: 'Archives parlementaires'
       image:

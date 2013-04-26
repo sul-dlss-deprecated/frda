@@ -135,18 +135,27 @@ class SolrDocument
     return nil if highlights.blank?
     highlights
   end
-  
-  def image_urls_for_page(options={})
+
+  def page_range_in_session
+    numbers = pages_in_session.map do |_, page|
+      page.page_number
+    end
+    (numbers.select{|number| !number.blank?}.first...numbers.select{|number| !number.blank?}.last)
+  end
+
+  def pages_in_session(options={})
     return nil unless self[:pages_ssim]
     urls = {}
     self[:pages_ssim].map do |id_with_page|
-      image_id = id_with_page.split("-|-").first
-      page = id_with_page.split("-|-").last
+      image_id = id_with_page.split("-|-")[0]
+      page = id_with_page.split("-|-")[1]
       size = options[:size] || :default
       format = options[:format] || "jpg"
       stacks_url = Frda::Application.config.stacks_url
-      urls[image_id] = {:url=>"#{stacks_url}/#{self[:druid_ssi]}/#{image_id.chomp(File.extname(image_id))}#{SolrDocument.image_dimensions[size]}.#{format}",
-                        :page_number => page}
+      urls[image_id] = OpenStruct.new(
+        :page_number => page,
+        :url => "#{stacks_url}/#{self[:druid_ssi]}/#{image_id.chomp(File.extname(image_id))}#{SolrDocument.image_dimensions[size]}.#{format}"
+      )
     end
     urls
   end

@@ -217,6 +217,7 @@ en:
       collection_text: 'Collection items'
       sibling_text: "Other items in the %{collection} collection"
     search:
+      page: 'page'
       results_heading_combined: 'combined collections'
       results_heading_ap: 'Parliamentary archives'
       image:

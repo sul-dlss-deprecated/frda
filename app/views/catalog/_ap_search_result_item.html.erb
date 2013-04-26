@@ -1,7 +1,6 @@
 <%- image_urls = document.pages_in_session(:size=>:thumb) -%>
 <%# This is used for all search result views. 
     Oneresult == one search result item, which is a page in this display context -%>
-
 <% unless list_is_empty?(document.session_title) %>
   <h3 class="session-title display-top">
     <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
@@ -54,11 +53,11 @@
       </div>
     <%- end -%>
   <%- elsif !document.truncated_full_text.blank? -%>
-    <%- page_numbers = image_urls.map{|id, data| data.page_number } -%>
+    <%- page_range = [document.page_range_in_session.first, document.page_range_in_session.last].uniq.join(" - ") -%>
     <div>
       <span class="pageimg">
         <%- image_link = link_to_document SolrDocument.new(:id => image_urls.first.first),
-                           :label => "<div data-lazy-load='true' data-src='#{image_urls.first.last.url}' data-alt='#{document.page_range_in_session.first} - #{document.page_range_in_session.last}' data-title='#{document.page_range_in_session.first} - #{document.page_range_in_session.last}'></div>".html_safe,
+                           :label => "<div data-lazy-load='true' data-src='#{image_urls.first.last.url}' data-alt='#{page_range}' data-title='#{page_range}'></div>".html_safe,
                            :counter =>  (index + 1 + @response.params[:start].to_i) -%>
         <%= image_link %>
         <noscript><%= image_link %></noscript>
@@ -69,7 +68,7 @@
         </h3>
       <% end %>
       <span class="pagenum">
-        <%= link_to("#{t('frda.search.page')} #{document.page_range_in_session.first} - #{document.page_range_in_session.last}", catalog_path(image_urls.first.first)) %>
+        <%= link_to("#{t('frda.search.page')} #{page_range}", catalog_path(image_urls.first.first)) %>
       </span>
       <div class="snippet">
         <span class="longtext">

@@ -176,11 +176,14 @@ class SolrDocument
   end
   
   def session_title
-    if self[:session_title_ftsi]
-      highlighted_fields(:session_title_ftsi)
+    if self[:div2_title_ssi]
+      return highlighted_fields(:div2_title_ssi)
+    elsif self[:session_title_ftsi]
+      return highlighted_fields(:session_title_ftsi)
     elsif self[:session_title_ftsim]
-      highlighted_fields(:session_title_ftsim)
+      return highlighted_fields(:session_title_ftsim)
     end
+    []
   end
   
   def volume

@@ -207,7 +207,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'artist_ssim', :label => 'frda.show.artist', :limit => 15
     config.add_facet_field 'collector_ssim', :label => 'frda.show.collector', :limit => 15
     config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume', :limit => 15
-    config.add_facet_field 'session_title_si', :label => 'frda.show.session', :show => false
+    config.add_facet_field 'div2_title_ssi', :label => 'frda.show.session', :show => false
     config.add_facet_field 'search_date_dtsim', :label => "frda.show.date", :show => false
 
     config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["result_group_ssi", "session_title_sim"]
@@ -239,7 +239,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'spoken_text_ftsmiv', :label => "Spoken Text:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'title_long_ftsi', :label => "Long Tilte:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'title_short_ftsi', :label => "Short Title:", :highlight => true #don't really need an i18n label here since it won't be used.
-    config.add_index_field 'session_title_ftsim', :label => "Session:", :highlight => true #don't really need an i18n label here since it won't be used.
+    config.add_index_field 'div2_title_ssi', :label => "Section:", :highlight => true #don't really need an i18n label here since it won't be used.
     
 
     # solr fields to be displayed in the show (single result) view
@@ -357,7 +357,7 @@ class CatalogController < ApplicationController
     !(params and
         params["f"] and
           ((params["f"]["vol_title_ssi"] and !params["f"]["vol_title_ssi"].blank?) or
-           (params["f"]["session_title_sim"] and !params["f"]["session_title_sim"].blank?)) or
+           (params["f"]["div2_title_ssi"] and !params["f"]["div2_title_ssi"].blank?)) or
            (params["f"]["collection_ssi"] and params["f"]["collection_ssi"].include?(Frda::Application.config.images_id)) or
            (params["f"]["result_group_ssi"] and params["f"]["result_group_ssi"].include?(Frda::Application.config.images_id)))
   end

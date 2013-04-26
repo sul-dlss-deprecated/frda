@@ -410,6 +410,7 @@
   <field name="pages_ssim">bm916nx5550_00_0302-|-237</field>
   <field name="session_date_val_ssi">1789-07-15</field>
   <field name="session_date_dtsim">1789-07-15T00:00:00Z</field>
+  <field name="div2_title_si">Séance du 15 juillet 1789</field>
   <field name="session_title_ftsi">Séance du 15 juillet 1789</field>
   <field name="session_date_title_ssi">1789-07-15-|-Séance du 15 juillet 1789</field>
   <field name="session_govt_ssi">ASSEMBLÉE NATIONALE</field>
@@ -439,6 +440,7 @@
   <field name="pages_ssim">bm916nx5550_00_0305-|-240</field>
   <field name="session_date_val_ssi">1789-07-16</field>
   <field name="session_date_dtsim">1789-07-16T00:00:00Z</field>
+  <field name="div2_title_ssi">Séance du 16 juillet 1789</field>
   <field name="session_title_ftsi">Séance du 16 juillet 1789</field>
   <field name="session_date_title_ssi">1789-07-16-|-Séance du 16 juillet 1789</field>
   <field name="session_govt_ssi">ASSEMBLÉE NATIONALE</field>

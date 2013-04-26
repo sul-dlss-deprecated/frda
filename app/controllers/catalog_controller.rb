@@ -11,7 +11,9 @@ class CatalogController < ApplicationController
   
   # The logic to handle the date range queries is being set by the BlacklightDates2SVG gem.
   # If we remove that, but still want date processing, we'll need to explicity require and use the DateRangeSolrQuery gem.
-  CatalogController.solr_search_params_logic += [:only_search_div2, :search_within_speeches, :proximity_search, :result_view, :exclude_highlighting]
+  CatalogController.solr_search_params_logic += [:only_search_div2, :search_within_speeches,
+                                                 :proximity_search, :result_view,
+                                                 :exclude_highlighting, :pivot_facet_on_ap_landing_page]
   
   before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
 
@@ -209,8 +211,10 @@ class CatalogController < ApplicationController
     config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume', :limit => 15
     config.add_facet_field 'div2_title_ssi', :label => 'frda.show.session', :show => false
     config.add_facet_field 'search_date_dtsim', :label => "frda.show.date", :show => false
+    config.add_facet_field 'result_group_ssort', :label => "frda.show.volume", :show => false
+    config.add_facet_field 'div2_ssort', :label => "frda.show.session", :show => false
 
-    config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["result_group_ssi", "session_title_sim"]
+    config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["result_group_ssort", "div2_ssort"]
 
     config.add_facet_field 'en_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('en')
     config.add_facet_field 'fr_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('fr')
@@ -403,6 +407,12 @@ class CatalogController < ApplicationController
     if on_home_page or on_ap_landing_page
       solr_params[:hl] = "false"
       solr_params[:rows] = 0
+    end
+  end
+
+  def pivot_facet_on_ap_landing_page(solr_params, user_params)
+    if on_ap_landing_page
+      solr_params[:"facet.pivot"] = "result_group_ssort,div2_ssort"
     end
   end
 

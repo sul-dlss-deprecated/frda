@@ -336,16 +336,45 @@ class SolrDocument
 
                          
   private
-  
+
   def highlighted_fields(key)
     return [] unless self[key]
     if self.highlight_field(key)
-      self.highlight_field(key)
+      if self.highlight_field(key).first.scan("-|-").length > 3
+        if key.to_s.include?("unspoken")
+          split_highlighted_unspoken_field_glob(self.highlight_field(key))
+        else
+          split_highlighted_spoken_field_glob(self.highlight_field(key))
+        end
+      else
+        self.highlight_field(key)
+      end
     else
       [self[key]].flatten
     end
   end
+
+  def split_highlighted_unspoken_field_glob(field)
+    split_field_glob(field).map do |(id, text)|
+      "#{id}-|-#{text}" if text.include?("<em>")
+    end.compact
+  end
+
+  def split_highlighted_spoken_field_glob(field)
+    split_field_glob(field).map do |(id, delimited_text)|
+      if delimited_text
+        speaker, text = delimited_text.split("-|-")
+        "#{id}-|-#{speaker}-|-#{text}" if text.include?("<em>")
+      end
+    end.compact
+  end
   
+  def split_field_glob(field)
+    split_fields = field.join(" ").split(/(\w+_\d{2}_\d{4})-\|-/)
+    split_fields.shift # remove first element if blank
+    split_fields.each_slice(2).to_a # returns an array of arrays: [["id", "text_value"], ["id", "text_value"], ["id", "text_value"]]
+  end
+
   def blacklight_config
     CatalogController.blacklight_config
   end

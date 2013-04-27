@@ -17,40 +17,43 @@
 <div class="oneresult ap">
   <%- if !document.highlighted_spoken_and_unspoken_text.blank?  -%>
     <%- document.highlighted_spoken_and_unspoken_text.each do |page_id, text_fields| -%>
-      <div class="oneresult-page">
-        <span class="pageimg">
-          <%= link_to_document SolrDocument.new(:id => page_id),
-                :label => "<div data-lazy-load='true' data-src='#{image_urls[page_id].url}' data-alt='#{image_urls[page_id].page_number}' data-title='#{image_urls[page_id].page_number}'></div>".html_safe,
-                :counter =>  (index + 1 + @response.params[:start].to_i) -%>
-          <noscript><%= link_to(image_tag(image_urls[page_id].url), catalog_path(page_id)) %></noscript>
-        </span>
-        <% unless list_is_empty?(document.session_title)%>
-          <h3 class="session-title display-bottom">
-            <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
-          </h3>
-        <% end %>
-        <span class="pagenum">
-          <%= link_to "#{t('frda.search.page')} #{image_urls[page_id].page_number}", catalog_path(page_id) %>
-        </span>
-        <%- text_fields.each_with_index do |frda_text, index| -%>
-          <div class="<%= 'un' unless frda_text.respond_to?(:speaker) %>spoken_text <%= 'sibling-text-field' unless index == 0  %>">
-            <%- if frda_text.respond_to?(:speaker) -%>
-              <span class="speaker">
-                <span class="frda-label"><%=t('frda.search.results.speaker')%>:</span> <%= frda_text.speaker %>
-              </span>
-            <%- end -%>
-            <div class="snippet">
-              <span class="shorttext">
-                <%= truncate_highlight(frda_text.text, :around => 20, :length => 200).html_safe %>
-              </span>
-              <span class="longtext">
-                <%= truncate_highlight(frda_text.text, :around => 40, :length => 600).html_safe %>
-              </span>
+      <%- if image_urls[page_id] -%>
+        <div class="oneresult-page">
+          <span class="pageimg">
+            <%#- puts "#{page_id.inspect} (#{document[:id]}) #{image_urls.inspect}\n" if image_urls[page_id].nil? -%>
+            <%= link_to_document SolrDocument.new(:id => page_id),
+                  :label => "<div data-lazy-load='true' data-src='#{image_urls[page_id].url}' data-alt='#{image_urls[page_id].page_number}' data-title='#{image_urls[page_id].page_number}'></div>".html_safe,
+                  :counter =>  (index + 1 + @response.params[:start].to_i) -%>
+            <noscript><%= link_to(image_tag(image_urls[page_id].url), catalog_path(page_id)) %></noscript>
+          </span>
+          <% unless list_is_empty?(document.session_title)%>
+            <h3 class="session-title display-bottom">
+              <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
+            </h3>
+          <% end %>
+          <span class="pagenum">
+            <%= link_to "#{t('frda.search.page')} #{image_urls[page_id].page_number}", catalog_path(page_id) %>
+          </span>
+          <%- text_fields.each_with_index do |frda_text, index| -%>
+            <div class="<%= 'un' unless frda_text.respond_to?(:speaker) %>spoken_text <%= 'sibling-text-field' unless index == 0  %>">
+              <%- if frda_text.respond_to?(:speaker) -%>
+                <span class="speaker">
+                  <span class="frda-label"><%=t('frda.search.results.speaker')%>:</span> <%= frda_text.speaker %>
+                </span>
+              <%- end -%>
+              <div class="snippet">
+                <span class="shorttext">
+                  <%= truncate_highlight(frda_text.text, :around => 20, :length => 200).html_safe %>
+                </span>
+                <span class="longtext">
+                  <%= truncate_highlight(frda_text.text, :around => 40, :length => 600).html_safe %>
+                </span>
+              </div>
             </div>
-          </div>
-        <%- end -%>
-        <div class="clearfix"></div>
-      </div>
+          <%- end -%>
+          <div class="clearfix"></div>
+        </div>
+      <%- end -%>
     <%- end -%>
   <%- elsif !document.truncated_full_text.blank? -%>
     <%- page_range = [document.page_range_in_session.first, document.page_range_in_session.last].uniq.join(" - ") -%>

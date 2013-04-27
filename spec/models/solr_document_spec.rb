@@ -138,6 +138,52 @@ describe SolrDocument do
     end
   end
   
+  describe "highlight glob fields" do
+    describe "unspoken_text" do
+      before(:all) do
+        @hl_text1 = "dd123abc_00_0001-|-Some <em>text<em> on a page "
+        @hl_text2 = "dd123abc_00_0002-|-Another piece of <em>text</em> on a page "
+        @no_hl_text1 = "dd123abc_02_0002-|-Text that is not highlighted. "
+        @no_hl_text2 = "dd123abc_02_0001-|-More text that is not highlighted. "
+      end
+      it "should reconstruct the highlighted fields array of fields from a giant glob" do
+        fields = SolrDocument.new(:id => "123").send(:split_highlighted_unspoken_field_glob, ["#{@hl_text1} #{@hl_text2}"])
+        fields.should be_a Array
+        fields.length.should be 2
+        fields.first.should match /^#{@hl_text1}/
+        fields.last.should match /^#{@hl_text2}/
+      end
+      it "should not return any non-highlighted fields" do
+        fields = SolrDocument.new(:id => "123").send(:split_highlighted_unspoken_field_glob, ["#{@no_hl_text1} #{@hl_text1} #{@hl_text2} #{@no_hl_text2}"])
+        fields.should be_a Array
+        fields.length.should be 2
+        fields.first.should match /^#{@hl_text1}/
+        fields.last.should match /^#{@hl_text2}/
+      end
+    end
+    describe "spoken_text" do
+      before(:all) do
+        @hl_speech1 = "dd123abc_00_0001-|-Le President-|-A <em>speech<em> by the president "
+        @hl_speech2 = "dd123abc_00_0002-|-Mr. Doe-|-Another <em>speech</em> with some text "
+        @no_hl_speech1 = "dd123abc_02_0002-|-Mrs. Doe-|-A speech that is not highlighted. "
+        @no_hl_speech2 = "dd123abc_02_0001-|-Mr. Dorzy-|-Another speech that is not highlighted. "
+      end
+      it "should reconstruct the highlighted fields array of fields from a giant glob" do
+        fields = SolrDocument.new(:id => "123").send(:split_highlighted_spoken_field_glob, ["#{@hl_speech1} #{@hl_speech2}"])
+        fields.should be_a Array
+        fields.length.should be 2
+        fields.first.should match /^#{@hl_speech1}/
+        fields.last.should match /^#{@hl_speech2}/
+      end
+      it "should not return any non-highlighted fields" do
+        fields = SolrDocument.new(:id => "123").send(:split_highlighted_spoken_field_glob, ["#{@no_hl_speech1} #{@hl_speech1} #{@hl_speech2} #{@no_hl_speech2}"])
+        fields.should be_a Array
+        fields.length.should be 2
+        fields.first.should match /^#{@hl_speech1}/
+        fields.last.should match /^#{@hl_speech2}/
+      end
+    end
+  end
   
   describe "mods" do
     before(:all) do

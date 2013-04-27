@@ -181,6 +181,7 @@ module ApplicationHelper
   def link_to_volume_facet(volume, options={})
     link_params = {}
     link_params.merge!(options[:params]) if options[:params]
+    link_params["page"] = nil
     volume_facet_params = params_for_volume_or_image(volume)
     options.delete(:params)
     if options[:count]

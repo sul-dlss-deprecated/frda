@@ -57,7 +57,7 @@
     <%- end -%>
   <%- elsif !document.truncated_full_text.blank? -%>
     <%- page_range = [document.page_range_in_session.first, document.page_range_in_session.last].uniq.join(" - ") -%>
-    <div>
+    <div class="oneresult-page">
       <span class="pageimg">
         <%- image_link = link_to_document SolrDocument.new(:id => image_urls.first.first),
                            :label => "<div data-lazy-load='true' data-src='#{image_urls.first.last.url}' data-alt='#{page_range}' data-title='#{page_range}'></div>".html_safe,

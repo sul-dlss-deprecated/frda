@@ -5,6 +5,17 @@
   position: relative;
   margin-bottom: 20px;
   margin-top: 30px;
+  rect {
+		&:hover {
+			stroke: #555;
+		  stroke-width: 0.5px;
+		  cursor: pointer;
+		}
+		&[data-selected='true']{
+		  stroke: #999;
+		  stroke-width: 0.5px;
+		}
+	}
   .dates2svg-controls {
     bottom: 0;
     right: 0;

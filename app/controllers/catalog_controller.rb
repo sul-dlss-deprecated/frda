@@ -412,6 +412,10 @@ class CatalogController < ApplicationController
 
   def pivot_facet_on_ap_landing_page(solr_params, user_params)
     if on_ap_landing_page
+      solr_params[:"f.result_group_ssort.facet.limit"] = "-1"
+      solr_params[:"f.result_group_ssort.facet.sort"] = "index"
+      solr_params[:"f.div2_ssort.facet.limit"] = "-1"
+      solr_params[:"f.div2_ssort.facet.sort"] = "index"
       solr_params[:"facet.pivot"] = "result_group_ssort,div2_ssort"
     end
   end

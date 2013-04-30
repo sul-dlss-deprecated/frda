@@ -388,10 +388,17 @@
           }
         }
       }
+      &.tome-title {
+        margin-left: 2em;
+        text-indent: -1.8em;
+      }
     }
     ul#sessions,
     ul#headings-level1, ul#headings-level2, ul#headings-level3 {
       margin: 6px 10px 12px 22px;
+    }
+    ul#sessions {
+      margin-left: 25px;
     }
     ul#headings-root {
       margin-left: 0;

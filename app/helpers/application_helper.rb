@@ -300,6 +300,10 @@ module ApplicationHelper
     return subjects
   end
 
+  def split_ap_facet_delimiter(string)
+    OpenStruct.new(:id => string.split("-|-")[0], :value => string.split("-|-")[1])
+  end
+
   def response_includes_ap?(response)
     response[:facet_counts][:facet_fields][:collection_ssi].any? { |c| c == 'Archives parlementaires' }
   end

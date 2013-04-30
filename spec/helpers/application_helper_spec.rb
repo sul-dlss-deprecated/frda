@@ -60,7 +60,22 @@ describe ApplicationHelper do
       link.should match(/^<a href=.*some_facet.*=A\+Value.*<\/a>$/)
     end
   end
-  
+
+  describe "split_ap_facet_delimiter" do
+    before(:all) do
+      @string = "1234-|-Session Title"
+    end
+    it "should return an OpenStuct object" do
+      split_ap_facet_delimiter(@string).should be_a OpenStruct
+    end
+    it "should return the first part of the delimited string as the #id" do
+      split_ap_facet_delimiter(@string).id.should == "1234"
+    end
+    it "should return the first second part of the delimited as the #value" do
+      split_ap_facet_delimiter(@string).value.should == "Session Title"
+    end
+  end
+
   describe "truncate_hightlight" do
     before(:all) do
       @no_highlight = "Hello, this is a string that does not have any highlighting."

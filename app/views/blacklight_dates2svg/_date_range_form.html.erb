@@ -1,0 +1,16 @@
+<div class="form-controls">
+  <%= render "blacklight_dates2svg/legend" -%>
+
+  <%= form_tag(catalog_index_path, :method => "get") do %>
+    <%= search_as_hidden_fields(:omit_keys => date_range_form_omit_keys).html_safe %>
+    <%= hidden_field_tag :q, params[:q] %>
+    <%= hidden_field_tag :dates, 1 %>
+    <%= text_field_tag :"date-start", params["date-start"], :class => "begin-date" %> to
+    <%= text_field_tag :"date-end", params["date-end"], :class => "end-date" %>
+
+    <%= submit_tag "search", :class=>"btn btn-small" %>
+    <span class='hits'></span>
+
+  <%- end -%>
+
+</div>

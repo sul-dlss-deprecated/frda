@@ -1,6 +1,7 @@
 # encoding: utf-8
 
-AP_STATIC_TOMES = ['Tome 83 : Du 5 au 27 janvier 1794',
+AP_STATIC_TOMES = ['Tome 82 bis : Table alphabétique et analytique des séances de la Convention nationale du 11 août 1793 au 4 janvier 1794',
+                   'Tome 83 : Du 5 au 27 janvier 1794',
                    'Tome 84 : Du 28 janvier au 13 février 1794',
                    'Tome 85 : Du 14 février au 2 mars 1794',
                    'Tome 86 : Du 3 au 20 mars 1794',

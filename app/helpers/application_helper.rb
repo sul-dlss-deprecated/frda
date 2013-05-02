@@ -82,6 +82,20 @@ module ApplicationHelper
     end # content_tag :ul
   end
 
+  def show_mods_artist(doc)
+    artists = []
+    nodeset = doc.mods.plain_name
+    nodeset.collect do |n|
+      if ["art", "drm", "egr", "ill", "scl"].include? n.role.text.strip
+        artists << n.display_value
+      end
+    end
+    if artists.empty?
+      artists = ["Unattributed"]
+    end
+    return artists.uniq
+  end
+
   def list_is_empty?(arry)
     return true if arry.nil?
     if arry.all? { |element| element.blank? }

@@ -130,6 +130,11 @@ class CatalogController < ApplicationController
 
   end
 
+  def citation
+    @ap_purl = params[:purl]
+    super
+  end
+
   # an ajax call to get speaker name suggestions for autocomplete on the speaker search box
   def speaker_suggest
     term=params[:term]

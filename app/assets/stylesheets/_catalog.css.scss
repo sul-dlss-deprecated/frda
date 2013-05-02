@@ -217,6 +217,11 @@
   }
 }
 
+/* Citation */
+.citation-title {
+  font-style: italic;
+}
+
 /* Responsive styles */
 @media (max-width: 979px) {
   .blacklight-catalog-show .images-item .member-image {float: none;}

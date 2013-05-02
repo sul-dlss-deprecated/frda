@@ -4,6 +4,15 @@ Frda::Application.configure do
   config.exception_recipients = '' # list of email addresses, comma separated, that will be notified when an exception occurs - leave blank for no emails
   config.action_mailer.default_url_options = { :host => 'frda-stage.stanford.edu' }
 
+  config.action_mailer.delivery_method = :sendmail
+  # Defaults to:
+  # config.action_mailer.sendmail_settings = {
+  #   :location => '/usr/sbin/sendmail',
+  #   :arguments => '-i -t'
+  # }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
   # Code is not reloaded between requests
   config.cache_classes = true
 

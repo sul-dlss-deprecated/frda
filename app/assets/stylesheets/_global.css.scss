@@ -3,10 +3,10 @@
 /* Variables */
 /* Theme color palette */
 
-$body_bg_color: #fff;
+$body_bg_color: #fbfbf9;
 
-$header_bg_color: #fff;
-$nav_border_color: #eee;
+$header_bg_color: #f2f1eb;
+$nav_border_color: #e3dfd5;
 
 $container_bg_color: #fff;
 $heading_color: #3F3C30;
@@ -18,10 +18,10 @@ $text_font_family: 'Source Sans Pro', sans-serif;
 $active_link_color: #820000;
 $hover_link_color: lighten($active_link_color, 10%);
 $active_nav_link_color: lighten($active_link_color, 10%);
-$inactive_nav_link_color: $text_color;
-$active_heading_link_color: #7a766b;
+$inactive_nav_link_color: #585754;
+$active_heading_link_color: $active_link_color;
 
-$facet_box_background_color: darken($header_bg_color, 5%);
+$facet_box_background_color: #f2f1eb;
 $facet_link_color: $active_link_color;
 $facet_selected_color: darken($facet_link_color, 10%);
 

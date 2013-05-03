@@ -25,7 +25,6 @@
       padding-bottom: 3px;
       > li {
         &.active > a {
-          background-color: #eeeeee;
           color: $active_nav_link_color;
         }
         > a {
@@ -35,7 +34,6 @@
           font-size: 1em;
           padding: 5px 14px 5px 14px;
           &:hover, &:focus {
-            background-color: #eeeeee;
             color: $active_nav_link_color;
           }
         }
@@ -53,7 +51,7 @@
   h2 {
     border: none;
     clear: left;
-    color: #999;
+    color: $active_link_color;
     font-family: $text_font_family;
     font-size: 1em;
     font-style: italic;

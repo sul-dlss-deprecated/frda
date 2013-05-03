@@ -1,20 +1,7 @@
-#facets {
-  h5 {background-color: $facet_box_background_color;}
-  a {
-    color: $facet_link_color;
-    font-size: 14px;
-    text-decoration: none;
-  }
-  a:hover {text-decoration: underline;}
-  span.selected {
-    background-color: #eee;
-    color: $facet_selected_color;
-  }
-}
 
 /* "#facets-frda" serves as "#facets" does in Blacklight for CSS below.
    An extra wrapper div with the id of "facets-frda" is used to
-   move the Browse heading outside of the facet box (for FRDA theme)
+   move the Limit your search heading outside of the facet box (for FRDA theme)
    and keep the responsive controls working as intended.
 */
 #facets-frda {
@@ -40,6 +27,31 @@
     }
     & .icon-bar + .icon-bar {
       margin-top: 3px;
+    }
+  }
+  #facets.sidenav {
+    border: 1px solid #d5d0c0;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    padding-bottom: 1px;
+    h5 {
+      background-color: $facet_box_background_color;
+      border-top: 1px solid #d5d0c0;
+      border-bottom: 1px solid #d5d0c0;
+      padding-left: 12px;
+    }
+    a {
+      color: $facet_link_color;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    a:hover {text-decoration: underline;}
+    span.selected {
+      background-color: #eee;
+      color: $facet_selected_color;
+    }
+    ul {
+      padding-top: 1em;
     }
   }
 }

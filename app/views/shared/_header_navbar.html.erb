@@ -12,52 +12,54 @@
 </div> <!-- #brandbar end -->
 <!-- Brandbar snippet end -->
 
-<div id="header-navbar-static-top" class="navbar navbar-static-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <div class="row">
-        <div class="span3">
-          <%= link_to(image_tag("frda-site-logo.jpg", :alt => t('blacklight.application_name')), root_path, :class => "logo") %>
-        </div>
-
-        <div class="span9 site-header-content">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <div class="language-toggle">
-            <% if I18n.locale == :en %>
-              in english
-            <% else %>
-              <%= link_to "in english", params.merge(:locale => 'en', :result_view => nil) %>
-            <% end %>
-              |
-            <% if I18n.locale == :fr %>
-              en français
-            <% else %>
-              <%= link_to "en français", params.merge(:locale => 'fr', :result_view => nil) %>
-            <% end %>
+<div id="header-wrapper">
+  <div id="header-navbar-static-top" class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <div class="row">
+          <div class="span3">
+            <%= link_to(image_tag("frda-site-logo.jpg", :alt => t('blacklight.application_name')), root_path, :class => "logo") %>
           </div>
-          <h1><%= t('blacklight.application_name') %></h1>
-          <h2><%= t('frda.application_name_subtitle') %></h2>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="<%="active" if on_home_page%>">
-                <%= link_to t('frda.nav.home'), root_path %>
-              </li>
-              <%# Collection Highlights section -%>
-              <!-- <li class="<%#="active" if on_collection_highlights_page%>">
-                <%#= link_to t('frda.nav.collection_highlights'), collection_highlights_path%>
-              </li> -->
-              <li class="<%="active" if on_ap_page or on_ap_landing_page %>">
-                <%= link_to t('frda.nav.collection_ap'), ap_collection_path %>
-              </li>
-              <li class="<%="active" if on_images_page %>">
-                <%= link_to t('frda.nav.collection_images'), images_collection_path %>
-              </li>
-              <li class="<%="active" if on_about_pages%>"><%= link_to t('frda.nav.about'), about_project_path %></li>
-            </ul>
+
+          <div class="span9 site-header-content">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <div class="language-toggle">
+              <% if I18n.locale == :en %>
+                in english
+              <% else %>
+                <%= link_to "in english", params.merge(:locale => 'en', :result_view => nil) %>
+              <% end %>
+                |
+              <% if I18n.locale == :fr %>
+                en français
+              <% else %>
+                <%= link_to "en français", params.merge(:locale => 'fr', :result_view => nil) %>
+              <% end %>
+            </div>
+            <h1><%= t('blacklight.application_name') %></h1>
+            <h2><%= t('frda.application_name_subtitle') %></h2>
+            <div class="nav-collapse">
+              <ul class="nav">
+                <li class="<%="active" if on_home_page%>">
+                  <%= link_to t('frda.nav.home'), root_path %>
+                </li>
+                <%# Collection Highlights section -%>
+                <!-- <li class="<%#="active" if on_collection_highlights_page%>">
+                  <%#= link_to t('frda.nav.collection_highlights'), collection_highlights_path%>
+                </li> -->
+                <li class="<%="active" if on_ap_page or on_ap_landing_page %>">
+                  <%= link_to t('frda.nav.collection_ap'), ap_collection_path %>
+                </li>
+                <li class="<%="active" if on_images_page %>">
+                  <%= link_to t('frda.nav.collection_images'), images_collection_path %>
+                </li>
+                <li class="<%="active" if on_about_pages%>"><%= link_to t('frda.nav.about'), about_project_path %></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

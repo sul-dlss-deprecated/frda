@@ -9,7 +9,7 @@ $header_bg_color: #f2f1eb;
 $nav_border_color: #e3dfd5;
 
 $container_bg_color: #fff;
-$heading_color: #3F3C30;
+$heading_color: #565347;
 $sidebar_header_color: #555;
 $text_color: #333;
 $heading_font_family: 'Source Sans Pro', sans-serif;
@@ -33,7 +33,7 @@ $constraint_border_active_color: #FFD27A !default;
 /* Mixins */
 @mixin sidebar-top-border {
   border-top: 5px solid desaturate($active_link_color, 50%);
-  padding-top: 10px;
+  padding-top: 3px;
 }
 
 @mixin main-top-border {
@@ -146,12 +146,22 @@ h1 {
 h2 {
   @include page-header;
 	font-size: 1.3em;
+	font-weight: 600;
 	line-height: 1.5em;
 }
 h3 {
   font-family: $heading_font_family;
 	font-size: 1em;
+	font-weight: 600;
 	line-height: 1.5em;
+}
+h4 {
+  font-family: $heading_font_family;
+  color: #565347;
+  font-weight: 600;
+  font-size: 1em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
 }
 p {
   font-family: $text_font_family;

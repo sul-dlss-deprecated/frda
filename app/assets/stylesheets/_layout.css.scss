@@ -55,8 +55,10 @@ body {
   a.accordion-toggle {
     border-bottom: none;
     @include link-uncolored;
+    color: $heading_color;
     text-decoration: none;
     font-size: 0.9em;
+    font-weight: 600;
   }
   .accordion-inner ul {
     list-style: none;

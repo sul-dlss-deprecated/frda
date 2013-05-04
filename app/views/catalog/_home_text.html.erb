@@ -22,22 +22,16 @@
     <div class="span9 about-dl">
       <%# TODO: Change the H2 tag below to H3 if we add back the Collection Highlights section above -%>
       <h2 class="section-heading"><%= t('frda.home.about_collections_html') %></h2>
-      <p>
         <%= t('frda.home.about_text_html') %>
-      </p>
       <div>
         <%= link_to image_tag('APcoverimage.jpg', :width => '140'), ap_collection_path %>
         <%= link_to "Archives parlementaires / Parliamentary archives", ap_collection_path, :class => "heading-link" %>
-        <p class="collection-desc">
-          <%= t('frda.home.about_text_ap_html') %>
-        </p>
+        <%= t('frda.home.about_text_ap_html') %>
       </div>
       <div>
         <%= link_to image_tag('images_image_cropped.jpg', :width => '140'), images_collection_path  %>
         <%= link_to "Images de la Révolution française / Images of the French Revolution", images_collection_path, :class => "heading-link" %>
-        <p class="collection-desc">
-          <%= t('frda.home.about_text_images_html') %>
-        </p>
+        <%= t('frda.home.about_text_images_html') %>
       </div>
     </div>
   </div>

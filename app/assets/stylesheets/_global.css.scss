@@ -5,7 +5,7 @@
 
 $body_bg_color: #fbfbf9;
 
-$header_bg_color: #f2f1eb;
+$header_bg_color: lighten(#f2f1eb, 1%);
 $nav_border_color: #e3dfd5;
 
 $container_bg_color: #fff;
@@ -21,7 +21,7 @@ $active_nav_link_color: lighten($active_link_color, 10%);
 $inactive_nav_link_color: #585754;
 $active_heading_link_color: $active_link_color;
 
-$facet_box_background_color: #f2f1eb;
+$facet_box_background_color: lighten(#f2f1eb, 2%);
 $facet_link_color: $active_link_color;
 $facet_selected_color: darken($facet_link_color, 10%);
 

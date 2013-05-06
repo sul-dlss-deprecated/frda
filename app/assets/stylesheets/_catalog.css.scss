@@ -57,7 +57,10 @@
       margin-top: 10px;
       dt {
         color: $heading_color;
-        font-weight: bold;
+        font-weight: 700;
+      }
+      dd {
+        font-weight: 400;
       }
       a {@include link-uncolored-border;}
     }
@@ -150,6 +153,7 @@
    .item-views {
      text-align: center;
    }
+   @include container-well;
  }
  .page-navigation .form-inline {
    display: inline-block;
@@ -161,11 +165,17 @@
  }
 }
 .image-box, .ocr-box {
+  background: white;
   border: 1px solid #CCC;
-  padding: 7px;
 }
-.image-box {margin-right: 20px;}
-.ocr-box p {margin-top: 0;}
+.image-box {
+  margin-right: 20px;
+  padding: 0;
+}
+.ocr-box {
+  padding: 12px 18px;
+  p {margin-top: 0;}
+}
 .flipbook {
   height: 100%;
   text-align: center;
@@ -214,6 +224,7 @@
       margin: 0px;
       vertical-align: middle;
     }
+    @include container-well;
   }
 }
 

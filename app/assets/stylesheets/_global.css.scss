@@ -145,7 +145,7 @@ h1 {
 }
 h2 {
   @include page-header;
-	font-size: 1.3em;
+	font-size: 1.4em;
 	font-weight: 600;
 	line-height: 1.5em;
 }
@@ -195,6 +195,10 @@ span.content-type {
 .nav-header {color: $sidebar_header_color;}
 
 .nav > li > a  {border-radius: 6px;}
+
+.truncator-link {
+  font-size: 1em;
+}
 
 .hidden {display: none;}
 .off-screen {position: absolute; left: -100000px;}

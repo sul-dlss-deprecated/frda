@@ -49,7 +49,7 @@
     }
     a:hover {text-decoration: underline;}
     span.selected {
-      background-color: #eee;
+      background-color: $gray2;
       color: $facet_selected_color;
     }
     ul {

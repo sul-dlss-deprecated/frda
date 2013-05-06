@@ -69,6 +69,7 @@
       font-size: 0.8em;
       a {
         color: $dark_red;
+        font-weight: 400;
       }
     }
   }
@@ -261,7 +262,8 @@
     .icon-book {margin: 4px 5px;}
     .icon-picture {margin: 3px 5px;}
     .result-group, .flat-result-group {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
+      margin-left: 15px;
       .oneresult {
         clear: both;
         margin-left: 10px;
@@ -279,7 +281,10 @@
           margin-right: 1em;
           width: 7em;
         }
-        .sibling-text-field {
+        .unspoken_text.sibling-text-field {
+          margin-left: 0px;
+        }
+        .spoken_text.sibling-text-field {
           margin-left: 8em; // make equal to: .pagenum margin-right + width
         }
         .snippet {
@@ -292,7 +297,7 @@
         }
         .longtext {display: none;}
         &.ap {
-          margin-bottom: 30px;
+          margin-bottom: 15px;
           margin-top: 10px;
           h3.session-title {
             margin-bottom: 3px;
@@ -598,6 +603,7 @@ span.constraints-label {margin-right: 0.5em;}
   margin: 0 8px 0 0;
   .appliedFilter {
     @include container-well;
+    border-radius: 8px;
     padding: 1px 50px 1px 1em;
     .btnRemove {
       /* override the BL icon used as separator */

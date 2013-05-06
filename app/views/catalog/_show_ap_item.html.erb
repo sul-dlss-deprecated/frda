@@ -34,12 +34,12 @@ end
   <div class="span12 well" id="controls">
 
     <div class="row">
-      <div class="span5 result-item-nav">
+      <div class="span4 result-item-nav">
         <%#= render 'previous_next_doc' %>
         <%= link_back_to_catalog %>
       </div>
 
-      <div class="span2 item-views btn-group">
+      <div class="span3 item-views btn-group">
           <%= link_to show_page_path(:id=>@document.druid,:page_seq=>@document.page_sequence,:mode=>"image"),:remote=>true do%>
             <%= button_tag t('frda.show.ap.buttons.side_by_side'),
                 :class => 'btn btn-small',

@@ -2,12 +2,16 @@
 <div id="brandbar">
   <div class="container">
     <%= link_to(image_tag("SUL-Logo-white-text-h25.png", :alt => "Stanford University Libraries"), "http://library.stanford.edu/")%>
-    <span id="report-problem"><%= link_to(
-          t('frda.nav.report_problem'),
-          contact_us_path(:from=>request.path),
-					:id=>'contact_us_link'
+    <span id="report-problem">
+      <%#= link_to(
+        t('frda.nav.report_problem'),
+        contact_us_path(:from=>request.path),
+        :id=>'contact_us_link'
         )
-    %></span>
+      %>
+      <%# The mailto link below is temporary until we get staging to send email, then uncomment above %>
+      <%= mail_to "digcoll@jirasul.stanford.edu", t('frda.nav.report_problem'), :cc => "frda-problems@jirasul.stanford.edu", :subject => "FRDA problem" %>
+    </span>
   </div> <!-- .container end -->
 </div> <!-- #brandbar end -->
 <!-- Brandbar snippet end -->

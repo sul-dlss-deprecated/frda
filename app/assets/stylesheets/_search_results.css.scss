@@ -416,7 +416,8 @@
       }
     }
     .heading-root {
-      background: lighten(#f2f1eb, 1%);
+      background: lighten($gray2, 1%);
+      border: 1px solid $gray4;
       border-radius: 4px;
       color: $heading_color;
       font-size: 1.2em;
@@ -448,6 +449,7 @@ ul.inventory-ancestry {
 
 /* Results paging/controls */
 .row.results-controls {
+  @include container-well;
   margin-left: 0;
   margin-bottom: 12px;
   margin-top: 20px;
@@ -484,7 +486,7 @@ ul.inventory-ancestry {
           background-color: $header_bg_color;
         }
         li > a.active, a.active:hover {
-          background-color: $header_bg_color;
+          background-color: $gray1;
           border: 1px solid #ddd;
           color: $active_link_color;
         }
@@ -577,6 +579,7 @@ span.constraints-label {margin-right: 0.5em;}
   clear: right;
   margin: 0 8px 0 0;
   .appliedFilter {
+    @include container-well;
     padding: 1px 50px 1px 1em;
     .btnRemove {
       /* override the BL icon used as separator */

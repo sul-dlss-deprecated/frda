@@ -31,14 +31,14 @@
   }
   #facets.sidenav {
     background-color: #ffffff;
-    border: 1px solid #d5d0c0;
+    border: 1px solid $gray5;
     border-radius: 3px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     padding-bottom: 1px;
     h5 {
       background-color: $facet_box_background_color;
-      border-top: 1px solid #d5d0c0;
-      border-bottom: 1px solid #d5d0c0;
+      border-top: 1px solid $gray5;
+      border-bottom: 1px solid $gray5;
       padding-left: 12px;
     }
     a {

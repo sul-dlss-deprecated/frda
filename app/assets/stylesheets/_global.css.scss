@@ -1,27 +1,39 @@
-/* TODO: Refactor to use mix-ins, etc. */
+/* Theme color palette */
+$cardinal_red: rgba(140,21,21, 1);
+$dark_red: rgba(130,0,0, 1);
+
+$gray1: rgba(251,249,249, 1);
+$gray2: rgba(242,241,235, 1);
+$gray3: rgba(233,230,223, 1);
+$gray4: rgba(227,223,213, 1);
+$gray5: rgba(213,208,192, 1);
+
+$darkgray1: rgba(138,136,125, 1);
+$darkgray2: rgba(86,83,71, 1);
+$darkgray3: rgba(63,60,48, 1);
 
 /* Variables */
-/* Theme color palette */
+$body_bg_color: $gray1;
 
-$body_bg_color: #fbfbf9;
+$header_bg_color: lighten($gray2, 1%);
+$nav_border_color: $gray4;
 
-$header_bg_color: lighten(#f2f1eb, 1%);
-$nav_border_color: #e3dfd5;
+$container_bg_color: white;
+$heading_color: $darkgray2;
 
-$container_bg_color: #fff;
-$heading_color: #565347;
+$container_border_color: $gray5;
 $sidebar_header_color: #555;
 $text_color: #333;
 $heading_font_family: 'Source Sans Pro', sans-serif;
 $text_font_family: 'Source Sans Pro', sans-serif;
 
-$active_link_color: #820000;
+$active_link_color: $dark_red;
 $hover_link_color: lighten($active_link_color, 10%);
 $active_nav_link_color: lighten($active_link_color, 10%);
-$inactive_nav_link_color: #585754;
+$inactive_nav_link_color: $darkgray2;
 $active_heading_link_color: $active_link_color;
 
-$facet_box_background_color: lighten(#f2f1eb, 2%);
+$facet_box_background_color: lighten($gray2, 2%);
 $facet_link_color: $active_link_color;
 $facet_selected_color: darken($facet_link_color, 10%);
 
@@ -51,7 +63,7 @@ $constraint_border_active_color: #FFD27A !default;
 
 @mixin member-section-header {
   @include main-top_border;
-  color: #990000;
+  color: $dark_red;
   margin-top: 0;
   padding-top: 10px;
   text-transform: uppercase;
@@ -76,6 +88,12 @@ $constraint_border_active_color: #FFD27A !default;
 @mixin image-border {
   border: 1px solid #cccccc;
   padding: 4px;
+}
+
+/* Styling of well and other small container boxes */
+@mixin container-well {
+  background: $header_bg_color;
+  border: 1px solid $container_border_color;
 }
 
 /* --- */
@@ -157,7 +175,7 @@ h3 {
 }
 h4 {
   font-family: $heading_font_family;
-  color: #565347;
+  color: $darkgray2;
   font-weight: 600;
   font-size: 1em;
   margin-bottom: 6px;
@@ -220,7 +238,7 @@ span.content-type {
         background-color: transparent;
         border: none;
         border-right: 1px solid #ddd;
-        color: #999999;
+        color: $darkgray2;
         line-height: 1.5em;
         padding: 4px 10px;
       }

@@ -12,6 +12,8 @@ $darkgray1: rgba(138,136,125, 1);
 $darkgray2: rgba(86,83,71, 1);
 $darkgray3: rgba(63,60,48, 1);
 
+$section_line_color: #D1D1C4;
+
 /* Variables */
 $body_bg_color: $gray1;
 
@@ -51,7 +53,7 @@ $constraint_border_active_color: #FFD27A !default;
 }
 
 @mixin main-top-border {
-  border-top: 5px solid darken($header_bg_color, 15%);
+  border-top: 5px solid $section_line_color;
   padding-top: 10px;
 }
 

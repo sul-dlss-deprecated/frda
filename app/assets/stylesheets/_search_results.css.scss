@@ -439,8 +439,8 @@
       }
     }
     .heading-root {
-      background: lighten($gray2, 1%);
-      border: 1px solid $gray4;
+      background: $facet_box_background_color;
+      border: 1px solid $facet_box_border_color;
       border-radius: 4px;
       color: $heading_color;
       font-size: 1.2em;

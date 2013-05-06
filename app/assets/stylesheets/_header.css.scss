@@ -5,9 +5,10 @@
 }
 
 #header-wrapper {
-  background: $header_bg_color;
-  background-image: none;
+  background-color: $header_bg_color;
+  background: image-url("shadow.png") center bottom repeat-x,image-url("background_pattern.jpg") center top repeat-x;
   border-bottom: 1px solid $nav_border_color;
+  border-top: 2px solid rgba(0,0,0,0.2);
   #header-navbar-static-top {
     .site-header-content {
       height: 120px;
@@ -30,24 +31,24 @@
         position: absolute;
         bottom: 0;
         > li {
-
           font-weight: 600;
           line-height: normal;
           text-transform: uppercase;
           &.active > a {
-            border-left: 2px solid darken($active_nav_link_color, 10%);
-            color: darken($active_nav_link_color, 10%);
+            border-left: 2px solid $dark_red;
+            color: $dark_red;
           }
           > a {
-            background-color: $header_bg_color;
-            border-left: 2px solid #aca68d;
-            border-radius: 4px;
+            background-color: transparent;
+            border-left: 2px solid $darkgray1;
+            border-radius: 0;
             box-shadow: none;
             color: $inactive_nav_link_color;
             font-size: 1em;
-            padding: 0 36px 0 9px;
+            margin-right: 36px;
+            padding: 0 6px 0 9px;
             &:hover, &:focus {
-              border-left: 2px solid $active_nav_link_color;
+              border-left: 2px solid $dark_red;
               color: $active_nav_link_color;
             }
           }

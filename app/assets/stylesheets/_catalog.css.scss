@@ -2,7 +2,7 @@
   h3 {
     padding-top: 10px;
     &.section-heading {
-      border-top: 3px solid darken($header_bg_color, 5%);
+      border-top: 3px solid $section_line_color;
       font-size: 1.25em;
     }
   }

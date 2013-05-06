@@ -420,7 +420,7 @@
       margin: 9px 10px 12px 36px;
     }
     ul#sessions {
-      border-left: 1px solid darken($header_bg_color, 15%);
+      border-left: 1px solid #ddd;
       margin: 3px 25px 25px 25px;
       padding-left: 12px;
     }
@@ -448,7 +448,7 @@
     }
   }
   ul#volumes {
-    border-top: 2px dotted darken($header_bg_color, 15%);
+    border-top: 1px solid #ddd;
     margin-top: 20px;
     padding-top: 15px;
   }
@@ -490,7 +490,7 @@ ul.inventory-ancestry {
       .nav-pills {
         margin-bottom: 0;
         li > a {
-          background-color: $gray4;
+          background-color: $gray3;
           border: 1px solid darken($header_bg_color, 20%);
           // for no JS; for JS, display is set in frda.js
           display: none;

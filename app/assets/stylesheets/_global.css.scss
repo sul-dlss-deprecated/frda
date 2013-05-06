@@ -16,6 +16,7 @@ $darkgray3: rgba(63,60,48, 1);
 $body_bg_color: $gray1;
 
 $header_bg_color: lighten($gray2, 1%);
+//$header_bg_color: $gray2;
 $nav_border_color: $gray4;
 
 $container_bg_color: white;
@@ -33,7 +34,8 @@ $active_nav_link_color: lighten($active_link_color, 10%);
 $inactive_nav_link_color: $darkgray2;
 $active_heading_link_color: $active_link_color;
 
-$facet_box_background_color: lighten($gray2, 2%);
+$facet_box_background_color: darken($gray1, 1%);
+$facet_box_border_color: $gray4;
 $facet_link_color: $active_link_color;
 $facet_selected_color: darken($facet_link_color, 10%);
 
@@ -92,8 +94,8 @@ $constraint_border_active_color: #FFD27A !default;
 
 /* Styling of well and other small container boxes */
 @mixin container-well {
-  background: $header_bg_color;
-  border: 1px solid $container_border_color;
+  background: $facet_box_background_color;
+  border: 1px solid $facet_box_border_color;
 }
 
 /* --- */

@@ -1,6 +1,6 @@
 .blacklight-about {
   h2 {
-    border-top: 2px solid #eae8df;
+    border-top: 1px solid #ddd;
     margin-bottom: 3px;
     margin-top: 36px;
     padding-top: 6px;
@@ -41,13 +41,22 @@
   blockquote {
     width: 80%;
   }
-  .curator-title {font-style: italic;}
+  .curator-title {
+    color: #555;
+    font-size: 0.95em;
+    font-style: italic;
+    font-weight: 400;
+  }
   .icon-user {
     margin-left: 5px;
     vertical-align: top;
   }
   #sidebar #sidebar-nav {
     margin-top: 9px;
+    .nav-header {
+      color: $darkgray3;
+      font-weight: 600;
+    }
   }
   dt {
     font-weight: 600;

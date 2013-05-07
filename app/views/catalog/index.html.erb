@@ -54,7 +54,11 @@ $(document).ready(function(){
         <%=t('frda.about.ap_html')%>
       </div>
     <% else %> <%# combined search %>
+      <%- if response_is_grouped? -%>
         <h2 class="search-results"><%= t('blacklight.search.search_results_header_grouped') %></h2>
+      <% else %>
+        <h2 class="search-results"><%= t('blacklight.search.search_results_header_ungrouped') %></h2>
+      <% end %>
     <% end %>
 
     <% unless on_ap_landing_page || on_images_landing_page %>

@@ -27,8 +27,8 @@ $heading_color: $darkgray2;
 $container_border_color: $gray5;
 $sidebar_header_color: #555;
 $text_color: #333;
-$heading_font_family: 'Source Sans Pro', sans-serif;
-$text_font_family: 'Source Sans Pro', sans-serif;
+$heading_font_family: "lemonde-sans",sans-serif;
+$text_font_family: "lemonde-sans",sans-serif;
 
 $active_link_color: $dark_red;
 $hover_link_color: lighten($active_link_color, 10%);
@@ -168,19 +168,19 @@ h1 {
 h2 {
   @include page-header;
 	font-size: 1.4em;
-	font-weight: 600;
+	font-weight: 700;
 	line-height: 1.5em;
 }
 h3 {
   font-family: $heading_font_family;
 	font-size: 1em;
-	font-weight: 600;
+	font-weight: 700;
 	line-height: 1.5em;
 }
 h4 {
   font-family: $heading_font_family;
   color: $darkgray2;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1em;
   margin-bottom: 6px;
   text-transform: uppercase;

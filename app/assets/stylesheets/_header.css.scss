@@ -31,7 +31,7 @@
         position: absolute;
         bottom: 0;
         > li {
-          font-weight: 600;
+          font-weight: 700;
           line-height: normal;
           text-transform: uppercase;
           &.active > a {
@@ -61,7 +61,7 @@
       color: #3f3c30;
       font-size: 2.3em;
       font-family: $heading_font_family;
-      font-weight: 600;
+      font-weight: 700;
       margin: 0;
       padding-bottom: 0;
     }

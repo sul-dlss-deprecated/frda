@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module ApplicationHelper
 
   def on_scrollspy_page?
@@ -39,7 +38,66 @@ module ApplicationHelper
     end
   end
 
+  # element == MODS nodeset
+  def show_mods_element_as_list(doc, element)
+    content_tag(:ul, :class => "item-mvf-list #{element}") do
+      case element
+      when :note
+        nodeset = doc.mods.note
+        nodeset.collect do |n|
+          concat content_tag(:li, n.text)
+        end
+      when :creator
+        nodeset = doc.mods.plain_name
+        nodeset.collect do |n|
+          # convert marcrelator term to human-friendly label
+          rlabel = mods_creator_role_to_label(n.role.text)
+          # should have error handling if any value happens to be nil?
+          content_tag(:li) do
+            link_to("#{n.display_value}", catalog_index_path(:q => "\"#{n.display_value}\"")) +
+            " (#{n.date.text}), #{rlabel}"
+          end
+        end.join.html_safe
+      when :publication
+        nodeset = doc.mods.origin_info
+        place = mods_element_publication_place(doc)
+        date_issued = mods_element_dateIssued(doc)
+        # quick attempt at error handling if any value happens to be nil
+        # I'm sure this could be done better...
+        str = ""
+        str += "#{place} : " unless place.nil?
+        str += "#{nodeset.publisher.text}" unless nodeset.publisher.text.nil?
+        str += "#{date_issued}" unless date_issued.nil?
+        content_tag(:li) do
+          str
+        end
+      when :subject
+        subjects = mods_element_subject(doc)
+        subjects.collect do |n|
+          content_tag(:li) do
+            "#{n}"
+          end
+        end.join.html_safe
+      end # case
+    end # content_tag :ul
+  end
+
+  def show_mods_artist(doc)
+    artists = []
+    nodeset = doc.mods.plain_name
+    nodeset.collect do |n|
+      if ["art", "drm", "egr", "ill", "scl"].include? n.role.text.strip
+        artists << n.display_value
+      end
+    end
+    if artists.empty?
+      artists = ["Unattributed"]
+    end
+    return artists.uniq
+  end
+
   def list_is_empty?(arry)
+    return true if arry.nil?
     if arry.all? { |element| element.blank? }
       return true
     end
@@ -102,6 +160,10 @@ module ApplicationHelper
     {:f => {:session_title_sim => [session]}}
   end
 
+  def params_for_volume(volume)
+    {:f => {:vol_title_ssi => [volume]}}
+  end
+
   # sections for About page
   # elementlink names should match what's used in locale_about.yml
   def about_sections
@@ -133,6 +195,7 @@ module ApplicationHelper
   def link_to_volume_facet(volume, options={})
     link_params = {}
     link_params.merge!(options[:params]) if options[:params]
+    link_params["page"] = nil
     volume_facet_params = params_for_volume_or_image(volume)
     options.delete(:params)
     if options[:count]
@@ -145,7 +208,7 @@ module ApplicationHelper
   def link_to_session_facet(session, options={})
     link_params = {}
     link_params.merge!(options[:params]) if options[:params]
-    session_facet_params = {"f" => {"session_title_sim" => [session]}}
+    session_facet_params = {"f" => {"session_title_si" => [session]}}
     options.delete(:params)
     link_to(session, catalog_index_path(link_params.deep_merge(session_facet_params)), options)
   end
@@ -159,8 +222,13 @@ module ApplicationHelper
   end
 
   def link_for_catalog_heading_search(string)
+    if I18n.locale == :fr
+      lang = "catalog_heading_ftsimv"
+    else
+      lang = "catalog_heading_etsimv"
+    end
     link_to(string, catalog_index_path( :q  => "#{string}",
-                                        :fl => 'catalog_heading_etsimv',
+                                        :fl => "#{lang}",
                                         :f  => {:collection_ssi=>[Frda::Application.config.images_id]}))
   end
 
@@ -195,17 +263,83 @@ module ApplicationHelper
   def mods_element_dateIssued(doc)
     doc.mods.origin_info.dateIssued.find {|n| n.attr("encoding") != 'marc'}.text
   end
-  
-  def grouped_response_includes_images?(documents)
-    documents.map {|doc| doc.group}.include?(Frda::Application.config.images_id)
+
+  # Get the mods element 'placeTerm' where it is the placeTerm elment with "type = 'text'"
+  def mods_element_publication_place(doc)
+    doc.mods.origin_info.place.placeTerm.find {|n| n.attr("type") == 'text'}.text
   end
 
-  def grouped_response_includes_ap?(documents)
-    documents.map {|doc| doc.group}.include?(Frda::Application.config.ap_id)
+  def mods_element_note(doc)
+    doc.mods.origin_info.note.find {|n| n.attr("encoding") != 'marc'}.text
+  end
+  
+  def mods_creator_role_to_label(role)
+    case role.strip
+    when "art"
+      rlabel = "Artist"
+    when "col"
+      rlabel = "Collector"
+    when "dnr"
+      rlabel = "Donor"
+    when "drm"
+      rlabel = "Draftsman"
+    when "egr"
+      rlabel = "Engraver"
+    when "ill"
+      rlabel = "Illustrator"
+    when "pbl"
+      rlabel = "Publisher"
+    when "scl"
+      rlabel = "Sculptor"
+    else
+      rlabel = ""
+    end
+    return rlabel
+  end
+
+  def mods_element_subject(doc)
+    subjects = []
+    doc.mods.subject.each do |subj|
+      # don't want: doc.mods.subject.displayLabel == 'Catalog heading'
+      if subj.topic && subj.displayLabel != 'Catalog heading'
+        subj.topic.each do |t|
+          subjects << t.text if !subj.topic.empty?
+        end
+      end
+      # don't want: doc.mods.subject.name_el.type_at == 'personal'
+      if subj.name_el && subj.name_el.type_at != 'personal'
+        subjects << subj.name_el.namePart.text if !subj.name_el.namePart.text.empty?
+      end
+    end
+    return subjects
+  end
+
+  def split_ap_facet_delimiter(string)
+    OpenStruct.new(:id => string.split("-|-")[0], :value => string.split("-|-")[1])
   end
 
   def response_includes_ap?(response)
     response[:facet_counts][:facet_fields][:collection_ssi].any? { |c| c == 'Archives parlementaires' }
+  end
+
+  def search_result_ap_only?(response = @response)
+    response.facets.select do |facet|
+      facet.name == "collection_ssi"
+    end.first.items.all? do |item|
+      item.value == Frda::Application.config.ap_id
+    end
+  end
+
+  def search_result_images_only?(response = @response)
+    response.facets.select do |facet|
+      facet.name == "collection_ssi"
+    end.first.items.all? do |item|
+      item.value == Frda::Application.config.images_id
+    end
+  end
+
+  def search_result_mixed?(response = @response)
+    (!search_result_ap_only?(response) and !search_result_images_only?(response))
   end
 
   def render_locale_class

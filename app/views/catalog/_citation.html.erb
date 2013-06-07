@@ -1,10 +1,48 @@
-<% @documents.each do |document| %>
-  <div class="modal-body">
-    <p>
-      [citation details here]
-      <% unless document.purl.blank? %>
-        <%= link_to document.purl %>
-      <% end %>
-    </p>
-  </div>
-<% end %>
+<div class="modal-body">
+  <p>
+    <% if @ap_purl %> <%# AP show page %>
+      J. Madival and E. Laurent, et. al., eds. Archives parlementaires de 1789 à 1860: recueil complet des débats législatifs &amp; politiques des Chambres françaises. Paris: Librairie administrative de P. Dupont, 1862- . <%= @ap_purl %>
+
+    <% else %> <%# Images show page %>
+      <% @documents.each do |document| %>
+
+        <%# Artist’s name (last name, first name) %>
+        <%= show_mods_artist(document).join(", ") %>.
+
+        <%# Title, usually italicized %>
+        <% unless document.title.nil?%>
+          <span class="citation-title"><%= document.title.first %></span>,
+        <% end %>
+
+        <%# the date %>
+        <% unless document.mods.origin_info.blank? %>
+          <%= mods_element_dateIssued(document) + "." %>
+        <% end %>
+
+        <%# the medium and support %>
+        <% unless document.mods.physical_description.extent.blank?%>
+          <%= document.mods.physical_description.extent.text %>
+        <% end %>
+
+        <%# repository %>
+        <% unless document.mods.related_item.location.url.blank? %>
+          <%= ActionView::Base.full_sanitizer.sanitize(link_to_images_item_source(document)) %>
+        <% end %>
+
+        <%# and city %>
+        <% unless document.mods.origin_info.place.placeTerm.blank? %>
+          <%= mods_element_publication_place(document) + "." %>
+        <% end %>
+
+        <%# PURL %>
+        <% unless document.purl.blank? %>
+          <%= ActionView::Base.full_sanitizer.sanitize(link_to document.purl)  + "." %>
+        <% end %>
+
+        <%# accessed date %>
+        (accessed <%= Date.today %>).
+        <% end %>
+
+    <% end %>
+  </p>
+</div>

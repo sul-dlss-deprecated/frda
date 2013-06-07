@@ -1,5 +1,10 @@
 .blacklight-about {
-  h2 {border: none;}
+  h2 {
+    border-top: 1px solid #ddd;
+    margin-bottom: 3px;
+    margin-top: 36px;
+    padding-top: 6px;
+  }
   h3 {
     border-bottom: 1px solid #ddd;
     color: $heading_color;
@@ -8,13 +13,12 @@
   }
   h2#curator {
     @include main-top-border;
+    margin-top: 0;
     padding-top: 10px;
   }
   p {
     font-family: $text_font_family;
   	font-weight: 400;
-  	font-size: 1.125em;
-    line-height: 1.5em;
     color: #333333;
   	margin: 0 0 20px 0;
   	width: 90%;
@@ -29,7 +33,7 @@
     height: 10px;
     margin-top: 12px;
     text-indent: -9999px;
-    background: $active_link_color;
+    background: darken($header_bg_color, 15%);
   }
   span.contact-link {
     display: block;
@@ -37,12 +41,29 @@
   blockquote {
     width: 80%;
   }
-  .curator-title {font-style: italic;}
+  .curator-title {
+    color: #555;
+    font-size: 0.95em;
+    font-style: italic;
+    font-weight: 400;
+  }
   .icon-user {
     margin-left: 5px;
     vertical-align: top;
   }
-
+  #sidebar #sidebar-nav {
+    margin-top: 9px;
+    .nav-header {
+      color: $darkgray3;
+      font-weight: 700;
+    }
+  }
+  dt {
+    font-weight: 700;
+  }
+  p, li, dt, dd {
+    font-size: 0.95em;
+  }
 
   // Make textarea wide as reasonable given viewport size
   @media (min-width: 980px) {

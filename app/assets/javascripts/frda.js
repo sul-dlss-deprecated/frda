@@ -6,7 +6,17 @@ $(document).ready(function(){
 
   $('.overview .nav-pills a:first').tab('show');
 
+  // AP landing page - show/hide the note for the static tomes
+  $('.ap-browse .tome-note').each(function(){
+     $('.tome-note-text').hide();
+     $(this).click(function(){
+       $(this).next('.tome-note-text').toggle();
+       return false;
+     });
+  });
+
   // AP and Images landing pages - browse tome/session and catalog heading hierarchies using expand/collapse
+  // Also using for grouped search results to expand/collapse volume group
   if($("[data-collapse='true']").length > 0) {
 		$("ul", $("[data-collapse='true']")).each(function(){
 			var toggle_text = $(this).children("li[data-behavior='toggle-handler']");
@@ -15,8 +25,8 @@ $(document).ready(function(){
 				icon.toggle();
 			  var nested_list = $(this).next("li");
 				nested_list.hide();
-				if ($('.images-browse').length) {
-          $("i", $(this)).click(function(){ // for Images, don't want to use 'a' for expand/collapse
+				if ($('.images-browse, .grouped-result-page').length) {
+          $("i", $(this)).click(function(){ // for Images or grouped results, don't want to use 'a' for expand/collapse
             icon.toggleClass("icon-minus");
             nested_list.slideToggle();
           });
@@ -29,6 +39,7 @@ $(document).ready(function(){
 			});
 		});
 	  $('.heading-root i').first().trigger('click'); // open the first Images group on page load
+	  $('.grouped-result-page .tome-title i').trigger('click'); // open all grouped result groups on page load
 	}
 
   // Result view links are 'display: none' by default, to hide from no JS browsers
@@ -103,7 +114,9 @@ function showImageViewer(imageURL,target) {
 	var z = new zpr(target, {
 	'imageStacksURL': imageURL,
 	'width': 2700,
-	'height': 4200
+	'height': 4200,
+	'zoomIncrement': 1, // open at zoom+1
+	'marqueeImgSize': 125
 	});
 }
 
@@ -202,7 +215,7 @@ function searchOptionsToggles(){
 
 function searchOptionsDatePicker(){
 	if($("[data-date-picker='true']").length > 0) {
-		var last_date = $("input#date-end").attr("placeholder");
+		var last_date = $("input#date-end").attr("data-placeholder");
 		$("[data-date-picker='true']").each(function(){
 			$(this).datepicker({
 				format: "yyyy-mm-dd",
@@ -215,12 +228,12 @@ function searchOptionsDatePicker(){
 			});
 			$(this).click(function(){
 				if($(this).attr("value") == "") {
-					$(this).attr("value", $(this).attr("placeholder"));
+					$(this).attr("value", $(this).attr("data-placeholder"));
 					$(this).datepicker("update");
 				}
 			});
 			$(this).bind('blur', function(){
-				if($(this).attr("value") == $(this).attr("placeholder")) {
+				if($(this).attr("value") == $(this).attr("data-placeholder")) {
 					$(this).attr("value", "");
 				}
 			});

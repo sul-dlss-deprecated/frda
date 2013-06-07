@@ -1,4 +1,5 @@
 body {
+  background-color: $body_bg_color;
   padding-top: 0;
 }
 
@@ -8,7 +9,7 @@ body {
 }
 
 .breadcrumb {
-  background: $container_bg_color;
+  background: $body_bg_color;
   color: #666;
   font-size: 13px;
   margin-bottom: 6px;
@@ -54,8 +55,10 @@ body {
   a.accordion-toggle {
     border-bottom: none;
     @include link-uncolored;
+    color: $heading_color;
     text-decoration: none;
     font-size: 0.9em;
+    font-weight: 400;
   }
   .accordion-inner ul {
     list-style: none;
@@ -87,8 +90,10 @@ body {
     width: 5.7em;
   }
   #collapseSearch .accordion-inner {
+    background-color: $facet_box_background_color;
+    border: 1px solid $gray5;
+    border-radius: 3px;
     padding: 7px;
-    border-top: none;
   }
   p.form_label {
     font-size: 0.85em;

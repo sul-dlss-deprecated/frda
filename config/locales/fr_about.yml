@@ -10,6 +10,7 @@ fr:
       email_address: 'Courriel'
       subject: 'Object du message'
       message: 'Message'
+      page_url: 'Location when reported'
       describe_problem: 'Saisir le texte du message'
       curator: 'Conservatrice des collections françaises et italiennes'
     curator_heading: 'Message de la conservatrice'

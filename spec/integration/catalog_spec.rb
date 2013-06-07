@@ -16,16 +16,16 @@ describe("Search Pages",:type=>:request,:integration=>true) do
 
   it "should show the AP home page" do
     visit ap_collection_path
-    page.should have_content("The Archives parlementaires is a chronologically-ordered edited collection of sources on the French Revolution.")
-    page.should have_content("1 - 5 of 5 volumes")
+    #page.should have_content("The Archives parlementaires is a chronologically-ordered edited collection of sources on the French Revolution.")
+    page.should have_content("1 volume found")
     page.should have_css('div.oneresult')
     page.should have_xpath("//img[contains(@src, \"APcoverimage.jpg\")]")
   end
   
   it "should show the Images home page" do
-    visit images_collection_path    
-    page.should have_content("The Images are composed of high-resolution digital images of approximately 12,000 individual visual items, primarily prints")
-    page.should have_content("1 - 10 of 11 volumes")
+    visit images_collection_path
+    #page.should have_content("The Images are composed of high-resolution digital images of approximately 12,000 individual visual items, primarily prints")
+    page.should have_content("1 - 10 of 11 images")
     page.should have_css('div.oneresult')
     page.should have_xpath("//img[contains(@src, \"images_image_cropped.jpg\")]")
   end
@@ -86,10 +86,9 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   end
 
   it "should search for an AP item" do
-    visit search_path(:q=>'tome')
-    page.should have_css("div.blacklight-collection_ssi") # should have collection facet
-    page.should have_content("Tome 1 : 1789 – Introduction")
-    page.should have_xpath("//img[contains(@src, \"jt959wc5586/jt959wc5586_00_0782_thumb\")]")  
+    visit search_path(:q=>'Lafayette')
+    page.should have_content("Tome 8 : Du 5 mai 1789 au 15 septembre 1789")
+    page.should have_xpath("//img[contains(@src, \"bm916nx5550/bm916nx5550_00_0301_thumb\")]")  
   end
   
   describe "search options" do
@@ -116,20 +115,20 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     describe "in speeches by" do
       it "should return the correct number of results for a specific term and specific speaker" do
         visit root_path
-        fill_in "q", :with => "verbal"
+        fill_in "q", :with => "Lafayette"
         check("speeches")
-        fill_in "by-speaker", :with=> "Le Président" 
+        fill_in "by-speaker", :with=> "Le comte de Mirabeau" 
         find(:css, "[value='Search...']").click
         page.all(:css, ".oneresult").length.should == 1
-        page.should have_content "1 to 1 of 1 volume"
-        page.should have_content "Séance du jeudi 18 février 1790, au matin (1). "
+        page.should have_content "Séance du 15 juillet 1789"
       end
       it "should return more results when not restricted by speaker" do
         visit root_path
-        fill_in "q", :with => "verbal"
+        fill_in "q", :with => "Lafayette"
         find(:css, "[value='Search...']").click
-        page.all(:css, ".oneresult").length.should == 5
-        page.should have_content "1 - 2 of 2 volumes "
+        page.all(:css, ".oneresult").length.should == 2
+        page.should have_content "Séance du 15 juillet 1789"
+        page.should have_content "Séance du 16 juillet 1789"
       end      
     end
     
@@ -142,7 +141,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
          fill_in :"date-end", :with => "1799-04-25"
          find(:css, "[value='Search...']").click
          
-         page.all(:css, ".oneresult").length.should == 18
+         page.all(:css, ".oneresult").length.should == 11
     
          fill_in :"date-start", :with => "1794-04-25"
          find(:css, "[value='Search...']").click
@@ -158,12 +157,12 @@ describe("Search Pages",:type=>:request,:integration=>true) do
         select "Parliamentary archives", :from => "search_collection"
         find(:css, "[value='Search...']").click
         
-        page.should have_content "1 - 5 of 5 volumes"
+        page.should have_content "1 volume found"
         
         select "Images of the French Revolution", :from => "search_collection"
         find(:css, "[value='Search...']").click
         
-        page.should have_content "1 - 10 of 11 volume"
+        page.should have_content "1 - 10 of 11 images"
       end
     end
   end
@@ -172,13 +171,13 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   describe "grouped search results" do
     it "should group AP items together by tome/volume" do
       visit catalog_index_path(:q => "*:*")
-      page.should have_xpath("//h2/a[text()='Tome 36 : Du 11 décembre 1791 au 1er janvier 1792']")
+      page.should have_xpath("//li/a[text()='Tome 8 : Du 5 mai 1789 au 15 septembre 1789']")
     end
     describe "facets" do
       it "should properly extend the facets module from Blacklight to return facets from the response correctly" do
         visit root_path
         click_link 'nonprojected graphic'
-        page.should have_content("1 to 1 of 1 volume")
+        page.should have_content("1 volume found")
         page.should have_xpath("//img[contains(@src, \"image/bb018fc7286/T0000001_thumb.jpg\")]")        
       end
     end
@@ -189,10 +188,10 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   
   describe "non grouped results" do
     it "should be returned when we're on a faceted search for vol_title_ssi" do
-      visit catalog_index_path(:f => {:vol_title_ssi => ["Tome 36 : Du 11 décembre 1791 au 1er janvier 1792"]})
-      page.should_not have_xpath("//h2/a[text()='Tome 36 : Du 11 décembre 1791 au 1er janvier 1792']")
+      visit catalog_index_path(:f => {:vol_title_ssi => ["Tome 8 : Du 5 mai 1789 au 15 septembre 1789"]})
+      page.should_not have_xpath("//h2/a[text()='Tome 8 : Du 5 mai 1789 au 15 septembre 1789']")
       # make sure we're also getting results
-      page.all(:css, ".oneresult").length.should == 4
+      page.all(:css, ".oneresult").length.should == 2
     end
   end
   

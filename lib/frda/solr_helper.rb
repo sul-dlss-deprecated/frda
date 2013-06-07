@@ -20,7 +20,7 @@ module Frda::SolrHelper
   end
   
   def group_results_params
-    {:group => true, :"group.field" => group_result_field, :"group.limit" => 9, :"group.ngroups" => true}
+    {:group => true, :"group.field" => group_result_field, :"group.limit" => 9, :"group.ngroups" => true, :debugQuery => true}
   end
   
   def group_result_field

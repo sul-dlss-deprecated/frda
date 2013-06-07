@@ -182,7 +182,9 @@ fr:
     search:
       title: '%{application_name} Résultats de recherche'
       search_results_header: 'Résultats de recherche'
-      search_results: 'Résultats de recherche'
+      search_results_header_ungrouped: 'Résultats groupés par section'
+      search_results_header_grouped: 'Résultats groupés par volume'
+      search_results: 'Résultats'
       errors:
         request_error: 'Désolé, je ne comprends pas votre recherche'
         invalid_solr_id: 'Désolé, la notice que vous avez demandée n’existe pas'
@@ -204,10 +206,10 @@ fr:
         title: 'Les résultats'
       pagination_info:
         no_items_found: '%{entry_name} non trouvé(e)'
-        single_item_found: '<b>1</b> sur <b>1</b> sur <b>1</b> volume'
+        single_item_found: 'Results found in <b>1</b> volume'
         pages:
-          one: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
-          other: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
+          one: 'Results found in <b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
+          other: 'Results found in <b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
       entry_pagination_info:
         one: '<b>1 sur 1</b>'
         other: '<b>%{current}</b> sur <b>%{total}</b>'

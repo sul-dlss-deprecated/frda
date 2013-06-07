@@ -64,47 +64,126 @@ describe SolrDocument do
     end
   end
   
-  describe "speeches" do
+  describe "spoken_text" do
     before(:all) do
-      @speech = "M. Dorizy-|-This is a speech by a person."
+      @speech = "1234-|-M. Dorizy-|-This is a speech by a person."
+      @unspoken = "1234-|-This is some unspoken text."
       @speech_bad = "M. Dorizy This is a speech by a person."
     end
     it "should parse the speech split on the appropriate delimiter" do
-      speeches = SolrDocument.new({:spoken_text_ftsimv => [@speech]}, {}).speeches
+      speeches = SolrDocument.new({:spoken_text_ftsimv => [@speech]}, {}).spoken_text
       speeches.should be_a Array
       speeches.length.should == 1
       speeches.first.speaker.should == "M. Dorizy"
-      speeches.first.speech.should == "This is a speech by a person."
+      speeches.first.text.should == "This is a speech by a person."
     end
     it "should be blank if the speech is unparsable" do
-      speeches = SolrDocument.new({:spoken_text_ftsimv => [@speech_bad]}, {}).speeches
+      speeches = SolrDocument.new({:spoken_text_ftsimv => [@speech_bad]}, {}).spoken_text
       speeches.should be_blank
     end
     it "should inform us if a speech has been highlighted" do
-      hl_response = {'highlighting' => {'1234'=>{'spoken_text_ftsimv'=>["M. Dorizy -|- This is a <em>speech</em> by a person."]}}}
-      speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech]}, hl_response).speeches
+      hl_response = {'highlighting' => {'1234'=>{'spoken_text_ftsimv'=>["1234-|-M. Dorizy-|-This is a <em>speech</em> by a person."]}}}
+      speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech]}, hl_response).spoken_text
+      speeches.should be_a(Array)
+      speeches.length.should == 1
       speeches.first.should be_highlighted
-      speeches.first.speech.should =~ /<em>/
+      speeches.first.text.should =~ /<em>/
 
-      speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech]}, {}).speeches
+      speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech]}, {}).spoken_text
       speeches.first.should_not be_highlighted
     end
     describe "highlighted_speeches" do
       it "should return only the highlighed speeches" do
-        hl_response = {'highlighting' => {'1234'=>{'spoken_text_ftsimv'=>["M. Dorizy -|- This is a <em>speech</em> by a person."]}}}
-        speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech, @speech_bad]}, hl_response).highlighted_speeches
+        hl_response = {'highlighting' => {'1234'=>{'spoken_text_ftsimv'=>["1234-|-M. Dorizy-|-This is a <em>speech</em> by a person."]}}}
+        speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech, @speech_bad]}, hl_response).highlighted_spoken_text
         speeches.should be_a Array
         speeches.length.should == 1
         speeches.first.should be_highlighted
-        speeches.first.speech.should =~ /<em>/
+        speeches.first.text.should =~ /<em>/
       end
       it "should return nil if no highlighting is available" do
-        speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech, @speech_bad]}, {}).highlighted_speeches
+        speeches = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech, @speech_bad]}, {}).highlighted_spoken_text
         speeches.should be_nil
+      end
+      describe "highlighted_spoken_and_unspoken_text" do
+        before(:all) do
+          hl_response =  {  'highlighting' => {
+                             '1234' => {
+                               'spoken_text_ftsimv' => ["5555-|-M. Dorizy-|-This is a <em>speech</em> by a person."],
+                               'unspoken_text_ftsimv' => ["4444-|-This is some <em>unspoken</em> text.",
+                                                          "5555-|-This is <em>another</em> speech by a person."]
+                             }
+                           }
+                         }
+          @document = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => ["5555-|-M. Dorizy-|-This is a speech by a person."], 
+                                                   :unspoken_text_ftsimv => ["4444-|-This is some unspoken text.",
+                                                                             "5555-|-This is another speech by a person."]}, hl_response)
+        end
+        it "should group speeches by page id" do
+          @document.highlighted_spoken_and_unspoken_text.keys.should == ["4444", "5555"]
+        end
+        it "should sort speeches by page id" do
+          @document.highlighted_spoken_and_unspoken_text.keys.should == ["5555", "4444"].sort
+        end
+        it "should aggregate both text flavors into highlighted_spoken_and_unspoken_text" do
+          hl_response = {'highlighting' => {'1234'=>{'spoken_text_ftsimv'=>["1234-|-M. Dorizy-|-This is a <em>speech</em> by a person."], 'unspoken_text_ftsimv' => ["1234-|-This is some <em>unspoken</em> text."]}}}
+          texts = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => [@speech], :unspoken_text_ftsimv => [@unspoken]}, hl_response).highlighted_spoken_and_unspoken_text
+          texts.should be_a Hash
+          texts.keys.should == ["1234"]
+          texts["1234"].should be_a Array
+          texts["1234"].length.should == 2
+          texts["1234"].all?{|t| t.is_a?(SpokenText) or t.is_a?(UnspokenText) }.should be_true
+        end
       end
     end
   end
   
+  describe "highlight glob fields" do
+    describe "unspoken_text" do
+      before(:all) do
+        @hl_text1 = "dd123abc_00_0001-|-Some <em>text<em> on a page "
+        @hl_text2 = "dd123abc_00_0002-|-Another piece of <em>text</em> on a page "
+        @no_hl_text1 = "dd123abc_02_0002-|-Text that is not highlighted. "
+        @no_hl_text2 = "dd123abc_02_0001-|-More text that is not highlighted. "
+      end
+      it "should reconstruct the highlighted fields array of fields from a giant glob" do
+        fields = SolrDocument.new(:id => "123").send(:split_highlighted_unspoken_field_glob, ["#{@hl_text1} #{@hl_text2}"])
+        fields.should be_a Array
+        fields.length.should be 2
+        fields.first.should match /^#{@hl_text1}/
+        fields.last.should match /^#{@hl_text2}/
+      end
+      it "should not return any non-highlighted fields" do
+        fields = SolrDocument.new(:id => "123").send(:split_highlighted_unspoken_field_glob, ["#{@no_hl_text1} #{@hl_text1} #{@hl_text2} #{@no_hl_text2}"])
+        fields.should be_a Array
+        fields.length.should be 2
+        fields.first.should match /^#{@hl_text1}/
+        fields.last.should match /^#{@hl_text2}/
+      end
+    end
+    describe "spoken_text" do
+      before(:all) do
+        @hl_speech1 = "dd123abc_00_0001-|-Le President-|-A <em>speech<em> by the president "
+        @hl_speech2 = "dd123abc_00_0002-|-Mr. Doe-|-Another <em>speech</em> with some text "
+        @no_hl_speech1 = "dd123abc_02_0002-|-Mrs. Doe-|-A speech that is not highlighted. "
+        @no_hl_speech2 = "dd123abc_02_0001-|-Mr. Dorzy-|-Another speech that is not highlighted. "
+      end
+      it "should reconstruct the highlighted fields array of fields from a giant glob" do
+        fields = SolrDocument.new(:id => "123").send(:split_highlighted_spoken_field_glob, ["#{@hl_speech1} #{@hl_speech2}"])
+        fields.should be_a Array
+        fields.length.should be 2
+        fields.first.should match /^#{@hl_speech1}/
+        fields.last.should match /^#{@hl_speech2}/
+      end
+      it "should not return any non-highlighted fields" do
+        fields = SolrDocument.new(:id => "123").send(:split_highlighted_spoken_field_glob, ["#{@no_hl_speech1} #{@hl_speech1} #{@hl_speech2} #{@no_hl_speech2}"])
+        fields.should be_a Array
+        fields.length.should be 2
+        fields.first.should match /^#{@hl_speech1}/
+        fields.last.should match /^#{@hl_speech2}/
+      end
+    end
+  end
   
   describe "mods" do
     before(:all) do

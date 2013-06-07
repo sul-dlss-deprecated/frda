@@ -8,12 +8,12 @@
 
 @mixin result-title-styling {
   h3 {
-    color: $active_heading_link_color;
-    font-size: 12px;
+    color: $darkgray2;
+    font-size: 1.1em;
     &.index_title {
       max-width: 100%;
     }
-    a {color: $active_heading_link_color;}
+    a {color: $darkgray2;}
   }
 }
 
@@ -25,7 +25,7 @@
   padding-bottom: 5px;
   padding-top: 15px;
   h3.index_title {padding-top: 0;}
-  h5.index_title {font-size: 13px;}
+  h5.index_title {font-size: 1em;}
   a {
     border-bottom: 1px dotted $active_heading_link_color;
     text-decoration: none;
@@ -40,81 +40,140 @@
     margin-left: 20px;
   }
   .speaker .frda-label {color: #aaa;}
-  .group-count {
-    font-size: 13px;
+  .grouped-result-page {
+    ul {
+      list-style-type: none;
+      margin-left: 20px;
+      .result-group {
+        ul {
+          list-style-type: none;
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .tome-title {
+    border-top: none;
+    clear: left;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    padding-top: 0;
+    margin-left: 0.5em;
+    text-indent: -2em;
+    a {
+      color: $darkgray2;
+      font-weight: 700;
+    }
+    .group-count {
+      font-size: 0.8em;
+      a {
+        color: $dark_red;
+        font-weight: 400;
+      }
+    }
   }
 
   /* Overrides and styling for specific results views */
   /* Default View */
   &.default {
-    h2 {
-      border-top: none;
-      color: $active_heading_link_color;
-      clear: left;
-      padding-top: 0;
-      a {
-        color: $active_heading_link_color;
-      }
-    }
     h3 {
       display: inline-block;
-      font-size: 13px;
-      font-weight: bold;
+      font-size: 1.1em;
+      font-weight: 700;
       padding-bottom: 10px;
       padding-top: 0;
       width: 100%;
-      margin: 6px 0 0;
+      margin: 0;
       a {
-        color: $active_heading_link_color;
+        color: $darkgray2;
       }
-      &.short-title {
+      &.short-title, &.display-bottom {
         display: none;
+      }
+      &.display-top {
+        display: inline;
+      }
+      .frequency-counts {
+        font-weight: bold;
       }
     }
     .icon-book {margin: 4px 5px;}
     .icon-picture {margin: 3px 5px;}
     .oneresult {
       clear: both;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
+      margin-top: 12px;
       padding-left: 135px;
       .pageimg {
         width: 100px;
         text-align: center;
         float: left;
-        margin: 3px 7px 14px -135px;
+        margin: 0 7px 14px -135px;
         a {border-bottom: none;}
         img {
           @include result-image-styling;
-          margin-top: 3px;
+          margin-top: 0;
           width: 100px;
         }
       }
-      .speaker {float: right;}
+      .oneresult-page {
+        border-top: 1px dotted #bbb;
+        margin-bottom: 30px;
+      }
+      .speaker {
+        float: right;
+        padding-top: 10px;
+      }
       .tome {display: none;}
-      .pagenum {display: block;}
+      .pagenum {
+        display: block;
+        font-size: 1.1em;
+        margin-top: 9px;
+        a {
+          background: $gray2;
+          border-bottom: none;
+          border: 1px dotted $gray5;
+          border-radius: 4px;
+          padding: 1px 6px 1px 3px;
+        }
+      }
       .samepage .pagenum {display: none;}
-      .snippet {clear: right; display: inline-block; padding-top: 10px;}
+      .snippet {
+        clear: right;
+        display: inline-block;
+        padding-top: 10px;
+        width: 66%;
+        .shorttext {
+          display: none;
+        }
+      }
+      .unspoken_text .snippet {
+        width: 90%;
+      }
+    }
+    .grouped-result-page ul .result-group {
+      ul.group-members {
+        margin-left: -10px;
+        li {
+          padding-top: 5px;
+        }
+      }
     }
     .frequency-view, #frequencytable {display: none;}
   } // end default
 
   /* Gallery View */
   &.gallery {
-    h2 {
-      border-top: none;
-      color: $active_heading_link_color;
-      clear: left;
-      padding-top: 0;
-      a {
-        color: $active_heading_link_color;
-      }
-    }
     @include result-title-styling; //h3 styling
     h3 {
       margin-bottom: 0;
       margin-top: 0;
-      padding: 5px 9px;
+      padding: 5px 9px 0;
       &.long-title {
+        display: none;
+      }
+      &.display-top {
         display: none;
       }
     }
@@ -122,12 +181,13 @@
     .icon-picture {margin: 3px 5px;}
     .result-group, .flat-result-group {
       .oneresult {
-        float: left;
-        width: 225px;
-        text-align: center;
-        margin: 0 0 15px 0;
-        min-height: 425px;
-        .pageimg {}
+        &.images {
+          float: left;
+          width: 225px;
+          text-align: center;
+          margin: 0 0 15px 0;
+          min-height: 425px;
+        }
         .pageimg {
           > a {border-bottom: none;}
           img {
@@ -136,6 +196,13 @@
             width: 200px;
           }
         }
+        .oneresult-page {
+          float: left;
+          width: 225px;
+          text-align: center;
+          margin: 0 0 15px 0;
+//          min-height: 425px;
+        }
         .speaker {display: none;}
         .tome {
           display: inline-block;
@@ -143,7 +210,7 @@
         }
         .pagenum {
           display: inline-block;
-          padding-left: 5px;
+          padding-left: 10px;
         }
         .snippet {display: none;}
         .images .snippet {margin-left: 6em;}
@@ -162,21 +229,16 @@
         }
       }
     }
-    .frequency-view, #frequencytable {display: none;}
+    .grouped-result-page ul .result-group {
+      ul.group-members {
+        margin-left: -20px;
+      }
+    }
+    .frequency-view, #frequencytable, .frequency-counts {display: none;}
   } // end gallery
 
    /* List View */
   &.list {
-    h2 {
-      border-top: none;
-      margin-top: 0;
-      color: $active_heading_link_color;
-      clear: left;
-      padding-top: 0;
-      a {
-        color: $active_heading_link_color;
-      }
-    }
     @include result-title-styling; //h3 styling
     h3 {
       margin-top: 12px;
@@ -187,11 +249,21 @@
           display: none;
         }
       }
+      &.display-top {
+        display: inline;
+      }
+      .frequency-counts {
+        font-weight: bold;
+      }
+      &.display-bottom {
+        display: none;
+      }
     }
     .icon-book {margin: 4px 5px;}
     .icon-picture {margin: 3px 5px;}
     .result-group, .flat-result-group {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
+      margin-left: 15px;
       .oneresult {
         clear: both;
         margin-left: 10px;
@@ -200,11 +272,27 @@
         .speaker {float: right;}
         .speaker .frda-label {display: none;}
         .tome {display: none;}
+        &.ap .oneresult-page {
+          padding-bottom: 12px;
+        }
         .pagenum {
           float: left;
           margin-left: 0;
-          margin-right: 20px;
-          width: 6em;
+          margin-right: 1em;
+          width: 7em;
+        }
+        .unspoken_text {
+          display: inline-block;
+          .snippet {
+            width: 90%;
+          }
+          &.sibling-text-field {
+            display: block;
+            margin-left: 8em;
+          }
+        }
+        .spoken_text.sibling-text-field {
+          margin-left: 8em; // make equal to: .pagenum margin-right + width
         }
         .snippet {
           display: inline-block;
@@ -213,10 +301,19 @@
         .images .snippet {margin-left: 6em;}
         .longtext {display: none;}
         &.ap {
-          margin-bottom: 30px;
+          margin-bottom: 15px;
+          margin-top: 10px;
           h3.session-title {
             margin-bottom: 3px;
           }
+        }
+      }
+    }
+    .grouped-result-page ul .result-group {
+      ul.group-members {
+        margin-left: -10px;
+        li {
+          padding-top: 5px;
         }
       }
     }
@@ -281,7 +378,7 @@
 .ap-browse, .images-browse {
   ul {
     list-style-type: none;
-    margin-left: 10px;
+    margin-left: 0;
     margin-top: 15px;
     li {
       padding: 1px 0;
@@ -290,14 +387,51 @@
       }
       &.tome-title, &.heading-root {
         a {
-          color: $active_heading_link_color;
-          font-weight: bold;
+          color: $heading_color;
+          font-weight: 700;
+        }
+        .static {
+          padding-left: 8px;
+        }
+        .rbullet {
+          padding-left: 3px;
+        }
+        a.tome-note {
+          color: $active_link_color;
+          border-bottom: 1px dotted $active_link_color;
+          font-weight: normal;
+          &:hover {
+            cursor: pointer;
+            text-decoration: none;
+          }
+        }
+        .tome-note-text {
+          margin: 6px 0 12px 24px;
+          a {
+            font-weight: normal;
+            color: $active_link_color;
+          }
         }
       }
+      &.tome-title {
+        color: $heading_color;
+        font-size: 0.95em;
+        font-weight: 400;
+        margin-bottom: 4px;
+        margin-left: 2em;
+        text-indent: -1.8em;
+      }
     }
-    ul#sessions,
-    ul#headings-level1, ul#headings-level2, ul#headings-level3 {
-      margin: 6px 10px 12px 22px;
+    ul#headings-level2, ul#headings-level3 {
+      margin: 3px 10px 6px 22px;
+    }
+    ul#headings-level1 {
+      margin: 9px 10px 12px 36px;
+    }
+    ul#sessions {
+      border-left: 1px solid #ddd;
+      margin: 3px 25px 25px 25px;
+      padding-left: 12px;
     }
     ul#headings-root {
       margin-left: 0;
@@ -309,14 +443,29 @@
       }
     }
     .heading-root {
-      color: #777;
+      background: $facet_box_background_color;
+      border: 1px solid $facet_box_border_color;
+      border-radius: 4px;
+      color: $heading_color;
       font-size: 1.2em;
-      font-weight: bold;
-      margin: 8px;
+      font-weight: 400;
+      margin: 8px 8px 0;
+      padding: 5px 6px;
+      i {
+        margin-right: 5px;
+      }
     }
+  }
+  ul#volumes {
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    padding-top: 15px;
   }
 }
 
+h2.search-results {
+  margin-bottom: 3px;
+}
 /* Breadcrumb-like single-line display of result's ancestors */
 ul.inventory-ancestry {
   font-size: 12px;
@@ -327,6 +476,7 @@ ul.inventory-ancestry {
 
 /* Results paging/controls */
 .row.results-controls {
+  @include container-well;
   margin-left: 0;
   margin-bottom: 12px;
   margin-top: 20px;
@@ -349,21 +499,21 @@ ul.inventory-ancestry {
       .nav-pills {
         margin-bottom: 0;
         li > a {
-          background-color: darken($header_bg_color, 5%);
+          background-color: $gray3;
           border: 1px solid darken($header_bg_color, 20%);
           // for no JS; for JS, display is set in frda.js
           display: none;
-          font-weight: 600;
+          font-weight: 700;
           margin-left: 3px;
           padding-top: 4px;
           padding-bottom: 4px;
           padding: 4px 10px 5px 10px;
         }
         li > a:hover {
-          background-color: $header_bg_color;
+          background-color: $gray2;
         }
         li > a.active, a.active:hover {
-          background-color: $header_bg_color;
+          background-color: $gray1;
           border: 1px solid #ddd;
           color: $active_link_color;
         }
@@ -386,13 +536,16 @@ ul.inventory-ancestry {
   }
 }
 
-.collection-image {margin-right: 18px;}
+.collection-image {
+  margin-right: 18px;
+  margin-top: 12px;
+}
 img.ap-collection-image, img.images-collection-image {
   float: left;
   margin: 0 0 20px 0;
   padding: 7px;
   border: 1px solid #CCC;
-  box-shadow: 1px 1px 5px #CCC;
+  box-shadow: 1px 2px 6px rgba(0,0,0,.25);
   width: 100%;
 }
 p.ap-summary, p.images-summary {
@@ -453,6 +606,8 @@ span.constraints-label {margin-right: 0.5em;}
   clear: right;
   margin: 0 8px 0 0;
   .appliedFilter {
+    @include container-well;
+    border-radius: 8px;
     padding: 1px 50px 1px 1em;
     .btnRemove {
       /* override the BL icon used as separator */
@@ -468,6 +623,12 @@ span.constraints-label {margin-right: 0.5em;}
         padding-left: 6px;
       }
     }
+  }
+}
+i.icon-plus, i.icon-minus {
+  opacity: 0.65;
+  .heading-root & {
+    margin-top: 3px;
   }
 }
 

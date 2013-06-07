@@ -2,7 +2,7 @@
   h3 {
     padding-top: 10px;
     &.section-heading {
-      border-top: 3px solid darken($header_bg_color, 5%);
+      border-top: 3px solid $section_line_color;
       font-size: 1.25em;
     }
   }
@@ -57,7 +57,10 @@
       margin-top: 10px;
       dt {
         color: $heading_color;
-        font-weight: bold;
+        font-weight: 700;
+      }
+      dd {
+        font-weight: 400;
       }
       a {@include link-uncolored-border;}
     }
@@ -105,6 +108,9 @@
     list-style-type: none;
     margin-left: 0;
     margin-bottom: 0;
+    &.note li:last-child {
+      padding-bottom: 9px;
+    }
   }
   ul.item.breadcrumb {
     margin: 0;
@@ -128,41 +134,49 @@
 
 /* AP Item Details */
 .blacklight-catalog-show .show-document .ap-item {
- h2 {
-   //border: none;
-   //font-size: 14px;
-   //font-weight: normal;
-   a {color: #3F3C30;}
- }
- ul.item-breadcrumb {
+  h2 {
+   a {color: $darkgray3;}
+  }
+  ul.item-breadcrumb {
    font-size: 0.9em;
    list-style-type: none;
    margin-bottom: 20px;
    a {@include link-uncolored-border;}
- }
- .well {
+  }
+  .well {
+   box-sizing: border-box;
    padding: 6px 15px;
    a {@include link-uncolored-border;}
    button > a, .item-views a {border-bottom: none;}
    .item-views {
      text-align: center;
    }
- }
- .page-navigation .form-inline {
+   @include container-well;
+  }
+  .page-navigation .form-inline {
    display: inline-block;
    margin-bottom: 0;
- }
- .result-item-nav {
+  }
+  .result-item-nav {
    font-size: 13px;
    padding-top: 5px;
- }
+  }
+  .item-views, .item-actions {
+    margin-left: 0;
+  }
 }
 .image-box, .ocr-box {
+  background: white;
   border: 1px solid #CCC;
-  padding: 7px;
 }
-.image-box {margin-right: 20px;}
-.ocr-box p {margin-top: 0;}
+.image-box {
+  margin-right: 20px;
+  padding: 0;
+}
+.ocr-box {
+  padding: 12px 18px;
+  p {margin-top: 0;}
+}
 .flipbook {
   height: 100%;
   text-align: center;
@@ -184,7 +198,10 @@
 /* Images Item Details */
 .blacklight-catalog-show .show-document .images-item {
   h2 {
-    a {color: #3F3C30;}
+    a {color: $darkgray3;}
+  }
+  h3 {
+    margin-bottom: 6px;
   }
   ul.item-breadcrumb {
     font-size: 0.9em;
@@ -208,7 +225,13 @@
       margin: 0px;
       vertical-align: middle;
     }
+    @include container-well;
   }
+}
+
+/* Citation */
+.citation-title {
+  font-style: italic;
 }
 
 /* Responsive styles */

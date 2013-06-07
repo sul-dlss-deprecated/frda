@@ -43,15 +43,21 @@
   }
 }
 .about-dl {
-  div {margin-top: 20px;}
+  div {margin-top: 24px;}
+  h2.section-heading {
+    font-size: 1.4em;
+    margin-bottom: 6px;
+  }
   p {
+    margin-top: 6px;
     width: 95%;
-    &.collection-desc {margin-top: 6px;}
+    &.collection-desc {margin-top: 9px;}
   }
   a.heading-link {
     border-bottom: 1px dotted $active_heading_link_color;
     color: $active_heading_link_color;
-    font-weight: bold;
+    font-size: 1.1em;
+    font-weight: 700;
     text-decoration: none;
   }
   img {
@@ -130,9 +136,5 @@
   }
   .about-dl img {
     max-width: 100px;
-  }
-  #header-navbar-static-top.navbar .logo img {
-    font-size: 1.75em;
-    max-width: 150px;
   }
 }

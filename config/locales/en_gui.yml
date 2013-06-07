@@ -6,6 +6,7 @@ en:
     facet:
       personal_name: 'Personal name'
       location: 'Location'
+      medium: 'Medium'
       corporate_name: 'Corporate name'
       family_name: 'Family name'
       start_year: 'Start year'
@@ -123,6 +124,43 @@ en:
       member_detail: 'Item detail'
     collection_members:
       items_name: 'image'
+    pagination_info:
+      mixed:
+        no_items_found: 'No %{entry_name} found'
+        single_item_found: '<b>1</b> volume found'
+        pages:
+          one: '<b>%{total_num}</b> volumes found'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes found'
+      images_only:
+        no_items_found: 'No %{entry_name} found'
+        single_item_found: '<b>1</b> volume found'
+        pages:
+          one: '<b>%{total_num}</b> volumes found'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes found'
+        flat:
+          no_items_found: 'No %{entry_name} found'
+          single_item_found: '<b>1</b> image found'
+          pages:
+            one: '<b>%{total_num}</b> images found'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> images found'
+      ap_only:
+        no_items_found: 'No %{entry_name} found'
+        single_item_found: '<b>1</b> volume found'
+        pages:
+          one: '<b>%{total_num}</b> volumes found'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes found'
+        flat:
+          no_items_found: 'No %{entry_name} found'
+          single_item_found: '<b>1</b> section found'
+          pages:
+            one: '<b>%{total_num}</b> sections found'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> sections found'
+      search:
+        no_items_found: 'No %{entry_name} found'
+        single_item_found: 'Results found in <b>1</b> volume'
+        pages:
+          one: 'Results found in <b>%{total_num}</b> volumes'
+          other: 'Results found in <b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes'
     show:
       wait: 'Loading, please wait...'
       open_in_full_screen: 'Open in full screen'
@@ -138,14 +176,17 @@ en:
       people: 'People'
       person: 'Person'
       genre: 'Genre'
-      medium: 'Medium'
+      subject: 'Subject'
+      medium: 'Physical description'
       publisher: 'Publisher'
+      publication: 'Publication'
       type: 'Type'
       format: 'Format'
       copyright: 'Copyright'
       source: 'Source'
       collector: 'Collector'
       artist: 'Artist'
+      creator: 'Creator'
       publisher: 'Publisher'
       volume: 'Volume'
       session: 'Session'
@@ -169,21 +210,23 @@ en:
           side_by_side: "side-by-side"
           text_only: "text only"
           flipbook: "read in flipbook"
+      view_sw: "View this item in Searchworks:"
     collection_members_grid:
       members_link: 'View all collection items'
       collection_link: 'View this collection'
       collection_text: 'Collection items'
       sibling_text: "Other items in the %{collection} collection"
     search:
+      page: 'page'
       results_heading_combined: 'combined collections'
       results_heading_ap: 'Parliamentary archives'
       image:
         one: "1 image"
         other: "%{count} images"
       occurrence:
-        one: "1 page"
-        other: "%{count} pages"
-      occurrences: Pages
+        one: "1 session"
+        other: "%{count} sessions"
+      occurrences: Sessions
       sequence: Sequence
       results_heading_image: 'Images of the French Revolution'
       search_results: 'Results'

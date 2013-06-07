@@ -1,38 +1,50 @@
 <div id="documents" class="<%= params[:result_view] %><%= ' images' if on_images_page %>">
   <%- if response_is_grouped? -%>
- 	<%- documents.each_with_index do |grouping, index| -%>
-      <%- if grouping.group -%>
-        <h2>
-          <i class="icon-book"></i>
-          <%= link_to_volume_facet(grouping.group, {:params => params, :class => 'volume-title'}) %>
-          <%#= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
-          <span class="group-count">
-            <%# the 'if grouping.total > 10' value below is dependent on the value
-                of solr_helper.rb#group_results_params group.limit value being '9' %>
-            (<%= t(contextual_118n_key_for_pages(grouping.group), :count => grouping.total) %><% if grouping.total > 10 %><span class="all-results"> - <%= link_to_volume_facet(grouping.group, {:params => params, :count => grouping.total, :class => 'volume-title'}) %></span><% end %>)
-          </span>
-        </h2>
-        <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the
-            Images group title. Will need to detect whether group is Images and if so,
-            use the appropriate icon instead of icon-book. %>
-      <%- else -%>
-        <%# Only show the Images group heading if we're in the combined results view %>
-        <% unless on_images_page %>
-          <h2>
-            <i class="icon-picture"></i>
-            <%= t('frda.search.results_heading_image') %>
-          </h2>
-        <%- end -%>
-      <%- end -%> <%# end grouping-group %>
+    <%- documents.each_with_index do |grouping, index| -%>
+    <div class="grouped-result-page" data-collapse="true">
+      <ul class="group-title">
+        <%- if grouping.group -%>
+          <li class="tome-title" data-behavior='toggle-handler' data-reference-id="#<%= index %>">
+            <i style="display:none;" class="icon-plus"></i>
+            <span class="tome-title">
+              <%= link_to_volume_facet(grouping.group, {:params => params, :class => 'volume-title'}) %>
+              <%#= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
+              <span class="group-count">
+                <%# the 'if grouping.total > 10' value below is dependent on the value
+                    of solr_helper.rb#group_results_params group.limit value being '9' %>
+                (<%= t(contextual_118n_key_for_pages(grouping.group), :count => grouping.total) %><% if grouping.total > 10 %><span class="all-results"> - <%= link_to_volume_facet(grouping.group, {:params => params, :count => grouping.total, :class => 'volume-title'}) %></span><% end %>)
+              </span>
+            </span>
+          </li>
 
-      <%# response is grouped %>
-      <div class="result-group">
-        <%- grouping.docs.each_with_index do |document, index| -%>
-          <%= render :partial => "search_result_item", :locals => {:document => document, :index => index} %>
-        <%- end -%> <%# end grouping.docs %>
-      </div> <%# end result-group div %>
+          <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the
+              Images group title. Will need to detect whether group is Images and if so,
+              use the appropriate icon instead of icon-book. %>
+        <%- else -%>
+          <%# Only show the Images group heading if we're in the combined results view %>
+          <% unless on_images_page %>
+            <h2>
+              <i class="icon-picture"></i>
+              <%= t('frda.search.results_heading_image') %>
+            </h2>
+          <%- end -%>
+        <%- end -%> <%# end grouping-group %>
 
-    <%- end -%> <%# end true portion of response_is_grouped? %>
+        <%# response is grouped %>
+        <li>
+          <div class="result-group">
+            <ul class="group-members">
+              <%- grouping.docs.each_with_index do |document, index| -%>
+                <li>
+                  <%= render :partial => "search_result_item", :locals => {:document => document, :index => index} %>
+                </li>
+              <%- end -%> <%# end grouping.docs %>
+            </ul>
+          </div> <%# end result-group div %>
+        </li>
+      </ul>
+    </div>
+  <%- end -%> <%# end true portion of response_is_grouped? %>
 
   <%- else -%> <%# response is not grouped %>
     <div class="flat-result-group">
@@ -42,36 +54,37 @@
     </div>
   <%- end -%> <%# end response_is_grouped? %>
 
+  <%# Hiding frequency view pending decision on whether it is still feasible 04-24-2013 %>
   <%# Frequency View %>
-  <div class="row heading frequency-view">
+  <!-- <div class="row heading frequency-view">
     <div class="span9">
-      <%= t('frda.search.sequence') %>
-      <span class="occurrences"><%= t('frda.search.occurrences') %></span>
+      <%#= t('frda.search.sequence') %>
+      <span class="occurrences"><%#= t('frda.search.occurrences') %></span>
     </div>
   </div>
 
   <div class="row frequency-view">
     <div class="span9">
-      <%- @response.facet_pivot.each do |_, tomes| -%>
+      <%# @response.facet_pivot.each do |_, tomes| -%>
         <ul id="frequencytable">
-          <%- tomes.each do |tome| -%>
+          <%# tomes.each do |tome| -%>
             <li class="tome-title">
-              <%= link_to_volume_facet(tome["value"], :params => params.dup.delete_if{|k,v| k == "view"}) %> <span class="occurrences"><%= tome["count"]%></span>
+              <%#= link_to_volume_facet(tome["value"], :params => params.dup.delete_if{|k,v| k == "view"}) %> <span class="occurrences"><%#= tome["count"]%></span>
               <ul>
-                <%- tome["pivot"].each do |session| -%>
+                <%# tome["pivot"].each do |session| -%>
                   <li>
                     <span class="session-title">
-                      <%= link_to_session_facet(session["value"], :params => params.dup.delete_if{|k,v| k == "view"}, :title => session["value"]) %> 
+                      <%#= link_to_session_facet(session["value"], :params => params.dup.delete_if{|k,v| k == "view"}, :title => session["value"]) %> 
                     </span>
-                    <span class="occurrences"><%= session["count"] %></span>
+                    <span class="occurrences"><%#= session["count"] %></span>
                   </li>
-                <%- end -%>
+                <%# end -%>
               </ul>
             </li>
-          <%- end -%>
+          <%# end -%>
         </ul>
-      <%- end -%>
+      <%# end -%>
     </div>
-  </div>
+  </div> -->
 
 </div>

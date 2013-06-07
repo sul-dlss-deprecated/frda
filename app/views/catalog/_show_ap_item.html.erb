@@ -20,7 +20,7 @@ end
   <div class="span12">
     <h2><%= link_to "Archives parlementaires", ap_collection_path %></h2>
     <ul class="item-breadcrumb">
-      <li><%= link_to(@document.volume_name, show_page_path(:id=>@document.druid,:page_seq=>"1")) %>  »
+      <li><%= link_to(@document.volume_name, catalog_index_path(params_for_volume(@document.volume_name))) %>  »
           <% @document.session_title.each do |session|%>
             <%= link_to(session, catalog_index_path(params_for_session(session))) %>  »
           <% end %>
@@ -34,12 +34,12 @@ end
   <div class="span12 well" id="controls">
 
     <div class="row">
-      <div class="span5 result-item-nav">
+      <div class="span4 result-item-nav">
         <%#= render 'previous_next_doc' %>
         <%= link_back_to_catalog %>
       </div>
 
-      <div class="span2 item-views btn-group">
+      <div class="span3 item-views btn-group">
           <%= link_to show_page_path(:id=>@document.druid,:page_seq=>@document.page_sequence,:mode=>"image"),:remote=>true do%>
             <%= button_tag t('frda.show.ap.buttons.side_by_side'),
                 :class => 'btn btn-small',
@@ -90,7 +90,7 @@ end
             </li>
           </ul>
           <button class="btn btn-small">
-             <%= link_to t('frda.sidebar.actions.cite'), citation_catalog_path(:id => @document), {:id => 'citeLink', :class => 'lightboxLink cite'} %>
+             <%= link_to t('frda.sidebar.actions.cite'), citation_catalog_path(:id => @document, :purl => @document.purl), {:id => 'citeLink', :class => 'lightboxLink cite'} %>
           </button>
         </div>
       </div>
@@ -159,7 +159,7 @@ end
 		<% if @mode == 'flipbook' %>
 		<span id="loading_message"><%=t('frda.show.wait')%></span>
 	    <div class="flipbook">
-				<iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/view.jsp?id=<%=@document.druid%>#page/<%=@document.page_sequence%>/mode/1up" width="100%" height="800"></iframe>
+				<iframe onLoad="$('#loading_message').hide();" src="http://sul-reader.stanford.edu/flipbook2/embed.jsp?id=<%=@document.druid%>#page/<%=@document.page_sequence%>/mode/1up" width="100%" height="800"></iframe>
 	    </div>
 	  <% end %>
 		<% if ['image', nil, '', 'ocr'].include?(@mode) %>

@@ -1,27 +1,43 @@
-/* TODO: Refactor to use mix-ins, etc. */
+/* Theme color palette */
+$cardinal_red: rgba(140,21,21, 1);
+$dark_red: rgba(130,0,0, 1);
+
+$gray1: rgba(251,249,249, 1);
+$gray2: rgba(242,241,235, 1);
+$gray3: rgba(233,230,223, 1);
+$gray4: rgba(227,223,213, 1);
+$gray5: rgba(213,208,192, 1);
+
+$darkgray1: rgba(138,136,125, 1);
+$darkgray2: rgba(86,83,71, 1);
+$darkgray3: rgba(63,60,48, 1);
+
+$section_line_color: #D1D1C4;
 
 /* Variables */
-/* Theme color palette */
+$body_bg_color: $gray1;
 
-$body_bg_color: #fff;
+$header_bg_color: lighten($gray2, 1%);
+//$header_bg_color: $gray2;
+$nav_border_color: $gray4;
 
-$header_bg_color: #fff;
-$nav_border_color: #eee;
+$container_bg_color: white;
+$heading_color: $darkgray2;
 
-$container_bg_color: #fff;
-$heading_color: #3F3C30;
+$container_border_color: $gray5;
 $sidebar_header_color: #555;
 $text_color: #333;
-$heading_font_family: "news-gothic-std","Helvetica","Arial",sans-serif;
-$text_font_family: "Optima", "Geneva", "Arial", "Helvetica", sans-serif;
+$heading_font_family: "lemonde-sans",sans-serif;
+$text_font_family: "lemonde-sans",sans-serif;
 
-$active_link_color: #820000;
+$active_link_color: $dark_red;
 $hover_link_color: lighten($active_link_color, 10%);
 $active_nav_link_color: lighten($active_link_color, 10%);
-$inactive_nav_link_color: $text_color;
-$active_heading_link_color: #7a766b;
+$inactive_nav_link_color: $darkgray2;
+$active_heading_link_color: $active_link_color;
 
-$facet_box_background_color: darken($header_bg_color, 5%);
+$facet_box_background_color: darken($gray1, 1%);
+$facet_box_border_color: $gray4;
 $facet_link_color: $active_link_color;
 $facet_selected_color: darken($facet_link_color, 10%);
 
@@ -33,11 +49,11 @@ $constraint_border_active_color: #FFD27A !default;
 /* Mixins */
 @mixin sidebar-top-border {
   border-top: 5px solid desaturate($active_link_color, 50%);
-  padding-top: 10px;
+  padding-top: 3px;
 }
 
 @mixin main-top-border {
-  border-top: 5px solid darken($header_bg_color, 15%);
+  border-top: 5px solid $section_line_color;
   padding-top: 10px;
 }
 
@@ -51,7 +67,7 @@ $constraint_border_active_color: #FFD27A !default;
 
 @mixin member-section-header {
   @include main-top_border;
-  color: #990000;
+  color: $dark_red;
   margin-top: 0;
   padding-top: 10px;
   text-transform: uppercase;
@@ -76,6 +92,12 @@ $constraint_border_active_color: #FFD27A !default;
 @mixin image-border {
   border: 1px solid #cccccc;
   padding: 4px;
+}
+
+/* Styling of well and other small container boxes */
+@mixin container-well {
+  background: $facet_box_background_color;
+  border: 1px solid $facet_box_border_color;
 }
 
 /* --- */
@@ -145,21 +167,34 @@ h1 {
 }
 h2 {
   @include page-header;
-	font-size: 1.3em;
+	font-size: 1.4em;
+	font-weight: 700;
 	line-height: 1.5em;
 }
 h3 {
   font-family: $heading_font_family;
 	font-size: 1em;
+	font-weight: 700;
 	line-height: 1.5em;
+}
+h4 {
+  font-family: $heading_font_family;
+  color: $darkgray2;
+  font-weight: 700;
+  font-size: 1em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
 }
 p {
   font-family: $text_font_family;
-  color: #333333;
+  color: #555555;
 //  font-size: 0.8em;
   font-size: 13px;
   line-height: 1.5em;
   margin:12px 0;
+}
+input, button, select, textarea {
+  font-family: $text_font_family;
 }
 span.content-type {
 	font-size: 0.8em;
@@ -183,6 +218,10 @@ span.content-type {
 
 .nav > li > a  {border-radius: 6px;}
 
+.truncator-link {
+  font-size: 1em;
+}
+
 .hidden {display: none;}
 .off-screen {position: absolute; left: -100000px;}
 
@@ -203,7 +242,7 @@ span.content-type {
         background-color: transparent;
         border: none;
         border-right: 1px solid #ddd;
-        color: #999999;
+        color: $darkgray2;
         line-height: 1.5em;
         padding: 4px 10px;
       }

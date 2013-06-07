@@ -1,0 +1,87 @@
+<%- image_urls = document.pages_in_session(:size=>:thumb) -%>
+<%# This is used for all search result views. 
+    Oneresult == one search result item, which is a page in this display context -%>
+<% unless list_is_empty?(document.session_title) %>
+  <h3 class="session-title display-top">
+    <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
+  </h3>
+<% end %>
+<%- unless @response.term_frequencies.blank? or @response.term_frequencies[document[:id]].blank? -%>
+  <span class="frequency-counts">
+    - search term matches:
+    <%- @response.term_frequencies[document[:id]].each do |term| -%>
+      <%= term[:word] %> (<%= term[:frequency] %>)
+    <%- end -%>
+  </span>
+<%- end -%>
+<div class="oneresult ap">
+  <%- if !document.highlighted_spoken_and_unspoken_text.blank?  -%>
+    <%- document.highlighted_spoken_and_unspoken_text.each do |page_id, text_fields| -%>
+      <%- if image_urls[page_id] -%>
+        <div class="oneresult-page">
+          <span class="pageimg">
+            <%#- puts "#{page_id.inspect} (#{document[:id]}) #{image_urls.inspect}\n" if image_urls[page_id].nil? -%>
+            <%= link_to_document SolrDocument.new(:id => page_id),
+                  :label => "<div data-lazy-load='true' data-src='#{image_urls[page_id].url}' data-alt='#{image_urls[page_id].page_number}' data-title='#{image_urls[page_id].page_number}'></div>".html_safe,
+                  :counter =>  (index + 1 + @response.params[:start].to_i) -%>
+            <noscript><%= link_to(image_tag(image_urls[page_id].url), catalog_path(page_id)) %></noscript>
+          </span>
+          <% unless list_is_empty?(document.session_title)%>
+            <h3 class="session-title display-bottom">
+              <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
+            </h3>
+          <% end %>
+          <span class="pagenum">
+            <%= link_to "#{t('frda.search.page')} #{image_urls[page_id].page_number}", catalog_path(page_id) %>
+          </span>
+          <%- text_fields.each_with_index do |frda_text, index| -%>
+            <div class="<%= 'un' unless frda_text.respond_to?(:speaker) %>spoken_text <%= 'sibling-text-field' unless index == 0  %>">
+              <%- if frda_text.respond_to?(:speaker) -%>
+                <span class="speaker">
+                  <span class="frda-label"><%=t('frda.search.results.speaker')%>:</span> <%= frda_text.speaker %>
+                </span>
+              <%- end -%>
+              <div class="snippet">
+                <span class="shorttext">
+                  <%= truncate_highlight(frda_text.text, :around => 20, :length => 200).html_safe %>
+                </span>
+                <span class="longtext">
+                  <%= truncate_highlight(frda_text.text, :around => 40, :length => 600).html_safe %>
+                </span>
+              </div>
+            </div>
+          <%- end -%>
+          <div class="clearfix"></div>
+        </div>
+      <%- end -%>
+    <%- end -%>
+  <%- elsif !document.truncated_full_text.blank? -%>
+    <%- page_range = [document.page_range_in_session.first, document.page_range_in_session.last].uniq.join(" - ") -%>
+    <div class="oneresult-page">
+      <span class="pageimg">
+        <%- image_link = link_to_document SolrDocument.new(:id => image_urls.first.first),
+                           :label => "<div data-lazy-load='true' data-src='#{image_urls.first.last.url}' data-alt='#{page_range}' data-title='#{page_range}'></div>".html_safe,
+                           :counter =>  (index + 1 + @response.params[:start].to_i) -%>
+        <%= image_link %>
+        <noscript><%= image_link %></noscript>
+      </span>
+      <% unless list_is_empty?(document.session_title)%>
+        <h3 class="session-title display-bottom">
+          <%= link_to show_list(document.session_title).html_safe, catalog_path(image_urls.first.first) %>
+        </h3>
+      <% end %>
+      <span class="pagenum">
+        <%= link_to("#{t('frda.search.page')} #{page_range}", catalog_path(image_urls.first.first)) %>
+      </span>
+      <div class="snippet">
+        <span class="longtext">
+          <%= document.truncated_full_text(:length => 400).join("<br/>").html_safe -%>
+        </span>
+        <span class="shorttext">
+          <%= document.truncated_full_text(:length => 200).join("<br/>").html_safe -%>
+        </span>
+      </div>
+    </div>
+  <%- end -%>
+  
+</div> <%# end oneresult div %>

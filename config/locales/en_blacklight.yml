@@ -157,7 +157,9 @@ en:
     search:
       title: '%{application_name} Search results'
       search_results_header: 'Search results'
-      search_results: 'Search results'
+      search_results_header_ungrouped: 'Search results by session'
+      search_results_header_grouped: 'Results grouped by volume'
+      search_results: 'Results'
       errors:
         request_error: "Sorry, I don't understand your search."
         invalid_solr_id: "Sorry, you have requested a record that doesn't exist."
@@ -180,10 +182,10 @@ en:
         title: 'Results navigation'
       pagination_info:
         no_items_found: 'No %{entry_name} found'
-        single_item_found: '<b>1</b> to <b>1</b> of <b>1</b> volume'
+        single_item_found: 'Results found in <b>1</b> volume'
         pages:
-          one: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes'
-          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes'
+          one: 'Results found in <b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes'
+          other: 'Results found in <b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes'
       entry_pagination_info:
         one: '<b>1 of 1</b>'
         other: '<b>%{current}</b> of <b>%{total}</b>'

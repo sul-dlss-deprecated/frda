@@ -1,7 +1,7 @@
 /* Adjust Stanford Identity styles that have been previously overriden by FRDA or Blacklight styles */
 
 #brandbar {
-  background: #585754;
+  background: $dark_red;
   #report-problem {
     float: right;
     font-size: 0.85em;
@@ -10,7 +10,7 @@
   }
 }
 #global-footer, #global-footer .container {
-  background: #8A887D;
+  background: $darkgray1;
   a, p.copyright { color: darken(#f7f7f7, 5%);}
   p.copyright {
     margin: 0;

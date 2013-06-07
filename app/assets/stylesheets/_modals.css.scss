@@ -1,6 +1,11 @@
 @mixin modal-header {
-	background-color: #8A887D;
+	background-color: $darkgray1;
+	border-bottom: 2px solid $gray1;
 	text-align: center;
+	h3 {
+	  color: white;
+	  font-size: 1.3em;
+	}
 }
 
 .zoom-modal {
@@ -12,16 +17,15 @@
 	}
 }
 
+.modal-header {
+  @include modal-header;
+}
+
 #terms-dialog.modal {
   p {margin-left: 20px;}
 	.modal-header {
 	  @include modal-header;
 	  padding: 0 0 9px;
-	  h3 {
-	    border-top: 1px solid #999;
-      color: #fff;
-	    font-size: 18px;
-	  }
 	}
 	.modal-footer {
 		padding: 15px;

@@ -1,0 +1,67 @@
+/* Overrides to default plugin values to enable form controls to
+   be placed side-by-side with the grid display instead of below it */
+
+.date-range-selector {
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  rect {
+		&:hover {
+			stroke: #222;
+		  stroke-width: 0.5px;
+		  cursor: pointer;
+		}
+		&[data-selected='true']{
+		  stroke: #999;
+		  stroke-width: 0.5px;
+		}
+	}
+  .dates2svg-controls {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    .form-controls {
+      form {
+        margin-bottom: 0;
+        margin-left: 0;
+        input[type="text"] {
+           height: 14px;
+           font-size: 10px;
+           line-height: 14px;
+        }
+      }
+      .legend {
+        float: left;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 979px) { // need to put legend/controls below grid below this breakpoint
+  .date-range-selector {
+    position: static;
+    .dates2svg-controls {
+      box-sizing: border-box;
+      float: none;
+      display: block;
+      margin-left: 20px;
+      position: static;
+      width: 100%;
+      .form-controls {
+        form {
+          margin-top: 17px;
+        }
+        .legend {
+          margin-bottom: 0;
+          margin-right: 20px;
+          margin-top: 20px;
+        }
+        .hits {
+          padding-left: 12px;
+        }
+      }
+    }
+  }
+}

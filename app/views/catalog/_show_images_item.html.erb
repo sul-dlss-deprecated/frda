@@ -55,44 +55,38 @@
   <div class="span6 metadata">
     <% unless @document.title.nil?%>
       <h3><%= @document.title.first %></h3>
-      <% unless @document.mods.note.blank? %>
-        <p><%= @document.mods.note.text %></p>
-      <% end %>
+    <% end %>
+    <% unless @document.mods.note.blank? %>
+      <%= show_mods_element_as_list(@document, :note) %>
     <% end %>
 
     <dl class="dl-invert">
+      <% unless @document.mods.plain_name.blank? %>
+        <dt><%=t('frda.show.creator')%></dt>
+        <dd><%= show_mods_element_as_list(@document, :creator) %></dd>
+      <% end %>
+      <% unless @document.mods.origin_info.blank? %>
+        <dt><%=t('frda.show.publication')%></dt>
+        <dd><%= show_mods_element_as_list(@document, :publication) %></dd>
+      <% end %>
       <% unless @document.mods.physical_description.extent.blank?%>
         <dt><%=t('frda.show.medium')%></dt>
         <dd><%=@document.mods.physical_description.extent.text %></dd>
-      <% end %>
-      <% unless @document.mods.origin_info.publisher.blank? %>
-        <dt><%=t('frda.show.publisher')%></dt>
-        <dd><%= @document.mods.origin_info.publisher.text %></dd>
-      <% end %>
-      <% unless list_is_empty?(@document.collector) %>
-        <dt><%=t('frda.show.collector')%></dt>
-        <dd><%=show_formatted_list(@document.collector,:facet=>'collector_ssim')%></dd>
       <% end %>
       <% unless list_is_empty?(@document.genre)%>
         <dt><%=t('frda.show.genre')%></dt>
         <dd><%=show_formatted_list(@document.genre,:facet=>'genre_ssim')%></dd>
       <% end %>
-      <% unless list_is_empty?(@document.speaker)%>
-        <dt><%=t('frda.show.person')%></dt>
-        <dd><%=show_formatted_list(@document.speaker,:facet=>'speaker_ssim')%></dd>
+      <% unless list_is_empty?(@document.collector) %>
+        <dt><%=t('frda.show.collector')%></dt>
+        <dd><%=show_formatted_list(@document.collector,:facet=>'collector_ssim')%></dd>
       <% end %>
-      <% unless list_is_empty?(@document.artist)%>
-        <dt><%=t('frda.show.artist')%></dt>
-        <dd><%=show_formatted_list(@document.artist,:facet=>'artist_ssim')%></dd>
+      <% unless @document.mods.subject.blank? %>
+        <dt><%=t('frda.show.subject')%></dt>
+        <dd><%= show_mods_element_as_list(@document, :subject) %></dd>
       <% end %>
-      <% if mods_element_dateIssued_present?(@document) %>
-         <dt><%=t('frda.show.date')%></dt>
-         <dd><%= mods_element_dateIssued(@document) %></dd>
-       <% end %>
-      <% unless list_is_empty?(@document.format) %>
-        <dt><%=t('frda.show.format')%></dt>
-        <dd><%=show_formatted_list(@document.format,:facet=>'doc_type_ssim')%></dd>
-      <% end %>
+      <dt><%=t('frda.show.type')%></dt>
+      <dd>Image</dd>
       <% unless @document.mods.related_item.location.url.blank? %>
         <dt><%=t('frda.show.source')%></dt>
         <dd><%= link_to_images_item_source(@document) %></dd>

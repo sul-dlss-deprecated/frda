@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 require 'blacklight/catalog'
 require 'frda/solr_helper'
+require 'solr_response_term_frequencies'
 
 class CatalogController < ApplicationController  
 
@@ -10,7 +11,9 @@ class CatalogController < ApplicationController
   
   # The logic to handle the date range queries is being set by the BlacklightDates2SVG gem.
   # If we remove that, but still want date processing, we'll need to explicity require and use the DateRangeSolrQuery gem.
-  CatalogController.solr_search_params_logic += [:search_within_speeches, :proximity_search, :result_view]
+  CatalogController.solr_search_params_logic += [:only_search_div2, :search_within_speeches,
+                                                 :proximity_search, :result_view,
+                                                 :exclude_highlighting, :pivot_facet_on_ap_landing_page]
   
   before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
 
@@ -127,6 +130,11 @@ class CatalogController < ApplicationController
 
   end
 
+  def citation
+    @ap_purl = params[:purl]
+    super
+  end
+
   # an ajax call to get speaker name suggestions for autocomplete on the speaker search box
   def speaker_suggest
     term=params[:term]
@@ -200,16 +208,18 @@ class CatalogController < ApplicationController
     config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection'
     config.add_facet_field 'speaker_ssim', :label => 'frda.show.people', :show => true, :limit => 15
     
-    config.add_facet_field 'doc_type_ssim', :label => 'frda.show.type', :limit => 15
-    config.add_facet_field 'medium_ssi', :label => 'frda.show.medium', :limit => 15
+    config.add_facet_field 'doc_type_ssi', :label => 'frda.show.type', :limit => 15
+    config.add_facet_field 'medium_ssi', :label => 'frda.facet.medium', :limit => 15
     config.add_facet_field 'genre_ssim', :label => 'frda.show.genre', :limit => 15
     config.add_facet_field 'artist_ssim', :label => 'frda.show.artist', :limit => 15
     config.add_facet_field 'collector_ssim', :label => 'frda.show.collector', :limit => 15
     config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume', :limit => 15
-    config.add_facet_field 'session_title_sim', :label => 'frda.show.session', :show => false
+    config.add_facet_field 'div2_title_ssi', :label => 'frda.show.session', :show => false
     config.add_facet_field 'search_date_dtsim', :label => "frda.show.date", :show => false
+    config.add_facet_field 'result_group_ssort', :label => "frda.show.volume", :show => false
+    config.add_facet_field 'div2_ssort', :label => "frda.show.session", :show => false
 
-    config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["result_group_ssi", "session_title_sim"]
+    config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["result_group_ssort", "div2_ssort"]
 
     config.add_facet_field 'en_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('en')
     config.add_facet_field 'fr_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('fr')
@@ -238,7 +248,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'spoken_text_ftsmiv', :label => "Spoken Text:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'title_long_ftsi', :label => "Long Tilte:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'title_short_ftsi', :label => "Short Title:", :highlight => true #don't really need an i18n label here since it won't be used.
-    config.add_index_field 'session_title_ftsim', :label => "Session:", :highlight => true #don't really need an i18n label here since it won't be used.
+    config.add_index_field 'div2_title_ssi', :label => "Section:", :highlight => true #don't really need an i18n label here since it won't be used.
     
 
     # solr fields to be displayed in the show (single result) view
@@ -356,7 +366,7 @@ class CatalogController < ApplicationController
     !(params and
         params["f"] and
           ((params["f"]["vol_title_ssi"] and !params["f"]["vol_title_ssi"].blank?) or
-           (params["f"]["session_title_sim"] and !params["f"]["session_title_sim"].blank?)) or
+           (params["f"]["div2_title_ssi"] and !params["f"]["div2_title_ssi"].blank?)) or
            (params["f"]["collection_ssi"] and params["f"]["collection_ssi"].include?(Frda::Application.config.images_id)) or
            (params["f"]["result_group_ssi"] and params["f"]["result_group_ssi"].include?(Frda::Application.config.images_id)))
   end
@@ -375,6 +385,15 @@ class CatalogController < ApplicationController
     u
   end
 
+  def only_search_div2(solr_params, user_params)
+    query = "-type_ssi:page"
+    if solr_params.has_key?(:fq)
+      solr_params[:fq] << query
+    else
+      solr_params[:fq] = [query]
+    end
+  end
+
   def search_within_speeches(solr_params, user_params)
     unless user_params["speeches"].blank? and user_params["by-speaker"].blank?
       solr_params[:q] = "spoken_text_ftsimv:\"#{user_params['by-speaker']} #{user_params['q']}\"~10000"
@@ -386,6 +405,23 @@ class CatalogController < ApplicationController
     if user_params["prox"] and !user_params["words"].blank?
       solr_params[:q] = "\"#{user_params["q"].gsub('"', '')}\""
       solr_params[:qs] = user_params["words"]
+    end
+  end
+
+  def exclude_highlighting(solr_params, user_params)
+    if on_home_page or on_ap_landing_page
+      solr_params[:hl] = "false"
+      solr_params[:rows] = 0
+    end
+  end
+
+  def pivot_facet_on_ap_landing_page(solr_params, user_params)
+    if on_ap_landing_page
+      solr_params[:"f.result_group_ssort.facet.limit"] = "-1"
+      solr_params[:"f.result_group_ssort.facet.sort"] = "index"
+      solr_params[:"f.div2_ssort.facet.limit"] = "-1"
+      solr_params[:"f.div2_ssort.facet.sort"] = "index"
+      solr_params[:"facet.pivot"] = "result_group_ssort,div2_ssort"
     end
   end
 

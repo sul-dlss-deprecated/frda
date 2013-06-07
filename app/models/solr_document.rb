@@ -89,22 +89,82 @@ class SolrDocument
      multivalue_field('speaker_ssim')
   end
  
-  def speeches
-    return nil unless self[:spoken_text_ftsimv]
-    fields = highlighted_fields(:spoken_text_ftsimv)
-    fields.map do |speech|
-      Speech.new(speech) unless Speech.new(speech).speech.blank?
-    end.compact
+  def highlighted_spoken_and_unspoken_text
+    return nil unless highlighted_spoken_text? or highlighted_unspoken_text?
+    [highlighted_spoken_text, highlighted_unspoken_text].flatten.compact.sort_by{ |text| text.page_id }.group_by(&:page_id)
   end
  
-  def highlighted_speeches
-    return nil if speeches.blank?
+  def spoken_text
+    return nil unless self[:spoken_text_ftsimv]
+    fields = highlighted_fields(:spoken_text_ftsimv)
+    @spoken_text ||= fields.map do |text|
+      SpokenText.new(text) unless SpokenText.new(text).text.blank?
+    end.compact
+  end
+  
+  def unspoken_text
+    return nil unless self[:unspoken_text_ftsimv]
+    fields = highlighted_fields(:unspoken_text_ftsimv)
+    @unspoken_text ||= fields.map do |text|
+      UnspokenText.new(text) unless UnspokenText.new(text).text.blank?
+    end.compact
+  end
+  
+  def highlighted_spoken_text?
+    return true unless highlighted_spoken_text.blank?
+  end
+  
+  def highlighted_spoken_text
+    highlighted_text_field(spoken_text)
+  end
+  
+  def highlighted_unspoken_text?
+    return true unless highlighted_unspoken_text.blank?
+  end
+  
+  def highlighted_unspoken_text
+    highlighted_text_field(unspoken_text)
+  end
+ 
+  def highlighted_text_field(text_field)
+    return nil if text_field.blank?
     highlights = []
-    self.speeches.each do |speech|
-      highlights << speech if speech.highlighted?
+    text_field.each do |text|
+      highlights << text if text.highlighted?
     end
     return nil if highlights.blank?
     highlights
+  end
+
+  def page_range_in_session
+    numbers = pages_in_session.map do |_, page|
+      page.page_number
+    end
+    (numbers.select{|number| !number.blank?}.first...numbers.select{|number| !number.blank?}.last)
+  end
+
+  def pages_in_session(options={})
+    return nil unless self[:pages_ssim]
+    urls = {}
+    self[:pages_ssim].map do |id_with_page|
+      image_id = id_with_page.split("-|-")[0]
+      page = id_with_page.split("-|-")[1]
+      size = options[:size] || :default
+      format = options[:format] || "jpg"
+      stacks_url = Frda::Application.config.stacks_url
+      urls[image_id] = OpenStruct.new(
+        :page_number => page,
+        :url => "#{stacks_url}/#{self[:druid_ssi]}/#{image_id.chomp(File.extname(image_id))}#{SolrDocument.image_dimensions[size]}.#{format}"
+      )
+    end
+    urls
+  end
+  
+  def truncated_full_text(options={})
+    return nil unless self[:text_ftsiv]
+    snippet = options[:length] || 100
+    return [self[:text_ftsiv]] if self[:text_ftsiv].length < ((snippet * 2) + (snippet / 2))
+    [self[:text_ftsiv][0..snippet], "...", self[:text_ftsiv][-snippet..-1]]
   end
   
   def medium
@@ -116,7 +176,14 @@ class SolrDocument
   end
   
   def session_title
-    highlighted_fields(:session_title_ftsim)
+    if self[:div2_title_ssi]
+      return highlighted_fields(:div2_title_ssi)
+    elsif self[:session_title_ftsi]
+      return highlighted_fields(:session_title_ftsi)
+    elsif self[:session_title_ftsim]
+      return highlighted_fields(:session_title_ftsim)
+    end
+    []
   end
   
   def volume
@@ -269,16 +336,45 @@ class SolrDocument
 
                          
   private
-  
+
   def highlighted_fields(key)
     return [] unless self[key]
     if self.highlight_field(key)
-      self.highlight_field(key)
+      if self.highlight_field(key).first.scan("-|-").length > 3
+        if key.to_s.include?("unspoken")
+          split_highlighted_unspoken_field_glob(self.highlight_field(key))
+        else
+          split_highlighted_spoken_field_glob(self.highlight_field(key))
+        end
+      else
+        self.highlight_field(key)
+      end
     else
       [self[key]].flatten
     end
   end
+
+  def split_highlighted_unspoken_field_glob(field)
+    split_field_glob(field).map do |(id, text)|
+      "#{id}-|-#{text}" if text.include?("<em>")
+    end.compact
+  end
+
+  def split_highlighted_spoken_field_glob(field)
+    split_field_glob(field).map do |(id, delimited_text)|
+      if delimited_text
+        speaker, text = delimited_text.split("-|-")
+        "#{id}-|-#{speaker}-|-#{text}" if text.include?("<em>")
+      end
+    end.compact
+  end
   
+  def split_field_glob(field)
+    split_fields = field.join(" ").split(/(\w+_\d{2}_\d{4})-\|-/)
+    split_fields.shift # remove first element if blank
+    split_fields.each_slice(2).to_a # returns an array of arrays: [["id", "text_value"], ["id", "text_value"], ["id", "text_value"]]
+  end
+
   def blacklight_config
     CatalogController.blacklight_config
   end

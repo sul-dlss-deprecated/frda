@@ -6,20 +6,31 @@
           <%- tomes.each_with_index do |tome, index| -%>
             <li class="tome-title" data-behavior='toggle-handler' data-reference-id="#<%= index %>">
               <i style="display:none;" class="icon-plus"></i>
-              <%= link_to tome["value"], "##{index}" %>
+              <%= link_to split_ap_facet_delimiter(tome["value"]).value, "##{index}" %>
             </li>
             <li>
               <ul id="sessions">
                 <%- tome["pivot"].each do |session| -%>
                   <li>
                     <span class="session-title">
-                      &raquo;<%= link_to_session_facet(session["value"], :params => params.dup.delete_if{|k,v| k == "view"}, :title => session["value"]) %> 
+                      &raquo; <%= link_to(split_ap_facet_delimiter(session["value"]).value, catalog_path(split_ap_facet_delimiter(session["value"]).id)) %>
                     </span>
                   </li>
                 <%- end -%>
               </ul>
             </li>
           <%- end -%>
+          <% AP_STATIC_TOMES.each do |tome| %>
+            <li class="tome-title">
+              <span class="rbullet">&raquo;</span>
+              <span class="static"><%= tome %></span>
+              <%= link_to "note", "http://searchworks.stanford.edu/view/1071767", :class => "tome-note" %>
+              <p class="tome-note-text">
+                <%= t('frda.show.view_sw') %>
+                <%= link_to "http://searchworks.stanford.edu/view/1071767", "http://searchworks.stanford.edu/view/1071767" %>
+              </p>
+            </li>
+          <% end%>
         </ul>
       <%- end -%>
     </div>

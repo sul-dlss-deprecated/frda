@@ -16,7 +16,7 @@ fr:
           Révolution française</em>.
         </p>
       about_text_ap_html: |
-          Les <em>Archives parlementaires</em> sont une collection de sources relatives à la Révolution
+          <p class="collection-desc">Les <em>Archives parlementaires</em> sont une collection de sources relatives à la Révolution
           française, organisées de façon chronologique. Elles ont été créées au milieu du XIXe siècle pour
           constituer un recueil précis des délibérations parlementaires, et incluent également des lettres,
           des rapports, des discours et autres comptes-rendus directs issus d’une multitude de sources
@@ -24,10 +24,10 @@ fr:
           contiennent uniquement les volumes des AP couvrant les années 1787 à 1794. Le texte de ces volumes
           a été codé en TEI de façon à pouvoir rechercher plus facilement les orateurs, les lieux, les dates
           et les termes dans l’index. Les utilisateurs ont accès à des numérisations des AP à la fois en mode
-          image et en mode texte.
+          image et en mode texte.</p>
       about_text_images_html: |
-          Le corpus des <em>Images</em> est constitué d’images numériques haute résolution correspondant à environ 14 000 documents, essentiellement des gravures,
+          <p class="collection-desc">Le corpus des <em>Images</em> est constitué d’images numériques haute résolution correspondant à environ 14 000 documents, essentiellement des gravures,
           mais également des illustrations, des médailles, des monnaies et d’autres objets, représentant différents aspects de la Révolution. Ces matériaux
           proviennent en majorité des collections du département des Estampes et de la photographie mais ont également été sélectionnées dans d’autres départements
           de la BnF. Plusieurs milliers de ces images sont extraites des collections Hennin et De Vinck, sources majeures pour la période. Des métadonnées
-          détaillées existent pour chaque image, permettant aux chercheurs de rechercher par artiste, par sujet, par genre et par lieu.
+          détaillées existent pour chaque image, permettant aux chercheurs de rechercher par artiste, par sujet, par genre et par lieu.</p>

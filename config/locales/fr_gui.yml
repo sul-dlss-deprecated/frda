@@ -6,6 +6,7 @@ fr:
     facet:
       personal_name: 'Personal name'
       location: 'Location'
+      medium: 'Médium'
       corporate_name: 'Corporate name'
       family_name: 'Family name'
       start_year: 'Start year'
@@ -127,6 +128,44 @@ fr:
         l’utilisation que les chercheurs en feraient à des fins d’étude et d’enseignement, mais aussi que le
         grand public y verrait un moyen essentiel d’en savoir plus sur cette période fondatrice pour la nation
         française. </p>
+
+    pagination_info:
+      mixed:
+        no_items_found: '%{entry_name} non trouvé(e)'
+        single_item_found: '<b>1</b> volume trouvé'
+        pages:
+          one: '<b>%{total_num}</b> volumes trouvé'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes trouvés'
+      images_only:
+        no_items_found: '%{entry_name} non trouvé(e)'
+        single_item_found: '<b>1</b> volume trouvé'
+        pages:
+          one: '<b>%{total_num}</b> volumes trouvé'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes trouvés'
+        flat:
+          single_item_found: '<b>1</b> volume trouvé'
+          pages:
+            one: '<b>%{total_num}</b> images trouvé'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> images trouvés'
+      ap_only:
+        no_items_found: '%{entry_name} non trouvé(e)'
+        single_item_found: '<b>1</b> volume trouvé'
+        pages:
+          one: '<b>%{total_num}</b> volumes trouvé'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes trouvés'
+        flat:
+          no_items_found: '%{entry_name} non trouvé(e)'
+          single_item_found: '<b>1</b> section trouvée'
+          pages:
+            one: '<b>%{total_num}</b> sections trouvées'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> sections trouvées'
+      search:
+        no_items_found: '%{entry_name} non trouvé(e)'
+        single_item_found: 'Results found in <b>1</b> volume'
+        pages:
+          one: 'Results found in <b>%{total_num}</b> volumes'
+          other: 'Results found in <b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
+
     show:
       wait: 'Loading, please wait...'
       open_in_full_screen: 'Open in full screen'
@@ -138,11 +177,12 @@ fr:
       more: 'voir plus'
       less: 'fermer'
       date: 'Date'
-      people: 'People'
+      people: 'Personnes'
       person: 'Person'
       description: 'Déscription'
       genre: 'Genre'
-      medium: 'Médium'
+      subject: 'Sujet'
+      medium: 'Description matérielle'
       publisher: 'Éditeur'
       type: 'Type'
       format: 'Format'
@@ -150,8 +190,10 @@ fr:
       source: 'Origine'
       collector: 'Collectionneur'
       artist: 'Artiste'
+      creator: 'Createur'
       publisher: 'Publisher'
-      volume: 'Volume'
+      publication: 'Publication'
+      volume: 'Tome'
       session: 'Session'
       page: 'page'
       notes: 'Notes'
@@ -173,6 +215,7 @@ fr:
           side_by_side: "côte à côte"
           text_only: "texte"
           flipbook: "feuilleter en plein écran"
+      view_sw: "View this item in Searchworks:"
     collection:
       collection_detail: 'Collection Detail'
       member_detail: 'Item Detail'
@@ -184,15 +227,16 @@ fr:
       collection_text: 'Collection Items'
       sibling_text: "Other items in the %{collection} collection"
     search:
+      page: 'page'
       results_heading_combined: 'dans les deux archives'
       results_heading_ap: 'Archives parlementaires'
       image:
         one: "1 image"
         other: "%{count} images"
       occurrence:
-        one: "1 occurrence"
-        other: "%{count} pages"
-      occurrences: Pages
+        one: "1 séance"
+        other: "%{count} séances"
+      occurrences: Séances
       sequence: Sequence
       results_heading_image: 'Images de la Révolution française'
       search_results: 'Résultats'

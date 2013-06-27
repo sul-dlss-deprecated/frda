@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412175255) do
+ActiveRecord::Schema.define(:version => 20130627175531) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id",     :null => false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130412175255) do
     t.integer  "rgt"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "position"
   end
 
   create_table "category_frs", :force => true do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130412175255) do
     t.integer  "rgt"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "position"
   end
 
   create_table "collection_highlight_items", :force => true do |t|
@@ -77,6 +79,36 @@ ActiveRecord::Schema.define(:version => 20130412175255) do
   end
 
   add_index "searches", ["user_id"], :name => "index_searches_on_user_id"
+
+  create_table "sqlite_sp_functions", :id => false, :force => true do |t|
+    t.text "name"
+    t.text "text"
+  end
+
+# Could not dump table "sqlite_stat1" because of following StandardError
+#   Unknown type '' for column 'tbl'
+
+# Could not dump table "sqlite_stat3" because of following StandardError
+#   Unknown type '' for column 'tbl'
+
+  create_table "sqlite_vs_links_names", :id => false, :force => true do |t|
+    t.text "name"
+    t.text "alias"
+  end
+
+  create_table "sqlite_vs_properties", :id => false, :force => true do |t|
+    t.text "parentType"
+    t.text "parentName"
+    t.text "propertyName"
+    t.text "propertyValue"
+  end
+
+  create_table "sqlite_vsp_diagrams", :id => false, :force => true do |t|
+    t.text "name"
+    t.text "diadata"
+    t.text "comment"
+    t.text "preview"
+  end
 
   create_table "users", :force => true do |t|
     t.datetime "created_at", :null => false

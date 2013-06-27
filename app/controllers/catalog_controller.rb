@@ -58,7 +58,7 @@ class CatalogController < ApplicationController
 
     if on_images_landing_page
       lang = I18n.locale.to_s.titleize
-      @headings = "Category#{lang}".constantize.order("lft ASC")
+      @headings = "Category#{lang}".constantize.order("position ASC")
     end
 
 

@@ -35,7 +35,18 @@ def store_words(data, parent_id, lang)
   return if data.keys.length == 0
   data.keys.each do |k|
     # puts "name = #{k}, parent_id = #{parent_id}"
-    cm = category_model.create!(:name => k, :parent_id => parent_id)
+    # Case statement is for storing desired display order of the three top-level categories
+    case k
+    when 'The events of the Revolution', 'Les événements de la Révolution'
+      pos = '1'
+    when 'Themes in art and culture', 'Aspects culturels et artistiques'
+      pos = '2'
+    when 'Archives and documents', 'Archives et documents'
+      pos = '3'
+    else
+      pos = '99'
+    end
+    cm = category_model.create!(:name => k, :parent_id => parent_id, :position => pos)
     store_words(data[k], cm.id,lang)
   end
 end

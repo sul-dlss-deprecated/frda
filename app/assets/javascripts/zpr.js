@@ -210,8 +210,18 @@ function zpr(viewFinderId, inputValues) {
     imgFrame.css({ 'top': top + 'px', 'left': left + 'px' });
     showTiles(); 
   }
-  
-  
+
+  /* center imgFrame */
+  function centerImgFrame() {
+    var left = Math.floor((viewFinder.width() / 2) - (imgFrame.width() / 2));
+    var top = Math.floor((viewFinder.height() / 2) - (imgFrame.height() / 2));
+    imgFrame.css({
+      'top': top + 'px',
+      'left': left + 'px'
+    });
+    showTiles();
+  }
+
   /* get list of visible tiles */
   function getVisibleTiles() {
     var visibleImgSpace = { left: 0, top: 0, right: 0, bottom: 0 };

@@ -60,6 +60,7 @@
       <%= show_mods_element_as_list(@document, :note) %>
     <% end %>
 
+    <p style="color:red">Without Mods Display gem</p>
     <dl class="dl-invert">
       <% unless @document.mods.plain_name.blank? %>
         <dt><%=t('frda.show.creator')%></dt>
@@ -92,5 +93,9 @@
         <dd><%= link_to_images_item_source(@document) %></dd>
       <% end %>
     </dl>
+
+    <p style="color:red">With Mods Display gem</p>
+    <%= render_mods_display(@document).body.html_safe %>
+
   </div>
 </div>

@@ -80,36 +80,6 @@ ActiveRecord::Schema.define(:version => 20130627175531) do
 
   add_index "searches", ["user_id"], :name => "index_searches_on_user_id"
 
-  create_table "sqlite_sp_functions", :id => false, :force => true do |t|
-    t.text "name"
-    t.text "text"
-  end
-
-# Could not dump table "sqlite_stat1" because of following StandardError
-#   Unknown type '' for column 'tbl'
-
-# Could not dump table "sqlite_stat3" because of following StandardError
-#   Unknown type '' for column 'tbl'
-
-  create_table "sqlite_vs_links_names", :id => false, :force => true do |t|
-    t.text "name"
-    t.text "alias"
-  end
-
-  create_table "sqlite_vs_properties", :id => false, :force => true do |t|
-    t.text "parentType"
-    t.text "parentName"
-    t.text "propertyName"
-    t.text "propertyValue"
-  end
-
-  create_table "sqlite_vsp_diagrams", :id => false, :force => true do |t|
-    t.text "name"
-    t.text "diadata"
-    t.text "comment"
-    t.text "preview"
-  end
-
   create_table "users", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

@@ -4,8 +4,13 @@ require 'open-uri'
 class SolrDocument 
 
   include Blacklight::Solr::Document
-  
+  include ModsDisplay::ModelExtension
+
   self.unique_key = 'id'
+
+  mods_xml_source do |model|
+      model[:mods_xml]
+    end
 
   def title(params={})
     length = params[:length] || "long"

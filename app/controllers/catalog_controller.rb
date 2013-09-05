@@ -8,6 +8,10 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Frda::SolrHelper
   include BlacklightDates2SVG
+  include ModsDisplay::ControllerExtension
+
+  configure_mods_display do
+  end
   
   # The logic to handle the date range queries is being set by the BlacklightDates2SVG gem.
   # If we remove that, but still want date processing, we'll need to explicity require and use the DateRangeSolrQuery gem.

@@ -16,130 +16,142 @@ fr:
     curator_heading: 'Message de la conservatrice'
     curator_text_html: |
       <div class="truncate">
-        <p>Les <em>Archives numériques de la Révolution française</em> sont nées du besoin exprimé par les
-        chercheurs travaillant sur cette période de l’histoire d’obtenir un accès plus large et plus souple aux
-        sources existantes. La Révolution française a, en son temps, produit un grand nombre de documents
-        émanant de participants, de spectateurs et de critiques. Ces documents incluent des textes de natures
-        diverses - documents juridiques, pamphlets, textes littéraires, compositions musicales - ainsi qu’une
-        riche imagerie. Disséminé dans diverses bibliothèques et archives, dissimulé dans des fonds
-        documentaires et de brefs pamphlets individuels, cet héritage documentaire aux multiples facettes est
-        aujourd’hui accessible aux chercheurs sous forme numérique. Les Archives numériques de la Révolution
-        française réunissent deux sources fondamentales pour la recherche&nbsp;: les <em>Archives
-        parlementaires</em> (ci-dessous, <em>AP</em>) et un large ensemble d’images issues des collections de
-        la Bibliothèque nationale de France. Ces deux corpus constituaient les <u>Archives de la Révolution
-        française</u>, vaste ensemble documentaire rassemblé par la BnF et Pergamon Press à l’occasion du
-        bicentenaire de la Révolution en 1989. Les <em>AP</em> y étaient accessibles en microfilm et les
-        <em>Images</em> sur vidéodisque</p>
-         <p>Les <em>Archives parlementaires</em> sont une collection, organisée chronologiquement, de sources
-        d’archives mais également de sources publiées sur la Révolution française. Elles sont nées au milieu du
-        XIXe siècle pour constituer un recueil précis des délibérations parlementaires, à des fins à la fois
-        intellectuelles et politiques, ainsi qu’il est décrit dans la préface à la deuxième édition&nbsp;: </p>
-         <blockquote><strong>«&nbsp;</strong>Quelle plus utile et plus brillante école pour les amis de la
-        liberté, dont le nombre s’accroît chaque jour en Europe, quel moyen d’instruction plus agréable pour
-        eux, qu’un ouvrage dans lequel ils pourront recueillir tout ce que nos gens de lettres, nos
-        publicistes, nos législateurs, nos philosophes ont dit et publié pour réparer, développer et consommer
-        une révolution dont l’heureuse influence parait déjà se faire sentir chez tous les peuples ! <a
-        href="#_ftn1" name="_ftnref1" title=""> </a><strong>&nbsp;»</strong></blockquote>
-         <p>Si les <em>AP</em> ont vu le jour dans un esprit de conservation encouragé par les archivistes du
-        gouvernement, elles sont ensuite devenues un projet académique sous la direction d’historiens de renom.
-        Cette imposante collection de sources historiques a été entamée en 1862 à la demande des parlementaires
-        français, et atteignait 82 volumes en 1914, chacun constitué d’environ 800 pages à double colonne,
-        couvrant les années 1789 à 1794. Après une longue période de latence, le projet a été repris en 1962
-        par l’<em>Institut d’histoire de la Révolution française de l’Université Paris I&nbsp;</em>et se
-        poursuit toujours aujourd’hui. Les archives numériques actuelles contiennent uniquement les 82 premiers
-        volumes de la première série des <em>Archives parlementaires</em>, publiée avant la Première guerre
-        mondiale. Ces volumes couvrent globalement les cinq premières années de la Révolution française, des
-        cahiers des Etats généraux 1789 au 15 nivôse an II (4 janvier 1794). Ils relatent les évènements allant
-        de la convocation des états généraux à la première moitié de la Terreur. </p>
-         <p>Les <em>Archives parlementaires</em> fournissent un aperçu unique des rouages de la Révolution à
-        travers les idées et les actes de ses participants. L’ouvrage est le recueil au jour le jour des débats
-        et discussions qui ont eu lieu au sein des trois organes parlementaires exerçant le pouvoir législatif
-        en France entre 1789 et 1794. Les sept premiers volumes des <em>AP</em> présentent les Cahiers de
-        doléances envoyés aux Etats généraux en 1789.Les volumes suivants comptent principalement les minutes
-        officielles des débats parlementaires, mais également des comptes-rendus journalistiques des
-        procédures, des discours préparés mais jamais prononcés, ainsi que des lettres, des rapports et
-        d’autres documents reçus ou étudiés par l’assemblée. La fragmentation du pouvoir, la multitude
-        d’autorités et l’existence de comptes-rendus issus de points de vue aussi variés que contradictoires
-        compliquent encore le recueil. Étant donné la rapidité du déroulement des évènements à cette époque,
-        l’organisation détaillée en étapes chronologiques des sources révolutionnaires utilisée dans les
-        <em>AP</em> a une valeur inestimable pour les chercheurs. Au cours des dernières décennies, les
-        <em>AP</em> se sont vues reconnaître par les chercheurs comme l’équivalent d’une documentation
-        primaire, et il s’agit aujourd’hui pour la grande majorité d’entre eux du premier outil de recherche
-        dans les archives des délibérations de la Révolution jusqu’en 1794.</p>
-         <p>Si la version numérique des <em>AP</em> offre l’accès le plus complet à la vaste production
-        textuelle de la Révolution et en facilite l’analyse, la Révolution française a également produit un
-        corpus d’images d’une grande richesse et d’une importance majeure. À une époque où le langage était
-        sans cesse soumis à de nouveaux exercices, où le discours importait <em>réellement</em> aux yeux des
-        révolutionnaires, et où les évènements prenaient un tour sans précédent, les archives iconographiques
-        jouent un rôle essentiel pour les chercheurs d’aujourd’hui, en les aidant à appréhender l’univers
-        physique et intellectuel de la Révolution. En effet, les représentations d’orateurs, d’acteurs, de
-        débats et d’évènements ont énormément contribué à expliquer la signification des textes de l’époque qui
-        nous sont parvenus. En outre, le matériel visuel et l’iconographie ont largement été utilisés par les
-        révolutionnaires pour afficher leur identité et celle de la Révolution pendant toute la période, ainsi
-        que pour répandre leur vision de la Révolution au peuple français et au reste du monde.</p>
-         <p>Les <em>ANRF</em> donnent accès à la base de données la plus complète en termes d’images de la
-        Révolution française. Les <em>Images de la Révolution française</em> sont une base d’images de
-        référence constituée par la Bibliothèque nationale de France à l’occasion du bicentenaire de la
-        Révolution en 1989. Celle-ci avait pour but de «&nbsp;permettre au lecteur d’explorer les relations,
-        les articulations, les confrontations entre les idées de la Révolution et leur représentation
-        métaphorique, le brassage permanent d’idéologies et de faux-semblants…&nbsp;»<a href="#_ftn2"
-        name="_ftnref2" title=""> </a> Dans le cadre de ce projet, la BnF a créé plus de 38&nbsp;000 vues
-        distinctes reproduisant plus de 14&nbsp;000 images, proposant des agrandissements et classant les
-        documents dans les sections correspondantes. Les <em>Images</em>, initialement proposées en format
-        analogique sur vidéodisque, étaient devenues difficilement accessibles depuis plus de dix ans, à cause
-        de la rapidité de l’évolution technologique. Dans le cadre de ses programmes de numérisation, la
-        Bibliothèque nationale de France a numérisé en haute résolution, à partir des originaux, près de la
-        moitié des images du vidéodisque. Pour le reste du corpus, de nouveaux fichiers JPEG ont été créés
-        directement à partie du vidéodisque original. Désormais, toutes ces images sont accessibles en ligne
-        dans le cadre des <em>ANRF</em>.</p>
-         <p>Plus de 14&nbsp;000 documents, principalement des gravures du <em>Département des Estampes et de la
-        Photographie</em>, mais également des illustrations, des médailles, des monnaies, ainsi que d’autres
-        objets ont été sélectionnés au sein de tous les départements de la BnF. Beaucoup sont entrés dans les
-        collections de la BnF grâce au Dépôt légal, mais d’autres proviennent d’importantes collections
-        acquises aux XIXe et début du XXe siècles. Deux de ces collections sont à distinguer. La collection de
-        Michel Hennin est remarquable non seulement par sa taille, mais également parce qu’elle compte de
-        nombreuses gravures échappées au Dépôt légal qu’Hennin a amassées alors qu’il travaillait en Italie
-        pour le vice-roi, le Prince Eugène de Beauharnais. La collection d’estampes du diplomate belge, Carl de
-        Vinck, est née de la fascination de son père pour Marie-Antoinette. Elle s’est ensuite élargie pour
-        inclure plus généralement des représentations iconographiques de la France pour la période allant du
-        mariage de Marie-Antoinette et de Louis XVI en 1770 à la Commune de Paris en 1870.</p>
-         <p>Les images sélectionnées pour les <em>Archives numériques</em> couvrent uniquement la période de
-        1787 à 1799, des années précédant immédiatement le début de la Révolution jusqu’à l’apparition de
-        Napoléon. Seule l’iconographie directement liée à la Révolution a été sélectionnée. Si les textes des
-        <em>AP</em> intéressent principalement les étudiants avancés et les chercheurs travaillant sur la
-        période de la Révolution, ces images élargissent la portée des ANRF au grand public. Les auteurs de la
-        première version des <em>Images de la Révolution française</em> avaient anticipé l’utilisation que les
-        chercheurs en feraient à des fins d’étude et d’enseignement, mais aussi que le grand public y verrait
-        un moyen essentiel d’en savoir plus sur cette période fondatrice pour la nation française. </p>
-         <p>En quoi les <em>Archives numériques de la Révolution française</em> contribuent-elles à la
-        recherche à travers les <em>Archives parlementaires</em> et les <em>Images</em> au format
-        numérique<em>&nbsp;</em>? La Révolution française est un évènement tortueux et complexe, et ses sources
-        documentaires en sont le reflet. Ce projet offre aux chercheurs de nouvelles façons d’utiliser
-        d’anciens documents dans le cadre de leurs travaux en leur permettant d’explorer plus efficacement des
-        années de sources-clé textuelles et visuelles, grâce à une recherche par mots ou par index. </p>
-         <p>En ce qui concerne les <em>AP</em>, les noms d’orateurs, les dates, ainsi que les termes figurant
-        dans les index publiés des <em>AP</em>, ont tous été marqués dans le texte, renforçant ainsi
-        considérablement les capacités de recherche. L’affichage des résultats de recherche a également été
-        travaillé pour permettre aux chercheurs de contextualiser plus facilement des termes donnés et
-        d’analyser plus efficacement le corpus imposant de textes. </p>
-         <p>Dans les collections de la Bibliothèque nationale de France, les images que l’on peut voir dans les
-        <em>ANRF</em> sont conservées par provenance ou par sujet. Les collections Hennin et De Vinck, qui
-        constituent une part importante du corpus, étaient décrites dans des catalogues imprimés séparés. Le
-        vidéodisque des <em>Images de la Révolution française</em> a représenté une première étape dans la
-        constitution d’un corpus iconographique autour de la Révolution. En raison de l’obsolescence de cette
-        première technologie, la description des documents ainsi que certaines images ne demeurait accessible
-        que par le Catalogue général de la BnF, qui permettait néanmoins d’exploiter, dans leur grande
-        richesse, les métadonnées, créées par le projet de 1989, largement indexées à l’aide d’une terminologie
-        contrôlée pour les artistes, les genres iconographiques, les lieux de publication et les termes du
-        sujet. Au-delà de ces possibilités de recherche, qui sont bien entendu reprises par les <em>ANRF</em>,
-        le grand mérite des <em>Archives numériques</em> est de rendre de nouveau visible la cohérence de
-        l’ensemble.</p>
-         <p>Plus important encore, les chercheurs pourront exploiter les deux collections des <em>Images</em>
-        et des <em>Archives parlementaires</em> séparément mais également y effectuer des recherches unifiées.
-        En réunissant les représentations visuelles et textuelles de la Révolution française en une unique
-        collection historique associée à des méthodes de recherche, d’analyse et d’affichage performantes, les
-        chercheurs et étudiants auront la capacité de faire évoluer notre connaissance et compréhension de
-        cette époque cruciale de l’histoire du monde.</p>
+        <p>Les <em>Archives numériques de la Révolution française</em> sont nées du besoin - exprimé par
+        les chercheurs travaillant sur cette période de l&rsquo;histoire - de disposer d&rsquo;un accès
+        plus large et plus souple aux sources existantes. La Révolution française a produit un grand nombre
+        de documents émanant de participants, de spectateurs et de critiques. Ces documents incluent des
+        textes de natures diverses - documents juridiques, pamphlets, textes littéraires, compositions
+        musicales - ainsi qu&rsquo;une riche imagerie. Disséminées dans diverses bibliothèques et archives,
+        dissimulées dans des fonds documentaires et de brefs pamphlets individuels, ces sources aux
+        multiples facettes sont aujourd&rsquo;hui, grâce aux <em>Archives numériques de la Révolution
+        française</em> (<em>ANRF</em>), accessibles aux chercheurs sous forme numérique. Les <em>ANRF</em>
+        réunissent deux sources fondamentales pour la recherche : les <em>Archives parlementaires</em>
+        (ci-dessous, <em>AP</em>) et les <em>Images de la Révolution française</em>, large ensemble
+        iconographique issu des collections de la Bibliothèque nationale de France. Ces deux corpus
+        constituaient les <em>Archives de la Révolution française</em>, vaste ensemble documentaire
+        rassemblé par la BnF et Pergamon Press à l&rsquo;occasion du bicentenaire de la Révolution en 1989.
+        Les <em>AP</em> y étaient accessibles en microfilm et les <em>Images</em> sur vidéodisque.</p>
+        <p>Les <em>Archives parlementaires</em> sont une collection, organisée chronologiquement, de
+        sources d&rsquo;archives mais également de sources publiées sur la Révolution française. Elles sont
+        nées au milieu du XIXe siècle pour constituer un recueil précis des délibérations parlementaires, à
+        des fins à la fois intellectuelles et politiques, ainsi qu&rsquo;il est décrit dans la préface à la
+        deuxième édition : </p>
+        <blockquote> <strong>&laquo;&nbsp;</strong>Quelle plus utile et plus
+        brillante école pour les amis de la liberté, dont le nombre s&rsquo;accroît chaque jour en Europe,
+        quel moyen d&rsquo;instruction plus agréable pour eux, qu&rsquo;un ouvrage dans lequel ils pourront
+        recueillir tout ce que nos gens de lettres, nos publicistes, nos législateurs, nos philosophes ont
+        dit et publié pour réparer, développer et consommer une révolution dont l&rsquo;heureuse influence
+        parait déjà se faire sentir chez tous les peuples ! <a name="_ftnref1"
+        id="_ftnref1"></a><strong>&nbsp;&raquo;</strong></blockquote>
+        <p>Si les <em>AP</em> ont vu le jour
+        dans un esprit de conservation encouragé par les archivistes du gouvernement, elles sont ensuite
+        devenues un projet académique sous la direction d&rsquo;historiens de renom. Cette imposante
+        collection de sources historiques a été entamée en 1862 à la demande des parlementaires français et
+        atteignait, en 1914, 82 volumes, constitués chacun d&rsquo;environ 800 pages à double colonne et
+        couvrant les années 1789 à 1794. Après une longue période de latence, le projet a été repris en
+        1962 par l&rsquo;<em>Institut d&rsquo;histoire de la Révolution française de l&rsquo;Université
+        Paris I </em>et se poursuit toujours aujourd&rsquo;hui. La numérisation mise en ligne par les
+        <em>ANRF</em> concerne uniquement les 82 premiers volumes de la première série des <em>Archives
+        parlementaires</em> et couvre ainsi globalement les cinq premières années de la Révolution
+        française, des cahiers des États généraux de 1789 au 15 nivôse an II (4 janvier 1794). Ils relatent
+        les évènements allant de la convocation des États généraux à la première moitié de la Terreur.</p>
+        <p>Les <em>Archives parlementaires</em> fournissent un aperçu unique des rouages de la Révolution à
+        travers les idées et les actes de ses participants. L&rsquo;ouvrage est le recueil, au jour le
+        jour, des débats et discussions qui ont eu lieu au sein des trois organes parlementaires exerçant
+        le pouvoir législatif en France entre 1789 et 1794. Les sept premiers volumes des <em>AP</em>
+        présentent les cahiers de doléances envoyés aux États généraux en 1789. Les volumes suivants
+        comptent principalement les minutes officielles des débats parlementaires, mais également des
+        comptes rendus journalistiques des procédures, des discours préparés mais jamais prononcés, ainsi
+        que des lettres, des rapports et d&rsquo;autres documents reçus ou étudiés par les assemblées. La
+        fragmentation du pouvoir, la multitude d&rsquo;autorités et l&rsquo;existence de comptes rendus
+        issus de points de vue aussi variés que contradictoires compliquent encore le recueil. Étant donné
+        la rapidité du déroulement des évènements à cette époque, l&rsquo;organisation détaillée dans les
+        <em>AP</em> en étapes chronologiques des sources révolutionnaires a une valeur inestimable pour les
+        chercheurs. Au cours des dernières décennies, les <em>AP</em> se sont ainsi vues reconnaître comme
+        l&rsquo;équivalent d&rsquo;une documentation primaire et il s&rsquo;agit aujourd&rsquo;hui pour la
+        grande majorité des spécialistes de la période du premier outil de recherche dans les archives des
+        délibérations de la Révolution jusqu&rsquo;en 1794.</p>
+        <p>A côté d&rsquo;une vaste production
+        textuelle, la Révolution française a également donné naissance à un corpus d&rsquo;images
+        d&rsquo;une grande richesse et d&rsquo;une importance majeure, à une époque où le langage était
+        sans cesse soumis à de nouveaux exercices, où le discours importait <em>réellement</em> aux yeux
+        des révolutionnaires, et où les évènements prenaient un tour sans précédent. Le matériel visuel et
+        l&rsquo;iconographie ont largement été utilisés par les révolutionnaires pour afficher leur
+        identité et celle de la Révolution pendant toute la période, ainsi que pour diffuser leur vision
+        auprès du peuple français et du reste du monde. Ces archives iconographiques jouent un rôle
+        essentiel pour les chercheurs d&rsquo;aujourd&rsquo;hui, en les aidant à appréhender
+        l&rsquo;univers physique et intellectuel de la Révolution. Ainsi, les représentations
+        d&rsquo;orateurs, d&rsquo;acteurs, de débats et d&rsquo;évènements ont énormément contribué à
+        expliquer la signification des textes de l&rsquo;époque qui nous sont parvenus.</p>
+        <p>Les
+        <em>Images de la Révolution française, désormais en ligne dans le cadre des </em><em>ANRF</em>,
+        sont une base d&rsquo;images de référence constituée par la Bibliothèque nationale de France à
+        l&rsquo;occasion du bicentenaire de la Révolution en 1989. Celle-ci avait pour but de « permettre
+        au lecteur d&rsquo;explorer les relations, les articulations, les confrontations entre les idées de
+        la Révolution et leur représentation métaphorique, le brassage permanent d&rsquo;idéologies et de
+        faux-semblants… »<a name="_ftnref2" id="_ftnref2"> </a>. Dans le cadre de ce projet, la BnF avait
+        créé plus de 38 000 vues distinctes reproduisant plus de 14 000 images, proposant des
+        agrandissements et classant les documents selon un chapitrage fin. Les <em>Images</em>,
+        initialement proposées en format analogique sur vidéodisque, étaient devenues difficilement
+        accessibles depuis plus de dix ans, victimes de la rapidité de l&rsquo;évolution technologique.
+        Dans le cadre de ses programmes de numérisation, la Bibliothèque nationale de France a numérisé en
+        haute définition, à partir des originaux, près de la moitié des images du vidéodisque. Pour le
+        reste du corpus, de nouveaux fichiers JPEG ont été créés directement à partir du vidéodisque
+        original. Quelques 14 000 documents - principalement des gravures du <em>Département des Estampes
+        et de la Photographie</em>, mais également des illustrations, des médailles, des monnaies, ainsi
+        que d&rsquo;autres objets - ont été sélectionnés au sein de tous les départements de la BnF.
+        Beaucoup proviennent d&rsquo;importantes collections, acquises aux XIXe et début du XXe siècles, et
+        dont deux sont particulièrement à distinguer. La collection Hennin, est remarquable non seulement
+        par sa taille, mais également parce qu&rsquo;elle compte de nombreuses gravures échappées au Dépôt
+        légal que Michel Hennin a amassées alors qu&rsquo;il travaillait en Italie pour le vice-roi, le
+        Prince Eugène de Beauharnais. La collection d&rsquo;estampes du diplomate belge, Carl de Vinck, est
+        née de la fascination de son père pour Marie-Antoinette. Elle s&rsquo;est ensuite élargie pour
+        inclure plus généralement des représentations iconographiques de la France pour la période allant
+        du mariage de Marie-Antoinette et de Louis XVI en 1770 à la Commune de Paris en 1871.</p>
+        <p>Les
+        images sélectionnées pour les <em>Archives numériques</em> couvrent uniquement la période
+        1787-1799, des années précédant immédiatement le début de la Révolution jusqu&rsquo;à
+        l&rsquo;apparition de Napoléon. Seule l&rsquo;iconographie directement liée à la Révolution a été
+        sélectionnée. Si les textes des <em>AP</em> intéressent principalement les étudiants avancés et les
+        chercheurs travaillant sur la période de la Révolution, ces images élargissent la portée des
+        <em>ANRF</em> au grand public. Les auteurs de la première version des <em>Images de la Révolution
+        française</em> avaient anticipé l&rsquo;utilisation que les chercheurs en feraient à des fins
+        d&rsquo;étude et d&rsquo;enseignement, mais aussi l&rsquo;intérêt pour le grand public qui y
+        verrait un moyen essentiel d&rsquo;en savoir plus sur cette période fondatrice pour la nation
+        française.</p>
+        <p>En quoi les <em>Archives numériques de la Révolution française</em>
+        contribuent-elles à la recherche à travers les <em>Archives parlementaires</em> et les
+        <em>Images</em> ? Ce projet offre aux chercheurs de nouvelles façons d&rsquo;utiliser
+        d&rsquo;anciens documents dans le cadre de leurs travaux en leur permettant d&rsquo;explorer plus
+        efficacement, grâce à une recherche par mots ou par index, des années de sources-clé textuelles et
+        visuelles, reflet de l&rsquo;événement tortueux et complexe qu&rsquo;a été la Révolution
+        française.</p>
+        <p>Dans les <em>AP</em>, les noms d&rsquo;orateurs, les dates, ainsi que les termes
+        figurant dans les index publiés des <em>AP</em>, ont tous été marqués dans le texte, renforçant
+        ainsi considérablement les capacités d&rsquo;exploration de ce corpus. L&rsquo;affichage des
+        résultats de recherche a également été travaillé pour permettre aux chercheurs de contextualiser
+        plus facilement des termes donnés et d&rsquo;analyser plus efficacement le corpus imposant de
+        textes.</p>
+        <p>Dans les collections de la Bibliothèque nationale de France, les images que
+        l&rsquo;on peut voir dans les <em>ANRF</em> sont conservées par provenance ou par sujet. Les
+        collections Hennin et De Vinck, qui constituent une part importante du corpus, étaient décrites
+        dans des catalogues imprimés séparés. Le vidéodisque des <em>Images de la Révolution française</em>
+        avait représenté une première étape dans la constitution d&rsquo;un corpus iconographique autour de
+        la Révolution. En raison de l&rsquo;obsolescence de cette première technologie, la description des
+        documents ainsi que certaines images ne demeurait accessible que par le Catalogue général de la
+        BnF, qui permettait néanmoins d&rsquo;exploiter, dans leur grande richesse, les métadonnées, créées
+        par le projet de 1989, largement indexées à l&rsquo;aide d&rsquo;une terminologie contrôlée pour
+        les artistes, les genres iconographiques, les lieux de publication et les termes du sujet. Au-delà
+        de ces possibilités de recherche, qui sont bien entendu reprises par les <em>ANRF</em>, le grand
+        mérite des <em>Archives numériques</em> est de rendre de nouveau visible la cohérence de
+        l&rsquo;ensemble.</p>
+        <p>Plus important encore, les chercheurs pourront exploiter les deux
+        collections des <em>Images</em> et des <em>Archives parlementaires</em> séparément mais également y
+        effectuer des recherches unifiées. En réunissant les représentations visuelles et textuelles de la
+        Révolution française en une unique collection historique associée à des méthodes de recherche,
+        d&rsquo;analyse et d&rsquo;affichage performantes, les chercheurs et étudiants auront la capacité
+        de faire évoluer notre connaissance et compréhension de cette époque cruciale de l&rsquo;histoire
+        du monde.</p>
       </div>
     project_team_stanford_heading: 'Équipe de projet: Stanford'
     project_team_stanford_text_html: |

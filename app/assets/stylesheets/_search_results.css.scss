@@ -67,9 +67,16 @@
     }
     .group-count {
       font-size: 0.8em;
+      margin-left: 12px;
       a {
         color: $dark_red;
         font-weight: 400;
+        background: $gray2;
+        border-bottom: none;
+        border: 1px dotted $gray5;
+        border-radius: 4px;
+        margin-left: 12px;
+        padding: 1px 6px 1px 3px;
       }
     }
   }

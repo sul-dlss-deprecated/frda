@@ -10,9 +10,17 @@
               <%= link_to_volume_facet(grouping.group, {:params => params, :class => 'volume-title'}) %>
               <%#= link_to(grouping.group, show_page_path(:id=>grouping.docs.first.druid,:page_num=>"1")) %>
               <span class="group-count">
-                <%# the 'if grouping.total > 10' value below is dependent on the value
-                    of solr_helper.rb#group_results_params group.limit value being '9' %>
-                (<%= t(contextual_118n_key_for_pages(grouping.group), :count => grouping.total) %><% if grouping.total > 10 %><span class="all-results"> - <%= link_to_volume_facet(grouping.group, {:params => params, :count => grouping.total, :class => 'volume-title'}) %></span><% end %>)
+                <%# the 'if grouping.total > 10' values below should correspond to the value
+                    of lib/frda/solr_helper.rb#group_results_params group.limit %>
+                <% if grouping.total > 10 %>
+                  showing 10 of 
+                <% end %>
+                <%= t(contextual_118n_key_for_pages(grouping.group), :count => grouping.total) %>
+                <% if grouping.total > 10 %>
+                  <span class="all-results">
+                    <%= link_to_volume_facet(grouping.group, {:params => params, :count => grouping.total, :class => 'volume-title'}) %>
+                  </span>
+                <% end %>
               </span>
             </span>
           </li>

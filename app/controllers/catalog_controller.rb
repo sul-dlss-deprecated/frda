@@ -212,12 +212,12 @@ class CatalogController < ApplicationController
     config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection'
     config.add_facet_field 'speaker_ssim', :label => 'frda.show.people', :show => true, :limit => 15
     
-    config.add_facet_field 'doc_type_ssi', :label => 'frda.show.type', :limit => 15
-    config.add_facet_field 'medium_ssi', :label => 'frda.facet.medium', :limit => 15
-    config.add_facet_field 'genre_ssim', :label => 'frda.show.genre', :limit => 15
-    config.add_facet_field 'artist_ssim', :label => 'frda.show.artist', :limit => 15
-    config.add_facet_field 'collector_ssim', :label => 'frda.show.collector', :limit => 15
-    config.add_facet_field 'vol_title_ssi', :label => 'frda.show.volume', :limit => 15
+    config.add_facet_field 'doc_type_ssi', :label => 'frda.facet.type', :limit => 15
+    config.add_facet_field 'medium_ssi', :label => 'frda.facet.medium_html', :limit => 15
+    config.add_facet_field 'genre_ssim', :label => 'frda.facet.genre_html', :limit => 15
+    config.add_facet_field 'artist_ssim', :label => 'frda.facet.artist_html', :limit => 15
+    config.add_facet_field 'collector_ssim', :label => 'frda.facet.collector_html', :limit => 15
+    config.add_facet_field 'vol_title_ssi', :label => 'frda.facet.volume_html', :limit => 15
     config.add_facet_field 'div2_title_ssi', :label => 'frda.show.session', :show => false
     config.add_facet_field 'search_date_dtsim', :label => "frda.show.date", :show => false
     config.add_facet_field 'result_group_ssort', :label => "frda.show.volume", :show => false

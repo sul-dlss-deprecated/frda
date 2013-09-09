@@ -6,7 +6,12 @@ en:
     facet:
       personal_name: 'Personal name'
       location: 'Location'
-      medium: 'Medium'
+      type: 'Document type'
+      medium_html: 'Medium <span class="collection-type">(Images)</span>'
+      genre_html: 'Genre <span class="collection-type">(Images)</span>'
+      artist_html: 'Artist <span class="collection-type">(Images)</span>'
+      collector_html: 'Collector <span class="collection-type">(Images)</span>'
+      volume_html: 'Volume <span class="collection-type">(AP)</span>'
       corporate_name: 'Corporate name'
       family_name: 'Family name'
       start_year: 'Start year'

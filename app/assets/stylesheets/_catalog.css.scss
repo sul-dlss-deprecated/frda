@@ -164,6 +164,11 @@
   .item-views, .item-actions {
     margin-left: 0;
   }
+  .css-dropdown li:hover > ul, .css-dropdown li.hovering > ul {
+    border-top: 1px dotted #bbb;
+    display: block;
+    width: 190px;
+  }
 }
 .image-box, .ocr-box {
   background: white;

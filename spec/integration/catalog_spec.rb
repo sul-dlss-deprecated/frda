@@ -144,7 +144,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
          fill_in :"date-end", :with => "1799-04-25"
          find(:css, "[value='Search...']").click
          
-         page.all(:css, ".oneresult").length.should == 11
+         page.all(:css, ".oneresult").length.should == 12
     
          fill_in :"date-start", :with => "1794-04-25"
          find(:css, "[value='Search...']").click

@@ -1,66 +1,43 @@
-/* Overrides to default plugin values to enable form controls to
-   be placed side-by-side with the grid display instead of below it */
+/* Overrides to default plugin values */
 
 .date-range-selector {
-  position: relative;
-  margin-bottom: 20px;
-  margin-top: 30px;
+  text-align: center;
+  margin-top: 12px;
   rect {
-		&:hover {
-			stroke: #222;
-		  stroke-width: 0.5px;
-		  cursor: pointer;
-		}
-		&[data-selected='true']{
-		  stroke: #999;
-		  stroke-width: 0.5px;
-		}
-	}
+    &:hover {
+      stroke: #222;
+      stroke-width: 0.5px;
+      cursor: pointer;
+    }
+    &[data-selected='true']{
+      stroke: #999;
+      stroke-width: 0.5px;
+    }
+  }
+  .dates2svg-grid {
+    margin: 0 auto;
+    width: 90%;
+  }
   .dates2svg-controls {
-    bottom: 0;
-    right: 0;
-    position: absolute;
+    margin-bottom: 24px;
+    width: 100%;
     .form-controls {
+      margin: 0 auto;
       form {
         margin-bottom: 0;
-        margin-left: 0;
+        margin-top: 20px;
         input[type="text"] {
-           height: 14px;
-           font-size: 10px;
-           line-height: 14px;
+         height: 14px;
+         font-size: 11px;
+         line-height: 14px;
         }
       }
       .legend {
-        float: left;
-        margin-bottom: 30px;
+        margin-bottom: 0;
+        margin-top: 24px;
       }
-    }
-  }
-}
-
-/* Responsive styles */
-@media (max-width: 979px) { // need to put legend/controls below grid below this breakpoint
-  .date-range-selector {
-    position: static;
-    .dates2svg-controls {
-      box-sizing: border-box;
-      float: none;
-      display: block;
-      margin-left: 20px;
-      position: static;
-      width: 100%;
-      .form-controls {
-        form {
-          margin-top: 17px;
-        }
-        .legend {
-          margin-bottom: 0;
-          margin-right: 20px;
-          margin-top: 20px;
-        }
-        .hits {
-          padding-left: 12px;
-        }
+      .hits {
+        padding-left: 12px;
       }
     }
   }

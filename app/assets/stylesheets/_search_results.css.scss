@@ -484,6 +484,7 @@ ul.inventory-ancestry {
 /* Results paging/controls */
 .row.results-controls {
   @include container-well;
+  clear: both;
   margin-left: 0;
   margin-bottom: 12px;
   margin-top: 20px;

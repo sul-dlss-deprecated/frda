@@ -135,31 +135,31 @@ en:
         single_item_found: '<b>1</b> volume found'
         pages:
           one: '<b>%{total_num}</b> volumes found'
-          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes found'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes'
       images_only:
         no_items_found: 'No %{entry_name} found'
         single_item_found: '<b>1</b> volume found'
         pages:
           one: '<b>%{total_num}</b> volumes found'
-          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes found'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes'
         flat:
           no_items_found: 'No %{entry_name} found'
           single_item_found: '<b>1</b> image found'
           pages:
             one: '<b>%{total_num}</b> images found'
-            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> images found'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> images'
       ap_only:
         no_items_found: 'No %{entry_name} found'
         single_item_found: '<b>1</b> volume found'
         pages:
           one: '<b>%{total_num}</b> volumes found'
-          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes found'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes'
         flat:
           no_items_found: 'No %{entry_name} found'
           single_item_found: '<b>1</b> section found'
           pages:
             one: '<b>%{total_num}</b> sections found'
-            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> sections found'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> results'
       search:
         no_items_found: 'No %{entry_name} found'
         single_item_found: 'Results found in <b>1</b> volume'
@@ -229,8 +229,8 @@ en:
         one: "1 image"
         other: "%{count} images"
       occurrence:
-        one: "1 session"
-        other: "%{count} sessions"
+        one: "1 result"
+        other: "%{count} results"
       occurrences: Sessions
       sequence: Sequence
       results_heading_image: 'Images of the French Revolution'

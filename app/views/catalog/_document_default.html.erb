@@ -13,7 +13,7 @@
                 <%# the 'if grouping.total > 10' values below should correspond to the value
                     of lib/frda/solr_helper.rb#group_results_params group.limit %>
                 <% if grouping.total > 10 %>
-                  showing 10 of 
+                  <%= t('blacklight.search.showing') %>
                 <% end %>
                 <%= t(contextual_118n_key_for_pages(grouping.group), :count => grouping.total) %>
                 <% if grouping.total > 10 %>

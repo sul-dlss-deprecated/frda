@@ -182,9 +182,10 @@ fr:
     search:
       title: '%{application_name} Résultats de recherche'
       search_results_header: 'Résultats de recherche'
-      search_results_header_ungrouped: 'Résultats groupés par section'
-      search_results_header_grouped: 'Résultats groupés par volume'
-      search_results: 'Résultats'
+      search_results_header_ungrouped: 'Résultats trouvés dans le Tome %{volume_number}'
+      search_results_header_grouped: 'Résultats groupés par volume (AP + Images)'
+      search_results_html: 'Résultats trouvés dans <em>Images de la Révolution française</em> '
+      showing: 'affichant 10 sur '
       errors:
         request_error: 'Désolé, je ne comprends pas votre recherche'
         invalid_solr_id: 'Désolé, la notice que vous avez demandée n’existe pas'

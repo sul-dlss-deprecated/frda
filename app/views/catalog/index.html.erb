@@ -41,12 +41,14 @@ $(document).ready(function(){
         <%=t('frda.about.images_html')%>
       </div>
     <% elsif on_images_page %>
-      <h2 class="search-results"><%= t('blacklight.search.search_results') %></h2>
+      <h2 class="search-results"><%= t('blacklight.search.search_results_html') %></h2>
     <% elsif on_ap_page %>
       <%- if response_is_grouped? -%>
         <h2 class="search-results"><%= t('blacklight.search.search_results_header_grouped') %></h2>
       <% else %>
-        <h2 class="search-results"><%= t('blacklight.search.search_results_header_ungrouped') %></h2>
+        <h2 class="search-results">
+          <%= t('blacklight.search.search_results_header_ungrouped', :volume_number => volume_title_number(params)) %>
+        </h2>
       <% end %>
     <% elsif on_ap_landing_page %>
       <h2 class="search-results"><%= t('frda.nav.collection_ap') %></h2>
@@ -57,7 +59,9 @@ $(document).ready(function(){
       <%- if response_is_grouped? -%>
         <h2 class="search-results"><%= t('blacklight.search.search_results_header_grouped') %></h2>
       <% else %>
-        <h2 class="search-results"><%= t('blacklight.search.search_results_header_ungrouped') %></h2>
+        <h2 class="search-results">
+          <%= t('blacklight.search.search_results_header_ungrouped', :volume_number => volume_title_number(params)) %>
+        </h2>
       <% end %>
     <% end %>
 

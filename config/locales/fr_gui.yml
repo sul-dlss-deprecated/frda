@@ -139,30 +139,30 @@ fr:
         single_item_found: '<b>1</b> volume trouvé'
         pages:
           one: '<b>%{total_num}</b> volumes trouvé'
-          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes trouvés'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
       images_only:
         no_items_found: '%{entry_name} non trouvé(e)'
         single_item_found: '<b>1</b> volume trouvé'
         pages:
-          one: '<b>%{total_num}</b> volumes trouvé'
-          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes trouvés'
+          one: '<b>%{total_num}</b> volumes'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
         flat:
           single_item_found: '<b>1</b> volume trouvé'
           pages:
             one: '<b>%{total_num}</b> images trouvé'
-            other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> images trouvés'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> images'
       ap_only:
         no_items_found: '%{entry_name} non trouvé(e)'
         single_item_found: '<b>1</b> volume trouvé'
         pages:
           one: '<b>%{total_num}</b> volumes trouvé'
-          other: '<b>%{start_num}</b> - <b>%{end_num}</b> of <b>%{total_num}</b> volumes trouvés'
+          other: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> volumes'
         flat:
           no_items_found: '%{entry_name} non trouvé(e)'
           single_item_found: '<b>1</b> section trouvée'
           pages:
             one: '<b>%{total_num}</b> sections trouvées'
-            other: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> sections trouvées'
+            other: '<b>%{start_num}</b> - <b>%{end_num}</b> sur <b>%{total_num}</b> résultats'
       search:
         no_items_found: '%{entry_name} non trouvé(e)'
         single_item_found: 'Results found in <b>1</b> volume'
@@ -238,13 +238,13 @@ fr:
         one: "1 image"
         other: "%{count} images"
       occurrence:
-        one: "1 séance"
-        other: "%{count} séances"
+        one: "1 résultat"
+        other: "%{count} résultats"
       occurrences: Séances
       sequence: Sequence
       results_heading_image: 'Images de la Révolution française'
       search_results: 'Résultats'
-      view_all: "view all"
+      view_all: 'tout afficher'
       view_toggle:
         default: 'Résultats'
         gallery: 'Affichage mosaïque'

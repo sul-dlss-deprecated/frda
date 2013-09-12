@@ -164,6 +164,13 @@ module ApplicationHelper
     {:f => {:vol_title_ssi => [volume]}}
   end
 
+  # get just the '11' part of a complete volume name ('Tome 11 : blah blah')
+  def volume_title_number(volume)
+    volume_title = params[:f][:vol_title_ssi]
+    volume_number = volume_title[0].match(/^(\D+)(\d+)\s:/)
+    return volume_number[2]
+  end
+
   # sections for About page
   # elementlink names should match what's used in locale_about.yml
   def about_sections

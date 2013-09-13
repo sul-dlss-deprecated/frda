@@ -20,7 +20,7 @@ gem 'blacklight_dates2svg', '~> 0.0.1.beta3'
 gem "coderay"
 
 gem 'stanford-mods'
-gem 'mods_display', '~> 0.1.3'
+gem 'mods_display', '~> 0.1.4'
 
 gem 'bootstrap-datepicker-rails'
 

@@ -119,7 +119,7 @@ GEM
       iso-639
       nokogiri
       nom-xml
-    mods_display (0.1.3)
+    mods_display (0.1.4)
       stanford-mods
     multi_json (1.7.6)
     mysql (2.8.1)
@@ -230,7 +230,7 @@ DEPENDENCIES
   json (~> 1.7.7)
   launchy
   meta_request
-  mods_display (~> 0.1.3)
+  mods_display (~> 0.1.4)
   mysql (= 2.8.1)
   rails (>= 3.2.11)
   rest-client

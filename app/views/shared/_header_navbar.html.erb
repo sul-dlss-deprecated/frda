@@ -31,19 +31,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </a>
-            <div class="language-toggle">
-              <% if I18n.locale == :en %>
-                in english
-              <% else %>
-                <%= link_to "in english", params.merge(:locale => 'en', :result_view => nil) %>
-              <% end %>
-                |
-              <% if I18n.locale == :fr %>
-                en français
-              <% else %>
-                <%= link_to "en français", params.merge(:locale => 'fr', :result_view => nil) %>
-              <% end %>
-            </div>
+            <%= render_locale_switcher.html_safe %>
             <h1><%= t('blacklight.application_name') %></h1>
             <h2><%= t('frda.application_name_subtitle') %></h2>
             <div class="nav-collapse">

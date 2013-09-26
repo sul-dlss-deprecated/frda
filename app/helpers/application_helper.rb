@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ApplicationHelper
 
   def on_scrollspy_page?
@@ -353,4 +354,30 @@ module ApplicationHelper
     "lang-#{I18n.locale}"
   end
 
+  def render_locale_switcher
+    <<-HTML
+      <div class='language-toggle'>
+        #{link_to_if(I18n.locale == :fr, "in english",  params_for_locale_switcher("en"))}
+        |
+        #{link_to_if(I18n.locale == :en, "en français", params_for_locale_switcher("fr"))}
+      </div>
+    HTML
+  end
+  def params_for_locale_switcher(locale)
+    locale_params = {:locale => locale, :result_view => nil}
+    user_params = sanitize_params_for_locale_switcher(params)
+    ap_params = sanitize_params_for_locale_switcher(Rails.application.routes.named_routes.routes[:ap_collection].defaults)
+    images_params = sanitize_params_for_locale_switcher(Rails.application.routes.named_routes.routes[:images_collection].defaults)
+    if [ap_params, images_params].include?(user_params)
+      locale_params
+    else
+      params.merge(locale_params)
+    end
+  end
+  def sanitize_params_for_locale_switcher(p)
+    hwia = HashWithIndifferentAccess.new(p.clone)
+    hwia.delete(:locale)
+    hwia.delete(:result_view)
+    hwia
+  end
 end

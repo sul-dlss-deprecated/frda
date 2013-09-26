@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require "spec_helper"
 
 def blacklight_config
@@ -150,5 +151,55 @@ describe ApplicationHelper do
       search_result_images_only?.should be_false
     end
   end
-
+  describe "locale switcher" do
+    describe "render_locale_switcher" do
+      it "should merge the params w/ the apporpirate locale" do
+        helper.stub(:params).and_return({:controller => "catalog", :action => "index", :q => "query"})
+        switcher = helper.send(:render_locale_switcher)
+        french_link = /<a href=\"\/fr\/catalog\?q=query\">en français<\/a>/
+        english_link = /<a href=\"\/en\/catalog\?q=query\">in english<\/a>/
+        switcher.should match french_link
+        switcher.should_not match english_link
+        I18n.locale = :fr
+        switcher = helper.send(:render_locale_switcher)
+        switcher.should_not match french_link
+        switcher.should match english_link
+      end
+    end
+    describe "params_for_locale_switcher" do
+      it "should merge the params w/ the provided locale" do
+        helper.stub(:params).and_return({:q => "query", :f => {:collection => ["ABC"]}})
+        params = helper.send(:params_for_locale_switcher, "en")
+        params[:locale].should == "en"
+        params[:q].should == "query"
+        params[:f].should == {:collection => ["ABC"]}
+      end
+      it "should remove the result_view param" do
+        helper.stub(:params).and_return({:q => "query", :result_view => "default"})
+        params = helper.send(:params_for_locale_switcher, "en")
+        params[:result_view].should be_nil
+      end
+      it "should identify when we're on the AP landing page and not try to merge the params" do
+        helper.stub(:params).and_return(Rails.application.routes.named_routes.routes[:ap_collection].defaults)
+        params = helper.send(:params_for_locale_switcher, "en")
+        params.should == {:locale=>"en", :result_view=>nil}
+      end
+      it "should identify when we're on the Images landing page and not try to merge the params" do
+        helper.stub(:params).and_return(Rails.application.routes.named_routes.routes[:images_collection].defaults)
+        params = helper.send(:params_for_locale_switcher, "en")
+        params.should == {:locale=>"en", :result_view=>nil}
+      end
+    end
+    describe "sanitize_params_for_locale_switcher" do
+      it "should return a hash with indifferent access" do
+        hash = sanitize_params_for_locale_switcher({:a => "bcd"})
+        hash.should be_a(HashWithIndifferentAccess)
+        hash["a"].should_not be_nil
+      end
+      it "should remove the locale and result_view params" do
+        hash = sanitize_params_for_locale_switcher({"locale" => "en", :result_view => "default"})
+        hash.should == {}
+      end
+    end
+  end
 end

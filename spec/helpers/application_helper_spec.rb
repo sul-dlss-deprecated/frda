@@ -13,19 +13,20 @@ describe ApplicationHelper do
       highlight.stub(:id).and_return("1")
       params = params_for_collection_highlight(highlight)
       params.should be_a(Hash)
-      params[:f][:en_highlight_field].should be_a(Array)
-      params[:f][:en_highlight_field].length.should == 1
-      params[:f][:en_highlight_field].first.should == "highlight_1"
+      field = params[:f][:en_highlight_field] || params[:f][:fr_highlight_field]
+      field.should be_a(Array)
+      field.length.should == 1
+      field.first.should == "highlight_1"
     end
     
     it "should link to the appropriate collection highlight" do
       highlight = mock('highlight')
       highlight.stub(:id).and_return("1")
       highlight.stub(:name_en).and_return("Highlighted Collection")
+      highlight.stub(:name_fr).and_return("Highlighted Collection")
       link = link_to_collection_highlight(highlight)
       link.should =~ /^<a href=".*highlight_field.*highlight_1">Highlighted Collection<\/a>$/
     end
-    
   end
   
   describe "catalog_heading linking" do

@@ -107,26 +107,48 @@ module ApplicationHelper
   def truncate_highlight(text, options={})
     unless (text.include?("<em>") and text.include?("</em>"))
       options[:length] = text.length unless options[:length]
-      return truncate(text, options)
+      return [truncate(text, options)]
     end
+    options[:omission] ||= "..."
 
-    first_position = text.index("<em>")
-    last_position = text.enum_for(:scan, /<\/em>/).map{ Regexp.last_match.begin(0) }.last + 4
-    if options[:before]
-      first_position -= options[:before].to_i
-    end
-    if options[:after]
-      last_position += options[:after].to_i
-    end
-    if options[:around]
-      first_position -= options[:around].to_i
-      last_position += options[:around].to_i
-    end
-    first_position = 0 if first_position < 0
-    omission = "..."
-    omission = options[:omission] if options[:omission]
+    opens  = text.enum_for(:scan, /<em>/  ).map{ Regexp.last_match.begin(0) }
+    closes = text.enum_for(:scan, /<\/em>/).map{ Regexp.last_match.begin(0) }
 
-    "#{omission}#{text[first_position..last_position]}#{omission}"
+    gap = options[:around] || 0
+    instances = []
+    closes.length.times do |i|
+      open_tag  = opens[i]
+      close_tag = (closes[i] + 5)
+      instances << OpenStruct.new(:open  => open_tag,
+                                  :close => close_tag,
+                                  :text  => text[open_tag...close_tag])
+    end
+    inst_buffer = []
+    snippets = []
+    instances.each_with_index do |instance, index|
+      next_open = instances[index+1] ? instances[index+1].open : instances.last.open
+      if ((next_open - instance.close) < ((gap * 2) + 10))
+        inst_buffer << instance
+      else
+        if inst_buffer.blank?
+          snippets << generate_snippet(text, gap, instance.open, instance.close, options[:omission])
+        else
+          inst_buffer << instance
+          snippets << generate_snippet(text, gap, inst_buffer.first.open, inst_buffer.last.close, options[:omission])
+        end
+        inst_buffer = []
+      end
+      if ((index+1) == instances.length) && !inst_buffer.blank?
+        snippets << generate_snippet(text, gap, inst_buffer.first.open, inst_buffer.last.close, options[:omission])
+      end
+    end
+    snippets
+  end
+
+  def generate_snippet(str, gap, open, close, omission)
+    open_with_gap = open - gap
+    open_with_gap = 0 if open_with_gap < 0
+    "#{omission if open_with_gap > 0 }#{str[(open_with_gap)...(close+gap)]}#{omission if (close+gap) < str.length}"
   end
 
   def highlight_text(doc, field)

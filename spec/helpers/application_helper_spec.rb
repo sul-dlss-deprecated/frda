@@ -83,28 +83,28 @@ describe ApplicationHelper do
       @no_highlight = "Hello, this is a string that does not have any highlighting."
       @single_highlight = "Hello, <em>this string</em> has a single highlight in it."
       @multi_highlights = "Hello, <em>this string</em> has <em>multiple</em> highlights in it."
+      @long_highlight = "Lorem <em>ipsum</em> dolor sit amet, consectetur <em>adipiscing</em> elit. Sed sed euismod quam."
     end
     it "should preserve fields w/o highlighting" do
-      truncate_highlight(@no_highlight).should == @no_highlight
+      truncate_highlight(@no_highlight).should == [@no_highlight]
     end
     it "should send on the parameters to truncate for non highlighted text" do
-      truncate_highlight(@no_highlight, :length => 8).should == "Hello..."
+      truncate_highlight(@no_highlight, :length => 8).should == ["Hello..."]
     end
     it "should truncate around the first and last em if no options are passed" do
-      truncate_highlight(@single_highlight).should == "...<em>this string</em>..."
-      truncate_highlight(@multi_highlights).should == "...<em>this string</em> has <em>multiple</em>..."
-    end
-    it "should grab the requested number of characters before the highlighting" do
-      truncate_highlight(@single_highlight, :before => 3).should == "...o, <em>this string</em>..."
-      truncate_highlight(@multi_highlights, :before => 3).should == "...o, <em>this string</em> has <em>multiple</em>..."
-    end
-    it "should grab the requested number of characters after the highlighting" do
-      truncate_highlight(@single_highlight, :after => 3).should == "...<em>this string</em> ha..."
-      truncate_highlight(@multi_highlights, :after => 3).should == "...<em>this string</em> has <em>multiple</em> hi..."
+      truncate_highlight(@single_highlight).should == ["...<em>this string</em>..."]
+      truncate_highlight(@multi_highlights).should == ["...<em>this string</em> has <em>multiple</em>..."]
     end
     it "should grab the requested number of characters around the highlighting" do
-      truncate_highlight(@single_highlight, :around => 3).should == "...o, <em>this string</em> ha..."
-      truncate_highlight(@multi_highlights, :around => 3).should == "...o, <em>this string</em> has <em>multiple</em> hi..."
+      truncate_highlight(@single_highlight, :around => 3).should == ["...o, <em>this string</em> ha..."]
+      truncate_highlight(@multi_highlights, :around => 3).should == ["...o, <em>this string</em> has <em>multiple</em> hi..."]
+    end
+    it "should combine highlighting that is w/i the gap*2 (and then some)" do
+      truncate_highlight(@long_highlight, :around => 2 ).should == ["...m <em>ipsum</em> d...", "...r <em>adipiscing</em> e..."]
+      truncate_highlight(@long_highlight, :around => 10).should == ["Lorem <em>ipsum</em> dolor sit amet, consectetur <em>adipiscing</em> elit. Sed..."]
+    end
+    it "should not add the ommission characters when we're not truncating a part of the string" do
+      truncate_highlight(@single_highlight, :around => 100).should == [@single_highlight]
     end
   end
 

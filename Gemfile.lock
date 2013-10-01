@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/cbeer/gssapi.git
+  remote: https://github.com/cbeer/gssapi.git
   revision: 59bbd6dd916cf2b96cf6b1984f5db8e7891c8bcd
   specs:
     gssapi (1.1.2)

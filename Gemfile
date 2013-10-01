@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'http://sul-gems.stanford.edu'
 
 gem 'bundler', '>= 1.2.0'
 
@@ -67,6 +68,17 @@ gem 'jquery-rails'
 gem "bootstrap-sass"
 
 gem 'awesome_nested_set'
+
+# gems necessary for capistrano deployment
+group :deployment do
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'rvm-capistrano'
+  gem 'lyberteam-devel', '>=1.0.0'
+  gem 'lyberteam-gems-devel', '>=1.0.0'
+  gem 'net-ssh-krb'
+  gem 'gssapi', :github => 'cbeer/gssapi'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

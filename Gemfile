@@ -77,8 +77,8 @@ group :deployment do
   gem 'lyberteam-devel', '>=1.0.0'
   gem 'lyberteam-gems-devel', '>=1.0.0'
   gem 'net-ssh-krb'
-  gem 'gssapi', :git => 'https://github.com/cbeer/gssapi.git'
 end
+gem 'gssapi', :git => 'https://github.com/cbeer/gssapi.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

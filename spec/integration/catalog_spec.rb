@@ -71,9 +71,6 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   end
   
   it "should show an Images detail page" do
-    pending
-    # fails when adding mods_display gem?
-    # TODO revist when finalizing mods_display gem configuration
     visit catalog_path(:id=>'bb018fc7286')
     page.should have_content("le 14.e juillet 1790 : [estampe]")
     page.should have_xpath("//img[contains(@src, \"bb018fc7286/T0000001_thumb.jpg\")]")    
@@ -81,8 +78,6 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   end
   
   it "should search for an Images item" do
-    pending
-    # we aren't printing titles in the search results for the Image items at the moment.
     visit search_path(:q=>'bonaparte')
     page.should have_content("Bonaparte au Caire")
     page.should have_xpath("//img[contains(@src, \"zp695fd1911/T0000001_thumb\")]")

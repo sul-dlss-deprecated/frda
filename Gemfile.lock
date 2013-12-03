@@ -156,7 +156,7 @@ GEM
       iso-639
       nokogiri
       nom-xml
-    mods_display (0.1.4)
+    mods_display (0.2.3)
       stanford-mods
     multi_json (1.7.6)
     mysql (2.8.1)
@@ -286,7 +286,7 @@ DEPENDENCIES
   lyberteam-devel (>= 1.0.0)
   lyberteam-gems-devel (>= 1.0.0)
   meta_request
-  mods_display (~> 0.1.4)
+  mods_display (~> 0.2.3)
   mysql (= 2.8.1)
   net-ssh-krb
   rails (>= 3.2.11)

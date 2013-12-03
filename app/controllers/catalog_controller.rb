@@ -14,6 +14,9 @@ class CatalogController < ApplicationController
     genre do
       link :search_link_from_facet_field, :field => "genre_ssim", :value => "%value%"
     end
+    collection do
+      ignore!
+    end
   end
   
   # The logic to handle the date range queries is being set by the BlacklightDates2SVG gem.

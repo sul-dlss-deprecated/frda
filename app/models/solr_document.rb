@@ -9,8 +9,8 @@ class SolrDocument
   self.unique_key = 'id'
 
   mods_xml_source do |model|
-      model[:mods_xml]
-    end
+    model.mods_xml_for_mods_display
+  end
 
   def title(params={})
     length = params[:length] || "long"
@@ -296,7 +296,16 @@ class SolrDocument
     return nil unless self[:mods_xml]
     @mods ||= Stanford::Mods::Record.new.from_str(self[:mods_xml], false)
   end
-  
+
+  def mods_xml_for_mods_display
+    return nil unless self[:mods_xml]
+    xml = Nokogiri::XML(self[:mods_xml]).remove_namespaces!
+    xml.search("//subject[@displayLabel='Catalog heading']").each do |node|
+      node.remove
+    end
+    xml.to_s
+  end
+
    def self.image_dimensions
      options = {:default => "_thumb",
                 :square   => "_square",

@@ -202,5 +202,14 @@ describe SolrDocument do
       @no_mods_doc.mods.should be_nil
     end
   end
-  
+  describe "mods_xml_for_mods_display" do
+    before(:all) do
+      @xml = "<?xml version='1.0'?><mods><title>This is the first note.</title><subject displayLabel='Catalog heading'>This is a Catalog Heading</subject></mods>"
+      @mods_doc = SolrDocument.new({:id => "12345", :mods_xml => @xml})
+    end
+    it "should remove catalog headings from MODS before sending to the ModsDisplay gem" do
+      expect(@xml).to match(/This is a Catalog Heading/)
+      expect(@mods_doc.mods_xml_for_mods_display).not_to match(/This is a Catalog Heading/)
+    end
+  end
 end

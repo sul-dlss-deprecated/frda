@@ -11,6 +11,9 @@ class CatalogController < ApplicationController
   include ModsDisplay::ControllerExtension
 
   configure_mods_display do
+    genre do
+      link :search_link_from_facet_field, :field => "genre_ssim", :value => "%value%"
+    end
   end
   
   # The logic to handle the date range queries is being set by the BlacklightDates2SVG gem.
@@ -471,5 +474,8 @@ class CatalogController < ApplicationController
     params.delete("combined")
   end
   
+  def search_link_from_facet_field(opts={})
+    catalog_index_path(:f => {opts[:field].to_sym => [opts[:value]]})
+  end
   
 end 

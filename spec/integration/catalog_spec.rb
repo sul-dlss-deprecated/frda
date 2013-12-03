@@ -74,7 +74,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     visit catalog_path(:id=>'bb018fc7286')
     page.should have_content("le 14.e juillet 1790 : [estampe]")
     page.should have_xpath("//img[contains(@src, \"bb018fc7286/T0000001_thumb.jpg\")]")    
-    page.should have_xpath("//a[contains(@href, \"/en/catalog?f%5Bcollector_ssim%5D%5B%5D=Vinck%2C+Carl+de\")]")    
+    page.should have_xpath("//a[contains(@href, \"en/catalog?f%5Bgenre_ssim%5D%5B%5D=Picture\")]")
   end
   
   it "should search for an Images item" do

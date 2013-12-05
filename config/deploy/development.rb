@@ -13,5 +13,6 @@ namespace :deploy do
   end
 end
 
-before "deploy:restart", "jetty:refresh_fixtures"
+# Commenting out while we use frda-dev with stage data.
+#before "deploy:restart", "jetty:refresh_fixtures"
 after "deploy:migrate", "db:loadseeds"

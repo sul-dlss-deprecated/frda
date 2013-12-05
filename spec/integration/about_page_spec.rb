@@ -3,6 +3,7 @@ require 'spec_helper'
 describe("About Pages",:type=>:request,:integration=>true) do
 
   before(:each) do
+    I18n.locale = :en
     @curator_title=I18n.t("frda.curator_heading")
     @project_team_title=I18n.t("frda.project_team_stanford_heading")
     @acknowledgements_title=I18n.t("frda.acknowledgements_heading")

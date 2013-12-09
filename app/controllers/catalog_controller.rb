@@ -14,6 +14,10 @@ class CatalogController < ApplicationController
     genre do
       link :search_link_from_facet_field, :field => "genre_ssim", :value => "%value%"
     end
+    subject do
+      hierarchical_link true
+      link :catalog_index_path, q: '"%value%"'
+    end
     collection do
       ignore!
     end

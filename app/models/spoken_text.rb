@@ -2,13 +2,15 @@ class SpokenText < Frda::Text
   attr_reader :speaker
   def initialize(solr_text)
     if solr_text =~ /#{delimiter.strip}/
-      split_text = solr_text.split(delimiter)
-      @page_id = split_text[0]
-      @speaker = strip_highlighting(split_text[1])
-      @text  = split_text[2]
+      @page_id, @speaker, @text = solr_text.split(delimiter)
+      process_speaker
     else
       return nil
     end
   end
-  
+
+  def process_speaker
+    strip_speaker_anchor strip_highlighting @speaker
+  end
+
 end

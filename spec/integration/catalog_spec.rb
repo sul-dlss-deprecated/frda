@@ -76,6 +76,16 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     page.should have_xpath("//img[contains(@src, \"bb018fc7286/T0000001_thumb.jpg\")]")    
     page.should have_xpath("//a[contains(@href, \"en/catalog?f%5Bgenre_ssim%5D%5B%5D=Picture\")]")
   end
+
+  it "should include a colon in an Images detail page title when there is a Mods subTitle" do
+    visit catalog_path(:id=>'bb018fc7286') # item has both Mods title and subTitle fields
+    page.first('h3').text.should == 'Pacte fédératif des Français le 14.e juillet 1790 : [estampe]'
+  end
+
+  it "should not include a colon in an Images detail page title when there is not a Mods subTitle" do
+    visit catalog_path(:id=>'bg698df3242') # item does not have a Mods subTitle field
+    page.should_not have_xpath("//h3[contains(., '[:]')]")
+  end
   
   it "should search for an Images item" do
     visit search_path(:q=>'bonaparte')

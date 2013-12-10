@@ -282,6 +282,19 @@ module ApplicationHelper
       link_to(display_label, doc.mods.related_item.location.url.text)
   end
 
+  # Creates Images item title from mods title and mods subTitle, with " : " between them
+  def mods_combined_title(doc)
+    title = doc.mods.title_info.title.text
+    subtitle = doc.mods.title_info.subTitle.text
+    unless title.blank?
+      combined_title = title
+      unless subtitle.blank?
+        combined_title << " : #{subtitle}"
+      end
+      return combined_title
+    end
+  end
+
   # Check to see if the mods element 'dateIssued', without "encoding = 'marc'", exits
   def mods_element_dateIssued_present?(doc)
     if doc.mods.origin_info.dateIssued.find {|n| n.attr("encoding") != 'marc'}.present?

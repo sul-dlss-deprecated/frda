@@ -54,7 +54,7 @@
 
   <div class="span6 metadata">
     <% unless @document.title.nil?%>
-      <h3><%= @document.title.first %></h3>
+      <h3><%= mods_combined_title(@document) %></h3>
     <% end %>
 
     <%= render_mods_display(@document).body.html_safe %>

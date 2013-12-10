@@ -410,7 +410,7 @@ class CatalogController < ApplicationController
 
   def search_within_speeches(solr_params, user_params)
     unless user_params["speeches"].blank? and user_params["by-speaker"].blank?
-      solr_params[:q] = "spoken_text_ftsimv:\"#{user_params['by-speaker']} #{user_params['q']}\"~10000"
+      solr_params[:q] = "spoken_text_ftsimv:\"aaa#{user_params['by-speaker']}zzz #{user_params['q']}\"~10000"
       solr_params[:defType] = "lucene"
     end
   end

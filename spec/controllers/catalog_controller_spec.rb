@@ -3,6 +3,26 @@ require "spec_helper"
 describe CatalogController do
   
   describe "solr_params_logic" do
+    describe "search within speeches" do
+      before :each do
+        @speaker = "President"
+        @text = "I am the person in charge!"
+        @solr_params = {}
+        @user_params = {"speeches" => "1", "by-speaker" => @speaker, "q" => @text}
+      end
+      it "should prepend the query with the appropriate solr field" do
+        controller.send(:search_within_speeches, @solr_params, @user_params)
+        expect(@solr_params[:q]).to match /^(\w+):\"/
+      end
+      it "should surround the speaker with 'aaa' and 'zzz'" do
+        controller.send(:search_within_speeches, @solr_params, @user_params)
+        expect(@solr_params[:q]).to match /:\"aaa#{@speaker}zzz #{@text}\"/
+      end
+      it "should append the query with an boost value" do
+        controller.send(:search_within_speeches, @solr_params, @user_params)
+        expect(@solr_params[:q]).to match /\"~(\d+)$/
+      end
+    end
     describe "exclude_highlighting" do
       it "should turn highlighting off and not return any rows for the home page" do
         solr_params = {}

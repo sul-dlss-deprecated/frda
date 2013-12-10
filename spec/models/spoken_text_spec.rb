@@ -4,6 +4,7 @@ describe SpokenText do
   
   before :all do
     @spoken_text = "1234-|-John Doe-|-This is a speech."
+    @anchored_speaker = "1234-|-aaaJohn Doezzz-|-This is a speech."
     @highlighted_text = "1234-|-John Doe-|-This is a <em>highlighted</em> speech."
     @highlighted_speaker = "1234-|-<em>John</em> Doe-|-This is a <em>highlighted</em> speech."
   end
@@ -17,6 +18,9 @@ describe SpokenText do
   describe "speaker" do
     it "should return the second element in the spoken_text delimited field" do
       SpokenText.new(@spoken_text).speaker.should == "John Doe"
+    end
+    it "should strip the anchor strings from the speaker" do
+      SpokenText.new(@anchored_speaker).speaker.should == "John Doe"
     end
     it "should strip any highlighting if present" do
       SpokenText.new(@highlighted_speaker).speaker.should_not include "<em>"

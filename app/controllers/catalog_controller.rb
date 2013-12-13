@@ -223,7 +223,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'speaker_ssim', :label => 'frda.show.people', :show => true, :limit => 15
     
     config.add_facet_field 'doc_type_ssi', :label => 'frda.facet.type', :limit => 15
-    config.add_facet_field 'medium_ssi', :label => 'frda.facet.medium', :limit => 15
+    config.add_facet_field 'medium_ssim', :label => 'frda.facet.medium', :limit => 15
     config.add_facet_field 'genre_ssim', :label => 'frda.facet.genre', :limit => 15
     config.add_facet_field 'artist_ssim', :label => 'frda.facet.artist', :limit => 15
     config.add_facet_field 'collector_ssim', :label => 'frda.facet.collector', :limit => 15

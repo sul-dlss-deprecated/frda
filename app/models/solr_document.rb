@@ -173,7 +173,7 @@ class SolrDocument
   end
   
   def medium
-    self[:medium_ssi]
+    self[:medium_ssim]
   end
 
   def publisher

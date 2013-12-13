@@ -7,19 +7,19 @@
    <field name="type_ssi">image</field>
    <field name="doc_type_ssi">nonprojected graphic</field>
    <field name="title_short_ftsi">Pacte fédératif des Français le 14.e juillet 1790</field>
-   <field name="title_long_ftsi">Pacte fédératif des Français le 14.e juillet 1790 : [estampe]</field> 
+   <field name="title_long_ftsi">Pacte fédératif des Français le 14.e juillet 1790 : [estampe]</field>
    <field name="collector_ssim">Vinck, Carl de</field>
    <field name="artist_ssim">Girardet, Abraham</field>
    <field name="genre_ssim">Picture</field>
    <field name="genre_ssim">Scènes historiques-1789-1799</field>
-   <field name="medium_ssi">eau-forte</field>  
+   <field name="medium_ssim">eau-forte</field>
    <field name="search_date_dtsim">1790-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Aspects culturels et artistiques -- Fêtes et célébrations -- La Fête de la Fédération (14 juillet 1790) -- La cérémonie au Champ-de-Mars</field>
-   <field name="catalog_heading_etsimv">Themes in art and culture -- Festivals and celebrations -- The "Fête de la Fédération" (14 July 1790) -- The ceremony on the Champ-de-Mars</field>    
-   
+   <field name="catalog_heading_etsimv">Themes in art and culture -- Festivals and celebrations -- The "Fête de la Fédération" (14 July 1790) -- The ceremony on the Champ-de-Mars</field>
+
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><titleInfo> <title>Pacte fédératif des Français le 14.e juillet 1790</title> <subTitle>[estampe]</subTitle> </titleInfo> <note>An nonprojected graphic by Abraham Giradret</note><originInfo> <place> <placeTerm type="code" authority="marccountry">fr</placeTerm> </place> <place> <placeTerm type="text">Se vend a&#x300; Paris</placeTerm> </place> <publisher>chez Girardet</publisher> <dateIssued>[1790]</dateIssued> <dateIssued encoding="marc">1790</dateIssued> <dateIssued encoding="marc">1790</dateIssued> <issuance>monographic</issuance> </originInfo> <name type="personal"> <namePart>Vinck, Carl de</namePart> <namePart type="date">1859-19</namePart> <role> <roleTerm authority="marcrelator" type="code">col</roleTerm> </role> </name> <genre authority="marcgt">Picture</genre> <genre authority="">Scènes symboliques-1789-1799.</genre> <subject authority="ram"> <topic>Serments politiques</topic> <geographic>France</geographic> <temporal>1789-1815</temporal> </subject> <subject> <topic>Fe&#x301;de&#x301;rations (France) (1789-1790) -- France -- Paris (France)</topic> </subject> <subject lang="fre" displayLabel="Catalog heading"> <topic>Aspects culturels et artistiques</topic> <topic>F&#xEA;tes et c&#xE9;l&#xE9;brations</topic> <topic>La F&#xEA;te de la F&#xE9;d&#xE9;ration (14 juillet 1790)</topic> <topic>La c&#xE9;r&#xE9;monie au Champ-de-Mars</topic> </subject> <subject lang="eng" displayLabel="Catalog heading"> <topic>Themes in art and culture</topic> <topic>Festivals and celebrations</topic> <topic>The "F&#xEA;te de la F&#xE9;d&#xE9;ration" (14 July 1790)</topic> <topic>The ceremony on the Champ-de-Mars</topic> </subject><relatedItem> <location> <url displayLabel="Notice et cote du catalogue de la Bibliothe&#x300;que nationale de France">http://catalogue.bnf.fr/ark:/12148/cb40247956f</url> </location> </relatedItem></mods>]]></field>
  </doc>
- 
+
  <doc>
    <field name="id">bb101kw2226</field>
    <field name="image_id_ssm">T0000001.jp2</field>
@@ -33,11 +33,11 @@
    <field name="collector_ssim">Vinck, Carl de</field>
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Scènes symboliques-1789-1799.</field>
-   <field name="medium_ssi">eau-forte, coul.</field>
+   <field name="medium_ssim">eau-forte, coul.</field>
    <field name="search_date_dtsim">1789-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Aspects culturels et artistiques -- Jeux et loisirs -- Jeux divers</field>
    <field name="catalog_heading_etsimv">Themes in art and culture -- Games and leisure -- Other games</field>
-   
+
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>A print that was collected by Carl de Vinck</note></mods>]]></field>
  </doc>
  <doc>
@@ -54,12 +54,12 @@
    <field name="artist_ssim">Jones, John</field>
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Portraits-1789-1799.</field>
-   <field name="medium_ssi">eau-forte, pointillé</field>
+   <field name="medium_ssim">eau-forte, pointillé</field>
    <field name="speaker_ssim">Robespierre, Maximilien de</field>
    <field name="search_date_dtsim">1794-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- R</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- R</field>
-   
+
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods> <titleInfo><title>M. Robbespierre</title></titleInfo> <note>An image of Maximilien de Rebespierre speaking</note></mods>]]></field>
  </doc>
 
@@ -76,10 +76,10 @@
    <field name="collector_ssim">Vinck, Carl de</field>
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Costume-1789-1799.</field>
-   <field name="medium_ssi">eau-forte, coul.</field>
+   <field name="medium_ssim">eau-forte, coul.</field>
    <field name="search_date_dtsim">1795-01-01T00:00:00Z</field>
    <field name="search_date_dtsim">1799-01-01T00:00:00Z</field>
-   
+
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><title><titleInfo>Membre du Directoire exécutif dans son grand costume</titleInfo></title></mods>]]></field>
  </doc>
 
@@ -99,15 +99,15 @@
    <field name="artist_ssim">Girardet, Abraham</field>
    <field name="genre_ssim">Illustration</field>
    <field name="genre_ssim">Scènes historiques-1789-1799</field>
-   <field name="medium_ssi">eau-forte, burin</field>
+   <field name="medium_ssim">eau-forte, burin</field>
    <field name="speaker_ssim">Ramel, Jean-Pierre</field>
    <field name="search_date_dtsim">1802-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Les événements de la Révolution -- Rivalités politiques et antagonismes sociaux -- Les luttes politiques -- De thermidor au coup d'état du 18 brumaire (novembre 1799)</field>
-   <field name="catalog_heading_etsimv">The events of the Revolution -- Political rivalries and social conflict -- Political struggles -- From 9 Thermidor (July 1794) to the "coup d'état" of 18 Brumaire (November 1799)</field>    
-   
+   <field name="catalog_heading_etsimv">The events of the Revolution -- Political rivalries and social conflict -- Political struggles -- From 9 Thermidor (July 1794) to the "coup d'état" of 18 Brumaire (November 1799)</field>
+
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
  </doc>
- 
+
  <doc>
    <field name="id">qv647nz8770</field>
    <field name="image_id_ssm">T0000001.jp2</field>
@@ -123,14 +123,14 @@
    <field name="artist_ssim">Béricourt, E.</field>
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Scènes de genre-1789-1799.</field>
-   <field name="medium_ssi">eau-forte, outils, coul. au repérage</field>
+   <field name="medium_ssim">eau-forte, outils, coul. au repérage</field>
    <field name="search_date_dtsim">1789-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Les événements de la Révolution -- La politique au quotidien -- Les "types du jour" -- Les enfants</field>
-   <field name="catalog_heading_etsimv">The events of the Revolution -- Everyday politics -- Typical characters -- Children</field>    
-   
+   <field name="catalog_heading_etsimv">The events of the Revolution -- Everyday politics -- Typical characters -- Children</field>
+
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>An image by Brouwer, G.</note><note>An image by Béricourt, E.</note></mods>]]></field>
  </doc>
- 
+
  <doc>
    <field name="id">zp486wj7751</field>
    <field name="image_id_ssm">T0000001.jp2</field>
@@ -144,11 +144,11 @@
    <field name="collector_ssim">Vinck, Carl de</field>
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Caricatures et dessins humoristiques-1789-1799.</field>
-   <field name="medium_ssi">eau-forte, coul.</field>
+   <field name="medium_ssim">eau-forte, coul.</field>
    <field name="search_date_dtsim">1790-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Les événements de la Révolution -- La religion -- Le discrédit du clergé et de l'Église -- La critique des moeurs du clergé</field>
    <field name="catalog_heading_etsimv">The events of the Revolution -- Religion -- The clergy and Church discredited -- The attack on priests' morals</field>
-   
+
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
  </doc>
 
@@ -165,13 +165,13 @@
    <field name="collector_ssim">Hennin, Michel</field>
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
-   <field name="medium_ssi">eau-forte, pointillé</field>
+   <field name="medium_ssim">eau-forte, pointillé</field>
    <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
    <field name="search_date_dtsim">1798-01-01T00:00:00Z</field>
    <field name="search_date_dtsim">1799-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
-   
+
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><originInfo> <place> <placeTerm type="code" authority="marccountry">fr</placeTerm> </place> <place> <placeTerm type="text">Paris]</placeTerm> </place> <publisher>[s.n.]</publisher> <dateIssued>[1798 ou 1799]</dateIssued> <dateIssued encoding="marc" point="start" qualifier="questionable">1798</dateIssued> <dateIssued encoding="marc" point="end" qualifier="questionable">1799</dateIssued> <issuance>monographic</issuance> </originInfo><subject authority="ram"> <name type="personal"> <namePart type="termsOfAddress">Ier, empereur des Franc&#x327;ais</namePart> <namePart>Napole&#x301;on</namePart> <namePart type="date">1769-1821</namePart> </name> </subject> <subject> <geographic>France -- Histoire, 1798-1801 (campagne d'Egypte)</geographic> </subject> <subject lang="fre" displayLabel="Catalog heading"> <topic>Archives et documents</topic> <topic>Portraits</topic> <topic>Les personnages de l'&#xE9;poque r&#xE9;volutionnaire</topic> <topic>B</topic> </subject> <subject lang="eng" displayLabel="Catalog heading"> <topic>Archives and documents</topic> <topic>Portraits</topic> <topic>Revolutionary figures</topic> <topic>B</topic> </subject><relatedItem> <location> <url displayLabel="Notice et cote du catalogue de la Bibliothe&#x300;que nationale de France">http://catalogue.bnf.fr/ark:/12148/cb40252105b</url> </location> </relatedItem></mods>]]></field>
  </doc>
 
@@ -188,12 +188,12 @@
    <field name="collector_ssim">Hennin, Michel</field>
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
-   <field name="medium_ssi">eau-forte, pointillé</field>
+   <field name="medium_ssim">eau-forte, pointillé</field>
    <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
    <field name="search_date_dtsim">1798-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
-   
+
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>A portrait of Napoleon</note></mods>]]></field>
  </doc>
 
@@ -210,12 +210,12 @@
    <field name="collector_ssim">Hennin, Michel</field>
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
-   <field name="medium_ssi">eau-forte, pointillé</field>
+   <field name="medium_ssim">eau-forte, pointillé</field>
    <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
    <field name="search_date_dtsim">1798-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
-   
+
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
  </doc>
 
@@ -232,11 +232,11 @@
    <field name="collector_ssim">Hennin, Michel</field>
    <field name="genre_ssim">picture</field>
    <field name="genre_ssim">Portraits symboliques-1789-1815.</field>
-   <field name="medium_ssi">eau-forte, pointillé</field>
+   <field name="medium_ssim">eau-forte, pointillé</field>
    <field name="speaker_ssim">Ier, empereur des Français Napoléon</field>
    <field name="search_date_dtsim">1798-01-01T00:00:00Z</field>
    <field name="catalog_heading_ftsimv">Archives et documents -- Portraits -- Les personnages de l'époque révolutionnaire -- B</field>
    <field name="catalog_heading_etsimv">Archives and documents -- Portraits -- Revolutionary figures -- B</field>
-   
+
    <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
  </doc>

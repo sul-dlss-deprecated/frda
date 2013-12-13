@@ -640,6 +640,15 @@ i.icon-plus, i.icon-minus {
   }
 }
 
+.sort-order-label {
+  color: #999;
+  display: block;
+  text-align: center;
+  &.combined {
+    margin: 12px 0 0;
+  }
+}
+
 /* Responsive styles */
 @media (min-width: 768px) and (max-width: 979px) {
   .blacklight-catalog-index {

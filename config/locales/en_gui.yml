@@ -257,6 +257,7 @@ en:
         words: "words"
         in_title: "in title & key terms only"
         exact: "exact match (no stemming)"
+      images_sort_order: "Results sorted by date, ascending"
     sidebar:
       actions:
         title: 'Actions'

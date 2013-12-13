@@ -23,11 +23,11 @@
                 <% end %>
               </span>
             </span>
+            <% if grouping.group == "Images de la Révolution française" %>
+              <span class="sort-order-label combined"><%= t('frda.search.images_sort_order') %></span>
+            <% end %>
           </li>
 
-          <%# TODO: The else portion below is temporary. Remove when indexing work is done to show the
-              Images group title. Will need to detect whether group is Images and if so,
-              use the appropriate icon instead of icon-book. %>
         <%- else -%>
           <%# Only show the Images group heading if we're in the combined results view %>
           <% unless on_images_page %>
@@ -55,6 +55,7 @@
   <%- end -%> <%# end true portion of response_is_grouped? %>
 
   <%- else -%> <%# response is not grouped %>
+    <span class="sort-order-label"><%= t('frda.search.images_sort_order') %></span>
     <div class="flat-result-group">
       <%- documents.each_with_index do |document, index| -%>
         <%= render :partial => "search_result_item", :locals => {:document => document, :index => index} %>

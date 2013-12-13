@@ -266,6 +266,7 @@ fr:
         words: "mots d'écart"
         in_title: "par? titres et tables/légends"
         exact: "mots exacts (sans troncature)"
+      images_sort_order: "Tri par date d'édition croissante"
     sidebar:
       actions:
         title: 'Actions'

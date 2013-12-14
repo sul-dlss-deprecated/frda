@@ -18,6 +18,9 @@ class CatalogController < ApplicationController
       hierarchical_link true
       link :catalog_index_path, q: '"%value%"'
     end
+    resource_type do
+      ignore!
+    end
     collection do
       ignore!
     end

@@ -2,6 +2,9 @@
 
 #brandbar {
   min-height: 35px;
+  .bnf-logo {
+    padding-left: 30px;
+  }
 }
 
 #header-wrapper {
@@ -129,6 +132,15 @@
     }
     &.navbar .nav > li:last-child > a {padding-right: 25px}
   }
+}
+
+/* Brand bar adjustments for small screens */
+@media (max-width: 767px) {
+ #brandbar {
+   #report-problem {
+     padding-right: 10px;
+   }
+ }
 }
 /* Tablets: reduce logo size and add some extra space between logo
    and site title and nav elements */

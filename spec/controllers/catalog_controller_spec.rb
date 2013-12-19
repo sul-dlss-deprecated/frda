@@ -22,6 +22,12 @@ describe CatalogController do
         controller.send(:search_within_speeches, @solr_params, @user_params)
         expect(@solr_params[:q]).to match /\"~(\d+)$/
       end
+      it "should remove quotes in the user query param" do
+        user_params = {"q" => '"HEY, this is a phrase"', "speeches" => "1", "by-speaker" => @speaker}
+        controller.send(:search_within_speeches, @solr_params, user_params)
+        expect(user_params["q"]).to eq '"HEY, this is a phrase"'
+        expect(@solr_params[:q]).not_to match user_params["q"]
+      end
     end
     describe "exclude_highlighting" do
       it "should turn highlighting off and not return any rows for the home page" do

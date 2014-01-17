@@ -11,9 +11,13 @@ class CatalogController < ApplicationController
   include ModsDisplay::ControllerExtension
 
   configure_mods_display do
-    genre do
-      link :search_link_from_facet_field, :field => "genre_ssim", :value => "%value%"
-    end
+    # Removing genre links per FRDA-191. I am keeping this commented out
+    # as a refernece to how we used the search_link_from_facet_field
+    # method in case we would like to re-link genre in the future.
+
+    # genre do
+    #   link :search_link_from_facet_field, :field => "genre_ssim", :value => "%value%"
+    # end
     subject do
       hierarchical_link true
       link :catalog_index_path, q: '"%value%"'

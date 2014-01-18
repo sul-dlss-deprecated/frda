@@ -489,7 +489,7 @@ class CatalogController < ApplicationController
   end
 
   def subject_search_link opts={}
-    catalog_index_path(:q => opts[:value], :f => {:collection_ssi => [Frda::Application.config.images_id]})
+    catalog_index_path(:q => opts[:value], :f => {:collection_ssi => [Frda::Application.config.images_id]}, :exact => 1)
   end
 
   def search_link_from_facet_field(opts={})

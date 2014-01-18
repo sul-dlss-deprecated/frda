@@ -114,5 +114,8 @@ describe CatalogController do
     it "should limit to the Images collection" do
       expect(@link).to match /\?|&f%5Bcollection_ssi.*=#{Frda::Application.config.images_id}&|^/
     end
+    it "should force an exact match" do
+      expect(@link).to match /\?|&exact=1&|^/
+    end
   end
 end

@@ -104,5 +104,15 @@ describe CatalogController do
 
     end
   end
-  
+  describe "subject search linking" do
+    before :each do
+      @link = controller.send(:subject_search_link, {:value => 'This is the value'})
+    end
+    it "should pass the original value as the q parameter" do
+      expect(@link).to match /\?|&q=This\+is\+the\+value&|^/
+    end
+    it "should limit to the Images collection" do
+      expect(@link).to match /\?|&f%5Bcollection_ssi.*=#{Frda::Application.config.images_id}&|^/
+    end
+  end
 end

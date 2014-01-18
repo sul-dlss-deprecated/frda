@@ -20,7 +20,7 @@ class CatalogController < ApplicationController
     # end
     subject do
       hierarchical_link true
-      link :catalog_index_path, q: '"%value%"'
+      link :subject_search_link, :value => '"%value%"'
     end
     resource_type do
       ignore!
@@ -487,7 +487,11 @@ class CatalogController < ApplicationController
     params.delete("image")
     params.delete("combined")
   end
-  
+
+  def subject_search_link opts={}
+    catalog_index_path(:q => opts[:value], :f => {:collection_ssi => [Frda::Application.config.images_id]})
+  end
+
   def search_link_from_facet_field(opts={})
     catalog_index_path(:f => {opts[:field].to_sym => [opts[:value]]})
   end

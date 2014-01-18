@@ -73,8 +73,9 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   it "should show an Images detail page" do
     visit catalog_path(:id=>'bb018fc7286')
     page.should have_content("le 14.e juillet 1790 : [estampe]")
-    page.should have_xpath("//img[contains(@src, \"bb018fc7286/T0000001_thumb.jpg\")]")    
-    page.should have_xpath("//a[contains(@href, \"en/catalog?f%5Bgenre_ssim%5D%5B%5D=Picture\")]")
+    page.should have_xpath("//img[contains(@src, \"bb018fc7286/T0000001_thumb.jpg\")]")
+    page.should have_xpath("//dt", :text => "Genre")
+    page.should have_xpath("//dd", :text => "Picture")
   end
 
   it "should include a colon in an Images detail page title when there is a Mods subTitle" do

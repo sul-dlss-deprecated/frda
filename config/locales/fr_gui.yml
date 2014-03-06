@@ -23,7 +23,7 @@ fr:
       frda_collection: 'Archives numériques de la Révolution française'
       about: 'À propos'
       home: 'Accueil'
-      report_problem: 'Problèmes techniques?'
+      feedback: 'Feedback'
       technical_description: 'Informations techniques'
       project_overview: 'Message de la conservatrice'
       project_team_stanford: 'Équipe de projet : Stanford'
@@ -44,7 +44,7 @@ fr:
       close: 'Close'
     about:
       project_title: 'Message de la conservatrice'
-      contact_title: 'Problèmes techniques?'
+      contact_title: 'Feedback'
       contact_message_sent: 'Thanks - your message has been sent.'
       contact_error: 'You need to enter some message text.'
       terms_of_use_title: Conditions d'utilisation

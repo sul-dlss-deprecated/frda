@@ -5,13 +5,13 @@
     <%= link_to(image_tag("bnf-logo-gray-white-text-h23.png", :alt => "Bibliothèque nationale de France"), "http://www.bnf.fr", :class => "bnf-logo")%>
     <span id="report-problem">
       <%= link_to(
-        t('frda.nav.report_problem'),
+        t('frda.nav.feedback'),
         contact_us_path(:from=>request.path),
         :id=>'contact_us_link'
         )
       %>
       <%# The mailto link below is temporary until we get staging to send email, then uncomment above %>
-      <%#= mail_to "digcoll@jirasul.stanford.edu", t('frda.nav.report_problem'), :cc => "frda-problems@jirasul.stanford.edu", :subject => "FRDA problem" %>
+      <%#= mail_to "digcoll@jirasul.stanford.edu", t('frda.nav.feedback'), :cc => "frda-problems@jirasul.stanford.edu", :subject => "FRDA problem" %>
     </span>
   </div> <!-- .container end -->
 </div> <!-- #brandbar end -->

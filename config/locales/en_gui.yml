@@ -27,7 +27,7 @@ en:
       contact_us: 'Contact Us'
       use_policy: 'Use and reproduction'
       home: 'Home'
-      report_problem: 'Report a problem'
+      feedback: 'Feedback'
       technical_description: 'Technical description'
       project_overview: 'From the curator'
       project_team_stanford: 'Project team: Stanford'
@@ -45,7 +45,7 @@ en:
       close: 'Close'
     about:
       project_title: 'From the curator'
-      contact_title: 'Report a Problem'
+      contact_title: 'Feedback'
       contact_message_sent: 'Thanks - your message has been sent.'
       contact_error: 'You need to enter some message text.'
       terms_of_use_title: 'Use and reproduction'

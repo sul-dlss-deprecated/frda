@@ -28,7 +28,6 @@ en:
       use_policy: 'Use and reproduction'
       home: 'Home'
       feedback: 'Feedback'
-      technical_description: 'Technical description'
       project_overview: 'From the curator'
       project_team_stanford: 'Project team: Stanford'
       project_team_bnf: 'Project team: BnF'
@@ -53,7 +52,6 @@ en:
       acknowledgements_title: 'Acknowledgements'
       stanford_team_title: 'Project team: Stanford'
       bnf_team_title: 'Project team: BnF'
-      technical_description_title: 'Technical description'
       version_title: 'Application Version'
       ap_html: |
         <p>The <em>Archives parlementaires</em> is a chronologically-ordered edited collection of sources on

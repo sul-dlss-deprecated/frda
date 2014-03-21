@@ -179,11 +179,6 @@ en:
         <li>Dominique Maillet at the Preservation Department of the BnF</li>
       </ul>
       </p>
-    technical_description_heading: 'Technical description'
-    technical_description_text_html: |
-      <p>
-        Technical description - text to be provided
-      </p>
     acknowledgements_heading: 'Acknowledgements'
     acknowledgements_text_html: |
       <p>

@@ -198,7 +198,7 @@ module ApplicationHelper
   # elementlink names should match what's used in locale_about.yml
   def about_sections
     section_list = ['curator', 'project_team_stanford',
-                    'project_team_bnf', 'technical_description',
+                    'project_team_bnf',
                     'acknowledgements', 'use_and_reproduction']
   end
 

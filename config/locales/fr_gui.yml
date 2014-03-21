@@ -24,7 +24,6 @@ fr:
       about: 'À propos'
       home: 'Accueil'
       feedback: 'Feedback'
-      technical_description: 'Informations techniques'
       project_overview: 'Message de la conservatrice'
       project_team_stanford: 'Équipe de projet : Stanford'
       project_team_bnf: 'Équipe de projet : BnF'
@@ -52,7 +51,6 @@ fr:
       acknowledgements_title: 'Remerciements'
       stanford_team_title: 'Équipe de projet : Stanford'
       bnf_team_title: 'Équipe de projet : BnF'
-      technical_description_title: 'Informations techniques'
       version_title: Version de l'application
       ap_html: |
         <p>Les <em>Archives parlementaires</em> sont une collection de sources relatives à la Révolution

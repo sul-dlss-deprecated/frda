@@ -13,6 +13,14 @@ fr:
       page_url: 'Location when reported'
       describe_problem: 'Saisir le texte du message'
       curator: 'Conservatrice des collections françaises et italiennes'
+      known_issue:
+        issue_text_html: |
+          <p><strong>Known issue</strong>: Four volumes of the Archives parlementaires are missing digital images of
+          selected pages. The missing pages will be made available on the site when the issue is resolved.</p>
+        vol_28: 'Volume 28: page 444'
+        vol_57: 'Volume 57: page 63'
+        vol_72: 'Volume 72: page 817, 818'
+        vol_82: 'Volume 82: page 522'
     curator_heading: 'Message de la conservatrice'
     curator_text_html: |
       <div class="truncate">

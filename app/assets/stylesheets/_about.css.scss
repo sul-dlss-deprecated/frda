@@ -68,6 +68,15 @@
   p, li, dt, dd {
     font-size: 0.95em;
   }
+  .well.known-issue {
+    background-color: #f7f6f2;
+    border-color: #e3dfd5;
+    margin: 30px;
+    padding: 15px;
+    p {
+      width: 100%;
+    }
+  }
 
   // Make textarea wide as reasonable given viewport size
   @media (min-width: 980px) {

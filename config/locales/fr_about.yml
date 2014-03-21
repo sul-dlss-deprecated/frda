@@ -17,12 +17,12 @@ fr:
         issue_text_html: |
           <p><strong>Problème connu</strong>: Nous avons identifié quelques images numériques des pages
           manquent dans quatre volumes des Archives parlementaires.
-          Les pages manquantes seront mises à la disposition des utilisateurs une fois que le problème
-          aura été résolu.</p>
-        vol_28: 'Volume 28: page 444'
-        vol_57: 'Volume 57: page 63'
-        vol_72: 'Volume 72: page 817, 818'
-        vol_82: 'Volume 82: page 522'
+          Les pages manquantes seront mises à la disposition des utilisateurs une fois que le
+          problème aura été résolu</p>
+        vol_28: 'Tome 28: page 444'
+        vol_57: 'Tome 57: page 63'
+        vol_72: 'Tome 72: page 817, 818'
+        vol_82: 'Tome 82: page 522'
     curator_heading: 'Message de la conservatrice'
     curator_text_html: |
       <div class="truncate">

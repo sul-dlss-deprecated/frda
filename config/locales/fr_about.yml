@@ -15,8 +15,10 @@ fr:
       curator: 'Conservatrice des collections françaises et italiennes'
       known_issue:
         issue_text_html: |
-          <p><strong>Known issue</strong>: Four volumes of the Archives parlementaires are missing digital images of
-          selected pages. The missing pages will be made available on the site when the issue is resolved.</p>
+          <p><strong>Problème connu</strong>: Nous avons identifié quelques images numériques des pages
+          manquent dans quatre volumes des Archives parlementaires.
+          Les pages manquantes seront mises à la disposition des utilisateurs une fois que le problème
+          aura été résolu.</p>
         vol_28: 'Volume 28: page 444'
         vol_57: 'Volume 57: page 63'
         vol_72: 'Volume 72: page 817, 818'

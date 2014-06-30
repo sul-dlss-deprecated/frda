@@ -1,9 +1,9 @@
-require "blacklight/mash" unless defined?(Mash)
 require "solr_response_term_frequencies"
 
-class Frda::GroupedSolrResponse < Mash
+class Frda::GroupedSolrResponse < HashWithIndifferentAccess
   
   include SolrResponseTermFrequencies
+  include Blacklight::SolrResponse::PaginationMethods
 
   attr_reader :request_params
   def initialize(data, request_params)

@@ -82,10 +82,6 @@ class CatalogController < ApplicationController
       @headings = "Category#{lang}".constantize.order("position ASC")
     end
 
-
-    extra_head_content << view_context.auto_discovery_link_tag(:rss, url_for(params.merge(:format => 'rss')), :title => t('blacklight.search.rss_feed') )
-    extra_head_content << view_context.auto_discovery_link_tag(:atom, url_for(params.merge(:format => 'atom')), :title => t('blacklight.search.atom_feed') )
-
     if group_response?
       (@response, @document_list) = get_grouped_search_results
     else
@@ -95,7 +91,7 @@ class CatalogController < ApplicationController
     @filters = params[:f] || []
 
     respond_to do |format|
-      format.html { save_current_search_params }
+      format.html
       format.rss  { render :layout => false }
       format.atom { render :layout => false }
     end
@@ -226,28 +222,29 @@ class CatalogController < ApplicationController
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
 
-    config.add_facet_field 'collection_ssi', :label => 'frda.nav.collection'
-    config.add_facet_field 'speaker_ssim', :label => 'frda.show.people', :show => true, :limit => 15
+
+    config.add_facet_field 'en_periods_ssim', label: :'frda.nav.timeline_of_events', :show => true,  :query => political_periods_query('en')
+    config.add_facet_field 'fr_periods_ssim', label: :'frda.nav.timeline_of_events', :show => true,  :query => political_periods_query('fr')
+  
+    config.add_facet_field 'en_highlight_ssim', label: :'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('en')
+    config.add_facet_field 'fr_highlight_ssim', label: :'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('fr')
+
+    config.add_facet_field 'collection_ssi', label: :'frda.nav.collection'
+    config.add_facet_field 'speaker_ssim', label: :'frda.show.people', :show => true, :limit => 15
     
-    config.add_facet_field 'doc_type_ssi', :label => 'frda.facet.type', :limit => 15
-    config.add_facet_field 'medium_ssim', :label => 'frda.facet.medium', :limit => 15
-    config.add_facet_field 'genre_ssim', :label => 'frda.facet.genre', :limit => 15
-    config.add_facet_field 'artist_ssim', :label => 'frda.facet.artist', :limit => 15
-    config.add_facet_field 'collector_ssim', :label => 'frda.facet.collector', :limit => 15
-    config.add_facet_field 'vol_title_ssi', :label => 'frda.facet.volume', :limit => 15
-    config.add_facet_field 'div2_title_ssi', :label => 'frda.show.session', :show => false
-    config.add_facet_field 'search_date_dtsim', :label => "frda.show.date", :show => false
-    config.add_facet_field 'result_group_ssort', :label => "frda.show.volume", :show => false
-    config.add_facet_field 'div2_ssort', :label => "frda.show.session", :show => false
+    config.add_facet_field 'doc_type_ssi', label: :'frda.facet.type', :limit => 15
+    config.add_facet_field 'medium_ssim', label: :'frda.facet.medium', :limit => 15
+    config.add_facet_field 'genre_ssim', label: :'frda.facet.genre', :limit => 15
+    config.add_facet_field 'artist_ssim', label: :'frda.facet.artist', :limit => 15
+    config.add_facet_field 'collector_ssim', label: :'frda.facet.collector', :limit => 15
+    config.add_facet_field 'vol_title_ssi', label: :'frda.facet.volume', :limit => 15
+    config.add_facet_field 'div2_title_ssi', label: :'frda.show.session', :show => false
+    config.add_facet_field 'search_date_dtsim', label: :"frda.show.date", :show => false
+    config.add_facet_field 'result_group_ssort', label: :"frda.show.volume", :show => false
+    config.add_facet_field 'div2_ssort', label: :"frda.show.session", :show => false
 
-    config.add_facet_field 'frequency_ssim', :label => "frda.show.frequency", :show => false, :pivot => ["result_group_ssort", "div2_ssort"]
+    config.add_facet_field 'frequency_ssim', label: :"frda.show.frequency", :show => false, :pivot => ["result_group_ssort", "div2_ssort"]
 
-    config.add_facet_field 'en_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('en')
-    config.add_facet_field 'fr_highlight_ssim', :label => 'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('fr')
-
-    config.add_facet_field 'en_periods_ssim', :label => 'frda.nav.timeline_of_events', :show => true,  :query => political_periods_query('en')
-    config.add_facet_field 'fr_periods_ssim', :label => 'frda.nav.timeline_of_events', :show => true,  :query => political_periods_query('fr')
-    
     # config.add_facet_field 'example_query_facet_field', :label => 'Publish Date', :query => {
     #    :years_5 => { :label => 'within 5 Years', :fq => "pub_date:[#{Time.now.year - 5 } TO *]" },
     #    :years_10 => { :label => 'within 10 Years', :fq => "pub_date:[#{Time.now.year - 10 } TO *]" },
@@ -263,8 +260,8 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
 
-    config.add_index_field 'level_ssim', :label => "#{I18n.t('frda.show.level')}:"
-    config.add_index_field 'unit_date_ssim', :label => "#{I18n.t('frda.show.date')}:"
+    config.add_index_field 'level_ssim', label: :'frda.show.level'
+    config.add_index_field 'unit_date_ssim', label: :'frda.show.date'
     config.add_index_field 'text_ftsiv', :label => "Spoken Text:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'spoken_text_ftsmiv', :label => "Spoken Text:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'title_long_ftsi', :label => "Long Tilte:", :highlight => true #don't really need an i18n label here since it won't be used.
@@ -274,10 +271,10 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
-    config.add_show_field 'level_ssim', :label => "#{I18n.t('frda.show.level')}:"
-    config.add_show_field 'unit_date_ssim', :label => "#{I18n.t('frda.show.date')}:"
-    config.add_show_field 'extent_ssim',  :label => "#{I18n.t('frda.show.physical_description')}:"
-    config.add_show_field 'description_tsim', :label => "#{I18n.t('frda.show.notes')}:"
+    config.add_show_field 'level_ssim', label: :'frda.show.level'
+    config.add_show_field 'unit_date_ssim', label: :'frda.show.date'
+    config.add_show_field 'extent_ssim',  label: :'frda.show.physical_description'
+    config.add_show_field 'description_tsim', label: :'frda.show.notes'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
@@ -297,10 +294,10 @@ class CatalogController < ApplicationController
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise. 
     
-    config.add_search_field 'all_fields', :label => "#{I18n.t('frda.facet.all_fields')}:"
+    config.add_search_field 'all_fields', label: :'frda.facet.all_fields'
     
     config.add_search_field('title_terms') do |field|
-      field.label = I18n.t('frda.facet.title')
+      field.label = :'frda.facet.title'
       field.solr_local_parameters = {
         :qf => '$qf_title',
         :pf => '$pf_title'
@@ -308,7 +305,7 @@ class CatalogController < ApplicationController
     end
     
     config.add_search_field('exact') do |field|
-      field.label = I18n.t('frda.facet.exact')
+      field.label = :'frda.facet.exact'
       field.solr_local_parameters = {
         :qf => '$qf_exact',
         :pf => '$pf_exact'
@@ -316,7 +313,7 @@ class CatalogController < ApplicationController
     end
     
     config.add_search_field('exact_title') do |field|
-      field.label = I18n.t('frda.facet.exact_title')
+      field.label = :'frda.facet.exact_title'
       field.solr_local_parameters = {
         :qf => '$qf_title_exact',
         :pf => '$pf_title_exact'
@@ -399,12 +396,6 @@ class CatalogController < ApplicationController
   helper_method :"response_is_grouped?"
 
   private
-  
-  def create_guest_user
-    u = User.create
-    u.save
-    u
-  end
 
   def only_search_div2(solr_params, user_params)
     query = "-type_ssi:page"

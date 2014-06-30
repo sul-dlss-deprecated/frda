@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'bundler', '>= 1.2.0'
 
-gem 'rails', '~> 3.2.17'
+gem 'rails', '~> 3.2.19'
 
 gem 'google-analytics-rails'
 

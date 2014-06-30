@@ -1,18 +1,6 @@
+server 'frda-dev.stanford.edu', user: 'lyberadmin', roles: %w{web db app}
+
+Capistrano::OneTimeKey.generate_one_time_key!
 set :rails_env, "development"
-set :deployment_host, "frda-dev.stanford.edu"
-set :bundle_without, [:deployment]
 
-role :web, deployment_host
-role :app, deployment_host
-role :db,  deployment_host, :primary => true
-
-namespace :deploy do
-  namespace :assets do
-    task :symlink do ; end
-    task :precompile do ; end
-  end
-end
-
-# Commenting out while we use frda-dev with stage data.
-#before "deploy:restart", "jetty:refresh_fixtures"
-after "deploy:migrate", "db:loadseeds"
+set :assets_roles, [:none]

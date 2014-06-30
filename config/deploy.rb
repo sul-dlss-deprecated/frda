@@ -1,88 +1,49 @@
-require 'net/ssh/kerberos'
-require 'bundler/setup'
-require 'bundler/capistrano'
-require 'dlss/capistrano'
-require 'pathname'
+# config valid only for Capistrano 3.1
+lock '3.2.1'
 
-set :stages, %W(staging development production)
-set :default_stage, "staging"
-set :bundle_flags, "--quiet"
+set :application, 'frda'
+set :repo_url, 'https://github.com/sul-dlss/frda.git'
 
-set :sunet_id,   Capistrano::CLI.ui.ask('SUNetID: ') { |q| q.default =  `whoami`.chomp }
-set :repository, "https://github.com/sul-dlss/frda.git"
-set :deploy_via, :copy
+# Default branch is :master
+# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
-require 'capistrano/ext/multistage'
+# Default deploy_to directory is /var/www/my_app
+set :deploy_to, '/home/lyberadmin/frda-app'
 
-set :shared_children, %w(
-  log 
-  config/database.yml
-  config/solr.yml
-)
+# Default value for :scm is :git
+# set :scm, :git
 
-set :user, "lyberadmin" 
-set :runner, "lyberadmin"
-set :ssh_options, {
-  :auth_methods  => %w(gssapi-with-mic publickey hostbased),
-  :forward_agent => true
-}
+# Default value for :format is :pretty
+# set :format, :pretty
 
-set :destination, "/home/lyberadmin"
-set :application, "frda-app"
+# Default value for :log_level is :debug
+# set :log_level, :debug
 
-set :scm, :git
-set :copy_cache, true
-set :copy_exclude, [".git"]
-set :use_sudo, false
-set :keep_releases, 3
+# Default value for :pty is false
+# set :pty, true
 
-set :deploy_to, "#{destination}/#{application}"
+# Default value for :linked_files is []
+set :linked_files, %w{config/database.yml config/solr.yml}
 
-set :branch do
-  DEFAULT_TAG = 'master'
-  tag = Capistrano::CLI.ui.ask "Tag or branch to deploy (make sure to push the tag or branch first): [#{DEFAULT_TAG}] "
-  tag = DEFAULT_TAG if tag.empty?
-  tag
-end
+# Default value for linked_dirs is []
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-namespace :jetty do
-  task :config do
-    run "cd #{deploy_to}/current && rake frda:config RAILS_ENV=#{rails_env}"
-  end
-  task :start do 
-    run "cd #{deploy_to}/current && rake jetty:start RAILS_ENV=#{rails_env}"
-  end
-  task :stop do
-    run "if [ -d #{deploy_to}/current ]; then cd #{deploy_to}/current && rake jetty:stop RAILS_ENV=#{rails_env}; fi"
-  end
-  task :ingest_fixtures do
-    run "cd #{deploy_to}/current && rake frda:index_fixtures RAILS_ENV=#{rails_env}"
-  end
-  task :refresh_fixtures do
-    run "cd #{deploy_to}/current && rake frda:refresh_fixtures RAILS_ENV=#{rails_env}"
-  end  
-  task :symlink do
-    run "rm -fr #{release_path}/jetty"
-    run "ln -s #{shared_path}/jetty #{release_path}/jetty"
-  end
-end
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-namespace :db do
-  task :loadseeds do
-    run "cd #{deploy_to}/current && rake db:seed RAILS_ENV=#{rails_env}"    
-  end
-  task :symlink_sqlite do
-    run "ln -fs #{shared_path}/#{rails_env}.sqlite3 #{release_path}/db/#{rails_env}.sqlite3"
-  end  
-end
+# Default value for keep_releases is 5
+# set :keep_releases, 5
 
 namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
-end
 
-after "deploy", "deploy:migrate"
-after "deploy:update", "deploy:cleanup" 
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      # Your restart mechanism here, for example:
+      execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+
+  after :publishing, :restart
+
+end

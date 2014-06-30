@@ -6,7 +6,6 @@ development: &dev
 
 test: &test
   jetty_port: <%= ENV["TEST_JETTY_PORT"] || '8888' %>
-  startup_wait: 200
   java_opts:
       - "-XX:MaxPermSize=128m"
       - "-Xmx256m"

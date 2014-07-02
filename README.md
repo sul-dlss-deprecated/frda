@@ -1,5 +1,6 @@
 # FRDA Collection
 
+[![Build Status](https://travis-ci.org/sul-dlss/frda.svg?branch=master)](https://travis-ci.org/sul-dlss/frda)
 This is a Blacklight application for the FRDA Collection at Stanford University.
 
 ## Getting Started

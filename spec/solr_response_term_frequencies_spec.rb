@@ -1,7 +1,6 @@
 require "spec_helper"
-require "blacklight/mash" unless defined?(Mash)
 
-class TestTermFrequency < Mash
+class TestTermFrequency < HashWithIndifferentAccess
   include SolrResponseTermFrequencies
 end
 

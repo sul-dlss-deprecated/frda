@@ -1,11 +1,6 @@
 module BlacklightHelper
   include Blacklight::BlacklightHelperBehavior
-  
-  def render_index_field_label args
-    field = args[:field]
-    html_escape("#{t(index_fields[field].label)}:")
-  end
-  
+
   # link_back_to_catalog(:label=>'Back to Search')
   # Create a link back to the index screen, keeping the user's facet, query and paging choices intact by using session.
   def link_back_to_catalog(opts={:label=>nil})

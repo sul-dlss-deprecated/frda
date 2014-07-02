@@ -1,18 +1,15 @@
 source 'https://rubygems.org'
-source 'http://sul-gems.stanford.edu'
 
 gem 'bundler', '>= 1.2.0'
 
-ruby "1.9.3"
-
-gem 'rails', '~> 3.2.17'
+gem 'rails', '~> 3.2.19'
 
 gem 'google-analytics-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "blacklight", '~> 4.0.0'
+gem "blacklight", '~> 4.7.0'
 #gem 'eadsax', :git => "https://github.com/sul-dlss/eadsax.git"
 gem 'ffi'
 
@@ -44,7 +41,7 @@ end
 
 group :development do
 	gem 'better_errors'
-	gem 'binding_of_caller'
+	gem 'binding_of_caller', "~> 0.7"
 	gem 'meta_request'
 	gem 'launchy'
 end
@@ -58,7 +55,7 @@ group :staging, :production do
   gem 'mysql', "2.8.1"
 end
 
-gem 'json', '~> 1.7.7'
+gem 'json'
 
 gem 'rest-client'
 gem 'geocoder'
@@ -70,14 +67,11 @@ gem 'awesome_nested_set'
 
 # gems necessary for capistrano deployment
 group :deployment do
-  gem 'capistrano'
-  gem 'capistrano-ext'
-  gem 'rvm-capistrano'
-  gem 'lyberteam-devel', '>=1.0.0'
-  gem 'lyberteam-gems-devel', '>=1.0.0'
-  gem 'net-ssh-krb'
+  gem 'capistrano', "~> 3.0"
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'lyberteam-capistrano-devel', '>=3.0.0'
 end
-gem 'gssapi', :git => 'https://github.com/cbeer/gssapi.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

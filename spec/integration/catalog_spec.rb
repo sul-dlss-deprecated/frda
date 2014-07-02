@@ -153,7 +153,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
          page.all(:css, ".oneresult").length.should == 12
     
          fill_in :"date-start", :with => "1794-04-25"
-         find(:css, "[value='Search...']").click
+         find(:css, "[type='submit'][value='Search...']").click
          
          page.all(:css, ".oneresult").length.should == 5
        end
@@ -169,7 +169,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
         page.should have_content "1 volume found"
         
         select "Images of the French Revolution", :from => "search_collection"
-        find(:css, "[value='Search...']").click
+        find(:css, "[type='submit'][value='Search...']").click
         
         page.should have_content "1 - 10 of 11 images"
       end

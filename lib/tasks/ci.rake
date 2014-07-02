@@ -8,6 +8,7 @@ task :ci => ['frda:config'] do
   else
     Jettywrapper.wrap(Jettywrapper.load_config('test')) do
       Rake::Task["frda:refresh_fixtures"].invoke
+      Rake::Task["db:migrate"].invoke
       Rake::Task["db:seed"].invoke
       Rake::Task["rspec"].invoke
     end

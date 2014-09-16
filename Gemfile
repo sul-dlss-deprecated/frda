@@ -16,7 +16,7 @@ gem 'ffi'
 gem 'blacklight_dates2svg', '~> 0.0.1.beta3'
 
 gem "coderay"
-
+gem 'kaminari', '<= 0.14.1'
 gem 'stanford-mods'
 gem 'mods_display', '~> 0.3.0'
 gem 'bootstrap-datepicker-rails'

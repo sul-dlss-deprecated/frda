@@ -5,6 +5,10 @@ module ApplicationHelper
     on_about_pages
   end
 
+  def clean(title)
+    title.first.gsub("'","").gsub('"','')
+  end
+  
   # take in a hash of options for the contact us form, and then pass the values of the hash through the translation engine
   def translate_options(options)
     result={}

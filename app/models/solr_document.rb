@@ -227,17 +227,22 @@ class SolrDocument
 
   def get_actual_txt_file
     base_name="https://stacks.stanford.edu/file/druid:#{self.druid}/"     
-    possible_filenames=[self[:ocr_id_ss],self[:ocr_id_ss].gsub('_99_','_'),self[:ocr_id_ss].gsub('_99_','_00_')]
-    possible_filenames.each do |file| 
-      begin
-         full_path="#{base_name}#{file}"
-         @formatted_page_text=open(full_path).read.encode('UTF-16le', :invalid => :replace, :replace => '').encode('UTF-8')
-         @txt_file=full_path
-         break
-       rescue
-         @formatted_page_text=""
-         @txt_file=""
-       end
+    if self[:ocr_id_ss].blank?
+      @formatted_page_text=""
+      @txt_file=""
+    else
+      possible_filenames=[self[:ocr_id_ss],self[:ocr_id_ss].gsub('_99_','_'),self[:ocr_id_ss].gsub('_99_','_00_')]
+      possible_filenames.each do |file| 
+        begin
+           full_path="#{base_name}#{file}"
+           @formatted_page_text=open(full_path).read.encode('UTF-16le', :invalid => :replace, :replace => '').encode('UTF-8')
+           @txt_file=full_path
+           break
+         rescue
+           @formatted_page_text=""
+           @txt_file=""
+         end
+      end
     end
   end
   

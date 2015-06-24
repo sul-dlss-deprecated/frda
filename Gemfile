@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'bundler', '>= 1.2.0'
 
-gem 'rails', '~> 3.2.19'
+gem 'rails', '~> 3.2.22'
 
 gem 'google-analytics-rails'
 
@@ -49,10 +49,11 @@ end
 group :development, :staging, :test do
   gem 'jettywrapper'
   gem 'sqlite3'
+  gem 'test-unit'
 end
 
 group :staging, :production do
-  gem 'mysql', "2.8.1"
+  gem 'mysql', "~> 2.9.0"
 end
 
 gem 'json'

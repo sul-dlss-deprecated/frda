@@ -179,7 +179,7 @@ function toggleSearchOptions(){
 			if($(this).attr("type") == "checkbox" && $(this).is(":checked")){
 				search_options.show();
 				return false;
-			}else if($(this).attr("type") == "text" && $(this).attr("value") != ""){
+			}else if($(this).attr("type") == "text" && $(this).val() != ""){
 				search_options.show();
 				return false;
 			}

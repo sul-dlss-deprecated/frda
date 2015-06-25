@@ -71,6 +71,7 @@ group :deployment do
   gem 'capistrano', "~> 3.0"
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'capistrano-passenger'
   gem 'lyberteam-capistrano-devel', '>=3.0.0'
 end
 

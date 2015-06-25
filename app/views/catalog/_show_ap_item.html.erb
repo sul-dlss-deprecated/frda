@@ -89,9 +89,7 @@ end
               </ul>
             </li>
           </ul>
-          <button class="btn btn-small">
-             <%= link_to t('frda.sidebar.actions.cite'), citation_catalog_path(:id => @document, :purl => @document.purl), {:id => 'citeLink', :class => 'lightboxLink cite'} %>
-          </button>
+          <%= link_to t('frda.sidebar.actions.cite'), citation_catalog_path(:id => @document, :purl => @document.purl), {:id => 'citeLink', :class => 'lightboxLink cite'} %>
         </div>
       </div>
 

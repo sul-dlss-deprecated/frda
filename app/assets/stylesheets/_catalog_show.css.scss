@@ -1,0 +1,5 @@
+a.lightboxLink.cite {
+  @extend .btn, .btn-small, .pull-right;
+  // Needed work around because of greedy selector at ./_catalog.css.scss#225
+  border: 1px solid $btnBorder !important;
+}

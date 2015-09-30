@@ -1,22 +1,3 @@
-<script type="text/javascript">
-  $(document).ready(function(){
-    $("#image_workspace").embedPurl({'server': '<%=Frda::Application.config.purl_plugin_server%>',
-                                     'druid': '<%= @document[:id] %>',
-                                     'size': 'thumb',
-                                     'layout': 'thin-nav-bottom',
-                                     'width': 425,
-                                     'height': 500,
-                                     'zoomOnClick': true,
-                                     'tooltipTexts': {
-                                     '<%= I18n.locale %>': {
-                                       'OpenInFullScreen': '<%= t('frda.show.open_in_full_screen') %>',
-                                       'Close': '<%= t('frda.show.close') %>'
-                                       }
-                                     }
-                                   });
-  });
-</script>
-
 <div class="row images-item">
   <div class="span12">
     <h2><%= link_to t('frda.image.detail.title'), images_collection_path %></h2>
@@ -37,17 +18,18 @@
 
 <div class="row document-details images-item">
   <div class="span6 member-image">
-    <div id="image_workspace" class="hidden showOnLoad" ><%=t('frda.show.wait')%></div>
-      <noscript>
-         <div class="item active">
-             <%= link_to image_tag(@document.first_image, :alt => "#{t('frda.collection_members.items_name')} 1 of #{@document.images.size}"),@document.purl %>
-		        <% unless @document.purl.blank? %>
-		          <div>Permanent URL<%= " (click to view all item images)" if @document.images.size > 1 %>:
-		            <span><%= link_to @document.purl, @document.purl, :class => 'purl-link' %></span>
-		          </div>
-				<% end %>
-         </div>
-      </noscript>
+    <iframe id="image_workspace" style="width: 100%; height: 600px;" src="//embed.stanford.edu/iframe?url=http://purl.stanford.edu/<%= @document[:id] %>&amp;hide_title=true&amp;hide_metadata=true&amp;maxwidth=425&amp;maxheight=500"></iframe>
+
+    <noscript>
+       <div class="item active">
+           <%= link_to image_tag(@document.first_image, :alt => "#{t('frda.collection_members.items_name')} 1 of #{@document.images.size}"),@document.purl %>
+	        <% unless @document.purl.blank? %>
+	          <div>Permanent URL<%= " (click to view all item images)" if @document.images.size > 1 %>:
+	            <span><%= link_to @document.purl, @document.purl, :class => 'purl-link' %></span>
+	          </div>
+			<% end %>
+       </div>
+    </noscript>
   </div>
 
   <div class="span6 metadata">

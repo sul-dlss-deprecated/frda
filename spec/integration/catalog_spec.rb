@@ -2,16 +2,16 @@
 require 'spec_helper'
 
 describe("Search Pages",:type=>:request,:integration=>true) do
-  
+
   before(:each) do
 
   end
-    
+
   it "should show the collection highlights" do
     visit collection_highlights_path
     page.should have_content("Collection highlights")
     page.should have_content("Items from university correspondance.")
-    page.should have_content("Items from official documents.")  
+    page.should have_content("Items from official documents.")
   end
 
   it "should show the AP home page" do
@@ -21,7 +21,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     page.should have_css('div.oneresult')
     page.should have_xpath("//img[contains(@src, \"APcoverimage.jpg\")]")
   end
-  
+
   it "should show the Images home page" do
     visit images_collection_path
     #page.should have_content("The Images are composed of high-resolution digital images of approximately 12,000 individual visual items, primarily prints")
@@ -29,7 +29,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     page.should have_css('div.oneresult')
     page.should have_xpath("//img[contains(@src, \"images_image_cropped.jpg\")]")
   end
-  
+
   it "should show an AP detail page" do
     visit catalog_path(:id=>'wb029sv4796_00_0006')
     page.should have_content("M. le secrétaire, continuant la lecture des lettres, adresses et pétitions :")
@@ -69,7 +69,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     click_button "Go"
     current_path.should == catalog_path('en',:id=>'wb029sv4796_00_0006')
   end
-  
+
   it "should show an Images detail page" do
     visit catalog_path(:id=>'bb018fc7286')
     page.should have_content("le 14.e juillet 1790 : [estampe]")
@@ -87,7 +87,7 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     visit catalog_path(:id=>'bg698df3242') # item does not have a Mods subTitle field
     page.should_not have_xpath("//h3[contains(., '[:]')]")
   end
-  
+
   it "should search for an Images item" do
     visit search_path(:q=>'bonaparte')
     page.should have_content("Bonaparte au Caire")
@@ -97,36 +97,36 @@ describe("Search Pages",:type=>:request,:integration=>true) do
   it "should search for an AP item" do
     visit search_path(:q=>'Lafayette')
     page.should have_content("Tome 8 : Du 5 mai 1789 au 15 septembre 1789")
-    page.should have_xpath("//img[contains(@src, \"bm916nx5550/bm916nx5550_00_0301_thumb\")]")  
+    page.should have_xpath("//img[contains(@src, \"bm916nx5550/bm916nx5550_00_0301_thumb\")]")
   end
-  
+
   describe "search options" do
-    
+
     it "should return appropriate results for speaker autocomplete in json case insensitive, but only for AP data" do
       get speaker_suggest_path(:term=>'dor'),format: "json" # ap should have one result only
       response.status.should == 200
-      response.body.should == '["Dorizy"]'  
+      response.body.should == '["Dorizy"]'
 
       get speaker_suggest_path(:term=>'go'),format: "json" # ap should work lowercase letter first
       response.status.should == 200
-      response.body.should == '["Gohier","Gossuin"]'          
+      response.body.should == '["Gohier","Gossuin"]'
 
       get speaker_suggest_path(:term=>'Go'),format: "json" # ap should work capital letter first
       response.status.should == 200
-      response.body.should == '["Gohier","Gossuin"]'          
+      response.body.should == '["Gohier","Gossuin"]'
 
       get speaker_suggest_path(:term=>'rob'),format: "json" #image data should yield no results
       response.status.should == 200
-      response.body.should == '[]'          
+      response.body.should == '[]'
 
     end
-    
+
     describe "in speeches by" do
       it "should return the correct number of results for a specific term and specific speaker" do
         visit root_path
         fill_in "q", :with => "Lafayette"
         check("speeches")
-        fill_in "by-speaker", :with=> "Le comte de Mirabeau" 
+        fill_in "by-speaker", :with=> "Le comte de Mirabeau"
         find(:css, "[value='Search...']").click
         page.all(:css, ".oneresult").length.should == 1
         page.should have_content "Séance du 15 juillet 1789"
@@ -138,9 +138,9 @@ describe("Search Pages",:type=>:request,:integration=>true) do
         page.all(:css, ".oneresult").length.should == 2
         page.should have_content "Séance du 15 juillet 1789"
         page.should have_content "Séance du 16 juillet 1789"
-      end      
+      end
     end
-    
+
     describe "date range" do
        it "should limit the results by the dates specified" do
          visit root_path
@@ -149,34 +149,34 @@ describe("Search Pages",:type=>:request,:integration=>true) do
          fill_in :"date-start", :with => "1780-05-19"
          fill_in :"date-end", :with => "1799-04-25"
          find(:css, "[value='Search...']").click
-         
+
          page.all(:css, ".oneresult").length.should == 12
-    
+
          fill_in :"date-start", :with => "1794-04-25"
          find(:css, "[type='submit'][value='Search...']").click
-         
+
          page.all(:css, ".oneresult").length.should == 5
        end
      end
-     
+
     describe "collection drop down" do
       it "should limit the search to the given collection" do
         visit root_path
         fill_in "q", :with => "*:*"
         select "Parliamentary archives", :from => "search_collection"
         find(:css, "[value='Search...']").click
-        
+
         page.should have_content "1 volume found"
-        
+
         select "Images of the French Revolution", :from => "search_collection"
         find(:css, "[type='submit'][value='Search...']").click
-        
+
         page.should have_content "1 - 10 of 11 images"
       end
     end
   end
-  
-  
+
+
   describe "grouped search results" do
     it "should group AP items together by tome/volume" do
       visit catalog_index_path(:q => "*:*")
@@ -187,14 +187,14 @@ describe("Search Pages",:type=>:request,:integration=>true) do
         visit root_path
         click_link 'nonprojected graphic'
         page.should have_content("1 volume found")
-        page.should have_xpath("//img[contains(@src, \"image/bb018fc7286/T0000001_thumb.jpg\")]")        
+        page.should have_xpath("//img[contains(@src, \"image/bb018fc7286/T0000001_thumb.jpg\")]")
       end
     end
     describe "pagination" do
       pending
     end
   end
-  
+
   describe "non grouped results" do
     it "should be returned when we're on a faceted search for vol_title_ssi" do
       visit catalog_index_path(:f => {:vol_title_ssi => ["Tome 8 : Du 5 mai 1789 au 15 septembre 1789"]})
@@ -203,5 +203,5 @@ describe("Search Pages",:type=>:request,:integration=>true) do
       page.all(:css, ".oneresult").length.should == 2
     end
   end
-  
+
 end

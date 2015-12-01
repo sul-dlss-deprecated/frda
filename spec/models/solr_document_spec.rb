@@ -1,3 +1,4 @@
+# encoding: utf-8
 require "spec_helper"
 
 describe SolrDocument do
@@ -7,13 +8,13 @@ describe SolrDocument do
     doc[:id].should == "12345"
     doc.should respond_to :export_formats
   end
-  
+
   describe "catalog_heading" do
     it "should get the correct field based on the locale passed in" do
       doc = SolrDocument.new(:id => "12345", :catalog_heading_etsimv => ["Something -- Something English"], :catalog_heading_ftsimv => ["Something -- Something French"])
       en_heading = doc.catalog_heading(:en)
       fr_heading = doc.catalog_heading(:fr)
-      en_heading.length.should == 1 
+      en_heading.length.should == 1
       fr_heading.length.should == 1
       en_heading.first.should include "Something English" and en_heading.first.should_not include "Something French"
       fr_heading.first.should include "Something French" and fr_heading.first.should_not include "Something English"
@@ -28,7 +29,7 @@ describe SolrDocument do
       end
     end
   end
-  
+
   describe "images" do
     before(:all) do
       @images = SolrDocument.new({:image_id_ssm => ["abc123", "cba321"]}).images
@@ -63,7 +64,7 @@ describe SolrDocument do
       end
     end
   end
-  
+
   describe "spoken_text" do
     before(:all) do
       @speech = "1234-|-M. Dorizy-|-This is a speech by a person."
@@ -115,7 +116,7 @@ describe SolrDocument do
                              }
                            }
                          }
-          @document = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => ["5555-|-M. Dorizy-|-This is a speech by a person."], 
+          @document = SolrDocument.new({:id => "1234", :spoken_text_ftsimv => ["5555-|-M. Dorizy-|-This is a speech by a person."],
                                                    :unspoken_text_ftsimv => ["4444-|-This is some unspoken text.",
                                                                              "5555-|-This is another speech by a person."]}, hl_response)
         end
@@ -137,7 +138,7 @@ describe SolrDocument do
       end
     end
   end
-  
+
   describe "highlight glob fields" do
     describe "unspoken_text" do
       before(:all) do
@@ -184,14 +185,14 @@ describe SolrDocument do
       end
     end
   end
-  
+
   describe "mods" do
     before(:all) do
       @mods_doc = SolrDocument.new({:id => "12345", :mods_xml => "<?xml version='1.0'?><mods><note>This is the first note.</note><note>This is the second note.</note></mods>"})
       @no_mods_doc = SolrDocument.new({:id => "54321"})
     end
     it "should return a Nokogiri::XML::Document when mods_xml is available" do
-      @mods_doc.mods.should be_a Nokogiri::XML::Document
+      @mods_doc.mods.should be_a Stanford::Mods::Record
     end
     it "should provide an easy API to the elements in the XML" do
       @mods_doc.mods.note.length.should == 2
@@ -210,6 +211,23 @@ describe SolrDocument do
     it "should remove catalog headings from MODS before sending to the ModsDisplay gem" do
       expect(@xml).to match(/This is a Catalog Heading/)
       expect(@mods_doc.mods_xml_for_mods_display).not_to match(/This is a Catalog Heading/)
+    end
+  end
+
+  describe "get ocr text" do
+    it "should look for multiple OCR file locations" do
+      doc = SolrDocument.new(:id => "12345",:ocr_id_ss=>'somefilename_99_test.txt')
+      doc.possible_ocr_filenames.should == ['somefilename_99_test.txt','somefilename_test.txt','somefilename_00_test.txt']
+    end
+    it "should return no text if the file cannot be found" do
+      doc = SolrDocument.new(:id => "12345",:ocr_id_ss=>'somefilename_99_test.txt')
+      doc.formatted_page_text.should == ''
+      doc.txt_file.should == ''
+    end
+    it "should return text if a file was found" do
+      doc = SolrDocument.new(:id => "wb029sv4796_00_0111",:druid_ssi=>"wb029sv4796", :ocr_id_ss=>"wb029sv4796_99_0111.txt")
+      doc.formatted_page_text.should include '118 [Assemblée nationale législative.] ARCHIVES PA1'
+      doc.txt_file.should == 'https://stacks.stanford.edu/file/druid:wb029sv4796/wb029sv4796_99_0111.txt'
     end
   end
 end

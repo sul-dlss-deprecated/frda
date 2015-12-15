@@ -9,20 +9,20 @@ describe UnspokenText do
   
   describe "page_id" do
     it "should return the first element in the spoken_text delimited field" do
-      UnspokenText.new(@unspoken_text).page_id.should == "1234"
+      expect(UnspokenText.new(@unspoken_text).page_id).to eq("1234")
     end
   end
   
   describe "text" do
     it "should return the third element in the spoken_text delmited field" do
-      UnspokenText.new(@unspoken_text).text.should == "This is unspoken text."
+      expect(UnspokenText.new(@unspoken_text).text).to eq("This is unspoken text.")
     end
     describe "highlighted?" do
       it "should return true if highlighting is present in the text" do
-        UnspokenText.new(@highlighted_text).should be_highlighted
+        expect(UnspokenText.new(@highlighted_text)).to be_highlighted
       end
       it "should return false if highlighting is not present in the text" do
-        UnspokenText.new(@unspoken_text).should_not be_highlighted
+        expect(UnspokenText.new(@unspoken_text)).not_to be_highlighted
       end
     end
   end

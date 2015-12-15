@@ -23,7 +23,7 @@ gem 'kaminari', '<= 0.14.1'
 gem 'stanford-mods'
 gem 'mods_display'
 gem 'bootstrap-datepicker-rails'
-
+gem 'net-ssh', '< 3' # net-ssh 2 needed for ruby 1.9 compatibility
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -37,7 +37,7 @@ group :assets do
 end
 
 group :development,:test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', ">=2.14"
   gem 'capybara'
 	gem 'launchy'
   gem 'better_errors'

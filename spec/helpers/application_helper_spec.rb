@@ -9,23 +9,23 @@ describe ApplicationHelper do
   
   describe "collection highlight linking" do
     it "params_for_collection_highlight should return the appropriate params" do
-      highlight = mock('highlight')
-      highlight.stub(:id).and_return("1")
+      highlight = double('highlight')
+      allow(highlight).to receive(:id).and_return("1")
       params = params_for_collection_highlight(highlight)
-      params.should be_a(Hash)
+      expect(params).to be_a(Hash)
       field = params[:f][:en_highlight_field] || params[:f][:fr_highlight_field]
-      field.should be_a(Array)
-      field.length.should == 1
-      field.first.should == "highlight_1"
+      expect(field).to be_a(Array)
+      expect(field.length).to eq(1)
+      expect(field.first).to eq("highlight_1")
     end
     
     it "should link to the appropriate collection highlight" do
-      highlight = mock('highlight')
-      highlight.stub(:id).and_return("1")
-      highlight.stub(:name_en).and_return("Highlighted Collection")
-      highlight.stub(:name_fr).and_return("Highlighted Collection")
+      highlight = double('highlight')
+      allow(highlight).to receive(:id).and_return("1")
+      allow(highlight).to receive(:name_en).and_return("Highlighted Collection")
+      allow(highlight).to receive(:name_fr).and_return("Highlighted Collection")
       link = link_to_collection_highlight(highlight)
-      link.should =~ /^<a href=".*highlight_field.*highlight_1">Highlighted Collection<\/a>$/
+      expect(link).to match(/^<a href=".*highlight_field.*highlight_1">Highlighted Collection<\/a>$/)
     end
   end
   
@@ -33,33 +33,33 @@ describe ApplicationHelper do
     it "should turn the array into a series of linked entries" do
       headings = ["Something", "Something Else", "Another Something"]
       links = link_to_catalog_heading(headings)
-      links.length.should == 3
+      expect(links.length).to eq(3)
       headings.each do |heading|
         encoded_heading = heading.gsub(" ", '\\\+')
-        links.join.should match(/<a href=.*#{encoded_heading}.*>#{heading}<\/a>/)
+        expect(links.join).to match(/<a href=.*#{encoded_heading}.*>#{heading}<\/a>/)
       end
     end
   end
   
   describe "link_to_volume_facet" do
     it "should link to the volume text passed" do
-      link_to_volume_facet("A Volume Title").should match(/^<a href=.*>A Volume Title<\/a>$/)
+      expect(link_to_volume_facet("A Volume Title")).to match(/^<a href=.*>A Volume Title<\/a>$/)
     end
     it "should link to the volume facet" do
-      link_to_volume_facet("A Volume Title").should match(/^<a href=.*vol_title_ssi.*=A\+Volume\+Title.*<\/a>$/)
+      expect(link_to_volume_facet("A Volume Title")).to match(/^<a href=.*vol_title_ssi.*=A\+Volume\+Title.*<\/a>$/)
     end
     it "should pass non-params options along to link_to" do
-      link_to_volume_facet("A Volume Title", :class => "some-class").should match(/^<a.*class="some-class".*<\/a>$/)
+      expect(link_to_volume_facet("A Volume Title", :class => "some-class")).to match(/^<a.*class="some-class".*<\/a>$/)
     end
     it "should merge the params if sent through the options" do
       link = link_to_volume_facet("A Volume Title", {:params => {:q => "Hello"}})
-      link.should match(/^<a href=.*vol_title_ssi.*=A\+Volume\+Title.*<\/a>$/)
-      link.should match(/^<a href=.*q=Hello.*<\/a>$/)
+      expect(link).to match(/^<a href=.*vol_title_ssi.*=A\+Volume\+Title.*<\/a>$/)
+      expect(link).to match(/^<a href=.*q=Hello.*<\/a>$/)
     end
     it "should deep merge faceting" do
       link = link_to_volume_facet("A Volume Title", {:params => {"f" => {"some_facet" => ["A Value"]}}})
-      link.should match(/^<a href=.*vol_title_ssi.*=A\+Volume\+Title.*<\/a>$/)
-      link.should match(/^<a href=.*some_facet.*=A\+Value.*<\/a>$/)
+      expect(link).to match(/^<a href=.*vol_title_ssi.*=A\+Volume\+Title.*<\/a>$/)
+      expect(link).to match(/^<a href=.*some_facet.*=A\+Value.*<\/a>$/)
     end
   end
 
@@ -68,13 +68,13 @@ describe ApplicationHelper do
       @string = "1234-|-Session Title"
     end
     it "should return an OpenStuct object" do
-      split_ap_facet_delimiter(@string).should be_a OpenStruct
+      expect(split_ap_facet_delimiter(@string)).to be_a OpenStruct
     end
     it "should return the first part of the delimited string as the #id" do
-      split_ap_facet_delimiter(@string).id.should == "1234"
+      expect(split_ap_facet_delimiter(@string).id).to eq("1234")
     end
     it "should return the first second part of the delimited as the #value" do
-      split_ap_facet_delimiter(@string).value.should == "Session Title"
+      expect(split_ap_facet_delimiter(@string).value).to eq("Session Title")
     end
   end
 
@@ -86,25 +86,25 @@ describe ApplicationHelper do
       @long_highlight = "Lorem <em>ipsum</em> dolor sit amet, consectetur <em>adipiscing</em> elit. Sed sed euismod quam."
     end
     it "should preserve fields w/o highlighting" do
-      truncate_highlight(@no_highlight).should == [@no_highlight]
+      expect(truncate_highlight(@no_highlight)).to eq([@no_highlight])
     end
     it "should send on the parameters to truncate for non highlighted text" do
-      truncate_highlight(@no_highlight, :length => 8).should == ["Hello..."]
+      expect(truncate_highlight(@no_highlight, :length => 8)).to eq(["Hello..."])
     end
     it "should truncate around the first and last em if no options are passed" do
-      truncate_highlight(@single_highlight).should == ["...<em>this string</em>..."]
-      truncate_highlight(@multi_highlights).should == ["...<em>this string</em> has <em>multiple</em>..."]
+      expect(truncate_highlight(@single_highlight)).to eq(["...<em>this string</em>..."])
+      expect(truncate_highlight(@multi_highlights)).to eq(["...<em>this string</em> has <em>multiple</em>..."])
     end
     it "should grab the requested number of characters around the highlighting" do
-      truncate_highlight(@single_highlight, :around => 3).should == ["...o, <em>this string</em> ha..."]
-      truncate_highlight(@multi_highlights, :around => 3).should == ["...o, <em>this string</em> has <em>multiple</em> hi..."]
+      expect(truncate_highlight(@single_highlight, :around => 3)).to eq(["...o, <em>this string</em> ha..."])
+      expect(truncate_highlight(@multi_highlights, :around => 3)).to eq(["...o, <em>this string</em> has <em>multiple</em> hi..."])
     end
     it "should combine highlighting that is w/i the gap*2 (and then some)" do
-      truncate_highlight(@long_highlight, :around => 2 ).should == ["...m <em>ipsum</em> d...", "...r <em>adipiscing</em> e..."]
-      truncate_highlight(@long_highlight, :around => 10).should == ["Lorem <em>ipsum</em> dolor sit amet, consectetur <em>adipiscing</em> elit. Sed..."]
+      expect(truncate_highlight(@long_highlight, :around => 2 )).to eq(["...m <em>ipsum</em> d...", "...r <em>adipiscing</em> e..."])
+      expect(truncate_highlight(@long_highlight, :around => 10)).to eq(["Lorem <em>ipsum</em> dolor sit amet, consectetur <em>adipiscing</em> elit. Sed..."])
     end
     it "should not add the ommission characters when we're not truncating a part of the string" do
-      truncate_highlight(@single_highlight, :around => 100).should == [@single_highlight]
+      expect(truncate_highlight(@single_highlight, :around => 100)).to eq([@single_highlight])
     end
   end
 
@@ -135,71 +135,71 @@ describe ApplicationHelper do
                ]
     end
     it "search_result_ap_only? should return true if there is only an AP value in the collection_ssi facet" do
-      @response = mock('response')
-      @response.stub(:facets).and_return(@ap_only)
-      search_result_ap_only?.should be_true
+      @response = double('response')
+      allow(@response).to receive(:facets).and_return(@ap_only)
+      expect(search_result_ap_only?).to be_truthy
     end
     it "search_result_images_only? should return true if there is only an Image value in the collection_ssi facet" do
-      @response = mock('response')
-      @response.stub(:facets).and_return(@image_only)
-      search_result_images_only?.should be_true
+      @response = double('response')
+      allow(@response).to receive(:facets).and_return(@image_only)
+      expect(search_result_images_only?).to be_truthy
     end
     it "search_result_mixed? should return true if there are both (or more) collection values in the collection_ssi facet" do
-      @response = mock('response')
-      @response.stub(:facets).and_return(@mixed)
-      search_result_mixed?.should be_true
-      search_result_ap_only?.should be_false
-      search_result_images_only?.should be_false
+      @response = double('response')
+      allow(@response).to receive(:facets).and_return(@mixed)
+      expect(search_result_mixed?).to be_truthy
+      expect(search_result_ap_only?).to be_falsey
+      expect(search_result_images_only?).to be_falsey
     end
   end
   describe "locale switcher" do
     describe "render_locale_switcher" do
       it "should merge the params w/ the apporpirate locale" do
-        helper.stub(:params).and_return({:controller => "catalog", :action => "index", :q => "query"})
+        allow(helper).to receive(:params).and_return({:controller => "catalog", :action => "index", :q => "query"})
         switcher = helper.send(:render_locale_switcher)
         french_link = /<a href=\"\/fr\/catalog\?q=query\">en français<\/a>/
         english_link = /<a href=\"\/en\/catalog\?q=query\">in english<\/a>/
-        switcher.should match french_link
-        switcher.should_not match english_link
+        expect(switcher).to match french_link
+        expect(switcher).not_to match english_link
         I18n.locale = :fr
         switcher = helper.send(:render_locale_switcher)
-        switcher.should_not match french_link
-        switcher.should match english_link
+        expect(switcher).not_to match french_link
+        expect(switcher).to match english_link
       end
     end
     describe "params_for_locale_switcher" do
       it "should merge the params w/ the provided locale" do
-        helper.stub(:params).and_return({:q => "query", :f => {:collection => ["ABC"]}})
+        allow(helper).to receive(:params).and_return({:q => "query", :f => {:collection => ["ABC"]}})
         params = helper.send(:params_for_locale_switcher, "en")
-        params[:locale].should == "en"
-        params[:q].should == "query"
-        params[:f].should == {:collection => ["ABC"]}
+        expect(params[:locale]).to eq("en")
+        expect(params[:q]).to eq("query")
+        expect(params[:f]).to eq({:collection => ["ABC"]})
       end
       it "should remove the result_view param" do
-        helper.stub(:params).and_return({:q => "query", :result_view => "default"})
+        allow(helper).to receive(:params).and_return({:q => "query", :result_view => "default"})
         params = helper.send(:params_for_locale_switcher, "en")
-        params[:result_view].should be_nil
+        expect(params[:result_view]).to be_nil
       end
       it "should identify when we're on the AP landing page and not try to merge the params" do
-        helper.stub(:params).and_return(Rails.application.routes.named_routes.routes[:ap_collection].defaults)
+        allow(helper).to receive(:params).and_return(Rails.application.routes.named_routes.routes[:ap_collection].defaults)
         params = helper.send(:params_for_locale_switcher, "en")
-        params.should == {:locale=>"en", :result_view=>nil}
+        expect(params).to eq({:locale=>"en", :result_view=>nil})
       end
       it "should identify when we're on the Images landing page and not try to merge the params" do
-        helper.stub(:params).and_return(Rails.application.routes.named_routes.routes[:images_collection].defaults)
+        allow(helper).to receive(:params).and_return(Rails.application.routes.named_routes.routes[:images_collection].defaults)
         params = helper.send(:params_for_locale_switcher, "en")
-        params.should == {:locale=>"en", :result_view=>nil}
+        expect(params).to eq({:locale=>"en", :result_view=>nil})
       end
     end
     describe "sanitize_params_for_locale_switcher" do
       it "should return a hash with indifferent access" do
         hash = sanitize_params_for_locale_switcher({:a => "bcd"})
-        hash.should be_a(HashWithIndifferentAccess)
-        hash["a"].should_not be_nil
+        expect(hash).to be_a(HashWithIndifferentAccess)
+        expect(hash["a"]).not_to be_nil
       end
       it "should remove the locale and result_view params" do
         hash = sanitize_params_for_locale_switcher({"locale" => "en", :result_view => "default"})
-        hash.should == {}
+        expect(hash).to eq({})
       end
     end
   end

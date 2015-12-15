@@ -5,17 +5,17 @@ describe Frda::GroupedSolrResponse do
   describe "groups" do
     it "shuold return an array of SolrGroups" do
       response = create_response(grouped_response)
-      response.groups.should be_a Array
-      response.groups.length.should be 2
+      expect(response.groups).to be_a Array
+      expect(response.groups.length).to be 2
       response.groups.each do |group|
-        group.should be_a Frda::GroupedSolrResponse::SolrGroup
+        expect(group).to be_a Frda::GroupedSolrResponse::SolrGroup
       end
     end
     it "should include a list of SolrDocuments" do
       response = create_response(grouped_response)
       response.groups.each do |group|
         group.docs.each do |doc|
-          doc.should be_a SolrDocument
+          expect(doc).to be_a SolrDocument
         end
       end
     end
@@ -23,28 +23,28 @@ describe Frda::GroupedSolrResponse do
   
   describe "total" do
     it "should return the ngroups value" do
-      create_response(grouped_response).total.should == 3
+      expect(create_response(grouped_response).total).to eq(3)
     end
   end
   
   describe "facets" do
     it "should exist in the response object (not testing, we just extend the module)" do
-      create_response(grouped_response).should respond_to :facets
+      expect(create_response(grouped_response)).to respond_to :facets
     end
   end
   
   describe "rows" do
     it "should get the rows in the header params if they are not in the request params" do
       response = create_response(grouped_response)
-      response.rows.should be 3
+      expect(response.rows).to be 3
     end
     it "should get the rows if they are available in the request params" do
       response = create_response(grouped_response, {"rows" => 5})
-      response.rows.should be 5
+      expect(response.rows).to be 5
     end
     it "should be able to handle params arrays" do
       response = create_response(grouped_response, {"rows" => ["0", "10"]})
-      response.rows.should be 10
+      expect(response.rows).to be 10
     end
   end
 end

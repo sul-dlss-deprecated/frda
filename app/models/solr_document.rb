@@ -240,17 +240,17 @@ class SolrDocument
     @txt_file=""
     possible_ocr_filenames.each do |file|
       txt_file="#{base_name}#{file}"
-      logger.info("app/models/solr_document.rb#get_actual_txt_file: Looking for OCR file #{txt_file}")
+      Rails.logger.info("app/models/solr_document.rb#get_actual_txt_file: Looking for OCR file #{txt_file}")
       begin
         response = Faraday.get(txt_file)
-        if response.status == 200 # we found it
-          logger.info("....found #{txt_file}")
+        if response.success? # we found it
+          Rails.logger.info("....found #{txt_file}")
           @txt_file=txt_file # cache the filename
           @formatted_page_text=response.body.force_encoding('UTF-8').scrub # encoding of txt files from the stacks is set to ASCII-8BIT, but is REALLY UTF-8, force it
           break # don't bother checking for more filename possibilities once we find one
-        end # end check for 200 response code
-      rescue Exception => e
-        logger.error("Error in app/models/solr_document.rb#get_actual_txt_file on #{txt_file}.  Exception raised was #{e.message}.")
+        end # end check for success response code
+      rescue StandardError => e
+        Rails.logger.error("Error in app/models/solr_document.rb#get_actual_txt_file on #{txt_file}.  Exception raised was #{e.message}.")
        end # rescue block
      end # loop over possible filenames
   end # get_actual_txt_file method

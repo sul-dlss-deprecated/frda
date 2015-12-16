@@ -40,7 +40,7 @@ group :development,:test do
   gem 'rspec-rails', ">=2.14"
   gem 'capybara'
 	gem 'launchy'
-  gem 'better_errors'
+  gem 'better_errors', "< 2.0" # v2.0 or greater does not support Ruby 1.9 anymore, which is what is currently running in FRDA prod
   gem 'binding_of_caller', "~> 0.7"
   gem 'meta_request'
   gem 'test-unit'

@@ -13,6 +13,9 @@ gem "blacklight", '~> 4.7.0'
 #gem 'eadsax', :git => "https://github.com/sul-dlss/eadsax.git"
 gem 'ffi'
 
+gem 'faraday'
+gem 'scrub_rb'
+
 gem 'blacklight_dates2svg', '~> 0.0.1.beta3'
 
 gem "coderay"
@@ -20,7 +23,7 @@ gem 'kaminari', '<= 0.14.1'
 gem 'stanford-mods'
 gem 'mods_display'
 gem 'bootstrap-datepicker-rails'
-
+gem 'net-ssh', '< 3' # net-ssh 2 needed for ruby 1.9 compatibility
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -33,23 +36,19 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :test do
-  gem 'rspec-rails'
+group :development,:test do
+  gem 'rspec-rails', ">=2.14"
   gem 'capybara'
 	gem 'launchy'
-end
-
-group :development do
-	gem 'better_errors'
-	gem 'binding_of_caller', "~> 0.7"
-	gem 'meta_request'
-	gem 'launchy'
+  gem 'better_errors', "< 2.0" # v2.0 or greater does not support Ruby 1.9 anymore, which is what is currently running in FRDA prod
+  gem 'binding_of_caller', "~> 0.7"
+  gem 'meta_request'
+  gem 'test-unit'
 end
 
 group :development, :staging, :test do
   gem 'jettywrapper'
   gem 'sqlite3'
-  gem 'test-unit'
 end
 
 group :staging, :production do

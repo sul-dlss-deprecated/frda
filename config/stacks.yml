@@ -1,8 +1,8 @@
 development:
-  url: https://stacks.stanford.edu/image
+  url: https://stacks.stanford.edu
 test:
-  url: https://stacks-test.stanford.edu/image
+  url: https://stacks.stanford.edu
 staging:
-  url: https://stacks.stanford.edu/image
+  url: https://stacks.stanford.edu
 production:
-  url: https://stacks.stanford.edu/image
+  url: https://stacks.stanford.edu

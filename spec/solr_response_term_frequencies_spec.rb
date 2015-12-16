@@ -45,31 +45,31 @@ describe SolrResponseTermFrequencies do
                      }
   end
   it "should return a hash of term frequencies" do
-    TestTermFrequency.new(@single).term_frequencies.should be_a Hash
+    expect(TestTermFrequency.new(@single).term_frequencies).to be_a Hash
   end
   it "should have a key for every document in the explain section" do
-    TestTermFrequency.new(@single).term_frequencies.keys.should == ["1234"]
-    TestTermFrequency.new(@multi_doc).term_frequencies.keys.should == ["1234", "4321"]
+    expect(TestTermFrequency.new(@single).term_frequencies.keys).to eq(["1234"])
+    expect(TestTermFrequency.new(@multi_doc).term_frequencies.keys).to eq(["1234", "4321"])
   end
   it "should handle multi-word frequency responses" do
     freq = TestTermFrequency.new(@multi_freq).term_frequencies
-    freq.should be_a Hash
-    freq["1234"].should be_a Array
-    freq["1234"].length.should == 3
+    expect(freq).to be_a Hash
+    expect(freq["1234"]).to be_a Array
+    expect(freq["1234"].length).to eq(3)
     [{:word => "paris", :frequency => "5"}, {:word=>"france", :frequency=>"6"}, {:word=>'"paris france"', :frequency=>"5"}].each do |word|
-      freq["1234"].should include word
+      expect(freq["1234"]).to include word
     end
   end
   it "should handle phrase frequency when it is available" do
     freq = TestTermFrequency.new(@phrase).term_frequencies
-    freq.should be_a Hash
-    freq["1234"].should be_a Array
-    freq["1234"].length.should == 1
-    freq["1234"].first.should == {:word => "paris", :frequency => "5"}
+    expect(freq).to be_a Hash
+    expect(freq["1234"]).to be_a Array
+    expect(freq["1234"].length).to eq(1)
+    expect(freq["1234"].first).to eq({:word => "paris", :frequency => "5"})
   end
   it "should handle several word queries correctly" do
     freq = TestTermFrequency.new(@several_words).term_frequencies
-    freq["1234"].length.should == 7
-    freq["1234"].should include({ :word => '"this is a several word query"', :frequency => "1"})
+    expect(freq["1234"].length).to eq(7)
+    expect(freq["1234"]).to include({ :word => '"this is a several word query"', :frequency => "1"})
   end
 end

@@ -52,7 +52,7 @@ group :development, :staging, :test do
 end
 
 group :staging, :production do
-  gem 'mysql', "~> 2.9.0"
+  gem 'mysql2', "~> 0.3.10"
 end
 
 gem 'json'

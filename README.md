@@ -17,30 +17,26 @@ This is a Blacklight application for the FRDA Collection at Stanford University.
         cd frda
         [accept gemfile]
 
-1. Install dependencies via bundler for both the main and deploy directories:
+1. Install dependencies via bundler:
 
         bundle install
-        cd deploy
-        bundle install
-        cd ..
 
-1. Set up local jetty and copy config files
+1. Remove the jetty that is checked into git and then set up local jetty and copy config files:
 
+        rm -fr jetty
         git submodule init
         git submodule update
         rake frda:config
-
-1. Migrate the database:
-
-        rake db:migrate
-        rake db:migrate RAILS_ENV=test
-        rake db:seed
-        rake db:seed RAILS_ENV=test
 
 1. Start solr and load the fixtures: (you should first stop any other jetty processes if you have multiple jetty-related projects):
 
         rake jetty:start
         rake frda:index_fixtures
+
+1. Migrate the database.  Note that the solr instance (i.e. jetty) needs to be available to run any migrations, so start Jetty first!
+
+        rake db:migrate
+        rake db:seed
 
 1. Start Rails:
 
@@ -48,10 +44,8 @@ This is a Blacklight application for the FRDA Collection at Stanford University.
 
 1. Go to <http://localhost:3000>
 
-
 ## Deployment
 
-    cd deploy
     cap production deploy # for production
     cap staging deploy # for staging
     cap development deploy # for development
@@ -60,13 +54,17 @@ You must specify a branch or tag to deploy.  You can deploy the latest by specif
 
 ## Testing
 
-You can run the test suite locally by running:
+During development, you can run the test suite locally by running:
 
     rake local_ci
 
-This will stop development jetty, force you into the test environment, start jetty, start solr,
+This will stop the development jetty, force you into the test environment, start jetty, start solr,
 delete all the records in the test solr core, index all fixtures in `spec/fixtures`, run `db:migrate` in test,
 then run the tests, and then restart development jetty
+
+If your jetty is not currently running, you can start it and run all of the tests with
+
+    rake ci
 
 ## Solr Fields in Fixtures
 

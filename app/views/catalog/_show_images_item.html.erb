@@ -10,6 +10,7 @@
 </div>
 
 <div class="row images-item well well-small">
+  <%= link_back_to_catalog if current_search_session%>
   <%= render 'previous_next_doc' %>
   <%# if we want to show the Send email action, use partial below instead of button below that %>
   <%#= render :partial => 'show_actions' %>

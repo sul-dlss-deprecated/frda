@@ -66,6 +66,13 @@ If your jetty is not currently running, you can start it and run all of the test
 
     rake ci
 
+## Useful commands for debugging
+
+rails console
+doc=Item.find('wg983ft3682_00_0004')
+puts doc.inspect
+puts doc['type_ssi']
+
 ## Solr Fields in Fixtures
 
 The following fields are important for the web app to work correctly and are required for each kind of item

@@ -246,7 +246,25 @@ class SolrDocument
         if response.success? # we found it
           Rails.logger.info("....found #{txt_file}")
           @txt_file=txt_file # cache the filename
-          @formatted_page_text=response.body.force_encoding('UTF-8').scrub # encoding of txt files from the stacks is set to ASCII-8BIT, but is REALLY UTF-8, force it
+          text_data = response.body
+          detect_encoding = CharDet.detect(text_data)
+          # Check to make sure the response body encoding is UTF-8 as expected using https://rubygems.org/gems/rchardet
+          # If not UTF-8, convert from current encoding to UTF-8 using string encode or the following algorithm.
+          # After sampling text files that are not encoded as UTF-8, there were some encoded as nil, windows-1255 (hebrew encoding for Microsoft Word),
+          # and Big5 (chinese character encoding). To begin with, assume all are Windows-1252 (Latin alphabet)
+          if detect_encoding['encoding'].downcase != 'utf-8'
+            if (detect_encoding['encoding'].downcase.include?('windows') ||
+               detect_encoding['encoding'].downcase.include?('big5') ||
+               detect_encoding['encoding'].downcase.include?('8859') ||
+               detect_encoding['encoding'].downcase.include?('tis') ||
+               detect_encoding['encoding'] == nil)
+              @formatted_page_text = text_data.encode("UTF-8", "Windows-1252")
+            else
+              @formatted_page_text = text_data.encode("UTF-8", detect_encoding['encoding'])
+            end
+          else
+            @formatted_page_text = text_data.force_encoding('UTF-8').scrub
+          end
           break # don't bother checking for more filename possibilities once we find one
         end # end check for success response code
       rescue StandardError => e

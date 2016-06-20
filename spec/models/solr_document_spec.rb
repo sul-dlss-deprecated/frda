@@ -230,4 +230,16 @@ describe SolrDocument do
       expect(doc.txt_file).to eq 'https://stacks.stanford.edu/file/druid:wb029sv4796/wb029sv4796_99_0111.txt'
     end
   end
+
+  describe 'get_actual_txt_file' do
+    it 'should convert non-UTF-8 encoding to UTF-8' do
+      doc = SolrDocument.new(:id => "fz023dp4399_00_0030",:druid_ssi=>"fz023dp4399", :ocr_id_ss=>"fz023dp4399_00_0030.txt")
+      expect(doc.formatted_page_text).not_to include "g\xE9n. 1789. Cahiere.] ARCHIVES PARLEMENTAIRES. [S\xE9n\xE9chauss\xE9e d'Angoonois.]" # Badly encoded string
+      expect(doc.formatted_page_text).to include "gén. 1789. Cahiere.] ARCHIVES PARLEMENTAIRES. [Sénéchaussée d'Angoonois.]" # Correctly encoded string
+    end
+    it 'should not change text that is already UTF-8' do
+      doc = SolrDocument.new(:id => "mc666yy3026_99_0014",:druid_ssi=>"mc666yy3026", :ocr_id_ss=>"mc666yy3026_99_0014.txt")
+      expect(doc.formatted_page_text).to include "Art. 14. Qu'il ne serà fait aucun emprunt que de l'agrément dès Etats généraux; que"
+    end
+  end
 end

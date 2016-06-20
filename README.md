@@ -73,6 +73,13 @@ doc=Item.find('wg983ft3682_00_0004')
 puts doc.inspect
 puts doc['type_ssi']
 
+## Timeline of the Revolution
+
+The timeline of the revolution widget shown on the home page comes from an external service, with data in a Google Sheet.
+
+Documentation for how the widget is created via a spreadsheet is here: https://timeline.knightlab.com/docs/using-spreadsheets.html
+The live FRDA spreadsheet is referenced in Jira ticket #FRDA-274
+
 ## Solr Fields in Fixtures
 
 The following fields are important for the web app to work correctly and are required for each kind of item

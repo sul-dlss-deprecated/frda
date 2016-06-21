@@ -50,6 +50,7 @@ end
 group :development, :staging, :test do
   gem 'jettywrapper'
   gem 'sqlite3'
+  gem 'quiet_assets'
 end
 
 group :staging, :production do

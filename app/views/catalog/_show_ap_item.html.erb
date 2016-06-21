@@ -36,7 +36,7 @@ end
     <div class="row">
       <div class="span4 result-item-nav">
         <%#= render 'previous_next_doc' %>
-        <%= link_back_to_catalog %>
+        <%= link_back_to_catalog if current_search_session%>
       </div>
 
       <div class="span3 item-views btn-group">
@@ -99,7 +99,7 @@ end
 
 <div id="page-navigation" class="<%="hidden" if @mode=='flipbook'%> row ap-item">
   <div class="span12 page-navigation">
-    
+
  	<% unless list_is_empty?(@document.session_title)%>
 			<div class="btn-group showOnLoad hidden">
 	      <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
@@ -118,7 +118,7 @@ end
 	 		<% unless list_is_empty?(@document.session_title)%>
 				<noscript>
 					  <%= select_tag "session_title", options_for_select([[t('frda.show.select_session'),'']] + @document.volume_sessions), :"data-hide-submit"=>'true' %>
-				</noscript>		
+				</noscript>
 			<% end %>
 			<%= hidden_field_tag :volume,@document.volume %>
       <%= hidden_field_tag :id,@document.druid %>

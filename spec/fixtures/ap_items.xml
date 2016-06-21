@@ -35,9 +35,9 @@
     loi qui est inconstitutionnel. » (Murmures.)</field>
   <field name="speaker_ssim">Gohier</field>
   <field name="spoken_text_timv">Page 1 spoken text</field>
-  
+
   <field name="text_tiv">Page 1 text</field>
-  
+
   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><title><titleInfo>ASSEMBLÉE NATIONALE LÉGISLATIVE.</titleInfo></title></mods>]]></field>
 </doc>
 
@@ -85,16 +85,16 @@
     sanction, ou qu'ils aient été présentés par trois législatures. Mais cela n'empeche pas qu'ils
     ne soient des lois. Le roi a seulement le droit de suspendre l'exécution de la loi, mais elle
     est faite par le Corps législatif. Je demande donc l'ordre du jour sur la motion de M. Ghéron.</field>
-  
-  <field name="text_tiv">ASSEMBLÉE NATIONALE LÉGISLATIVE. 
-    Séance du dimanche 11 décembre 1791 . 
-    PRÉSIDENCE DE M. LEMONTEY. 
-    La séance est ouverte à neuf heures du matin. 
-    M. Dorizy. 
+
+  <field name="text_tiv">ASSEMBLÉE NATIONALE LÉGISLATIVE.
+    Séance du dimanche 11 décembre 1791 .
+    PRÉSIDENCE DE M. LEMONTEY.
+    La séance est ouverte à neuf heures du matin.
+    M. Dorizy.
     Pour concilier tous les esprits, on peut, en
     faisant mention honorable de 1 adresse, mettre dans le procès-verbal « sans approuver le mot
-    loi qui est inconstitutionnel. » (Murmures.) 
-    M. Gohier. 
+    loi qui est inconstitutionnel. » (Murmures.)
+    M. Gohier.
     L'opinion seule de M. Ghéron est
     inconstitutionnelle. Par l'article 1er de la section relative aux pouvoirs et fonctions de
     l'Assemblée nationale législative, la Constitution délègue exclusivement au Corps législatif
@@ -106,7 +106,7 @@
     sanction, ou qu'ils aient été présentés par trois législatures. Mais cela n'empeche pas qu'ils
     ne soient des lois. Le roi a seulement le droit de suspendre l'exécution de la loi, mais elle
     est faite par le Corps législatif. Je demande donc l'ordre du jour sur la motion de M. Ghéron.</field>
-    
+
     <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
 </doc>
 
@@ -143,9 +143,9 @@
     loi qui est inconstitutionnel. » (Murmures.)</field>
   <field name="speaker_ssim">Gohier</field>
   <field name="spoken_text_timv">Page 3 spoken text</field>
-  
+
   <field name="text_tiv">Page 3 text</field>
-  
+
   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>Speech by M. Dorizy</note></mods>]]></field>
 </doc>
 
@@ -182,13 +182,13 @@
     législation une motion de M. Lejosne (1) sur la question de savoir si les tribunaux criminels
     seraient sédentaires où ambulants. Le rapport sur cette matière est très urgent. Il me semble</field>
   <field name="speaker_ssim">Fauchet</field>
-  <field name="spoken_text_timv">Fauchet -|- secrétaire, donne lecture des lettres, adresses et pétitions suivantes :</field>    
+  <field name="spoken_text_timv">Fauchet -|- secrétaire, donne lecture des lettres, adresses et pétitions suivantes :</field>
   <field name="spoken_text_timv">Fauchet -|- 1° Lettre de M. Bertrand, ministre de la marine, par laquelle il communique à l'Assemblée</field>
 
-  <field name="text_tiv">ASSEMBLÉE NATIONALE LÉGISLATIVE. 
-    Séance du mardi 13 décembre 1791, au matin. 
-    PRÉSIDENCE DE M. LEMONTEY. 
-    La séance est ouverte à neuf heures du matin. 
+  <field name="text_tiv">ASSEMBLÉE NATIONALE LÉGISLATIVE.
+    Séance du mardi 13 décembre 1791, au matin.
+    PRÉSIDENCE DE M. LEMONTEY.
+    La séance est ouverte à neuf heures du matin.
     Un de MM. les secrétaires fait lecture du procès-verbal de la séance du lundi 12 décembre.
     M. Gossuin.
     Messieurs, dans la séance du 31 octobre dernier, l'Assemblée a renvoyé à son comité de
@@ -197,7 +197,7 @@
     M. Fauchet
     secrétaire, donne lecture des lettres, adresses et pétitions suivantes :
     1° Lettre de M. Bertrand, ministre de la marine, par laquelle il communique à l'Assemblée</field>
-    
+
     <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>Sessions from December 1791 - January 1792</note></mods>]]></field>
 </doc>
 
@@ -230,17 +230,17 @@
 
   <field name="session_prez_ssim">PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.</field>
   <field name="session_seq_first_isim">1</field>
-  
+
   <field name="speaker_ssim">Guillotin</field>
   <field name="spoken_text_timv">Guillotin -|- Vun de MM. les secrétaires, donne (1) Cette séance est incomplète au
     Moniteur. lecture des procès-verbaux des deux séances du mardi</field>
   <field name="speaker_ssim">Le Président</field>
   <field name="spoken_text_timv">Le Président -|- Le procès-verbal de la séance d'hier n'étant pas terminé, la lecture en est renvoyée à
-    demain.</field>    
+    demain.</field>
   <field name="spoken_text_timv">Le Président -|- something something something.</field>
 
-  <field name="text_tiv">ASSEMBLÉE NATIONALE. 
-    Séance du jeudi 18 février 1790, au matin (1).  
+  <field name="text_tiv">ASSEMBLÉE NATIONALE.
+    Séance du jeudi 18 février 1790, au matin (1).
     PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.
     M. Guillotin
     Vun de MM. les secrétaires, donne (1) Cette séance est incomplète au
@@ -250,7 +250,7 @@
     demain.
     something something something.
   </field>
-  
+
   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note></note></mods>]]></field>
 </doc>
 
@@ -283,19 +283,19 @@
   <field name="session_seq_first_isim">1</field>
 
   <field name="session_prez_ssim">PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.</field>
-  
-  <field name="text_tiv">ASSEMBLÉE NATIONALE. 
-    Séance du jeudi 18 février 1790, au soir (1).  
+
+  <field name="text_tiv">ASSEMBLÉE NATIONALE.
+    Séance du jeudi 18 février 1790, au soir (1).
     PRÉSIDENCE DE M. DE TALLEYRAND, ÉVÊQUE D'AUTUN.
     Un de MM. les secrétaires fait mention des adresses de félicitations, d'adhésion et de dons
-    patriotiques, dont la teneur suit : 
+    patriotiques, dont la teneur suit :
     Adresse de la communauté d'Aumont, diocèse de Senlis ; elle fait le don patriotique du
     produit de la contribution sur les ci-devant privilégiés.
     Adresse de la ville de Pontarlier : elle a de nouveau consacré pour le maintien de la
     Constitution, et la prospérité de l'empire français, un vœu qu'elle avait fait en 1620.
-    Adresses d'une multitude de communautés,       
-  </field>    
-  
+    Adresses d'une multitude de communautés,
+  </field>
+
   <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>National Assemble</note></mods>]]></field>
 </doc>
 
@@ -311,7 +311,7 @@
   <field name="collection_ssi">Archives parlementaires</field>
   <field name="vol_num_ssi">1</field>
   <field name="vol_title_ssi">Tome 1 : 1789 – Introduction - états généraux - préliminaires. Cahiers des sénéchaussées et baillages [Agen - Amont]</field>
-	<field name="result_group_ssi">Tome 1 : 1789 – Introduction - états généraux - préliminaires. Cahiers des sénéchaussées et baillages [Agen - Amont]</field> 
+	<field name="result_group_ssi">Tome 1 : 1789 – Introduction - états généraux - préliminaires. Cahiers des sénéchaussées et baillages [Agen - Amont]</field>
  <field name="vol_date_start_dti">1789-01-01T00:00:00Z</field>
   <field name="vol_date_end_dti">1789-12-31T23:59:59Z</field>
   <field name="search_date_dtsim">1789-12-31T00:00:00Z</field>
@@ -323,16 +323,16 @@
 	<field name="vol_tei_size_is">4000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">table des matières</field>
-  
+
   <field name="text_tiv">
     ARCHIVES PARLEMENTAIRES. Introduction
     PREMIÈRE SÉRIE. TABLE PAR ORDRE DES MATIÈRES DU TOME PREMIER.
     Pages.
     Avertissement......................................I
     Avant propos........... ...................... 1
-  </field>   
-  
-  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>Contents of Introduction</note><note>Table of Contents</note></mods>]]></field> 
+  </field>
+
+  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note>Contents of Introduction</note><note>Table of Contents</note></mods>]]></field>
 </doc>
 
 <!-- table_alpha -->
@@ -359,15 +359,15 @@
 	<field name="vol_tei_size_is">2000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">liste</field>
-  
+
   <field name="text_tiv">
-    LISTE 
+    LISTE
     DES NOMS ET QUALITÉS DE MESSIEURS LES DÉPUTÉS ET SUPPLÉANTS
     A L'ASSEMBLÉE NATIONALE,
     DRESSÉE PAR ORDRE ALPHABÉTIQUE DE SÉNÉCHAUSSÉES ET BAILLIAGES.
-  </field> 
-  
-  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>   
+  </field>
+
+  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods></mods>]]></field>
 </doc>
 <doc>
   <field name="id">mc666yy3026_00_0144</field>
@@ -390,22 +390,22 @@
 	<field name="vol_tei_size_is">34000</field>
   <field name="type_ssi">page</field>
   <field name="doc_type_ssim">liste</field>
-  
+
   <field name="text_tiv">
     Bailliage de Saint-Jean-de-Losne.
     B
     Bonneneontre. P. Soucelier.
     Brazey. Philippon.
-  </field>  
-  
-  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note></note></mods>]]></field>  
+  </field>
+
+  <field name="mods_xml"><![CDATA[<?xml version="1.0"?><mods><note></note></mods>]]></field>
 </doc>
 
 <doc>
   <field name="id">bm916nx5550_div2_18</field>
   <field name="doc_type_ssi">seance</field>
   <field name="collection_ssi">Archives parlementaires</field>
-  <field name="pages_ssim">bm916nx5550_00_0300-|-235</field>
+  <field name="pages_ssim">bm916nx5550_00_0006-|-235</field>
   <field name="pages_ssim">bm916nx5550_00_0301-|-236</field>
   <field name="pages_ssim">bm916nx5550_00_0302-|-237</field>
   <field name="session_date_val_ssi">1789-07-15</field>
@@ -414,12 +414,12 @@
   <field name="session_title_ftsi">Séance du 15 juillet 1789</field>
   <field name="session_date_title_ssi">1789-07-15-|-Séance du 15 juillet 1789</field>
   <field name="session_govt_ssi">ASSEMBLÉE NATIONALE</field>
-  <field name="spoken_text_ftsimv">bm916nx5550_00_0300-|-aaaLe marquis de Silleryzzz-|-, présente un projet d'adresse ainsi conçu :</field>
+  <field name="spoken_text_ftsimv">bm916nx5550_00_0006-|-aaaLe marquis de Silleryzzz-|-, présente un projet d'adresse ainsi conçu :</field>
   <field name="spoken_text_ftsimv">bm916nx5550_00_0301-|-aaaLe comte de Mirabeauzzz-|-M. de Lafayette, M. de Liancourt, M. d'Avarev, M. de Marguerites, M. le duc de Mortemart, M. le duc de Luy nés, M. l'archevêque de Reims, M. l'évêque de Coutances, M. l'abbé de Villeneuve, M.Forestde Masmoury, M. Gombert, M. Thomas* M. Jaillant, M. Pruche, M. Gérard, M. Hanoteau, M. Roussillon, M. Douchet, M. Bourgeois, M. Le Clerc, M. Poulain de Gerlières, M. Bouron, M. Fii-leau, M. Alquier.</field>
   <field name="spoken_text_ftsimv">bm916nx5550_00_0301-|-aaaLe Roizzz-|-paraît à l'entrée de la salle, sans gardes, accompagné seulement de ses deux frères. 11 fait quelques pas dans la salle; debout, en face de l'Assemblée, il prononce d'une voix ferme et assurée le discours suivant :</field>
   <field name="spoken_text_ftsimv">bm916nx5550_00_0302-|-aaaLe comte de Clermont-Tonnerrezzz-|-L'Assemblée reconnaît à cette proposition l'esprit qui jusqu'à présent caractérise MM. les gardes du corps, mais elle considère qu'une députation nationale, allant pour remettre le calme dans une ville menacée des plus grands malheurs, doit y entrer sans aucune apparence *de forces militaires. Elle arrête que MM. les gardes du Roi seront remerciés d'une offre qui augmente pour eux l'estime de tous les Français, et charge son président et ses secrétaires de leur écrire, pour les féliciter sur leur acte de patriotisme, et les assurer des sentiments de l'Assemblée nationale.</field>
-  <field name="unspoken_text_ftsimv">bm916nx5550_00_0300-|-présidence de m. le franc de pompignan, archevêque de vienne.</field>
-  <field name="unspoken_text_ftsimv">bm916nx5550_00_0300-|-L'Assemblée nationale, trop profondément affectée et trop vivement inquiété sur les malheurs publics, pour arrêter ses pensées sur d'autres objets, n'a pas pu suivre le plan ordinaire de ses délibérations ; et au lieu de commencer, comme les autres jours, par la lecture des adresses des différentes villes et du procès-verbal, on a mis en délibération quel parti il y avait actuellement à prendre pour rétablir la tranquillité dans Paris. Plusieurs membres de l'Assemblée ont fait différentes propositions. Quelques-uns ont présenté défe projets d'adresse au Roi.</field>
+  <field name="unspoken_text_ftsimv">bm916nx5550_00_0006-|-présidence de m. le franc de pompignan, archevêque de vienne.</field>
+  <field name="unspoken_text_ftsimv">bm916nx5550_00_0006-|-L'Assemblée nationale, trop profondément affectée et trop vivement inquiété sur les malheurs publics, pour arrêter ses pensées sur d'autres objets, n'a pas pu suivre le plan ordinaire de ses délibérations ; et au lieu de commencer, comme les autres jours, par la lecture des adresses des différentes villes et du procès-verbal, on a mis en délibération quel parti il y avait actuellement à prendre pour rétablir la tranquillité dans Paris. Plusieurs membres de l'Assemblée ont fait différentes propositions. Quelques-uns ont présenté défe projets d'adresse au Roi.</field>
   <field name="vol_title_ssi">Tome 8 : Du 5 mai 1789 au 15 septembre 1789</field>
   <field name="result_group_ssi">Tome 8 : Du 5 mai 1789 au 15 septembre 1789</field>
   <field name="druid_ssi">bm916nx5550</field>
@@ -435,7 +435,7 @@
   <field name="id">bm916nx5550_div2_19</field>
   <field name="doc_type_ssi">seance</field>
   <field name="collection_ssi">Archives parlementaires</field>
-  <field name="pages_ssim">bm916nx5550_00_0303-|-238</field>
+  <field name="pages_ssim">mc666yy3026_00_0144-|-238</field>
   <field name="pages_ssim">bm916nx5550_00_0304-|-239</field>
   <field name="pages_ssim">bm916nx5550_00_0305-|-240</field>
   <field name="session_date_val_ssi">1789-07-16</field>
@@ -444,8 +444,8 @@
   <field name="session_title_ftsi">Séance du 16 juillet 1789</field>
   <field name="session_date_title_ssi">1789-07-16-|-Séance du 16 juillet 1789</field>
   <field name="session_govt_ssi">ASSEMBLÉE NATIONALE</field>
-  <field name="spoken_text_ftsimv">bm916nx5550_00_0303-|-aaaBaillyzzz-|-avance ensuite au bureau. De toutes parts il s'élève des acclamations de joie et des cris de félicitation. Lorsque ce premier moment d'allégresse est passé, M. Bailly annonce que Paris lui a fait l'honneur de le nommer maire de la ville ; qu'il a été élevé à cet honneur par acclamation, et qu'il est prêt à recevoir les ordres de l'Assemblée. (On applaudit vivement, sans cependant prendre de délibération.)</field>
-  <field name="spoken_text_ftsimv">bm916nx5550_00_0303-|-aaaMounierzzz-|-Un membre de la noblesse annonce qu'hier M. le marquis de Lafayette a été nommé colonel général de la milice bourgeoise; qu'il était resté à Paris pour prendre différentes instructions à l'Hôtel-de-ville; mais qu'il attend les ordres de l'Assemblée nationale pour accepter la dignité dont ses concitoyens l'ont honoré.</field>
+  <field name="spoken_text_ftsimv">mc666yy3026_00_0144-|-aaaBaillyzzz-|-avance ensuite au bureau. De toutes parts il s'élève des acclamations de joie et des cris de félicitation. Lorsque ce premier moment d'allégresse est passé, M. Bailly annonce que Paris lui a fait l'honneur de le nommer maire de la ville ; qu'il a été élevé à cet honneur par acclamation, et qu'il est prêt à recevoir les ordres de l'Assemblée. (On applaudit vivement, sans cependant prendre de délibération.)</field>
+  <field name="spoken_text_ftsimv">mc666yy3026_00_0144-|-aaaMounierzzz-|-Un membre de la noblesse annonce qu'hier M. le marquis de Lafayette a été nommé colonel général de la milice bourgeoise; qu'il était resté à Paris pour prendre différentes instructions à l'Hôtel-de-ville; mais qu'il attend les ordres de l'Assemblée nationale pour accepter la dignité dont ses concitoyens l'ont honoré.</field>
   <field name="unspoken_text_ftsimv">bm916nx5550_00_0304-|-Arrivés à la place Louis XV, nous descendons de nos voitures. Une garde nombreuse nous escorte : un peuple innombrable s'offre de tous côtés à nos regards. Les bourgeois et les soldats armés sont rangés en haie sur notre passage. Les spectateurs tâchent de donner essor au sentiment qui les oppresse, par tous les signes de la plus vive affection. C'est pour eux une vive jouissance que de serrer les mains d'un des membres de l'Assemblée nationale. L'air est incessamment frappé des applaudissements, des cris de joie auxquels se joint le bruit des tambours et des instruments de musique. Les citoyens se félicitent, s'embrassent réciproquement. Tous les yeux sont mouillés de larmes ; partout se montre l'ivresse du sentiment. De toutes parts on s'écrie : Vive le Roi, vive la nation, vivent les députés !</field>
   <field name="vol_title_ssi">Tome 8 : Du 5 mai 1789 au 15 septembre 1789</field>
   <field name="result_group_ssi">Tome 8 : Du 5 mai 1789 au 15 septembre 1789</field>

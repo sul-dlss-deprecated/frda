@@ -100,6 +100,23 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     expect(page).to have_xpath("//img[contains(@src, \"bm916nx5550/bm916nx5550_00_0301_thumb\")]")
   end
 
+  it "should return to search results via the 'back to search' button for an Images item" do
+    visit search_path(:q=>"Le Point d'honneur")
+    click_link "Le Point d'honneur : [estampe]"
+    expect(current_path).to eq(catalog_path('en',:id=>'qv647nz8770'))
+    click_link "« results"
+    expect(page).to have_content("Le Point d'honneur : [estampe]")
+    expect(page).to have_content("Results grouped by volume (AP + Images)")
+  end
+
+  it "should return to search results via the 'back to search' button for an AP item" do
+    visit search_path(:"f[vol_title_ssi][]"=>"Tome 8 : Du 5 mai 1789 au 15 septembre 1789")
+    click_link "Séance du 15 juillet 1789"
+    expect(current_path).to eq(catalog_path('en',:id=>'bm916nx5550_00_0006'))
+    click_link "« results"
+    expect(page).to have_content("Results in Volume 8")
+  end
+
   describe "search options" do
 
     it "should return appropriate results for speaker autocomplete in json case insensitive, but only for AP data" do

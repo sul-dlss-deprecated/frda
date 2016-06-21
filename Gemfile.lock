@@ -34,9 +34,10 @@ GEM
     arel (3.0.3)
     awesome_nested_set (2.1.6)
       activerecord (>= 3.0.0)
-    better_errors (1.1.0)
+    better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     blacklight (4.7.0)
@@ -172,7 +173,7 @@ GEM
     mysql2 (0.3.21)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (2.9.4)
+    net-ssh (3.2.0)
     netrc (0.11.0)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -284,7 +285,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_nested_set
-  better_errors (< 2.0)
+  better_errors
   binding_of_caller (~> 0.7)
   blacklight (~> 4.7.0)
   blacklight_dates2svg (~> 0.0.1.beta3)
@@ -311,7 +312,7 @@ DEPENDENCIES
   meta_request
   mods_display
   mysql2 (~> 0.3.10)
-  net-ssh (< 3)
+  net-ssh
   quiet_assets
   rails (~> 3.2.22)
   rchardet

@@ -102,6 +102,16 @@ collection_ssi - must be "Images de la Révolution française"
 image_id_ssm - must be the base filename of the image to show (e.g. "T00000001") - no .jp2 extension required
 type_ssi - must be "image"
 
+## Custom Methods
+
+There is a custom "link_back_to_catalog" method in app/helpers/blacklight_helper.rb
+If you update Blacklight, you should confirm if this method still works or compare with the equivalent method in the latest version of blacklight.  The method is responsible for generating a "back to results" link from item detail pages.
+
+
+## Indexing
+
+There is a custom indexing app for FRDA that is quite out of date (as of June 2016) and non-operational.  It is still in the DLSS AFS space (under "dev/dlss/git/digital_collection_sites/frda-indexer.git") and not available in github.  To reindex material you would need to upgrade to the latest harvestdor stack.
+
 ## Utils
 
 To reset jetty and solr back to their initial state:

@@ -16,6 +16,7 @@ gem 'ffi'
 gem 'faraday'
 gem 'scrub_rb'
 gem 'rchardet'
+gem 'whenever'
 
 gem 'blacklight_dates2svg', '~> 0.0.1.beta3'
 

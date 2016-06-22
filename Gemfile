@@ -25,7 +25,7 @@ gem 'kaminari', '<= 0.14.1'
 gem 'stanford-mods'
 gem 'mods_display'
 gem 'bootstrap-datepicker-rails'
-gem 'net-ssh', '< 3' # net-ssh 2 needed for ruby 1.9 compatibility
+gem 'net-ssh'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -42,7 +42,7 @@ group :development,:test do
   gem 'rspec-rails', ">=2.14"
   gem 'capybara'
 	gem 'launchy'
-  gem 'better_errors', "< 2.0" # v2.0 or greater does not support Ruby 1.9 anymore, which is what is currently running in FRDA prod
+  gem 'better_errors'
   gem 'binding_of_caller', "~> 0.7"
   gem 'meta_request'
   gem 'test-unit'

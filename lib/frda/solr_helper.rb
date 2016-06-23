@@ -11,10 +11,6 @@ module Frda::SolrHelper
     return [solr_response, solr_response.groups]
   end
 
-  def blacklight_solr
-    Blacklight.solr
-  end
-
   def group_results_params
     {:group => true, :"group.field" => group_result_field, :"group.limit" => 10, :"group.ngroups" => true, :debugQuery => true}
   end

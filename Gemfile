@@ -2,14 +2,14 @@ source 'https://rubygems.org'
 
 gem 'bundler', '>= 1.2.0'
 
-gem 'rails', '~> 3.2.22'
+gem 'rails', '~> 4'
 
 gem 'google-analytics-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "blacklight", '~> 4.7.0'
+gem "blacklight", '~> 4'
 #gem 'eadsax', :git => "https://github.com/sul-dlss/eadsax.git"
 gem 'ffi'
 
@@ -18,7 +18,7 @@ gem 'scrub_rb'
 gem 'rchardet'
 gem 'whenever'
 
-gem 'blacklight_dates2svg', '~> 0.0.1.beta3'
+gem 'blacklight_dates2svg', '~> 0.0.1.beta4'
 
 gem 'is_it_working-cbeer', require: 'is_it_working'
 
@@ -28,24 +28,23 @@ gem 'stanford-mods'
 gem 'mods_display'
 gem 'bootstrap-datepicker-rails'
 gem 'net-ssh'
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+gem 'protected_attributes' # allows use of attr_accessible in models in rails 4
 
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'sass-rails',   '~> 4'
+gem 'coffee-rails', '~> 4'
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', :platforms => :ruby
+
+gem 'uglifier', '>= 1.0.3'
 
 group :development,:test do
   gem 'rspec-rails', ">=2.14"
   gem 'capybara'
 	gem 'launchy'
   gem 'better_errors'
-  gem 'binding_of_caller', "~> 0.7"
+  gem 'binding_of_caller'
   gem 'meta_request'
   gem 'test-unit'
 end

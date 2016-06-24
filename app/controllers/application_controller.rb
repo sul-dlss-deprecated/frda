@@ -97,8 +97,7 @@ class ApplicationController < ActionController::Base
 
   def exception_on_website(exception)
     @exception=exception
-
-    FrdaMailer.error_notification(:exception=>@exception).deliver unless Frda::Application.config.exception_recipients.blank?
+    notify_squash exception
 
     if Frda::Application.config.exception_error_page
         logger.error(@exception.message)

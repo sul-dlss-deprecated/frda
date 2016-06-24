@@ -25,6 +25,7 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/passenger'
 require 'dlss/capistrano'
+require 'squash/rails/capistrano3' # Note that this inclusion requires a branch, not a tag, to be deployed
 require 'whenever/capistrano'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.

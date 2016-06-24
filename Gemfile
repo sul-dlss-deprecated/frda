@@ -68,6 +68,9 @@ gem "bootstrap-sass"
 
 gem 'awesome_nested_set'
 
+gem 'squash_ruby', :require => 'squash/ruby'
+gem 'squash_rails', :require => 'squash/rails'
+
 # gems necessary for capistrano deployment
 group :deployment do
   gem 'capistrano', "~> 3.0"

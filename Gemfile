@@ -57,6 +57,7 @@ end
 
 group :staging, :production do
   gem 'mysql2', "~> 0.3.10"
+  gem 'minitest'
 end
 
 gem 'json'

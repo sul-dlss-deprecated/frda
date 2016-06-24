@@ -20,6 +20,8 @@ gem 'whenever'
 
 gem 'blacklight_dates2svg', '~> 0.0.1.beta3'
 
+gem 'is_it_working-cbeer', require: 'is_it_working'
+
 gem "coderay"
 gem 'kaminari', '<= 0.14.1'
 gem 'stanford-mods'

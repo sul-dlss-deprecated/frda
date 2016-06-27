@@ -3,3 +3,16 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-Agent: *
 # Disallow: /
+User-Agent: bingbot
+Crawl-delay: 3
+
+User-Agent: Slurp  # yahoo too i think, possibly old
+Disallow: /
+
+User-Agent: yahoo
+Disallow: /
+
+User-Agent: *
+Disallow: /catalog/range_limit
+Disallow: /catalog/facet
+Disallow: /catalog.atom

@@ -1,7 +1,6 @@
 Frda::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  config.exception_error_page = false # show a friendly 500 error page if true
-  config.exception_recipients = '' # list of email addresses, comma separated, that will be notified when an exception occurs - leave blank for no emails
+  config.exception_error_page = true # show a friendly 500 error page if true
   config.action_mailer.default_url_options = { :host => 'frda-stage.stanford.edu' }
 
   config.action_mailer.delivery_method = :sendmail
@@ -73,7 +72,4 @@ Frda::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  # Log the query plan for queries taking more than this (works
-  # with SQLite, MySQL, and PostgreSQL)
-  # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end

@@ -8,7 +8,7 @@ module ApplicationHelper
   def clean(title)
     title.first.gsub("'","").gsub('"','')
   end
-  
+
   # take in a hash of options for the contact us form, and then pass the values of the hash through the translation engine
   def translate_options(options)
     result={}
@@ -233,9 +233,9 @@ module ApplicationHelper
     volume_facet_params = params_for_volume_or_image(volume)
     options.delete(:params)
     if options[:count]
-      link_to(t('frda.search.view_all'), catalog_index_path(link_params.deep_merge(volume_facet_params)), options)
+      link_to(t('frda.search.view_all'), catalog_index_path(link_params.deep_merge(volume_facet_params).symbolize_keys), options)
     else
-      link_to(volume, catalog_index_path(link_params.deep_merge(volume_facet_params)), options)
+      link_to(volume, catalog_index_path(link_params.deep_merge(volume_facet_params).symbolize_keys), options)
     end
   end
 
@@ -319,7 +319,7 @@ module ApplicationHelper
   def mods_element_note(doc)
     doc.mods.origin_info.note.find {|n| n.attr("encoding") != 'marc'}.text
   end
-  
+
   def mods_creator_role_to_label(role)
     case role.strip
     when "art"

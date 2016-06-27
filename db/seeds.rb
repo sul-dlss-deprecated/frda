@@ -120,9 +120,9 @@ def add_items(items,coll)
   items.each {|item| coll.collection_highlight_items << CollectionHighlightItem.create(item_id:"#{item}")}
 end
 
-CollectionHighlight.find(:all).each {|h| h.destroy}
-CollectionHighlightItem.find(:all).each {|hi| hi.destroy}
-PoliticalPeriod.find(:all).each {|p| p.destroy}
+CollectionHighlight.all.each {|h| h.destroy}
+CollectionHighlightItem.all.each {|hi| hi.destroy}
+PoliticalPeriod.all.each {|p| p.destroy}
 
 c1=CollectionHighlight.create(
   sort_order:1,

@@ -5,3 +5,4 @@
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
 Frda::Application.config.secret_token = 'gyuvnjb4z6uoxsohccwm9yeh9a6kfdyivvveqjh15b2uag6w38ymwrau2fnj79hrwkywd268hc49tvd0jp7j8ko2xef45tcw2cqemugz1sxunpllcnxkxfvk'
+Frda::Application.config.secret_key_base = 'NbZjtEZHZSVr65S8czvwIQ+=='

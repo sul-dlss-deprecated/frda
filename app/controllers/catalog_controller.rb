@@ -3,7 +3,7 @@ require 'blacklight/catalog'
 require 'frda/solr_helper'
 require 'solr_response_term_frequencies'
 
-class CatalogController < ApplicationController  
+class CatalogController < ApplicationController
 
   include Blacklight::Catalog
   include Frda::SolrHelper
@@ -29,18 +29,18 @@ class CatalogController < ApplicationController
       ignore!
     end
   end
-  
+
   # The logic to handle the date range queries is being set by the BlacklightDates2SVG gem.
   # If we remove that, but still want date processing, we'll need to explicity require and use the DateRangeSolrQuery gem.
   CatalogController.solr_search_params_logic += [:only_search_div2, :search_within_speeches,
                                                  :proximity_search, :result_view,
                                                  :exclude_highlighting, :pivot_facet_on_ap_landing_page]
-  
+
   before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
 
   def self.political_periods_query(locale)
     opts={}
-    PoliticalPeriod.find(:all,:order=>:sort_order).each do |period|
+    PoliticalPeriod.all.order(:sort_order).each do |period|
       start_date = "#{DateTime.parse(period.start_date).strftime("%Y-%m-%d")}T00:00:00Z"
       end_date = "#{(DateTime.parse(period.end_date) + 1.day).strftime("%Y-%m-%d")}T00:00:00Z"
       range_query = "search_date_dtsim:[#{start_date} TO #{end_date}]"
@@ -48,31 +48,31 @@ class CatalogController < ApplicationController
     end if ActiveRecord::Base.connection.table_exists? 'political_periods'
     opts
   end
-  
+
   def self.collection_highlights(locale)
     opts = {}
-    CollectionHighlight.find(:all,:order=>:sort_order).each do |highlight|
+    CollectionHighlight.all.order(:sort_order).each do |highlight|
       opts[:"highlight_#{highlight.id}"] = {:label => highlight.send("name_#{locale}"), :fq => "id:(#{highlight.query.gsub('or', 'OR')})"}
     end if ActiveRecord::Base.connection.table_exists? 'collection_highlights'
     opts
   end
-    
+
   def current_user; nil; end
-  
+
   def guest_user
     User.find(session[:guest_user_id].nil? ? session[:guest_user_id] = create_guest_user.id : session[:guest_user_id])
   end
-  
+
   def current_or_guest_user
     guest_user
   end
-  
+
   def index
-    
+
     if on_home_page
       @highlights=CollectionHighlight.order("sort_order").limit(3)
     end
-    
+
     if on_collection_highlights_page
       @highlights=CollectionHighlight.order("sort_order")
     end
@@ -98,7 +98,7 @@ class CatalogController < ApplicationController
 
   end
 
-    
+
    def show
      @mode=params[:mode] # can be set to "ocr" or "flipbook" to show only ocr text or flipbook on AP pages
      super
@@ -113,12 +113,12 @@ class CatalogController < ApplicationController
     download_ocr_text=params[:download_ocr_text]
     volume=params[:volume]
     session_title=params[:session_title]
-    
+
     @mode=params[:mode]
 
     if (page_num.blank? && page_seq.blank?) || !session_title.blank? # if no page number or sequence given, this must be a search for a specific session, so look for the first page in that volume/session
       pages = Blacklight.solr.select(:params =>{:fq => "session_title_sim:\"#{session_title}\"",:"facet.field"=>"session_seq_first_isim",:rows=>0})['facet_counts']['facet_fields']['session_seq_first_isim']
-      if pages.size > 0 
+      if pages.size > 0
         page_seq=pages.first # grab first page sequence number for the first session returned and then look up the page in the given voluem
         response = Blacklight.solr.select(:params =>{:fq => "vol_num_ssi:\"#{volume}\" AND page_sequence_isi:\"#{page_seq}\""})["response"]
         @document = SolrDocument.new(response["docs"].first, response) if response["docs"].size > 0 # assuming we found this page
@@ -128,7 +128,7 @@ class CatalogController < ApplicationController
       response = Blacklight.solr.select(:params =>{:fq => "druid_ssi:\"#{druid}\" AND #{page_query}"})["response"]
       @document = SolrDocument.new(response["docs"].first, response) if response["docs"].size > 0 # assuming we found this page
     end
-        
+
     if request.xhr? # coming an ajax call, just render the new page (or an error message if not found)
         setup_next_and_previous_documents
         render 'show_page',:format=>:js
@@ -139,7 +139,7 @@ class CatalogController < ApplicationController
     elsif @document # user needs to see the next page and is not coming an ajax call, we will redirect them on below to the new page
         id=@document.id
     else # page was not found, so we will redirect back to where they started with an error message
-        flash[:alert]=t('frda.show.not_found') 
+        flash[:alert]=t('frda.show.not_found')
         id=from_id
     end
 
@@ -163,10 +163,10 @@ class CatalogController < ApplicationController
       format.json { render :json => @suggestions }
     end
   end
-  
+
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
-    config.default_solr_params = { 
+    config.default_solr_params = {
       :qt => 'search',
       :facet => 'true',
       :rows => 10,
@@ -174,25 +174,25 @@ class CatalogController < ApplicationController
       :"facet.mincount" => 1,
       :"hl.usePhraseHighlighter" => true
     }
-    
+
     config.search_date_field = "search_date_dtsim"
 
-    config.collection_highlight_field = "highlight_ssim" 
-            
+    config.collection_highlight_field = "highlight_ssim"
+
     config.collection_member_identifying_field = "collection_ssi"  # this identifies what overall collection we are in
-            
+
     config.image_identifier_field = "image_id_ssm"
 
-    ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or 
+    ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
     config.default_document_solr_params = {
      :qt => 'search',
      :fl => '*',
      :rows => 1,
-     :q => '{!raw f=id v=$id}' 
+     :q => '{!raw f=id v=$id}'
     }
-    
+
     config.document_index_view_types = ["default", "gallery", "list", "frequency", "covers"]
 
     # NOT SURE THESE ARE RELEVANT SINCE WE HAVE CUSTOM VIEWS FOR ALL ITEMS  Peter 2/1/2013
@@ -209,29 +209,29 @@ class CatalogController < ApplicationController
     # * If left unset, then all facet values returned by solr will be displayed.
     # * If set to an integer, then "f.somefield.facet.limit" will be added to
     # solr request, with actual solr request being +1 your configured limit --
-    # you configure the number of items you actually want _displayed_ in a page.    
+    # you configure the number of items you actually want _displayed_ in a page.
     # * If set to 'true', then no additional parameters will be sent to solr,
     # but any 'sniffed' request limit parameters will be used for paging, with
-    # paging at requested limit -1. Can sniff from facet.limit or 
+    # paging at requested limit -1. Can sniff from facet.limit or
     # f.specific_field.facet.limit solr request params. This 'true' config
     # can be used if you set limits in :default_solr_params, or as defaults
     # on the solr side in the request handler itself. Request handler defaults
     # sniffing requires solr requests to be made with "echoParams=all", for
-    # app code to actually have it echo'd back to see it.  
+    # app code to actually have it echo'd back to see it.
     #
-    # :show may be set to false if you don't want the facet to be drawn in the 
+    # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
 
 
     config.add_facet_field 'en_periods_ssim', label: :'frda.nav.timeline_of_events', :show => true,  :query => political_periods_query('en')
     config.add_facet_field 'fr_periods_ssim', label: :'frda.nav.timeline_of_events', :show => true,  :query => political_periods_query('fr')
-  
+
     config.add_facet_field 'en_highlight_ssim', label: :'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('en')
     config.add_facet_field 'fr_highlight_ssim', label: :'frda.nav.collection_highlights', :show => false,  :query => collection_highlights('fr')
 
     config.add_facet_field 'collection_ssi', label: :'frda.nav.collection'
     config.add_facet_field 'speaker_ssim', label: :'frda.show.people', :show => true, :limit => 15
-    
+
     config.add_facet_field 'doc_type_ssi', label: :'frda.facet.type', :limit => 15
     config.add_facet_field 'medium_ssim', label: :'frda.facet.medium', :limit => 15
     config.add_facet_field 'genre_ssim', label: :'frda.facet.genre', :limit => 15
@@ -258,7 +258,7 @@ class CatalogController < ApplicationController
     # config.add_facet_fields_to_solr_request!
 
     # solr fields to be displayed in the index (search results) view
-    #   The ordering of the field names is the order of the display 
+    #   The ordering of the field names is the order of the display
 
     config.add_index_field 'level_ssim', label: :'frda.show.level'
     config.add_index_field 'unit_date_ssim', label: :'frda.show.date'
@@ -267,10 +267,10 @@ class CatalogController < ApplicationController
     config.add_index_field 'title_long_ftsi', :label => "Long Tilte:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'title_short_ftsi', :label => "Short Title:", :highlight => true #don't really need an i18n label here since it won't be used.
     config.add_index_field 'div2_title_ssi', :label => "Section:", :highlight => true #don't really need an i18n label here since it won't be used.
-    
+
 
     # solr fields to be displayed in the show (single result) view
-    #   The ordering of the field names is the order of the display 
+    #   The ordering of the field names is the order of the display
     config.add_show_field 'level_ssim', label: :'frda.show.level'
     config.add_show_field 'unit_date_ssim', label: :'frda.show.date'
     config.add_show_field 'extent_ssim',  label: :'frda.show.physical_description'
@@ -288,14 +288,14 @@ class CatalogController < ApplicationController
     # The :key is what will be used to identify this BL search field internally,
     # as well as in URLs -- so changing it after deployment may break bookmarked
     # urls.  A display label will be automatically calculated from the :key,
-    # or can be specified manually to be different. 
+    # or can be specified manually to be different.
 
     # This one uses all the defaults set by the solr request handler. Which
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
-    # since we aren't specifying it otherwise. 
-    
+    # since we aren't specifying it otherwise.
+
     config.add_search_field 'all_fields', label: :'frda.facet.all_fields'
-    
+
     config.add_search_field('title_terms') do |field|
       field.label = :'frda.facet.title'
       field.solr_local_parameters = {
@@ -303,7 +303,7 @@ class CatalogController < ApplicationController
         :pf => '$pf_title'
       }
     end
-    
+
     config.add_search_field('exact') do |field|
       field.label = :'frda.facet.exact'
       field.solr_local_parameters = {
@@ -311,7 +311,7 @@ class CatalogController < ApplicationController
         :pf => '$pf_exact'
       }
     end
-    
+
     config.add_search_field('exact_title') do |field|
       field.label = :'frda.facet.exact_title'
       field.solr_local_parameters = {
@@ -330,7 +330,7 @@ class CatalogController < ApplicationController
     #config.add_sort_field 'author_sort asc, title_sort asc', :label => 'author'
     #config.add_sort_field 'title_sort asc, pub_date_sort desc', :label => 'title'
 
-    # If there are more than this many search results, no spelling ("did you 
+    # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
     config.spell_max = 5
   end
@@ -341,7 +341,7 @@ class CatalogController < ApplicationController
     if request.post?
       if params[:to]
         url_gen_params = {:host => request.host_with_port, :protocol => request.protocol}
-        
+
         if params[:to].match(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/)
           email = RecordMailer.email_record(@documents, {:to => params[:to], :message => params[:message]}, url_gen_params)
         else
@@ -352,13 +352,13 @@ class CatalogController < ApplicationController
       end
 
       unless flash[:error]
-        email.deliver 
+        email.deliver
         flash[:success] = "Email sent"
         if request.xhr?
           render :email_sent, :formats => [:js]
           return
         else
-          redirect_to catalog_path(params['id']) 
+          redirect_to catalog_path(params['id'])
         end
       end
     end
@@ -370,7 +370,7 @@ class CatalogController < ApplicationController
       end
     end
   end
-  
+
   def mods
     @response, @documents = get_solr_response_for_field_values(SolrDocument.unique_key,params[:id])
     respond_to do |format|
@@ -378,7 +378,7 @@ class CatalogController < ApplicationController
       format.js { render :layout => false }
     end
   end
-  
+
   def group_response?
     return true unless params["f"]
     !(params and
@@ -389,7 +389,7 @@ class CatalogController < ApplicationController
            (params["f"]["result_group_ssi"] and params["f"]["result_group_ssi"].include?(Frda::Application.config.images_id)))
   end
   helper_method :"group_response?"
-  
+
   def response_is_grouped?
     @response and @response.is_a?(Frda::GroupedSolrResponse)
   end
@@ -412,7 +412,7 @@ class CatalogController < ApplicationController
       solr_params[:defType] = "lucene"
     end
   end
-  
+
   def proximity_search(solr_params, user_params)
     if user_params["prox"] and !user_params["words"].blank?
       solr_params[:q] = "\"#{user_params["q"].gsub('"', '')}\""
@@ -466,7 +466,7 @@ class CatalogController < ApplicationController
       params[:f] = {"collection_ssi" => [params["search_collection"]]}
     end
   end
-  
+
   # used to capture and transform the parameters passed in the split button options.
   def capture_split_button_options
     unless (params.dup.keys & ["ap", "image"]).blank?
@@ -486,5 +486,5 @@ class CatalogController < ApplicationController
   def search_link_from_facet_field(opts={})
     catalog_index_path(:f => {opts[:field].to_sym => [opts[:value]]})
   end
-  
-end 
+
+end

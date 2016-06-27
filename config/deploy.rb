@@ -5,7 +5,7 @@ set :application, 'frda'
 set :repo_url, 'https://github.com/sul-dlss/frda.git'
 
 # Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+ask :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/opt/app/frda/frda-app'
@@ -33,7 +33,6 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-set :bundle_audit_ignore, %w{CVE-2015-3226 OSVDB-131677}
 
 after  "deploy:finished", "db:seed"  # the db:seed method loads data that the FRDA site needs to operate correctly, including info shown on this page: /en/images and /fr/images
 # db:seed should be run after each deploy

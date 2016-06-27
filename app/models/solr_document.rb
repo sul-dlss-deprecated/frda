@@ -379,6 +379,19 @@ class SolrDocument
                          )
 
 
+    ###########################################################################
+    ##### THESE METHODS ARE NECESSARY FOR RAILS 4 TO WORK WITH BLACKLIGHT 4 ##
+    #####  THEY CAN LIKELY BE REMOVED WHEN BLACKLIGHT 5 UPGRADE OCCURS #######
+    #####  JUNE 2016                         
+   def to_model
+     self
+   end
+
+   def persisted?
+     true
+   end
+  ############################################################################
+
   private
 
   def highlighted_fields(key)

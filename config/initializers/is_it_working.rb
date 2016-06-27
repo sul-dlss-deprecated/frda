@@ -4,6 +4,10 @@ Rails.configuration.middleware.use(IsItWorking::Handler) do |h|
     status.ok(IO.read(Rails.root.join('VERSION')).strip)
   end
 
+  h.check :revision do |status|
+    status.ok(IO.read(Rails.root.join('REVISION')).strip)
+  end
+
   # Check the ActiveRecord database connection without spawning a new thread
   h.check :active_record, :async => false
 

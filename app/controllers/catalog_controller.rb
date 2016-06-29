@@ -92,8 +92,8 @@ class CatalogController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.rss  { render :layout => false }
-      format.atom { render :layout => false }
+      format.rss  { render nothing: true, status: :not_acceptable }
+      format.atom { render nothing: true, status: :not_acceptable }
     end
 
   end

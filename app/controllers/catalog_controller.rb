@@ -82,6 +82,12 @@ class CatalogController < ApplicationController
       @headings = "Category#{lang}".constantize.order("position ASC")
     end
 
+    if bad_facet_params
+      session[:search]=nil # blow away the search context
+      render nothing: true, status: :not_acceptable
+      return
+    end
+
     if group_response?
       (@response, @document_list) = get_grouped_search_results
     else
@@ -396,6 +402,21 @@ class CatalogController < ApplicationController
   helper_method :"response_is_grouped?"
 
   private
+
+  # google and other bots continue to use bad facet values for the some of the facets when indexing ...
+  #  this in turn causes a 500 exception deep within blacklight, triggering excessive logging; just tell them to get lost instead   Peter Mangiafico, June 2016  ... # this is fixed in later versions of blacklight
+  def bad_facet_params
+
+    result = false
+
+    custom_facets_to_check=['en_periods_ssim','fr_periods_ssim','en_highlight_ssim','fr_highlight_ssim']
+    custom_facets_to_check.each do |custom_facet|
+      result = true if params && params[:f] && params[:f][custom_facet.to_sym] && ((blacklight_config.facet_fields[custom_facet].query.keys + params[:f][custom_facet.to_sym]).uniq.size) != blacklight_config.facet_fields[custom_facet].query.keys.size
+    end
+
+    result
+
+  end
 
   def only_search_div2(solr_params, user_params)
     query = "-type_ssi:page"

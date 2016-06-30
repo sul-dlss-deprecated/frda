@@ -57,7 +57,7 @@ GEM
       rails (>= 3.2.6, < 5)
       rsolr (~> 1.0.6)
       sass-rails
-    blacklight_dates2svg (0.0.1.beta4)
+    blacklight_dates2svg (0.0.1.beta5)
       blacklight
       date_range_solr_query
       dates2svg
@@ -313,7 +313,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   blacklight (~> 4)
-  blacklight_dates2svg (~> 0.0.1.beta4)
+  blacklight_dates2svg (~> 0.0.1.beta5)
   bootstrap-datepicker-rails
   bootstrap-sass
   bundler (>= 1.2.0)

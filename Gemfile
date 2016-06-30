@@ -18,7 +18,7 @@ gem 'scrub_rb'
 gem 'rchardet'
 gem 'whenever'
 
-gem 'blacklight_dates2svg', '~> 0.0.1.beta4'
+gem 'blacklight_dates2svg', '~> 0.0.1.beta5'
 
 gem 'is_it_working-cbeer', require: 'is_it_working'
 

@@ -16,3 +16,4 @@ User-Agent: *
 Disallow: /catalog/range_limit
 Disallow: /catalog/facet
 Disallow: /catalog.atom
+Disallow: /catalog.rss

@@ -117,6 +117,22 @@ describe("Search Pages",:type=>:request,:integration=>true) do
     expect(page).to have_content("Results in Volume 8")
   end
 
+
+  it "should reject but not throw an exception for a bad political_periods facet value" do
+    visit catalog_index_path(:"f[en_periods_ssim][]"=>"period_abcdef")
+    expect(page.status_code).to eq 406
+    visit catalog_index_path(:"f[fr_periods_ssim][]"=>"period_abcdef")
+    expect(page.status_code).to eq 406
+  end
+
+  it "should work with a known political_periods facet value" do
+    good_id=PoliticalPeriod.first.id
+    visit catalog_index_path(:"f[en_periods_ssim][]"=>"period_#{good_id}")
+    expect(page.status_code).to eq 200
+    visit catalog_index_path(:"f[fr_periods_ssim][]"=>"period_#{good_id}")
+    expect(page.status_code).to eq 200
+  end
+
   describe "search options" do
 
     it "should return appropriate results for speaker autocomplete in json case insensitive, but only for AP data" do

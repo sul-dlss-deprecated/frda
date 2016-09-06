@@ -19,11 +19,6 @@ class ApplicationController < ActionController::Base
                 :on_search_page, :request_path
 
   before_filter :set_locale
-  before_filter :require_http
-
-  def require_http
-    redirect_to :protocol => "http://" if (request.ssl?)
-  end
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale

@@ -4,9 +4,6 @@ class ApplicationController < ActionController::Base
   # Please be sure to impelement current_user and user_session. Blacklight depends on
   # these methods in order to perform user specific actions.
 
-  include Squash::Ruby::ControllerMethods
-  enable_squash_client
-
   protect_from_forgery
 
   rescue_from Exception, :with=>:exception_on_website
@@ -92,7 +89,7 @@ class ApplicationController < ActionController::Base
 
   def exception_on_website(exception)
     @exception=exception
-    notify_squash exception
+    Honeybadger.notify(exception)
 
     if Frda::Application.config.exception_error_page
         logger.error(@exception.message)

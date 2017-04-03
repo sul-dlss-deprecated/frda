@@ -82,8 +82,3 @@ Frda::Application.config.stacks_url = YAML.load_file("#{Rails.root}/config/stack
 Frda::Application.config.contact_us_topics = {'error'=>'frda.contact.problem'} # sets the list of topics shown in the contact us page
 Frda::Application.config.contact_us_recipients = {'error'=>'digcoll@jirasul.stanford.edu'} # sets the email address for each contact us topic configed above
 Frda::Application.config.contact_us_cc_recipients = {'error'=>'frda-problems@jirasul.stanford.edu'} # sets the CC email address for each contact us topic configed above
-
-Squash::Ruby.configure :api_host => 'https://sul-squash.stanford.edu',
-                       :api_key => '0867a75c-aaf0-4756-a5c9-714663b602e0',
-                       :revision_file => 'REVISION',
-                       :disabled => (Rails.env.development? || Rails.env.test?)

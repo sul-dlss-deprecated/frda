@@ -91,6 +91,8 @@ class ApplicationController < ActionController::Base
     @exception=exception
     Honeybadger.notify(exception)
 
+    Honeybadger.notify(exception)
+
     if Frda::Application.config.exception_error_page
         logger.error(@exception.message)
         logger.error(@exception.backtrace.join("\n"))

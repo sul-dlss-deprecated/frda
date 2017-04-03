@@ -33,3 +33,5 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 
 after  "deploy:finished", "db:seed"  # the db:seed method loads data that the FRDA site needs to operate correctly, including info shown on this page: /en/images and /fr/images
 # db:seed should be run after each deploy
+
+before 'deploy:restart', 'shared_configs:update'

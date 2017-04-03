@@ -78,7 +78,7 @@ group :deployment do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
-  gem 'lyberteam-capistrano-devel', '>=3.0.0'
+  gem 'dlss-capistrano', '~> 3.0'
 end
 
 # To use ActiveModel has_secure_password

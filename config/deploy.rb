@@ -1,6 +1,3 @@
-# config valid only for Capistrano 3.1
-lock '3.5.0'
-
 set :application, 'frda'
 set :repo_url, 'https://github.com/sul-dlss/frda.git'
 

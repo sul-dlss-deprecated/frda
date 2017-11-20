@@ -179,13 +179,15 @@ describe("Search Pages",:type=>:request,:integration=>true) do
          visit root_path
          fill_in "q", :with => "*:*"
          check("dates")
+         puts page.body
          fill_in :"date-start", :with => "1780-05-19"
          fill_in :"date-end", :with => "1799-04-25"
          find(:css, "[value='Search...']").click
 
          expect(page.all(:css, ".oneresult").length).to eq(12)
-
-         fill_in :"date-start", :with => "1794-04-25"
+         within '#sidebar' do
+           fill_in :"date-start", :with => "1794-04-25"
+         end
          find(:css, "[type='submit'][value='Search...']").click
 
          expect(page.all(:css, ".oneresult").length).to eq(5)

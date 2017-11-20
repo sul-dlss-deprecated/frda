@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <config>
+  <!-- NOTE:  these 2 lib dirs are here for testing only and do NOT go in the prod file -->
+  <lib dir="${solr.install.dir:../../../..}/contrib/analysis-extras/lib" />
+  <lib dir="${solr.install.dir:../../../..}/contrib/analysis-extras/lucene-libs" />
+
   <!-- NOTE: various comments and unused configuration possibilities have been purged
      from this file.  Please refer to http://wiki.apache.org/solr/SolrConfigXml,
      as well as the default solrconfig file included with Solr -->
 
   <abortOnConfigurationError>${solr.abortOnConfigurationError:true}</abortOnConfigurationError>
 
-  <luceneMatchVersion>LUCENE_40</luceneMatchVersion>
+  <luceneMatchVersion>5.4.1</luceneMatchVersion>
 
-	<lib dir="../lib"/>
-	<lib dir="../lib/contrib/extraction/lib" />
-	<lib dir="../lib/contrib/analysis-extras/lib" />
-	<lib dir="../lib/contrib/analysis-extras/lucene-libs" />
-  <lib dir="/usr/lib/solr/4.0.0/" />
-  
+
+
   <dataDir>${solr.data.dir:}</dataDir>
 
   <indexConfig>
   	<maxFieldLength>2147483647</maxFieldLength>
-    <unlockOnStartup>true</unlockOnStartup>
-<!-- from sw-solr   
+
+<!-- from sw-solr
     <writeLockTimeout>1000</writeLockTimeout>
     <useCompoundFile>false</useCompoundFile>
     <ramBufferSizeMB>128</ramBufferSizeMB>
     <mergeFactor>10</mergeFactor>
-    <lockType>simple</lockType>
+    <lockType>${solr.lock.type:native}</lockType>
     <reopenReaders>true</reopenReaders>
     <deletionPolicy class="solr.SolrDeletionPolicy">
       <str name="maxCommitsToKeep">1</str>
       <str name="maxOptimizedCommitsToKeep">0</str>
     </deletionPolicy>
--->    
+-->
   </indexConfig>
 
   <!-- See docs re: autoCommit -->
@@ -39,7 +39,10 @@
       <str name="dir">${solr.data.dir:}</str>
     </updateLog>
   </updateHandler>
-	
+
+  <jmx />
+
+
   <query>
     <maxBooleanClauses>1024</maxBooleanClauses>
     <filterCache class="solr.FastLRUCache" size="512" initialSize="512" autowarmCount="0"/>
@@ -64,12 +67,13 @@
           <int name="facet.mincount">1</int>
           <int name="facet.limit">30</int>
           <str name="facet.field">collection_ssi</str>
-          <str name="facet.field">doc_type_ssim</str>
+          <str name="facet.field">doc_type_ssi</str>
           <str name="facet.field">speaker_ssim</str>
-          <str name="facet.field">session_date_sim</str>
-          <str name="facet.field">session_title_sim</str>
+          <str name="facet.field">search_date_dtsim</str>
+          <str name="facet.field">session_title_si</str>
+          <str name="facet.field">div2_title_ssi</str>
           <str name="facet.field">vol_title_ssi</str>
-          <str name="facet.field">medium_ssi</str>
+          <str name="facet.field">medium_ssim</str>
           <str name="facet.field">genre_ssim</str>
           <str name="facet.field">artist_ssim</str>
           <str name="facet.field">collector_ssim</str>
@@ -84,12 +88,13 @@
           <int name="facet.mincount">1</int>
           <int name="facet.limit">30</int>
           <str name="facet.field">collection_ssi</str>
-          <str name="facet.field">doc_type_ssim</str>
+          <str name="facet.field">doc_type_ssi</str>
           <str name="facet.field">speaker_ssim</str>
-          <str name="facet.field">session_date_sim</str>
-          <str name="facet.field">session_title_sim</str>
+          <str name="facet.field">search_date_dtsim</str>
+          <str name="facet.field">session_title_si</str>
+          <str name="facet.field">div2_title_ssi</str>
           <str name="facet.field">vol_title_ssi</str>
-          <str name="facet.field">medium_ssi</str>
+          <str name="facet.field">medium_ssim</str>
           <str name="facet.field">genre_ssim</str>
           <str name="facet.field">artist_ssim</str>
           <str name="facet.field">collector_ssim</str>
@@ -110,12 +115,13 @@
           <int name="facet.mincount">1</int>
           <int name="facet.limit">30</int>
           <str name="facet.field">collection_ssi</str>
-          <str name="facet.field">doc_type_ssim</str>
+          <str name="facet.field">doc_type_ssi</str>
           <str name="facet.field">speaker_ssim</str>
-          <str name="facet.field">session_date_sim</str>
-          <str name="facet.field">session_title_sim</str>
+          <str name="facet.field">search_date_dtsim</str>
+          <str name="facet.field">session_title_si</str>
+          <str name="facet.field">div2_title_ssi</str>
           <str name="facet.field">vol_title_ssi</str>
-          <str name="facet.field">medium_ssi</str>
+          <str name="facet.field">medium_ssim</str>
           <str name="facet.field">genre_ssim</str>
           <str name="facet.field">artist_ssim</str>
           <str name="facet.field">collector_ssim</str>
@@ -130,12 +136,13 @@
           <int name="facet.mincount">1</int>
           <int name="facet.limit">30</int>
           <str name="facet.field">collection_ssi</str>
-          <str name="facet.field">doc_type_ssim</str>
+          <str name="facet.field">doc_type_ssi</str>
           <str name="facet.field">speaker_ssim</str>
-          <str name="facet.field">session_date_sim</str>
-          <str name="facet.field">session_title_sim</str>
+          <str name="facet.field">search_date_dtsim</str>
+          <str name="facet.field">session_title_si</str>
+          <str name="facet.field">div2_title_ssi</str>
           <str name="facet.field">vol_title_ssi</str>
-          <str name="facet.field">medium_ssi</str>
+          <str name="facet.field">medium_ssim</str>
           <str name="facet.field">genre_ssim</str>
           <str name="facet.field">artist_ssim</str>
           <str name="facet.field">collector_ssim</str>
@@ -161,65 +168,98 @@
     <lst name="defaults">
       <str name="defType">edismax</str>
       <str name="echoParams">explicit</str>
-      <str name="sort">score desc</str>
+      <str name="sort">vol_ssort asc,sort_date_dti asc,id asc</str>
       <int name="rows">10</int>
       <str name="q.alt">*:*</str>
       <str name="mm">6&lt;-1 6&lt;90%</str>
       <int name="qs">1</int>
       <int name="ps">0</int>
       <float name="tie">0.01</float>
+      <str name="fl">score, *</str>
+      <bool name="debugQuery">true</bool>
+
       <str name="qf">
         title_short_ti^5
         title_long_ti^5
         title_short_ftsi
         title_long_ftsi
+        vol_title_ti^5
+        vol_title_fti
         catalog_heading_timv^3
         catalog_heading_ftsimv
         catalog_heading_etsimv
+        subject_timv^3
+        subject_ftsimv
+        search_names_timv^3
+        speaker_timv^3
+        subject_name_timv^3
+        subject_name_ftimv
         spoken_text_timv^5
         spoken_text_ftsimv
-        text_tiv^5
-        text_ftsiv
-        session_title_sim^5
-        session_title_ftsim
-        speaker_ssim
-        session_govt_ssim
-        doc_type_ssim
+        unspoken_text_timv^5
+        unspoken_text_ftsimv
+        session_title_si^5
+        session_title_ftsi
+        session_govt_ssi
+        doc_type_ssi
         id
         druid_ssi
+        text_tiv^0.5
+        text_ftsiv^0.1
       </str>
       <str name="pf">
         title_short_ti^20
         title_long_ti^20
         title_short_ftsi^15
         title_long_ftsi^15
-        spoken_text_timv^20
-        spoken_text_ftsimv^15
-        text_tiv^20
-        text_ftsiv^10
-        session_title_sim^20
-        session_title_ftsim^10
+        vol_title_ti^20
+        vol_title_fti^15
         catalog_heading_timv^20
         catalog_heading_ftsimv^15
         catalog_heading_etsimv^15
+        subject_timv^20
+        subject_ftsimv^15
+        search_names_timv^20
+        speaker_timv^20
+        subject_name_timv^20
+        subject_name_ftimv^15
+        spoken_text_timv^20
+        spoken_text_ftsimv^15
+        unspoken_text_timv^20
+        unspoken_text_ftsimv^15
+        session_title_si^20
+        session_title_ftsi^10
+        text_tiv^10
+        text_ftsiv^5
       </str>
       <str name="qf_exact">
         title_short_ti
         title_long_ti
+        vol_title_ti
         catalog_heading_timv
+        subject_timv
+        search_names_timv
+        speaker_timv
+        subject_name_timv
         spoken_text_timv
-        text_tiv
-        session_title_sim
-        speaker_ssim
-        session_govt_ssim
-        doc_type_ssim
+        unspoken_text_timv
+        session_title_si
+        session_govt_ssi
+        doc_type_ssi
+        text_tiv^0.1
       </str>
       <str name="pf_exact">
         title_short_ti^5
         title_long_ti^5
+        vol_title_ti^5
         catalog_heading_timv^5
+        subject_timv^5
+        search_names_timv^5
+        speaker_timv^5
+        subject_name_timv^5
         spoken_text_timv^5
-        session_title_sim^5
+        unspoken_text_timv^5
+        session_title_si^5
         text_tiv^5
       </str>
 
@@ -228,48 +268,61 @@
         title_long_ti^5
         title_short_ftsi
         title_long_ftsi
+        vol_title_ti^5
+        vol_title_fti
       </str>
       <str name="pf_title">
         title_short_ti^10
         title_long_ti^10
         title_short_ftsi^5
         title_long_ftsi^5
+        vol_title_ti^10
+        vol_title_fti^5
       </str>
       <str name="qf_title_exact">
         title_short_ti
         title_long_ti
+        vol_title_ti
       </str>
       <str name="pf_title_exact">
         title_short_ti^5
         title_long_ti^5
+        vol_title_ti^5
       </str>
 
       <str name="qf_name">
         speaker_ssim
         artist_ssim
         collector_ssim
+        search_names_timv
       </str>
       <str name="pf_name">
         speaker_ssim^5
         artist_ssim^5
         collector_ssim^5
+        search_names_timv^5
       </str>
 
-      <str name="fl">score, *</str>
-      
       <bool name="facet">true</bool>
       <int name="facet.mincount">1</int>
       <int name="facet.limit">16</int>
       <str name="facet.field">collection_ssi</str>
       <str name="facet.field">doc_type_ssi</str>
+      <str name="facet.field">search_date_dtsim</str>
+      <str name="f.search_date_dtsim.facet.limit">-1</str>
       <str name="facet.field">speaker_ssim</str>
-      <str name="facet.field">session_title_sim</str>
+      <str name="facet.field">session_title_si</str>
+      <str name="f.session_title_si.facet.limit">-1</str>
+      <str name="facet.field">div2_title_ssi</str>
+      <str name="f.div2_title_ssi.facet.limit">-1</str>
       <str name="facet.field">vol_title_ssi</str>
-      <str name="facet.field">medium_ssi</str>
+      <str name="facet.field">medium_ssim</str>
       <str name="facet.field">genre_ssim</str>
       <str name="facet.field">artist_ssim</str>
       <str name="facet.field">collector_ssim</str>
-      <str name="facet.pivot">result_group_ssi,session_title_sim</str>
+      <str name="facet.field">result_group_ssi</str>
+      <str name="f.result_group_ssi.facet.limit">-1</str>
+      <str name="facet.pivot">result_group_ssort,div2_ssort</str>
       <str name="facet.query">search_date_dtsim:[1787-02-22T00:00:00Z TO 1789-01-25T00:00:00Z]</str>
       <str name="facet.query">search_date_dtsim:[1789-05-05T00:00:00Z TO 1789-07-15T00:00:00Z]</str>
       <str name="facet.query">search_date_dtsim:[1789-07-17T00:00:00Z TO 1791-10-01T00:00:00Z]</str>
@@ -287,11 +340,24 @@
       <str name="group.field">result_group_ssi</str>
 
       <str name="hl">on</str>
-      <str name="hl.fl">spoken_text_ftsimv, title_long_ftsi, title_short_ftsi, text_ftsiv, session_title_ftsim</str>
+      <str name="hl.fl">spoken_text_ftsimv, unspoken_text_ftsimv, title_long_ftsi, title_short_ftsi, session_title_ftsi</str>
+      <str name="hl.snippets">500</str>
+<!-- uncomment 2 lines below and remove hl.fragsize for the NEW way with better performance -->
+<!--
+      <str name="hl.useFastVectorHighlighter">true</str>
+      <str name="hl.fragListBuilder">single</str>
+-->
       <str name="hl.fragsize">0</str>
-    </lst>    
+      <str name="hl.maxAnalyzedChars">100000</str>
+    </lst>
   </requestHandler>
-	
+
+  <searchComponent class="solr.HighlightComponent" name="highlight">
+    <highlighting>
+      <fragListBuilder name="single" default="true" class="solr.highlight.SingleFragListBuilder"/>
+    </highlighting>
+  </searchComponent>
+
   <!-- single document requests; use id=666 instead of q=id:666 -->
   <requestHandler name="document" class="solr.SearchHandler" >
     <lst name="defaults">
@@ -320,26 +386,34 @@
     <lst name="defaults">
       <str name="defType">lucene</str>
       <str name="echoParams">explicit</str>
-      <str name="df">text_tiv</str>
+      <str name="df">text_ftsiv</str>
       <str name="q.op">AND</str>
-      <str name="sort">score desc</str>
+      <str name="sort">vol_ssort asc,sort_date_dti asc,id asc</str>
       <int name="rows">20</int>
 
       <str name="fl">score, *</str>
-      
+      <bool name="debugQuery">true</bool>
+
       <bool name="facet">true</bool>
       <int name="facet.mincount">1</int>
       <int name="facet.limit">16</int>
       <str name="facet.field">collection_ssi</str>
-      <str name="facet.field">doc_type_ssim</str>
+      <str name="facet.field">doc_type_ssi</str>
+      <str name="facet.field">search_date_dtsim</str>
+      <str name="f.search_date_dtsim.facet.limit">-1</str>
       <str name="facet.field">speaker_ssim</str>
-      <str name="facet.field">session_title_sim</str>
+      <str name="facet.field">session_title_si</str>
+      <str name="f.session_title_si.facet.limit">-1</str>
+      <str name="facet.field">div2_title_ssi</str>
+      <str name="f.div2_title_ssi.facet.limit">-1</str>
       <str name="facet.field">vol_title_ssi</str>
-      <str name="facet.field">medium_ssi</str>
+      <str name="facet.field">medium_ssim</str>
       <str name="facet.field">genre_ssim</str>
       <str name="facet.field">artist_ssim</str>
       <str name="facet.field">collector_ssim</str>
-      <str name="facet.pivot">result_group_ssi,session_title_sim</str>
+      <str name="facet.field">result_group_ssi</str>
+      <str name="f.result_group_ssi.facet.limit">-1</str>
+      <str name="facet.pivot">result_group_ssort,div2_ssort</str>
       <str name="facet.query">search_date_dtsim:[1787-02-22T00:00:00Z TO 1789-01-25T00:00:00Z]</str>
       <str name="facet.query">search_date_dtsim:[1789-05-05T00:00:00Z TO 1789-07-15T00:00:00Z]</str>
       <str name="facet.query">search_date_dtsim:[1789-07-17T00:00:00Z TO 1791-10-01T00:00:00Z]</str>
@@ -350,15 +424,22 @@
       <str name="facet.query">search_date_dtsim:[1795-10-27T00:00:00Z TO 1797-09-05T00:00:00Z]</str>
       <str name="facet.query">search_date_dtsim:[1797-09-04T00:00:00Z TO 1799-06-19T00:00:00Z]</str>
       <str name="facet.query">search_date_dtsim:[1799-06-08T00:00:00Z TO 1799-11-12T00:00:00Z]</str>
-      
-      <str name="group">true</str>
+
+      <str name="group">false</str>
       <str name="group.ngroups">true</str>
       <str name="group.limit">10</str>
       <str name="group.field">result_group_ssi</str>
 
       <str name="hl">on</str>
-      <str name="hl.fl">spoken_text_ftsimv, title_long_ftsi, title_short_ftsi, text_ftsiv, session_title_ftsim</str>
+      <str name="hl.fl">spoken_text_ftsimv, unspoken_text_ftsimv, title_long_ftsi, title_short_ftsi, session_title_ftsi</str>
+      <str name="hl.snippets">500</str>
+<!-- uncomment 2 lines below and remove hl.fragsize for the NEW way with better performance -->
+<!--
+      <str name="hl.useFastVectorHighlighter">true</str>
+      <str name="hl.fragListBuilder">single</str>
+-->
       <str name="hl.fragsize">0</str>
+      <str name="hl.maxAnalyzedChars">100000</str>
     </lst>
   </requestHandler>
 
@@ -374,10 +455,11 @@
       <str>tvComponent</str>
     </arr>
   </requestHandler>
-    
+
   <requestHandler name="/update" class="solr.UpdateRequestHandler" startup="lazy" />
-  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />  
-  <requestHandler name="/admin/" class="org.apache.solr.handler.admin.AdminHandlers" />
+  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
+  <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />
+
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
     <lst name="invariants">
       <str name="q">ping test query</str>

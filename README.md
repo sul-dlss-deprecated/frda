@@ -21,19 +21,12 @@ This is a Blacklight application for the FRDA Collection at Stanford University.
 
         bundle install
 
-1. Remove the jetty that is checked into git and then set up local jetty and copy config files:
+1. Start solr and load the fixtures: (you should first stop any solr processes if you have multiple solr-related projects):
 
-        rm -fr jetty
-        git submodule init
-        git submodule update
-        rake frda:config
-
-1. Start solr and load the fixtures: (you should first stop any other jetty processes if you have multiple jetty-related projects):
-
-        rake jetty:start
+        solr_wrapper
         rake frda:index_fixtures
 
-1. Migrate the database.  Note that the solr instance (i.e. jetty) needs to be available to run any migrations, so start Jetty first!
+1. Migrate the database.  Note that the solr instance needs to be available to run any migrations, so start Solr first!
 
         rake db:migrate
         rake db:seed
@@ -55,14 +48,6 @@ You must specify a branch or tag to deploy.  You can deploy the latest by specif
 ## Testing
 
 During development, you can run the test suite locally by running:
-
-    rake local_ci
-
-This will stop the development jetty, force you into the test environment, start jetty, start solr,
-delete all the records in the test solr core, index all fixtures in `spec/fixtures`, run `db:migrate` in test,
-then run the tests, and then restart development jetty
-
-If your jetty is not currently running, you can start it and run all of the tests with
 
     rake ci
 
@@ -107,13 +92,6 @@ type_ssi - must be "image"
 There is a custom "link_back_to_catalog" method in app/helpers/blacklight_helper.rb
 If you update Blacklight, you should confirm if this method still works or compare with the equivalent method in the latest version of blacklight.  The method is responsible for generating a "back to results" link from item detail pages.
 
-
 ## Indexing
 
 There is a custom indexing app for FRDA that is quite out of date (as of June 2016) and non-operational.  It is still in the DLSS AFS space (under "dev/dlss/git/digital_collection_sites/frda-indexer.git") and not available in github.  To reindex material you would need to upgrade to the latest harvestdor stack.
-
-## Utils
-
-To reset jetty and solr back to their initial state:
-
-    rake frda:jetty_nuke

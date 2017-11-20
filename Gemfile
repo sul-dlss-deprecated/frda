@@ -53,7 +53,7 @@ group :development,:test do
 end
 
 group :development, :staging, :test do
-  gem 'jettywrapper'
+  gem 'solr_wrapper', '~> 1.0'
   gem 'sqlite3'
   gem 'quiet_assets'
 end

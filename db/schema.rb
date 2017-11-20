@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20130627175531) do
 
   create_table "bookmarks", force: :cascade do |t|
-    t.integer  "user_id",                 null: false
-    t.string   "document_id", limit: 255
-    t.string   "title",       limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "user_type",   limit: 255
+    t.integer  "user_id",     null: false
+    t.string   "document_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "user_type"
   end
 
   create_table "category_ens", force: :cascade do |t|
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20130627175531) do
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "position",   limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "position"
   end
 
   create_table "category_frs", force: :cascade do |t|
@@ -37,52 +37,52 @@ ActiveRecord::Schema.define(version: 20130627175531) do
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "position",   limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "position"
   end
 
   create_table "collection_highlight_items", force: :cascade do |t|
-    t.string   "item_id",                 limit: 255
+    t.string   "item_id"
     t.integer  "collection_highlight_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "collection_highlights", force: :cascade do |t|
-    t.string   "name_en",        limit: 255
+    t.string   "name_en"
     t.text     "description_en"
-    t.string   "name_fr",        limit: 255
+    t.string   "name_fr"
     t.text     "description_fr"
-    t.string   "image_url",      limit: 255
+    t.string   "image_url"
     t.integer  "sort_order"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "political_periods", force: :cascade do |t|
-    t.string   "name_en",    limit: 255
-    t.string   "name_fr",    limit: 255
-    t.string   "start_date", limit: 255
-    t.string   "end_date",   limit: 255
+    t.string   "name_en"
+    t.string   "name_fr"
+    t.string   "start_date"
+    t.string   "end_date"
     t.integer  "sort_order"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "searches", force: :cascade do |t|
     t.text     "query_params"
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "user_type",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "user_type"
   end
 
   add_index "searches", ["user_id"], name: "index_searches_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

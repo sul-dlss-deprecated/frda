@@ -1,0 +1,8 @@
+development: &dev
+  url: http://localhost:8983/solr/blacklight-core
+test: &test
+  url: http://localhost:8983/solr/blacklight-core
+staging:
+  <<: *dev
+production: &prod
+  <<: *dev

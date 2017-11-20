@@ -68,15 +68,15 @@
     <dynamicField name="*_itsm" type="tint" stored="true" indexed="false" multiValued="true"/>
     <dynamicField name="*_itsi" type="tint" stored="true" indexed="true" multiValued="false"/>
     <dynamicField name="*_itsim" type="tint" stored="true" indexed="true" multiValued="true"/>
-
-		<dynamicField name="*_li" type="long" stored="false" indexed="true" multiValued="false"/>
-		<dynamicField name="*_lim" type="long" stored="false" indexed="true" multiValued="true"/>
-		<dynamicField name="*_ls" type="long" stored="true" indexed="false" multiValued="false"/>
-		<dynamicField name="*_lsm" type="long" stored="true" indexed="false" multiValued="true"/>
-		<dynamicField name="*_lsi" type="long" stored="true" indexed="true" multiValued="false"/>
-		<dynamicField name="*_lsim" type="long" stored="true" indexed="true" multiValued="true"/>
-		<dynamicField name="*_lsort" type="long" stored="false" indexed="true" multiValued="false"/> 
-   
+    
+    <dynamicField name="*_li" type="long" stored="false" indexed="true" multiValued="false"/>
+    <dynamicField name="*_lim" type="long" stored="false" indexed="true" multiValued="true"/>
+    <dynamicField name="*_ls" type="long" stored="true" indexed="false" multiValued="false"/>
+    <dynamicField name="*_lsm" type="long" stored="true" indexed="false" multiValued="true"/>
+    <dynamicField name="*_lsi" type="long" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_lsim" type="long" stored="true" indexed="true" multiValued="true"/>
+    <dynamicField name="*_lsort" type="long" stored="false" indexed="true" multiValued="false"/>
+    
     <dynamicField name="*_di" type="date" stored="false" indexed="true" multiValued="false"/>
     <dynamicField name="*_dim" type="date" stored="false" indexed="true" multiValued="true"/>
     <dynamicField name="*_ds" type="date" stored="true" indexed="false" multiValued="false"/>
@@ -99,13 +99,25 @@
   </fields>
 
   <!-- copy fields -->
-  <copyField source="session_title_ftsim" dest="session_title_sim" />
+  <copyField source="session_date_dtsi" dest="search_date_dtsim" />
   <copyField source="session_date_dtsim" dest="search_date_dtsim" />
+  <copyField source="session_title_ftsi" dest="session_title_si" />
+  <copyField source="session_title_ftsi" dest="div2_title_ssi" />
+  <copyField source="session_title_ftsim" dest="session_title_sim" />
   <copyField source="text_tiv" dest="text_ftsiv" />
   <copyField source="spoken_text_timv" dest="spoken_text_ftsimv" />
+  <copyField source="unspoken_text_timv" dest="unspoken_text_ftsimv" />
+  <copyField source="catalog_heading_ftsimv" dest="catalog_heading_timv" />
+  <copyField source="catalog_heading_etsimv" dest="catalog_heading_timv" />
+  <copyField source="subject_ftsimv" dest="subject_timv" />
+  <copyField source="speaker_ssim" dest="speaker_timv" />
+  <copyField source="subject_name_ssim" dest="subject_name_ftimv" />
+  <copyField source="subject_name_ssim" dest="subject_name_timv" />
   <copyField source="title_short_ftsi" dest="title_short_ti" />
   <copyField source="title_long_ftsi" dest="title_long_ti" />
   <copyField source="vol_title_ssi" dest="result_group_ssi" />
+  <copyField source="vol_title_ssi" dest="vol_title_fti" />
+  <copyField source="vol_title_ssi" dest="vol_title_ti" />
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
@@ -130,10 +142,6 @@
     <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
     <!-- A Trie based date field for faster date range queries and date faceting. -->
     <fieldType name="tdate" class="solr.TrieDateField" precisionStep="6" positionIncrementGap="0"/>
-        
-	   <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType"
-	     geo="true" distErrPct="0.025" maxDistErr="0.000009" units="degrees" />
-
         
     <fieldType name="text" class="solr.TextField" omitNorms="false">
       <analyzer>

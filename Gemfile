@@ -6,9 +6,6 @@ gem 'rails', '~> 4'
 
 gem 'google-analytics-rails'
 
-# Using 1.7.2 because 1.8 appears to have an incompatibility with ModsDisplay 0.4.1
-gem 'nokogiri', '~> 1.7.2'
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

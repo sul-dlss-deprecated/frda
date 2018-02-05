@@ -2,17 +2,12 @@
 	$('#item_detail').html("<%= escape_javascript(render( :partial => "show_ap_item")).html_safe %>");
 	clearMessages();
 	showOnLoad();
-	<% if ['flipbook', 'ocr'].include?(@mode) == false%>
+	<% if @mode != 'ocr' %>
 		showImageViewer('<%=@document.first_image(:size=>:full,:format=>"none")%>','ap_page_image');
 	<% end %>
-	<% if @mode=='flipbook'%>
-		$('#page-navigation').addClass('hidden');
-	<% else %>
-		$('#page-navigation').removeClass('hidden');
-	<% end %>
+	$('#page-navigation').removeClass('hidden');
 	window.history.pushState({}, "<%=@document.title%>", "<%=catalog_path(@document.id,:mode=>@mode)%>");
 	document.title = '<%="#{t('blacklight.application_name')}: #{@document.title}"%>';
 <% else %>
 	showMessage('<%=t('frda.show.not_found')%>','alert');
 <%end%>
-

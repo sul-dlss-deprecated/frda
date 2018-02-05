@@ -106,7 +106,7 @@ class CatalogController < ApplicationController
 
 
    def show
-     @mode=params[:mode] # can be set to "ocr" or "flipbook" to show only ocr text or flipbook on AP pages
+     @mode=params[:mode] # can be set to "ocr" to show only ocr text
      super
    end
 

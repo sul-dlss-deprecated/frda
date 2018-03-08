@@ -3,5 +3,6 @@ notifications:
 
 rvm:
   - 2.3.4
+  - 2.4.3
 
 script: bundle exec rake ci

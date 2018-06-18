@@ -34,7 +34,8 @@ class CatalogController < ApplicationController
   # If we remove that, but still want date processing, we'll need to explicity require and use the DateRangeSolrQuery gem.
   CatalogController.solr_search_params_logic += [:only_search_div2, :search_within_speeches,
                                                  :proximity_search, :result_view,
-                                                 :exclude_highlighting, :pivot_facet_on_ap_landing_page]
+                                                 :exclude_highlighting, :pivot_facet_on_ap_landing_page,
+                                                 :add_hlfl]
 
   before_filter :capture_split_button_options, :capture_drop_down_options, :title_and_exact_search, :only => :index
 
@@ -470,6 +471,10 @@ class CatalogController < ApplicationController
         params[:search_field] = "exact_title"
       end
     end
+  end
+
+  def add_hlfl(solr_params, user_params)
+    solr_params[:'hl.fl'] = user_params['q']
   end
 
   # Value will be changed via JavaScript when user changes views

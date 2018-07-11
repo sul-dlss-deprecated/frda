@@ -304,25 +304,25 @@ class CatalogController < ApplicationController
 
     config.add_search_field('title_terms') do |field|
       field.label = :'frda.facet.title'
-      field.solr_local_parameters = {
-        :qf => '$qf_title',
-        :pf => '$pf_title'
+      field.solr_parameters = {
+        :qf => '${qf_title}',
+        :pf => '${pf_title}'
       }
     end
 
     config.add_search_field('exact') do |field|
       field.label = :'frda.facet.exact'
-      field.solr_local_parameters = {
-        :qf => '$qf_exact',
-        :pf => '$pf_exact'
+      field.solr_parameters = {
+        :qf => '${qf_exact}',
+        :pf => '${pf_exact}'
       }
     end
 
     config.add_search_field('exact_title') do |field|
       field.label = :'frda.facet.exact_title'
-      field.solr_local_parameters = {
-        :qf => '$qf_title_exact',
-        :pf => '$pf_title_exact'
+      field.solr_parameters = {
+        :qf => '${qf_title_exact}',
+        :pf => '${pf_title_exact}'
       }
     end
 

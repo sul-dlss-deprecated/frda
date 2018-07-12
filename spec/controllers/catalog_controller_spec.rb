@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe CatalogController do
-  
+
   describe "solr_params_logic" do
     describe "search within speeches" do
       before :each do
@@ -27,6 +27,14 @@ describe CatalogController do
         controller.send(:search_within_speeches, @solr_params, user_params)
         expect(user_params["q"]).to eq '"HEY, this is a phrase"'
         expect(@solr_params[:q]).not_to match user_params["q"]
+      end
+    end
+    describe "add_hlfl" do
+      it "copies the user's original query to the hl.q solr parameter" do
+        user_params = { "q" => "test" }
+        solr_params = {}
+        controller.send(:add_hlq, solr_params, user_params)
+        expect(solr_params[:'hl.q']).to eq user_params["q"]
       end
     end
     describe "exclude_highlighting" do

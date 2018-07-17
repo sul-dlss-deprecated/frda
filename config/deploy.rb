@@ -2,7 +2,7 @@ set :application, 'frda'
 set :repo_url, 'https://github.com/sul-dlss/frda.git'
 
 # Default branch is :master
-ask :branch, 'master'
+set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/opt/app/frda/frda-app'

@@ -193,10 +193,10 @@ class CatalogController < ApplicationController
     ## parameters included in the document requestHandler.
     #
     config.default_document_solr_params = {
-     :qt => 'search',
-     :fl => '*',
-     :rows => 1,
-     :q => '{!raw f=id v=$id}'
+     :qt => 'document',
+     # :fl => '*',
+     # :rows => 1,
+     # :q => '{!raw f=id v=$id}'
     }
 
     config.document_index_view_types = ["default", "gallery", "list", "frequency", "covers"]

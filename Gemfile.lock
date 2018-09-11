@@ -263,7 +263,7 @@ GEM
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
     scrub_rb (1.0.1)
-    solr_wrapper (1.2.0)
+    solr_wrapper (2.0.0)
       faraday
       retriable
       ruby-progressbar
@@ -347,7 +347,7 @@ DEPENDENCIES
   rspec-rails (>= 2.14)
   sass-rails (~> 4)
   scrub_rb
-  solr_wrapper (~> 1.0)
+  solr_wrapper (~> 2.0)
   sqlite3
   stanford-mods
   test-unit

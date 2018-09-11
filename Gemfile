@@ -50,7 +50,7 @@ group :development,:test do
 end
 
 group :development, :staging, :test do
-  gem 'solr_wrapper', '~> 1.0'
+  gem 'solr_wrapper', '~> 2.0'
   gem 'sqlite3'
   gem 'quiet_assets'
 end

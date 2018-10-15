@@ -49,7 +49,7 @@ $(document).ready(function(){
         <h2 class="search-results"><%= t('blacklight.search.search_results_header_grouped') %></h2>
       <% else %>
         <h2 class="search-results">
-          <%= t('blacklight.search.search_results_header_ungrouped', :volume_number => volume_title_number(params)) %>
+          <%= t('blacklight.search.search_results_header_ungrouped', :volume_number => volume_title_number) %>
         </h2>
       <% end %>
     <% elsif on_ap_landing_page %>
@@ -62,7 +62,7 @@ $(document).ready(function(){
         <h2 class="search-results"><%= t('blacklight.search.search_results_header_grouped') %></h2>
       <% else %>
         <h2 class="search-results">
-          <%= t('blacklight.search.search_results_header_ungrouped', :volume_number => volume_title_number(params)) %>
+          <%= t('blacklight.search.search_results_header_ungrouped', :volume_number => volume_title_number) %>
         </h2>
       <% end %>
     <% end %>

@@ -192,10 +192,12 @@ module ApplicationHelper
   end
 
   # get just the '11' part of a complete volume name ('Tome 11 : blah blah')
-  def volume_title_number(volume)
-    volume_title = params[:f][:vol_title_ssi]
-    volume_number = volume_title[0].match(/^(\D+)(\d+)\s:/)
-    return volume_number[2]
+  def volume_title_number
+    return if params.dig(:f, :vol_title_ssi).blank?
+
+    volume_title = params[:f][:vol_title_ssi].first
+    volume_number = volume_title.match(/^(\D+)(\d+)\s:/) || []
+    volume_number[2]
   end
 
   # sections for About page

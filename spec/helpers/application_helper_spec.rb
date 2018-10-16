@@ -6,7 +6,7 @@ def blacklight_config
 end
 
 describe ApplicationHelper do
-  
+
   describe "collection highlight linking" do
     it "params_for_collection_highlight should return the appropriate params" do
       highlight = double('highlight')
@@ -18,7 +18,7 @@ describe ApplicationHelper do
       expect(field.length).to eq(1)
       expect(field.first).to eq("highlight_1")
     end
-    
+
     it "should link to the appropriate collection highlight" do
       highlight = double('highlight')
       allow(highlight).to receive(:id).and_return("1")
@@ -28,7 +28,7 @@ describe ApplicationHelper do
       expect(link).to match(/^<a href=".*highlight_field.*highlight_1">Highlighted Collection<\/a>$/)
     end
   end
-  
+
   describe "catalog_heading linking" do
     it "should turn the array into a series of linked entries" do
       headings = ["Something", "Something Else", "Another Something"]
@@ -40,7 +40,7 @@ describe ApplicationHelper do
       end
     end
   end
-  
+
   describe "link_to_volume_facet" do
     it "should link to the volume text passed" do
       expect(link_to_volume_facet("A Volume Title")).to match(/^<a href=.*>A Volume Title<\/a>$/)
@@ -200,6 +200,23 @@ describe ApplicationHelper do
       it "should remove the locale and result_view params" do
         hash = sanitize_params_for_locale_switcher({"locale" => "en", :result_view => "default"})
         expect(hash).to eq({})
+      end
+    end
+
+    describe '#volume_title_number' do
+      it 'is the number between a word and a " :"' do
+        expect(helper).to receive(:params).at_least(:once).and_return({ f: { vol_title_ssi: ['Tome 21 : The Title'] } })
+        expect(helper.volume_title_number).to eq '21'
+      end
+
+      it 'handles the lack of the volume title data proplery' do
+        expect(helper).to receive(:params).at_least(:once).and_return({ f: { vol_title_ssi: [] } })
+        expect(helper.volume_title_number).to be_nil
+      end
+
+      it 'handles malformed title data properly' do
+        expect(helper).to receive(:params).at_least(:once).and_return({ f: { vol_title_ssi: ['ThingThatDoesNot : ConformToOurPattern'] } })
+        expect(helper.volume_title_number).to be_nil
       end
     end
   end

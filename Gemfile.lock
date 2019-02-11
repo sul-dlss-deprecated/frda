@@ -350,7 +350,7 @@ DEPENDENCIES
   sass-rails (~> 4)
   scrub_rb
   solr_wrapper (~> 2.0)
-  sqlite3
+  sqlite3 (~> 1.3.13)
   stanford-mods
   test-unit
   therubyracer

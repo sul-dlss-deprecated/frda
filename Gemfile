@@ -41,7 +41,7 @@ gem 'uglifier', '>= 1.0.3'
 
 group :development,:test do
   gem 'rspec-rails', ">=2.14"
-  gem 'capybara'
+  gem 'capybara', '~> 3.15.0' # pinned for ruby 2.3 compatibility
 	gem 'launchy'
   gem 'better_errors'
   gem 'binding_of_caller'

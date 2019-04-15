@@ -286,7 +286,7 @@ GEM
     stanford-mods (2.6.1)
       activesupport
       mods (~> 2.2)
-    test-unit (3.3.1)
+    test-unit (3.3.2)
       power_assert
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)

@@ -20,7 +20,7 @@ gem 'whenever'
 
 gem 'blacklight_dates2svg', '~> 0.0.1.beta5'
 
-gem 'is_it_working-cbeer', require: 'is_it_working'
+gem 'okcomputer'
 
 gem "coderay"
 gem 'kaminari', '<= 0.14.1'

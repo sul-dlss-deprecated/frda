@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 Frda::Application.routes.draw do
-
+   match '/is_it_working' => 'ok_computer/ok_computer#index', via: [:get, :options]
   scope "(:locale)", :locale => /en|fr/ do
 
     Blacklight.add_routes(self)

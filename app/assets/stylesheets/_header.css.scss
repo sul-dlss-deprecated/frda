@@ -2,6 +2,9 @@
 
 #brandbar {
   min-height: 35px;
+  .sul-logo img {
+    height: 28px !important;
+  }
   .bnf-logo {
     padding-left: 30px;
   }
@@ -183,5 +186,5 @@
     .nav > li > a {
       font-size: 1.1em;
     }
-  }  
+  }
 }

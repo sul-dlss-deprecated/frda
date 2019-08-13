@@ -7,6 +7,10 @@ set :branch, 'master'
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/opt/app/frda/frda-app'
 
+# Ignore bootstrap vulnerabilities.
+# We plan on migrating this site to another platform before a major bootstrap upgrade
+set :bundle_audit_ignore, %w[CVE-2016-10735 CVE-2019-8331]
+
 # Default value for :scm is :git
 # set :scm, :git
 

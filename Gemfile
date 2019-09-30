@@ -92,3 +92,5 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+gem 'rubyzip', '< 2', require: false

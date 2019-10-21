@@ -106,7 +106,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
-    crass (1.0.4)
+    crass (1.0.5)
     date_range_solr_query (0.0.1.beta1)
       activesupport
       i18n
@@ -178,7 +178,7 @@ GEM
     mods_display (0.7.1)
       i18n
       stanford-mods (~> 2.1)
-    multi_json (1.14.0)
+    multi_json (1.14.1)
     multipart-post (2.1.1)
     mysql2 (0.3.21)
     net-scp (2.0.0)
